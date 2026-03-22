@@ -1,11 +1,13 @@
 #pragma once
+#include <evamDefaultTrimm.h>
 
-class MockMotor
+template <class TRIMMER=DefaultTrimm>
+class MockMotor: public TRIMMER
 {
 public:
-    void set(signed short level) 
+    void actuate(signed short level) 
     {
-        this->resultLevel = level;
+        this->resultLevel = TRIMMER::trim(level);
     }
     signed short resultLevel = 0;
 };

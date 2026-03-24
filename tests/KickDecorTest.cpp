@@ -9,7 +9,7 @@ using namespace evam;
 
 test(kick_simple)
 {
-    KickDecor<MockMotor<DefaultTrimm>, 20, 250> rd;
+    KickDecor<MockMotor, 20, 250> rd;
     rd.actuate(0);
     assertEqual(rd.resultLevel, 0);
     tac();
@@ -27,7 +27,7 @@ test(kick_simple)
 
 test(kick_simple_alt2)
 {
-    KickDecor<MockMotor<>, 1000, 250> rd;
+    KickDecor<MockMotor, 1000, 250> rd;
     rd.actuate(0);
     assertEqual(rd.resultLevel, 0);
 

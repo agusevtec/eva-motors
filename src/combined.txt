@@ -1,0 +1,452 @@
+// Combined project file
+// Generated from .
+// Total files: 9
+
+<evamCurveDecor.h>
+#ifndef CURVEDECOR_H_
+#define CURVEDECOR_H_
+
+#pragma once
+
+namespace evam
+{
+    template <class MOTOR, signed short ALPHA>
+    class CurveDecor : public MOTOR
+    {
+    public:
+        signed long f(signed long x)
+        {
+            return ALPHA * (x - x * x / 1000) / 10;
+        }
+
+        unsigned short bend(unsigned short x)
+        {
+            signed long fx_x = f(x) + x;
+            return f(fx_x) + fx_x;
+        }
+
+        void actuate(signed short value)
+        {
+            value = constrain(value, -1000, 1000);
+            if (value >= 0)
+                MOTOR::actuate(bend(value));
+            else
+                MOTOR::actuate(-bend(-value));
+        }
+    };
+
+}
+#endif // CURVEDECOR_H_
+</evamCurveDecor.h>
+
+<evamDirectionalMotor.h>
+#pragma once
+#include <Arduino.h>
+
+namespace evam
+{
+
+    template <class DRIVER, signed short MAX_BACKWARD, signed short MIN_BACKWARD, signed short MIN_FORWARD, signed short MAX_FORWARD>
+    class DirectionalMotor : public DRIVER
+    {
+    protected:
+        signed short toSSS(signed short level, signed short mxb, signed short mnb, signed short mnf, signed short mxf)
+        {
+            if (level < 0)
+                return map(constrain(level, -1000, 0), -1000, 0, mxb, mnb) + 1500;
+            if (level > 0)
+                return map(constrain(level, 0, 1000), 0, 1000, mnf, mxf) + 1500;
+            return 1500;
+        }
+
+    public:
+        void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(toSSS(level, MAX_BACKWARD, MIN_BACKWARD, MIN_FORWARD, MAX_FORWARD));
+        }
+    };
+
+    template <class DRIVER, signed short MAX_BACKWARD, signed short MIN_BACKWARD, signed short MIN_FORWARD, signed short MAX_FORWARD>
+    class DirectionalMutableMotor : public DirectionalMotor<DRIVER, 1000, 0, 0, 1000>
+    {
+    private:
+        signed short maxBackward = MAX_BACKWARD;
+        signed short minBackward = MIN_BACKWARD;
+        signed short minForward = MIN_FORWARD;
+        signed short maxForward = MAX_FORWARD;
+
+    public:
+
+        DirectionalMutableMotor *setMaxBackward(signed short value)
+        {
+            this->maxBackward = value;
+            return this;
+        }
+
+        DirectionalMutableMotor *setMinBackward(signed short value)
+        {
+            this->minBackward = value;
+            return this;
+        }
+
+        DirectionalMutableMotor *setMinForward(signed short value)
+        {
+            this->minForward = value;
+            return this;
+        }
+
+        DirectionalMutableMotor *setMaxForward(signed short value)
+        {
+            this->maxForward = value;
+            return this;
+        }
+
+        void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(this->toSSS(level, this->maxBackward, this->minBackward, this->minForward, this->maxForward));
+        }
+    };
+}
+</evamDirectionalMotor.h>
+
+<evamForwardMotor.h>
+#pragma once
+namespace evam
+{
+
+    template <class DRIVER, int MIN_VALUE, int MAX_VALUE>
+    class ForwardMotor: public DRIVER
+    {
+    public:
+        signed short toSSS(signed short level, signed short minValue, signed short maxValue)
+        {
+            if (level > 0)
+                return map(constrain(level, 0, 1000), 0, 1000, minValue, maxValue) + 1000;
+            return 1000;
+        }
+        void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(toSSS(level, MIN_VALUE, MAX_VALUE));
+        }
+    };
+
+    template <class DRIVER, int MIN_VALUE, int MAX_VALUE>
+    class ForwardMutableMotor: public ForwardMotor<DRIVER, MIN_VALUE, MAX_VALUE>
+    {
+    private:
+        int minValue = MIN_VALUE;
+        int maxValue = MAX_VALUE;
+
+    public:
+        ForwardMutableMotor *setMinValue(int value)
+        {
+            this->minValue = value;
+            return this;
+        }
+
+        ForwardMutableMotor *setMaxValue(int value)
+        {
+            this->maxValue = value;
+            return this;
+        }
+
+         void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(this->toSSS(level, this->minValue, this->maxValue));
+        }
+    };
+}
+</evamForwardMotor.h>
+
+<evamInertiaDecor.h>
+#ifndef MOTORINERTIADECORATOR_H
+#define MOTORINERTIADECORATOR_H
+
+#pragma once
+#include <evaTickable.h>
+using namespace eva;
+
+namespace evam
+{
+  template <class Motor>
+  class InertiaDecor : public virtual Tickable, public Motor
+  {
+  public:
+    void actuate(int speed)
+    {
+      this->desiredSpeed = speed;
+      if (speed == calcSpeed())
+      {
+        this->speed = speed;
+        Motor::actuate(speed);
+      }
+    }
+
+  private:
+    signed short calcSpeed()
+    {
+      if (this->desiredSpeed * this->speed < 0)
+        return this->desiredSpeed;
+
+      if (abs(this->desiredSpeed) > abs(this->speed))
+        return this->desiredSpeed;
+
+      signed short step = 2*(this->desiredSpeed - this->speed)/10;
+      signed short signStep = (this->desiredSpeed > this->speed) + (this->desiredSpeed < this->speed);
+      return this->speed + step - signStep;
+    }
+
+    void tick()
+    {
+      unsigned long now = millis();
+      if (now - lastSpeedUpdateWasAt < 100)
+        return;
+      lastSpeedUpdateWasAt = now;
+      
+      this->speed = calcSpeed();
+      Motor::actuate(this->speed);
+    }
+
+  private:
+    unsigned long lastSpeedUpdateWasAt = 0;
+    signed short desiredSpeed = 0;
+    signed short speed = 0;
+  };
+}
+#endif
+</evamInertiaDecor.h>
+
+<evamKickDecor.h>
+#ifndef MOTORKICKDECORATOR_H_
+#define MOTORKICKDECORATOR_H_
+
+#pragma once
+
+#include <evaTickable.h>
+using namespace eva;
+
+namespace evam
+{
+    template <class MOTOR, unsigned short KICK_DURATION = 20, signed short KICK_POWER = 250>
+    class KickDecor : public virtual Tickable, public MOTOR
+    {
+    public:
+        signed short calculateKickPower(signed short value)
+        {
+            if ((this->targetSpeed <= 0) && (value > 0))
+                return KICK_POWER;
+
+            if ((this->targetSpeed >= 0) && (value < 0))
+                return -KICK_POWER;
+                
+            return 0;
+        }
+
+        void actuate(signed short value)
+        {
+            signed short needKick = calculateKickPower(value);
+            this->targetSpeed = value;
+
+            if (needKick)
+            {
+                MOTOR::actuate(needKick);
+                holdingStartedAt = millis();
+                return;
+            }
+
+            if (holdingStartedAt)
+                return;
+
+            MOTOR::actuate(value);
+        }
+
+        void tick() override
+        {
+            if (!holdingStartedAt)
+                return;
+
+            if (millis() - holdingStartedAt < KICK_DURATION)
+                return;
+
+            MOTOR::actuate(targetSpeed);
+            holdingStartedAt = 0;
+        }
+
+    private:
+        int targetSpeed = 0;
+        unsigned long holdingStartedAt = 0;
+    };
+
+}
+#endif // MOTORKICKDECORATOR_H_
+</evamKickDecor.h>
+
+<evamLinearMotor.h>
+#pragma once
+namespace evam
+{
+
+    template <class DRIVER, int MIN_VALUE, int MAX_VALUE>
+    class LinearMotor: public DRIVER
+    {
+    public:
+        signed short toSSS(signed short level, signed short minValue, signed short maxValue)
+        {
+            return map(constrain(level, 0, 1000), 0, 1000, minValue, maxValue) + 1000;
+        }
+        void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(toSSS(level, MIN_VALUE, MAX_VALUE));
+        }
+    };
+
+    template <class DRIVER, int MIN_VALUE, int MAX_VALUE>
+    class LinearMutableMotor: public LinearMotor<DRIVER, MIN_VALUE, MAX_VALUE>
+    {
+    private:
+        int minValue = MIN_VALUE;
+        int maxValue = MAX_VALUE;
+
+    public:
+        LinearMutableMotor *setMinValue(int value)
+        {
+            this->minValue = value;
+            return this;
+        }
+
+        LinearMutableMotor *setMaxValue(int value)
+        {
+            this->maxValue = value;
+            return this;
+        }
+
+        void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(this->toSSS(level, this->minValue, this->maxValue));
+        }
+    };
+}
+</evamLinearMotor.h>
+
+<evamServoDriver.h>
+#pragma once
+
+#include <Servo.h>
+#include "evamDefaultTrimm.h"
+
+namespace evam
+{
+    template <int PIN>
+    class ServoDriver
+    {
+    public:
+        ServoDriver()
+        {
+            servo.attach(PIN);
+        }
+
+        /// @brief
+        /// @param aLevel 1000 to 2000 value
+        void setMicroseconds(unsigned short value)
+        {
+            servo.writeMicroseconds(constrain(value, 500, 2500));
+        }
+
+    private:
+        Servo servo;
+    };
+}
+
+
+</evamServoDriver.h>
+
+<evamTurnMotor.h>
+#pragma once
+#include <Arduino.h>
+
+namespace evam
+{
+
+    template <class DRIVER, signed short LEFT_POS, signed short CENTER_POS, signed short RIGHT_POS>
+    class TurnMotor : public DRIVER
+    {
+    protected:
+        signed short toSSS(signed short level, signed short left, signed short center, signed short right)
+        {
+            if (level < 0)
+                return map(constrain(level, -1000, 0), -1000, 0, left, center) + 1500;
+            else
+                return map(constrain(level, 0, 1000), 0, 1000, center, right) + 1500;
+        }
+
+    public:
+        void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(toSSS(level, LEFT_POS, CENTER_POS, RIGHT_POS));
+        }
+    };
+
+    template <class DRIVER, signed short LEFT_POS, signed short CENTER_POS, signed short RIGHT_POS>
+    class TurnMutableMotor : public TurnMotor<DRIVER, 1000, 0, 1000>
+    {
+    private:
+        signed short leftPosition = LEFT_POS;
+        signed short centerPosition = CENTER_POS;
+        signed short rightPosition = RIGHT_POS;
+
+    public:
+
+        TurnMutableMotor *setLeftPosition(signed short value)
+        {
+            this->leftPosition = value;
+            return this;
+        }
+
+        TurnMutableMotor *setCenterPosition(signed short value)
+        {
+            this->centerPosition = value;
+            return this;
+        }
+
+        TurnMutableMotor *setRightPosition(signed short value)
+        {
+            this->rightPosition = value;
+            return this;
+        }
+
+        void actuate(signed short level)
+        {
+            DRIVER::setMicroseconds(this->toSSS(level, this->leftPosition, this->centerPosition,  this->rightPosition));
+        }
+    };
+}
+</evamTurnMotor.h>
+
+<TB6612Driver.h>
+#ifndef TB6612FNG_DRIVER_H_
+#define TB6612FNG_DRIVER_H_
+#pragma once
+
+template <int PIN_SPEED, int PIN_MODE1, int PIN_MODE2>
+class TB6612FNGDriver
+{
+public:
+  TB6612FNGDriver()
+  {
+    pinMode(PIN_SPEED, OUTPUT);
+    pinMode(mModePin1, OUTPUT);
+    pinMode(mModePin2, OUTPUT);
+    actuate(0);
+  }
+
+  void setMicroseconds(unsigned short value)
+  {
+    analogWrite(map(constrain(value, 1000, 2000), 1000, 2000, -255, 255));
+    digitalWrite(mModePin1, value > 1500);
+    digitalWrite(mModePin2, value < 1500);
+  }
+};
+
+#endif
+</TB6612Driver.h>
+

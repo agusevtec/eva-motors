@@ -8,7 +8,7 @@ using namespace evam;
 
 test(curve_simple)
 {
-    CurveDecor<MockMotor<>, 0> rd;
+    CurveDecor<MockMotor, 0> rd;
     rd.actuate(0);
     assertEqual(rd.resultLevel, 0);
 
@@ -21,7 +21,7 @@ test(curve_simple)
 
 test(curve_bend_up)
 {
-    CurveDecor<MockMotor<>, 2> rd;
+    CurveDecor<MockMotor, 2> rd;
     rd.actuate(0); 
     assertEqual(rd.resultLevel, 0);
 
@@ -34,7 +34,7 @@ test(curve_bend_up)
 
 test(curve_bend_down)
 {
-    CurveDecor<MockMotor<>, -2> rd;
+    CurveDecor<MockMotor, -2> rd;
     rd.actuate(0);
     assertEqual(rd.resultLevel, 0);
 
@@ -47,7 +47,7 @@ test(curve_bend_down)
 
 test(curve_bend_negative)
 {
-    CurveDecor<MockMotor<>, -2> rd;
+    CurveDecor<MockMotor, -2> rd;
     rd.actuate(0);
     assertEqual(rd.resultLevel, 0);
 

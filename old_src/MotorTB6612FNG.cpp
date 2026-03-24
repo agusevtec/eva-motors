@@ -1,4 +1,4 @@
-#include "MotorTB6612FNG.h"
+#include "../src/TB6612FNG.h"
 #include <arduino.h>
 
 MotorTB6612FNG::MotorTB6612FNG(int pSpeedPin, int pModePin1, int pModePin2):

@@ -9,7 +9,7 @@ using namespace evam;
 
 test(inertia_simple)
 {
-    InertiaDecor<MockMotor<DefaultTrimm>> rd;
+    InertiaDecor<MockMotor> rd;
     rd.actuate(0);
     assertEqual(rd.resultLevel, 0);
 
@@ -21,12 +21,12 @@ test(inertia_simple)
 
     rd.actuate(30);
     assertEqual(rd.resultLevel, 1000);
-    for (int i =0 ; i < 30; i++)
-    {
-        tac();
-        delay(100);
-        Serial.println(rd.resultLevel);
-    }
+    // for (int i =0 ; i < 30; i++)
+    // {
+    //     tac();
+    //     delay(100);
+    //     Serial.println(rd.resultLevel);
+    // }
 
 }
 

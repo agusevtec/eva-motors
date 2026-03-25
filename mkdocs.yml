@@ -5,8 +5,11 @@ theme: material
 docs_dir: 'docs-md'
 site_dir: 'docs'
 nav:
-  - Readme: index.md
-
+  - Readme:
+      - Readme: quickstart/README.md
+      - Quickstart: quickstart/quickstart.md
+      - Motors: quickstart/motors.md
+      - Decors: quickstart/decorators.md
   - API Reference:
       - Classes: eva-motors/annotated.md
       - Hierarchy: eva-motors/hierarchy.md

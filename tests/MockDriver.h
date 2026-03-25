@@ -2,11 +2,17 @@
 
 class MockDriver
 {
-public:
-    void setMicroseconds(unsigned short value) 
+protected:
+    void actBipolar(signed short value)
     {
-        this->resultSSS = value;
+        this->resultValue = value;
     }
-    
-    unsigned short resultSSS = 0;
+
+    void actUnipolar(signed short value)
+    {
+        this->resultValue = value;
+    }
+
+public:
+    signed short resultValue = 0;
 };

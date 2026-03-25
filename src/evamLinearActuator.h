@@ -1,19 +1,18 @@
 #pragma once
 #include <Arduino.h>
-
 namespace evam
 {
     /**
-     * @brief Unidirectional forward-only motor controller (e.g., aircraft ESC, throttle).
+     * @brief Linear actuator controller (position control).
      *
-     * Maps input range 0..1000 to driver output. Negative inputs are treated as stop (0).
+     * Maps input range 0..1000 linearly to output values. 0 = minimum position, 1000 = maximum position.
      *
      * @tparam Driver Driver class (must implement actUnipolar(unsigned short))
-     * @tparam kMinValue Minimum output value (e.g., 20 = stop)
-     * @tparam kMaxValue Maximum output value (e.g., 1000 = full throttle)
+     * @tparam kMinValue Output value at 0 input (minimum position)
+     * @tparam kMaxValue Output value at 1000 input (maximum position)
      */
     template <class Driver, int kMinValue = 0, int kMaxValue = 1000>
-    class ForwardMotor : public Driver
+    class LinearActuator : public Driver
     {
         static_assert(kMinValue >= -1000 && kMinValue <= 1000, "kMinValue out of range");
         static_assert(kMaxValue >= -1000 && kMaxValue <= 1000, "kMaxValue out of range");
@@ -23,14 +22,12 @@ namespace evam
 
         signed short compute(signed short aLevel) const
         {
-            if (aLevel > 0)
-                return map(constrain(aLevel, 0, 1000), 0, 1000, mMinValue, mMaxValue);
-            return 0;
+            return map(constrain(aLevel, 0, 1000), 0, 1000, mMinValue, mMaxValue);
         }
 
     public:
         /**
-         * @brief Set minimum output value.
+         * @brief Set minimum output value (position at 0 input).
          * @param aValue Output value, clamped to -1000..1000.
          */
         void SetMinValue(int aValue)
@@ -39,7 +36,7 @@ namespace evam
         }
 
         /**
-         * @brief Set maximum output value.
+         * @brief Set maximum output value (position at 1000 input).
          * @param aValue Output value, clamped to -1000..1000.
          */
         void SetMaxValue(int aValue)
@@ -48,8 +45,8 @@ namespace evam
         }
 
         /**
-         * @brief Apply the control value.
-         * @param aLevel Input control value, range 0..1000 (negative treated as 0).
+         * @brief Apply the position control value.
+         * @param aLevel Input position, range 0..1000.
          */
         void Go(signed short aLevel)
         {

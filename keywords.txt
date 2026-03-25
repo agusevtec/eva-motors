@@ -1,0 +1,59 @@
+# Syntax highlighting for Arduino IDE
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+CurveDecor	KEYWORD1
+DirectionalMotor	KEYWORD1
+ForwardMotor	KEYWORD1
+InertiaDecor	KEYWORD1
+KickDecor	KEYWORD1
+LinearActuator	KEYWORD1
+PwmDriver	KEYWORD1
+ServoDriver	KEYWORD1
+SteeringActuator	KEYWORD1
+TA6586Driver	KEYWORD1
+TB6612FNGDriver	KEYWORD1
+
+#######################################
+# Methods (KEYWORD2)
+#######################################
+
+Go	KEYWORD2
+SetBend	KEYWORD2
+SetInertiaMass	KEYWORD2
+SetMaxBackward	KEYWORD2
+SetMinBackward	KEYWORD2
+SetMinForward	KEYWORD2
+SetMaxForward	KEYWORD2
+SetMinValue	KEYWORD2
+SetMaxValue	KEYWORD2
+SetLeftPos	KEYWORD2
+SetCenterPos	KEYWORD2
+SetRightPos	KEYWORD2
+actBipolar	KEYWORD2
+actUnipolar	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+kBend	LITERAL1
+kInertiaMass	LITERAL1
+kKickDuration	LITERAL1
+kKickPower	LITERAL1
+kMinValue	LITERAL1
+kMaxValue	LITERAL1
+kMinForward	LITERAL1
+kMaxForward	LITERAL1
+kMinBackward	LITERAL1
+kMaxBackward	LITERAL1
+kLeftPos	LITERAL1
+kCenterPos	LITERAL1
+kRightPos	LITERAL1
+kForwardPin	LITERAL1
+kBackwardPin	LITERAL1
+kPinSpeed	LITERAL1
+kPinMode1	LITERAL1
+kPinMode2	LITERAL1
+kPin	LITERAL1

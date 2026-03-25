@@ -9,19 +9,19 @@ test(forw_range_normal)
 {
     ForwardMotor<MockDriver, 30, 500> rd;
 
-    rd.actuate(0);
-    assertEqual(rd.resultSSS, 1000 + 0);
-    rd.actuate(1);
-    assertMoreOrEqual(rd.resultSSS, 1000 + 30);
-    rd.actuate(1000);
-    assertEqual(rd.resultSSS, 1000 + 500);
+    rd.Go(0);
+    assertEqual(rd.resultValue,  0);
+    rd.Go(1);
+    assertMoreOrEqual(rd.resultValue,  30);
+    rd.Go(1000);
+    assertEqual(rd.resultValue, 500);
 }
 
 test(forw_range_reversed)
 {
     ForwardMotor<MockDriver, 100, -30> rd;
-    rd.actuate(0);
-    assertEqual(rd.resultSSS, 1000);
-    rd.actuate(1000);
-    assertEqual(rd.resultSSS, 1000 - 30);
+    rd.Go(0);
+    assertEqual(rd.resultValue, 0);
+    rd.Go(1000);
+    assertEqual(rd.resultValue, -30);
 }

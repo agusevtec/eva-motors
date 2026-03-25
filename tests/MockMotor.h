@@ -3,7 +3,7 @@
 class MockMotor
 {
 public:
-    void actuate(signed short level) 
+    void Go(signed short level) 
     {
         this->resultLevel = level;
     }

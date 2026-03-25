@@ -1,18 +1,16 @@
-site_name: EVA Boxy
-site_description: EVA Boxy - GUI windowing library for Arduino Built on EVA Core event-driven framework Create windowed interfaces with buttons, menus, and dialogs
-repo_url: https://github.com/agusevtec/eva-core-sk
+site_name: EVA Motors
+site_description: A modular library for motor and actuator control on Arduino. Features unified Go() interface, pluggable drivers (Servo, TB6612, TA6586, PWM), decorators for curve shaping, inertia simulation, kick-start, and flexible range mapping for unipolar/bipolar control.
+repo_url: https://github.com/agusevtec/eva-motors
 theme: material
 docs_dir: 'docs-md'
 site_dir: 'docs'
 nav:
-  - About: index.md
-  - QuickStart:
-    - About: index.md
+  - Readme: index.md
 
   - API Reference:
-      - Classes: eva-core-sk/annotated.md
-      - Hierarchy: eva-core-sk/hierarchy.md
-      - Files: eva-core-sk/files.md
+      - Classes: eva-motors/annotated.md
+      - Hierarchy: eva-motors/hierarchy.md
+      - Files: eva-motors/files.md
 
 markdown_extensions:
   - admonition
@@ -24,7 +22,7 @@ plugins:
   - search
   - mkdoxy:
       projects:
-        eva-core-sk:
+        eva-motors:
           src-dirs: ./src
           full-doc: True
           doxy-cfg:

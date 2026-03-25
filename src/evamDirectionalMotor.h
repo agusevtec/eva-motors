@@ -3,65 +3,84 @@
 
 namespace evam
 {
-
-    template <class DRIVER, signed short MAX_BACKWARD, signed short MIN_BACKWARD, signed short MIN_FORWARD, signed short MAX_FORWARD>
-    class DirectionalMotor : public DRIVER
+    /**
+     * @brief Bidirectional motor controller (forward/reverse).
+     *
+     * Maps a signed input range -1000..1000 to driver-specific output values.
+     * Negative values correspond to reverse, positive to forward.
+     *
+     * @tparam Driver Driver class (must implement actBipolar(signed short))
+     * @tparam kMaxBackward Maximum reverse output value (e.g., -1000)
+     * @tparam kMinBackward Minimum reverse output value (e.g., -50)
+     * @tparam kMinForward Minimum forward output value (e.g., 50)
+     * @tparam kMaxForward Maximum forward output value (e.g., 1000)
+     */
+    template <class Driver, signed short kMaxBackward = -1000, signed short kMinBackward = 0, signed short kMinForward = 0, signed short kMaxForward=1000>
+    class DirectionalMotor : public Driver
     {
-    protected:
-        signed short toSSS(signed short level, signed short mxb, signed short mnb, signed short mnf, signed short mxf)
-        {
-            if (level < 0)
-                return map(constrain(level, -1000, 0), -1000, 0, mxb, mnb) + 1500;
-            if (level > 0)
-                return map(constrain(level, 0, 1000), 0, 1000, mnf, mxf) + 1500;
-            return 1500;
-        }
-
-    public:
-        void actuate(signed short level)
-        {
-            DRIVER::setMicroseconds(toSSS(level, MAX_BACKWARD, MIN_BACKWARD, MIN_FORWARD, MAX_FORWARD));
-        }
-    };
-
-    template <class DRIVER, signed short MAX_BACKWARD, signed short MIN_BACKWARD, signed short MIN_FORWARD, signed short MAX_FORWARD>
-    class DirectionalMutableMotor : public DirectionalMotor<DRIVER, 1000, 0, 0, 1000>
-    {
+        static_assert(kMaxBackward >= -1000 && kMaxBackward <= 1000, "kMaxBackward out of range");
+        static_assert(kMinBackward >= -1000 && kMinBackward <= 1000, "kMinBackward out of range");
+        static_assert(kMinForward >= -1000 && kMinForward <= 1000, "kMinForward out of range");
+        static_assert(kMaxForward >= -1000 && kMaxForward <= 1000, "kMaxForward out of range");
     private:
-        signed short maxBackward = MAX_BACKWARD;
-        signed short minBackward = MIN_BACKWARD;
-        signed short minForward = MIN_FORWARD;
-        signed short maxForward = MAX_FORWARD;
+        signed short mMaxBackward = kMaxBackward;
+        signed short mMinBackward = kMinBackward;
+        signed short mMinForward = kMinForward;
+        signed short mMaxForward = kMaxForward;
+
+        signed short compute(signed short aLevel) const
+        {
+            if (aLevel < 0)
+                return map(constrain(aLevel, -1000, 0), -1000, 0, mMaxBackward, mMinBackward);
+            if (aLevel > 0)
+                return map(constrain(aLevel, 0, 1000), 0, 1000, mMinForward, mMaxForward);
+            return 0;
+        }
 
     public:
-
-        DirectionalMutableMotor *setMaxBackward(signed short value)
+        /**
+         * @brief Set maximum reverse output value.
+         * @param aValue Output value, clamped to -1000..1000.
+         */
+        void SetMaxBackward(signed short aValue)
         {
-            this->maxBackward = value;
-            return this;
+            mMaxBackward = constrain(aValue, -1000, 1000);
         }
 
-        DirectionalMutableMotor *setMinBackward(signed short value)
+        /**
+         * @brief Set minimum reverse output value.
+         * @param aValue Output value, clamped to -1000..1000.
+         */
+        void SetMinBackward(signed short aValue)
         {
-            this->minBackward = value;
-            return this;
+            mMinBackward = constrain(aValue, -1000, 1000);
         }
 
-        DirectionalMutableMotor *setMinForward(signed short value)
+        /**
+         * @brief Set minimum forward output value.
+         * @param aValue Output value, clamped to -1000..1000.
+         */
+        void SetMinForward(signed short aValue)
         {
-            this->minForward = value;
-            return this;
+            mMinForward = constrain(aValue, -1000, 1000);
         }
 
-        DirectionalMutableMotor *setMaxForward(signed short value)
+        /**
+         * @brief Set maximum forward output value.
+         * @param aValue Output value, clamped to -1000..1000.
+         */
+        void SetMaxForward(signed short aValue)
         {
-            this->maxForward = value;
-            return this;
+            mMaxForward = constrain(aValue, -1000, 1000);
         }
 
-        void actuate(signed short level)
+        /**
+         * @brief Apply the control value.
+         * @param aLevel Input control value, range -1000..1000.
+         */
+        void Go(signed short aLevel)
         {
-            DRIVER::setMicroseconds(this->toSSS(level, this->maxBackward, this->minBackward, this->minForward, this->maxForward));
+            Driver::actBipolar(compute(aLevel));
         }
     };
 }

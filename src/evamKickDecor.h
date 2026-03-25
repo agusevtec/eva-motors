@@ -25,6 +25,7 @@ namespace evam
     {
         static_assert(kKickDuration > 0, "kKickDuration must be > 0");
         static_assert(kKickPower >= -1000 && kKickPower <= 1000, "kKickPower out of range");
+
     private:
         signed short mTargetSpeed = 0;
         unsigned long mHoldingStartedAt = 0;
@@ -36,7 +37,7 @@ namespace evam
 
             if ((mTargetSpeed >= 0) && (aValue < 0))
                 return -kKickPower;
-                
+
             return 0;
         }
 
@@ -53,6 +54,18 @@ namespace evam
         }
 
     public:
+        /**
+         * @brief Configure kickstart parameters at once.
+         *
+         * @param aKickDuration Kick pulse duration in milliseconds
+         * @param aKickPower Kick power, range -1000..1000
+         */
+        void setup_kickstart(unsigned short aKickDuration, signed short aKickPower)
+        {
+//TODO: think care 
+            // SetKickDuration(aKickDuration);
+            // SetKickPower(aKickPower);
+        }
         /**
          * @brief Apply the control value with kick-start pulse.
          * @param aValue Desired control value, range -1000..1000.

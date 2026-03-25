@@ -17,6 +17,7 @@ namespace evam
     {
         static_assert(kMinValue >= -1000 && kMinValue <= 1000, "kMinValue out of range");
         static_assert(kMaxValue >= -1000 && kMaxValue <= 1000, "kMaxValue out of range");
+
     private:
         int mMinValue = kMinValue;
         int mMaxValue = kMaxValue;
@@ -29,6 +30,17 @@ namespace evam
         }
 
     public:
+        /**
+         * @brief Configure the output range parameters at once.
+         *
+         * @param aMinValue Minimum output value (stop position)
+         * @param aMaxValue Maximum output value (full throttle)
+         */
+        void setup_range(int aMinValue, int aMaxValue)
+        {
+            SetMinValue(aMinValue);
+            SetMaxValue(aMaxValue);
+        }
         /**
          * @brief Set minimum output value.
          * @param aValue Output value, clamped to -1000..1000.

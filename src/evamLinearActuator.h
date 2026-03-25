@@ -16,6 +16,7 @@ namespace evam
     {
         static_assert(kMinValue >= -1000 && kMinValue <= 1000, "kMinValue out of range");
         static_assert(kMaxValue >= -1000 && kMaxValue <= 1000, "kMaxValue out of range");
+
     private:
         int mMinValue = kMinValue;
         int mMaxValue = kMaxValue;
@@ -26,6 +27,17 @@ namespace evam
         }
 
     public:
+        /**
+         * @brief Configure the position range parameters at once.
+         *
+         * @param aMinValue Output value at 0 input (minimum position), range -1000..1000
+         * @param aMaxValue Output value at 1000 input (maximum position), range -1000..1000
+         */
+        void setup_range(int aMinValue, int aMaxValue)
+        {
+            SetMinValue(aMinValue);
+            SetMaxValue(aMaxValue);
+        }
         /**
          * @brief Set minimum output value (position at 0 input).
          * @param aValue Output value, clamped to -1000..1000.

@@ -15,13 +15,14 @@ namespace evam
      * @tparam kMinForward Minimum forward output value (e.g., 50)
      * @tparam kMaxForward Maximum forward output value (e.g., 1000)
      */
-    template <class Driver, signed short kMaxBackward = -1000, signed short kMinBackward = 0, signed short kMinForward = 0, signed short kMaxForward=1000>
+    template <class Driver, signed short kMaxBackward = -1000, signed short kMinBackward = 0, signed short kMinForward = 0, signed short kMaxForward = 1000>
     class DirectionalMotor : public Driver
     {
         static_assert(kMaxBackward >= -1000 && kMaxBackward <= 1000, "kMaxBackward out of range");
         static_assert(kMinBackward >= -1000 && kMinBackward <= 1000, "kMinBackward out of range");
         static_assert(kMinForward >= -1000 && kMinForward <= 1000, "kMinForward out of range");
         static_assert(kMaxForward >= -1000 && kMaxForward <= 1000, "kMaxForward out of range");
+
     private:
         signed short mMaxBackward = kMaxBackward;
         signed short mMinBackward = kMinBackward;
@@ -38,6 +39,21 @@ namespace evam
         }
 
     public:
+        /**
+         * @brief Configure all range parameters at once.
+         *
+         * @param aMaxBackward Maximum reverse output value (-1000..1000)
+         * @param aMinBackward Minimum reverse output value (-1000..1000)
+         * @param aMinForward Minimum forward output value (-1000..1000)
+         * @param aMaxForward Maximum forward output value (-1000..1000)
+         */
+        void setup_range(signed short aMaxBackward, signed short aMinBackward, signed short aMinForward, signed short aMaxForward)
+        {
+            SetMaxBackward(aMaxBackward);
+            SetMinBackward(aMinBackward);
+            SetMinForward(aMinForward);
+            SetMaxForward(aMaxForward);
+        }
         /**
          * @brief Set maximum reverse output value.
          * @param aValue Output value, clamped to -1000..1000.

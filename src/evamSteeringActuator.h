@@ -20,6 +20,7 @@ namespace evam
         static_assert(kLeftPos >= -1000 && kLeftPos <= 1000, "kLeftPos out of range");
         static_assert(kCenterPos >= -1000 && kCenterPos <= 1000, "kCenterPos out of range");
         static_assert(kRightPos >= -1000 && kRightPos <= 1000, "kRightPos out of range");
+
     private:
         signed short mLeftPos = kLeftPos;
         signed short mCenterPos = kCenterPos;
@@ -34,6 +35,19 @@ namespace evam
         }
 
     public:
+        /**
+         * @brief Configure all position parameters at once.
+         *
+         * @param aLeftPos Output value at -1000 input (leftmost position), range -1000..1000
+         * @param aCenterPos Output value at 0 input (center position), range -1000..1000
+         * @param aRightPos Output value at 1000 input (rightmost position), range -1000..1000
+         */
+        void setup_range(signed short aLeftPos, signed short aCenterPos, signed short aRightPos)
+        {
+            SetLeftPos(aLeftPos);
+            SetCenterPos(aCenterPos);
+            SetRightPos(aRightPos);
+        }
         /**
          * @brief Set leftmost position output value.
          * @param aValue Output value, clamped to -1000..1000.

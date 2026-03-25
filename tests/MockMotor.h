@@ -8,10 +8,5 @@ public:
         this->resultLevel = level;
     }
 
-    unsigned short min()
-    {
-        return -1000;
-    }
-
     signed short resultLevel = 0;
 };

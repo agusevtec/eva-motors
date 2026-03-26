@@ -55,6 +55,9 @@ Inherits the following classes: Driver
 
 | Type | Name |
 | ---: | :--- |
+|  signed short | [**GetCenterPos**](#function-getcenterpos) () const<br>_Get center position output value._  |
+|  signed short | [**GetLeftPos**](#function-getleftpos) () const<br>_Get leftmost position output value._  |
+|  signed short | [**GetRightPos**](#function-getrightpos) () const<br>_Get rightmost position output value._  |
 |  void | [**Go**](#function-go) (signed short aLevel) <br>_Apply the steering control value._  |
 |  void | [**SetCenterPos**](#function-setcenterpos) (signed short aValue) <br>_Set center position output value._  |
 |  void | [**SetLeftPos**](#function-setleftpos) (signed short aValue) <br>_Set leftmost position output value._  |
@@ -110,6 +113,81 @@ Maps input range -1000..1000 to output positions: -1000 = left position, 0 = cen
     
 ## Public Functions Documentation
 
+
+
+
+### function GetCenterPos 
+
+_Get center position output value._ 
+```C++
+inline signed short evam::SteeringActuator::GetCenterPos () const
+```
+
+
+
+
+
+**Returns:**
+
+Current center position output value. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetLeftPos 
+
+_Get leftmost position output value._ 
+```C++
+inline signed short evam::SteeringActuator::GetLeftPos () const
+```
+
+
+
+
+
+**Returns:**
+
+Current leftmost position output value. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetRightPos 
+
+_Get rightmost position output value._ 
+```C++
+inline signed short evam::SteeringActuator::GetRightPos () const
+```
+
+
+
+
+
+**Returns:**
+
+Current rightmost position output value. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

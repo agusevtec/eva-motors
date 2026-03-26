@@ -13,6 +13,7 @@ Here is a list of all files with brief descriptions:
     * **file** [**evamLinearActuator.h**](evam_linear_actuator_8h.md)     
     * **file** [**evamPwmDriver.h**](evam_pwm_driver_8h.md)     
     * **file** [**evamServoDriver.h**](evam_servo_driver_8h.md)     
+    * **file** [**evamSoftwareServoDriver.h**](evam_software_servo_driver_8h.md)     
     * **file** [**evamSteeringActuator.h**](evam_steering_actuator_8h.md)     
     * **file** [**evamTA6586Driver.h**](evam_t_a6586_driver_8h.md)     
     * **file** [**evamTB6612Driver.h**](evam_t_b6612_driver_8h.md)     

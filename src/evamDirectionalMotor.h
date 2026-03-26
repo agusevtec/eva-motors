@@ -54,6 +54,7 @@ namespace evam
             SetMinForward(aMinForward);
             SetMaxForward(aMaxForward);
         }
+
         /**
          * @brief Set maximum reverse output value.
          * @param aValue Output value, clamped to -1000..1000.
@@ -61,6 +62,15 @@ namespace evam
         void SetMaxBackward(signed short aValue)
         {
             mMaxBackward = constrain(aValue, -1000, 1000);
+        }
+
+        /**
+         * @brief Get maximum reverse output value.
+         * @return Current maximum reverse output value.
+         */
+        signed short GetMaxBackward() const
+        {
+            return mMaxBackward;
         }
 
         /**
@@ -73,6 +83,15 @@ namespace evam
         }
 
         /**
+         * @brief Get minimum reverse output value.
+         * @return Current minimum reverse output value.
+         */
+        signed short GetMinBackward() const
+        {
+            return mMinBackward;
+        }
+
+        /**
          * @brief Set minimum forward output value.
          * @param aValue Output value, clamped to -1000..1000.
          */
@@ -82,12 +101,30 @@ namespace evam
         }
 
         /**
+         * @brief Get minimum forward output value.
+         * @return Current minimum forward output value.
+         */
+        signed short GetMinForward() const
+        {
+            return mMinForward;
+        }
+
+        /**
          * @brief Set maximum forward output value.
          * @param aValue Output value, clamped to -1000..1000.
          */
         void SetMaxForward(signed short aValue)
         {
             mMaxForward = constrain(aValue, -1000, 1000);
+        }
+
+        /**
+         * @brief Get maximum forward output value.
+         * @return Current maximum forward output value.
+         */
+        signed short GetMaxForward() const
+        {
+            return mMaxForward;
         }
 
         /**

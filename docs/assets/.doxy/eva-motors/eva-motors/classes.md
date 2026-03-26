@@ -48,6 +48,8 @@
 
 * [**ServoDriver**](classevam_1_1_servo_driver.md)
 ([**evam**](namespaceevam.md))
+* [**SoftwareServoDriver**](classevam_1_1_software_servo_driver.md)
+([**evam**](namespaceevam.md))
 * [**SteeringActuator**](classevam_1_1_steering_actuator.md)
 ([**evam**](namespaceevam.md))
 

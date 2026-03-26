@@ -41,6 +41,11 @@ namespace evam
             mBend = constrain(aValue, -10, 10);
         }
 
+        signed short GetBend() const
+        {
+            return mBend;
+        }
+
         void Go(signed short aValue)
         {
             aValue = constrain(aValue, -1000, 1000);

@@ -36,6 +36,60 @@
         </inbodydescription>
         <location file="src/evamTB6612Driver.h" line="27" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="27" bodyend="33"/>
       </memberdef>
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a20dee77f573b8af6aec42559b8623f1b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::GetSpeedPin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetSpeedPin</name>
+        <qualifiedname>evam::TB6612FNGDriver::GetSpeedPin</qualifiedname>
+        <briefdescription>
+<para>Get the speed PWM pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Speed control PWM pin number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="39" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::GetMode1Pin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMode1Pin</name>
+        <qualifiedname>evam::TB6612FNGDriver::GetMode1Pin</qualifiedname>
+        <briefdescription>
+<para>Get the first direction pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Direction pin 1 (IN1) number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="48" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1ac3a9f5ad479ee89dd1909521fdfc47bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::GetMode2Pin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetMode2Pin</name>
+        <qualifiedname>evam::TB6612FNGDriver::GetMode2Pin</qualifiedname>
+        <briefdescription>
+<para>Get the second direction pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Direction pin 2 (IN2) number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="57" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="57" bodyend="60"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1adc2c94301188415930a5a20e007ffd48" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -65,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="41" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="41" bodyend="47"/>
+        <location file="src/evamTB6612Driver.h" line="68" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="68" bodyend="74"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -73,8 +127,8 @@
     </briefdescription>
     <detaileddescription>
 <para>Pin connection:<itemizedlist>
-<listitem><para>PWMA → speed control PWM pin</para>
-</listitem><listitem><para>AIN1 / AIN2 → direction control pins for motor A</para>
+<listitem><para>PWMA - speed control PWM pin</para>
+</listitem><listitem><para>AIN1 / AIN2 - direction control pins for motor A</para>
 </listitem><listitem><para>PWMB, BIN1, BIN2 for motor B (use separate instance)</para>
 </listitem></itemizedlist>
 </para>
@@ -105,9 +159,12 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamTB6612Driver.h" line="20" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="21" bodyend="48"/>
+    <location file="src/evamTB6612Driver.h" line="20" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="21" bodyend="75"/>
     <listofallmembers>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adc2c94301188415930a5a20e007ffd48" prot="protected" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>actBipolar</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode1Pin</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1ac3a9f5ad479ee89dd1909521fdfc47bd" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode2Pin</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a20dee77f573b8af6aec42559b8623f1b" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetSpeedPin</name></member>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adf1637401e80f6438a2b7ddc18288d45" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>TB6612FNGDriver</name></member>
     </listofallmembers>
   </compounddef>

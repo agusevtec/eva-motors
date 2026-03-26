@@ -55,7 +55,11 @@ Inherits the following classes: Tickable,  Motor
 
 | Type | Name |
 | ---: | :--- |
+|  unsigned short | [**GetKickDuration**](#function-getkickduration) () const<br>_Get kick pulse duration._  |
+|  signed short | [**GetKickPower**](#function-getkickpower) () const<br>_Get kick power._  |
 |  void | [**Go**](#function-go) (signed short aValue) <br>_Apply the control value with kick-start pulse._  |
+|  void | [**SetKickDuration**](#function-setkickduration) (unsigned short aDuration) <br>_Set kick pulse duration._  |
+|  void | [**SetKickPower**](#function-setkickpower) (signed short aPower) <br>_Set kick power._  |
 |  void | [**SetupKickstart**](#function-setupkickstart) (unsigned short aKickDuration, signed short aKickPower) <br>_Configure kickstart parameters at once._  |
 
 
@@ -109,6 +113,56 @@ When starting from stop or changing direction, a power pulse is applied for a sh
 
 
 
+### function GetKickDuration 
+
+_Get kick pulse duration._ 
+```C++
+inline unsigned short evam::KickDecor::GetKickDuration () const
+```
+
+
+
+
+
+**Returns:**
+
+Kick duration in milliseconds. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetKickPower 
+
+_Get kick power._ 
+```C++
+inline signed short evam::KickDecor::GetKickPower () const
+```
+
+
+
+
+
+**Returns:**
+
+Kick power value in range -1000..1000. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
 ### function Go 
 
 _Apply the control value with kick-start pulse._ 
@@ -126,6 +180,60 @@ inline void evam::KickDecor::Go (
 
 
 * `aValue` Desired control value, range -1000..1000. 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function SetKickDuration 
+
+_Set kick pulse duration._ 
+```C++
+inline void evam::KickDecor::SetKickDuration (
+    unsigned short aDuration
+) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `aDuration` Duration in milliseconds, must be &gt; 0. 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function SetKickPower 
+
+_Set kick power._ 
+```C++
+inline void evam::KickDecor::SetKickPower (
+    signed short aPower
+) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `aPower` Power value, clamped to -1000..1000. 
 
 
 

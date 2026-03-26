@@ -67,6 +67,15 @@ namespace evam
         }
 
         /**
+         * @brief Get the current virtual mass (inertia) value.
+         * @return Current mass value in range 1..200.
+         */
+        unsigned short GetInertiaMass() const
+        {
+            return mInertiaMass;
+        }
+
+        /**
          * @brief Apply the control value with inertia simulation.
          * @param aSpeed Desired speed, range -1000..1000.
          */

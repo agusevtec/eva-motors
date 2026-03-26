@@ -44,9 +44,15 @@ namespace evam
             SetMinForward(aMinForward);
             SetMaxForward(aMaxForward);
         }
+
         void SetMaxBackward(signed short aValue)
         {
             mMaxBackward = constrain(aValue, -1000, 1000);
+        }
+
+        signed short GetMaxBackward() const
+        {
+            return mMaxBackward;
         }
 
         void SetMinBackward(signed short aValue)
@@ -54,14 +60,29 @@ namespace evam
             mMinBackward = constrain(aValue, -1000, 1000);
         }
 
+        signed short GetMinBackward() const
+        {
+            return mMinBackward;
+        }
+
         void SetMinForward(signed short aValue)
         {
             mMinForward = constrain(aValue, -1000, 1000);
         }
 
+        signed short GetMinForward() const
+        {
+            return mMinForward;
+        }
+
         void SetMaxForward(signed short aValue)
         {
             mMaxForward = constrain(aValue, -1000, 1000);
+        }
+
+        signed short GetMaxForward() const
+        {
+            return mMaxForward;
         }
 
         void Go(signed short aLevel)

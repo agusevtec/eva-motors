@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_software_servo_driver" kind="class" language="C++" prot="public">
+    <compoundname>evam::SoftwareServoDriver</compoundname>
+    <basecompoundref prot="public" virt="virtual">Tickable</basecompoundref>
+    <includes refid="evam_software_servo_driver_8h" local="no">evamSoftwareServoDriver.h</includes>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>kPin</declname>
+        <defname>kPin</defname>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>kMinPulse</declname>
+        <defname>kMinPulse</defname>
+        <defval>500</defval>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>kMaxPulse</declname>
+        <defname>kMaxPulse</defname>
+        <defval>2500</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classevam_1_1_software_servo_driver_1a26708555ea7d0ab3ccf560b10142ba7e" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::kRefreshIntervalMs</definition>
+        <argsstring></argsstring>
+        <name>kRefreshIntervalMs</name>
+        <qualifiedname>evam::SoftwareServoDriver::kRefreshIntervalMs</qualifiedname>
+        <initializer>= 20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="33" column="40" bodyfile="src/evamSoftwareServoDriver.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_software_servo_driver_1a5dc7a400e15a98c84a4fd3fda8a18241" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::mTargetPulseUs</definition>
+        <argsstring></argsstring>
+        <name>mTargetPulseUs</name>
+        <qualifiedname>evam::SoftwareServoDriver::mTargetPulseUs</qualifiedname>
+        <initializer>= kMinPulse</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="35" column="23" bodyfile="src/evamSoftwareServoDriver.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_software_servo_driver_1aabf19c02f264f156d38198fae62211ff" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::mPulseStartUs</definition>
+        <argsstring></argsstring>
+        <name>mPulseStartUs</name>
+        <qualifiedname>evam::SoftwareServoDriver::mPulseStartUs</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="36" column="23" bodyfile="src/evamSoftwareServoDriver.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_software_servo_driver_1a2bbfaf027c862f04bef9fe7079b32a7a" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::mLastRefreshMs</definition>
+        <argsstring></argsstring>
+        <name>mLastRefreshMs</name>
+        <qualifiedname>evam::SoftwareServoDriver::mLastRefreshMs</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="37" column="23" bodyfile="src/evamSoftwareServoDriver.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_software_servo_driver_1ae76a185aa63ed47aef4f522540347775" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::mPulseActive</definition>
+        <argsstring></argsstring>
+        <name>mPulseActive</name>
+        <qualifiedname>evam::SoftwareServoDriver::mPulseActive</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="38" column="14" bodyfile="src/evamSoftwareServoDriver.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classevam_1_1_software_servo_driver_1adb4122499e11a864789f32c9d5247072" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::tick</definition>
+        <argsstring>() override</argsstring>
+        <name>tick</name>
+        <qualifiedname>evam::SoftwareServoDriver::tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="40" column="14" bodyfile="src/evamSoftwareServoDriver.h" bodystart="40" bodyend="66"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_software_servo_driver_1a9334d8b4bf31e5007c7a8ed6ce0c58f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::SoftwareServoDriver</definition>
+        <argsstring>()</argsstring>
+        <name>SoftwareServoDriver</name>
+        <qualifiedname>evam::SoftwareServoDriver::SoftwareServoDriver</qualifiedname>
+        <briefdescription>
+<para>Constructor. Initializes the pin as output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="72" column="9" bodyfile="src/evamSoftwareServoDriver.h" bodystart="72" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classevam_1_1_software_servo_driver_1ac6161ba8159dc7d49745b2bd84d77488" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::actBipolar</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>actBipolar</name>
+        <qualifiedname>evam::SoftwareServoDriver::actBipolar</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Bipolar (centered) control. Input range -1000..1000. Output: pulse width mapped to kMinPulse..kMaxPulse with center at mid-point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input value, range -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="84" column="14" bodyfile="src/evamSoftwareServoDriver.h" bodystart="84" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_software_servo_driver_1a782a54f493d6dc7c7bbe3c17d1447090" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;::actUnipolar</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>actUnipolar</name>
+        <qualifiedname>evam::SoftwareServoDriver::actUnipolar</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Unipolar (absolute) control. Input range 0..1000. Output: pulse width mapped to kMinPulse..kMaxPulse. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input value, range 0..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSoftwareServoDriver.h" line="97" column="14" bodyfile="src/evamSoftwareServoDriver.h" bodystart="97" bodyend="101"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Software-based servo driver using millis() for timing. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This driver implements servo control without using the hardware PWM limitations of the Arduino Servo library. Each instance manages its own timing and inherits from Tickable to integrate with the event loop.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>kPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Servo signal pin number. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kMinPulse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum pulse width in microseconds (default: 500) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kMaxPulse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum pulse width in microseconds (default: 2500) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Tickable</label>
+      </node>
+      <node id="1">
+        <label>evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;</label>
+        <link refid="classevam_1_1_software_servo_driver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Tickable</label>
+      </node>
+      <node id="1">
+        <label>evam::SoftwareServoDriver&lt; kPin, kMinPulse, kMaxPulse &gt;</label>
+        <link refid="classevam_1_1_software_servo_driver"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamSoftwareServoDriver.h" line="26" column="5" bodyfile="src/evamSoftwareServoDriver.h" bodystart="27" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_software_servo_driver_1ac6161ba8159dc7d49745b2bd84d77488" prot="protected" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>actBipolar</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1a782a54f493d6dc7c7bbe3c17d1447090" prot="protected" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>actUnipolar</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1a26708555ea7d0ab3ccf560b10142ba7e" prot="private" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>kRefreshIntervalMs</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1a2bbfaf027c862f04bef9fe7079b32a7a" prot="private" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>mLastRefreshMs</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1ae76a185aa63ed47aef4f522540347775" prot="private" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>mPulseActive</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1aabf19c02f264f156d38198fae62211ff" prot="private" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>mPulseStartUs</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1a5dc7a400e15a98c84a4fd3fda8a18241" prot="private" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>mTargetPulseUs</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1a9334d8b4bf31e5007c7a8ed6ce0c58f3" prot="public" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>SoftwareServoDriver</name></member>
+      <member refid="classevam_1_1_software_servo_driver_1adb4122499e11a864789f32c9d5247072" prot="private" virt="non-virtual"><scope>evam::SoftwareServoDriver</scope><name>tick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

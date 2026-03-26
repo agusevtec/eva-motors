@@ -55,6 +55,7 @@ Inherits the following classes: Tickable,  Motor
 
 | Type | Name |
 | ---: | :--- |
+|  unsigned short | [**GetInertiaMass**](#function-getinertiamass) () const<br>_Get the current virtual mass (inertia) value._  |
 |  void | [**Go**](#function-go) (int aSpeed) <br>_Apply the control value with inertia simulation._  |
 |  void | [**SetInertiaMass**](#function-setinertiamass) (unsigned short aValue) <br>_Set the virtual mass (inertia) value._  |
 
@@ -105,6 +106,31 @@ When decelerating or stopping, speed decreases gradually over time, simulating t
     
 ## Public Functions Documentation
 
+
+
+
+### function GetInertiaMass 
+
+_Get the current virtual mass (inertia) value._ 
+```C++
+inline unsigned short evam::InertiaDecor::GetInertiaMass () const
+```
+
+
+
+
+
+**Returns:**
+
+Current mass value in range 1..200. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

@@ -38,6 +38,7 @@ namespace evam
             SetMinValue(aMinValue);
             SetMaxValue(aMaxValue);
         }
+
         /**
          * @brief Set minimum output value (position at 0 input).
          * @param aValue Output value, clamped to -1000..1000.
@@ -48,12 +49,30 @@ namespace evam
         }
 
         /**
+         * @brief Get minimum output value (position at 0 input).
+         * @return Current minimum output value.
+         */
+        int GetMinValue() const
+        {
+            return mMinValue;
+        }
+
+        /**
          * @brief Set maximum output value (position at 1000 input).
          * @param aValue Output value, clamped to -1000..1000.
          */
         void SetMaxValue(int aValue)
         {
             mMaxValue = constrain(aValue, -1000, 1000);
+        }
+
+        /**
+         * @brief Get maximum output value (position at 1000 input).
+         * @return Current maximum output value.
+         */
+        int GetMaxValue() const
+        {
+            return mMaxValue;
         }
 
         /**

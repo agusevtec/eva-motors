@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -801,7 +801,7 @@ EVA Motors lets you compose behavior by stacking decorators that add specific ch
 <li><strong>Signed motors</strong>: <code>-1000</code> to <code>1000</code> (-100% to +100%)</li>
 <li><strong>Unsigned motors</strong>: <code>0</code> to <code>1000</code> (0% to 100%)</li>
 </ul>
-<p>This means you can use EVA Motors as asimple motor control library without decorators. Whether you need bidirectional DC motor control, ESC throttle, or servo positioning, the API remains consistent:</p>
+<p>This means you can use EVA Motors as a simple motor control library without decorators. Whether you need bidirectional DC motor control, ESC throttle, or servo positioning, the API remains consistent:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">evam</span><span class="p">;</span>
 <span class="c1">// Simple motor without decorators</span>
 <span class="k">using</span><span class="w"> </span><span class="n">Motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">TA6586Driver</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;&gt;</span><span class="p">;</span>

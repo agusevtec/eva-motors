@@ -100,6 +100,24 @@
         </inbodydescription>
         <location file="src/evamCurveDecor.h" line="43" column="14" bodyfile="src/evamCurveDecor.h" bodystart="43" bodyend="46"/>
       </memberdef>
+      <memberdef kind="function" id="classevam_1_1_curve_decor_1af663dff10ff1152e1928a4d7d2b3083b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short evam::CurveDecor&lt; Motor, kBend &gt;::GetBend</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBend</name>
+        <qualifiedname>evam::CurveDecor::GetBend</qualifiedname>
+        <briefdescription>
+<para>Get the current bend intensity value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current bend value in range -10..10. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="52" column="22" bodyfile="src/evamCurveDecor.h" bodystart="52" bodyend="55"/>
+      </memberdef>
       <memberdef kind="function" id="classevam_1_1_curve_decor_1a9c94a0b4947d7135439fce236ddb3b16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void evam::CurveDecor&lt; Motor, kBend &gt;::Go</definition>
@@ -127,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamCurveDecor.h" line="52" column="14" bodyfile="src/evamCurveDecor.h" bodystart="52" bodyend="59"/>
+        <location file="src/evamCurveDecor.h" line="61" column="14" bodyfile="src/evamCurveDecor.h" bodystart="61" bodyend="68"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -176,10 +194,11 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamCurveDecor.h" line="21" column="5" bodyfile="src/evamCurveDecor.h" bodystart="22" bodyend="60"/>
+    <location file="src/evamCurveDecor.h" line="21" column="5" bodyfile="src/evamCurveDecor.h" bodystart="22" bodyend="69"/>
     <listofallmembers>
       <member refid="classevam_1_1_curve_decor_1aaadf93770704c24268470e06f72f409e" prot="private" virt="non-virtual"><scope>evam::CurveDecor</scope><name>curve</name></member>
       <member refid="classevam_1_1_curve_decor_1a3e3c8a5b45ebe6c8d9962de0e1b307a0" prot="private" virt="non-virtual"><scope>evam::CurveDecor</scope><name>f</name></member>
+      <member refid="classevam_1_1_curve_decor_1af663dff10ff1152e1928a4d7d2b3083b" prot="public" virt="non-virtual"><scope>evam::CurveDecor</scope><name>GetBend</name></member>
       <member refid="classevam_1_1_curve_decor_1a9c94a0b4947d7135439fce236ddb3b16" prot="public" virt="non-virtual"><scope>evam::CurveDecor</scope><name>Go</name></member>
       <member refid="classevam_1_1_curve_decor_1ad210396c13d93977987c9ce560ef9f80" prot="private" virt="non-virtual"><scope>evam::CurveDecor</scope><name>mBend</name></member>
       <member refid="classevam_1_1_curve_decor_1a69c5974b2e9506693dc047b8199d442c" prot="public" virt="non-virtual"><scope>evam::CurveDecor</scope><name>SetBend</name></member>

@@ -10,6 +10,7 @@
     <innerclass refid="classevam_1_1_linear_actuator" prot="public">evam::LinearActuator</innerclass>
     <innerclass refid="classevam_1_1_pwm_driver" prot="public">evam::PwmDriver</innerclass>
     <innerclass refid="classevam_1_1_servo_driver" prot="public">evam::ServoDriver</innerclass>
+    <innerclass refid="classevam_1_1_software_servo_driver" prot="public">evam::SoftwareServoDriver</innerclass>
     <innerclass refid="classevam_1_1_steering_actuator" prot="public">evam::SteeringActuator</innerclass>
     <innerclass refid="classevam_1_1_t_a6586_driver" prot="public">evam::TA6586Driver</innerclass>
     <innerclass refid="classevam_1_1_t_b6612_f_n_g_driver" prot="public">evam::TB6612FNGDriver</innerclass>

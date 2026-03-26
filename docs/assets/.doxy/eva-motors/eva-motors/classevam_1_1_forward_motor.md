@@ -55,6 +55,8 @@ Inherits the following classes: Driver
 
 | Type | Name |
 | ---: | :--- |
+|  int | [**GetMaxValue**](#function-getmaxvalue) () const<br>_Get maximum output value._  |
+|  int | [**GetMinValue**](#function-getminvalue) () const<br>_Get minimum output value._  |
 |  void | [**Go**](#function-go) (signed short aLevel) <br>_Apply the control value._  |
 |  void | [**SetMaxValue**](#function-setmaxvalue) (int aValue) <br>_Set maximum output value._  |
 |  void | [**SetMinValue**](#function-setminvalue) (int aValue) <br>_Set minimum output value._  |
@@ -108,6 +110,56 @@ Maps input range 0..1000 to driver output. Negative inputs are treated as stop (
     
 ## Public Functions Documentation
 
+
+
+
+### function GetMaxValue 
+
+_Get maximum output value._ 
+```C++
+inline int evam::ForwardMotor::GetMaxValue () const
+```
+
+
+
+
+
+**Returns:**
+
+Current maximum output value. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetMinValue 
+
+_Get minimum output value._ 
+```C++
+inline int evam::ForwardMotor::GetMinValue () const
+```
+
+
+
+
+
+**Returns:**
+
+Current minimum output value. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

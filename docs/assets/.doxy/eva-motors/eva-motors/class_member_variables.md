@@ -6,6 +6,7 @@
 ## k
 
 * **kUpdateIntervalMs** ([**evam::InertiaDecor**](classevam_1_1_inertia_decor.md))
+* **kRefreshIntervalMs** ([**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md))
 
 
 ## m
@@ -24,6 +25,10 @@
 * **mHoldingStartedAt** ([**evam::KickDecor**](classevam_1_1_kick_decor.md))
 * **mTargetSpeed** ([**evam::KickDecor**](classevam_1_1_kick_decor.md))
 * **mServo** ([**evam::ServoDriver**](classevam_1_1_servo_driver.md))
+* **mLastRefreshMs** ([**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md))
+* **mPulseActive** ([**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md))
+* **mPulseStartUs** ([**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md))
+* **mTargetPulseUs** ([**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md))
 * **mCenterPos** ([**evam::SteeringActuator**](classevam_1_1_steering_actuator.md))
 * **mLeftPos** ([**evam::SteeringActuator**](classevam_1_1_steering_actuator.md))
 * **mRightPos** ([**evam::SteeringActuator**](classevam_1_1_steering_actuator.md))

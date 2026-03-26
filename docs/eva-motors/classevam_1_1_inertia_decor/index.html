@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -603,6 +603,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-getinertiamass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetInertiaMass
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-go" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -667,6 +678,10 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;">unsigned short</td>
+<td style="text-align: left;"><a href="#function-getinertiamass"><strong>GetInertiaMass</strong></a> () const<br><em>Get the current virtual mass (inertia) value.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (int aSpeed) <br><em>Apply the control value with inertia simulation.</em></td>
 </tr>
@@ -684,6 +699,15 @@
 <li><code>kInertiaMass</code> Virtual mass. Larger values = slower deceleration. Range: 1..200. </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-getinertiamass">function GetInertiaMass<a class="headerlink" href="#function-getinertiamass" title="Permanent link">&para;</a></h3>
+<p><em>Get the current virtual mass (inertia) value.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">GetInertiaMass</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<p>Current mass value in range 1..200. </p>
+<hr>
+
 <h3 id="function-go">function Go<a class="headerlink" href="#function-go" title="Permanent link">&para;</a></h3>
 <p><em>Apply the control value with inertia simulation.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">Go</span><span class="w"> </span><span class="p">(</span>

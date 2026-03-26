@@ -31,6 +31,42 @@
         </inbodydescription>
         <location file="src/evamTA6586Driver.h" line="35" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="35" bodyend="40"/>
       </memberdef>
+      <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a0d84c607271f5c137c562aee8c785a9a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int evam::TA6586Driver&lt; kForwardPin, kBackwardPin &gt;::GetForwardPin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetForwardPin</name>
+        <qualifiedname>evam::TA6586Driver::GetForwardPin</qualifiedname>
+        <briefdescription>
+<para>Get the forward pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Forward PWM pin number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="46" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1adb04860e202772b68877f7aaa426ab13" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int evam::TA6586Driver&lt; kForwardPin, kBackwardPin &gt;::GetBackwardPin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetBackwardPin</name>
+        <qualifiedname>evam::TA6586Driver::GetBackwardPin</qualifiedname>
+        <briefdescription>
+<para>Get the backward pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Backward PWM pin number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="55" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="55" bodyend="58"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
       <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a65972491e15cb9e0b5d578cd7df5174a" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -60,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="48" column="14" bodyfile="src/evamTA6586Driver.h" bodystart="48" bodyend="53"/>
+        <location file="src/evamTA6586Driver.h" line="66" column="14" bodyfile="src/evamTA6586Driver.h" bodystart="66" bodyend="71"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -94,9 +130,11 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamTA6586Driver.h" line="29" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="30" bodyend="54"/>
+    <location file="src/evamTA6586Driver.h" line="29" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="30" bodyend="72"/>
     <listofallmembers>
       <member refid="classevam_1_1_t_a6586_driver_1a65972491e15cb9e0b5d578cd7df5174a" prot="protected" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>actBipolar</name></member>
+      <member refid="classevam_1_1_t_a6586_driver_1adb04860e202772b68877f7aaa426ab13" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>GetBackwardPin</name></member>
+      <member refid="classevam_1_1_t_a6586_driver_1a0d84c607271f5c137c562aee8c785a9a" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>GetForwardPin</name></member>
       <member refid="classevam_1_1_t_a6586_driver_1a9707afdcd8fd42b433eb43176c7f0b63" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>TA6586Driver</name></member>
     </listofallmembers>
   </compounddef>

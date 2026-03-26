@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -614,6 +614,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-getbackwardpin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetBackwardPin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getforwardpin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetForwardPin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-ta6586driver" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -694,6 +716,14 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getbackwardpin"><strong>GetBackwardPin</strong></a> () const<br><em>Get the backward pin number.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getforwardpin"><strong>GetForwardPin</strong></a> () const<br><em>Get the forward pin number.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;"></td>
 <td style="text-align: left;"><a href="#function-ta6586driver"><strong>TA6586Driver</strong></a> () <br><em>Constructor. Initializes pins and stops the motor.</em></td>
 </tr>
@@ -722,6 +752,24 @@
 <li><code>kBackwardPin</code> PWM pin connected to BI (backward input) </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-getbackwardpin">function GetBackwardPin<a class="headerlink" href="#function-getbackwardpin" title="Permanent link">&para;</a></h3>
+<p><em>Get the backward pin number.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">TA6586Driver</span><span class="o">::</span><span class="n">GetBackwardPin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<p>Backward PWM pin number. </p>
+<hr>
+
+<h3 id="function-getforwardpin">function GetForwardPin<a class="headerlink" href="#function-getforwardpin" title="Permanent link">&para;</a></h3>
+<p><em>Get the forward pin number.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">TA6586Driver</span><span class="o">::</span><span class="n">GetForwardPin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<p>Forward PWM pin number. </p>
+<hr>
+
 <h3 id="function-ta6586driver">function TA6586Driver<a class="headerlink" href="#function-ta6586driver" title="Permanent link">&para;</a></h3>
 <p><em>Constructor. Initializes pins and stops the motor.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">TA6586Driver</span><span class="o">::</span><span class="n">TA6586Driver</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>

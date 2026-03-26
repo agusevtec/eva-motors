@@ -54,6 +54,7 @@ _Servo driver using standard Arduino Servo library._ [More...](#detailed-descrip
 
 | Type | Name |
 | ---: | :--- |
+|  int | [**GetPin**](#function-getpin) () const<br>_Get the servo pin number._  |
 |   | [**ServoDriver**](#function-servodriver) () <br>_Constructor. Attaches the servo to the pin._  |
 
 
@@ -108,6 +109,31 @@ Supports both bipolar (centered) and unipolar (absolute) control modes.
     
 ## Public Functions Documentation
 
+
+
+
+### function GetPin 
+
+_Get the servo pin number._ 
+```C++
+inline int evam::ServoDriver::GetPin () const
+```
+
+
+
+
+
+**Returns:**
+
+Pin number used for servo signal. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

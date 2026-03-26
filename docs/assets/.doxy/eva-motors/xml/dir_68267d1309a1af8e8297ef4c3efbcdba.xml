@@ -10,6 +10,7 @@
     <innerfile refid="evam_linear_actuator_8h">evamLinearActuator.h</innerfile>
     <innerfile refid="evam_pwm_driver_8h">evamPwmDriver.h</innerfile>
     <innerfile refid="evam_servo_driver_8h">evamServoDriver.h</innerfile>
+    <innerfile refid="evam_software_servo_driver_8h">evamSoftwareServoDriver.h</innerfile>
     <innerfile refid="evam_steering_actuator_8h">evamSteeringActuator.h</innerfile>
     <innerfile refid="evam_t_a6586_driver_8h">evamTA6586Driver.h</innerfile>
     <innerfile refid="evam_t_b6612_driver_8h">evamTB6612Driver.h</innerfile>

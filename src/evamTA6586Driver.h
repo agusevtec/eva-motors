@@ -39,6 +39,24 @@ namespace evam
             actBipolar(0);
         }
 
+        /**
+         * @brief Get the forward pin number.
+         * @return Forward PWM pin number.
+         */
+        int GetForwardPin() const
+        {
+            return kForwardPin;
+        }
+
+        /**
+         * @brief Get the backward pin number.
+         * @return Backward PWM pin number.
+         */
+        int GetBackwardPin() const
+        {
+            return kBackwardPin;
+        }
+
     protected:
         /**
          * @brief Set bipolar (signed) control value.

@@ -155,6 +155,24 @@
         </inbodydescription>
         <location file="src/evamInertiaDecor.h" line="64" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="64" bodyend="67"/>
       </memberdef>
+      <memberdef kind="function" id="classevam_1_1_inertia_decor_1a7b80b8ea1c71bb1b3edb96e5825b27c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::GetInertiaMass</definition>
+        <argsstring>() const</argsstring>
+        <name>GetInertiaMass</name>
+        <qualifiedname>evam::InertiaDecor::GetInertiaMass</qualifiedname>
+        <briefdescription>
+<para>Get the current virtual mass (inertia) value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current mass value in range 1..200. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="73" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="73" bodyend="76"/>
+      </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1ae9c41746f86cd243d7005e14d950e366" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::Go</definition>
@@ -182,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="73" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="73" bodyend="81"/>
+        <location file="src/evamInertiaDecor.h" line="82" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="82" bodyend="90"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -241,9 +259,10 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamInertiaDecor.h" line="22" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="23" bodyend="82"/>
+    <location file="src/evamInertiaDecor.h" line="22" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="23" bodyend="91"/>
     <listofallmembers>
       <member refid="classevam_1_1_inertia_decor_1a3c6e90dbf7b202ba443a30f48a01ad77" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>calcSpeed</name></member>
+      <member refid="classevam_1_1_inertia_decor_1a7b80b8ea1c71bb1b3edb96e5825b27c7" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>GetInertiaMass</name></member>
       <member refid="classevam_1_1_inertia_decor_1ae9c41746f86cd243d7005e14d950e366" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>Go</name></member>
       <member refid="classevam_1_1_inertia_decor_1a5a7f088ded0d85e5801158596b0fb447" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>kUpdateIntervalMs</name></member>
       <member refid="classevam_1_1_inertia_decor_1acf624be318ecaaa68dc0d98e480b9447" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mDesiredSpeed</name></member>

@@ -42,6 +42,24 @@
         </inbodydescription>
         <location file="src/evamServoDriver.h" line="25" column="9" bodyfile="src/evamServoDriver.h" bodystart="25" bodyend="28"/>
       </memberdef>
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1a0db1512ae53e1539ba29c3388710f73f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int evam::ServoDriver&lt; kPin &gt;::GetPin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPin</name>
+        <qualifiedname>evam::ServoDriver::GetPin</qualifiedname>
+        <briefdescription>
+<para>Get the servo pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pin number used for servo signal. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="34" column="13" bodyfile="src/evamServoDriver.h" bodystart="34" bodyend="37"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
       <memberdef kind="function" id="classevam_1_1_servo_driver_1ae5fd3297b3b95f055c08b7d07d340d46" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
@@ -71,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamServoDriver.h" line="36" column="14" bodyfile="src/evamServoDriver.h" bodystart="36" bodyend="39"/>
+        <location file="src/evamServoDriver.h" line="45" column="14" bodyfile="src/evamServoDriver.h" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_servo_driver_1aaac67782dbe6c81850842411a5bc5eed" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -100,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamServoDriver.h" line="46" column="14" bodyfile="src/evamServoDriver.h" bodystart="46" bodyend="49"/>
+        <location file="src/evamServoDriver.h" line="55" column="14" bodyfile="src/evamServoDriver.h" bodystart="55" bodyend="58"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -119,10 +137,11 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamServoDriver.h" line="16" column="5" bodyfile="src/evamServoDriver.h" bodystart="17" bodyend="50"/>
+    <location file="src/evamServoDriver.h" line="16" column="5" bodyfile="src/evamServoDriver.h" bodystart="17" bodyend="59"/>
     <listofallmembers>
       <member refid="classevam_1_1_servo_driver_1ae5fd3297b3b95f055c08b7d07d340d46" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actBipolar</name></member>
       <member refid="classevam_1_1_servo_driver_1aaac67782dbe6c81850842411a5bc5eed" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actUnipolar</name></member>
+      <member refid="classevam_1_1_servo_driver_1a0db1512ae53e1539ba29c3388710f73f" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>GetPin</name></member>
       <member refid="classevam_1_1_servo_driver_1abf788921122671c641b28dc789ddcd3f" prot="private" virt="non-virtual"><scope>evam::ServoDriver</scope><name>mServo</name></member>
       <member refid="classevam_1_1_servo_driver_1a10c838566cd5addb74e19e7b2496606b" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>ServoDriver</name></member>
     </listofallmembers>

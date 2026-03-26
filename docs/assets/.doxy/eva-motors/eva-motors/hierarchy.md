@@ -20,4 +20,5 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** **Tickable**    
     * **class** [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md) _Decorator that simulates mechanical inertia (flywheel effect)._ 
     * **class** [**evam::KickDecor**](classevam_1_1_kick_decor.md) _Decorator that applies a momentary kick to overcome static friction._ 
+    * **class** [**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md) _Software-based servo driver using millis() for timing._ 
 

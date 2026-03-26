@@ -62,6 +62,11 @@ namespace evam
             mInertiaMass = constrain(aValue, 1, 200);
         }
 
+        unsigned short GetInertiaMass() const
+        {
+            return mInertiaMass;
+        }
+
         void Go(int aSpeed)
         {
             mDesiredSpeed = aSpeed;

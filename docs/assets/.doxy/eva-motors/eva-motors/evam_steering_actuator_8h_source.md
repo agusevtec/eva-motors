@@ -40,9 +40,15 @@ namespace evam
             SetCenterPos(aCenterPos);
             SetRightPos(aRightPos);
         }
+
         void SetLeftPos(signed short aValue)
         {
             mLeftPos = constrain(aValue, -1000, 1000);
+        }
+
+        signed short GetLeftPos() const
+        {
+            return mLeftPos;
         }
 
         void SetCenterPos(signed short aValue)
@@ -50,9 +56,19 @@ namespace evam
             mCenterPos = constrain(aValue, -1000, 1000);
         }
 
+        signed short GetCenterPos() const
+        {
+            return mCenterPos;
+        }
+
         void SetRightPos(signed short aValue)
         {
             mRightPos = constrain(aValue, -1000, 1000);
+        }
+
+        signed short GetRightPos() const
+        {
+            return mRightPos;
         }
 
         void Go(signed short aLevel)

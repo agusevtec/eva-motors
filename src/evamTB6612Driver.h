@@ -8,8 +8,8 @@ namespace evam
      * @brief Driver for the TB6612FNG dual H-bridge motor driver.
      *
      * Pin connection:
-     * - PWMA → speed control PWM pin
-     * - AIN1 / AIN2 → direction control pins for motor A
+     * - PWMA - speed control PWM pin
+     * - AIN1 / AIN2 - direction control pins for motor A
      * - PWMB, BIN1, BIN2 for motor B (use separate instance)
      *
      * @tparam kPinSpeed PWM pin for speed control
@@ -30,6 +30,33 @@ namespace evam
             pinMode(kPinMode1, OUTPUT);
             pinMode(kPinMode2, OUTPUT);
             actBipolar(0);
+        }
+
+        /**
+         * @brief Get the speed PWM pin number.
+         * @return Speed control PWM pin number.
+         */
+        int GetSpeedPin() const
+        {
+            return kPinSpeed;
+        }
+
+        /**
+         * @brief Get the first direction pin number.
+         * @return Direction pin 1 (IN1) number.
+         */
+        int GetMode1Pin() const
+        {
+            return kPinMode1;
+        }
+
+        /**
+         * @brief Get the second direction pin number.
+         * @return Direction pin 2 (IN2) number.
+         */
+        int GetMode2Pin() const
+        {
+            return kPinMode2;
         }
 
     protected:

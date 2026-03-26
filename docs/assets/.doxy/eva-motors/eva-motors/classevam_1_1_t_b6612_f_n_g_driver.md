@@ -54,6 +54,9 @@ _Driver for the TB6612FNG dual H-bridge motor driver._ [More...](#detailed-descr
 
 | Type | Name |
 | ---: | :--- |
+|  int | [**GetMode1Pin**](#function-getmode1pin) () const<br>_Get the first direction pin number._  |
+|  int | [**GetMode2Pin**](#function-getmode2pin) () const<br>_Get the second direction pin number._  |
+|  int | [**GetSpeedPin**](#function-getspeedpin) () const<br>_Get the speed PWM pin number._  |
 |   | [**TB6612FNGDriver**](#function-tb6612fngdriver) () <br>_Constructor. Initializes pins and stops the motor._  |
 
 
@@ -92,8 +95,8 @@ _Driver for the TB6612FNG dual H-bridge motor driver._ [More...](#detailed-descr
 
 
 Pin connection:
-* PWMA → speed control PWM pin
-* AIN1 / AIN2 → direction control pins for motor A
+* PWMA - speed control PWM pin
+* AIN1 / AIN2 - direction control pins for motor A
 * PWMB, BIN1, BIN2 for motor B (use separate instance)
 
 
@@ -114,6 +117,81 @@ Pin connection:
     
 ## Public Functions Documentation
 
+
+
+
+### function GetMode1Pin 
+
+_Get the first direction pin number._ 
+```C++
+inline int evam::TB6612FNGDriver::GetMode1Pin () const
+```
+
+
+
+
+
+**Returns:**
+
+Direction pin 1 (IN1) number. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetMode2Pin 
+
+_Get the second direction pin number._ 
+```C++
+inline int evam::TB6612FNGDriver::GetMode2Pin () const
+```
+
+
+
+
+
+**Returns:**
+
+Direction pin 2 (IN2) number. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetSpeedPin 
+
+_Get the speed PWM pin number._ 
+```C++
+inline int evam::TB6612FNGDriver::GetSpeedPin () const
+```
+
+
+
+
+
+**Returns:**
+
+Speed control PWM pin number. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

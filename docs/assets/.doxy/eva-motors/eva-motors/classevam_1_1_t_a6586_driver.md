@@ -54,6 +54,8 @@ _Driver for the TA6586 dual H-bridge motor driver._ [More...](#detailed-descript
 
 | Type | Name |
 | ---: | :--- |
+|  int | [**GetBackwardPin**](#function-getbackwardpin) () const<br>_Get the backward pin number._  |
+|  int | [**GetForwardPin**](#function-getforwardpin) () const<br>_Get the forward pin number._  |
 |   | [**TA6586Driver**](#function-ta6586driver) () <br>_Constructor. Initializes pins and stops the motor._  |
 
 
@@ -108,6 +110,56 @@ Pinout:
     
 ## Public Functions Documentation
 
+
+
+
+### function GetBackwardPin 
+
+_Get the backward pin number._ 
+```C++
+inline int evam::TA6586Driver::GetBackwardPin () const
+```
+
+
+
+
+
+**Returns:**
+
+Backward PWM pin number. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetForwardPin 
+
+_Get the forward pin number._ 
+```C++
+inline int evam::TA6586Driver::GetForwardPin () const
+```
+
+
+
+
+
+**Returns:**
+
+Forward PWM pin number. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

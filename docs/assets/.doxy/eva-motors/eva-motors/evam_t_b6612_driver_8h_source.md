@@ -27,6 +27,21 @@ namespace evam
             actBipolar(0);
         }
 
+        int GetSpeedPin() const
+        {
+            return kPinSpeed;
+        }
+
+        int GetMode1Pin() const
+        {
+            return kPinMode1;
+        }
+
+        int GetMode2Pin() const
+        {
+            return kPinMode2;
+        }
+
     protected:
         void actBipolar(signed short aValue)
         {

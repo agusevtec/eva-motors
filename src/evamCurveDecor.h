@@ -46,6 +46,15 @@ namespace evam
         }
 
         /**
+         * @brief Get the current bend intensity value.
+         * @return Current bend value in range -10..10.
+         */
+        signed short GetBend() const
+        {
+            return mBend;
+        }
+
+        /**
          * @brief Apply the curved transformation and pass to the underlying motor.
          * @param aValue Input control value, range -1000..1000.
          */

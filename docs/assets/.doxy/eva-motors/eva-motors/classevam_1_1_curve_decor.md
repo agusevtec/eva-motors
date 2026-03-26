@@ -55,6 +55,7 @@ Inherits the following classes: Motor
 
 | Type | Name |
 | ---: | :--- |
+|  signed short | [**GetBend**](#function-getbend) () const<br>_Get the current bend intensity value._  |
 |  void | [**Go**](#function-go) (signed short aValue) <br>_Apply the curved transformation and pass to the underlying motor._  |
 |  void | [**SetBend**](#function-setbend) (signed short aValue) <br>_Set the bend intensity at runtime._  |
 
@@ -105,6 +106,31 @@ Converts linear input into an S-shaped curve, useful for smoother starts and fin
     
 ## Public Functions Documentation
 
+
+
+
+### function GetBend 
+
+_Get the current bend intensity value._ 
+```C++
+inline signed short evam::CurveDecor::GetBend () const
+```
+
+
+
+
+
+**Returns:**
+
+Current bend value in range -10..10. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

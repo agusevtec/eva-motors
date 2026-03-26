@@ -28,6 +28,16 @@ namespace evam
             actBipolar(0);
         }
 
+        int GetForwardPin() const
+        {
+            return kForwardPin;
+        }
+
+        int GetBackwardPin() const
+        {
+            return kBackwardPin;
+        }
+
     protected:
         void actBipolar(signed short aValue)
         {

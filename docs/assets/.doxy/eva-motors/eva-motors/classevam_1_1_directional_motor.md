@@ -55,6 +55,10 @@ Inherits the following classes: Driver
 
 | Type | Name |
 | ---: | :--- |
+|  signed short | [**GetMaxBackward**](#function-getmaxbackward) () const<br>_Get maximum reverse output value._  |
+|  signed short | [**GetMaxForward**](#function-getmaxforward) () const<br>_Get maximum forward output value._  |
+|  signed short | [**GetMinBackward**](#function-getminbackward) () const<br>_Get minimum reverse output value._  |
+|  signed short | [**GetMinForward**](#function-getminforward) () const<br>_Get minimum forward output value._  |
 |  void | [**Go**](#function-go) (signed short aLevel) <br>_Apply the control value._  |
 |  void | [**SetMaxBackward**](#function-setmaxbackward) (signed short aValue) <br>_Set maximum reverse output value._  |
 |  void | [**SetMaxForward**](#function-setmaxforward) (signed short aValue) <br>_Set maximum forward output value._  |
@@ -112,6 +116,106 @@ Maps a signed input range -1000..1000 to driver-specific output values. Negative
     
 ## Public Functions Documentation
 
+
+
+
+### function GetMaxBackward 
+
+_Get maximum reverse output value._ 
+```C++
+inline signed short evam::DirectionalMotor::GetMaxBackward () const
+```
+
+
+
+
+
+**Returns:**
+
+Current maximum reverse output value. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetMaxForward 
+
+_Get maximum forward output value._ 
+```C++
+inline signed short evam::DirectionalMotor::GetMaxForward () const
+```
+
+
+
+
+
+**Returns:**
+
+Current maximum forward output value. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetMinBackward 
+
+_Get minimum reverse output value._ 
+```C++
+inline signed short evam::DirectionalMotor::GetMinBackward () const
+```
+
+
+
+
+
+**Returns:**
+
+Current minimum reverse output value. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function GetMinForward 
+
+_Get minimum forward output value._ 
+```C++
+inline signed short evam::DirectionalMotor::GetMinForward () const
+```
+
+
+
+
+
+**Returns:**
+
+Current minimum forward output value. 
+
+
+
+
+
+        
+
+<hr>
 
 
 

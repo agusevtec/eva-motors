@@ -48,6 +48,7 @@ namespace evam
             SetCenterPos(aCenterPos);
             SetRightPos(aRightPos);
         }
+
         /**
          * @brief Set leftmost position output value.
          * @param aValue Output value, clamped to -1000..1000.
@@ -55,6 +56,15 @@ namespace evam
         void SetLeftPos(signed short aValue)
         {
             mLeftPos = constrain(aValue, -1000, 1000);
+        }
+
+        /**
+         * @brief Get leftmost position output value.
+         * @return Current leftmost position output value.
+         */
+        signed short GetLeftPos() const
+        {
+            return mLeftPos;
         }
 
         /**
@@ -67,12 +77,30 @@ namespace evam
         }
 
         /**
+         * @brief Get center position output value.
+         * @return Current center position output value.
+         */
+        signed short GetCenterPos() const
+        {
+            return mCenterPos;
+        }
+
+        /**
          * @brief Set rightmost position output value.
          * @param aValue Output value, clamped to -1000..1000.
          */
         void SetRightPos(signed short aValue)
         {
             mRightPos = constrain(aValue, -1000, 1000);
+        }
+
+        /**
+         * @brief Get rightmost position output value.
+         * @return Current rightmost position output value.
+         */
+        signed short GetRightPos() const
+        {
+            return mRightPos;
         }
 
         /**

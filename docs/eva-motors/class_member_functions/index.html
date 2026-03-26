@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -668,8 +668,8 @@
 <h1 id="class-member-functions">Class Member Functions<a class="headerlink" href="#class-member-functions" title="Permanent link">&para;</a></h1>
 <h2 id="a">a<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>actUnipolar</strong> (<a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a>, <a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>)</li>
-<li><strong>actBipolar</strong> (<a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>, <a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
+<li><strong>actUnipolar</strong> (<a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a>, <a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
+<li><strong>actBipolar</strong> (<a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>, <a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>, <a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
 </ul>
 <h2 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <ul>
@@ -684,7 +684,26 @@
 </ul>
 <h2 id="g">g<a class="headerlink" href="#g" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>GetBend</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>)</li>
 <li><strong>Go</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>, <a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>GetMaxBackward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
+<li><strong>GetMaxForward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
+<li><strong>GetMinBackward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
+<li><strong>GetMinForward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
+<li><strong>GetMaxValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
+<li><strong>GetMinValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
+<li><strong>GetInertiaMass</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
+<li><strong>GetKickDuration</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
+<li><strong>GetKickPower</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
+<li><strong>GetPin</strong> (<a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>)</li>
+<li><strong>GetCenterPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>GetLeftPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>GetRightPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>GetBackwardPin</strong> (<a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>)</li>
+<li><strong>GetForwardPin</strong> (<a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>)</li>
+<li><strong>GetMode1Pin</strong> (<a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
+<li><strong>GetMode2Pin</strong> (<a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
+<li><strong>GetSpeedPin</strong> (<a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
 </ul>
 <h2 id="p">p<a class="headerlink" href="#p" title="Permanent link">&para;</a></h2>
 <ul>
@@ -701,15 +720,18 @@
 <li><strong>SetMaxValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
 <li><strong>SetMinValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
 <li><strong>SetInertiaMass</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
+<li><strong>SetKickDuration</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
+<li><strong>SetKickPower</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 <li><strong>SetupKickstart</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 <li><strong>ServoDriver</strong> (<a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>)</li>
+<li><strong>SoftwareServoDriver</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>SetCenterPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
 <li><strong>SetLeftPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
 <li><strong>SetRightPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
 </ul>
 <h2 id="t">t<a class="headerlink" href="#t" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>tick</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
+<li><strong>tick</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>TA6586Driver</strong> (<a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>)</li>
 <li><strong>TB6612FNGDriver</strong> (<a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
 </ul>

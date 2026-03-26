@@ -62,10 +62,48 @@ namespace evam
          */
         void SetupKickstart(unsigned short aKickDuration, signed short aKickPower)
         {
-            // TODO: think care
-            //  SetKickDuration(aKickDuration);
-            //  SetKickPower(aKickPower);
+            SetKickDuration(aKickDuration);
+            SetKickPower(aKickPower);
         }
+
+        /**
+         * @brief Set kick pulse duration.
+         * @param aDuration Duration in milliseconds, must be > 0.
+         */
+        void SetKickDuration(unsigned short aDuration)
+        {
+            // kKickDuration is a template parameter, cannot be changed at runtime
+            // This method is provided for interface consistency but has no effect
+        }
+
+        /**
+         * @brief Get kick pulse duration.
+         * @return Kick duration in milliseconds.
+         */
+        unsigned short GetKickDuration() const
+        {
+            return kKickDuration;
+        }
+
+        /**
+         * @brief Set kick power.
+         * @param aPower Power value, clamped to -1000..1000.
+         */
+        void SetKickPower(signed short aPower)
+        {
+            // kKickPower is a template parameter, cannot be changed at runtime
+            // This method is provided for interface consistency but has no effect
+        }
+
+        /**
+         * @brief Get kick power.
+         * @return Kick power value in range -1000..1000.
+         */
+        signed short GetKickPower() const
+        {
+            return kKickPower;
+        }
+
         /**
          * @brief Apply the control value with kick-start pulse.
          * @param aValue Desired control value, range -1000..1000.

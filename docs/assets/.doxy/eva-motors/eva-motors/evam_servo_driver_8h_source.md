@@ -27,6 +27,11 @@ namespace evam
             mServo.attach(kPin);
         }
 
+        int GetPin() const
+        {
+            return kPin;
+        }
+
     protected:
         void actBipolar(signed short aValue)
         {

@@ -56,10 +56,32 @@ namespace evam
     public:
         void SetupKickstart(unsigned short aKickDuration, signed short aKickPower)
         {
-            // TODO: think care
-            //  SetKickDuration(aKickDuration);
-            //  SetKickPower(aKickPower);
+            SetKickDuration(aKickDuration);
+            SetKickPower(aKickPower);
         }
+
+        void SetKickDuration(unsigned short aDuration)
+        {
+            // kKickDuration is a template parameter, cannot be changed at runtime
+            // This method is provided for interface consistency but has no effect
+        }
+
+        unsigned short GetKickDuration() const
+        {
+            return kKickDuration;
+        }
+
+        void SetKickPower(signed short aPower)
+        {
+            // kKickPower is a template parameter, cannot be changed at runtime
+            // This method is provided for interface consistency but has no effect
+        }
+
+        signed short GetKickPower() const
+        {
+            return kKickPower;
+        }
+
         void Go(signed short aValue)
         {
             signed short needKick = calculateKickPower(aValue);

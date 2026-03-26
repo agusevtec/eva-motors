@@ -27,6 +27,15 @@ namespace evam
             mServo.attach(kPin);
         }
 
+        /**
+         * @brief Get the servo pin number.
+         * @return Pin number used for servo signal.
+         */
+        int GetPin() const
+        {
+            return kPin;
+        }
+
     protected:
         /**
          * @brief Bipolar (centered) control. Input range -1000..1000.

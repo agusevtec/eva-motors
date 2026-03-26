@@ -33,14 +33,25 @@ namespace evam
             SetMinValue(aMinValue);
             SetMaxValue(aMaxValue);
         }
+
         void SetMinValue(int aValue)
         {
             mMinValue = constrain(aValue, -1000, 1000);
         }
 
+        int GetMinValue() const
+        {
+            return mMinValue;
+        }
+
         void SetMaxValue(int aValue)
         {
             mMaxValue = constrain(aValue, -1000, 1000);
+        }
+
+        int GetMaxValue() const
+        {
+            return mMaxValue;
         }
 
         void Go(signed short aLevel)

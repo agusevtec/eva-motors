@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_pwm_driver" kind="class" language="C++" prot="public">
+    <compoundname>evam::PwmDriver</compoundname>
+    <includes refid="evam_pwm_driver_8h" local="no">evamPwmDriver.h</includes>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>kPin</declname>
+        <defname>kPin</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_pwm_driver_1a85802cead4fd16ac623134c70d12e768" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::PwmDriver&lt; kPin &gt;::PwmDriver</definition>
+        <argsstring>()</argsstring>
+        <name>PwmDriver</name>
+        <qualifiedname>evam::PwmDriver::PwmDriver</qualifiedname>
+        <briefdescription>
+<para>Constructor. Initializes the pin as output. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamPwmDriver.h" line="25" column="9" bodyfile="src/evamPwmDriver.h" bodystart="25" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classevam_1_1_pwm_driver_1a0e0cc11fd0a37dd37f603652dd85c2d4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::PwmDriver&lt; kPin &gt;::actUnipolar</definition>
+        <argsstring>(unsigned short aValue)</argsstring>
+        <name>actUnipolar</name>
+        <qualifiedname>evam::PwmDriver::actUnipolar</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set unipolar output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input range 0..1000, mapped to 0..255 PWM. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamPwmDriver.h" line="36" column="14" bodyfile="src/evamPwmDriver.h" bodystart="36" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple PWM output driver (unipolar). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Converts 0..1000 input to 0..255 PWM duty cycle. Suitable for MOSFETs and other unipolar devices.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>kPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PWM output pin number. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="src/evamPwmDriver.h" line="19" column="5" bodyfile="src/evamPwmDriver.h" bodystart="20" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_pwm_driver_1a0e0cc11fd0a37dd37f603652dd85c2d4" prot="protected" virt="non-virtual"><scope>evam::PwmDriver</scope><name>actUnipolar</name></member>
+      <member refid="classevam_1_1_pwm_driver_1a85802cead4fd16ac623134c70d12e768" prot="public" virt="non-virtual"><scope>evam::PwmDriver</scope><name>PwmDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

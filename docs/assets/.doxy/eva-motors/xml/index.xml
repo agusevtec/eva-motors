@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.16.1" xml:lang="en-US">
+  <compound refid="classevam_1_1_curve_decor" kind="class"><name>evam::CurveDecor</name>
+    <member refid="classevam_1_1_curve_decor_1ad210396c13d93977987c9ce560ef9f80" kind="variable"><name>mBend</name></member>
+    <member refid="classevam_1_1_curve_decor_1a3e3c8a5b45ebe6c8d9962de0e1b307a0" kind="function"><name>f</name></member>
+    <member refid="classevam_1_1_curve_decor_1aaadf93770704c24268470e06f72f409e" kind="function"><name>curve</name></member>
+    <member refid="classevam_1_1_curve_decor_1a69c5974b2e9506693dc047b8199d442c" kind="function"><name>SetBend</name></member>
+    <member refid="classevam_1_1_curve_decor_1a9c94a0b4947d7135439fce236ddb3b16" kind="function"><name>Go</name></member>
+  </compound>
+  <compound refid="classevam_1_1_directional_motor" kind="class"><name>evam::DirectionalMotor</name>
+    <member refid="classevam_1_1_directional_motor_1a65fccb1705ca4d2ddace4bab3bb002c9" kind="variable"><name>mMaxBackward</name></member>
+    <member refid="classevam_1_1_directional_motor_1a25c43578ae3fba861784416debbccccc" kind="variable"><name>mMinBackward</name></member>
+    <member refid="classevam_1_1_directional_motor_1a9496f9fa61fff781b9d381db66ced08e" kind="variable"><name>mMinForward</name></member>
+    <member refid="classevam_1_1_directional_motor_1aca98527c2ae44994fa05dbfb31d5edfc" kind="variable"><name>mMaxForward</name></member>
+    <member refid="classevam_1_1_directional_motor_1a1ad4ba42252ca68349989969a6ba63b2" kind="function"><name>compute</name></member>
+    <member refid="classevam_1_1_directional_motor_1a05e0ec4905f5ee021210bd0402a87bac" kind="function"><name>SetupRange</name></member>
+    <member refid="classevam_1_1_directional_motor_1a599444bc8a44c78871005e8ce7822c63" kind="function"><name>SetMaxBackward</name></member>
+    <member refid="classevam_1_1_directional_motor_1aa7eb19172f0636e790a107292ac6157a" kind="function"><name>SetMinBackward</name></member>
+    <member refid="classevam_1_1_directional_motor_1a80a2a7293c15627b495abfb90c226ed1" kind="function"><name>SetMinForward</name></member>
+    <member refid="classevam_1_1_directional_motor_1a30de8ebb9e170dbd952577ed25b8b4b4" kind="function"><name>SetMaxForward</name></member>
+    <member refid="classevam_1_1_directional_motor_1ae4481d10624a209801146fc22c28f98b" kind="function"><name>Go</name></member>
+  </compound>
+  <compound refid="classevam_1_1_forward_motor" kind="class"><name>evam::ForwardMotor</name>
+    <member refid="classevam_1_1_forward_motor_1af1408901c404f15834f8531d1fc3cc02" kind="variable"><name>mMinValue</name></member>
+    <member refid="classevam_1_1_forward_motor_1acaea59c0662da77aefa313e1c81f5ae7" kind="variable"><name>mMaxValue</name></member>
+    <member refid="classevam_1_1_forward_motor_1afbed39f3ba5604fa32fc669933c80085" kind="function"><name>compute</name></member>
+    <member refid="classevam_1_1_forward_motor_1a6d7fb5cbebb2cb1da275896d7758ae74" kind="function"><name>SetupRange</name></member>
+    <member refid="classevam_1_1_forward_motor_1a6b9d5ae7ffb188d3c4dbf4edfacd9203" kind="function"><name>SetMinValue</name></member>
+    <member refid="classevam_1_1_forward_motor_1a82359bddd7701f52941f33210c182c6a" kind="function"><name>SetMaxValue</name></member>
+    <member refid="classevam_1_1_forward_motor_1ac0d4e94277f2d32911fb06cf989815f7" kind="function"><name>Go</name></member>
+  </compound>
+  <compound refid="classevam_1_1_inertia_decor" kind="class"><name>evam::InertiaDecor</name>
+    <member refid="classevam_1_1_inertia_decor_1a5a7f088ded0d85e5801158596b0fb447" kind="variable"><name>kUpdateIntervalMs</name></member>
+    <member refid="classevam_1_1_inertia_decor_1adcc8e52f69eb9e9b7d47a6da6e8ef25b" kind="variable"><name>mLastSpeedUpdateWasAt</name></member>
+    <member refid="classevam_1_1_inertia_decor_1acf624be318ecaaa68dc0d98e480b9447" kind="variable"><name>mDesiredSpeed</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a47c2aac39fad22a3dce7254377b5db36" kind="variable"><name>mSpeed</name></member>
+    <member refid="classevam_1_1_inertia_decor_1ab826adff2f71f5874145b7c33c33b23d" kind="variable"><name>mInertiaMass</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a3c6e90dbf7b202ba443a30f48a01ad77" kind="function"><name>calcSpeed</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a2211e606791504a58ceafeddba4ca10e" kind="function"><name>tick</name></member>
+    <member refid="classevam_1_1_inertia_decor_1aadd18f726c4e84e60a76fe189db071a7" kind="function"><name>SetInertiaMass</name></member>
+    <member refid="classevam_1_1_inertia_decor_1ae9c41746f86cd243d7005e14d950e366" kind="function"><name>Go</name></member>
+  </compound>
+  <compound refid="classevam_1_1_kick_decor" kind="class"><name>evam::KickDecor</name>
+    <member refid="classevam_1_1_kick_decor_1ab96b2d03c9a64306597d1fa05d765310" kind="variable"><name>mTargetSpeed</name></member>
+    <member refid="classevam_1_1_kick_decor_1a28f77a2c6394cadc2970dcd43b4c12aa" kind="variable"><name>mHoldingStartedAt</name></member>
+    <member refid="classevam_1_1_kick_decor_1a090ea7b7b2b53cfc047f02f35a6d2516" kind="function"><name>calculateKickPower</name></member>
+    <member refid="classevam_1_1_kick_decor_1a73b6080d3d4b335808a909d5dc5856a9" kind="function"><name>tick</name></member>
+    <member refid="classevam_1_1_kick_decor_1a4c3d0fbab65a0b369f65ccf98633541b" kind="function"><name>SetupKickstart</name></member>
+    <member refid="classevam_1_1_kick_decor_1a21a827853209051b250d1d16b1235d3d" kind="function"><name>Go</name></member>
+  </compound>
+  <compound refid="classevam_1_1_linear_actuator" kind="class"><name>evam::LinearActuator</name>
+    <member refid="classevam_1_1_linear_actuator_1a2a11b4710be2079a1c815aa37ac80d38" kind="variable"><name>mMinValue</name></member>
+    <member refid="classevam_1_1_linear_actuator_1a2955a6a2fc1a7f013f5869ae8a52e564" kind="variable"><name>mMaxValue</name></member>
+    <member refid="classevam_1_1_linear_actuator_1afa63c03dee2609466b32f55fd6da0fee" kind="function"><name>compute</name></member>
+    <member refid="classevam_1_1_linear_actuator_1acd888e81f56263e818febf713f59f28a" kind="function"><name>SetupRange</name></member>
+    <member refid="classevam_1_1_linear_actuator_1ad533a519c467958707256c7758bbdbf2" kind="function"><name>SetMinValue</name></member>
+    <member refid="classevam_1_1_linear_actuator_1a83c49edd7e41779324a0c1466dd9d0ac" kind="function"><name>SetMaxValue</name></member>
+    <member refid="classevam_1_1_linear_actuator_1a9192a4e76ec80829d22d3c1a15b01f69" kind="function"><name>Go</name></member>
+  </compound>
+  <compound refid="classevam_1_1_pwm_driver" kind="class"><name>evam::PwmDriver</name>
+    <member refid="classevam_1_1_pwm_driver_1a85802cead4fd16ac623134c70d12e768" kind="function"><name>PwmDriver</name></member>
+    <member refid="classevam_1_1_pwm_driver_1a0e0cc11fd0a37dd37f603652dd85c2d4" kind="function"><name>actUnipolar</name></member>
+  </compound>
+  <compound refid="classevam_1_1_servo_driver" kind="class"><name>evam::ServoDriver</name>
+    <member refid="classevam_1_1_servo_driver_1abf788921122671c641b28dc789ddcd3f" kind="variable"><name>mServo</name></member>
+    <member refid="classevam_1_1_servo_driver_1a10c838566cd5addb74e19e7b2496606b" kind="function"><name>ServoDriver</name></member>
+    <member refid="classevam_1_1_servo_driver_1ae5fd3297b3b95f055c08b7d07d340d46" kind="function"><name>actBipolar</name></member>
+    <member refid="classevam_1_1_servo_driver_1aaac67782dbe6c81850842411a5bc5eed" kind="function"><name>actUnipolar</name></member>
+  </compound>
+  <compound refid="classevam_1_1_steering_actuator" kind="class"><name>evam::SteeringActuator</name>
+    <member refid="classevam_1_1_steering_actuator_1a5acde101d9dbc07fa87c1c94be1a14e1" kind="variable"><name>mLeftPos</name></member>
+    <member refid="classevam_1_1_steering_actuator_1af5095c7310fcc300a00f7f3aa72d5bf0" kind="variable"><name>mCenterPos</name></member>
+    <member refid="classevam_1_1_steering_actuator_1aa2c7adfd96ce75dd59659cb70f7d5bd3" kind="variable"><name>mRightPos</name></member>
+    <member refid="classevam_1_1_steering_actuator_1aeb9968331d574c2438677117547fd60b" kind="function"><name>compute</name></member>
+    <member refid="classevam_1_1_steering_actuator_1acd41956e2720f543ad29bbf87d20cb07" kind="function"><name>SetupRange</name></member>
+    <member refid="classevam_1_1_steering_actuator_1a7a554e4becdace99d3cd60a3190e8747" kind="function"><name>SetLeftPos</name></member>
+    <member refid="classevam_1_1_steering_actuator_1ad9fce70e729d3dce91bd56e8175a9b47" kind="function"><name>SetCenterPos</name></member>
+    <member refid="classevam_1_1_steering_actuator_1a950a664d4d822313c49a7e72181346db" kind="function"><name>SetRightPos</name></member>
+    <member refid="classevam_1_1_steering_actuator_1aa25bee4f98929da792791174e4f80780" kind="function"><name>Go</name></member>
+  </compound>
+  <compound refid="classevam_1_1_t_a6586_driver" kind="class"><name>evam::TA6586Driver</name>
+    <member refid="classevam_1_1_t_a6586_driver_1a9707afdcd8fd42b433eb43176c7f0b63" kind="function"><name>TA6586Driver</name></member>
+    <member refid="classevam_1_1_t_a6586_driver_1a65972491e15cb9e0b5d578cd7df5174a" kind="function"><name>actBipolar</name></member>
+  </compound>
+  <compound refid="classevam_1_1_t_b6612_f_n_g_driver" kind="class"><name>evam::TB6612FNGDriver</name>
+    <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adf1637401e80f6438a2b7ddc18288d45" kind="function"><name>TB6612FNGDriver</name></member>
+    <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adc2c94301188415930a5a20e007ffd48" kind="function"><name>actBipolar</name></member>
+  </compound>
+  <compound refid="namespaceeva" kind="namespace"><name>eva</name>
+  </compound>
+  <compound refid="namespaceevam" kind="namespace"><name>evam</name>
+  </compound>
+  <compound refid="evam_curve_decor_8h" kind="file"><name>evamCurveDecor.h</name>
+  </compound>
+  <compound refid="evam_directional_motor_8h" kind="file"><name>evamDirectionalMotor.h</name>
+  </compound>
+  <compound refid="evam_forward_motor_8h" kind="file"><name>evamForwardMotor.h</name>
+  </compound>
+  <compound refid="evam_inertia_decor_8h" kind="file"><name>evamInertiaDecor.h</name>
+  </compound>
+  <compound refid="evam_kick_decor_8h" kind="file"><name>evamKickDecor.h</name>
+  </compound>
+  <compound refid="evam_linear_actuator_8h" kind="file"><name>evamLinearActuator.h</name>
+  </compound>
+  <compound refid="evam_pwm_driver_8h" kind="file"><name>evamPwmDriver.h</name>
+  </compound>
+  <compound refid="evam_servo_driver_8h" kind="file"><name>evamServoDriver.h</name>
+  </compound>
+  <compound refid="evam_steering_actuator_8h" kind="file"><name>evamSteeringActuator.h</name>
+  </compound>
+  <compound refid="evam_t_a6586_driver_8h" kind="file"><name>evamTA6586Driver.h</name>
+  </compound>
+  <compound refid="evam_t_b6612_driver_8h" kind="file"><name>evamTB6612Driver.h</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

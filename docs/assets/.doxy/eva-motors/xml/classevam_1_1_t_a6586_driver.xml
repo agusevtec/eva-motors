@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_t_a6586_driver" kind="class" language="C++" prot="public">
+    <compoundname>evam::TA6586Driver</compoundname>
+    <includes refid="evam_t_a6586_driver_8h" local="no">evamTA6586Driver.h</includes>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>kForwardPin</declname>
+        <defname>kForwardPin</defname>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>kBackwardPin</declname>
+        <defname>kBackwardPin</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a9707afdcd8fd42b433eb43176c7f0b63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::TA6586Driver&lt; kForwardPin, kBackwardPin &gt;::TA6586Driver</definition>
+        <argsstring>()</argsstring>
+        <name>TA6586Driver</name>
+        <qualifiedname>evam::TA6586Driver::TA6586Driver</qualifiedname>
+        <briefdescription>
+<para>Constructor. Initializes pins and stops the motor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="35" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="35" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a65972491e15cb9e0b5d578cd7df5174a" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::TA6586Driver&lt; kForwardPin, kBackwardPin &gt;::actBipolar</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>actBipolar</name>
+        <qualifiedname>evam::TA6586Driver::actBipolar</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set bipolar (signed) control value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Range -1000..1000, mapped to -255..255 PWM. Positive = forward, negative = reverse, 0 = stop. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="48" column="14" bodyfile="src/evamTA6586Driver.h" bodystart="48" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Driver for the TA6586 dual H-bridge motor driver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Pinout: <verbatim>*       TA-6586
+*       -------
+*  5 - |       | - VCC
+*  6 - |       | - GND
+*  7 - |       | - FI (Forward pin)
+*  8 - |   _   | - BI (Backward pin)
+*       --/ \--
+* </verbatim></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>kForwardPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PWM pin connected to FI (forward input) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kBackwardPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PWM pin connected to BI (backward input) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="src/evamTA6586Driver.h" line="29" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="30" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_t_a6586_driver_1a65972491e15cb9e0b5d578cd7df5174a" prot="protected" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>actBipolar</name></member>
+      <member refid="classevam_1_1_t_a6586_driver_1a9707afdcd8fd42b433eb43176c7f0b63" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>TA6586Driver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

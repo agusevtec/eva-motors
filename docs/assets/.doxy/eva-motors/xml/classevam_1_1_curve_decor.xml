@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_curve_decor" kind="class" language="C++" prot="public">
+    <compoundname>evam::CurveDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Motor</basecompoundref>
+    <includes refid="evam_curve_decor_8h" local="no">evamCurveDecor.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Motor</type>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kBend</declname>
+        <defname>kBend</defname>
+        <defval>0</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_curve_decor_1ad210396c13d93977987c9ce560ef9f80" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::CurveDecor&lt; Motor, kBend &gt;::mBend</definition>
+        <argsstring></argsstring>
+        <name>mBend</name>
+        <qualifiedname>evam::CurveDecor::mBend</qualifiedname>
+        <initializer>= kBend</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="25" column="22" bodyfile="src/evamCurveDecor.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classevam_1_1_curve_decor_1a3e3c8a5b45ebe6c8d9962de0e1b307a0" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed long</type>
+        <definition>signed long evam::CurveDecor&lt; Motor, kBend &gt;::f</definition>
+        <argsstring>(signed long x) const</argsstring>
+        <name>f</name>
+        <qualifiedname>evam::CurveDecor::f</qualifiedname>
+        <param>
+          <type>signed long</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="27" column="21" bodyfile="src/evamCurveDecor.h" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_curve_decor_1aaadf93770704c24268470e06f72f409e" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::CurveDecor&lt; Motor, kBend &gt;::curve</definition>
+        <argsstring>(unsigned short x) const</argsstring>
+        <name>curve</name>
+        <qualifiedname>evam::CurveDecor::curve</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="32" column="24" bodyfile="src/evamCurveDecor.h" bodystart="32" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_curve_decor_1a69c5974b2e9506693dc047b8199d442c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::CurveDecor&lt; Motor, kBend &gt;::SetBend</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetBend</name>
+        <qualifiedname>evam::CurveDecor::SetBend</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set the bend intensity at runtime. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bend value, clamped to -10..10. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="43" column="14" bodyfile="src/evamCurveDecor.h" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_curve_decor_1a9c94a0b4947d7135439fce236ddb3b16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::CurveDecor&lt; Motor, kBend &gt;::Go</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::CurveDecor::Go</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Apply the curved transformation and pass to the underlying motor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input control value, range -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="52" column="14" bodyfile="src/evamCurveDecor.h" bodystart="52" bodyend="59"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator that applies an S-curve (nonlinear) transformation to the control signal. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Converts linear input into an S-shaped curve, useful for smoother starts and finer control in the mid-range. Positive bend values create a softer start, negative values create a sharper initial response.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base motor class (must implement <ref refid="classevam_1_1_curve_decor_1a9c94a0b4947d7135439fce236ddb3b16" kindref="member">Go(signed short)</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kBend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bend intensity. Range: -10..10. 0 = linear. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Motor</label>
+      </node>
+      <node id="1">
+        <label>evam::CurveDecor&lt; Motor, kBend &gt;</label>
+        <link refid="classevam_1_1_curve_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Motor</label>
+      </node>
+      <node id="1">
+        <label>evam::CurveDecor&lt; Motor, kBend &gt;</label>
+        <link refid="classevam_1_1_curve_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamCurveDecor.h" line="21" column="5" bodyfile="src/evamCurveDecor.h" bodystart="22" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_curve_decor_1aaadf93770704c24268470e06f72f409e" prot="private" virt="non-virtual"><scope>evam::CurveDecor</scope><name>curve</name></member>
+      <member refid="classevam_1_1_curve_decor_1a3e3c8a5b45ebe6c8d9962de0e1b307a0" prot="private" virt="non-virtual"><scope>evam::CurveDecor</scope><name>f</name></member>
+      <member refid="classevam_1_1_curve_decor_1a9c94a0b4947d7135439fce236ddb3b16" prot="public" virt="non-virtual"><scope>evam::CurveDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_curve_decor_1ad210396c13d93977987c9ce560ef9f80" prot="private" virt="non-virtual"><scope>evam::CurveDecor</scope><name>mBend</name></member>
+      <member refid="classevam_1_1_curve_decor_1a69c5974b2e9506693dc047b8199d442c" prot="public" virt="non-virtual"><scope>evam::CurveDecor</scope><name>SetBend</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

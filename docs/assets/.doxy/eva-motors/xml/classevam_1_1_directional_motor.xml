@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_directional_motor" kind="class" language="C++" prot="public">
+    <compoundname>evam::DirectionalMotor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Driver</basecompoundref>
+    <includes refid="evam_directional_motor_8h" local="no">evamDirectionalMotor.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Driver</type>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kMaxBackward</declname>
+        <defname>kMaxBackward</defname>
+        <defval>-1000</defval>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kMinBackward</declname>
+        <defname>kMinBackward</defname>
+        <defval>0</defval>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kMinForward</declname>
+        <defname>kMinForward</defname>
+        <defval>0</defval>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kMaxForward</declname>
+        <defname>kMaxForward</defname>
+        <defval>1000</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_directional_motor_1a65fccb1705ca4d2ddace4bab3bb002c9" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::mMaxBackward</definition>
+        <argsstring></argsstring>
+        <name>mMaxBackward</name>
+        <qualifiedname>evam::DirectionalMotor::mMaxBackward</qualifiedname>
+        <initializer>= kMaxBackward</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="27" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_directional_motor_1a25c43578ae3fba861784416debbccccc" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::mMinBackward</definition>
+        <argsstring></argsstring>
+        <name>mMinBackward</name>
+        <qualifiedname>evam::DirectionalMotor::mMinBackward</qualifiedname>
+        <initializer>= kMinBackward</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="28" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_directional_motor_1a9496f9fa61fff781b9d381db66ced08e" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::mMinForward</definition>
+        <argsstring></argsstring>
+        <name>mMinForward</name>
+        <qualifiedname>evam::DirectionalMotor::mMinForward</qualifiedname>
+        <initializer>= kMinForward</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="29" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_directional_motor_1aca98527c2ae44994fa05dbfb31d5edfc" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::mMaxForward</definition>
+        <argsstring></argsstring>
+        <name>mMaxForward</name>
+        <qualifiedname>evam::DirectionalMotor::mMaxForward</qualifiedname>
+        <initializer>= kMaxForward</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="30" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classevam_1_1_directional_motor_1a1ad4ba42252ca68349989969a6ba63b2" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::compute</definition>
+        <argsstring>(signed short aLevel) const</argsstring>
+        <name>compute</name>
+        <qualifiedname>evam::DirectionalMotor::compute</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aLevel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="32" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="32" bodyend="39"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_directional_motor_1a05e0ec4905f5ee021210bd0402a87bac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::SetupRange</definition>
+        <argsstring>(signed short aMaxBackward, signed short aMinBackward, signed short aMinForward, signed short aMaxForward)</argsstring>
+        <name>SetupRange</name>
+        <qualifiedname>evam::DirectionalMotor::SetupRange</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aMaxBackward</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>aMinBackward</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>aMinForward</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>aMaxForward</declname>
+        </param>
+        <briefdescription>
+<para>Configure all range parameters at once. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aMaxBackward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum reverse output value (-1000..1000) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aMinBackward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum reverse output value (-1000..1000) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aMinForward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum forward output value (-1000..1000) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aMaxForward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum forward output value (-1000..1000) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="50" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="50" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_directional_motor_1a599444bc8a44c78871005e8ce7822c63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::SetMaxBackward</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetMaxBackward</name>
+        <qualifiedname>evam::DirectionalMotor::SetMaxBackward</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set maximum reverse output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value, clamped to -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="61" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_directional_motor_1aa7eb19172f0636e790a107292ac6157a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::SetMinBackward</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetMinBackward</name>
+        <qualifiedname>evam::DirectionalMotor::SetMinBackward</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set minimum reverse output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value, clamped to -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="70" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_directional_motor_1a80a2a7293c15627b495abfb90c226ed1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::SetMinForward</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetMinForward</name>
+        <qualifiedname>evam::DirectionalMotor::SetMinForward</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set minimum forward output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value, clamped to -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="79" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_directional_motor_1a30de8ebb9e170dbd952577ed25b8b4b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::SetMaxForward</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetMaxForward</name>
+        <qualifiedname>evam::DirectionalMotor::SetMaxForward</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set maximum forward output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value, clamped to -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="88" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_directional_motor_1ae4481d10624a209801146fc22c28f98b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;::Go</definition>
+        <argsstring>(signed short aLevel)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::DirectionalMotor::Go</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aLevel</declname>
+        </param>
+        <briefdescription>
+<para>Apply the control value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input control value, range -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamDirectionalMotor.h" line="97" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="97" bodyend="100"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Bidirectional motor controller (forward/reverse). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Maps a signed input range -1000..1000 to driver-specific output values. Negative values correspond to reverse, positive to forward.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Driver class (must implement actBipolar(signed short)) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kMaxBackward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum reverse output value (e.g., -1000) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kMinBackward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum reverse output value (e.g., -50) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kMinForward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum forward output value (e.g., 50) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kMaxForward</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum forward output value (e.g., 1000) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Driver</label>
+      </node>
+      <node id="1">
+        <label>evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;</label>
+        <link refid="classevam_1_1_directional_motor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Driver</label>
+      </node>
+      <node id="1">
+        <label>evam::DirectionalMotor&lt; Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward &gt;</label>
+        <link refid="classevam_1_1_directional_motor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamDirectionalMotor.h" line="19" column="5" bodyfile="src/evamDirectionalMotor.h" bodystart="20" bodyend="101"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_directional_motor_1a1ad4ba42252ca68349989969a6ba63b2" prot="private" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>compute</name></member>
+      <member refid="classevam_1_1_directional_motor_1ae4481d10624a209801146fc22c28f98b" prot="public" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_directional_motor_1a65fccb1705ca4d2ddace4bab3bb002c9" prot="private" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>mMaxBackward</name></member>
+      <member refid="classevam_1_1_directional_motor_1aca98527c2ae44994fa05dbfb31d5edfc" prot="private" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>mMaxForward</name></member>
+      <member refid="classevam_1_1_directional_motor_1a25c43578ae3fba861784416debbccccc" prot="private" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>mMinBackward</name></member>
+      <member refid="classevam_1_1_directional_motor_1a9496f9fa61fff781b9d381db66ced08e" prot="private" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>mMinForward</name></member>
+      <member refid="classevam_1_1_directional_motor_1a599444bc8a44c78871005e8ce7822c63" prot="public" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>SetMaxBackward</name></member>
+      <member refid="classevam_1_1_directional_motor_1a30de8ebb9e170dbd952577ed25b8b4b4" prot="public" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>SetMaxForward</name></member>
+      <member refid="classevam_1_1_directional_motor_1aa7eb19172f0636e790a107292ac6157a" prot="public" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>SetMinBackward</name></member>
+      <member refid="classevam_1_1_directional_motor_1a80a2a7293c15627b495abfb90c226ed1" prot="public" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>SetMinForward</name></member>
+      <member refid="classevam_1_1_directional_motor_1a05e0ec4905f5ee021210bd0402a87bac" prot="public" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>SetupRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

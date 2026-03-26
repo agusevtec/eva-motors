@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_steering_actuator" kind="class" language="C++" prot="public">
+    <compoundname>evam::SteeringActuator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Driver</basecompoundref>
+    <includes refid="evam_steering_actuator_8h" local="no">evamSteeringActuator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Driver</type>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kLeftPos</declname>
+        <defname>kLeftPos</defname>
+        <defval>-1000</defval>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kCenterPos</declname>
+        <defname>kCenterPos</defname>
+        <defval>0</defval>
+      </param>
+      <param>
+        <type>signed short</type>
+        <declname>kRightPos</declname>
+        <defname>kRightPos</defname>
+        <defval>1000</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_steering_actuator_1a5acde101d9dbc07fa87c1c94be1a14e1" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::mLeftPos</definition>
+        <argsstring></argsstring>
+        <name>mLeftPos</name>
+        <qualifiedname>evam::SteeringActuator::mLeftPos</qualifiedname>
+        <initializer>= kLeftPos</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="25" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_steering_actuator_1af5095c7310fcc300a00f7f3aa72d5bf0" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::mCenterPos</definition>
+        <argsstring></argsstring>
+        <name>mCenterPos</name>
+        <qualifiedname>evam::SteeringActuator::mCenterPos</qualifiedname>
+        <initializer>= kCenterPos</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="26" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_steering_actuator_1aa2c7adfd96ce75dd59659cb70f7d5bd3" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::mRightPos</definition>
+        <argsstring></argsstring>
+        <name>mRightPos</name>
+        <qualifiedname>evam::SteeringActuator::mRightPos</qualifiedname>
+        <initializer>= kRightPos</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="27" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1aeb9968331d574c2438677117547fd60b" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::compute</definition>
+        <argsstring>(signed short aLevel) const</argsstring>
+        <name>compute</name>
+        <qualifiedname>evam::SteeringActuator::compute</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aLevel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="29" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="29" bodyend="35"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1acd41956e2720f543ad29bbf87d20cb07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::SetupRange</definition>
+        <argsstring>(signed short aLeftPos, signed short aCenterPos, signed short aRightPos)</argsstring>
+        <name>SetupRange</name>
+        <qualifiedname>evam::SteeringActuator::SetupRange</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aLeftPos</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>aCenterPos</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>aRightPos</declname>
+        </param>
+        <briefdescription>
+<para>Configure all position parameters at once. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aLeftPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value at -1000 input (leftmost position), range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aCenterPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value at 0 input (center position), range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aRightPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value at 1000 input (rightmost position), range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="45" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1a7a554e4becdace99d3cd60a3190e8747" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::SetLeftPos</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetLeftPos</name>
+        <qualifiedname>evam::SteeringActuator::SetLeftPos</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set leftmost position output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value, clamped to -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="55" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1ad9fce70e729d3dce91bd56e8175a9b47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::SetCenterPos</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetCenterPos</name>
+        <qualifiedname>evam::SteeringActuator::SetCenterPos</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set center position output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value, clamped to -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="64" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1a950a664d4d822313c49a7e72181346db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::SetRightPos</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>SetRightPos</name>
+        <qualifiedname>evam::SteeringActuator::SetRightPos</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set rightmost position output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value, clamped to -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="73" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1aa25bee4f98929da792791174e4f80780" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::Go</definition>
+        <argsstring>(signed short aLevel)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::SteeringActuator::Go</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aLevel</declname>
+        </param>
+        <briefdescription>
+<para>Apply the steering control value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input steering value, range -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="82" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="82" bodyend="85"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Steering actuator (centered servo) controller. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Maps input range -1000..1000 to output positions: -1000 = left position, 0 = center, 1000 = right position.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Driver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Driver class (must implement actBipolar(signed short)) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kLeftPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value at -1000 input (leftmost position) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kCenterPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value at 0 input (center position) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kRightPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output value at 1000 input (rightmost position) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Driver</label>
+      </node>
+      <node id="1">
+        <label>evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;</label>
+        <link refid="classevam_1_1_steering_actuator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Driver</label>
+      </node>
+      <node id="1">
+        <label>evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;</label>
+        <link refid="classevam_1_1_steering_actuator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamSteeringActuator.h" line="18" column="5" bodyfile="src/evamSteeringActuator.h" bodystart="19" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_steering_actuator_1aeb9968331d574c2438677117547fd60b" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>compute</name></member>
+      <member refid="classevam_1_1_steering_actuator_1aa25bee4f98929da792791174e4f80780" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>Go</name></member>
+      <member refid="classevam_1_1_steering_actuator_1af5095c7310fcc300a00f7f3aa72d5bf0" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>mCenterPos</name></member>
+      <member refid="classevam_1_1_steering_actuator_1a5acde101d9dbc07fa87c1c94be1a14e1" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>mLeftPos</name></member>
+      <member refid="classevam_1_1_steering_actuator_1aa2c7adfd96ce75dd59659cb70f7d5bd3" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>mRightPos</name></member>
+      <member refid="classevam_1_1_steering_actuator_1ad9fce70e729d3dce91bd56e8175a9b47" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetCenterPos</name></member>
+      <member refid="classevam_1_1_steering_actuator_1a7a554e4becdace99d3cd60a3190e8747" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetLeftPos</name></member>
+      <member refid="classevam_1_1_steering_actuator_1a950a664d4d822313c49a7e72181346db" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetRightPos</name></member>
+      <member refid="classevam_1_1_steering_actuator_1acd41956e2720f543ad29bbf87d20cb07" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetupRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

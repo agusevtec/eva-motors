@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_servo_driver" kind="class" language="C++" prot="public">
+    <compoundname>evam::ServoDriver</compoundname>
+    <includes refid="evam_servo_driver_8h" local="no">evamServoDriver.h</includes>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>kPin</declname>
+        <defname>kPin</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_servo_driver_1abf788921122671c641b28dc789ddcd3f" prot="private" static="no" mutable="no">
+        <type>Servo</type>
+        <definition>Servo evam::ServoDriver&lt; kPin &gt;::mServo</definition>
+        <argsstring></argsstring>
+        <name>mServo</name>
+        <qualifiedname>evam::ServoDriver::mServo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="19" column="15" bodyfile="src/evamServoDriver.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1a10c838566cd5addb74e19e7b2496606b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::ServoDriver&lt; kPin &gt;::ServoDriver</definition>
+        <argsstring>()</argsstring>
+        <name>ServoDriver</name>
+        <qualifiedname>evam::ServoDriver::ServoDriver</qualifiedname>
+        <briefdescription>
+<para>Constructor. Attaches the servo to the pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="25" column="9" bodyfile="src/evamServoDriver.h" bodystart="25" bodyend="28"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1ae5fd3297b3b95f055c08b7d07d340d46" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::ServoDriver&lt; kPin &gt;::actBipolar</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>actBipolar</name>
+        <qualifiedname>evam::ServoDriver::actBipolar</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Bipolar (centered) control. Input range -1000..1000. Output: 1500µs ± input_mapped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input value, range -1000..1000, clamped to 500..2500µs output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="36" column="14" bodyfile="src/evamServoDriver.h" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1aaac67782dbe6c81850842411a5bc5eed" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::ServoDriver&lt; kPin &gt;::actUnipolar</definition>
+        <argsstring>(signed short aValue)</argsstring>
+        <name>actUnipolar</name>
+        <qualifiedname>evam::ServoDriver::actUnipolar</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Unipolar (absolute) control. Input range 0..1000. Output: 1000µs + input_mapped. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input value, range 0..1000, clamped to 500..2500µs output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="46" column="14" bodyfile="src/evamServoDriver.h" bodystart="46" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Servo driver using standard Arduino Servo library. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Supports both bipolar (centered) and unipolar (absolute) control modes.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>kPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Servo signal pin number. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="src/evamServoDriver.h" line="16" column="5" bodyfile="src/evamServoDriver.h" bodystart="17" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_servo_driver_1ae5fd3297b3b95f055c08b7d07d340d46" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actBipolar</name></member>
+      <member refid="classevam_1_1_servo_driver_1aaac67782dbe6c81850842411a5bc5eed" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actUnipolar</name></member>
+      <member refid="classevam_1_1_servo_driver_1abf788921122671c641b28dc789ddcd3f" prot="private" virt="non-virtual"><scope>evam::ServoDriver</scope><name>mServo</name></member>
+      <member refid="classevam_1_1_servo_driver_1a10c838566cd5addb74e19e7b2496606b" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>ServoDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

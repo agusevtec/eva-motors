@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_inertia_decor" kind="class" language="C++" prot="public">
+    <compoundname>evam::InertiaDecor</compoundname>
+    <basecompoundref prot="public" virt="virtual">Tickable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Motor</basecompoundref>
+    <includes refid="evam_inertia_decor_8h" local="no">evamInertiaDecor.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Motor</type>
+      </param>
+      <param>
+        <type>unsigned short</type>
+        <declname>kInertiaMass</declname>
+        <defname>kInertiaMass</defname>
+        <defval>10</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a5a7f088ded0d85e5801158596b0fb447" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::kUpdateIntervalMs</definition>
+        <argsstring></argsstring>
+        <name>kUpdateIntervalMs</name>
+        <qualifiedname>evam::InertiaDecor::kUpdateIntervalMs</qualifiedname>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="27" column="40" bodyfile="src/evamInertiaDecor.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_inertia_decor_1adcc8e52f69eb9e9b7d47a6da6e8ef25b" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::mLastSpeedUpdateWasAt</definition>
+        <argsstring></argsstring>
+        <name>mLastSpeedUpdateWasAt</name>
+        <qualifiedname>evam::InertiaDecor::mLastSpeedUpdateWasAt</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="29" column="23" bodyfile="src/evamInertiaDecor.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_inertia_decor_1acf624be318ecaaa68dc0d98e480b9447" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::mDesiredSpeed</definition>
+        <argsstring></argsstring>
+        <name>mDesiredSpeed</name>
+        <qualifiedname>evam::InertiaDecor::mDesiredSpeed</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="30" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a47c2aac39fad22a3dce7254377b5db36" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::mSpeed</definition>
+        <argsstring></argsstring>
+        <name>mSpeed</name>
+        <qualifiedname>evam::InertiaDecor::mSpeed</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="31" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_inertia_decor_1ab826adff2f71f5874145b7c33c33b23d" prot="private" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::mInertiaMass</definition>
+        <argsstring></argsstring>
+        <name>mInertiaMass</name>
+        <qualifiedname>evam::InertiaDecor::mInertiaMass</qualifiedname>
+        <initializer>= kInertiaMass</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="32" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classevam_1_1_inertia_decor_1a3c6e90dbf7b202ba443a30f48a01ad77" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::calcSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>calcSpeed</name>
+        <qualifiedname>evam::InertiaDecor::calcSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="34" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="34" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_inertia_decor_1a2211e606791504a58ceafeddba4ca10e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::tick</definition>
+        <argsstring>() override</argsstring>
+        <name>tick</name>
+        <qualifiedname>evam::InertiaDecor::tick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="48" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="48" bodyend="57"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_inertia_decor_1aadd18f726c4e84e60a76fe189db071a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::SetInertiaMass</definition>
+        <argsstring>(unsigned short aValue)</argsstring>
+        <name>SetInertiaMass</name>
+        <qualifiedname>evam::InertiaDecor::SetInertiaMass</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Set the virtual mass (inertia) value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mass value, clamped to 1..200. Higher = slower deceleration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="64" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_inertia_decor_1ae9c41746f86cd243d7005e14d950e366" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::InertiaDecor&lt; Motor, kInertiaMass &gt;::Go</definition>
+        <argsstring>(int aSpeed)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::InertiaDecor::Go</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>aSpeed</declname>
+        </param>
+        <briefdescription>
+<para>Apply the control value with inertia simulation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aSpeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired speed, range -1000..1000. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="73" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="73" bodyend="81"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator that simulates mechanical inertia (flywheel effect). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>When decelerating or stopping, speed decreases gradually over time, simulating the effect of mass and inertia. Acceleration and direction changes are applied immediately.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base motor class (must implement Go(signed short)) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kInertiaMass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Virtual mass. Larger values = slower deceleration. Range: 1..200. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Motor</label>
+      </node>
+      <node id="2">
+        <label>Tickable</label>
+      </node>
+      <node id="1">
+        <label>evam::InertiaDecor&lt; Motor, kInertiaMass &gt;</label>
+        <link refid="classevam_1_1_inertia_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Motor</label>
+      </node>
+      <node id="2">
+        <label>Tickable</label>
+      </node>
+      <node id="1">
+        <label>evam::InertiaDecor&lt; Motor, kInertiaMass &gt;</label>
+        <link refid="classevam_1_1_inertia_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamInertiaDecor.h" line="22" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="23" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_inertia_decor_1a3c6e90dbf7b202ba443a30f48a01ad77" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>calcSpeed</name></member>
+      <member refid="classevam_1_1_inertia_decor_1ae9c41746f86cd243d7005e14d950e366" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_inertia_decor_1a5a7f088ded0d85e5801158596b0fb447" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>kUpdateIntervalMs</name></member>
+      <member refid="classevam_1_1_inertia_decor_1acf624be318ecaaa68dc0d98e480b9447" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mDesiredSpeed</name></member>
+      <member refid="classevam_1_1_inertia_decor_1ab826adff2f71f5874145b7c33c33b23d" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mInertiaMass</name></member>
+      <member refid="classevam_1_1_inertia_decor_1adcc8e52f69eb9e9b7d47a6da6e8ef25b" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mLastSpeedUpdateWasAt</name></member>
+      <member refid="classevam_1_1_inertia_decor_1a47c2aac39fad22a3dce7254377b5db36" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mSpeed</name></member>
+      <member refid="classevam_1_1_inertia_decor_1aadd18f726c4e84e60a76fe189db071a7" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>SetInertiaMass</name></member>
+      <member refid="classevam_1_1_inertia_decor_1a2211e606791504a58ceafeddba4ca10e" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>tick</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

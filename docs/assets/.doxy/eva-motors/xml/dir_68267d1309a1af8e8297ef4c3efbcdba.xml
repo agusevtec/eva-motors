@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="evam_curve_decor_8h">evamCurveDecor.h</innerfile>
+    <innerfile refid="evam_directional_motor_8h">evamDirectionalMotor.h</innerfile>
+    <innerfile refid="evam_forward_motor_8h">evamForwardMotor.h</innerfile>
+    <innerfile refid="evam_inertia_decor_8h">evamInertiaDecor.h</innerfile>
+    <innerfile refid="evam_kick_decor_8h">evamKickDecor.h</innerfile>
+    <innerfile refid="evam_linear_actuator_8h">evamLinearActuator.h</innerfile>
+    <innerfile refid="evam_pwm_driver_8h">evamPwmDriver.h</innerfile>
+    <innerfile refid="evam_servo_driver_8h">evamServoDriver.h</innerfile>
+    <innerfile refid="evam_steering_actuator_8h">evamSteeringActuator.h</innerfile>
+    <innerfile refid="evam_t_a6586_driver_8h">evamTA6586Driver.h</innerfile>
+    <innerfile refid="evam_t_b6612_driver_8h">evamTB6612Driver.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

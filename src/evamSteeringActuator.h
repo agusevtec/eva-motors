@@ -42,7 +42,7 @@ namespace evam
          * @param aCenterPos Output value at 0 input (center position), range -1000..1000
          * @param aRightPos Output value at 1000 input (rightmost position), range -1000..1000
          */
-        void setup_range(signed short aLeftPos, signed short aCenterPos, signed short aRightPos)
+        void SetupRange(signed short aLeftPos, signed short aCenterPos, signed short aRightPos)
         {
             SetLeftPos(aLeftPos);
             SetCenterPos(aCenterPos);

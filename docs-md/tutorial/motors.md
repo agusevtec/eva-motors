@@ -19,17 +19,10 @@
 
 | Driver | DirectionalMotor | ForwardMotor | SteeringActuator | LinearActuator |
 |--------|------------------|--------------|------------------|----------------|
-| PwmDriver | | + | | + |
-| ServoDriver | + | + | + | + |
-| TA6586Driver | + | | + | |
-| TB6612Driver | + | | + | |
-
-**Notes:**
-- **bipolar** – Uses `actBipolar()` method with range -1000..1000
-- **unipolar** – Uses `actUnipolar()` method with range 0..1000
-- Empty cells indicate incompatibility
-- ServoDriver supports all motor types with appropriate interface
-- TA6586Driver and TB6612Driver support SteeringActuator through bipolar interface
+| PwmDriver | — | ✅ | — | ✅ |
+| ServoDriver | ✅ | ✅ | ✅ | ✅ |
+| TA6586Driver | ✅ | — | ✅ | — |
+| TB6612Driver | ✅ | — | ✅ | — |
 
 ## DirectionalMotor
 
@@ -43,18 +36,24 @@ class DirectionalMotor : public Driver
 ```
 
 **Methods:**
-- `setup_range(maxBack, minBack, minForw, maxForw)` – Configure all limits
+
+- `SetupRange(maxBack, minBack, minForw, maxForw)` – Configure all limits
+
 - `SetMaxBackward(value)` – Max reverse power (-1000..1000)
+
 - `SetMinBackward(value)` – Min reverse power (start threshold)
+
 - `SetMinForward(value)` – Min forward power (start threshold)
+
 - `SetMaxForward(value)` – Max forward power
+
 - `Go(level)` – Set motor power (-1000..1000)
 
 **Example:**
 ```cpp
 using Motor = evam::DirectionalMotor<evam::TA6586Driver<9, 10>>;
 Motor motor;
-motor.setup_range(-1000, -200, 200, 1000);  // 20% dead zone
+motor.SetupRange(-1000, -200, 200, 1000);  // 20% dead zone
 motor.Go(750);  // 75% forward
 ```
 
@@ -68,16 +67,20 @@ class ForwardMotor : public Driver
 ```
 
 **Methods:**
-- `setup_range(minVal, maxVal)` – Configure output range
+
+- `SetupRange(minVal, maxVal)` – Configure output range
+
 - `SetMinValue(value)` – Minimum output (idle/stop)
+
 - `SetMaxValue(value)` – Maximum output (full power)
+
 - `Go(level)` – Set motor power (0..1000, negative treated as 0)
 
 **Example:**
 ```cpp
 using ESC = evam::ForwardMotor<evam::PwmDriver<9>>;
 ESC throttle;
-throttle.setup_range(100, 1000);  // ESC calibration
+throttle.SetupRange(100, 1000);  // ESC calibration
 throttle.Go(500);  // 50% throttle
 ```
 
@@ -92,17 +95,22 @@ class SteeringActuator : public Driver
 ```
 
 **Methods:**
-- `setup_range(leftPos, centerPos, rightPos)` – Configure endpoints
+
+- `SetupRange(leftPos, centerPos, rightPos)` – Configure endpoints
+
 - `SetLeftPos(value)` – Leftmost position
+
 - `SetCenterPos(value)` – Center position
+
 - `SetRightPos(value)` – Rightmost position
+
 - `Go(level)` – Set position (-1000..1000)
 
 **Example:**
 ```cpp
 using Steering = evam::SteeringActuator<evam::ServoDriver<9>>;
 Steering steering;
-steering.setup_range(-800, 0, 800);  // Calibrate endpoints
+steering.SetupRange(-800, 0, 800);  // Calibrate endpoints
 steering.Go(500);  // Turn right
 ```
 
@@ -116,62 +124,20 @@ class LinearActuator : public Driver
 ```
 
 **Methods:**
-- `setup_range(minVal, maxVal)` – Configure position range
+
+- `SetupRange(minVal, maxVal)` – Configure position range
+
 - `SetMinValue(value)` – Position at input 0
+
 - `SetMaxValue(value)` – Position at input 1000
+
 - `Go(position)` – Set position (0..1000)
 
 **Example:**
 ```cpp
 using Actuator = evam::LinearActuator<evam::PwmDriver<10>>;
 Actuator actuator;
-actuator.setup_range(0, 1000);
+actuator.SetupRange(0, 1000);
 actuator.Go(750);  // 75% extended
 ```
 
-## Drivers
-
-### PwmDriver
-Simple PWM output for unipolar devices.
-
-```cpp
-template <int kPin>
-class PwmDriver
-```
-
-**Methods:**
-- `actUnipolar(value)` – Set PWM (0..1000 → 0..255)
-
-### ServoDriver
-Standard servo control using Arduino Servo library.
-
-```cpp
-template <int kPin>
-class ServoDriver
-```
-
-**Methods:**
-- `actBipolar(value)` – Centered control (-1000..1000 → 500..2500µs)
-- `actUnipolar(value)` – Absolute control (0..1000 → 1000..2000µs)
-
-### TA6586Driver
-Driver for TA6586 dual H-bridge.
-
-```cpp
-template <int kForwardPin, int kBackwardPin>
-class TA6586Driver
-```
-
-**Methods:**
-- `actBipolar(value)` – Bipolar control (-1000..1000 → -255..255 PWM)
-
-### TB6612Driver
-Driver for TB6612FNG dual H-bridge.
-
-```cpp
-template <int kPinSpeed, int kPinMode1, int kPinMode2>
-class TB6612FNGDriver
-```
-
-**Methods:**
-- `actBipolar(value)` – Bipolar control with direction pins

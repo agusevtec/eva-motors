@@ -4,9 +4,11 @@ Decorators add behavioral features to motors by wrapping them. Multiple decorato
 
 ## CurveDecor – Non-linear Response
 
-Converts linear input into an S-shaped curve. This provides **precise control at low speeds** (where small input changes produce minimal output change) while maintaining **strong response at high speeds** (where large inputs produce amplified output).
+Converts linear input into an S-shaped curve. 
 
-Positive bend values create a softer response at low speeds (finer control) with steeper response at high speeds. Negative bend values create sharper initial response with compressed high-end.
+![Curve Decor Visualization](../images/decorators_curves.png)
+
+Applying to Motors: Negative bend values create a softer response at low speeds (finer control) with steeper response at high speeds. Positive bend values create sharper initial response with compressed high-end.
 
 ```cpp
 template <class Motor, signed short kBend = 0>
@@ -14,31 +16,36 @@ class CurveDecor : public Motor
 ```
 
 **Parameters:**
+
 - `kBend`: -10..10 (0 = linear, positive = precise low-speed control, negative = aggressive start)
 
 **Methods:**
-- `setup_curve(bend)` – Configure bend intensity
+
 - `SetBend(value)` – Set bend at runtime
+
 - `Go(value)` – Apply curved transformation
 
 **Example:**
 ```cpp
 // Precise low-speed control with strong high-end response
-using PreciseMotor = evam::CurveDecor<evam::DirectionalMotor<evam::TA6586Driver<9, 10>>, 6>;
+using PreciseMotor = evam::CurveDecor<evam::DirectionalMotor<evam::TA6586Driver<9, 10>>, -6>;
 PreciseMotor motor;
-motor.Go(200);  // Gentle low-speed movement
-motor.Go(800);  // Strong acceleration at high speeds
+// Gentle reaction at low-speed
+motor.Go(150);
+motor.Go(200);
+// Strong reaction at high speeds
+motor.Go(750);  
+motor.Go(800);
 ```
 
-**Effect:**
-- Bend = 5: 10% input → 2% output (fine control), 90% input → 98% output (strong response)
-- Bend = 0: Linear response
-- Bend = -3: 10% input → 18% output (aggressive start), 90% input → 82% output (reduced top end)
-
 **Use cases:**
+
 - Camera gimbals requiring smooth micro-adjustments
+
 - Precision positioning systems
+
 - Vehicles needing both crawling speed control and full power
+
 - CNC machines with fine feed control
 
 ## InertiaDecor – Flywheel Effect
@@ -50,13 +57,18 @@ template <class Motor, unsigned short kInertiaMass = 10>
 class InertiaDecor : public virtual Tickable, public Motor
 ```
 
-**Requirements:** Must call `eva::tac()` in `loop()` to drive the deceleration updates.
+**Requirements:**
+
+Acording EVA principle must call `eva::tac()` in `loop()` to drive the deceleration updates.
 
 **Parameters:**
+
 - `kInertiaMass`: 1..200 (higher = slower deceleration)
 
 **Methods:**
+
 - `SetInertiaMass(value)` – Set virtual mass (1..200)
+
 - `Go(speed)` – Apply speed with inertia simulation
 
 **Example:**
@@ -69,9 +81,17 @@ motor.Go(0);    // Gradual deceleration
 ```
 
 **Behavior:**
+
 - Small mass (1-10): Quick stops, responsive
+
 - Medium mass (11-30): Realistic car-like behavior
+
 - Large mass (31-200): Heavy flywheel, slow deceleration
+
+**Use-case:**
+
+For extremely high transmission ratios (e.g., geared motors with high reduction), consider using higher inertia mass values to compensate for the mechanical advantage and gear train inertia.
+
 
 ## KickDecor – Static Friction Overcome
 
@@ -82,30 +102,42 @@ template <class Motor, unsigned short kKickDuration = 20, signed short kKickPowe
 class KickDecor : public virtual Tickable, public Motor
 ```
 
-**Requirements:** Must call `eva::tac()` in `loop()` to manage kick pulse timing.
+**Requirements:** 
+
+Must call `eva::tac()` in `loop()` to manage kick pulse timing.
 
 **Parameters:**
+
 - `kKickDuration`: Pulse duration in milliseconds (> 0)
+
 - `kKickPower`: Pulse power (-1000..1000)
 
 **Methods:**
-- `setup_kickstart(duration, power)` – Configure kick parameters
+
+- `SetupKickstart(duration, power)` – Configure kick parameters
+
 - `SetKickDuration(value)` – Set pulse duration
+
 - `SetKickPower(value)` – Set pulse power
+
 - `Go(value)` – Apply with kick-start when needed
 
 **Example:**
 ```cpp
 using KickerMotor = evam::KickDecor<evam::DirectionalMotor<evam::TA6586Driver<9, 10>>, 30, 900>;
 KickerMotor motor;
-motor.setup_kickstart(25, 800);  // 25ms pulse at 80% power
+motor.SetupKickstart(25, 800);  // 25ms pulse at 80% power
 motor.Go(300);  // Kick then maintain 30% power
 ```
 
 **Kick Logic:**
+
 - From stop to forward: Applies positive kick pulse
+
 - From stop to reverse: Applies negative kick pulse
+
 - Direction change: Applies kick in new direction
+
 - Already moving: No kick, direct control
 
 ## Combining Decorators
@@ -131,26 +163,32 @@ using SmartMotor = evam::KickDecor<InertialMotor, 25, 900>;
 SmartMotor motor;
 
 void setup() {
-    motor.setup_range(-1000, -200, 200, 1000);
-    motor.setup_curve(6);
+    motor.SetupRange(-1000, -200, 200, 1000);
+    motor.SetBend(6);
     motor.SetInertiaMass(20);
-    motor.setup_kickstart(30, 850);
+    motor.SetupKickstart(30, 850);
+    motor.Go(800);  // All decorators applied
 }
 
 void loop() {
     eva::tac();
-    motor.Go(800);  // All decorators applied
 }
 ```
 
 **Order Effects:**
+
 - Curve before Inertia: Precise low-speed shaping, then inertia applied to smooth signal
+
 - Inertia before Curve: Inertia on raw signal, then curve shapes the result
+
 - Kick at any level: Always applied at appropriate layer
 
 ## Performance Considerations
 
 - **InertiaDecor** and **KickDecor** require `eva::tac()` calls for timing
+
 - All decorators add minimal overhead (inline templates)
+
 - Multiple decorators compile to single optimized function chain
+
 - No runtime polymorphism overhead

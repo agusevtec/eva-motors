@@ -60,11 +60,11 @@ namespace evam
          * @param aKickDuration Kick pulse duration in milliseconds
          * @param aKickPower Kick power, range -1000..1000
          */
-        void setup_kickstart(unsigned short aKickDuration, signed short aKickPower)
+        void SetupKickstart(unsigned short aKickDuration, signed short aKickPower)
         {
-//TODO: think care 
-            // SetKickDuration(aKickDuration);
-            // SetKickPower(aKickPower);
+            // TODO: think care
+            //  SetKickDuration(aKickDuration);
+            //  SetKickPower(aKickPower);
         }
         /**
          * @brief Apply the control value with kick-start pulse.

@@ -36,7 +36,7 @@ namespace evam
          * @param aMinValue Minimum output value (stop position)
          * @param aMaxValue Maximum output value (full throttle)
          */
-        void setup_range(int aMinValue, int aMaxValue)
+        void SetupRange(int aMinValue, int aMaxValue)
         {
             SetMinValue(aMinValue);
             SetMaxValue(aMaxValue);

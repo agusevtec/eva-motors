@@ -33,7 +33,7 @@ namespace evam
          * @param aMinValue Output value at 0 input (minimum position), range -1000..1000
          * @param aMaxValue Output value at 1000 input (maximum position), range -1000..1000
          */
-        void setup_range(int aMinValue, int aMaxValue)
+        void SetupRange(int aMinValue, int aMaxValue)
         {
             SetMinValue(aMinValue);
             SetMaxValue(aMaxValue);

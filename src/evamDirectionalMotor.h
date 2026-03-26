@@ -47,7 +47,7 @@ namespace evam
          * @param aMinForward Minimum forward output value (-1000..1000)
          * @param aMaxForward Maximum forward output value (-1000..1000)
          */
-        void setup_range(signed short aMaxBackward, signed short aMinBackward, signed short aMinForward, signed short aMaxForward)
+        void SetupRange(signed short aMaxBackward, signed short aMinBackward, signed short aMinForward, signed short aMaxForward)
         {
             SetMaxBackward(aMaxBackward);
             SetMinBackward(aMinBackward);

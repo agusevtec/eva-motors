@@ -875,7 +875,7 @@
 
 <h1 id="custom-drivers">Custom Drivers<a class="headerlink" href="#custom-drivers" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>EVA Motor provides a clean hardware abstraction layer that makes adding support for new motor drivers straightforward. The driver layer is designed to be minimal, focused, and easy to implement while maintaining consistency with the rest of the library.</p>
+<p>EVA Motors provides a clean hardware abstraction layer that makes adding support for new motor drivers straightforward. The driver layer is designed to be minimal, focused, and easy to implement while maintaining consistency with the rest of the library.</p>
 <h2 id="driver-interface-requirements">Driver Interface Requirements<a class="headerlink" href="#driver-interface-requirements" title="Permanent link">&para;</a></h2>
 <p>To create a custom driver, your class must implement one or both of the following protected methods:</p>
 <table>
@@ -924,7 +924,7 @@
 <span class="cm"> * @brief Driver for hypothetical specific motor controller</span>
 <span class="cm"> * </span>
 <span class="cm"> * This driver demonstrates how to wrap any motor control hardware</span>
-<span class="cm"> * into the EVA Motor driver interface.</span>
+<span class="cm"> * into the EVA Motors driver interface.</span>
 <span class="cm"> */</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">MyDriver</span><span class="w"> </span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -968,7 +968,7 @@
 <div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamDirectionalMotor.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyDriver.h&quot;</span>
 
-<span class="c1">// Combine your driver with EVA Motor wrappers</span>
+<span class="c1">// Combine your driver with EVA Motors wrappers</span>
 <span class="k">using</span><span class="w"> </span><span class="n">MyMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">MyDriver</span><span class="o">&gt;</span><span class="p">;</span>
 
 <span class="n">MyMotor</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
@@ -990,7 +990,7 @@
 <li>Implement only what you need – Your driver can implement one or both interfaces</li>
 <li>Initialize to safe state – Always call <code>actBipolar(0)</code> or <code>actUnipolar(0)</code> in constructor</li>
 <li>Constrain inputs – Use <code>constrain()</code> before mapping to hardware values</li>
-<li>Keep it minimal – The driver should only translate between EVA Motor ranges and your hardware</li>
+<li>Keep it minimal – The driver should only translate between EVA Motors ranges and your hardware</li>
 </ol>
 <h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
 <p>If you have created a driver for a common motor controller, contributions are welcome and appreciated.</p>
@@ -998,9 +998,9 @@
 - Complete driver implementation
 - Clear documentation including pin connections
 - Basic usage example</p>
-<p>Your driver will help the entire community and make EVA Motor more versatile.</p>
+<p>Your driver will help the entire community and make EVA Motors more versatile.</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>Creating custom drivers in EVA Motor is straightforward:</p>
+<p>Creating custom drivers in EVA Motors is straightforward:</p>
 <ol>
 <li>Choose the appropriate interface (<code>actBipolar</code> or <code>actUnipolar</code>)</li>
 <li>Implement the method with your hardware-specific logic</li>

@@ -2,12 +2,12 @@
 
 ## Core Concept
 
-EVA Motor is a decorator-based library for behavioral modification of micro-motors. 
-EVA Motor lets you compose behavior by stacking decorators that add specific characteristics like S-curve response, inertia simulation, or kick-start pulses.
+EVA Motors is a decorator-based library for behavioral modification of micro-motors. 
+EVA Motors lets you compose behavior by stacking decorators that add specific characteristics like S-curve response, inertia simulation, or kick-start pulses.
 
 ## Built on EVA Ecosystem
 
-EVA Motor is part of the [EVA ecosystem](https://agusevtec.github.io/eva-core-sk/) – an event-driven architecture for Arduino. This integration provides:
+EVA Motors is part of the [EVA ecosystem](https://agusevtec.github.io/eva-core-sk/) – an event-driven architecture for Arduino. This integration provides:
 
 - Non-blocking timing – Decorators like `InertiaDecor` and `KickDecor` use EVA's `Tickable` infrastructure
 - Unified update cycle – Single `eva::tac()` call drives all time-based components
@@ -36,7 +36,7 @@ While decorators are the primary focus, this architecture naturally led to inter
 - **Signed motors**: `-1000` to `1000` (-100% to +100%)
 - **Unsigned motors**: `0` to `1000` (0% to 100%)
 
-This means you can use EVA Motors as asimple motor control library without decorators. Whether you need bidirectional DC motor control, ESC throttle, or servo positioning, the API remains consistent:
+This means you can use EVA Motors as a simple motor control library without decorators. Whether you need bidirectional DC motor control, ESC throttle, or servo positioning, the API remains consistent:
 
 ```cpp
 using namespace evam;

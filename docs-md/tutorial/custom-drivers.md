@@ -2,7 +2,7 @@
 
 ## Overview
 
-EVA Motor provides a clean hardware abstraction layer that makes adding support for new motor drivers straightforward. The driver layer is designed to be minimal, focused, and easy to implement while maintaining consistency with the rest of the library.
+EVA Motors provides a clean hardware abstraction layer that makes adding support for new motor drivers straightforward. The driver layer is designed to be minimal, focused, and easy to implement while maintaining consistency with the rest of the library.
 
 ## Driver Interface Requirements
 
@@ -48,7 +48,7 @@ namespace evam {
  * @brief Driver for hypothetical specific motor controller
  * 
  * This driver demonstrates how to wrap any motor control hardware
- * into the EVA Motor driver interface.
+ * into the EVA Motors driver interface.
  */
 class MyDriver {
 public:
@@ -95,7 +95,7 @@ Once implemented, your driver can be used with any compatible motor wrapper:
 #include <evamDirectionalMotor.h>
 #include "MyDriver.h"
 
-// Combine your driver with EVA Motor wrappers
+// Combine your driver with EVA Motors wrappers
 using MyMotor = evam::DirectionalMotor<MyDriver>;
 
 MyMotor motor;
@@ -117,7 +117,7 @@ void loop() {
 1. Implement only what you need – Your driver can implement one or both interfaces
 2. Initialize to safe state – Always call `actBipolar(0)` or `actUnipolar(0)` in constructor
 3. Constrain inputs – Use `constrain()` before mapping to hardware values
-4. Keep it minimal – The driver should only translate between EVA Motor ranges and your hardware
+4. Keep it minimal – The driver should only translate between EVA Motors ranges and your hardware
 
 ## Contributing
 
@@ -128,11 +128,11 @@ Please submit a pull request with:
 - Clear documentation including pin connections
 - Basic usage example
 
-Your driver will help the entire community and make EVA Motor more versatile.
+Your driver will help the entire community and make EVA Motors more versatile.
 
 ## Summary
 
-Creating custom drivers in EVA Motor is straightforward:
+Creating custom drivers in EVA Motors is straightforward:
 
 1. Choose the appropriate interface (`actBipolar` or `actUnipolar`)
 2. Implement the method with your hardware-specific logic

@@ -4,96 +4,103 @@
 #pragma once
 
 #include <Arduino.h>
+#include <evaHeartbeat.h>
+
+using namespace eva;
 
 namespace evam
 {
     /**
      * @brief Decorator that smooths control signals to eliminate jitter.
      *
-     * Applies exponential smoothing (low-pass filter) to the control signal,
-     * effectively removing high-frequency noise and jitter from joysticks
-     * or other noisy inputs while maintaining responsive control.
-     *
-     * The smoothing factor determines the trade-off between smoothness and
-     * response time. Lower values = smoother but more lag, higher values =
-     * more responsive but less filtering.
+     * Applies exponential smoothing (low-pass filter) to the control signal
+     * using a fixed time base from Heartbeat. This ensures consistent smoothing
+     * regardless of how often Go() is called.
      *
      * @tparam Motor Base motor class (must implement Go(signed short))
-     * @tparam kSmoothingFactor Smoothing factor (1..100). Default: 30.
-     *         Higher = more responsive, lower = smoother.
+     * @tparam kTimeConstantMs Time constant in milliseconds. Default: 50ms.
      */
-    template <class Motor, unsigned short kSmoothingFactor = 30>
-    class SmoothDecor : public Motor
+    template <class Motor, unsigned short kTimeConstantMs = 50>
+    class SmoothDecor : public Heartbeat, public Motor
     {
-        static_assert(kSmoothingFactor >= 1 && kSmoothingFactor <= 100, 
-                      "kSmoothingFactor out of range 1..100");
+        static_assert(kTimeConstantMs >= 5 && kTimeConstantMs <= 500, 
+                      "kTimeConstantMs out of range 5..500");
 
     private:
-        signed short mSmoothValue = 0;
-        unsigned short mSmoothingFactor = kSmoothingFactor;
+        static constexpr unsigned long kHeartbeatPeriodMs = 10;
         
-        // Deadzone to prevent micro-jitter at rest
+        signed short mTargetValue = 0;
+        signed short mCurrentValue = 0;
+        unsigned short mTimeConstantMs = kTimeConstantMs;
         static constexpr signed short kDeadzone = 5;
 
-        /**
-         * @brief Apply exponential smoothing to the input value.
-         * @param aValue Raw input value (-1000..1000)
-         * @return Smoothed output value
-         */
-        signed short smooth(signed short aValue)
+    protected:
+        void onHeartbeat() override
         {
-            // Apply deadzone when near zero to eliminate jitter at center
-            if (abs(aValue) <= kDeadzone && abs(mSmoothValue) <= kDeadzone)
+            // Calculate step based on time constant
+            float step = (float)(mTargetValue - mCurrentValue) * kHeartbeatPeriodMs / mTimeConstantMs;
+            
+            // Apply step with deadzone to prevent micro-jitter
+            if (abs(step) < 1.0f && abs(mCurrentValue) <= kDeadzone)
             {
-                mSmoothValue = 0;
-                return 0;
+                if (mCurrentValue != 0)
+                    mCurrentValue = 0;
+            }
+            else
+            {
+                mCurrentValue += (signed short)step;
             }
             
-            // Exponential smoothing (IIR low-pass filter)
-            // output = output + (input - output) * factor / 100
-            long diff = aValue - mSmoothValue;
-            long step = (diff * mSmoothingFactor) / 100;
-            mSmoothValue += step;
+            // Clamp to valid range
+            mCurrentValue = constrain(mCurrentValue, -1000, 1000);
             
-            return mSmoothValue;
+            // Output to motor
+            Motor::Go(mCurrentValue);
         }
 
     public:
         /**
-         * @brief Set the smoothing factor at runtime.
-         * @param aValue Smoothing factor (1..100). Higher = more responsive,
-         *               lower = smoother but more lag.
+         * @brief Constructor.
          */
-        void SetSmoothingFactor(unsigned short aValue)
+        SmoothDecor() : Heartbeat(kHeartbeatPeriodMs)
         {
-            mSmoothingFactor = constrain(aValue, 1, 100);
         }
 
         /**
-         * @brief Get the current smoothing factor.
-         * @return Current smoothing factor (1..100)
+         * @brief Set the time constant at runtime.
+         * @param aValue Time constant in milliseconds (5..500).
+         *               Higher = smoother but more lag.
          */
-        unsigned short GetSmoothingFactor() const
+        void SetTimeConstant(unsigned short aValue)
         {
-            return mSmoothingFactor;
+            mTimeConstantMs = constrain(aValue, 5, 500);
         }
 
         /**
-         * @brief Reset the smoothed value (useful after calibration).
+         * @brief Get the current time constant.
+         * @return Current time constant in milliseconds.
          */
-        void ResetSmoothing()
+        unsigned short GetTimeConstant() const
         {
-            mSmoothValue = 0;
+            return mTimeConstantMs;
         }
 
         /**
-         * @brief Apply smoothing and pass to underlying motor.
+         * @brief Reset the smoothed value.
+         */
+        void Reset()
+        {
+            mCurrentValue = 0;
+            mTargetValue = 0;
+        }
+
+        /**
+         * @brief Set target value (called from main loop).
          * @param aValue Raw input value, range -1000..1000.
          */
         void Go(signed short aValue)
         {
-            aValue = constrain(aValue, -1000, 1000);
-            Motor::Go(smooth(aValue));
+            mTargetValue = constrain(aValue, -1000, 1000);
         }
     };
 

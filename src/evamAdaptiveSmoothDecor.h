@@ -4,6 +4,9 @@
 #pragma once
 
 #include <Arduino.h>
+#include <evaHeartbeat.h>
+
+using namespace eva;
 
 namespace evam
 {
@@ -11,97 +14,87 @@ namespace evam
      * @brief Decorator with adaptive smoothing based on input rate of change.
      *
      * Automatically adjusts smoothing based on how fast the input is changing.
-     * When the signal is stable, heavy smoothing removes jitter. When the
-     * signal changes rapidly, smoothing decreases for immediate response.
-     * Best of both worlds: smooth at rest, responsive during movement.
+     * Uses fixed time base from Heartbeat for consistent behavior.
      *
      * @tparam Motor Base motor class (must implement Go(signed short))
-     * @tparam kMaxSmoothing Maximum smoothing factor (1..100). Default: 80
-     * @tparam kMinSmoothing Minimum smoothing factor (1..100). Default: 20
+     * @tparam kMinTimeConstantMs Minimum time constant (fast response). Default: 10ms
+     * @tparam kMaxTimeConstantMs Maximum time constant (heavy smoothing). Default: 150ms
      */
-    template <class Motor, unsigned short kMaxSmoothing = 80, unsigned short kMinSmoothing = 20>
-    class AdaptiveSmoothDecor : public Motor
+    template <class Motor, 
+              unsigned short kMinTimeConstantMs = 10, 
+              unsigned short kMaxTimeConstantMs = 150>
+    class AdaptiveSmoothDecor : public Heartbeat, public Motor
     {
-        static_assert(kMaxSmoothing >= 1 && kMaxSmoothing <= 100, 
-                      "kMaxSmoothing out of range 1..100");
-        static_assert(kMinSmoothing >= 1 && kMinSmoothing <= 100, 
-                      "kMinSmoothing out of range 1..100");
-        static_assert(kMinSmoothing <= kMaxSmoothing, 
-                      "kMinSmoothing must be <= kMaxSmoothing");
+        static_assert(kMinTimeConstantMs >= 5 && kMinTimeConstantMs <= 200, 
+                      "kMinTimeConstantMs out of range 5..200");
+        static_assert(kMaxTimeConstantMs >= kMinTimeConstantMs && kMaxTimeConstantMs <= 500,
+                      "kMaxTimeConstantMs must be >= kMinTimeConstantMs and <= 500");
 
     private:
-        signed short mSmoothValue = 0;
-        signed short mLastRawValue = 0;
+        static constexpr unsigned long kHeartbeatPeriodMs = 10;
         static constexpr signed short kDeadzone = 3;
+        
+        signed short mTargetValue = 0;
+        signed short mCurrentValue = 0;
+        signed short mLastTargetValue = 0;
+        
+        unsigned short mCurrentTimeConstantMs = kMaxTimeConstantMs;
 
-        /**
-         * @brief Calculate adaptive smoothing factor based on input change.
-         * @param aValue Current raw input
-         * @return Smoothing factor (higher = more smoothing)
-         */
-        unsigned short calculateSmoothingFactor(signed short aValue)
+        unsigned short calculateTimeConstant()
         {
-            signed short change = abs(aValue - mLastRawValue);
+            signed short change = abs(mTargetValue - mLastTargetValue);
             
-            // Map change (0..2000) to smoothing factor (kMaxSmoothing..kMinSmoothing)
-            // Large change = small smoothing (responsive)
-            // Small change = large smoothing (stable)
-            unsigned short factor;
-            
-            if (change <= 10)
-                factor = kMaxSmoothing;
-            else if (change >= 200)
-                factor = kMinSmoothing;
+            if (change >= 200)
+                return kMinTimeConstantMs;
+            else if (change <= 5)
+                return kMaxTimeConstantMs;
             else
-                factor = kMaxSmoothing - ((change - 10) * (kMaxSmoothing - kMinSmoothing) / 190);
-            
-            return factor;
+            {
+                return kMaxTimeConstantMs - ((change - 5) * (kMaxTimeConstantMs - kMinTimeConstantMs) / 195);
+            }
         }
 
-        /**
-         * @brief Apply adaptive exponential smoothing.
-         * @param aValue Raw input value
-         * @return Smoothed output
-         */
-        signed short smooth(signed short aValue)
+    protected:
+        void onHeartbeat() override
         {
-            // Deadzone at center
-            if (abs(aValue) <= kDeadzone && abs(mSmoothValue) <= kDeadzone)
+            mCurrentTimeConstantMs = calculateTimeConstant();
+            mLastTargetValue = mTargetValue;
+            
+            if (abs(mTargetValue) <= kDeadzone && abs(mCurrentValue) <= kDeadzone)
             {
-                mLastRawValue = aValue;
-                mSmoothValue = 0;
-                return 0;
+                if (mCurrentValue != 0)
+                    mCurrentValue = 0;
+            }
+            else
+            {
+                float step = (float)(mTargetValue - mCurrentValue) * kHeartbeatPeriodMs / mCurrentTimeConstantMs;
+                mCurrentValue += (signed short)step;
+                mCurrentValue = constrain(mCurrentValue, -1000, 1000);
             }
             
-            unsigned short factor = calculateSmoothingFactor(aValue);
-            
-            // Exponential smoothing with adaptive factor
-            long diff = aValue - mSmoothValue;
-            long step = (diff * factor) / 100;
-            mSmoothValue += step;
-            
-            mLastRawValue = aValue;
-            return mSmoothValue;
+            Motor::Go(mCurrentValue);
         }
 
     public:
-        /**
-         * @brief Apply adaptive smoothing and pass to underlying motor.
-         * @param aValue Raw input value, range -1000..1000.
-         */
-        void Go(signed short aValue)
+        AdaptiveSmoothDecor() : Heartbeat(kHeartbeatPeriodMs)
         {
-            aValue = constrain(aValue, -1000, 1000);
-            Motor::Go(smooth(aValue));
         }
 
-        /**
-         * @brief Reset the smoothing state.
-         */
+        void Go(signed short aValue)
+        {
+            mTargetValue = constrain(aValue, -1000, 1000);
+        }
+
         void Reset()
         {
-            mSmoothValue = 0;
-            mLastRawValue = 0;
+            mCurrentValue = 0;
+            mTargetValue = 0;
+            mLastTargetValue = 0;
+        }
+        
+        unsigned short GetCurrentTimeConstant() const
+        {
+            return mCurrentTimeConstantMs;
         }
     };
 

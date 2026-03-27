@@ -4,47 +4,45 @@
 #pragma once
 
 #include <Arduino.h>
+#include <evaHeartbeat.h>
+
+using namespace eva;
 
 namespace evam
 {
     /**
-     * @brief Decorator that applies median filtering to eliminate spikes.
+     * @brief Decorator that applies median filtering with fixed time base.
      *
-     * Uses a sliding window median filter to remove impulse noise and
-     * sudden spikes without adding significant delay. Useful for
-     * eliminating occasional glitches from sensors or joysticks.
+     * Samples the input at regular intervals and applies median filtering
+     * to remove spikes and noise. Output updates at the sampling rate.
      *
      * @tparam Motor Base motor class (must implement Go(signed short))
-     * @tparam kWindowSize Filter window size (3, 5, 7, etc.). Default: 3.
-     *         Larger window = more smoothing but more delay.
+     * @tparam kWindowSize Filter window size (odd number). Default: 5
      */
-    template <class Motor, unsigned short kWindowSize = 3>
-    class MedianDecor : public Motor
+    template <class Motor, unsigned short kWindowSize = 5>
+    class MedianDecor : public Heartbeat, public Motor
     {
         static_assert(kWindowSize >= 3 && kWindowSize <= 15, 
                       "kWindowSize out of range 3..15");
         static_assert(kWindowSize % 2 == 1, 
-                      "kWindowSize must be odd for proper median");
+                      "kWindowSize must be odd");
 
     private:
+        static constexpr unsigned long kHeartbeatPeriodMs = 10;
+        
         signed short mBuffer[kWindowSize];
         unsigned short mIndex = 0;
         bool mBufferFull = false;
+        signed short mLastSample = 0;
 
-        /**
-         * @brief Calculate median of the buffer.
-         * @return Median value
-         */
         signed short calculateMedian()
         {
-            // Copy buffer for sorting
             signed short sorted[kWindowSize];
-            unsigned short count = mBufferFull ? kWindowSize : mIndex;
+            unsigned short count = mBufferFull ? kWindowSize : mIndex + 1;
             
             for (unsigned short i = 0; i < count; i++)
                 sorted[i] = mBuffer[i];
             
-            // Simple bubble sort for small arrays
             for (unsigned short i = 0; i < count - 1; i++)
             {
                 for (unsigned short j = 0; j < count - i - 1; j++)
@@ -61,37 +59,10 @@ namespace evam
             return sorted[count / 2];
         }
 
-    public:
-        /**
-         * @brief Constructor. Initializes the buffer.
-         */
-        MedianDecor()
+    protected:
+        void onHeartbeat() override
         {
-            for (unsigned short i = 0; i < kWindowSize; i++)
-                mBuffer[i] = 0;
-        }
-
-        /**
-         * @brief Reset the filter buffer.
-         */
-        void ResetFilter()
-        {
-            mIndex = 0;
-            mBufferFull = false;
-            for (unsigned short i = 0; i < kWindowSize; i++)
-                mBuffer[i] = 0;
-        }
-
-        /**
-         * @brief Apply median filtering and pass to underlying motor.
-         * @param aValue Raw input value, range -1000..1000.
-         */
-        void Go(signed short aValue)
-        {
-            aValue = constrain(aValue, -1000, 1000);
-            
-            // Add to circular buffer
-            mBuffer[mIndex] = aValue;
+            mBuffer[mIndex] = mLastSample;
             mIndex++;
             if (mIndex >= kWindowSize)
             {
@@ -99,17 +70,30 @@ namespace evam
                 mBufferFull = true;
             }
             
-            // Only output when buffer is full enough
             if (mBufferFull || mIndex > kWindowSize / 2)
             {
-                signed short filtered = calculateMedian();
-                Motor::Go(filtered);
+                Motor::Go(calculateMedian());
             }
-            else
-            {
-                // Not enough samples yet, pass through
-                Motor::Go(aValue);
-            }
+        }
+
+    public:
+        MedianDecor() : Heartbeat(kHeartbeatPeriodMs)
+        {
+            for (unsigned short i = 0; i < kWindowSize; i++)
+                mBuffer[i] = 0;
+        }
+
+        void Reset()
+        {
+            mIndex = 0;
+            mBufferFull = false;
+            for (unsigned short i = 0; i < kWindowSize; i++)
+                mBuffer[i] = 0;
+        }
+
+        void Go(signed short aValue)
+        {
+            mLastSample = constrain(aValue, -1000, 1000);
         }
     };
 

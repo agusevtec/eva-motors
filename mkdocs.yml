@@ -10,6 +10,7 @@ nav:
       - Quickstart: tutorial/quickstart.md
       - Motors: tutorial/motors.md
       - Decorators: tutorial/decorators.md
+      - Filter decorators: tutorial/filters.md
       - Custom drivers: tutorial/custom-drivers.md
   - API Reference:
       - Classes: eva-motors/annotated.md

@@ -376,6 +376,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorial/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filter decorators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorial/custom-drivers/" class="md-nav__link">
         
   
@@ -580,6 +608,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#protected-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#detailed-description" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -625,10 +664,49 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-inertiadecor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function InertiaDecor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-setinertiamass" class="md-nav__link">
     <span class="md-ellipsis">
       
         function SetInertiaMass
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-functions-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Functions Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protected Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-onheartbeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function onHeartbeat
       
     </span>
   </a>
@@ -661,13 +739,13 @@
 
 
 <h1 id="class-evaminertiadecor">Class evam::InertiaDecor<a class="headerlink" href="#class-evaminertiadecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class Motor, unsigned short kInertiaMass&gt;</strong></p>
+<p><strong>template &lt;class Motor, signed short kInertiaMass&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>InertiaDecor</strong></a></p>
 <p><em>Decorator that simulates mechanical inertia (flywheel effect).</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evamInertiaDecor.h&gt;</code></li>
 </ul>
-<p>Inherits the following classes: Tickable,  Motor</p>
+<p>Inherits the following classes: Heartbeat,  Motor</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -679,15 +757,34 @@
 <tbody>
 <tr>
 <td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#function-getinertiamass"><strong>GetInertiaMass</strong></a> () const<br><em>Get the current virtual mass (inertia) value.</em></td>
+<td style="text-align: left;"><a href="#function-getinertiamass"><strong>GetInertiaMass</strong></a> () const<br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (int aSpeed) <br><em>Apply the control value with inertia simulation.</em></td>
+<td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (int aSpeed) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-inertiadecor"><strong>InertiaDecor</strong></a> () <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setinertiamass"><strong>SetInertiaMass</strong></a> (unsigned short aValue) <br><em>Set the virtual mass (inertia) value.</em></td>
+<td style="text-align: left;"><a href="#function-setinertiamass"><strong>SetInertiaMass</strong></a> (unsigned short aValue) <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions">Protected Functions<a class="headerlink" href="#protected-functions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-onheartbeat"><strong>onHeartbeat</strong></a> () override<br></td>
 </tr>
 </tbody>
 </table>
@@ -696,42 +793,41 @@
 <p><strong>Template parameters:</strong></p>
 <ul>
 <li><code>Motor</code> Base motor class (must implement Go(signed short)) </li>
-<li><code>kInertiaMass</code> Virtual mass. Larger values = slower deceleration. Range: 1..200. </li>
+<li><code>kInertiaMass</code> Virtual mass (positive). Larger values = slower deceleration. </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-getinertiamass">function GetInertiaMass<a class="headerlink" href="#function-getinertiamass" title="Permanent link">&para;</a></h3>
-<p><em>Get the current virtual mass (inertia) value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">GetInertiaMass</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<p>Current mass value in range 1..200. </p>
 <hr>
 
 <h3 id="function-go">function Go<a class="headerlink" href="#function-go" title="Permanent link">&para;</a></h3>
-<p><em>Apply the control value with inertia simulation.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">Go</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">aSpeed</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>aSpeed</code> Desired speed, range -1000..1000. </li>
-</ul>
+<hr>
+
+<h3 id="function-inertiadecor">function InertiaDecor<a class="headerlink" href="#function-inertiadecor" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
 <hr>
 
 <h3 id="function-setinertiamass">function SetInertiaMass<a class="headerlink" href="#function-setinertiamass" title="Permanent link">&para;</a></h3>
-<p><em>Set the virtual mass (inertia) value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">SetInertiaMass</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aValue</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>aValue</code> Mass value, clamped to 1..200. Higher = slower deceleration. </li>
-</ul>
+<hr>
+<h2 id="protected-functions-documentation">Protected Functions Documentation<a class="headerlink" href="#protected-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-onheartbeat">function onHeartbeat<a class="headerlink" href="#function-onheartbeat" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">onHeartbeat</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+</code></pre></div>
+
 <hr>
 
 <hr />

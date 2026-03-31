@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_sliding_window_decor" kind="class" language="C++" prot="public">
+    <compoundname>evam::SlidingWindowDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Motor</basecompoundref>
+    <includes refid="evam_sliding_window_decor_8h" local="no">evamSlidingWindowDecor.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Motor</type>
+      </param>
+      <param>
+        <type>unsigned short</type>
+        <declname>N</declname>
+        <defname>N</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_sliding_window_decor_1a0a9acb3b799ea7a4e4a4df58148bf533" prot="private" static="no" mutable="no">
+        <type><ref refid="classevam_1_1_ring_buffer" kindref="compound">RingBuffer</ref>&lt; signed short, N &gt;</type>
+        <definition>RingBuffer&lt;signed short, N&gt; evam::SlidingWindowDecor&lt; Motor, N &gt;::mRing</definition>
+        <argsstring></argsstring>
+        <name>mRing</name>
+        <qualifiedname>evam::SlidingWindowDecor::mRing</qualifiedname>
+        <briefdescription>
+<para>Ring buffer storing the last N values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlidingWindowDecor.h" line="29" column="16" bodyfile="src/evamSlidingWindowDecor.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_sliding_window_decor_1ab96273cbfa65164647294fe5507d9b67" prot="private" static="no" mutable="no">
+        <type>signed long</type>
+        <definition>signed long evam::SlidingWindowDecor&lt; Motor, N &gt;::mSum</definition>
+        <argsstring></argsstring>
+        <name>mSum</name>
+        <qualifiedname>evam::SlidingWindowDecor::mSum</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Running sum of values in buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlidingWindowDecor.h" line="30" column="17" bodyfile="src/evamSlidingWindowDecor.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_sliding_window_decor_1ab6308581599cf3e125e2c7a43a9e4ab3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SlidingWindowDecor&lt; Motor, N &gt;::Go</definition>
+        <argsstring>(signed short value)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::SlidingWindowDecor::Go</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Apply the control value with moving average filtering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input control value, range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlidingWindowDecor.h" line="38" column="10" bodyfile="src/evamSlidingWindowDecor.h" bodystart="38" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator that applies a simple moving average (sliding window) filter. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Motor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base motor class (must implement <ref refid="classevam_1_1_sliding_window_decor_1ab6308581599cf3e125e2c7a43a9e4ab3" kindref="member">Go(signed short)</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window size (number of values to average). Must be &gt;= 1.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The filter only produces filtered output after the buffer is full. Before that, values pass through unchanged. For N=1, the filter passes values through without any averaging (no effect). </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Motor</label>
+      </node>
+      <node id="1">
+        <label>evam::SlidingWindowDecor&lt; Motor, N &gt;</label>
+        <link refid="classevam_1_1_sliding_window_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Motor</label>
+      </node>
+      <node id="1">
+        <label>evam::SlidingWindowDecor&lt; Motor, N &gt;</label>
+        <link refid="classevam_1_1_sliding_window_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamSlidingWindowDecor.h" line="26" column="1" bodyfile="src/evamSlidingWindowDecor.h" bodystart="27" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_sliding_window_decor_1ab6308581599cf3e125e2c7a43a9e4ab3" prot="public" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1a0a9acb3b799ea7a4e4a4df58148bf533" prot="private" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>mRing</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1ab96273cbfa65164647294fe5507d9b67" prot="private" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>mSum</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -2,14 +2,18 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="namespaceevam" kind="namespace" language="C++">
     <compoundname>evam</compoundname>
+    <innerclass refid="classevam_1_1_adaptive_smooth_decor" prot="public">evam::AdaptiveSmoothDecor</innerclass>
     <innerclass refid="classevam_1_1_curve_decor" prot="public">evam::CurveDecor</innerclass>
     <innerclass refid="classevam_1_1_directional_motor" prot="public">evam::DirectionalMotor</innerclass>
     <innerclass refid="classevam_1_1_forward_motor" prot="public">evam::ForwardMotor</innerclass>
     <innerclass refid="classevam_1_1_inertia_decor" prot="public">evam::InertiaDecor</innerclass>
     <innerclass refid="classevam_1_1_kick_decor" prot="public">evam::KickDecor</innerclass>
     <innerclass refid="classevam_1_1_linear_actuator" prot="public">evam::LinearActuator</innerclass>
+    <innerclass refid="classevam_1_1_minmax_decor" prot="public">evam::MinmaxDecor</innerclass>
     <innerclass refid="classevam_1_1_pwm_driver" prot="public">evam::PwmDriver</innerclass>
+    <innerclass refid="classevam_1_1_ring_buffer" prot="public">evam::RingBuffer</innerclass>
     <innerclass refid="classevam_1_1_servo_driver" prot="public">evam::ServoDriver</innerclass>
+    <innerclass refid="classevam_1_1_sliding_window_decor" prot="public">evam::SlidingWindowDecor</innerclass>
     <innerclass refid="classevam_1_1_software_servo_driver" prot="public">evam::SoftwareServoDriver</innerclass>
     <innerclass refid="classevam_1_1_steering_actuator" prot="public">evam::SteeringActuator</innerclass>
     <innerclass refid="classevam_1_1_t_a6586_driver" prot="public">evam::TA6586Driver</innerclass>
@@ -18,6 +22,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evamCurveDecor.h" line="8" column="1"/>
+    <location file="src/evamAdaptiveSmoothDecor.h" line="11" column="1"/>
   </compounddef>
 </doxygen>

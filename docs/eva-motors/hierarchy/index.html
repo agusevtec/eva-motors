@@ -380,6 +380,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorial/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filter decorators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorial/custom-drivers/" class="md-nav__link">
         
   
@@ -600,13 +628,22 @@
 <p>This inheritance list is sorted roughly, but not completely, alphabetically:</p>
 <ul>
 <li><strong>class</strong> <a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a> <em>Simple PWM output driver (unipolar).</em> </li>
+<li><strong>class</strong> <a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a> <em>Servo driver using standard Arduino Servo library.</em> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a> <em>Driver for the TA6586 dual H-bridge motor driver.</em> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a> <em>Driver for the TB6612FNG dual H-bridge motor driver.</em> </li>
+<li><strong>class</strong> <strong>Heartbeat</strong>    <ul>
+<li><strong>class</strong> <a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a> <em>Decorator with adaptive smoothing based on input rate of change.</em> </li>
+<li><strong>class</strong> <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a> <em>Decorator that simulates mechanical inertia (flywheel effect).</em> </li>
+</ul>
+</li>
 <li><strong>class</strong> <strong>Motor</strong>    <ul>
+<li><strong>class</strong> <a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a> <em>Decorator with adaptive smoothing based on input rate of change.</em> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a> <em>Decorator that applies an S-curve (nonlinear) transformation to the control signal.</em> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a> <em>Decorator that simulates mechanical inertia (flywheel effect).</em> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a> <em>Decorator that applies a momentary kick to overcome static friction.</em> </li>
+<li><strong>class</strong> <a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a> <em>Decorator that applies a min-max (morphological) filter to the control signal.</em> </li>
+<li><strong>class</strong> <a href="../classevam_1_1_sliding_window_decor/"><strong>evam::SlidingWindowDecor</strong></a> <em>Decorator that applies a simple moving average (sliding window) filter.</em> </li>
 </ul>
 </li>
 <li><strong>class</strong> <strong>Driver</strong>    <ul>
@@ -617,7 +654,6 @@
 </ul>
 </li>
 <li><strong>class</strong> <strong>Tickable</strong>    <ul>
-<li><strong>class</strong> <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a> <em>Decorator that simulates mechanical inertia (flywheel effect).</em> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a> <em>Decorator that applies a momentary kick to overcome static friction.</em> </li>
 <li><strong>class</strong> <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a> <em>Software-based servo driver using millis() for timing.</em> </li>
 </ul>

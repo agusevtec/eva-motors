@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classevam_1_1_ring_buffer" kind="class" language="C++" prot="public">
+    <compoundname>evam::RingBuffer</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>unsigned char</type>
+        <declname>N</declname>
+        <defname>N</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_ring_buffer_1a1294c3ddd50107da160d6e1b7c538fbc" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T evam::RingBuffer&lt; T, N &gt;::mBuffer[N]</definition>
+        <argsstring>[N]</argsstring>
+        <name>mBuffer</name>
+        <qualifiedname>evam::RingBuffer::mBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="10" column="11" bodyfile="src/evamRingBuffer.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_ring_buffer_1a1bcbf894d57e1b93c4012bbd18d90d29" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char evam::RingBuffer&lt; T, N &gt;::mHead</definition>
+        <argsstring></argsstring>
+        <name>mHead</name>
+        <qualifiedname>evam::RingBuffer::mHead</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="11" column="23" bodyfile="src/evamRingBuffer.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_ring_buffer_1abfe2c230092271e79666cd90c5000cd4" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char evam::RingBuffer&lt; T, N &gt;::mSize</definition>
+        <argsstring></argsstring>
+        <name>mSize</name>
+        <qualifiedname>evam::RingBuffer::mSize</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="12" column="23" bodyfile="src/evamRingBuffer.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classevam_1_1_ring_buffer_1a51ed8432b95472a6d45bd60ec3dac67f" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char evam::RingBuffer&lt; T, N &gt;::wrapIndex</definition>
+        <argsstring>(unsigned char index) const</argsstring>
+        <name>wrapIndex</name>
+        <qualifiedname>evam::RingBuffer::wrapIndex</qualifiedname>
+        <param>
+          <type>unsigned char</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="14" column="30" bodyfile="src/evamRingBuffer.h" bodystart="14" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_ring_buffer_1a5ab9aa1d1d9087ac0380ceb0717ca596" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::RingBuffer&lt; T, N &gt;::RingBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>RingBuffer</name>
+        <qualifiedname>evam::RingBuffer::RingBuffer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="20" column="9" bodyfile="src/evamRingBuffer.h" bodystart="20" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_ring_buffer_1ab31ffb91bb05a8a6890934fd84fec48f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::RingBuffer&lt; T, N &gt;::put</definition>
+        <argsstring>(const T &amp;value)</argsstring>
+        <name>put</name>
+        <qualifiedname>evam::RingBuffer::put</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="26" column="14" bodyfile="src/evamRingBuffer.h" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_ring_buffer_1a14963be1a7a30cc3c95869b933ee9b59" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T evam::RingBuffer&lt; T, N &gt;::get</definition>
+        <argsstring>(unsigned char index) const</argsstring>
+        <name>get</name>
+        <qualifiedname>evam::RingBuffer::get</qualifiedname>
+        <param>
+          <type>unsigned char</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="34" column="11" bodyfile="src/evamRingBuffer.h" bodystart="34" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_ring_buffer_1a0506f1643d549b5383646b135e8abbec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool evam::RingBuffer&lt; T, N &gt;::isFull</definition>
+        <argsstring>() const</argsstring>
+        <name>isFull</name>
+        <qualifiedname>evam::RingBuffer::isFull</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="41" column="14" bodyfile="src/evamRingBuffer.h" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_ring_buffer_1a841b6e6aa5b306dbfa3b9dea19a7f876" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char evam::RingBuffer&lt; T, N &gt;::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>evam::RingBuffer::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamRingBuffer.h" line="46" column="23" bodyfile="src/evamRingBuffer.h" bodystart="46" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamRingBuffer.h" line="7" column="5" bodyfile="src/evamRingBuffer.h" bodystart="8" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_ring_buffer_1a14963be1a7a30cc3c95869b933ee9b59" prot="public" virt="non-virtual"><scope>evam::RingBuffer</scope><name>get</name></member>
+      <member refid="classevam_1_1_ring_buffer_1a0506f1643d549b5383646b135e8abbec" prot="public" virt="non-virtual"><scope>evam::RingBuffer</scope><name>isFull</name></member>
+      <member refid="classevam_1_1_ring_buffer_1a1294c3ddd50107da160d6e1b7c538fbc" prot="private" virt="non-virtual"><scope>evam::RingBuffer</scope><name>mBuffer</name></member>
+      <member refid="classevam_1_1_ring_buffer_1a1bcbf894d57e1b93c4012bbd18d90d29" prot="private" virt="non-virtual"><scope>evam::RingBuffer</scope><name>mHead</name></member>
+      <member refid="classevam_1_1_ring_buffer_1abfe2c230092271e79666cd90c5000cd4" prot="private" virt="non-virtual"><scope>evam::RingBuffer</scope><name>mSize</name></member>
+      <member refid="classevam_1_1_ring_buffer_1ab31ffb91bb05a8a6890934fd84fec48f" prot="public" virt="non-virtual"><scope>evam::RingBuffer</scope><name>put</name></member>
+      <member refid="classevam_1_1_ring_buffer_1a5ab9aa1d1d9087ac0380ceb0717ca596" prot="public" virt="non-virtual"><scope>evam::RingBuffer</scope><name>RingBuffer</name></member>
+      <member refid="classevam_1_1_ring_buffer_1a841b6e6aa5b306dbfa3b9dea19a7f876" prot="public" virt="non-virtual"><scope>evam::RingBuffer</scope><name>size</name></member>
+      <member refid="classevam_1_1_ring_buffer_1a51ed8432b95472a6d45bd60ec3dac67f" prot="private" virt="non-virtual"><scope>evam::RingBuffer</scope><name>wrapIndex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -12,7 +12,7 @@
             "problemMatcher": [
                 "$gcc"
             ],
-            "detail": "Запуск make в корне проекта"
+            "detail": "Run"
         }
     ]
 }

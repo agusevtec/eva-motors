@@ -9,6 +9,7 @@
     <innerfile refid="evam_inertia_decor_8h">evamInertiaDecor.h</innerfile>
     <innerfile refid="evam_kick_decor_8h">evamKickDecor.h</innerfile>
     <innerfile refid="evam_linear_actuator_8h">evamLinearActuator.h</innerfile>
+    <innerfile refid="evam_median_decor_8h">evamMedianDecor.h</innerfile>
     <innerfile refid="evam_minmax_decor_8h">evamMinmaxDecor.h</innerfile>
     <innerfile refid="evam_pwm_driver_8h">evamPwmDriver.h</innerfile>
     <innerfile refid="evam_ring_buffer_8h">evamRingBuffer.h</innerfile>

@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="27" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="27" bodyend="33"/>
+        <location file="src/evamTB6612Driver.h" line="25" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="25" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a20dee77f573b8af6aec42559b8623f1b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="39" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="39" bodyend="42"/>
+        <location file="src/evamTB6612Driver.h" line="37" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="37" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="48" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="48" bodyend="51"/>
+        <location file="src/evamTB6612Driver.h" line="46" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="46" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1ac3a9f5ad479ee89dd1909521fdfc47bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="57" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="57" bodyend="60"/>
+        <location file="src/evamTB6612Driver.h" line="55" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="55" bodyend="58"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="68" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="68" bodyend="74"/>
+        <location file="src/evamTB6612Driver.h" line="66" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="66" bodyend="72"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -159,7 +159,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamTB6612Driver.h" line="20" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="21" bodyend="75"/>
+    <location file="src/evamTB6612Driver.h" line="18" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="19" bodyend="73"/>
     <listofallmembers>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adc2c94301188415930a5a20e007ffd48" prot="protected" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>actBipolar</name></member>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode1Pin</name></member>

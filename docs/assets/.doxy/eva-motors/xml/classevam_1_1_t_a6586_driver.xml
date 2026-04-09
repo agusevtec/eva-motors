@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="35" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="35" bodyend="40"/>
+        <location file="src/evamTA6586Driver.h" line="32" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="32" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a0d84c607271f5c137c562aee8c785a9a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="46" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="46" bodyend="49"/>
+        <location file="src/evamTA6586Driver.h" line="43" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="43" bodyend="46"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1adb04860e202772b68877f7aaa426ab13" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="55" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="55" bodyend="58"/>
+        <location file="src/evamTA6586Driver.h" line="52" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="52" bodyend="55"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="66" column="14" bodyfile="src/evamTA6586Driver.h" bodystart="66" bodyend="71"/>
+        <location file="src/evamTA6586Driver.h" line="63" column="14" bodyfile="src/evamTA6586Driver.h" bodystart="63" bodyend="68"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -130,7 +130,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamTA6586Driver.h" line="29" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="30" bodyend="72"/>
+    <location file="src/evamTA6586Driver.h" line="26" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="27" bodyend="69"/>
     <listofallmembers>
       <member refid="classevam_1_1_t_a6586_driver_1a65972491e15cb9e0b5d578cd7df5174a" prot="protected" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>actBipolar</name></member>
       <member refid="classevam_1_1_t_a6586_driver_1adb04860e202772b68877f7aaa426ab13" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>GetBackwardPin</name></member>

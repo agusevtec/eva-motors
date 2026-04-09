@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef EVAM_TA6586_DRIVER_H_
-#define EVAM_TA6586_DRIVER_H_
-
 #pragma once
 
 #include <Arduino.h>
@@ -48,7 +45,6 @@ namespace evam
     };
 }
 
-#endif // EVAM_TA6586_DRIVER_H_
 ```
 
 

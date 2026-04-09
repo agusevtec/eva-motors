@@ -12,11 +12,13 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** **Heartbeat**    
     * **class** [**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) _Decorator with adaptive smoothing based on input rate of change._ 
     * **class** [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md) _Decorator that simulates mechanical inertia (flywheel effect)._ 
+    * **class** [**evam::MedianDecor**](classevam_1_1_median_decor.md) _Decorator that applies median filtering with fixed time base._ 
 * **class** **Motor**    
     * **class** [**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) _Decorator with adaptive smoothing based on input rate of change._ 
     * **class** [**evam::CurveDecor**](classevam_1_1_curve_decor.md) _Decorator that applies an S-curve (nonlinear) transformation to the control signal._ 
     * **class** [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md) _Decorator that simulates mechanical inertia (flywheel effect)._ 
     * **class** [**evam::KickDecor**](classevam_1_1_kick_decor.md) _Decorator that applies a momentary kick to overcome static friction._ 
+    * **class** [**evam::MedianDecor**](classevam_1_1_median_decor.md) _Decorator that applies median filtering with fixed time base._ 
     * **class** [**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md) _Decorator that applies a min-max (morphological) filter to the control signal._ 
     * **class** [**evam::SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md) _Decorator that applies a simple moving average (sliding window) filter._ 
 * **class** **Driver**    

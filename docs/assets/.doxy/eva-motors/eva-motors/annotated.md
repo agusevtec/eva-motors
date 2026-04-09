@@ -13,6 +13,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**InertiaDecor**](classevam_1_1_inertia_decor.md) _Decorator that simulates mechanical inertia (flywheel effect)._     
     * **class** [**KickDecor**](classevam_1_1_kick_decor.md) _Decorator that applies a momentary kick to overcome static friction._     
     * **class** [**LinearActuator**](classevam_1_1_linear_actuator.md) _Linear actuator controller (position control)._     
+    * **class** [**MedianDecor**](classevam_1_1_median_decor.md) _Decorator that applies median filtering with fixed time base._     
     * **class** [**MinmaxDecor**](classevam_1_1_minmax_decor.md) _Decorator that applies a min-max (morphological) filter to the control signal._     
     * **class** [**PwmDriver**](classevam_1_1_pwm_driver.md) _Simple PWM output driver (unipolar)._     
     * **class** [**RingBuffer**](classevam_1_1_ring_buffer.md)     

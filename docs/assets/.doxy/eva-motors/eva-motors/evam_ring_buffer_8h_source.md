@@ -8,8 +8,7 @@
 
 
 ```C++
-#ifndef EVAM_CIRCULAR_BUFFER_H_
-#define EVAM_CIRCULAR_BUFFER_H_
+#pragma once
 
 namespace evam
 {
@@ -60,8 +59,6 @@ namespace evam
     };
 
 } // namespace evam
-
-#endif // EVAM_CIRCULAR_BUFFER_H_
 ```
 
 

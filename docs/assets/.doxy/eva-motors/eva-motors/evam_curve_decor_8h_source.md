@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef CURVEDECOR_H_
-#define CURVEDECOR_H_
-
 #pragma once
 
 #include <Arduino.h>
@@ -57,7 +54,7 @@ namespace evam
     };
 
 }
-#endif // CURVEDECOR_H_
+
 ```
 
 

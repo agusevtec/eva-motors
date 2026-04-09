@@ -17,6 +17,7 @@
 * **compute** ([**evam::DirectionalMotor**](classevam_1_1_directional_motor.md), [**evam::ForwardMotor**](classevam_1_1_forward_motor.md), [**evam::LinearActuator**](classevam_1_1_linear_actuator.md), [**evam::SteeringActuator**](classevam_1_1_steering_actuator.md))
 * **calcSpeed** ([**evam::InertiaDecor**](classevam_1_1_inertia_decor.md))
 * **calculateKickPower** ([**evam::KickDecor**](classevam_1_1_kick_decor.md))
+* **calculateMedian** ([**evam::MedianDecor**](classevam_1_1_median_decor.md))
 
 
 ## f
@@ -26,7 +27,7 @@
 
 ## g
 
-* **Go** ([**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md), [**evam::CurveDecor**](classevam_1_1_curve_decor.md), [**evam::DirectionalMotor**](classevam_1_1_directional_motor.md), [**evam::ForwardMotor**](classevam_1_1_forward_motor.md), [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md), [**evam::KickDecor**](classevam_1_1_kick_decor.md), [**evam::LinearActuator**](classevam_1_1_linear_actuator.md), [**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md), [**evam::SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md), [**evam::SteeringActuator**](classevam_1_1_steering_actuator.md))
+* **Go** ([**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md), [**evam::CurveDecor**](classevam_1_1_curve_decor.md), [**evam::DirectionalMotor**](classevam_1_1_directional_motor.md), [**evam::ForwardMotor**](classevam_1_1_forward_motor.md), [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md), [**evam::KickDecor**](classevam_1_1_kick_decor.md), [**evam::LinearActuator**](classevam_1_1_linear_actuator.md), [**evam::MedianDecor**](classevam_1_1_median_decor.md), [**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md), [**evam::SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md), [**evam::SteeringActuator**](classevam_1_1_steering_actuator.md))
 * **GetBend** ([**evam::CurveDecor**](classevam_1_1_curve_decor.md))
 * **GetMaxBackward** ([**evam::DirectionalMotor**](classevam_1_1_directional_motor.md))
 * **GetMaxForward** ([**evam::DirectionalMotor**](classevam_1_1_directional_motor.md))
@@ -60,7 +61,7 @@
 ## k
 
 * **kDeadzone** ([**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md))
-* **kHeartbeatPeriodMs** ([**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md), [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md))
+* **kHeartbeatPeriodMs** ([**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md), [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md), [**evam::MedianDecor**](classevam_1_1_median_decor.md))
 * **kRefreshIntervalMs** ([**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md))
 
 
@@ -84,11 +85,15 @@
 * **mKickDuration** ([**evam::KickDecor**](classevam_1_1_kick_decor.md))
 * **mKickPower** ([**evam::KickDecor**](classevam_1_1_kick_decor.md))
 * **mTargetSpeed** ([**evam::KickDecor**](classevam_1_1_kick_decor.md))
+* **MedianDecor** ([**evam::MedianDecor**](classevam_1_1_median_decor.md))
+* **mBuffer** ([**evam::MedianDecor**](classevam_1_1_median_decor.md), [**evam::RingBuffer**](classevam_1_1_ring_buffer.md))
+* **mBufferFull** ([**evam::MedianDecor**](classevam_1_1_median_decor.md))
+* **mIndex** ([**evam::MedianDecor**](classevam_1_1_median_decor.md))
+* **mLastSample** ([**evam::MedianDecor**](classevam_1_1_median_decor.md))
 * **MinmaxDecor** ([**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md))
 * **mMaxBuffer** ([**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md))
 * **mMinBuffer** ([**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md))
 * **mRing** ([**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md), [**evam::SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md))
-* **mBuffer** ([**evam::RingBuffer**](classevam_1_1_ring_buffer.md))
 * **mHead** ([**evam::RingBuffer**](classevam_1_1_ring_buffer.md))
 * **mSize** ([**evam::RingBuffer**](classevam_1_1_ring_buffer.md))
 * **mServo** ([**evam::ServoDriver**](classevam_1_1_servo_driver.md))
@@ -104,7 +109,7 @@
 
 ## o
 
-* **onHeartbeat** ([**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md), [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md))
+* **onHeartbeat** ([**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md), [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md), [**evam::MedianDecor**](classevam_1_1_median_decor.md))
 
 
 ## p
@@ -115,6 +120,7 @@
 
 ## r
 
+* **Reset** ([**evam::MedianDecor**](classevam_1_1_median_decor.md))
 * **RingBuffer** ([**evam::RingBuffer**](classevam_1_1_ring_buffer.md))
 
 

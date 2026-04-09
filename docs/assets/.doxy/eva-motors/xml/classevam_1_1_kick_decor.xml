@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="30" column="22" bodyfile="src/evamKickDecor.h" bodystart="30" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="27" column="22" bodyfile="src/evamKickDecor.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_kick_decor_1a3af89e07eaf93477e95a52678cf034b0" prot="private" static="no" mutable="no">
         <type>unsigned long</type>
@@ -51,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="31" column="23" bodyfile="src/evamKickDecor.h" bodystart="31" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="28" column="23" bodyfile="src/evamKickDecor.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_kick_decor_1a5a7c00cf7b79fe825c88a6f85d539641" prot="private" static="no" mutable="no">
         <type>unsigned short</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="33" column="24" bodyfile="src/evamKickDecor.h" bodystart="33" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="30" column="24" bodyfile="src/evamKickDecor.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_kick_decor_1a8d6600e670f6ecbca0f81c2ec165dd94" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="34" column="22" bodyfile="src/evamKickDecor.h" bodystart="34" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="31" column="22" bodyfile="src/evamKickDecor.h" bodystart="31" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="36" column="22" bodyfile="src/evamKickDecor.h" bodystart="36" bodyend="45"/>
+        <location file="src/evamKickDecor.h" line="33" column="22" bodyfile="src/evamKickDecor.h" bodystart="33" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1ac0c64c9a39827383507f4988a654da00" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="47" column="14" bodyfile="src/evamKickDecor.h" bodystart="47" bodyend="57"/>
+        <location file="src/evamKickDecor.h" line="44" column="14" bodyfile="src/evamKickDecor.h" bodystart="44" bodyend="54"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -158,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="66" column="14" bodyfile="src/evamKickDecor.h" bodystart="66" bodyend="70"/>
+        <location file="src/evamKickDecor.h" line="63" column="14" bodyfile="src/evamKickDecor.h" bodystart="63" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1ae18b88c70786f12d3e57527cd98fc4d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="76" column="14" bodyfile="src/evamKickDecor.h" bodystart="76" bodyend="80"/>
+        <location file="src/evamKickDecor.h" line="73" column="14" bodyfile="src/evamKickDecor.h" bodystart="73" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1afb46c7180a34cf981fe9dd3b4cf0fdfd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
@@ -205,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="86" column="24" bodyfile="src/evamKickDecor.h" bodystart="86" bodyend="89"/>
+        <location file="src/evamKickDecor.h" line="83" column="24" bodyfile="src/evamKickDecor.h" bodystart="83" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1ad693a87b28e656fa3c3787d8731b10ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -234,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="95" column="14" bodyfile="src/evamKickDecor.h" bodystart="95" bodyend="98"/>
+        <location file="src/evamKickDecor.h" line="92" column="14" bodyfile="src/evamKickDecor.h" bodystart="92" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a6bcfcab1744372761692ed8ec6c71d62" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="104" column="22" bodyfile="src/evamKickDecor.h" bodystart="104" bodyend="107"/>
+        <location file="src/evamKickDecor.h" line="101" column="22" bodyfile="src/evamKickDecor.h" bodystart="101" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1aa75461f35695e8663099f992e29d45bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -281,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="113" column="14" bodyfile="src/evamKickDecor.h" bodystart="113" bodyend="129"/>
+        <location file="src/evamKickDecor.h" line="110" column="14" bodyfile="src/evamKickDecor.h" bodystart="110" bodyend="126"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -348,7 +348,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamKickDecor.h" line="24" column="5" bodyfile="src/evamKickDecor.h" bodystart="25" bodyend="130"/>
+    <location file="src/evamKickDecor.h" line="21" column="5" bodyfile="src/evamKickDecor.h" bodystart="22" bodyend="127"/>
     <listofallmembers>
       <member refid="classevam_1_1_kick_decor_1aff5456d553fa4ddead62236837da0706" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>calculateKickPower</name></member>
       <member refid="classevam_1_1_kick_decor_1afb46c7180a34cf981fe9dd3b4cf0fdfd" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>GetKickDuration</name></member>

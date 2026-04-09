@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef MOTORKICKDECORATOR_H_
-#define MOTORKICKDECORATOR_H_
-
 #pragma once
 
 #include <Arduino.h>
@@ -103,7 +100,6 @@ namespace evam
         }
     };
 }
-#endif // MOTORKICKDECORATOR_H_
 ```
 
 

@@ -25,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="10" column="11" bodyfile="src/evamRingBuffer.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evamRingBuffer.h" line="9" column="11" bodyfile="src/evamRingBuffer.h" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_ring_buffer_1a1bcbf894d57e1b93c4012bbd18d90d29" prot="private" static="no" mutable="no">
         <type>unsigned char</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="11" column="23" bodyfile="src/evamRingBuffer.h" bodystart="11" bodyend="-1"/>
+        <location file="src/evamRingBuffer.h" line="10" column="23" bodyfile="src/evamRingBuffer.h" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_ring_buffer_1abfe2c230092271e79666cd90c5000cd4" prot="private" static="no" mutable="no">
         <type>unsigned char</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="12" column="23" bodyfile="src/evamRingBuffer.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evamRingBuffer.h" line="11" column="23" bodyfile="src/evamRingBuffer.h" bodystart="11" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="14" column="30" bodyfile="src/evamRingBuffer.h" bodystart="14" bodyend="17"/>
+        <location file="src/evamRingBuffer.h" line="13" column="30" bodyfile="src/evamRingBuffer.h" bodystart="13" bodyend="16"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="20" column="9" bodyfile="src/evamRingBuffer.h" bodystart="20" bodyend="24"/>
+        <location file="src/evamRingBuffer.h" line="19" column="9" bodyfile="src/evamRingBuffer.h" bodystart="19" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_ring_buffer_1ab31ffb91bb05a8a6890934fd84fec48f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="26" column="14" bodyfile="src/evamRingBuffer.h" bodystart="26" bodyend="32"/>
+        <location file="src/evamRingBuffer.h" line="25" column="14" bodyfile="src/evamRingBuffer.h" bodystart="25" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_ring_buffer_1a14963be1a7a30cc3c95869b933ee9b59" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="34" column="11" bodyfile="src/evamRingBuffer.h" bodystart="34" bodyend="39"/>
+        <location file="src/evamRingBuffer.h" line="33" column="11" bodyfile="src/evamRingBuffer.h" bodystart="33" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_ring_buffer_1a0506f1643d549b5383646b135e8abbec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="41" column="14" bodyfile="src/evamRingBuffer.h" bodystart="41" bodyend="44"/>
+        <location file="src/evamRingBuffer.h" line="40" column="14" bodyfile="src/evamRingBuffer.h" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_ring_buffer_1a841b6e6aa5b306dbfa3b9dea19a7f876" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned char</type>
@@ -155,14 +155,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamRingBuffer.h" line="46" column="23" bodyfile="src/evamRingBuffer.h" bodystart="46" bodyend="49"/>
+        <location file="src/evamRingBuffer.h" line="45" column="23" bodyfile="src/evamRingBuffer.h" bodystart="45" bodyend="48"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evamRingBuffer.h" line="7" column="5" bodyfile="src/evamRingBuffer.h" bodystart="8" bodyend="50"/>
+    <location file="src/evamRingBuffer.h" line="6" column="5" bodyfile="src/evamRingBuffer.h" bodystart="7" bodyend="49"/>
     <listofallmembers>
       <member refid="classevam_1_1_ring_buffer_1a14963be1a7a30cc3c95869b933ee9b59" prot="public" virt="non-virtual"><scope>evam::RingBuffer</scope><name>get</name></member>
       <member refid="classevam_1_1_ring_buffer_1a0506f1643d549b5383646b135e8abbec" prot="public" virt="non-virtual"><scope>evam::RingBuffer</scope><name>isFull</name></member>

@@ -28,7 +28,8 @@
 | file | [**evamInertiaDecor.h**](evam_inertia_decor_8h.md) <br> |
 | file | [**evamKickDecor.h**](evam_kick_decor_8h.md) <br> |
 | file | [**evamLinearActuator.h**](evam_linear_actuator_8h.md) <br> |
-| file | [**evamMinmaxDecor.h**](evam_minmax_decor_8h.md) <br>_Min-max (minimax/maximin) filter decorator for motor control._  |
+| file | [**evamMedianDecor.h**](evam_median_decor_8h.md) <br> |
+| file | [**evamMinmaxDecor.h**](evam_minmax_decor_8h.md) <br> |
 | file | [**evamPwmDriver.h**](evam_pwm_driver_8h.md) <br> |
 | file | [**evamRingBuffer.h**](evam_ring_buffer_8h.md) <br> |
 | file | [**evamServoDriver.h**](evam_servo_driver_8h.md) <br> |

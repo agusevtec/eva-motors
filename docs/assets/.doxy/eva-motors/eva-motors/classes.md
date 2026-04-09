@@ -46,6 +46,8 @@
 
 ## m
 
+* [**MedianDecor**](classevam_1_1_median_decor.md)
+([**evam**](namespaceevam.md))
 * [**MinmaxDecor**](classevam_1_1_minmax_decor.md)
 ([**evam**](namespaceevam.md))
 

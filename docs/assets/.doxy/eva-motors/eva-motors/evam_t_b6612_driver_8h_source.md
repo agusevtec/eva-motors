@@ -8,8 +8,6 @@
 
 
 ```C++
-#ifndef TB6612FNG_DRIVER_H_
-#define TB6612FNG_DRIVER_H_
 #pragma once
 #include <Arduino.h>
 namespace evam
@@ -52,7 +50,7 @@ namespace evam
         }
     };
 }
-#endif
+
 ```
 
 

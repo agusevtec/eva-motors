@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="37" column="16" bodyfile="src/evamMinmaxDecor.h" bodystart="37" bodyend="-1"/>
+        <location file="src/evamMinmaxDecor.h" line="31" column="20" bodyfile="src/evamMinmaxDecor.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_minmax_decor_1a7e976d096d9d32fe414c6e71692704bf" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="38" column="18" bodyfile="src/evamMinmaxDecor.h" bodystart="38" bodyend="-1"/>
+        <location file="src/evamMinmaxDecor.h" line="32" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_minmax_decor_1aec8472c6c30a5291f319f7654a25c4a2" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="39" column="18" bodyfile="src/evamMinmaxDecor.h" bodystart="39" bodyend="-1"/>
+        <location file="src/evamMinmaxDecor.h" line="33" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="33" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="48" column="5" bodyfile="src/evamMinmaxDecor.h" bodystart="48" bodyend="55"/>
+        <location file="src/evamMinmaxDecor.h" line="42" column="9" bodyfile="src/evamMinmaxDecor.h" bodystart="42" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_minmax_decor_1a1d337107a5fcde9499e2f258390ea60c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="68" column="10" bodyfile="src/evamMinmaxDecor.h" bodystart="68" bodyend="97"/>
+        <location file="src/evamMinmaxDecor.h" line="62" column="14" bodyfile="src/evamMinmaxDecor.h" bodystart="62" bodyend="93"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="101" column="18" bodyfile="src/evamMinmaxDecor.h" bodystart="101" bodyend="107"/>
+        <location file="src/evamMinmaxDecor.h" line="96" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="96" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_minmax_decor_1ae858fc37e251a77727994442c598c147" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="109" column="18" bodyfile="src/evamMinmaxDecor.h" bodystart="109" bodyend="115"/>
+        <location file="src/evamMinmaxDecor.h" line="105" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="105" bodyend="112"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -198,7 +198,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamMinmaxDecor.h" line="34" column="1" bodyfile="src/evamMinmaxDecor.h" bodystart="35" bodyend="116"/>
+    <location file="src/evamMinmaxDecor.h" line="28" column="5" bodyfile="src/evamMinmaxDecor.h" bodystart="29" bodyend="113"/>
     <listofallmembers>
       <member refid="classevam_1_1_minmax_decor_1ae858fc37e251a77727994442c598c147" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>getMaximin</name></member>
       <member refid="classevam_1_1_minmax_decor_1a32a1cd56a7ba8a2a382e406444fdcb84" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>getMinimax</name></member>

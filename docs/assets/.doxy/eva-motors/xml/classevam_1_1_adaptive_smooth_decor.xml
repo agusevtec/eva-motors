@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="34" column="40" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="34" bodyend="-1"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="31" column="40" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1ab84c4e7d21f2e4fdf29391431025ce05" prot="private" static="yes" constexpr="yes" mutable="no">
         <type>signed short</type>
@@ -51,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="35" column="39" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="35" bodyend="-1"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="32" column="39" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="32" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="37" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="37" bodyend="-1"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="34" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1aef06aefd320756e647a048d954c4b0e3" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="38" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="38" bodyend="-1"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="35" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a64bd6f90c558e0a2977c92c9f4a14c0d" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="39" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="39" bodyend="-1"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="36" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a05df211a3bd3c1b930fe0c9a82721e26" prot="private" static="no" mutable="no">
         <type>unsigned short</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="41" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="41" bodyend="-1"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="38" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="38" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="43" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="43" bodyend="55"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="40" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="40" bodyend="52"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="58" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="58" bodyend="76"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="55" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="55" bodyend="73"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -161,7 +161,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="79" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="79" bodyend="81"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="76" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="76" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1af4db3a147eb7acc345c85b913b702454" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="83" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="83" bodyend="86"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="80" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="80" bodyend="83"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -246,7 +246,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamAdaptiveSmoothDecor.h" line="26" column="5" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="27" bodyend="87"/>
+    <location file="src/evamAdaptiveSmoothDecor.h" line="23" column="5" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="24" bodyend="84"/>
     <listofallmembers>
       <member refid="classevam_1_1_adaptive_smooth_decor_1afd6b3d77e17b89043385a95c91c86563" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>AdaptiveSmoothDecor</name></member>
       <member refid="classevam_1_1_adaptive_smooth_decor_1a8a40b11b09c1961602bc42c2145ed021" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>calculateTimeConstant</name></member>

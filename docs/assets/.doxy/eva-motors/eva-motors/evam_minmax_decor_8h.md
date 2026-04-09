@@ -8,7 +8,7 @@
 
 [Go to the source code of this file](evam_minmax_decor_8h_source.md)
 
-_Min-max (minimax/maximin) filter decorator for motor control._ 
+
 
 * `#include "evamRingBuffer.h"`
 

@@ -85,6 +85,18 @@
     <member refid="classevam_1_1_linear_actuator_1a2cbba5d2e8851c62f43d11fb7a7d318b" kind="function"><name>GetMaxValue</name></member>
     <member refid="classevam_1_1_linear_actuator_1a9192a4e76ec80829d22d3c1a15b01f69" kind="function"><name>Go</name></member>
   </compound>
+  <compound refid="classevam_1_1_median_decor" kind="class"><name>evam::MedianDecor</name>
+    <member refid="classevam_1_1_median_decor_1ae139ee9d75adaea362bc281fc12f9c8c" kind="variable"><name>kHeartbeatPeriodMs</name></member>
+    <member refid="classevam_1_1_median_decor_1a8d5a65c6c9d20c0da803d0a864ee0841" kind="variable"><name>mBuffer</name></member>
+    <member refid="classevam_1_1_median_decor_1a4439d34a666e141ac7a470ba01a4574b" kind="variable"><name>mIndex</name></member>
+    <member refid="classevam_1_1_median_decor_1ad61797b67505513ccc685113ee9c056e" kind="variable"><name>mBufferFull</name></member>
+    <member refid="classevam_1_1_median_decor_1a7a4146a264a6c94e646ca86aa98baf93" kind="variable"><name>mLastSample</name></member>
+    <member refid="classevam_1_1_median_decor_1a9b7451ed48051d8e7188506f408d099b" kind="function"><name>calculateMedian</name></member>
+    <member refid="classevam_1_1_median_decor_1a69a09319965f1b78734de44b9ccff285" kind="function"><name>onHeartbeat</name></member>
+    <member refid="classevam_1_1_median_decor_1a2249eb90839ddace68591fbcf9503280" kind="function"><name>MedianDecor</name></member>
+    <member refid="classevam_1_1_median_decor_1a375629bd26274b4b5fc5c2615761eed6" kind="function"><name>Reset</name></member>
+    <member refid="classevam_1_1_median_decor_1a5bbab261a1c6bbba11efad8488b4ca47" kind="function"><name>Go</name></member>
+  </compound>
   <compound refid="classevam_1_1_minmax_decor" kind="class"><name>evam::MinmaxDecor</name>
     <member refid="classevam_1_1_minmax_decor_1a84012ce44a3ab3930882fa38a8fd57f0" kind="variable"><name>mRing</name></member>
     <member refid="classevam_1_1_minmax_decor_1a7e976d096d9d32fe414c6e71692704bf" kind="variable"><name>mMaxBuffer</name></member>
@@ -176,6 +188,8 @@
   <compound refid="evam_kick_decor_8h" kind="file"><name>evamKickDecor.h</name>
   </compound>
   <compound refid="evam_linear_actuator_8h" kind="file"><name>evamLinearActuator.h</name>
+  </compound>
+  <compound refid="evam_median_decor_8h" kind="file"><name>evamMedianDecor.h</name>
   </compound>
   <compound refid="evam_minmax_decor_8h" kind="file"><name>evamMinmaxDecor.h</name>
   </compound>

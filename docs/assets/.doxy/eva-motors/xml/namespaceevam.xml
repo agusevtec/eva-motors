@@ -9,6 +9,7 @@
     <innerclass refid="classevam_1_1_inertia_decor" prot="public">evam::InertiaDecor</innerclass>
     <innerclass refid="classevam_1_1_kick_decor" prot="public">evam::KickDecor</innerclass>
     <innerclass refid="classevam_1_1_linear_actuator" prot="public">evam::LinearActuator</innerclass>
+    <innerclass refid="classevam_1_1_median_decor" prot="public">evam::MedianDecor</innerclass>
     <innerclass refid="classevam_1_1_minmax_decor" prot="public">evam::MinmaxDecor</innerclass>
     <innerclass refid="classevam_1_1_pwm_driver" prot="public">evam::PwmDriver</innerclass>
     <innerclass refid="classevam_1_1_ring_buffer" prot="public">evam::RingBuffer</innerclass>
@@ -22,6 +23,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evamAdaptiveSmoothDecor.h" line="11" column="1"/>
+    <location file="src/evamAdaptiveSmoothDecor.h" line="8" column="1"/>
   </compounddef>
 </doxygen>

@@ -8,10 +8,6 @@
 
 
 ```C++
-<evamSoftwareServoDriver.h>
-#ifndef EVAM_SOFTWARE_SERVO_DRIVER_H_
-#define EVAM_SOFTWARE_SERVO_DRIVER_H_
-
 #pragma once
 
 #include <Arduino.h>
@@ -40,7 +36,6 @@ namespace evam
         {
             unsigned long nowUs = micros();
             
-            // Всегда проверяем завершение активного импульса
             if (mPulseActive)
             {
                 if (nowUs - mPulseStartUs >= mTargetPulseUs)
@@ -50,7 +45,6 @@ namespace evam
                 }
             }
             
-            // Запуск нового импульса
             if (!mPulseActive)
             {
                 unsigned long nowMs = millis();
@@ -88,9 +82,6 @@ namespace evam
     };
 
 } // namespace evam
-
-#endif // EVAM_SOFTWARE_SERVO_DRIVER_H_
-</evamSoftwareServoDriver.h>
 ```
 
 

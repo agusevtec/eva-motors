@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="28" column="40" bodyfile="src/evamInertiaDecor.h" bodystart="28" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="25" column="40" bodyfile="src/evamInertiaDecor.h" bodystart="25" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="30" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="30" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="27" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a47c2aac39fad22a3dce7254377b5db36" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="31" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="31" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="28" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_inertia_decor_1ad89d3102abd1ead1b1b4b02f58eed132" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="32" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="32" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="29" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="29" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="34" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="34" bodyend="46"/>
+        <location file="src/evamInertiaDecor.h" line="31" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="31" bodyend="43"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="49" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="49" bodyend="53"/>
+        <location file="src/evamInertiaDecor.h" line="46" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="46" bodyend="50"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="56" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="56" bodyend="58"/>
+        <location file="src/evamInertiaDecor.h" line="53" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="53" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1aadd18f726c4e84e60a76fe189db071a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="60" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="60" bodyend="63"/>
+        <location file="src/evamInertiaDecor.h" line="57" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="57" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1a7b80b8ea1c71bb1b3edb96e5825b27c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="65" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="65" bodyend="68"/>
+        <location file="src/evamInertiaDecor.h" line="62" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="62" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1ae9c41746f86cd243d7005e14d950e366" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="70" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="70" bodyend="78"/>
+        <location file="src/evamInertiaDecor.h" line="67" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="67" bodyend="75"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -234,7 +234,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamInertiaDecor.h" line="23" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="24" bodyend="79"/>
+    <location file="src/evamInertiaDecor.h" line="20" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="21" bodyend="76"/>
     <listofallmembers>
       <member refid="classevam_1_1_inertia_decor_1a3c6e90dbf7b202ba443a30f48a01ad77" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>calcSpeed</name></member>
       <member refid="classevam_1_1_inertia_decor_1a7b80b8ea1c71bb1b3edb96e5825b27c7" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>GetInertiaMass</name></member>

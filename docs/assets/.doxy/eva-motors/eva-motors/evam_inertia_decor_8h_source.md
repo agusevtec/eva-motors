@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef MOTORINERTIADECORATOR_H
-#define MOTORINERTIADECORATOR_H
-
 #pragma once
 #include <Arduino.h>
 #include <evaHeartbeat.h>
@@ -78,7 +75,7 @@ namespace evam
         }
     };
 }
-#endif
+
 ```
 
 

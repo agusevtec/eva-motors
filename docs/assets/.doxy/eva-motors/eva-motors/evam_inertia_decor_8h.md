@@ -11,7 +11,7 @@
 
 
 * `#include <Arduino.h>`
-* `#include <evaTickable.h>`
+* `#include <evaHeartbeat.h>`
 
 
 
@@ -29,7 +29,6 @@
 
 | Type | Name |
 | ---: | :--- |
-| namespace | [**eva**](namespaceeva.md) <br> |
 | namespace | [**evam**](namespaceevam.md) <br> |
 
 

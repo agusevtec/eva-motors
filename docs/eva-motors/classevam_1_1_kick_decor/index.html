@@ -376,6 +376,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tutorial/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filter decorators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tutorial/custom-drivers/" class="md-nav__link">
         
   
@@ -694,7 +722,7 @@
 
 
 <h1 id="class-evamkickdecor">Class evam::KickDecor<a class="headerlink" href="#class-evamkickdecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class Motor, unsigned short kKickDuration, signed short kKickPower&gt;</strong></p>
+<p><strong>template &lt;class Motor, unsigned short kDefaultKickDuration, signed short kDefaultKickPower&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>KickDecor</strong></a></p>
 <p><em>Decorator that applies a momentary kick to overcome static friction.</em> <a href="#detailed-description">More...</a></p>
 <ul>
@@ -741,8 +769,8 @@
 <p><strong>Template parameters:</strong></p>
 <ul>
 <li><code>Motor</code> Base motor class (must implement <a href="./#function-go"><strong>Go(signed short)</strong></a>) </li>
-<li><code>kKickDuration</code> Kick pulse duration in milliseconds. Default: 20ms. </li>
-<li><code>kKickPower</code> Kick power. Range: -1000..1000. Default: 1000 (full power). </li>
+<li><code>kDefaultKickDuration</code> Default kick pulse duration in milliseconds. Default: 20ms. </li>
+<li><code>kDefaultKickPower</code> Default kick power. Range: -1000..1000. Default: 1000 (full power). </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-getkickduration">function GetKickDuration<a class="headerlink" href="#function-getkickduration" title="Permanent link">&para;</a></h3>

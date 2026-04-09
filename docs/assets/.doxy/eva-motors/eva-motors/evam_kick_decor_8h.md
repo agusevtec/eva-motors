@@ -36,7 +36,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**KickDecor**](classevam_1_1_kick_decor.md) &lt;class Motor, kKickDuration, kKickPower&gt;<br>_Decorator that applies a momentary kick to overcome static friction._  |
+| class | [**KickDecor**](classevam_1_1_kick_decor.md) &lt;class Motor, kDefaultKickDuration, kDefaultKickPower&gt;<br>_Decorator that applies a momentary kick to overcome static friction._  |
 
 
 

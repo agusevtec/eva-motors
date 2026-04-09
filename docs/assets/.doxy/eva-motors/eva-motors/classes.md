@@ -2,6 +2,12 @@
 # Class Index
 
 
+## a
+
+* [**AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md)
+([**evam**](namespaceevam.md))
+
+
 ## c
 
 * [**CurveDecor**](classevam_1_1_curve_decor.md)
@@ -38,15 +44,29 @@
 ([**evam**](namespaceevam.md))
 
 
+## m
+
+* [**MinmaxDecor**](classevam_1_1_minmax_decor.md)
+([**evam**](namespaceevam.md))
+
+
 ## p
 
 * [**PwmDriver**](classevam_1_1_pwm_driver.md)
 ([**evam**](namespaceevam.md))
 
 
+## r
+
+* [**RingBuffer**](classevam_1_1_ring_buffer.md)
+([**evam**](namespaceevam.md))
+
+
 ## s
 
 * [**ServoDriver**](classevam_1_1_servo_driver.md)
+([**evam**](namespaceevam.md))
+* [**SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md)
 ([**evam**](namespaceevam.md))
 * [**SoftwareServoDriver**](classevam_1_1_software_servo_driver.md)
 ([**evam**](namespaceevam.md))

@@ -20,23 +20,26 @@ using namespace eva;
 
 namespace evam
 {
-    template <class Motor, unsigned short kKickDuration = 20, signed short kKickPower = 1000>
+    template <class Motor, unsigned short kDefaultKickDuration = 20, signed short kDefaultKickPower = 1000>
     class KickDecor : public virtual Tickable, public Motor
     {
-        static_assert(kKickDuration > 0, "kKickDuration must be > 0");
-        static_assert(kKickPower >= -1000 && kKickPower <= 1000, "kKickPower out of range");
+        static_assert(kDefaultKickDuration > 0, "kDefaultKickDuration must be > 0");
+        static_assert(kDefaultKickPower >= -1000 && kDefaultKickPower <= 1000, "kDefaultKickPower out of range");
 
     private:
         signed short mTargetSpeed = 0;
         unsigned long mHoldingStartedAt = 0;
 
+        unsigned short mKickDuration = kDefaultKickDuration;
+        signed short mKickPower = kDefaultKickPower;
+
         signed short calculateKickPower(signed short aValue) const
         {
             if ((mTargetSpeed <= 0) && (aValue > 0))
-                return kKickPower;
+                return mKickPower;
 
             if ((mTargetSpeed >= 0) && (aValue < 0))
-                return -kKickPower;
+                return -mKickPower;
 
             return 0;
         }
@@ -46,7 +49,7 @@ namespace evam
             if (!mHoldingStartedAt)
                 return;
 
-            if (millis() - mHoldingStartedAt < kKickDuration)
+            if (millis() - mHoldingStartedAt < mKickDuration)
                 return;
 
             Motor::Go(mTargetSpeed);
@@ -62,24 +65,23 @@ namespace evam
 
         void SetKickDuration(unsigned short aDuration)
         {
-            // kKickDuration is a template parameter, cannot be changed at runtime
-            // This method is provided for interface consistency but has no effect
+            if (aDuration > 0)
+                mKickDuration = aDuration;
         }
 
         unsigned short GetKickDuration() const
         {
-            return kKickDuration;
+            return mKickDuration;
         }
 
         void SetKickPower(signed short aPower)
         {
-            // kKickPower is a template parameter, cannot be changed at runtime
-            // This method is provided for interface consistency but has no effect
+            mKickPower = constrain(aPower, -1000, 1000);
         }
 
         signed short GetKickPower() const
         {
-            return kKickPower;
+            return mKickPower;
         }
 
         void Go(signed short aValue)
@@ -100,7 +102,6 @@ namespace evam
             Motor::Go(aValue);
         }
     };
-
 }
 #endif // MOTORKICKDECORATOR_H_
 ```

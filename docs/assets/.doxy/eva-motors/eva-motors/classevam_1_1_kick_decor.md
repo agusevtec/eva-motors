@@ -2,7 +2,7 @@
 
 # Class evam::KickDecor
 
-**template &lt;class Motor, unsigned short kKickDuration, signed short kKickPower&gt;**
+**template &lt;class Motor, unsigned short kDefaultKickDuration, signed short kDefaultKickPower&gt;**
 
 
 
@@ -101,8 +101,8 @@ When starting from stop or changing direction, a power pulse is applied for a sh
 
 
 * `Motor` Base motor class (must implement [**Go(signed short)**](classevam_1_1_kick_decor.md#function-go)) 
-* `kKickDuration` Kick pulse duration in milliseconds. Default: 20ms. 
-* `kKickPower` Kick power. Range: -1000..1000. Default: 1000 (full power). 
+* `kDefaultKickDuration` Default kick pulse duration in milliseconds. Default: 20ms. 
+* `kDefaultKickPower` Default kick power. Range: -1000..1000. Default: 1000 (full power). 
 
 
 

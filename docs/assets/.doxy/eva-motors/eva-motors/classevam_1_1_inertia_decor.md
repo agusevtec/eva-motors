@@ -2,7 +2,7 @@
 
 # Class evam::InertiaDecor
 
-**template &lt;class Motor, unsigned short kInertiaMass&gt;**
+**template &lt;class Motor, signed short kInertiaMass&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that simulates mechanical inertia (flywheel effect)._ [More...](#deta
 
 
 
-Inherits the following classes: Tickable,  Motor
+Inherits the following classes: Heartbeat,  Motor
 
 
 
@@ -55,9 +55,10 @@ Inherits the following classes: Tickable,  Motor
 
 | Type | Name |
 | ---: | :--- |
-|  unsigned short | [**GetInertiaMass**](#function-getinertiamass) () const<br>_Get the current virtual mass (inertia) value._  |
-|  void | [**Go**](#function-go) (int aSpeed) <br>_Apply the control value with inertia simulation._  |
-|  void | [**SetInertiaMass**](#function-setinertiamass) (unsigned short aValue) <br>_Set the virtual mass (inertia) value._  |
+|  unsigned short | [**GetInertiaMass**](#function-getinertiamass) () const<br> |
+|  void | [**Go**](#function-go) (int aSpeed) <br> |
+|   | [**InertiaDecor**](#function-inertiadecor) () <br> |
+|  void | [**SetInertiaMass**](#function-setinertiamass) (unsigned short aValue) <br> |
 
 
 
@@ -82,6 +83,11 @@ Inherits the following classes: Tickable,  Motor
 
 
 
+## Protected Functions
+
+| Type | Name |
+| ---: | :--- |
+|  void | [**onHeartbeat**](#function-onheartbeat) () override<br> |
 
 
 
@@ -98,7 +104,7 @@ When decelerating or stopping, speed decreases gradually over time, simulating t
 
 
 * `Motor` Base motor class (must implement Go(signed short)) 
-* `kInertiaMass` Virtual mass. Larger values = slower deceleration. Range: 1..200. 
+* `kInertiaMass` Virtual mass (positive). Larger values = slower deceleration. 
 
 
 
@@ -111,7 +117,6 @@ When decelerating or stopping, speed decreases gradually over time, simulating t
 
 ### function GetInertiaMass 
 
-_Get the current virtual mass (inertia) value._ 
 ```C++
 inline unsigned short evam::InertiaDecor::GetInertiaMass () const
 ```
@@ -119,24 +124,12 @@ inline unsigned short evam::InertiaDecor::GetInertiaMass () const
 
 
 
-
-**Returns:**
-
-Current mass value in range 1..200. 
-
-
-
-
-
-        
-
 <hr>
 
 
 
 ### function Go 
 
-_Apply the control value with inertia simulation._ 
 ```C++
 inline void evam::InertiaDecor::Go (
     int aSpeed
@@ -146,16 +139,18 @@ inline void evam::InertiaDecor::Go (
 
 
 
-
-**Parameters:**
-
-
-* `aSpeed` Desired speed, range -1000..1000. 
+<hr>
 
 
 
+### function InertiaDecor 
 
-        
+```C++
+inline evam::InertiaDecor::InertiaDecor () 
+```
+
+
+
 
 <hr>
 
@@ -163,7 +158,6 @@ inline void evam::InertiaDecor::Go (
 
 ### function SetInertiaMass 
 
-_Set the virtual mass (inertia) value._ 
 ```C++
 inline void evam::InertiaDecor::SetInertiaMass (
     unsigned short aValue
@@ -173,16 +167,20 @@ inline void evam::InertiaDecor::SetInertiaMass (
 
 
 
-
-**Parameters:**
-
-
-* `aValue` Mass value, clamped to 1..200. Higher = slower deceleration. 
+<hr>
+## Protected Functions Documentation
 
 
 
 
-        
+### function onHeartbeat 
+
+```C++
+inline void evam::InertiaDecor::onHeartbeat () override
+```
+
+
+
 
 <hr>
 

@@ -17,12 +17,12 @@ namespace evam
      * @tparam kMinTimeConstantMs Minimum time constant (fast response). Default: 10ms
      * @tparam kMaxTimeConstantMs Maximum time constant (heavy smoothing). Default: 150ms
      */
-    template <class Motor, 
-              unsigned short kMinTimeConstantMs = 10, 
+    template <class Motor,
+              unsigned short kMinTimeConstantMs = 10,
               unsigned short kMaxTimeConstantMs = 150>
     class AdaptiveSmoothDecor : public Heartbeat, public Motor
     {
-        static_assert(kMinTimeConstantMs >= 5 && kMinTimeConstantMs <= 200, 
+        static_assert(kMinTimeConstantMs >= 5 && kMinTimeConstantMs <= 200,
                       "kMinTimeConstantMs out of range 5..200");
         static_assert(kMaxTimeConstantMs >= kMinTimeConstantMs && kMaxTimeConstantMs <= 500,
                       "kMaxTimeConstantMs must be >= kMinTimeConstantMs and <= 500");
@@ -30,17 +30,17 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
         static constexpr signed short kDeadzone = 3;
-        
+
         signed short mTargetValue = 0;
         signed short mCurrentValue = 0;
         signed short mLastTargetValue = 0;
-        
+
         unsigned short mCurrentTimeConstantMs = kMaxTimeConstantMs;
 
         unsigned short calculateTimeConstant()
         {
             signed short change = abs(mTargetValue - mLastTargetValue);
-            
+
             if (change >= 200)
                 return kMinTimeConstantMs;
             else if (change <= 5)
@@ -56,7 +56,7 @@ namespace evam
         {
             mCurrentTimeConstantMs = calculateTimeConstant();
             mLastTargetValue = mTargetValue;
-            
+
             if (abs(mTargetValue) <= kDeadzone && abs(mCurrentValue) <= kDeadzone)
             {
                 if (mCurrentValue != 0)
@@ -64,11 +64,11 @@ namespace evam
             }
             else
             {
-                float step = (float)(mTargetValue - mCurrentValue) * kHeartbeatPeriodMs / mCurrentTimeConstantMs;
-                mCurrentValue += (signed short)step;
+                signed long step = (signed long)(mTargetValue - mCurrentValue) * kHeartbeatPeriodMs * 1000 / mCurrentTimeConstantMs;
+                mCurrentValue += step / 1000;
                 mCurrentValue = constrain(mCurrentValue, -1000, 1000);
             }
-            
+
             Motor::Go(mCurrentValue);
         }
 
@@ -81,19 +81,7 @@ namespace evam
         {
             mTargetValue = constrain(aValue, -1000, 1000);
         }
-
-        void Reset()
-        {
-            mCurrentValue = 0;
-            mTargetValue = 0;
-            mLastTargetValue = 0;
-        }
-        
-        unsigned short GetCurrentTimeConstant() const
-        {
-            return mCurrentTimeConstantMs;
-        }
     };
 
-} // namespace evam
+}
 

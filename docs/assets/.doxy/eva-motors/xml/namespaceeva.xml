@@ -6,6 +6,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evamInertiaDecor.h" line="7" column="1"/>
+    <location file="src/evamAdaptiveSmoothDecor.h" line="9" column="1"/>
   </compounddef>
 </doxygen>

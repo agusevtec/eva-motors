@@ -86,7 +86,3 @@ KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<9, 10>>, 5>, 15>
 
 The library features a clean, extensible hardware abstraction layer. Adding support for new motor drivers is straightforward.
 
-## License
-
-This library is published under the **MIT License** – free for commercial and open-source use.
-

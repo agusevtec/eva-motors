@@ -1,6 +1,3 @@
-#ifndef EVAM_SMOOTH_DECOR_H_
-#define EVAM_SMOOTH_DECOR_H_
-
 #pragma once
 
 #include <Arduino.h>
@@ -106,4 +103,3 @@ namespace evam
 
 } // namespace evam
 
-#endif // EVAM_SMOOTH_DECOR_H_

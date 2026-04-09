@@ -1,6 +1,3 @@
-#ifndef EVAM_MEDIAN_DECOR_H_
-#define EVAM_MEDIAN_DECOR_H_
-
 #pragma once
 
 #include <Arduino.h>
@@ -99,4 +96,4 @@ namespace evam
 
 } // namespace evam
 
-#endif // EVAM_MEDIAN_DECOR_H_
+

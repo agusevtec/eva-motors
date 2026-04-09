@@ -1,6 +1,3 @@
-#ifndef EVAM_PWM_DRIVER_H_
-#define EVAM_PWM_DRIVER_H_
-
 #pragma once
 
 #include <Arduino.h>
@@ -42,4 +39,4 @@ namespace evam
 
 } // namespace evam
 
-#endif // EVAM_PWM_DRIVER_H_
+

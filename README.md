@@ -131,82 +131,18 @@ motor.SetMinBackward(-100);
 motor.Go(500);
 ```
 
-## Template Parameters
+## Installation
 
-All template parameters have sensible defaults and compile-time bounds checking.
+Using Arduino Library Manager
 
-### ForwardMotor / LinearActuator
-```cpp
-ForwardMotor<Driver, kMinValue = 0, kMaxValue = 1000>
-```
+Open Arduino IDE
 
-### DirectionalMotor
-```cpp
-DirectionalMotor<Driver, kMaxBackward, kMinBackward, kMinForward, kMaxForward>
-```
+Go to Sketch -> Include Library -> Manage Libraries
 
-### SteeringActuator
-```cpp
-SteeringActuator<Driver, kLeftPos = -1000, kCenterPos = 0, kRightPos = 1000>
-```
+Search for "eva-core-sk"
 
-### CurveDecor
-```cpp
-CurveDecor<Motor, kBend = 0>  // -10..10
-```
-
-### InertiaDecor
-```cpp
-InertiaDecor<Motor, kInertiaMass = 10>  // 1..200
-```
-
-### KickDecor
-```cpp
-KickDecor<Motor, kKickDuration = 20, kKickPower = 1000>
-```
-
-## Hardware Examples
-
-### TA6586 Motor Driver
-
-Pinout:
-```
-       TA-6586
-       -------
-  5 - |       | - VCC
-  6 - |       | - GND
-  7 - |       | - FI (Forward Input)
-  8 - |   _   | - BI (Backward Input)
-       --/ \--
-```
-
-```cpp
-#include <evamDirectionalMotor.h>
-#include <evamTA6586Driver.h>
-
-DirectionalMotor<TA6586Driver<7, 8>> motor;
-motor.Go(500);   // forward
-motor.Go(-300);  // reverse
-```
-
-### TB6612FNG Motor Driver
-
-```cpp
-#include <evamDirectionalMotor.h>
-#include <evamTB6612Driver.h>
-
-// Motor A: PWMA=9, AIN1=10, AIN2=11
-DirectionalMotor<TB6612FNGDriver<9, 10, 11>> motorA;
-```
+Click Install
 
 ## License
 
-MIT License
-
-## Author
-
-EVA Motors Library
-
-## Version
-
-1.0.0
+This library is published under MIT licence.

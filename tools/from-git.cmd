@@ -1,7 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM Проверка наличия аргумента
 if "%~1"=="" (
     echo Usage: %~nx0 ^<git-url^>
     exit /b 1

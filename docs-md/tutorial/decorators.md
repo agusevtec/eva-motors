@@ -110,7 +110,7 @@ Must call `eva::tac()` in `loop()` to manage kick pulse timing.
 
 - `kKickDuration`: Pulse duration in milliseconds (> 0)
 
-- `kKickPower`: Pulse power (-1000..1000)
+- `kKickPower`: Pulse power (0..1000)
 
 **Methods:**
 

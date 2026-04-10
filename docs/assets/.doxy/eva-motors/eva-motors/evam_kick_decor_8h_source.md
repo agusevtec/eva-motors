@@ -21,7 +21,7 @@ namespace evam
     class KickDecor : public virtual Tickable, public Motor
     {
         static_assert(kDefaultKickDuration > 0, "kDefaultKickDuration must be > 0");
-        static_assert(kDefaultKickPower >= -1000 && kDefaultKickPower <= 1000, "kDefaultKickPower out of range");
+        static_assert(kDefaultKickPower > 0 && kDefaultKickPower <= 1000, "kDefaultKickPower out of range");
 
     private:
         signed short mTargetSpeed = 0;
@@ -73,7 +73,7 @@ namespace evam
 
         void SetKickPower(signed short aPower)
         {
-            mKickPower = constrain(aPower, -1000, 1000);
+            mKickPower = constrain(aPower, 0, 1000);
         }
 
         signed short GetKickPower() const

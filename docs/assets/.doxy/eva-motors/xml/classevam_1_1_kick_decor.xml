@@ -226,7 +226,7 @@
 <parametername>aPower</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Power value, clamped to -1000..1000. </para>
+<para>Power value, clamped to 0..1000. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -246,7 +246,7 @@
 <para>Get kick power. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>Kick power value in range -1000..1000. </para>
+<para><simplesect kind="return"><para>Kick power value in range 0..1000. </para>
 </simplesect>
 </para>
         </detaileddescription>

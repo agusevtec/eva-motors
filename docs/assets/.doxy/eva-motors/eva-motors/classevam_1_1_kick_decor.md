@@ -151,7 +151,7 @@ inline signed short evam::KickDecor::GetKickPower () const
 
 **Returns:**
 
-Kick power value in range -1000..1000. 
+Kick power value in range 0..1000. 
 
 
 
@@ -233,7 +233,7 @@ inline void evam::KickDecor::SetKickPower (
 **Parameters:**
 
 
-* `aPower` Power value, clamped to -1000..1000. 
+* `aPower` Power value, clamped to 0..1000. 
 
 
 

@@ -97,6 +97,7 @@ motor.Go(100);  // brief full power then 10% throttle
 | Driver | Description | Methods |
 |--------|-------------|---------|
 | `ServoDriver<kPin>` | Standard servo | `actBipolar()`, `actUnipolar()` |
+| `SoftwareServoDriver<kPin>` | Standard servo | `actBipolar()`, `actUnipolar()` |
 | `PwmDriver<kPin>` | Simple PWM output | `actUnipolar()` |
 | `TB6612FNGDriver<kSpeed,kMode1,kMode2>` | TB6612 H-bridge | `actBipolar()` |
 | `TA6586Driver<kForward,kBackward>` | TA6586 H-bridge | `actBipolar()` |
@@ -139,7 +140,7 @@ Open Arduino IDE
 
 Go to Sketch -> Include Library -> Manage Libraries
 
-Search for "eva-core-sk"
+Search for "eva-motors"
 
 Click Install
 

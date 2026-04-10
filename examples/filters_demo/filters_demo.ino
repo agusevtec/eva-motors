@@ -13,6 +13,9 @@
 using namespace eva;
 using namespace evam;
 
+// HOW TO USE
+// please use serial plot mode
+
 class DemoDriver {
 public:
   signed short Value = 0;
@@ -25,7 +28,9 @@ using DemoMotor = DirectionalMotor<DemoDriver>;
 
 class App : Heartbeat {
 private:
-  // CurveDecor<DemoMotor, -6> mMotor;
+  // Uncomment the one!
+
+  CurveDecor<DemoMotor, -6> mMotor;
   // KickDecor<DemoMotor, 25, 900> mMotor;
   // InertiaDecor<DemoMotor, 30> mMotor;
   // AdaptiveSmoothDecor<DemoMotor> mMotor;
@@ -33,7 +38,6 @@ private:
   // MinmaxDecor<DemoMotor, 3> mMotor;
 
   PinSymmetricJoystick<A6, INPUT, 100, 300> mThrottle;
-  //PinJoystick<A6, INPUT, 100, 400/2, 300> mThrottle;
 
 public:
   App()
@@ -54,9 +58,7 @@ public:
 };
 
 void setup() {
-  pinMode(A4, OUTPUT);
   Serial.begin(9600);
-  digitalWrite(A4, LOW);
   // Static ensures object persists after setup() exits
   static App app;
 }

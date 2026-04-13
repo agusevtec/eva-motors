@@ -1,6 +1,6 @@
 # What is EVA Motors?
 
-## Core Concept
+## What is inside?
 
 EVA Motors is a decorator-based library for behavioral modification of micro-motors. 
 EVA Motors lets you compose behavior by stacking decorators that add specific characteristics like S-curve response, inertia simulation, or kick-start pulses.

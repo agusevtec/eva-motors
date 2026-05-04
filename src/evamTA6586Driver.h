@@ -22,14 +22,15 @@ namespace evam
      * @tparam kForwardPin PWM pin connected to FI (forward input)
      * @tparam kBackwardPin PWM pin connected to BI (backward input)
      */
-    template <int kForwardPin, int kBackwardPin>
     class TA6586Driver
     {
     public:
         /**
          * @brief Constructor. Initializes pins and stops the motor.
          */
-        TA6586Driver()
+        TA6586Driver(int kForwardPin, int kBackwardPin):
+            kForwardPin(kForwardPin),
+            kBackwardPin(kBackwardPin)
         {
             pinMode(kForwardPin, OUTPUT);
             pinMode(kBackwardPin, OUTPUT);
@@ -66,6 +67,10 @@ namespace evam
             analogWrite(kForwardPin, max(0, normalized));
             analogWrite(kBackwardPin, max(0, -normalized));
         }
+
+    private:
+        int kForwardPin;
+        int kBackwardPin;
     };
 }
 

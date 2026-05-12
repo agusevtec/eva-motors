@@ -66,8 +66,8 @@ actuator.Go(750);  // 75% extended
 ```cpp
 #include <evamCurveDecor.h>
 
-// Soft start and smooth response
-CurveDecor<ForwardMotor<PwmDriver<9>>, 5> motor;
+// Soft start but sensitive response at high speeds
+CurveDecor<ForwardMotor<PwmDriver<9>>, -5> motor;
 motor.Go(500);  // non-linear response
 ```
 

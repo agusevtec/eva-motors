@@ -30,7 +30,7 @@ namespace evam
 
         signed short calcSpeed() const
         {
-            if ((mDesiredSpeed > 0) ^ (mSpeed > 0))
+            if ((mDesiredSpeed != 0) && ((mDesiredSpeed > 0) ^ (mSpeed > 0)))
                 return mDesiredSpeed;
 
             if (abs(mDesiredSpeed) > abs(mSpeed))
@@ -38,8 +38,9 @@ namespace evam
 
             signed short delta = mDesiredSpeed - mSpeed;
             signed short step = 2* delta / mInertiaMass;
-            signed short extraStep = (mDesiredSpeed > mSpeed) + (mDesiredSpeed < mSpeed);
-            return mSpeed + step - extraStep;
+            if (abs(step) < 3)
+                return mDesiredSpeed;
+            return mSpeed + step;
         }
 
     protected:

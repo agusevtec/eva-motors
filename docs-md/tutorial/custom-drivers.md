@@ -130,13 +130,3 @@ Please submit a pull request with:
 
 Your driver will help the entire community and make EVA Motors more versatile.
 
-## Summary
-
-Creating custom drivers in EVA Motors is straightforward:
-
-1. Choose the appropriate interface (`actBipolar` or `actUnipolar`)
-2. Implement the method with your hardware-specific logic
-3. Initialize pins and set safe state in constructor
-4. Use with any compatible motor wrapper
-
-The driver layer is designed to be minimal yet flexible, making it easy to support virtually any motor controller hardware.

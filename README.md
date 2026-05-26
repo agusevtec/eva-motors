@@ -7,9 +7,8 @@ A modular C++ library for motor and actuator control on Arduino.
 - **Unified interface** – All motors and actuators use the same `Go()` method
 - **Plug-and-play drivers** – Servo, TB6612, TA6586, and PWM drivers included
 - **Decorator pattern** – Add behaviors like curve shaping, inertia, and kick-start
-- **Flexible range mapping** – Supports unipolar (0..1000) and bipolar (-1000..1000) control
-- **Runtime configuration** – All parameters can be adjusted at runtime via setters
-- **Compile-time safety** – `static_assert` validates template parameters
+- **Range mapping** – Supports unipolar (0..1000) and bipolar (-1000..1000) control
+
 
 ## Quick Start
 

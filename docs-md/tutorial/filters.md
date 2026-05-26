@@ -88,8 +88,7 @@ motor.Go(500);  // Filtered after 9 samples
 
 - Removing impulse noise from potentiometers
 - Cleaning encoder signals with glitches
-- Radar/lidar signal conditioning
-- Audio pop removal
+
 
 ## AdaptiveSmoothDecor – Adaptive Exponential
 

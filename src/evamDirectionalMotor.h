@@ -40,6 +40,14 @@ namespace evam
 
     public:
         /**
+         * @brief Forwarding constructor.
+         *
+         * Forwards all arguments to the Driver base class.
+         */
+        template <typename... Args>
+        DirectionalMotor(Args &&...args) : Driver(std::forward<Args>(args)...) {}
+
+        /**
          * @brief Configure all range parameters at once.
          *
          * @param aMaxBackward Maximum reverse output value (-1000..1000)

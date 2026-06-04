@@ -2,7 +2,7 @@
 
 # Class evam::SoftwareServoDriver
 
-**template &lt;int kPin, int kMinPulse, int kMaxPulse&gt;**
+**template &lt;int kPin, int kMinPulse, int kMiddlePulse, int kMaxPulse&gt;**
 
 
 
@@ -102,8 +102,9 @@ This driver implements servo control without using the hardware PWM limitations 
 
 
 * `kPin` Servo signal pin number. 
-* `kMinPulse` Minimum pulse width in microseconds (default: 500) 
-* `kMaxPulse` Maximum pulse width in microseconds (default: 2500) 
+* `kMinPulse` Minimum pulse width in microseconds (default: 1000) 
+* `kMiddlePulse` Middle pulse width in microseconds (default: 1500) 
+* `kMaxPulse` Maximum pulse width in microseconds (default: 2000) 
 
 
 

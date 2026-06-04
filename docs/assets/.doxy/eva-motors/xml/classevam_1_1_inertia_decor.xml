@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_inertia_decor" kind="class" language="C++" prot="public">
     <compoundname>evam::InertiaDecor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Heartbeat</basecompoundref>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="31" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="31" bodyend="43"/>
+        <location file="src/evamInertiaDecor.h" line="31" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="31" bodyend="44"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="46" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="46" bodyend="50"/>
+        <location file="src/evamInertiaDecor.h" line="47" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="47" bodyend="51"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="53" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="53" bodyend="55"/>
+        <location file="src/evamInertiaDecor.h" line="54" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="54" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1aadd18f726c4e84e60a76fe189db071a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="57" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="57" bodyend="60"/>
+        <location file="src/evamInertiaDecor.h" line="58" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="58" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1a7b80b8ea1c71bb1b3edb96e5825b27c7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="62" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="62" bodyend="65"/>
+        <location file="src/evamInertiaDecor.h" line="63" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="63" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1ae9c41746f86cd243d7005e14d950e366" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="67" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="67" bodyend="75"/>
+        <location file="src/evamInertiaDecor.h" line="68" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="68" bodyend="76"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -234,7 +234,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamInertiaDecor.h" line="20" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="21" bodyend="76"/>
+    <location file="src/evamInertiaDecor.h" line="20" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="21" bodyend="77"/>
     <listofallmembers>
       <member refid="classevam_1_1_inertia_decor_1a3c6e90dbf7b202ba443a30f48a01ad77" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>calcSpeed</name></member>
       <member refid="classevam_1_1_inertia_decor_1a7b80b8ea1c71bb1b3edb96e5825b27c7" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>GetInertiaMass</name></member>

@@ -33,7 +33,7 @@ namespace evam
                 return map(constrain(aLevel, -1000, 0), -1000, 0, mMaxBackward, mMinBackward);
             if (aLevel > 0)
                 return map(constrain(aLevel, 0, 1000), 0, 1000, mMinForward, mMaxForward);
-            return 0;
+            return (mMinForward + mMinBackward)/2;
         }
 
     public:

@@ -36,7 +36,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**ServoDriver**](classevam_1_1_servo_driver.md) &lt;kPin&gt;<br>_Servo driver using standard Arduino Servo library._  |
+| class | [**ServoDriver**](classevam_1_1_servo_driver.md) &lt;kPin, kMinPulse, kMiddlePulse, kMaxPulse&gt;<br>_Servo driver using standard Arduino Servo library._  |
 
 
 

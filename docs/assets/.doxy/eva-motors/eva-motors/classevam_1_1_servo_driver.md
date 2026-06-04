@@ -2,7 +2,7 @@
 
 # Class evam::ServoDriver
 
-**template &lt;int kPin&gt;**
+**template &lt;int kPin, int kMinPulse, int kMiddlePulse, int kMaxPulse&gt;**
 
 
 
@@ -102,6 +102,9 @@ Supports both bipolar (centered) and unipolar (absolute) control modes.
 
 
 * `kPin` Servo signal pin number. 
+* `kMinPulse` Minimum pulse width in microseconds (default: 1000) 
+* `kMiddlePulse` Middle pulse width in microseconds (default: 1500) 
+* `kMaxPulse` Maximum pulse width in microseconds (default: 2000) 
 
 
 

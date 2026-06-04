@@ -76,5 +76,5 @@ namespace evam
     };
     
     template <int kPin, int kMinPulse, int kMaxPulse>
-    using ServoFlatDriver = Servoriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2, kMaxPulse>
+    using ServoFlatDriver = ServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2, kMaxPulse>
 }

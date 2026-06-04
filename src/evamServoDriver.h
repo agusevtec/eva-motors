@@ -54,10 +54,10 @@ namespace evam
         void actBipolar(signed short aValue)
         {
             aValue = constrain(aValue, -1000, 1000);
-            if (aVelue < 0)
-                mServo.writeMicroseconds(map(aValue, -1000, 0), kMinPulse, kMiddlePulse))
+            if (aValue < 0)
+                mServo.writeMicroseconds(map(aValue, -1000, 0, kMinPulse, kMiddlePulse));
             else
-                mServo.writeMicroseconds(map(aValue, 0, 1000), kMiddlePulse, kMaxPulse))
+                mServo.writeMicroseconds(map(aValue, 0, 1000, kMiddlePulse, kMaxPulse));
         }
 
         /**
@@ -68,13 +68,13 @@ namespace evam
         void actUnipolar(signed short aValue)
         {
             aValue = constrain(aValue, 0, 1000);
-            if (aVelue < 500)
-                mServo.writeMicroseconds(map(aValue, 0, 500), kMinPulse, kMiddlePulse))
+            if (aValue < 500)
+                mServo.writeMicroseconds(map(aValue, 0, 500, kMinPulse, kMiddlePulse));
             else
-                mServo.writeMicroseconds(map(aValue, 500, 1000), kMiddlePulse, kMaxPulse))
+                mServo.writeMicroseconds(map(aValue, 500, 1000, kMiddlePulse, kMaxPulse));
         }
     };
     
     template <int kPin, int kMinPulse, int kMaxPulse>
-    using ServoFlatDriver = ServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2, kMaxPulse>
+    using ServoFlatDriver = ServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2, kMaxPulse>;
 }

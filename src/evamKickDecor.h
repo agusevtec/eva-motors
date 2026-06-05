@@ -8,6 +8,16 @@ using namespace eva;
 namespace evam
 {
     /**
+     * @brief Configuration structure for KickDecor
+     */
+    struct KickConfig {
+        unsigned short duration;
+        signed short power;
+        
+        KickConfig(unsigned short dur, signed short pow) : duration(dur), power(pow) {}
+    };
+
+    /**
      * @brief Decorator that applies a momentary kick to overcome static friction.
      *
      * When starting from stop or changing direction, a power pulse is applied
@@ -17,26 +27,27 @@ namespace evam
      * @tparam kDefaultKickDuration Default kick pulse duration in milliseconds. Default: 20ms.
      * @tparam kDefaultKickPower Default kick power. Range: -1000..1000. Default: 1000 (full power).
      */
-    template <class Motor, unsigned short kDefaultKickDuration = 20, signed short kDefaultKickPower = 1000>
+    template <class Motor, 
+              unsigned short kDefaultKickDuration = 20, 
+              signed short kDefaultKickPower = 1000>
     class KickDecor : public virtual Tickable, public Motor
     {
         static_assert(kDefaultKickDuration > 0, "kDefaultKickDuration must be > 0");
         static_assert(kDefaultKickPower > 0 && kDefaultKickPower <= 1000, "kDefaultKickPower out of range");
 
     private:
+        KickConfig mConfig;
+        
         signed short mTargetSpeed = 0;
         unsigned long mHoldingStartedAt = 0;
-
-        unsigned short mKickDuration = kDefaultKickDuration;
-        signed short mKickPower = kDefaultKickPower;
 
         signed short calculateKickPower(signed short aValue) const
         {
             if ((mTargetSpeed <= 0) && (aValue > 0))
-                return mKickPower;
+                return mConfig.power;
 
             if ((mTargetSpeed >= 0) && (aValue < 0))
-                return -mKickPower;
+                return -mConfig.power;
 
             return 0;
         }
@@ -46,7 +57,7 @@ namespace evam
             if (!mHoldingStartedAt)
                 return;
 
-            if (millis() - mHoldingStartedAt < mKickDuration)
+            if (millis() - mHoldingStartedAt < mConfig.duration)
                 return;
 
             Motor::Go(mTargetSpeed);
@@ -54,6 +65,11 @@ namespace evam
         }
 
     public:
+        KickDecor() : mConfig(kDefaultKickDuration, kDefaultKickPower) {}
+        
+        template<typename... Args>
+        KickDecor(KickConfig config, Args... args) : mConfig(config), Motor(args...) {}
+
         /**
          * @brief Configure kickstart parameters at once.
          *
@@ -73,7 +89,7 @@ namespace evam
         void SetKickDuration(unsigned short aDuration)
         {
             if (aDuration > 0)
-                mKickDuration = aDuration;
+                mConfig.duration = aDuration;
         }
 
         /**
@@ -82,7 +98,7 @@ namespace evam
          */
         unsigned short GetKickDuration() const
         {
-            return mKickDuration;
+            return mConfig.duration;
         }
 
         /**
@@ -91,7 +107,7 @@ namespace evam
          */
         void SetKickPower(signed short aPower)
         {
-            mKickPower = constrain(aPower, 0, 1000);
+            mConfig.power = constrain(aPower, 0, 1000);
         }
 
         /**
@@ -100,7 +116,7 @@ namespace evam
          */
         signed short GetKickPower() const
         {
-            return mKickPower;
+            return mConfig.power;
         }
 
         /**

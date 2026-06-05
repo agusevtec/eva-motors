@@ -4,6 +4,19 @@
 namespace evam
 {
     /**
+     * @brief Configuration structure for DirectionalMotor
+     */
+    struct DirectionalConfig {
+        signed short maxBackward;
+        signed short minBackward;
+        signed short minForward;
+        signed short maxForward;
+        
+        DirectionalConfig(signed short maxBw, signed short minBw, signed short minFw, signed short maxFw)
+            : maxBackward(maxBw), minBackward(minBw), minForward(minFw), maxForward(maxFw) {}
+    };
+
+    /**
      * @brief Bidirectional motor controller (forward/reverse).
      *
      * Maps a signed input range -1000..1000 to driver-specific output values.
@@ -15,7 +28,11 @@ namespace evam
      * @tparam kMinForward Minimum forward output value (e.g., 50)
      * @tparam kMaxForward Maximum forward output value (e.g., 1000)
      */
-    template <class Driver, signed short kMaxBackward = -1000, signed short kMinBackward = 0, signed short kMinForward = 0, signed short kMaxForward = 1000>
+    template <class Driver, 
+              signed short kMaxBackward = -1000, 
+              signed short kMinBackward = 0, 
+              signed short kMinForward = 0, 
+              signed short kMaxForward = 1000>
     class DirectionalMotor : public Driver
     {
         static_assert(kMaxBackward >= -1000 && kMaxBackward <= 1000, "kMaxBackward out of range");
@@ -24,21 +41,23 @@ namespace evam
         static_assert(kMaxForward >= -1000 && kMaxForward <= 1000, "kMaxForward out of range");
 
     private:
-        signed short mMaxBackward = kMaxBackward;
-        signed short mMinBackward = kMinBackward;
-        signed short mMinForward = kMinForward;
-        signed short mMaxForward = kMaxForward;
-
+        DirectionalConfig mConfig;
+        
         signed short compute(signed short aLevel) const
         {
             if (aLevel < 0)
-                return map(constrain(aLevel, -1000, 0), -1000, 0, mMaxBackward, mMinBackward);
+                return map(constrain(aLevel, -1000, 0), -1000, 0, mConfig.maxBackward, mConfig.minBackward);
             if (aLevel > 0)
-                return map(constrain(aLevel, 0, 1000), 0, 1000, mMinForward, mMaxForward);
-            return (mMinForward + mMinBackward)/2;
+                return map(constrain(aLevel, 0, 1000), 0, 1000, mConfig.minForward, mConfig.maxForward);
+            return (mConfig.minForward + mConfig.minBackward)/2;
         }
 
     public:
+        DirectionalMotor() : mConfig(kMaxBackward, kMinBackward, kMinForward, kMaxForward) {}
+        
+        template<typename... Args>
+        DirectionalMotor(DirectionalConfig config, Args... args) : Driver(args...), mConfig(config) {}
+
         /**
          * @brief Configure all range parameters at once.
          *
@@ -61,7 +80,7 @@ namespace evam
          */
         void SetMaxBackward(signed short aValue)
         {
-            mMaxBackward = constrain(aValue, -1000, 1000);
+            mConfig.maxBackward = constrain(aValue, -1000, 1000);
         }
 
         /**
@@ -70,7 +89,7 @@ namespace evam
          */
         signed short GetMaxBackward() const
         {
-            return mMaxBackward;
+            return mConfig.maxBackward;
         }
 
         /**
@@ -79,7 +98,7 @@ namespace evam
          */
         void SetMinBackward(signed short aValue)
         {
-            mMinBackward = constrain(aValue, -1000, 1000);
+            mConfig.minBackward = constrain(aValue, -1000, 1000);
         }
 
         /**
@@ -88,7 +107,7 @@ namespace evam
          */
         signed short GetMinBackward() const
         {
-            return mMinBackward;
+            return mConfig.minBackward;
         }
 
         /**
@@ -97,7 +116,7 @@ namespace evam
          */
         void SetMinForward(signed short aValue)
         {
-            mMinForward = constrain(aValue, -1000, 1000);
+            mConfig.minForward = constrain(aValue, -1000, 1000);
         }
 
         /**
@@ -106,7 +125,7 @@ namespace evam
          */
         signed short GetMinForward() const
         {
-            return mMinForward;
+            return mConfig.minForward;
         }
 
         /**
@@ -115,7 +134,7 @@ namespace evam
          */
         void SetMaxForward(signed short aValue)
         {
-            mMaxForward = constrain(aValue, -1000, 1000);
+            mConfig.maxForward = constrain(aValue, -1000, 1000);
         }
 
         /**
@@ -124,7 +143,7 @@ namespace evam
          */
         signed short GetMaxForward() const
         {
-            return mMaxForward;
+            return mConfig.maxForward;
         }
 
         /**

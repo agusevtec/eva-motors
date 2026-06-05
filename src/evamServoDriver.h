@@ -6,6 +6,19 @@
 namespace evam
 {
     /**
+     * @brief Configuration structure for ServoDriver
+     */
+    struct ServoConfig {
+        int pin;
+        int minPulse;
+        int middlePulse;
+        int maxPulse;
+        
+        ServoConfig(int p, int minP, int midP, int maxP) 
+            : pin(p), minPulse(minP), middlePulse(midP), maxPulse(maxP) {}
+    };
+
+    /**
      * @brief Servo driver using standard Arduino Servo library.
      *
      * Supports both bipolar (centered) and unipolar (absolute) control modes.
@@ -15,7 +28,7 @@ namespace evam
      * @tparam kMiddlePulse Middle pulse width in microseconds (default: 1500)
      * @tparam kMaxPulse Maximum pulse width in microseconds (default: 2000)
      */
-    template <int kPin, int kMinPulse = 1000, int kMiddlePulse = 1500, int kMaxPulse = 2000>
+    template <int kPin = 0, int kMinPulse = 1000, int kMiddlePulse = 1500, int kMaxPulse = 2000>
     class ServoDriver
     {
         static_assert(kMinPulse >= 500 && kMinPulse <= 2500, "kMinPulse out of range 500..2500");
@@ -25,15 +38,19 @@ namespace evam
         static_assert(kMiddlePulse < kMaxPulse, "kMiddlePulse must be less than kMaxPulse");
 
     private:
+        ServoConfig mConfig;
         Servo mServo;
 
     public:
-        /**
-         * @brief Constructor. Attaches the servo to the pin.
-         */
-        ServoDriver()
+        ServoDriver() : mConfig(kPin, kMinPulse, kMiddlePulse, kMaxPulse)
         {
-            mServo.attach(kPin);
+            mServo.attach(mConfig.pin);
+        }
+        
+        template<typename... Args>
+        ServoDriver(ServoConfig config, Args... args) : mConfig(config)
+        {
+            mServo.attach(mConfig.pin);
         }
 
         /**
@@ -42,7 +59,7 @@ namespace evam
          */
         int GetPin() const
         {
-            return kPin;
+            return mConfig.pin;
         }
 
     protected:
@@ -55,9 +72,9 @@ namespace evam
         {
             aValue = constrain(aValue, -1000, 1000);
             if (aValue < 0)
-                mServo.writeMicroseconds(map(aValue, -1000, 0, kMinPulse, kMiddlePulse));
+                mServo.writeMicroseconds(map(aValue, -1000, 0, mConfig.minPulse, mConfig.middlePulse));
             else
-                mServo.writeMicroseconds(map(aValue, 0, 1000, kMiddlePulse, kMaxPulse));
+                mServo.writeMicroseconds(map(aValue, 0, 1000, mConfig.middlePulse, mConfig.maxPulse));
         }
 
         /**
@@ -69,12 +86,12 @@ namespace evam
         {
             aValue = constrain(aValue, 0, 1000);
             if (aValue < 500)
-                mServo.writeMicroseconds(map(aValue, 0, 500, kMinPulse, kMiddlePulse));
+                mServo.writeMicroseconds(map(aValue, 0, 500, mConfig.minPulse, mConfig.middlePulse));
             else
-                mServo.writeMicroseconds(map(aValue, 500, 1000, kMiddlePulse, kMaxPulse));
+                mServo.writeMicroseconds(map(aValue, 500, 1000, mConfig.middlePulse, mConfig.maxPulse));
         }
     };
     
     template <int kPin, int kMinPulse, int kMaxPulse>
-    using ServoFlatDriver = ServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2, kMaxPulse>;
+    using ServoFlatDriver = ServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2 + kMinPulse, kMaxPulse>;
 }

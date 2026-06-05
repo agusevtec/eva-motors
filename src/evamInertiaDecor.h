@@ -7,6 +7,15 @@ using namespace eva;
 namespace evam
 {
     /**
+     * @brief Configuration structure for InertiaDecor
+     */
+    struct InertiaConfig {
+        unsigned short inertiaMass;
+        
+        InertiaConfig(unsigned short mass) : inertiaMass(mass) {}
+    };
+
+    /**
      * @brief Decorator that simulates mechanical inertia (flywheel effect).
      *
      * When decelerating or stopping, speed decreases gradually over time,
@@ -24,9 +33,9 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 100;
         
+        InertiaConfig mConfig;
         signed short mDesiredSpeed = 0;
         signed short mSpeed = 0;
-        signed short mInertiaMass = kInertiaMass;
 
         signed short calcSpeed() const
         {
@@ -37,7 +46,7 @@ namespace evam
                 return mDesiredSpeed;
 
             signed short delta = mDesiredSpeed - mSpeed;
-            signed short step = 2* delta / mInertiaMass;
+            signed short step = 2 * delta / mConfig.inertiaMass;
             if (abs(step) < 3)
                 return mDesiredSpeed;
             return mSpeed + step;
@@ -51,20 +60,34 @@ namespace evam
         }
 
     public:
-        InertiaDecor() : Heartbeat(kHeartbeatPeriodMs)
-        {
-        }
+        InertiaDecor() : Heartbeat(kHeartbeatPeriodMs), mConfig(kInertiaMass), mDesiredSpeed(0), mSpeed(0) {}
+        
+        template<typename... Args>
+        InertiaDecor(InertiaConfig config, Args... args) 
+            : Heartbeat(kHeartbeatPeriodMs), Motor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0){}
 
+        /**
+         * @brief Set the inertia mass value.
+         * @param aValue Virtual mass, clamped to 1..200
+         */
         void SetInertiaMass(unsigned short aValue)
         {
-            mInertiaMass = constrain(aValue, 1, 200);
+            mConfig.inertiaMass = constrain(aValue, 1, 200);
         }
 
+        /**
+         * @brief Get the current inertia mass value.
+         * @return Current inertia mass value
+         */
         unsigned short GetInertiaMass() const
         {
-            return mInertiaMass;
+            return mConfig.inertiaMass;
         }
 
+        /**
+         * @brief Apply the control value with inertia simulation.
+         * @param aSpeed Desired speed, range -1000..1000
+         */
         void Go(int aSpeed)
         {
             mDesiredSpeed = aSpeed;
@@ -76,4 +99,3 @@ namespace evam
         }
     };
 }
-

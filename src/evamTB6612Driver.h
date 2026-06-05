@@ -1,7 +1,20 @@
 #pragma once
 #include <Arduino.h>
+
 namespace evam
 {
+    /**
+     * @brief Configuration structure for TB6612FNGDriver
+     */
+    struct TB6612Config {
+        int pinSpeed;
+        int pinMode1;
+        int pinMode2;
+        
+        TB6612Config(int speed, int mode1, int mode2) 
+            : pinSpeed(speed), pinMode1(mode1), pinMode2(mode2) {}
+    };
+
     /**
      * @brief Driver for the TB6612FNG dual H-bridge motor driver.
      *
@@ -17,16 +30,27 @@ namespace evam
     template <int kPinSpeed, int kPinMode1, int kPinMode2>
     class TB6612FNGDriver
     {
-
+    private:
+        TB6612Config mConfig;
+        
     public:
         /**
          * @brief Constructor. Initializes pins and stops the motor.
          */
-        TB6612FNGDriver()
+        TB6612FNGDriver() : mConfig(kPinSpeed, kPinMode1, kPinMode2)
         {
-            pinMode(kPinSpeed, OUTPUT);
-            pinMode(kPinMode1, OUTPUT);
-            pinMode(kPinMode2, OUTPUT);
+            pinMode(mConfig.pinSpeed, OUTPUT);
+            pinMode(mConfig.pinMode1, OUTPUT);
+            pinMode(mConfig.pinMode2, OUTPUT);
+            actBipolar(0);
+        }
+        
+        template<typename... Args>
+        TB6612FNGDriver(TB6612Config config, Args... args) : mConfig(config)
+        {
+            pinMode(mConfig.pinSpeed, OUTPUT);
+            pinMode(mConfig.pinMode1, OUTPUT);
+            pinMode(mConfig.pinMode2, OUTPUT);
             actBipolar(0);
         }
 
@@ -36,7 +60,7 @@ namespace evam
          */
         int GetSpeedPin() const
         {
-            return kPinSpeed;
+            return mConfig.pinSpeed;
         }
 
         /**
@@ -45,7 +69,7 @@ namespace evam
          */
         int GetMode1Pin() const
         {
-            return kPinMode1;
+            return mConfig.pinMode1;
         }
 
         /**
@@ -54,7 +78,7 @@ namespace evam
          */
         int GetMode2Pin() const
         {
-            return kPinMode2;
+            return mConfig.pinMode2;
         }
 
     protected:
@@ -66,10 +90,9 @@ namespace evam
         void actBipolar(signed short aValue)
         {
             int pwm = map(constrain(abs(aValue), 0, 1000), 0, 1000, 0, 255);
-            digitalWrite(kPinMode1, aValue > 0);
-            digitalWrite(kPinMode2, aValue < 0);
-            analogWrite(kPinSpeed, pwm);
+            digitalWrite(mConfig.pinMode1, aValue > 0);
+            digitalWrite(mConfig.pinMode2, aValue < 0);
+            analogWrite(mConfig.pinSpeed, pwm);
         }
     };
 }
-

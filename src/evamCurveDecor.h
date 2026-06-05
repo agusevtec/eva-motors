@@ -5,6 +5,15 @@
 namespace evam
 {
     /**
+     * @brief Configuration structure for CurveDecor
+     */
+    struct CurveConfig {
+        signed short bend;
+        
+        CurveConfig(signed short b) : bend(b) {}
+    };
+
+    /**
      * @brief Decorator that applies an S-curve (nonlinear) transformation to the control signal.
      *
      * Converts linear input into an S-shaped curve, useful for smoother starts and
@@ -18,12 +27,13 @@ namespace evam
     class CurveDecor : public Motor
     {
         static_assert(kBend >= -10 && kBend <= 10, "kBend out of range -10..10");
+        
     private:
-        signed short mBend = kBend;
-
+        CurveConfig mConfig;
+        
         signed long f(signed long x) const
         {
-            return mBend * (x - x * x / 1000) / 10;
+            return mConfig.bend * (x - x * x / 1000) / 10;
         }
 
         unsigned short curve(unsigned short x) const
@@ -33,13 +43,18 @@ namespace evam
         }
 
     public:
+        CurveDecor() : mConfig(kBend) {}
+        
+        template<typename... Args>
+        CurveDecor(CurveConfig config, Args... args) : Motor(args...), mConfig(config) {}
+
         /**
          * @brief Set the bend intensity at runtime.
          * @param aValue Bend value, clamped to -10..10.
          */
         void SetBend(signed short aValue)
         {
-            mBend = constrain(aValue, -10, 10);
+            mConfig.bend = constrain(aValue, -10, 10);
         }
 
         /**
@@ -48,7 +63,7 @@ namespace evam
          */
         signed short GetBend() const
         {
-            return mBend;
+            return mConfig.bend;
         }
 
         /**
@@ -64,6 +79,4 @@ namespace evam
                 Motor::Go(-curve(-aValue));
         }
     };
-
 }
-

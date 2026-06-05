@@ -8,6 +8,17 @@ using namespace eva;
 namespace evam
 {
     /**
+     * @brief Configuration structure for AdaptiveSmoothDecor
+     */
+    struct AdaptiveSmoothConfig {
+        unsigned short minTimeConstantMs;
+        unsigned short maxTimeConstantMs;
+        
+        AdaptiveSmoothConfig(unsigned short minTc, unsigned short maxTc)
+            : minTimeConstantMs(minTc), maxTimeConstantMs(maxTc) {}
+    };
+
+    /**
      * @brief Decorator with adaptive smoothing based on input rate of change.
      *
      * Automatically adjusts smoothing based on how fast the input is changing.
@@ -31,10 +42,11 @@ namespace evam
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
         static constexpr signed short kDeadzone = 3;
 
+        AdaptiveSmoothConfig mConfig;
+        
         signed short mTargetValue = 0;
         signed short mCurrentValue = 0;
         signed short mLastTargetValue = 0;
-
         unsigned short mCurrentTimeConstantMs = kMaxTimeConstantMs;
 
         unsigned short calculateTimeConstant()
@@ -42,12 +54,12 @@ namespace evam
             signed short change = abs(mTargetValue - mLastTargetValue);
 
             if (change >= 200)
-                return kMinTimeConstantMs;
+                return mConfig.minTimeConstantMs;
             else if (change <= 5)
-                return kMaxTimeConstantMs;
+                return mConfig.maxTimeConstantMs;
             else
             {
-                return kMaxTimeConstantMs - ((change - 5) * (kMaxTimeConstantMs - kMinTimeConstantMs) / 195);
+                return mConfig.maxTimeConstantMs - ((change - 5) * (mConfig.maxTimeConstantMs - mConfig.minTimeConstantMs) / 195);
             }
         }
 
@@ -73,15 +85,15 @@ namespace evam
         }
 
     public:
-        AdaptiveSmoothDecor() : Heartbeat(kHeartbeatPeriodMs)
-        {
-        }
+        AdaptiveSmoothDecor() : mConfig(kMinTimeConstantMs, kMaxTimeConstantMs), Heartbeat(kHeartbeatPeriodMs) {}
+        
+        template<typename... Args>
+        AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args) 
+            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), Motor(args...) {}
 
         void Go(signed short aValue)
         {
             mTargetValue = constrain(aValue, -1000, 1000);
         }
     };
-
 }
-

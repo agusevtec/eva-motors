@@ -5,6 +5,16 @@
 namespace evam
 {
     /**
+     * @brief Configuration structure for TA6586Driver
+     */
+    struct TA6586Config {
+        int forwardPin;
+        int backwardPin;
+        
+        TA6586Config(int fwd, int bwd) : forwardPin(fwd), backwardPin(bwd) {}
+    };
+
+    /**
      * @brief Driver for the TA6586 dual H-bridge motor driver.
      *
      * Pinout:
@@ -18,21 +28,31 @@ namespace evam
      *       --/ \--
      * @endverbatim
      *
-     *
      * @tparam kForwardPin PWM pin connected to FI (forward input)
      * @tparam kBackwardPin PWM pin connected to BI (backward input)
      */
     template <int kForwardPin, int kBackwardPin>
     class TA6586Driver
     {
+    private:
+        TA6586Config mConfig;
+        
     public:
         /**
          * @brief Constructor. Initializes pins and stops the motor.
          */
-        TA6586Driver()
+        TA6586Driver() : mConfig(kForwardPin, kBackwardPin)
         {
-            pinMode(kForwardPin, OUTPUT);
-            pinMode(kBackwardPin, OUTPUT);
+            pinMode(mConfig.forwardPin, OUTPUT);
+            pinMode(mConfig.backwardPin, OUTPUT);
+            actBipolar(0);
+        }
+        
+        template<typename... Args>
+        TA6586Driver(TA6586Config config, Args... args) : mConfig(config)
+        {
+            pinMode(mConfig.forwardPin, OUTPUT);
+            pinMode(mConfig.backwardPin, OUTPUT);
             actBipolar(0);
         }
 
@@ -42,7 +62,7 @@ namespace evam
          */
         int GetForwardPin() const
         {
-            return kForwardPin;
+            return mConfig.forwardPin;
         }
 
         /**
@@ -51,7 +71,7 @@ namespace evam
          */
         int GetBackwardPin() const
         {
-            return kBackwardPin;
+            return mConfig.backwardPin;
         }
 
     protected:
@@ -63,9 +83,8 @@ namespace evam
         void actBipolar(signed short aValue)
         {
             int normalized = map(constrain(aValue, -1000, 1000), -1000, 1000, -255, 255);
-            analogWrite(kForwardPin, max(0, normalized));
-            analogWrite(kBackwardPin, max(0, -normalized));
+            analogWrite(mConfig.forwardPin, max(0, normalized));
+            analogWrite(mConfig.backwardPin, max(0, -normalized));
         }
     };
 }
-

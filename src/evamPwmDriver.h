@@ -5,6 +5,15 @@
 namespace evam
 {
     /**
+     * @brief Configuration structure for PwmDriver
+     */
+    struct PwmConfig {
+        int pin;
+        
+        PwmConfig(int p) : pin(p) {}
+    };
+
+    /**
      * @brief Simple PWM output driver (unipolar).
      *
      * Converts 0..1000 input to 0..255 PWM duty cycle.
@@ -15,13 +24,20 @@ namespace evam
     template <int kPin>
     class PwmDriver
     {
+    private:
+        PwmConfig mConfig;
+        
     public:
-        /**
-         * @brief Constructor. Initializes the pin as output.
-         */
-        PwmDriver()
+        PwmDriver() : mConfig(kPin)
         {
             pinMode(kPin, OUTPUT);
+            actUnipolar(0);
+        }
+        
+        template<typename... Args>
+        PwmDriver(PwmConfig config, Args... args) : mConfig(config)
+        {
+            pinMode(mConfig.pin, OUTPUT);
             actUnipolar(0);
         }
 
@@ -33,10 +49,7 @@ namespace evam
         void actUnipolar(unsigned short aValue)
         {
             int pwm = map(constrain(aValue, 0, 1000), 0, 1000, 0, 255);
-            analogWrite(kPin, pwm);
+            analogWrite(mConfig.pin, pwm);
         }
     };
-
-} // namespace evam
-
-
+}

@@ -4,6 +4,16 @@
 namespace evam
 {
     /**
+     * @brief Configuration structure for ForwardMotor
+     */
+    struct ForwardConfig {
+        int minValue;
+        int maxValue;
+        
+        ForwardConfig(int minVal, int maxVal) : minValue(minVal), maxValue(maxVal) {}
+    };
+
+    /**
      * @brief Unidirectional forward-only motor controller (e.g., aircraft ESC, throttle).
      *
      * Maps input range 0..1000 to driver output. Negative inputs are treated as stop (0).
@@ -19,17 +29,21 @@ namespace evam
         static_assert(kMaxValue >= -1000 && kMaxValue <= 1000, "kMaxValue out of range");
 
     private:
-        int mMinValue = kMinValue;
-        int mMaxValue = kMaxValue;
-
+        ForwardConfig mConfig;
+        
         signed short compute(signed short aLevel) const
         {
             if (aLevel > 0)
-                return map(constrain(aLevel, 0, 1000), 0, 1000, mMinValue, mMaxValue);
+                return map(constrain(aLevel, 0, 1000), 0, 1000, mConfig.minValue, mConfig.maxValue);
             return 0;
         }
 
     public:
+        ForwardMotor() : mConfig(kMinValue, kMaxValue) {}
+        
+        template<typename... Args>
+        ForwardMotor(ForwardConfig config, Args... args) : Driver(args...), mConfig(config) {}
+
         /**
          * @brief Configure the output range parameters at once.
          *
@@ -48,7 +62,7 @@ namespace evam
          */
         void SetMinValue(int aValue)
         {
-            mMinValue = constrain(aValue, -1000, 1000);
+            mConfig.minValue = constrain(aValue, -1000, 1000);
         }
 
         /**
@@ -57,7 +71,7 @@ namespace evam
          */
         int GetMinValue() const
         {
-            return mMinValue;
+            return mConfig.minValue;
         }
 
         /**
@@ -66,7 +80,7 @@ namespace evam
          */
         void SetMaxValue(int aValue)
         {
-            mMaxValue = constrain(aValue, -1000, 1000);
+            mConfig.maxValue = constrain(aValue, -1000, 1000);
         }
 
         /**
@@ -75,7 +89,7 @@ namespace evam
          */
         int GetMaxValue() const
         {
-            return mMaxValue;
+            return mConfig.maxValue;
         }
 
         /**

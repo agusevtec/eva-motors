@@ -8,6 +8,15 @@ using namespace eva;
 namespace evam
 {
     /**
+     * @brief Configuration structure for MedianDecor
+     */
+    struct MedianConfig {
+        unsigned short windowSize;
+        
+        MedianConfig(unsigned short size) : windowSize(size) {}
+    };
+
+    /**
      * @brief Decorator that applies median filtering with fixed time base.
      *
      * Samples the input at regular intervals and applies median filtering
@@ -26,6 +35,8 @@ namespace evam
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
+        
+        MedianConfig mConfig;
         
         signed short mBuffer[kWindowSize];
         unsigned short mIndex = 0;
@@ -74,12 +85,23 @@ namespace evam
         }
 
     public:
-        MedianDecor() : Heartbeat(kHeartbeatPeriodMs)
+        MedianDecor() : mConfig(kWindowSize), Heartbeat(kHeartbeatPeriodMs)
+        {
+            for (unsigned short i = 0; i < kWindowSize; i++)
+                mBuffer[i] = 0;
+        }
+        
+        template<typename... Args>
+        MedianDecor(MedianConfig config, Args... args) 
+            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), Motor(args...)
         {
             for (unsigned short i = 0; i < kWindowSize; i++)
                 mBuffer[i] = 0;
         }
 
+        /**
+         * @brief Reset the filter buffer.
+         */
         void Reset()
         {
             mIndex = 0;
@@ -93,7 +115,4 @@ namespace evam
             mLastSample = constrain(aValue, -1000, 1000);
         }
     };
-
-} // namespace evam
-
-
+}

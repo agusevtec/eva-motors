@@ -4,6 +4,14 @@
 
 namespace evam
 {
+    /**
+     * @brief Configuration structure for MinmaxDecor
+     */
+    struct MinmaxConfig {
+        unsigned char n;
+        
+        MinmaxConfig(unsigned char size) : n(size) {}
+    };
 
     /**
      * @brief Decorator that applies a min-max (morphological) filter to the control signal.
@@ -22,24 +30,31 @@ namespace evam
      *
      * @note The filter only produces filtered output after the buffer is full.
      *       Before that, values pass through unchanged.
-     *
      */
     template <class Motor, unsigned char N>
     class MinmaxDecor : public Motor
     {
+        static_assert(N >= 2 && N <= 5, "N out of range 2..5");
+        
     private:
-        RingBuffer<signed short, N * N> mRing; ///< Ring buffer of size N*N
-        signed short mMaxBuffer[N];            ///< Stores maximum of each chunk
-        signed short mMinBuffer[N];            ///< Stores minimum of each chunk
+        MinmaxConfig mConfig;
+        RingBuffer<signed short, N * N> mRing;
+        signed short mMaxBuffer[N];
+        signed short mMinBuffer[N];
 
     public:
-        /**
-         * @brief Default constructor.
-         *
-         * Initializes the filter with zero values. The buffer starts empty
-         * and must be filled with N*N values before filtering begins.
-         */
-        MinmaxDecor()
+        MinmaxDecor() : mConfig(N)
+        {
+            for (unsigned char i = 0; i < N; ++i)
+            {
+                mMaxBuffer[i] = 0;
+                mMinBuffer[i] = 0;
+            }
+        }
+        
+        template<typename... Args>
+        MinmaxDecor(MinmaxConfig config, Args... args) 
+            : mConfig(config), Motor(args...)
         {
             for (unsigned char i = 0; i < N; ++i)
             {
@@ -65,7 +80,6 @@ namespace evam
 
             if (mRing.isFull())
             {
-                // Calculate max and min for each chunk
                 for (unsigned char chunk = 0; chunk < N; chunk++)
                 {
                     unsigned char start = chunk * N;
@@ -85,7 +99,6 @@ namespace evam
                     mMinBuffer[chunk] = minVal;
                 }
 
-                // Output is average of minimax and maximin
                 value = (getMinimax() + getMaximin()) / 2;
             }
 
@@ -111,5 +124,4 @@ namespace evam
             return result;
         }
     };
-
-} // namespace evam
+}

@@ -26,8 +26,8 @@ namespace evam
      *       Before that, values pass through unchanged. For N=1, the filter passes
      *       values through without any averaging (no effect).
      */
-    template <class Motor, unsigned short N>
-    class SlidingWindowDecor : public Motor
+    template <class TMotor, unsigned short N>
+    class SlidingWindowDecor : public TMotor
     {
         static_assert(N >= 1 && N <= 32, "N out of range 1..32");
         
@@ -41,7 +41,7 @@ namespace evam
         
         template<typename... Args>
         SlidingWindowDecor(SlidingWindowConfig config, Args... args) 
-            : mConfig(config), Motor(args...) {}
+            : mConfig(config), TMotor(args...) {}
 
         /**
          * @brief Apply the control value with moving average filtering.
@@ -59,7 +59,7 @@ namespace evam
             if (mRing.isFull())
                 value = static_cast<signed short>(mSum / N);
 
-            Motor::Go(value);
+            TMotor::Go(value);
         }
     };
 }

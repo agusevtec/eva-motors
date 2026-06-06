@@ -31,8 +31,8 @@ namespace evam
      * @note The filter only produces filtered output after the buffer is full.
      *       Before that, values pass through unchanged.
      */
-    template <class Motor, unsigned char N>
-    class MinmaxDecor : public Motor
+    template <class TMotor, unsigned char N>
+    class MinmaxDecor : public TMotor
     {
         static_assert(N >= 2 && N <= 5, "N out of range 2..5");
         
@@ -54,7 +54,7 @@ namespace evam
         
         template<typename... Args>
         MinmaxDecor(MinmaxConfig config, Args... args) 
-            : mConfig(config), Motor(args...)
+            : mConfig(config), TMotor(args...)
         {
             for (unsigned char i = 0; i < N; ++i)
             {
@@ -102,7 +102,7 @@ namespace evam
                 value = (getMinimax() + getMaximin()) / 2;
             }
 
-            Motor::Go(value);
+            TMotor::Go(value);
         }
 
     private:

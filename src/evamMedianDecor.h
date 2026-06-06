@@ -25,8 +25,8 @@ namespace evam
      * @tparam Motor Base motor class (must implement Go(signed short))
      * @tparam kWindowSize Filter window size (odd number). Default: 5
      */
-    template <class Motor, unsigned short kWindowSize = 5>
-    class MedianDecor : public Heartbeat, public Motor
+    template <class TMotor, unsigned short kWindowSize = 5>
+    class MedianDecor : public Heartbeat, public TMotor
     {
         static_assert(kWindowSize >= 3 && kWindowSize <= 15, 
                       "kWindowSize out of range 3..15");
@@ -80,7 +80,7 @@ namespace evam
             
             if (mBufferFull || mIndex > kWindowSize / 2)
             {
-                Motor::Go(calculateMedian());
+                TMotor::Go(calculateMedian());
             }
         }
 
@@ -93,7 +93,7 @@ namespace evam
         
         template<typename... Args>
         MedianDecor(MedianConfig config, Args... args) 
-            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), Motor(args...)
+            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), TMotor(args...)
         {
             for (unsigned short i = 0; i < kWindowSize; i++)
                 mBuffer[i] = 0;

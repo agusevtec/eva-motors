@@ -25,10 +25,10 @@ namespace evam
      * @tparam Motor Base motor class (must implement Go(signed short))
      * @tparam kInertiaMass Virtual mass (positive). Larger values = slower deceleration.
      */
-    template <class Motor, signed short kInertiaMass = 5>
-    class InertiaDecor : public Heartbeat, public Motor
+    template <class TMotor, unsigned short kInertiaMass = 5>
+    class InertiaDecor : public Heartbeat, public TMotor
     {
-        static_assert(1 < kInertiaMass, "kInertiaMass must be > 1");
+        static_assert(0 < kInertiaMass, "kInertiaMass must be > 0");
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 100;
@@ -56,7 +56,7 @@ namespace evam
         void onHeartbeat() override
         {
             mSpeed = calcSpeed();
-            Motor::Go(mSpeed);
+            TMotor::Go(mSpeed);
         }
 
     public:
@@ -64,7 +64,7 @@ namespace evam
         
         template<typename... Args>
         InertiaDecor(InertiaConfig config, Args... args) 
-            : Heartbeat(kHeartbeatPeriodMs), Motor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0){}
+            : Heartbeat(kHeartbeatPeriodMs), TMotor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0){}
 
         /**
          * @brief Set the inertia mass value.
@@ -94,7 +94,7 @@ namespace evam
             if (aSpeed == calcSpeed())
             {
                 mSpeed = aSpeed;
-                Motor::Go(mSpeed);
+                TMotor::Go(mSpeed);
             }
         }
     };

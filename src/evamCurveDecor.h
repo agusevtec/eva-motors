@@ -23,8 +23,8 @@ namespace evam
      * @tparam Motor Base motor class (must implement Go(signed short))
      * @tparam kBend Bend intensity. Range: -10..10. 0 = linear.
      */
-    template <class Motor, signed short kBend = 0>
-    class CurveDecor : public Motor
+    template <class TMotor, signed short kBend = 0>
+    class CurveDecor : public TMotor
     {
         static_assert(kBend >= -10 && kBend <= 10, "kBend out of range -10..10");
         
@@ -46,7 +46,7 @@ namespace evam
         CurveDecor() : mConfig(kBend) {}
         
         template<typename... Args>
-        CurveDecor(CurveConfig config, Args... args) : Motor(args...), mConfig(config) {}
+        CurveDecor(CurveConfig config, Args... args) : TMotor(args...), mConfig(config) {}
 
         /**
          * @brief Set the bend intensity at runtime.
@@ -74,9 +74,9 @@ namespace evam
         {
             aValue = constrain(aValue, -1000, 1000);
             if (aValue >= 0)
-                Motor::Go(curve(aValue));
+                TMotor::Go(curve(aValue));
             else
-                Motor::Go(-curve(-aValue));
+                TMotor::Go(-curve(-aValue));
         }
     };
 }

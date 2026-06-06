@@ -49,7 +49,7 @@ namespace evam
                 return map(constrain(aLevel, -1000, 0), -1000, 0, mConfig.maxBackward, mConfig.minBackward);
             if (aLevel > 0)
                 return map(constrain(aLevel, 0, 1000), 0, 1000, mConfig.minForward, mConfig.maxForward);
-            return (mConfig.minForward + mConfig.minBackward)/2;
+            return 0;
         }
 
     public:

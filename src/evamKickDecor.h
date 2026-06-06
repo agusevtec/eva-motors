@@ -27,10 +27,10 @@ namespace evam
      * @tparam kDefaultKickDuration Default kick pulse duration in milliseconds. Default: 20ms.
      * @tparam kDefaultKickPower Default kick power. Range: -1000..1000. Default: 1000 (full power).
      */
-    template <class Motor, 
+    template <class TMotor, 
               unsigned short kDefaultKickDuration = 20, 
               signed short kDefaultKickPower = 1000>
-    class KickDecor : public virtual Tickable, public Motor
+    class KickDecor : public virtual Tickable, public TMotor
     {
         static_assert(kDefaultKickDuration > 0, "kDefaultKickDuration must be > 0");
         static_assert(kDefaultKickPower > 0 && kDefaultKickPower <= 1000, "kDefaultKickPower out of range");
@@ -60,7 +60,7 @@ namespace evam
             if (millis() - mHoldingStartedAt < mConfig.duration)
                 return;
 
-            Motor::Go(mTargetSpeed);
+            TMotor::Go(mTargetSpeed);
             mHoldingStartedAt = 0;
         }
 
@@ -68,7 +68,7 @@ namespace evam
         KickDecor() : mConfig(kDefaultKickDuration, kDefaultKickPower) {}
         
         template<typename... Args>
-        KickDecor(KickConfig config, Args... args) : mConfig(config), Motor(args...) {}
+        KickDecor(KickConfig config, Args... args) : mConfig(config), TMotor(args...) {}
 
         /**
          * @brief Configure kickstart parameters at once.
@@ -130,7 +130,7 @@ namespace evam
 
             if (needKick)
             {
-                Motor::Go(needKick);
+                TMotor::Go(needKick);
                 mHoldingStartedAt = millis();
                 return;
             }
@@ -138,7 +138,7 @@ namespace evam
             if (mHoldingStartedAt)
                 return;
 
-            Motor::Go(aValue);
+            TMotor::Go(aValue);
         }
     };
 }

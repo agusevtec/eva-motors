@@ -28,10 +28,10 @@ namespace evam
      * @tparam kMinTimeConstantMs Minimum time constant (fast response). Default: 10ms
      * @tparam kMaxTimeConstantMs Maximum time constant (heavy smoothing). Default: 150ms
      */
-    template <class Motor,
+    template <class TMotor,
               unsigned short kMinTimeConstantMs = 10,
               unsigned short kMaxTimeConstantMs = 150>
-    class AdaptiveSmoothDecor : public Heartbeat, public Motor
+    class AdaptiveSmoothDecor : public Heartbeat, public TMotor
     {
         static_assert(kMinTimeConstantMs >= 5 && kMinTimeConstantMs <= 200,
                       "kMinTimeConstantMs out of range 5..200");
@@ -81,7 +81,7 @@ namespace evam
                 mCurrentValue = constrain(mCurrentValue, -1000, 1000);
             }
 
-            Motor::Go(mCurrentValue);
+            TMotor::Go(mCurrentValue);
         }
 
     public:
@@ -89,7 +89,7 @@ namespace evam
         
         template<typename... Args>
         AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args) 
-            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), Motor(args...) {}
+            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), TMotor(args...) {}
 
         void Go(signed short aValue)
         {

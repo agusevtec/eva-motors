@@ -29,9 +29,5 @@ if errorlevel 1 (
     exit /b 1
 )
 
-pushd libraries\!repo_name!
-git checkout master
-popd
-
 echo Successfully cloned !repo_name!
 endlocal

@@ -10,9 +10,9 @@ namespace evam
      * @brief Configuration structure for InertiaDecor
      */
     struct InertiaConfig {
-        unsigned short inertiaMass;
+        signed short inertiaMass;
         
-        InertiaConfig(unsigned short mass) : inertiaMass(mass) {}
+        InertiaConfig(signed short mass) : inertiaMass(mass) {}
     };
 
     /**
@@ -46,8 +46,8 @@ namespace evam
                 return mDesiredSpeed;
 
             signed short delta = mDesiredSpeed - mSpeed;
-            signed short step = 2 * delta / mConfig.inertiaMass;
-            if (abs(step) < 3)
+            signed short step = delta / mConfig.inertiaMass;
+            if (abs(step) < 2)
                 return mDesiredSpeed;
             return mSpeed + step;
         }

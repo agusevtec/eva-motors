@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="classevam_1_1_i_motor" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>evam::IMotor</compoundname>
+    <derivedcompoundref refid="classevam_1_1_i_motor_maker" prot="public" virt="non-virtual">evam::IMotorMaker&lt; TMotor &gt;</derivedcompoundref>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_i_motor_1aabb372b56f4dd0bf28a2a482b8a23512" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void evam::IMotor::Go</definition>
+        <argsstring>(signed short aValue)=0</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::IMotor::Go</qualifiedname>
+        <reimplementedby refid="classevam_1_1_i_motor_maker_1a8afbb583f4e8b70f06400d7b05d4e4e1">Go</reimplementedby>
+        <param>
+          <type>signed short</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evabIMotor.h" line="8" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_i_motor_1a8ad753ce700ff72a470853369f722931" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual evam::IMotor::~IMotor</definition>
+        <argsstring>()=default</argsstring>
+        <name>~IMotor</name>
+        <qualifiedname>evam::IMotor::~IMotor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evabIMotor.h" line="9" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>evam::IMotor</label>
+        <link refid="classevam_1_1_i_motor"/>
+      </node>
+      <node id="2">
+        <label>evam::IMotorMaker&lt; TMotor &gt;</label>
+        <link refid="classevam_1_1_i_motor_maker"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/evabIMotor.h" line="5" column="5" bodyfile="src/evabIMotor.h" bodystart="6" bodyend="10"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_i_motor_1aabb372b56f4dd0bf28a2a482b8a23512" prot="public" virt="pure-virtual"><scope>evam::IMotor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_i_motor_1a8ad753ce700ff72a470853369f722931" prot="public" virt="virtual"><scope>evam::IMotor</scope><name>~IMotor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

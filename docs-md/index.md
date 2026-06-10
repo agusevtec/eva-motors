@@ -81,6 +81,16 @@ or more compact:
 KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<9, 10>>, 5>, 15>, 25, 900> motor;
 ```
 
+or dynamic configuration:
+
+```cpp
+KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<>>>>> motor = {
+    KickConfig{ 25, 900 },
+    InertiaConfig{ 15 },
+    CurveConfig{ 5 },
+    DirectionalConfig{ -1000, -200, 200, 1000 },
+    TA6586Config{ 9, 10 }
+};
 
 ## Extensible Driver Layer
 

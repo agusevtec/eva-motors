@@ -20,6 +20,22 @@
         <defname>kPinMode2</defname>
       </param>
     </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_t_b6612_f_n_g_driver_1a17e1e95082eb03f573b7f8767064f488" prot="private" static="no" mutable="no">
+        <type><ref refid="structevam_1_1_t_b6612_config" kindref="compound">TB6612Config</ref></type>
+        <definition>TB6612Config evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::mConfig</definition>
+        <argsstring></argsstring>
+        <name>mConfig</name>
+        <qualifiedname>evam::TB6612FNGDriver::mConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="34" column="22" bodyfile="src/evamTB6612Driver.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <sectiondef kind="public-func">
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1adf1637401e80f6438a2b7ddc18288d45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -34,7 +50,36 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="25" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="25" bodyend="31"/>
+        <location file="src/evamTB6612Driver.h" line="40" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="40" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1aff3bd6043f66bf64367191ed72b6d0ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::TB6612FNGDriver</definition>
+        <argsstring>(TB6612Config config, Args... args)</argsstring>
+        <name>TB6612FNGDriver</name>
+        <qualifiedname>evam::TB6612FNGDriver::TB6612FNGDriver</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_t_b6612_config" kindref="compound">TB6612Config</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="49" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="49" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a20dee77f573b8af6aec42559b8623f1b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -52,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="37" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="37" bodyend="40"/>
+        <location file="src/evamTB6612Driver.h" line="61" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="61" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -70,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="46" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="46" bodyend="49"/>
+        <location file="src/evamTB6612Driver.h" line="70" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1ac3a9f5ad479ee89dd1909521fdfc47bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -88,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="55" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="55" bodyend="58"/>
+        <location file="src/evamTB6612Driver.h" line="79" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="79" bodyend="82"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -119,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="66" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="66" bodyend="72"/>
+        <location file="src/evamTB6612Driver.h" line="90" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="90" bodyend="96"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -159,13 +204,15 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamTB6612Driver.h" line="18" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="19" bodyend="73"/>
+    <location file="src/evamTB6612Driver.h" line="31" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="32" bodyend="97"/>
     <listofallmembers>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adc2c94301188415930a5a20e007ffd48" prot="protected" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>actBipolar</name></member>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode1Pin</name></member>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1ac3a9f5ad479ee89dd1909521fdfc47bd" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode2Pin</name></member>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a20dee77f573b8af6aec42559b8623f1b" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetSpeedPin</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a17e1e95082eb03f573b7f8767064f488" prot="private" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>mConfig</name></member>
       <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adf1637401e80f6438a2b7ddc18288d45" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>TB6612FNGDriver</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1aff3bd6043f66bf64367191ed72b6d0ae" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>TB6612FNGDriver</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

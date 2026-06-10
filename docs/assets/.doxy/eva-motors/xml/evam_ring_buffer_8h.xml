@@ -19,7 +19,7 @@
       </node>
       <node id="3">
         <label>src/evamSlidingWindowDecor.h</label>
-        <link refid="evam_sliding_window_decor_8h"/>
+        <link refid="evam_sliding_window_decor_8h_source"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classevam_1_1_ring_buffer" prot="public">evam::RingBuffer</innerclass>

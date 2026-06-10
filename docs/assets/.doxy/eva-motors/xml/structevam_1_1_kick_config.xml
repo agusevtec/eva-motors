@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_kick_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::KickConfig</compoundname>
+    <includes refid="evam_kick_decor_8h" local="no">evamKickDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_kick_config_1a6ee1b4a7331ffe0c832b6f38d896f865" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::KickConfig::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>evam::KickConfig::duration</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamKickDecor.h" line="18" column="24" bodyfile="src/evamKickDecor.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_kick_config_1aeb2487a90bd71061bfe795e4c7a90517" prot="public" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::KickConfig::power</definition>
+        <argsstring></argsstring>
+        <name>power</name>
+        <qualifiedname>evam::KickConfig::power</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamKickDecor.h" line="19" column="22" bodyfile="src/evamKickDecor.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_kick_config_1ad449bbd8483cebeee27ae4ae324ad5f4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::KickConfig::KickConfig</definition>
+        <argsstring>(unsigned short duration, signed short power)</argsstring>
+        <name>KickConfig</name>
+        <qualifiedname>evam::KickConfig::KickConfig</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>duration</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>power</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamKickDecor.h" line="21" column="9" bodyfile="src/evamKickDecor.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_kick_decor" kindref="compound">KickDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamKickDecor.h" line="17" column="5" bodyfile="src/evamKickDecor.h" bodystart="17" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_kick_config_1a6ee1b4a7331ffe0c832b6f38d896f865" prot="public" virt="non-virtual"><scope>evam::KickConfig</scope><name>duration</name></member>
+      <member refid="structevam_1_1_kick_config_1ad449bbd8483cebeee27ae4ae324ad5f4" prot="public" virt="non-virtual"><scope>evam::KickConfig</scope><name>KickConfig</name></member>
+      <member refid="structevam_1_1_kick_config_1aeb2487a90bd71061bfe795e4c7a90517" prot="public" virt="non-virtual"><scope>evam::KickConfig</scope><name>power</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

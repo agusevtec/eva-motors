@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_t_b6612_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::TB6612Config</compoundname>
+    <includes refid="evam_t_b6612_driver_8h" local="no">evamTB6612Driver.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_t_b6612_config_1a07f74e151015164fff2250a88885cb2f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::TB6612Config::pinSpeed</definition>
+        <argsstring></argsstring>
+        <name>pinSpeed</name>
+        <qualifiedname>evam::TB6612Config::pinSpeed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="10" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_t_b6612_config_1a1d63cf74d8d983db1b2cb1fb86bdd850" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::TB6612Config::pinMode1</definition>
+        <argsstring></argsstring>
+        <name>pinMode1</name>
+        <qualifiedname>evam::TB6612Config::pinMode1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="11" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_t_b6612_config_1a60de86971bc955c6569d9f4ad5b92b6c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::TB6612Config::pinMode2</definition>
+        <argsstring></argsstring>
+        <name>pinMode2</name>
+        <qualifiedname>evam::TB6612Config::pinMode2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="12" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_t_b6612_config_1a49f8e73c4cfd36b938abda9339e573c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::TB6612Config::TB6612Config</definition>
+        <argsstring>(int pinSpeed, int pinMode1, int pinMode2)</argsstring>
+        <name>TB6612Config</name>
+        <qualifiedname>evam::TB6612Config::TB6612Config</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>pinSpeed</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pinMode1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pinMode2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTB6612Driver.h" line="14" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="14" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_t_b6612_f_n_g_driver" kindref="compound">TB6612FNGDriver</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamTB6612Driver.h" line="9" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="9" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_t_b6612_config_1a1d63cf74d8d983db1b2cb1fb86bdd850" prot="public" virt="non-virtual"><scope>evam::TB6612Config</scope><name>pinMode1</name></member>
+      <member refid="structevam_1_1_t_b6612_config_1a60de86971bc955c6569d9f4ad5b92b6c" prot="public" virt="non-virtual"><scope>evam::TB6612Config</scope><name>pinMode2</name></member>
+      <member refid="structevam_1_1_t_b6612_config_1a07f74e151015164fff2250a88885cb2f" prot="public" virt="non-virtual"><scope>evam::TB6612Config</scope><name>pinSpeed</name></member>
+      <member refid="structevam_1_1_t_b6612_config_1a49f8e73c4cfd36b938abda9339e573c5" prot="public" virt="non-virtual"><scope>evam::TB6612Config</scope><name>TB6612Config</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

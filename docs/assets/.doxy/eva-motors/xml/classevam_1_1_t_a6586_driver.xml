@@ -15,6 +15,22 @@
         <defname>kBackwardPin</defname>
       </param>
     </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_t_a6586_driver_1a0946b8de91937446f0009669759cb2c3" prot="private" static="no" mutable="no">
+        <type><ref refid="structevam_1_1_t_a6586_config" kindref="compound">TA6586Config</ref></type>
+        <definition>TA6586Config evam::TA6586Driver&lt; kForwardPin, kBackwardPin &gt;::mConfig</definition>
+        <argsstring></argsstring>
+        <name>mConfig</name>
+        <qualifiedname>evam::TA6586Driver::mConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="38" column="22" bodyfile="src/evamTA6586Driver.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <sectiondef kind="public-func">
       <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a9707afdcd8fd42b433eb43176c7f0b63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -29,7 +45,36 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="32" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="32" bodyend="37"/>
+        <location file="src/evamTA6586Driver.h" line="44" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="44" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a9eec20f02e96bbdacd0a1c39a7290a8e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::TA6586Driver&lt; kForwardPin, kBackwardPin &gt;::TA6586Driver</definition>
+        <argsstring>(TA6586Config config, Args... args)</argsstring>
+        <name>TA6586Driver</name>
+        <qualifiedname>evam::TA6586Driver::TA6586Driver</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_t_a6586_config" kindref="compound">TA6586Config</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="52" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="52" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1a0d84c607271f5c137c562aee8c785a9a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -47,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="43" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="43" bodyend="46"/>
+        <location file="src/evamTA6586Driver.h" line="63" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="63" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_t_a6586_driver_1adb04860e202772b68877f7aaa426ab13" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -65,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="52" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="52" bodyend="55"/>
+        <location file="src/evamTA6586Driver.h" line="72" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="72" bodyend="75"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -96,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTA6586Driver.h" line="63" column="14" bodyfile="src/evamTA6586Driver.h" bodystart="63" bodyend="68"/>
+        <location file="src/evamTA6586Driver.h" line="83" column="14" bodyfile="src/evamTA6586Driver.h" bodystart="83" bodyend="88"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -130,12 +175,14 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamTA6586Driver.h" line="26" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="27" bodyend="69"/>
+    <location file="src/evamTA6586Driver.h" line="35" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="36" bodyend="89"/>
     <listofallmembers>
       <member refid="classevam_1_1_t_a6586_driver_1a65972491e15cb9e0b5d578cd7df5174a" prot="protected" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>actBipolar</name></member>
       <member refid="classevam_1_1_t_a6586_driver_1adb04860e202772b68877f7aaa426ab13" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>GetBackwardPin</name></member>
       <member refid="classevam_1_1_t_a6586_driver_1a0d84c607271f5c137c562aee8c785a9a" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>GetForwardPin</name></member>
+      <member refid="classevam_1_1_t_a6586_driver_1a0946b8de91937446f0009669759cb2c3" prot="private" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>mConfig</name></member>
       <member refid="classevam_1_1_t_a6586_driver_1a9707afdcd8fd42b433eb43176c7f0b63" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>TA6586Driver</name></member>
+      <member refid="classevam_1_1_t_a6586_driver_1a9eec20f02e96bbdacd0a1c39a7290a8e" prot="public" virt="non-virtual"><scope>evam::TA6586Driver</scope><name>TA6586Driver</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

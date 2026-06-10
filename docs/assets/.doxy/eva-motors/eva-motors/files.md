@@ -5,6 +5,7 @@ Here is a list of all files with brief descriptions:
 
 
 * **dir** [**src**](dir_68267d1309a1af8e8297ef4c3efbcdba.md)     
+    * **file** [**evabIMotor.h**](evab_i_motor_8h.md)     
     * **file** [**evamAdaptiveSmoothDecor.h**](evam_adaptive_smooth_decor_8h.md)     
     * **file** [**evamCurveDecor.h**](evam_curve_decor_8h.md)     
     * **file** [**evamDirectionalMotor.h**](evam_directional_motor_8h.md)     
@@ -17,7 +18,7 @@ Here is a list of all files with brief descriptions:
     * **file** [**evamPwmDriver.h**](evam_pwm_driver_8h.md)     
     * **file** [**evamRingBuffer.h**](evam_ring_buffer_8h.md)     
     * **file** [**evamServoDriver.h**](evam_servo_driver_8h.md)     
-    * **file** [**evamSlidingWindowDecor.h**](evam_sliding_window_decor_8h.md) _Simple moving average (sliding window) filter decorator._     
+    * **file** [**evamSlidingWindowDecor.h**](evam_sliding_window_decor_8h.md)     
     * **file** [**evamSoftwareServoDriver.h**](evam_software_servo_driver_8h.md)     
     * **file** [**evamSteeringActuator.h**](evam_steering_actuator_8h.md)     
     * **file** [**evamTA6586Driver.h**](evam_t_a6586_driver_8h.md)     

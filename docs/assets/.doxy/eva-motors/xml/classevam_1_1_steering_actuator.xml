@@ -28,50 +28,19 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_steering_actuator_1a5acde101d9dbc07fa87c1c94be1a14e1" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::mLeftPos</definition>
+      <memberdef kind="variable" id="classevam_1_1_steering_actuator_1a35450d24b874f4e381a1d6741632a4b5" prot="private" static="no" mutable="no">
+        <type><ref refid="structevam_1_1_steering_config" kindref="compound">SteeringConfig</ref></type>
+        <definition>SteeringConfig evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::mConfig</definition>
         <argsstring></argsstring>
-        <name>mLeftPos</name>
-        <qualifiedname>evam::SteeringActuator::mLeftPos</qualifiedname>
-        <initializer>= kLeftPos</initializer>
+        <name>mConfig</name>
+        <qualifiedname>evam::SteeringActuator::mConfig</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="25" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="25" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_steering_actuator_1af5095c7310fcc300a00f7f3aa72d5bf0" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::mCenterPos</definition>
-        <argsstring></argsstring>
-        <name>mCenterPos</name>
-        <qualifiedname>evam::SteeringActuator::mCenterPos</qualifiedname>
-        <initializer>= kCenterPos</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="26" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="26" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_steering_actuator_1aa2c7adfd96ce75dd59659cb70f7d5bd3" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::mRightPos</definition>
-        <argsstring></argsstring>
-        <name>mRightPos</name>
-        <qualifiedname>evam::SteeringActuator::mRightPos</qualifiedname>
-        <initializer>= kRightPos</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="27" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="27" bodyend="-1"/>
+        <location file="src/evamSteeringActuator.h" line="42" column="24" bodyfile="src/evamSteeringActuator.h" bodystart="42" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -91,27 +60,70 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="29" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="29" bodyend="35"/>
+        <location file="src/evamSteeringActuator.h" line="44" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="44" bodyend="50"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_steering_actuator_1acd41956e2720f543ad29bbf87d20cb07" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1ae39c36b09a915066bbf5e760f9488e9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::SteeringActuator</definition>
+        <argsstring>()</argsstring>
+        <name>SteeringActuator</name>
+        <qualifiedname>evam::SteeringActuator::SteeringActuator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="53" column="9" bodyfile="src/evamSteeringActuator.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1a2e49618906b010e903aa1b13385ff110" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::SteeringActuator</definition>
+        <argsstring>(SteeringConfig config, Args... args)</argsstring>
+        <name>SteeringActuator</name>
+        <qualifiedname>evam::SteeringActuator::SteeringActuator</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_steering_config" kindref="compound">SteeringConfig</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="56" column="9" bodyfile="src/evamSteeringActuator.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_steering_actuator_1a838a957bca606cf97a66ae97e2c64811" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void evam::SteeringActuator&lt; Driver, kLeftPos, kCenterPos, kRightPos &gt;::SetupRange</definition>
-        <argsstring>(signed short aLeftPos, signed short aCenterPos, signed short aRightPos)</argsstring>
+        <argsstring>(signed short leftPos, signed short centerPos, signed short rightPos)</argsstring>
         <name>SetupRange</name>
         <qualifiedname>evam::SteeringActuator::SetupRange</qualifiedname>
         <param>
           <type>signed short</type>
-          <declname>aLeftPos</declname>
+          <declname>leftPos</declname>
         </param>
         <param>
           <type>signed short</type>
-          <declname>aCenterPos</declname>
+          <declname>centerPos</declname>
         </param>
         <param>
           <type>signed short</type>
-          <declname>aRightPos</declname>
+          <declname>rightPos</declname>
         </param>
         <briefdescription>
 <para>Configure all position parameters at once. </para>
@@ -146,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="45" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="45" bodyend="50"/>
+        <location file="src/evamSteeringActuator.h" line="65" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="65" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_steering_actuator_1a7a554e4becdace99d3cd60a3190e8747" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -175,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="56" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="56" bodyend="59"/>
+        <location file="src/evamSteeringActuator.h" line="76" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="76" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_steering_actuator_1a4d7ea9fcb9b48752bf11f22e53281440" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -193,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="65" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="65" bodyend="68"/>
+        <location file="src/evamSteeringActuator.h" line="85" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="85" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_steering_actuator_1ad9fce70e729d3dce91bd56e8175a9b47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -222,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="74" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="74" bodyend="77"/>
+        <location file="src/evamSteeringActuator.h" line="94" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="94" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_steering_actuator_1af290d89268f12a5155ee9ecd78b4b65d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -240,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="83" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="83" bodyend="86"/>
+        <location file="src/evamSteeringActuator.h" line="103" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="103" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_steering_actuator_1a950a664d4d822313c49a7e72181346db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -269,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="92" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="92" bodyend="95"/>
+        <location file="src/evamSteeringActuator.h" line="112" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="112" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_steering_actuator_1adf9b4f813dbd8cfe3d08f64dd60828fc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -287,7 +299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="101" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="101" bodyend="104"/>
+        <location file="src/evamSteeringActuator.h" line="121" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="121" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_steering_actuator_1aa25bee4f98929da792791174e4f80780" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -316,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSteeringActuator.h" line="110" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="110" bodyend="113"/>
+        <location file="src/evamSteeringActuator.h" line="130" column="14" bodyfile="src/evamSteeringActuator.h" bodystart="130" bodyend="133"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -381,20 +393,20 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamSteeringActuator.h" line="18" column="5" bodyfile="src/evamSteeringActuator.h" bodystart="19" bodyend="114"/>
+    <location file="src/evamSteeringActuator.h" line="35" column="5" bodyfile="src/evamSteeringActuator.h" bodystart="36" bodyend="134"/>
     <listofallmembers>
       <member refid="classevam_1_1_steering_actuator_1aeb9968331d574c2438677117547fd60b" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>compute</name></member>
       <member refid="classevam_1_1_steering_actuator_1af290d89268f12a5155ee9ecd78b4b65d" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>GetCenterPos</name></member>
       <member refid="classevam_1_1_steering_actuator_1a4d7ea9fcb9b48752bf11f22e53281440" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>GetLeftPos</name></member>
       <member refid="classevam_1_1_steering_actuator_1adf9b4f813dbd8cfe3d08f64dd60828fc" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>GetRightPos</name></member>
       <member refid="classevam_1_1_steering_actuator_1aa25bee4f98929da792791174e4f80780" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>Go</name></member>
-      <member refid="classevam_1_1_steering_actuator_1af5095c7310fcc300a00f7f3aa72d5bf0" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>mCenterPos</name></member>
-      <member refid="classevam_1_1_steering_actuator_1a5acde101d9dbc07fa87c1c94be1a14e1" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>mLeftPos</name></member>
-      <member refid="classevam_1_1_steering_actuator_1aa2c7adfd96ce75dd59659cb70f7d5bd3" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>mRightPos</name></member>
+      <member refid="classevam_1_1_steering_actuator_1a35450d24b874f4e381a1d6741632a4b5" prot="private" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>mConfig</name></member>
       <member refid="classevam_1_1_steering_actuator_1ad9fce70e729d3dce91bd56e8175a9b47" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetCenterPos</name></member>
       <member refid="classevam_1_1_steering_actuator_1a7a554e4becdace99d3cd60a3190e8747" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetLeftPos</name></member>
       <member refid="classevam_1_1_steering_actuator_1a950a664d4d822313c49a7e72181346db" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetRightPos</name></member>
-      <member refid="classevam_1_1_steering_actuator_1acd41956e2720f543ad29bbf87d20cb07" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetupRange</name></member>
+      <member refid="classevam_1_1_steering_actuator_1a838a957bca606cf97a66ae97e2c64811" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SetupRange</name></member>
+      <member refid="classevam_1_1_steering_actuator_1ae39c36b09a915066bbf5e760f9488e9f" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SteeringActuator</name></member>
+      <member refid="classevam_1_1_steering_actuator_1a2e49618906b010e903aa1b13385ff110" prot="public" virt="non-virtual"><scope>evam::SteeringActuator</scope><name>SteeringActuator</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

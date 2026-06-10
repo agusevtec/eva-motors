@@ -2,7 +2,7 @@
 
 # Class evam::KickDecor
 
-**template &lt;class Motor, unsigned short kDefaultKickDuration, signed short kDefaultKickPower&gt;**
+**template &lt;class TMotor, unsigned short tDefaultKickDurationMs, signed short tDefaultKickPower&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that applies a momentary kick to overcome static friction._ [More...]
 
 
 
-Inherits the following classes: Tickable,  Motor
+Inherits the following classes: Tickable,  TMotor
 
 
 
@@ -58,9 +58,11 @@ Inherits the following classes: Tickable,  Motor
 |  unsigned short | [**GetKickDuration**](#function-getkickduration) () const<br>_Get kick pulse duration._  |
 |  signed short | [**GetKickPower**](#function-getkickpower) () const<br>_Get kick power._  |
 |  void | [**Go**](#function-go) (signed short aValue) <br>_Apply the control value with kick-start pulse._  |
-|  void | [**SetKickDuration**](#function-setkickduration) (unsigned short aDuration) <br>_Set kick pulse duration._  |
-|  void | [**SetKickPower**](#function-setkickpower) (signed short aPower) <br>_Set kick power._  |
-|  void | [**SetupKickstart**](#function-setupkickstart) (unsigned short aKickDuration, signed short aKickPower) <br>_Configure kickstart parameters at once._  |
+|   | [**KickDecor**](#function-kickdecor-12) () <br> |
+|   | [**KickDecor**](#function-kickdecor-22) ([**KickConfig**](structevam_1_1_kick_config.md) config, Args... args) <br> |
+|  void | [**SetKickDuration**](#function-setkickduration) (unsigned short aValue) <br>_Set kick pulse duration._  |
+|  void | [**SetKickPower**](#function-setkickpower) (signed short aValue) <br>_Set kick power._  |
+|  void | [**SetupKickstart**](#function-setupkickstart) (unsigned short duration, signed short power) <br>_Configure kickstart parameters at once._  |
 
 
 
@@ -190,12 +192,42 @@ inline void evam::KickDecor::Go (
 
 
 
+### function KickDecor [1/2]
+
+```C++
+inline evam::KickDecor::KickDecor () 
+```
+
+
+
+
+<hr>
+
+
+
+### function KickDecor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::KickDecor::KickDecor (
+    KickConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
+
+
+
 ### function SetKickDuration 
 
 _Set kick pulse duration._ 
 ```C++
 inline void evam::KickDecor::SetKickDuration (
-    unsigned short aDuration
+    unsigned short aValue
 ) 
 ```
 
@@ -222,7 +254,7 @@ inline void evam::KickDecor::SetKickDuration (
 _Set kick power._ 
 ```C++
 inline void evam::KickDecor::SetKickPower (
-    signed short aPower
+    signed short aValue
 ) 
 ```
 
@@ -249,8 +281,8 @@ inline void evam::KickDecor::SetKickPower (
 _Configure kickstart parameters at once._ 
 ```C++
 inline void evam::KickDecor::SetupKickstart (
-    unsigned short aKickDuration,
-    signed short aKickPower
+    unsigned short duration,
+    signed short power
 ) 
 ```
 

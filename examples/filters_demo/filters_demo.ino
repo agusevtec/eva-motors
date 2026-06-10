@@ -9,6 +9,7 @@
 #include <evamAdaptiveSmoothDecor.h>
 #include <evamMinmaxDecor.h>
 #include <evamSlidingWindowDecor.h>
+#include <evamTA6586Driver.h>
 
 using namespace eva;
 using namespace evam;
@@ -38,6 +39,12 @@ private:
   // MinmaxDecor<DemoMotor, 3> mMotor;
 
   PinSymmetricJoystick<A6, INPUT, 100, 300> mThrottle;
+
+  CurveDecor<DirectionalMotor<TA6586Driver<>>> motorr = {
+    CurveConfig{ -3 },
+    DirectionalConfig{ -1000, -200, 200, 1000 },
+    TA6586Config{ 9, 10 }
+  };
 
 public:
   App()

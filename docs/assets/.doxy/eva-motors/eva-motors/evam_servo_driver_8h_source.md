@@ -15,7 +15,17 @@
 
 namespace evam
 {
-    template <int kPin, int kMinPulse = 1000, int kMiddlePulse = 1500, int kMaxPulse = 2000>
+    struct ServoConfig {
+        int pin;
+        int minPulse;
+        int middlePulse;
+        int maxPulse;
+        
+        ServoConfig(int pin, int minPulse, int middlePulse, int maxPulse) 
+            : pin(pin), minPulse(minPulse), middlePulse(middlePulse), maxPulse(maxPulse) {}
+    };
+
+    template <int kPin = 0, int kMinPulse = 1000, int kMiddlePulse = 1500, int kMaxPulse = 2000>
     class ServoDriver
     {
         static_assert(kMinPulse >= 500 && kMinPulse <= 2500, "kMinPulse out of range 500..2500");
@@ -25,41 +35,48 @@ namespace evam
         static_assert(kMiddlePulse < kMaxPulse, "kMiddlePulse must be less than kMaxPulse");
 
     private:
+        ServoConfig mConfig;
         Servo mServo;
 
     public:
-        ServoDriver()
+        ServoDriver() : mConfig(kPin, kMinPulse, kMiddlePulse, kMaxPulse)
         {
-            mServo.attach(kPin);
+            mServo.attach(mConfig.pin);
+        }
+        
+        template<typename... Args>
+        ServoDriver(ServoConfig config, Args... args) : mConfig(config)
+        {
+            mServo.attach(mConfig.pin);
         }
 
         int GetPin() const
         {
-            return kPin;
+            return mConfig.pin;
         }
 
     protected:
         void actBipolar(signed short aValue)
         {
             aValue = constrain(aValue, -1000, 1000);
-            if (aVelue < 0)
-                mServo.writeMicroseconds(map(aValue, -1000, 0), kMinPulse, kMiddlePulse))
+            if (aValue < 0)
+                mServo.writeMicroseconds(map(aValue, -1000, 0, mConfig.minPulse, mConfig.middlePulse));
             else
-                mServo.writeMicroseconds(map(aValue, 0, 1000), kMiddlePulse, kMaxPulse))
+                mServo.writeMicroseconds(map(aValue, 0, 1000, mConfig.middlePulse, mConfig.maxPulse));
         }
 
         void actUnipolar(signed short aValue)
         {
             aValue = constrain(aValue, 0, 1000);
-            if (aVelue < 500)
-                mServo.writeMicroseconds(map(aValue, 0, 500), kMinPulse, kMiddlePulse))
+            if (aValue < 500)
+                mServo.writeMicroseconds(map(aValue, 0, 500, mConfig.minPulse, mConfig.middlePulse));
             else
-                mServo.writeMicroseconds(map(aValue, 500, 1000), kMiddlePulse, kMaxPulse))
+                mServo.writeMicroseconds(map(aValue, 500, 1000, mConfig.middlePulse, mConfig.maxPulse));
         }
     };
     
     template <int kPin, int kMinPulse, int kMaxPulse>
-    using ServoFlatDriver = Servoriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2, kMaxPulse>
+    using ServoFlatDriver = ServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2 + kMinPulse, kMaxPulse>;
 }
 ```
 

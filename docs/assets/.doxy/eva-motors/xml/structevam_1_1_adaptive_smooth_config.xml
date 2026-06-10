@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_adaptive_smooth_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::AdaptiveSmoothConfig</compoundname>
+    <includes refid="evam_adaptive_smooth_decor_8h" local="no">evamAdaptiveSmoothDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_adaptive_smooth_config_1a4a5f2b8aec34ab30e563a27477c984bb" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::AdaptiveSmoothConfig::minTimeConstantMs</definition>
+        <argsstring></argsstring>
+        <name>minTimeConstantMs</name>
+        <qualifiedname>evam::AdaptiveSmoothConfig::minTimeConstantMs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="19" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_adaptive_smooth_config_1ad7eebd958a5f6dfa5f126d12e6fd7ed0" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::AdaptiveSmoothConfig::maxTimeConstantMs</definition>
+        <argsstring></argsstring>
+        <name>maxTimeConstantMs</name>
+        <qualifiedname>evam::AdaptiveSmoothConfig::maxTimeConstantMs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="20" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_adaptive_smooth_config_1a432d55a46ef6d28b4a186190c3ccb7fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::AdaptiveSmoothConfig::AdaptiveSmoothConfig</definition>
+        <argsstring>(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)</argsstring>
+        <name>AdaptiveSmoothConfig</name>
+        <qualifiedname>evam::AdaptiveSmoothConfig::AdaptiveSmoothConfig</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>minTimeConstantMs</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>maxTimeConstantMs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="22" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="22" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_adaptive_smooth_decor" kindref="compound">AdaptiveSmoothDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamAdaptiveSmoothDecor.h" line="18" column="5" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="18" bodyend="25"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_adaptive_smooth_config_1a432d55a46ef6d28b4a186190c3ccb7fb" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothConfig</scope><name>AdaptiveSmoothConfig</name></member>
+      <member refid="structevam_1_1_adaptive_smooth_config_1ad7eebd958a5f6dfa5f126d12e6fd7ed0" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothConfig</scope><name>maxTimeConstantMs</name></member>
+      <member refid="structevam_1_1_adaptive_smooth_config_1a4a5f2b8aec34ab30e563a27477c984bb" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothConfig</scope><name>minTimeConstantMs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

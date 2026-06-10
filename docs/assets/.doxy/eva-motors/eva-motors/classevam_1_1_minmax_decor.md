@@ -2,7 +2,7 @@
 
 # Class evam::MinmaxDecor
 
-**template &lt;class Motor, unsigned char N&gt;**
+**template &lt;class TMotor, unsigned char N&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that applies a min-max (morphological) filter to the control signal._
 
 
 
-Inherits the following classes: Motor
+Inherits the following classes: TMotor
 
 
 
@@ -56,7 +56,8 @@ Inherits the following classes: Motor
 | Type | Name |
 | ---: | :--- |
 |  void | [**Go**](#function-go) (signed short value) <br>_Apply the control value with min-max filtering._  |
-|   | [**MinmaxDecor**](#function-minmaxdecor) () <br>_Default constructor._  |
+|   | [**MinmaxDecor**](#function-minmaxdecor-12) () <br> |
+|   | [**MinmaxDecor**](#function-minmaxdecor-22) ([**MinmaxConfig**](structevam_1_1_minmax_config.md) config, Args... args) <br> |
 
 
 
@@ -158,19 +159,31 @@ Passes values through unchanged until the ring buffer is full. Once full, each n
 
 
 
-### function MinmaxDecor 
+### function MinmaxDecor [1/2]
 
-_Default constructor._ 
 ```C++
 inline evam::MinmaxDecor::MinmaxDecor () 
 ```
 
 
 
-Initializes the filter with zero values. The buffer starts empty and must be filled with N\*N values before filtering begins. 
+
+<hr>
 
 
-        
+
+### function MinmaxDecor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::MinmaxDecor::MinmaxDecor (
+    MinmaxConfig config,
+    Args... args
+) 
+```
+
+
+
 
 <hr>
 

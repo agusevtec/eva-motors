@@ -14,17 +14,36 @@
 
 namespace evam
 {
+    struct MinmaxConfig {
+        unsigned char n;
+        
+        MinmaxConfig(unsigned char n) : n(n) {}
+    };
 
-    template <class Motor, unsigned char N>
-    class MinmaxDecor : public Motor
+    template <class TMotor, unsigned char N>
+    class MinmaxDecor : public TMotor
     {
+        static_assert(N >= 2 && N <= 5, "N out of range 2..5");
+        
     private:
-        RingBuffer<signed short, N * N> mRing; 
-        signed short mMaxBuffer[N];            
-        signed short mMinBuffer[N];            
+        MinmaxConfig mConfig;
+        RingBuffer<signed short, N * N> mRing;
+        signed short mMaxBuffer[N];
+        signed short mMinBuffer[N];
 
     public:
-        MinmaxDecor()
+        MinmaxDecor() : mConfig(N)
+        {
+            for (unsigned char i = 0; i < N; ++i)
+            {
+                mMaxBuffer[i] = 0;
+                mMinBuffer[i] = 0;
+            }
+        }
+        
+        template<typename... Args>
+        MinmaxDecor(MinmaxConfig config, Args... args) 
+            : mConfig(config), TMotor(args...)
         {
             for (unsigned char i = 0; i < N; ++i)
             {
@@ -39,7 +58,6 @@ namespace evam
 
             if (mRing.isFull())
             {
-                // Calculate max and min for each chunk
                 for (unsigned char chunk = 0; chunk < N; chunk++)
                 {
                     unsigned char start = chunk * N;
@@ -59,11 +77,10 @@ namespace evam
                     mMinBuffer[chunk] = minVal;
                 }
 
-                // Output is average of minimax and maximin
                 value = (getMinimax() + getMaximin()) / 2;
             }
 
-            Motor::Go(value);
+            TMotor::Go(value);
         }
 
     private:
@@ -85,8 +102,7 @@ namespace evam
             return result;
         }
     };
-
-} // namespace evam
+}
 ```
 
 

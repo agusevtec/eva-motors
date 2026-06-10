@@ -4,16 +4,34 @@
 This inheritance list is sorted roughly, but not completely, alphabetically:
 
 
+* **class** [**evam::IMotor**](classevam_1_1_i_motor.md)     
+    * **class** [**evam::IMotorMaker**](classevam_1_1_i_motor_maker.md) 
 * **class** [**evam::PwmDriver**](classevam_1_1_pwm_driver.md) _Simple PWM output driver (unipolar)._ 
 * **class** [**evam::RingBuffer**](classevam_1_1_ring_buffer.md) 
 * **class** [**evam::ServoDriver**](classevam_1_1_servo_driver.md) _Servo driver using standard Arduino Servo library._ 
 * **class** [**evam::TA6586Driver**](classevam_1_1_t_a6586_driver.md) _Driver for the TA6586 dual H-bridge motor driver._ 
 * **class** [**evam::TB6612FNGDriver**](classevam_1_1_t_b6612_f_n_g_driver.md) _Driver for the TB6612FNG dual H-bridge motor driver._ 
+* **struct** [**evam::AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) _Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive_smooth_decor.md) _._
+* **struct** [**evam::CurveConfig**](structevam_1_1_curve_config.md) _Configuration structure for_ [_**CurveDecor**_](classevam_1_1_curve_decor.md) _._
+* **struct** [**evam::DirectionalConfig**](structevam_1_1_directional_config.md) _Configuration structure for_ [_**DirectionalMotor**_](classevam_1_1_directional_motor.md) _._
+* **struct** [**evam::ForwardConfig**](structevam_1_1_forward_config.md) _Configuration structure for_ [_**ForwardMotor**_](classevam_1_1_forward_motor.md) _._
+* **struct** [**evam::InertiaConfig**](structevam_1_1_inertia_config.md) _Configuration structure for_ [_**InertiaDecor**_](classevam_1_1_inertia_decor.md) _._
+* **struct** [**evam::KickConfig**](structevam_1_1_kick_config.md) _Configuration structure for_ [_**KickDecor**_](classevam_1_1_kick_decor.md) _._
+* **struct** [**evam::LinearActuatorConfig**](structevam_1_1_linear_actuator_config.md) _Configuration structure for_ [_**LinearActuator**_](classevam_1_1_linear_actuator.md) _._
+* **struct** [**evam::MedianConfig**](structevam_1_1_median_config.md) _Configuration structure for_ [_**MedianDecor**_](classevam_1_1_median_decor.md) _._
+* **struct** [**evam::MinmaxConfig**](structevam_1_1_minmax_config.md) _Configuration structure for_ [_**MinmaxDecor**_](classevam_1_1_minmax_decor.md) _._
+* **struct** [**evam::PwmConfig**](structevam_1_1_pwm_config.md) _Configuration structure for_ [_**PwmDriver**_](classevam_1_1_pwm_driver.md) _._
+* **struct** [**evam::ServoConfig**](structevam_1_1_servo_config.md) _Configuration structure for_ [_**ServoDriver**_](classevam_1_1_servo_driver.md) _._
+* **struct** [**evam::SlidingWindowConfig**](structevam_1_1_sliding_window_config.md) _Configuration structure for_ [_**SlidingWindowDecor**_](classevam_1_1_sliding_window_decor.md) _._
+* **struct** [**evam::SoftwareServoConfig**](structevam_1_1_software_servo_config.md) _Configuration structure for_ [_**SoftwareServoDriver**_](classevam_1_1_software_servo_driver.md) _._
+* **struct** [**evam::SteeringConfig**](structevam_1_1_steering_config.md) _Configuration structure for_ [_**SteeringActuator**_](classevam_1_1_steering_actuator.md) _._
+* **struct** [**evam::TA6586Config**](structevam_1_1_t_a6586_config.md) _Configuration structure for_ [_**TA6586Driver**_](classevam_1_1_t_a6586_driver.md) _._
+* **struct** [**evam::TB6612Config**](structevam_1_1_t_b6612_config.md) _Configuration structure for_ [_**TB6612FNGDriver**_](classevam_1_1_t_b6612_f_n_g_driver.md) _._
 * **class** **Heartbeat**    
     * **class** [**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) _Decorator with adaptive smoothing based on input rate of change._ 
     * **class** [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md) _Decorator that simulates mechanical inertia (flywheel effect)._ 
     * **class** [**evam::MedianDecor**](classevam_1_1_median_decor.md) _Decorator that applies median filtering with fixed time base._ 
-* **class** **Motor**    
+* **class** **TMotor**    
     * **class** [**evam::AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) _Decorator with adaptive smoothing based on input rate of change._ 
     * **class** [**evam::CurveDecor**](classevam_1_1_curve_decor.md) _Decorator that applies an S-curve (nonlinear) transformation to the control signal._ 
     * **class** [**evam::InertiaDecor**](classevam_1_1_inertia_decor.md) _Decorator that simulates mechanical inertia (flywheel effect)._ 

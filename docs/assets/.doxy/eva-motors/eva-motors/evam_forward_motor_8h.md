@@ -35,6 +35,7 @@
 
 | Type | Name |
 | ---: | :--- |
+| struct | [**ForwardConfig**](structevam_1_1_forward_config.md) <br>_Configuration structure for_ [_**ForwardMotor**_](classevam_1_1_forward_motor.md) _._ |
 | class | [**ForwardMotor**](classevam_1_1_forward_motor.md) &lt;class Driver, kMinValue, kMaxValue&gt;<br>_Unidirectional forward-only motor controller (e.g., aircraft ESC, throttle)._  |
 
 

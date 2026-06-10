@@ -62,7 +62,9 @@ Inherits the following classes: Driver
 |  void | [**SetCenterPos**](#function-setcenterpos) (signed short aValue) <br>_Set center position output value._  |
 |  void | [**SetLeftPos**](#function-setleftpos) (signed short aValue) <br>_Set leftmost position output value._  |
 |  void | [**SetRightPos**](#function-setrightpos) (signed short aValue) <br>_Set rightmost position output value._  |
-|  void | [**SetupRange**](#function-setuprange) (signed short aLeftPos, signed short aCenterPos, signed short aRightPos) <br>_Configure all position parameters at once._  |
+|  void | [**SetupRange**](#function-setuprange) (signed short leftPos, signed short centerPos, signed short rightPos) <br>_Configure all position parameters at once._  |
+|   | [**SteeringActuator**](#function-steeringactuator-12) () <br> |
+|   | [**SteeringActuator**](#function-steeringactuator-22) ([**SteeringConfig**](structevam_1_1_steering_config.md) config, Args... args) <br> |
 
 
 
@@ -304,9 +306,9 @@ inline void evam::SteeringActuator::SetRightPos (
 _Configure all position parameters at once._ 
 ```C++
 inline void evam::SteeringActuator::SetupRange (
-    signed short aLeftPos,
-    signed short aCenterPos,
-    signed short aRightPos
+    signed short leftPos,
+    signed short centerPos,
+    signed short rightPos
 ) 
 ```
 
@@ -325,6 +327,36 @@ inline void evam::SteeringActuator::SetupRange (
 
 
         
+
+<hr>
+
+
+
+### function SteeringActuator [1/2]
+
+```C++
+inline evam::SteeringActuator::SteeringActuator () 
+```
+
+
+
+
+<hr>
+
+
+
+### function SteeringActuator [2/2]
+
+```C++
+template<typename... Args>
+inline evam::SteeringActuator::SteeringActuator (
+    SteeringConfig config,
+    Args... args
+) 
+```
+
+
+
 
 <hr>
 

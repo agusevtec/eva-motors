@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_linear_actuator_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::LinearActuatorConfig</compoundname>
+    <includes refid="evam_linear_actuator_8h" local="no">evamLinearActuator.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_linear_actuator_config_1ab017f0247d8de6fdb4b5a673d8bbb1e1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::LinearActuatorConfig::minValue</definition>
+        <argsstring></argsstring>
+        <name>minValue</name>
+        <qualifiedname>evam::LinearActuatorConfig::minValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamLinearActuator.h" line="10" column="13" bodyfile="src/evamLinearActuator.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_linear_actuator_config_1a5f2d9109b7ace082d945941e0908de4c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::LinearActuatorConfig::maxValue</definition>
+        <argsstring></argsstring>
+        <name>maxValue</name>
+        <qualifiedname>evam::LinearActuatorConfig::maxValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamLinearActuator.h" line="11" column="13" bodyfile="src/evamLinearActuator.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_linear_actuator_config_1ab6f2a415cf8b13d95c259f8c82e8a4e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::LinearActuatorConfig::LinearActuatorConfig</definition>
+        <argsstring>(int minValue, int maxValue)</argsstring>
+        <name>LinearActuatorConfig</name>
+        <qualifiedname>evam::LinearActuatorConfig::LinearActuatorConfig</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>minValue</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamLinearActuator.h" line="13" column="9" bodyfile="src/evamLinearActuator.h" bodystart="13" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_linear_actuator" kindref="compound">LinearActuator</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamLinearActuator.h" line="9" column="5" bodyfile="src/evamLinearActuator.h" bodystart="9" bodyend="14"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_linear_actuator_config_1ab6f2a415cf8b13d95c259f8c82e8a4e1" prot="public" virt="non-virtual"><scope>evam::LinearActuatorConfig</scope><name>LinearActuatorConfig</name></member>
+      <member refid="structevam_1_1_linear_actuator_config_1a5f2d9109b7ace082d945941e0908de4c" prot="public" virt="non-virtual"><scope>evam::LinearActuatorConfig</scope><name>maxValue</name></member>
+      <member refid="structevam_1_1_linear_actuator_config_1ab017f0247d8de6fdb4b5a673d8bbb1e1" prot="public" virt="non-virtual"><scope>evam::LinearActuatorConfig</scope><name>minValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

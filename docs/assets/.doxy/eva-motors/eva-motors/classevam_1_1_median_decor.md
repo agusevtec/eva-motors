@@ -2,7 +2,7 @@
 
 # Class evam::MedianDecor
 
-**template &lt;class Motor, unsigned short kWindowSize&gt;**
+**template &lt;class TMotor, unsigned short tWindowSize&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that applies median filtering with fixed time base._ [More...](#detai
 
 
 
-Inherits the following classes: Heartbeat,  Motor
+Inherits the following classes: Heartbeat,  TMotor
 
 
 
@@ -56,8 +56,9 @@ Inherits the following classes: Heartbeat,  Motor
 | Type | Name |
 | ---: | :--- |
 |  void | [**Go**](#function-go) (signed short aValue) <br> |
-|   | [**MedianDecor**](#function-mediandecor) () <br> |
-|  void | [**Reset**](#function-reset) () <br> |
+|   | [**MedianDecor**](#function-mediandecor-12) () <br> |
+|   | [**MedianDecor**](#function-mediandecor-22) ([**MedianConfig**](structevam_1_1_median_config.md) config, Args... args) <br> |
+|  void | [**Reset**](#function-reset) () <br>_Reset the filter buffer._  |
 
 
 
@@ -129,7 +130,7 @@ inline void evam::MedianDecor::Go (
 
 
 
-### function MedianDecor 
+### function MedianDecor [1/2]
 
 ```C++
 inline evam::MedianDecor::MedianDecor () 
@@ -142,8 +143,26 @@ inline evam::MedianDecor::MedianDecor ()
 
 
 
+### function MedianDecor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::MedianDecor::MedianDecor (
+    MedianConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
+
+
+
 ### function Reset 
 
+_Reset the filter buffer._ 
 ```C++
 inline void evam::MedianDecor::Reset () 
 ```

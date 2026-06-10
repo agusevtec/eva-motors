@@ -642,10 +642,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-softwareservodriver" class="md-nav__link">
+  <a href="#function-getpin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function SoftwareServoDriver
+        function GetPin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-softwareservodriver-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function SoftwareServoDriver [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-softwareservodriver-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function SoftwareServoDriver [2/2]
       
     </span>
   </a>
@@ -734,8 +756,16 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-getpin"><strong>GetPin</strong></a> () const<br><em>Get the servo pin number.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-softwareservodriver"><strong>SoftwareServoDriver</strong></a> () <br><em>Constructor. Initializes the pin as output.</em></td>
+<td style="text-align: left;"><a href="#function-softwareservodriver-12"><strong>SoftwareServoDriver</strong></a> () <br><em>Constructor. Initializes the pin as output.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-softwareservodriver-22"><strong>SoftwareServoDriver</strong></a> (<a href="../structevam_1_1_software_servo_config/"><strong>SoftwareServoConfig</strong></a> config, Args... args) <br></td>
 </tr>
 </tbody>
 </table>
@@ -768,9 +798,28 @@
 <li><code>kMaxPulse</code> Maximum pulse width in microseconds (default: 2000) </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-softwareservodriver">function SoftwareServoDriver<a class="headerlink" href="#function-softwareservodriver" title="Permanent link">&para;</a></h3>
+<h3 id="function-getpin">function GetPin<a class="headerlink" href="#function-getpin" title="Permanent link">&para;</a></h3>
+<p><em>Get the servo pin number.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">SoftwareServoDriver</span><span class="o">::</span><span class="n">GetPin</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<p>Pin number used for servo signal. </p>
+<hr>
+
+<h3 id="function-softwareservodriver-12">function SoftwareServoDriver [1/2]<a class="headerlink" href="#function-softwareservodriver-12" title="Permanent link">&para;</a></h3>
 <p><em>Constructor. Initializes the pin as output.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">SoftwareServoDriver</span><span class="o">::</span><span class="n">SoftwareServoDriver</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-softwareservodriver-22">function SoftwareServoDriver [2/2]<a class="headerlink" href="#function-softwareservodriver-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">SoftwareServoDriver</span><span class="o">::</span><span class="n">SoftwareServoDriver</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">SoftwareServoConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>

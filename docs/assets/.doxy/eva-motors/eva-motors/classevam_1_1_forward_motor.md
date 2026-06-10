@@ -55,12 +55,14 @@ Inherits the following classes: Driver
 
 | Type | Name |
 | ---: | :--- |
+|   | [**ForwardMotor**](#function-forwardmotor-12) () <br> |
+|   | [**ForwardMotor**](#function-forwardmotor-22) ([**ForwardConfig**](structevam_1_1_forward_config.md) config, Args... args) <br> |
 |  int | [**GetMaxValue**](#function-getmaxvalue) () const<br>_Get maximum output value._  |
 |  int | [**GetMinValue**](#function-getminvalue) () const<br>_Get minimum output value._  |
 |  void | [**Go**](#function-go) (signed short aLevel) <br>_Apply the control value._  |
 |  void | [**SetMaxValue**](#function-setmaxvalue) (int aValue) <br>_Set maximum output value._  |
 |  void | [**SetMinValue**](#function-setminvalue) (int aValue) <br>_Set minimum output value._  |
-|  void | [**SetupRange**](#function-setuprange) (int aMinValue, int aMaxValue) <br>_Configure the output range parameters at once._  |
+|  void | [**SetupRange**](#function-setuprange) (int minValue, int maxValue) <br>_Configure the output range parameters at once._  |
 
 
 
@@ -110,6 +112,36 @@ Maps input range 0..1000 to driver output. Negative inputs are treated as stop (
     
 ## Public Functions Documentation
 
+
+
+
+### function ForwardMotor [1/2]
+
+```C++
+inline evam::ForwardMotor::ForwardMotor () 
+```
+
+
+
+
+<hr>
+
+
+
+### function ForwardMotor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::ForwardMotor::ForwardMotor (
+    ForwardConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
 
 
 
@@ -249,8 +281,8 @@ inline void evam::ForwardMotor::SetMinValue (
 _Configure the output range parameters at once._ 
 ```C++
 inline void evam::ForwardMotor::SetupRange (
-    int aMinValue,
-    int aMaxValue
+    int minValue,
+    int maxValue
 ) 
 ```
 

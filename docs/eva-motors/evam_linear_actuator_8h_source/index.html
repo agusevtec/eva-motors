@@ -613,8 +613,16 @@
 <p><a href="../evam_linear_actuator_8h/">Go to the documentation of this file</a></p>
 <div class="codehilite"><pre><span></span><code><span class="cp">#pragma once</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span>
+
 <span class="k">namespace</span><span class="w"> </span><span class="nn">evam</span>
 <span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">LinearActuatorConfig</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">LinearActuatorConfig</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">minValue</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">minValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">)),</span><span class="w"> </span><span class="n">maxValue</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">maxValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">))</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="p">};</span>
+
 <span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Driver</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kMinValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kMaxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">LinearActuator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Driver</span>
 <span class="w">    </span><span class="p">{</span>
@@ -622,39 +630,43 @@
 <span class="w">        </span><span class="k">static_assert</span><span class="p">(</span><span class="n">kMaxValue</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">-1000</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">kMaxValue</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;kMaxValue out of range&quot;</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">private</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mMinValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kMinValue</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mMaxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kMaxValue</span><span class="p">;</span>
+<span class="w">        </span><span class="n">LinearActuatorConfig</span><span class="w"> </span><span class="n">mConfig</span><span class="p">;</span>
 
 <span class="w">        </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">compute</span><span class="p">(</span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aLevel</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">aLevel</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="n">mMinValue</span><span class="p">,</span><span class="w"> </span><span class="n">mMaxValue</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">constrain</span><span class="p">(</span><span class="n">aLevel</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="n">mConfig</span><span class="p">.</span><span class="n">minValue</span><span class="p">,</span><span class="w"> </span><span class="n">mConfig</span><span class="p">.</span><span class="n">maxValue</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">public</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetupRange</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">aMinValue</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">aMaxValue</span><span class="p">)</span>
+<span class="w">        </span><span class="n">LinearActuator</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mConfig</span><span class="p">(</span><span class="n">kMinValue</span><span class="p">,</span><span class="w"> </span><span class="n">kMaxValue</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">        </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="n">LinearActuator</span><span class="p">(</span><span class="n">LinearActuatorConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Driver</span><span class="p">(</span><span class="n">args</span><span class="p">...),</span><span class="w"> </span><span class="n">mConfig</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetupRange</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">SetMinValue</span><span class="p">(</span><span class="n">aMinValue</span><span class="p">);</span>
-<span class="w">            </span><span class="n">SetMaxValue</span><span class="p">(</span><span class="n">aMaxValue</span><span class="p">);</span>
+<span class="w">            </span><span class="n">SetMinValue</span><span class="p">(</span><span class="n">minValue</span><span class="p">);</span>
+<span class="w">            </span><span class="n">SetMaxValue</span><span class="p">(</span><span class="n">maxValue</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetMinValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">aValue</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">mMinValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">aValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mConfig</span><span class="p">.</span><span class="n">minValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">aValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">GetMinValue</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mMinValue</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mConfig</span><span class="p">.</span><span class="n">minValue</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetMaxValue</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">aValue</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">mMaxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">aValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mConfig</span><span class="p">.</span><span class="n">maxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">aValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">GetMaxValue</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mMaxValue</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mConfig</span><span class="p">.</span><span class="n">maxValue</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">Go</span><span class="p">(</span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aLevel</span><span class="p">)</span>

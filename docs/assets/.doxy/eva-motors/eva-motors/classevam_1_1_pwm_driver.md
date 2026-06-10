@@ -54,7 +54,9 @@ _Simple PWM output driver (unipolar)._ [More...](#detailed-description)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**PwmDriver**](#function-pwmdriver) () <br>_Constructor. Initializes the pin as output._  |
+|  int | [**GetPin**](#function-getpin) () const<br>_Get the PWM pin number._  |
+|   | [**PwmDriver**](#function-pwmdriver-12) () <br> |
+|   | [**PwmDriver**](#function-pwmdriver-22) ([**PwmConfig**](structevam_1_1_pwm_config.md) config, Args... args) <br> |
 
 
 
@@ -110,11 +112,52 @@ Converts 0..1000 input to 0..255 PWM duty cycle. Suitable for MOSFETs and other 
 
 
 
-### function PwmDriver 
+### function GetPin 
 
-_Constructor. Initializes the pin as output._ 
+_Get the PWM pin number._ 
+```C++
+inline int evam::PwmDriver::GetPin () const
+```
+
+
+
+
+
+**Returns:**
+
+Pin number. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function PwmDriver [1/2]
+
 ```C++
 inline evam::PwmDriver::PwmDriver () 
+```
+
+
+
+
+<hr>
+
+
+
+### function PwmDriver [2/2]
+
+```C++
+template<typename... Args>
+inline evam::PwmDriver::PwmDriver (
+    PwmConfig config,
+    Args... args
+) 
 ```
 
 

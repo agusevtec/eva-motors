@@ -36,6 +36,7 @@
 | Type | Name |
 | ---: | :--- |
 | class | [**LinearActuator**](classevam_1_1_linear_actuator.md) &lt;class Driver, kMinValue, kMaxValue&gt;<br>_Linear actuator controller (position control)._  |
+| struct | [**LinearActuatorConfig**](structevam_1_1_linear_actuator_config.md) <br>_Configuration structure for_ [_**LinearActuator**_](classevam_1_1_linear_actuator.md) _._ |
 
 
 

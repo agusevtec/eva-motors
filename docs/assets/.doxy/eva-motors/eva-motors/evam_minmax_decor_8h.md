@@ -35,7 +35,8 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**MinmaxDecor**](classevam_1_1_minmax_decor.md) &lt;class Motor, N&gt;<br>_Decorator that applies a min-max (morphological) filter to the control signal._  |
+| struct | [**MinmaxConfig**](structevam_1_1_minmax_config.md) <br>_Configuration structure for_ [_**MinmaxDecor**_](classevam_1_1_minmax_decor.md) _._ |
+| class | [**MinmaxDecor**](classevam_1_1_minmax_decor.md) &lt;class TMotor, N&gt;<br>_Decorator that applies a min-max (morphological) filter to the control signal._  |
 
 
 

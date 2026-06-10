@@ -2,11 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_sliding_window_decor" kind="class" language="C++" prot="public">
     <compoundname>evam::SlidingWindowDecor</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">Motor</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
     <includes refid="evam_sliding_window_decor_8h" local="no">evamSlidingWindowDecor.h</includes>
     <templateparamlist>
       <param>
-        <type>class Motor</type>
+        <type>class TMotor</type>
       </param>
       <param>
         <type>unsigned short</type>
@@ -15,42 +15,97 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_sliding_window_decor_1a0a9acb3b799ea7a4e4a4df58148bf533" prot="private" static="no" mutable="no">
-        <type><ref refid="classevam_1_1_ring_buffer" kindref="compound">RingBuffer</ref>&lt; signed short, N &gt;</type>
-        <definition>RingBuffer&lt;signed short, N&gt; evam::SlidingWindowDecor&lt; Motor, N &gt;::mRing</definition>
+      <memberdef kind="variable" id="classevam_1_1_sliding_window_decor_1a6d75e8e6b11634b73be3a09cf33629dc" prot="private" static="no" mutable="no">
+        <type><ref refid="structevam_1_1_sliding_window_config" kindref="compound">SlidingWindowConfig</ref></type>
+        <definition>SlidingWindowConfig evam::SlidingWindowDecor&lt; TMotor, N &gt;::mConfig</definition>
         <argsstring></argsstring>
-        <name>mRing</name>
-        <qualifiedname>evam::SlidingWindowDecor::mRing</qualifiedname>
+        <name>mConfig</name>
+        <qualifiedname>evam::SlidingWindowDecor::mConfig</qualifiedname>
         <briefdescription>
-<para>Ring buffer storing the last N values. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSlidingWindowDecor.h" line="29" column="16" bodyfile="src/evamSlidingWindowDecor.h" bodystart="29" bodyend="-1"/>
+        <location file="src/evamSlidingWindowDecor.h" line="35" column="29" bodyfile="src/evamSlidingWindowDecor.h" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_sliding_window_decor_1ab96273cbfa65164647294fe5507d9b67" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_sliding_window_decor_1a8f6415d8a3a1fdcd26579a5bed0ef7de" prot="private" static="no" mutable="no">
+        <type><ref refid="classevam_1_1_ring_buffer" kindref="compound">RingBuffer</ref>&lt; signed short, N &gt;</type>
+        <definition>RingBuffer&lt;signed short, N&gt; evam::SlidingWindowDecor&lt; TMotor, N &gt;::mRing</definition>
+        <argsstring></argsstring>
+        <name>mRing</name>
+        <qualifiedname>evam::SlidingWindowDecor::mRing</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlidingWindowDecor.h" line="36" column="20" bodyfile="src/evamSlidingWindowDecor.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_sliding_window_decor_1ae92af8e59025785a03fcc2450bf66388" prot="private" static="no" mutable="no">
         <type>signed long</type>
-        <definition>signed long evam::SlidingWindowDecor&lt; Motor, N &gt;::mSum</definition>
+        <definition>signed long evam::SlidingWindowDecor&lt; TMotor, N &gt;::mSum</definition>
         <argsstring></argsstring>
         <name>mSum</name>
         <qualifiedname>evam::SlidingWindowDecor::mSum</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
-<para>Running sum of values in buffer. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSlidingWindowDecor.h" line="30" column="17" bodyfile="src/evamSlidingWindowDecor.h" bodystart="30" bodyend="-1"/>
+        <location file="src/evamSlidingWindowDecor.h" line="37" column="21" bodyfile="src/evamSlidingWindowDecor.h" bodystart="37" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_sliding_window_decor_1ab6308581599cf3e125e2c7a43a9e4ab3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_sliding_window_decor_1a1b71c14432e7ced4b663221aba338dc7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::SlidingWindowDecor&lt; TMotor, N &gt;::SlidingWindowDecor</definition>
+        <argsstring>()</argsstring>
+        <name>SlidingWindowDecor</name>
+        <qualifiedname>evam::SlidingWindowDecor::SlidingWindowDecor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlidingWindowDecor.h" line="40" column="9" bodyfile="src/evamSlidingWindowDecor.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_sliding_window_decor_1abafc74619019f86b3f03f61fd75d35a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::SlidingWindowDecor&lt; TMotor, N &gt;::SlidingWindowDecor</definition>
+        <argsstring>(SlidingWindowConfig config, Args... args)</argsstring>
+        <name>SlidingWindowDecor</name>
+        <qualifiedname>evam::SlidingWindowDecor::SlidingWindowDecor</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_sliding_window_config" kindref="compound">SlidingWindowConfig</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlidingWindowDecor.h" line="43" column="9" bodyfile="src/evamSlidingWindowDecor.h" bodystart="43" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_sliding_window_decor_1a5239139ab6b8d1603f379ba81de08db0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::SlidingWindowDecor&lt; Motor, N &gt;::Go</definition>
+        <definition>void evam::SlidingWindowDecor&lt; TMotor, N &gt;::Go</definition>
         <argsstring>(signed short value)</argsstring>
         <name>Go</name>
         <qualifiedname>evam::SlidingWindowDecor::Go</qualifiedname>
@@ -75,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamSlidingWindowDecor.h" line="38" column="10" bodyfile="src/evamSlidingWindowDecor.h" bodystart="38" bodyend="50"/>
+        <location file="src/evamSlidingWindowDecor.h" line="51" column="14" bodyfile="src/evamSlidingWindowDecor.h" bodystart="51" bodyend="63"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -87,7 +142,7 @@
 <parametername>Motor</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Base motor class (must implement <ref refid="classevam_1_1_sliding_window_decor_1ab6308581599cf3e125e2c7a43a9e4ab3" kindref="member">Go(signed short)</ref>) </para>
+<para>Base motor class (must implement <ref refid="classevam_1_1_sliding_window_decor_1a5239139ab6b8d1603f379ba81de08db0" kindref="member">Go(signed short)</ref>) </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -105,10 +160,10 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Motor</label>
+        <label>TMotor</label>
       </node>
       <node id="1">
-        <label>evam::SlidingWindowDecor&lt; Motor, N &gt;</label>
+        <label>evam::SlidingWindowDecor&lt; TMotor, N &gt;</label>
         <link refid="classevam_1_1_sliding_window_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -116,20 +171,23 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Motor</label>
+        <label>TMotor</label>
       </node>
       <node id="1">
-        <label>evam::SlidingWindowDecor&lt; Motor, N &gt;</label>
+        <label>evam::SlidingWindowDecor&lt; TMotor, N &gt;</label>
         <link refid="classevam_1_1_sliding_window_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamSlidingWindowDecor.h" line="26" column="1" bodyfile="src/evamSlidingWindowDecor.h" bodystart="27" bodyend="51"/>
+    <location file="src/evamSlidingWindowDecor.h" line="30" column="5" bodyfile="src/evamSlidingWindowDecor.h" bodystart="31" bodyend="64"/>
     <listofallmembers>
-      <member refid="classevam_1_1_sliding_window_decor_1ab6308581599cf3e125e2c7a43a9e4ab3" prot="public" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>Go</name></member>
-      <member refid="classevam_1_1_sliding_window_decor_1a0a9acb3b799ea7a4e4a4df58148bf533" prot="private" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>mRing</name></member>
-      <member refid="classevam_1_1_sliding_window_decor_1ab96273cbfa65164647294fe5507d9b67" prot="private" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>mSum</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1a5239139ab6b8d1603f379ba81de08db0" prot="public" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1a6d75e8e6b11634b73be3a09cf33629dc" prot="private" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>mConfig</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1a8f6415d8a3a1fdcd26579a5bed0ef7de" prot="private" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>mRing</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1ae92af8e59025785a03fcc2450bf66388" prot="private" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>mSum</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1a1b71c14432e7ced4b663221aba338dc7" prot="public" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>SlidingWindowDecor</name></member>
+      <member refid="classevam_1_1_sliding_window_decor_1abafc74619019f86b3f03f61fd75d35a9" prot="public" virt="non-virtual"><scope>evam::SlidingWindowDecor</scope><name>SlidingWindowDecor</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

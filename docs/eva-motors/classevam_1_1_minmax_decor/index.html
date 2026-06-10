@@ -642,10 +642,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-minmaxdecor" class="md-nav__link">
+  <a href="#function-minmaxdecor-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function MinmaxDecor
+        function MinmaxDecor [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-minmaxdecor-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function MinmaxDecor [2/2]
       
     </span>
   </a>
@@ -678,13 +689,13 @@
 
 
 <h1 id="class-evamminmaxdecor">Class evam::MinmaxDecor<a class="headerlink" href="#class-evamminmaxdecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class Motor, unsigned char N&gt;</strong></p>
+<p><strong>template &lt;class TMotor, unsigned char N&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>MinmaxDecor</strong></a></p>
 <p><em>Decorator that applies a min-max (morphological) filter to the control signal.</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evamMinmaxDecor.h&gt;</code></li>
 </ul>
-<p>Inherits the following classes: Motor</p>
+<p>Inherits the following classes: TMotor</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -700,7 +711,11 @@
 </tr>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-minmaxdecor"><strong>MinmaxDecor</strong></a> () <br><em>Default constructor.</em></td>
+<td style="text-align: left;"><a href="#function-minmaxdecor-12"><strong>MinmaxDecor</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-minmaxdecor-22"><strong>MinmaxDecor</strong></a> (<a href="../structevam_1_1_minmax_config/"><strong>MinmaxConfig</strong></a> config, Args... args) <br></td>
 </tr>
 </tbody>
 </table>
@@ -735,12 +750,20 @@
 </ul>
 <hr>
 
-<h3 id="function-minmaxdecor">function MinmaxDecor<a class="headerlink" href="#function-minmaxdecor" title="Permanent link">&para;</a></h3>
-<p><em>Default constructor.</em> </p>
+<h3 id="function-minmaxdecor-12">function MinmaxDecor [1/2]<a class="headerlink" href="#function-minmaxdecor-12" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">MinmaxDecor</span><span class="o">::</span><span class="n">MinmaxDecor</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
-<p>Initializes the filter with zero values. The buffer starts empty and must be filled with N*N values before filtering begins. </p>
+<hr>
+
+<h3 id="function-minmaxdecor-22">function MinmaxDecor [2/2]<a class="headerlink" href="#function-minmaxdecor-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">MinmaxDecor</span><span class="o">::</span><span class="n">MinmaxDecor</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">MinmaxConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
 <hr>
 
 <hr />

@@ -2,7 +2,7 @@
 
 # Class evam::InertiaDecor
 
-**template &lt;class Motor, signed short kInertiaMass&gt;**
+**template &lt;class TMotor, unsigned short tInertiaMass&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that simulates mechanical inertia (flywheel effect)._ [More...](#deta
 
 
 
-Inherits the following classes: Heartbeat,  Motor
+Inherits the following classes: Heartbeat,  TMotor
 
 
 
@@ -55,10 +55,11 @@ Inherits the following classes: Heartbeat,  Motor
 
 | Type | Name |
 | ---: | :--- |
-|  unsigned short | [**GetInertiaMass**](#function-getinertiamass) () const<br> |
-|  void | [**Go**](#function-go) (int aSpeed) <br> |
-|   | [**InertiaDecor**](#function-inertiadecor) () <br> |
-|  void | [**SetInertiaMass**](#function-setinertiamass) (unsigned short aValue) <br> |
+|  unsigned short | [**GetInertiaMass**](#function-getinertiamass) () const<br>_Get the current inertia mass value._  |
+|  void | [**Go**](#function-go) (int aSpeed) <br>_Apply the control value with inertia simulation._  |
+|   | [**InertiaDecor**](#function-inertiadecor-12) () <br> |
+|   | [**InertiaDecor**](#function-inertiadecor-22) ([**InertiaConfig**](structevam_1_1_inertia_config.md) config, Args... args) <br> |
+|  void | [**SetInertiaMass**](#function-setinertiamass) (unsigned short aValue) <br>_Set the inertia mass value._  |
 
 
 
@@ -104,7 +105,7 @@ When decelerating or stopping, speed decreases gradually over time, simulating t
 
 
 * `Motor` Base motor class (must implement Go(signed short)) 
-* `kInertiaMass` Virtual mass (positive). Larger values = slower deceleration. 
+* `tInertiaMass` Virtual mass (positive). Larger values = slower deceleration. 
 
 
 
@@ -117,6 +118,7 @@ When decelerating or stopping, speed decreases gradually over time, simulating t
 
 ### function GetInertiaMass 
 
+_Get the current inertia mass value._ 
 ```C++
 inline unsigned short evam::InertiaDecor::GetInertiaMass () const
 ```
@@ -124,12 +126,24 @@ inline unsigned short evam::InertiaDecor::GetInertiaMass () const
 
 
 
+
+**Returns:**
+
+Current inertia mass value 
+
+
+
+
+
+        
+
 <hr>
 
 
 
 ### function Go 
 
+_Apply the control value with inertia simulation._ 
 ```C++
 inline void evam::InertiaDecor::Go (
     int aSpeed
@@ -139,11 +153,22 @@ inline void evam::InertiaDecor::Go (
 
 
 
+
+**Parameters:**
+
+
+* `aSpeed` Desired speed, range -1000..1000 
+
+
+
+
+        
+
 <hr>
 
 
 
-### function InertiaDecor 
+### function InertiaDecor [1/2]
 
 ```C++
 inline evam::InertiaDecor::InertiaDecor () 
@@ -156,8 +181,26 @@ inline evam::InertiaDecor::InertiaDecor ()
 
 
 
+### function InertiaDecor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::InertiaDecor::InertiaDecor (
+    InertiaConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
+
+
+
 ### function SetInertiaMass 
 
+_Set the inertia mass value._ 
 ```C++
 inline void evam::InertiaDecor::SetInertiaMass (
     unsigned short aValue
@@ -166,6 +209,17 @@ inline void evam::InertiaDecor::SetInertiaMass (
 
 
 
+
+
+**Parameters:**
+
+
+* `aValue` Virtual mass, clamped to 1..200 
+
+
+
+
+        
 
 <hr>
 ## Protected Functions Documentation

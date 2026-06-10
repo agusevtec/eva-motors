@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_t_a6586_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::TA6586Config</compoundname>
+    <includes refid="evam_t_a6586_driver_8h" local="no">evamTA6586Driver.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_t_a6586_config_1a4d8dc5d92bac70d4b2d49dc6a4e62241" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::TA6586Config::forwardPin</definition>
+        <argsstring></argsstring>
+        <name>forwardPin</name>
+        <qualifiedname>evam::TA6586Config::forwardPin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="11" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_t_a6586_config_1a7967626ee6e3b018373d9a90ef1f1f05" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::TA6586Config::backwardPin</definition>
+        <argsstring></argsstring>
+        <name>backwardPin</name>
+        <qualifiedname>evam::TA6586Config::backwardPin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="12" column="13" bodyfile="src/evamTA6586Driver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_t_a6586_config_1af2b994560df0eea56035988bc23f75b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::TA6586Config::TA6586Config</definition>
+        <argsstring>(int forwardPin, int backwardPin)</argsstring>
+        <name>TA6586Config</name>
+        <qualifiedname>evam::TA6586Config::TA6586Config</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>forwardPin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>backwardPin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamTA6586Driver.h" line="14" column="9" bodyfile="src/evamTA6586Driver.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_t_a6586_driver" kindref="compound">TA6586Driver</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamTA6586Driver.h" line="10" column="5" bodyfile="src/evamTA6586Driver.h" bodystart="10" bodyend="15"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_t_a6586_config_1a7967626ee6e3b018373d9a90ef1f1f05" prot="public" virt="non-virtual"><scope>evam::TA6586Config</scope><name>backwardPin</name></member>
+      <member refid="structevam_1_1_t_a6586_config_1a4d8dc5d92bac70d4b2d49dc6a4e62241" prot="public" virt="non-virtual"><scope>evam::TA6586Config</scope><name>forwardPin</name></member>
+      <member refid="structevam_1_1_t_a6586_config_1af2b994560df0eea56035988bc23f75b5" prot="public" virt="non-virtual"><scope>evam::TA6586Config</scope><name>TA6586Config</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

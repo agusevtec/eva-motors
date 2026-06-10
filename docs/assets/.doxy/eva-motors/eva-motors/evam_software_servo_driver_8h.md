@@ -36,6 +36,7 @@
 
 | Type | Name |
 | ---: | :--- |
+| struct | [**SoftwareServoConfig**](structevam_1_1_software_servo_config.md) <br>_Configuration structure for_ [_**SoftwareServoDriver**_](classevam_1_1_software_servo_driver.md) _._ |
 | class | [**SoftwareServoDriver**](classevam_1_1_software_servo_driver.md) &lt;kPin, kMinPulse, kMiddlePulse, kMaxPulse&gt;<br>_Software-based servo driver using millis() for timing._  |
 
 

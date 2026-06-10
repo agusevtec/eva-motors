@@ -22,35 +22,19 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_linear_actuator_1a2a11b4710be2079a1c815aa37ac80d38" prot="private" static="no" mutable="no">
-        <type>int</type>
-        <definition>int evam::LinearActuator&lt; Driver, kMinValue, kMaxValue &gt;::mMinValue</definition>
+      <memberdef kind="variable" id="classevam_1_1_linear_actuator_1afc3cbdc3a404b8221386219345053371" prot="private" static="no" mutable="no">
+        <type><ref refid="structevam_1_1_linear_actuator_config" kindref="compound">LinearActuatorConfig</ref></type>
+        <definition>LinearActuatorConfig evam::LinearActuator&lt; Driver, kMinValue, kMaxValue &gt;::mConfig</definition>
         <argsstring></argsstring>
-        <name>mMinValue</name>
-        <qualifiedname>evam::LinearActuator::mMinValue</qualifiedname>
-        <initializer>= kMinValue</initializer>
+        <name>mConfig</name>
+        <qualifiedname>evam::LinearActuator::mConfig</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="21" column="13" bodyfile="src/evamLinearActuator.h" bodystart="21" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_linear_actuator_1a2955a6a2fc1a7f013f5869ae8a52e564" prot="private" static="no" mutable="no">
-        <type>int</type>
-        <definition>int evam::LinearActuator&lt; Driver, kMinValue, kMaxValue &gt;::mMaxValue</definition>
-        <argsstring></argsstring>
-        <name>mMaxValue</name>
-        <qualifiedname>evam::LinearActuator::mMaxValue</qualifiedname>
-        <initializer>= kMaxValue</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="22" column="13" bodyfile="src/evamLinearActuator.h" bodystart="22" bodyend="-1"/>
+        <location file="src/evamLinearActuator.h" line="32" column="30" bodyfile="src/evamLinearActuator.h" bodystart="32" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -70,23 +54,66 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="24" column="22" bodyfile="src/evamLinearActuator.h" bodystart="24" bodyend="27"/>
+        <location file="src/evamLinearActuator.h" line="34" column="22" bodyfile="src/evamLinearActuator.h" bodystart="34" bodyend="37"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_linear_actuator_1acd888e81f56263e818febf713f59f28a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_linear_actuator_1afb36b44cb3fd4be8aa0f8a8bb461183e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::LinearActuator&lt; Driver, kMinValue, kMaxValue &gt;::LinearActuator</definition>
+        <argsstring>()</argsstring>
+        <name>LinearActuator</name>
+        <qualifiedname>evam::LinearActuator::LinearActuator</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamLinearActuator.h" line="40" column="9" bodyfile="src/evamLinearActuator.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_linear_actuator_1ad7e4f85ac1e91f646faccbad4a084d94" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::LinearActuator&lt; Driver, kMinValue, kMaxValue &gt;::LinearActuator</definition>
+        <argsstring>(LinearActuatorConfig config, Args... args)</argsstring>
+        <name>LinearActuator</name>
+        <qualifiedname>evam::LinearActuator::LinearActuator</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_linear_actuator_config" kindref="compound">LinearActuatorConfig</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamLinearActuator.h" line="43" column="9" bodyfile="src/evamLinearActuator.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_linear_actuator_1a27124e6bc24f755a379ca99fd399a983" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void evam::LinearActuator&lt; Driver, kMinValue, kMaxValue &gt;::SetupRange</definition>
-        <argsstring>(int aMinValue, int aMaxValue)</argsstring>
+        <argsstring>(int minValue, int maxValue)</argsstring>
         <name>SetupRange</name>
         <qualifiedname>evam::LinearActuator::SetupRange</qualifiedname>
         <param>
           <type>int</type>
-          <declname>aMinValue</declname>
+          <declname>minValue</declname>
         </param>
         <param>
           <type>int</type>
-          <declname>aMaxValue</declname>
+          <declname>maxValue</declname>
         </param>
         <briefdescription>
 <para>Configure the position range parameters at once. </para>
@@ -113,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="36" column="14" bodyfile="src/evamLinearActuator.h" bodystart="36" bodyend="40"/>
+        <location file="src/evamLinearActuator.h" line="51" column="14" bodyfile="src/evamLinearActuator.h" bodystart="51" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1ad533a519c467958707256c7758bbdbf2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -142,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="46" column="14" bodyfile="src/evamLinearActuator.h" bodystart="46" bodyend="49"/>
+        <location file="src/evamLinearActuator.h" line="61" column="14" bodyfile="src/evamLinearActuator.h" bodystart="61" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a9ac2a01ad452130ab2aa811a5f73b79a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -160,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="55" column="13" bodyfile="src/evamLinearActuator.h" bodystart="55" bodyend="58"/>
+        <location file="src/evamLinearActuator.h" line="70" column="13" bodyfile="src/evamLinearActuator.h" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a83c49edd7e41779324a0c1466dd9d0ac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -189,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="64" column="14" bodyfile="src/evamLinearActuator.h" bodystart="64" bodyend="67"/>
+        <location file="src/evamLinearActuator.h" line="79" column="14" bodyfile="src/evamLinearActuator.h" bodystart="79" bodyend="82"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a2cbba5d2e8851c62f43d11fb7a7d318b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -207,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="73" column="13" bodyfile="src/evamLinearActuator.h" bodystart="73" bodyend="76"/>
+        <location file="src/evamLinearActuator.h" line="88" column="13" bodyfile="src/evamLinearActuator.h" bodystart="88" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a9192a4e76ec80829d22d3c1a15b01f69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -236,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="82" column="14" bodyfile="src/evamLinearActuator.h" bodystart="82" bodyend="85"/>
+        <location file="src/evamLinearActuator.h" line="97" column="14" bodyfile="src/evamLinearActuator.h" bodystart="97" bodyend="100"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -293,17 +320,18 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamLinearActuator.h" line="15" column="5" bodyfile="src/evamLinearActuator.h" bodystart="16" bodyend="86"/>
+    <location file="src/evamLinearActuator.h" line="26" column="5" bodyfile="src/evamLinearActuator.h" bodystart="27" bodyend="101"/>
     <listofallmembers>
       <member refid="classevam_1_1_linear_actuator_1afa63c03dee2609466b32f55fd6da0fee" prot="private" virt="non-virtual"><scope>evam::LinearActuator</scope><name>compute</name></member>
       <member refid="classevam_1_1_linear_actuator_1a2cbba5d2e8851c62f43d11fb7a7d318b" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>GetMaxValue</name></member>
       <member refid="classevam_1_1_linear_actuator_1a9ac2a01ad452130ab2aa811a5f73b79a" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>GetMinValue</name></member>
       <member refid="classevam_1_1_linear_actuator_1a9192a4e76ec80829d22d3c1a15b01f69" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>Go</name></member>
-      <member refid="classevam_1_1_linear_actuator_1a2955a6a2fc1a7f013f5869ae8a52e564" prot="private" virt="non-virtual"><scope>evam::LinearActuator</scope><name>mMaxValue</name></member>
-      <member refid="classevam_1_1_linear_actuator_1a2a11b4710be2079a1c815aa37ac80d38" prot="private" virt="non-virtual"><scope>evam::LinearActuator</scope><name>mMinValue</name></member>
+      <member refid="classevam_1_1_linear_actuator_1afb36b44cb3fd4be8aa0f8a8bb461183e" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>LinearActuator</name></member>
+      <member refid="classevam_1_1_linear_actuator_1ad7e4f85ac1e91f646faccbad4a084d94" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>LinearActuator</name></member>
+      <member refid="classevam_1_1_linear_actuator_1afc3cbdc3a404b8221386219345053371" prot="private" virt="non-virtual"><scope>evam::LinearActuator</scope><name>mConfig</name></member>
       <member refid="classevam_1_1_linear_actuator_1a83c49edd7e41779324a0c1466dd9d0ac" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>SetMaxValue</name></member>
       <member refid="classevam_1_1_linear_actuator_1ad533a519c467958707256c7758bbdbf2" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>SetMinValue</name></member>
-      <member refid="classevam_1_1_linear_actuator_1acd888e81f56263e818febf713f59f28a" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>SetupRange</name></member>
+      <member refid="classevam_1_1_linear_actuator_1a27124e6bc24f755a379ca99fd399a983" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>SetupRange</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

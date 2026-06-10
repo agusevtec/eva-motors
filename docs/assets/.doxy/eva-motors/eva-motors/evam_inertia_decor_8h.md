@@ -36,7 +36,8 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**InertiaDecor**](classevam_1_1_inertia_decor.md) &lt;class Motor, kInertiaMass&gt;<br>_Decorator that simulates mechanical inertia (flywheel effect)._  |
+| struct | [**InertiaConfig**](structevam_1_1_inertia_config.md) <br>_Configuration structure for_ [_**InertiaDecor**_](classevam_1_1_inertia_decor.md) _._ |
+| class | [**InertiaDecor**](classevam_1_1_inertia_decor.md) &lt;class TMotor, tInertiaMass&gt;<br>_Decorator that simulates mechanical inertia (flywheel effect)._  |
 
 
 

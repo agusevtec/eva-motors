@@ -2,7 +2,7 @@
 
 # Class evam::SlidingWindowDecor
 
-**template &lt;class Motor, unsigned short N&gt;**
+**template &lt;class TMotor, unsigned short N&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that applies a simple moving average (sliding window) filter._ [More.
 
 
 
-Inherits the following classes: Motor
+Inherits the following classes: TMotor
 
 
 
@@ -56,6 +56,8 @@ Inherits the following classes: Motor
 | Type | Name |
 | ---: | :--- |
 |  void | [**Go**](#function-go) (signed short value) <br>_Apply the control value with moving average filtering._  |
+|   | [**SlidingWindowDecor**](#function-slidingwindowdecor-12) () <br> |
+|   | [**SlidingWindowDecor**](#function-slidingwindowdecor-22) ([**SlidingWindowConfig**](structevam_1_1_sliding_window_config.md) config, Args... args) <br> |
 
 
 
@@ -133,6 +135,36 @@ inline void evam::SlidingWindowDecor::Go (
 
 
         
+
+<hr>
+
+
+
+### function SlidingWindowDecor [1/2]
+
+```C++
+inline evam::SlidingWindowDecor::SlidingWindowDecor () 
+```
+
+
+
+
+<hr>
+
+
+
+### function SlidingWindowDecor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::SlidingWindowDecor::SlidingWindowDecor (
+    SlidingWindowConfig config,
+    Args... args
+) 
+```
+
+
+
 
 <hr>
 

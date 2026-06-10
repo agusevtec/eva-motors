@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_inertia_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::InertiaConfig</compoundname>
+    <includes refid="evam_inertia_decor_8h" local="no">evamInertiaDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_inertia_config_1aa0ec9c40cd03d0cfeec452da50a214ae" prot="public" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::InertiaConfig::inertiaMass</definition>
+        <argsstring></argsstring>
+        <name>inertiaMass</name>
+        <qualifiedname>evam::InertiaConfig::inertiaMass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="15" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_inertia_config_1af47083ef9029d71c59217430af823e7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::InertiaConfig::InertiaConfig</definition>
+        <argsstring>(signed short inertiaMass)</argsstring>
+        <name>InertiaConfig</name>
+        <qualifiedname>evam::InertiaConfig::InertiaConfig</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>inertiaMass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="17" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_inertia_decor" kindref="compound">InertiaDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamInertiaDecor.h" line="13" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="14" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_inertia_config_1af47083ef9029d71c59217430af823e7e" prot="public" virt="non-virtual"><scope>evam::InertiaConfig</scope><name>InertiaConfig</name></member>
+      <member refid="structevam_1_1_inertia_config_1aa0ec9c40cd03d0cfeec452da50a214ae" prot="public" virt="non-virtual"><scope>evam::InertiaConfig</scope><name>inertiaMass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

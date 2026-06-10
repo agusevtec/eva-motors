@@ -653,10 +653,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-mediandecor" class="md-nav__link">
+  <a href="#function-mediandecor-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function MedianDecor
+        function MedianDecor [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-mediandecor-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function MedianDecor [2/2]
       
     </span>
   </a>
@@ -728,13 +739,13 @@
 
 
 <h1 id="class-evammediandecor">Class evam::MedianDecor<a class="headerlink" href="#class-evammediandecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class Motor, unsigned short kWindowSize&gt;</strong></p>
+<p><strong>template &lt;class TMotor, unsigned short tWindowSize&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>MedianDecor</strong></a></p>
 <p><em>Decorator that applies median filtering with fixed time base.</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evamMedianDecor.h&gt;</code></li>
 </ul>
-<p>Inherits the following classes: Heartbeat,  Motor</p>
+<p>Inherits the following classes: Heartbeat,  TMotor</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -750,11 +761,15 @@
 </tr>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-mediandecor"><strong>MedianDecor</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-mediandecor-12"><strong>MedianDecor</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-mediandecor-22"><strong>MedianDecor</strong></a> (<a href="../structevam_1_1_median_config/"><strong>MedianConfig</strong></a> config, Args... args) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-reset"><strong>Reset</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-reset"><strong>Reset</strong></a> () <br><em>Reset the filter buffer.</em></td>
 </tr>
 </tbody>
 </table>
@@ -789,13 +804,24 @@
 
 <hr>
 
-<h3 id="function-mediandecor">function MedianDecor<a class="headerlink" href="#function-mediandecor" title="Permanent link">&para;</a></h3>
+<h3 id="function-mediandecor-12">function MedianDecor [1/2]<a class="headerlink" href="#function-mediandecor-12" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">MedianDecor</span><span class="o">::</span><span class="n">MedianDecor</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 
+<h3 id="function-mediandecor-22">function MedianDecor [2/2]<a class="headerlink" href="#function-mediandecor-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">MedianDecor</span><span class="o">::</span><span class="n">MedianDecor</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">MedianConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="function-reset">function Reset<a class="headerlink" href="#function-reset" title="Permanent link">&para;</a></h3>
+<p><em>Reset the filter buffer.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">MedianDecor</span><span class="o">::</span><span class="n">Reset</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 

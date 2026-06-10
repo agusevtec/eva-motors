@@ -2,7 +2,7 @@
 
 # Class evam::AdaptiveSmoothDecor
 
-**template &lt;class Motor, unsigned short kMinTimeConstantMs, unsigned short kMaxTimeConstantMs&gt;**
+**template &lt;class TMotor, unsigned short tMinTimeConstantMs, unsigned short tMaxTimeConstantMs&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator with adaptive smoothing based on input rate of change._ [More...](#de
 
 
 
-Inherits the following classes: Heartbeat,  Motor
+Inherits the following classes: Heartbeat,  TMotor
 
 
 
@@ -55,8 +55,14 @@ Inherits the following classes: Heartbeat,  Motor
 
 | Type | Name |
 | ---: | :--- |
-|   | [**AdaptiveSmoothDecor**](#function-adaptivesmoothdecor) () <br> |
+|   | [**AdaptiveSmoothDecor**](#function-adaptivesmoothdecor-12) () <br> |
+|   | [**AdaptiveSmoothDecor**](#function-adaptivesmoothdecor-22) ([**AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) config, Args... args) <br> |
+|  unsigned short | [**GetMaxTimeConstantMs**](#function-getmaxtimeconstantms) () const<br> |
+|  unsigned short | [**GetMinTimeConstantMs**](#function-getmintimeconstantms) () const<br> |
 |  void | [**Go**](#function-go) (signed short aValue) <br> |
+|  void | [**SetMaxTimeConstantMs**](#function-setmaxtimeconstantms) (unsigned short value) <br> |
+|  void | [**SetMinTimeConstantMs**](#function-setmintimeconstantms) (unsigned short value) <br> |
+|  void | [**SetupRange**](#function-setuprange) (unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs) <br> |
 
 
 
@@ -114,10 +120,53 @@ Automatically adjusts smoothing based on how fast the input is changing. Uses fi
 
 
 
-### function AdaptiveSmoothDecor 
+### function AdaptiveSmoothDecor [1/2]
 
 ```C++
 inline evam::AdaptiveSmoothDecor::AdaptiveSmoothDecor () 
+```
+
+
+
+
+<hr>
+
+
+
+### function AdaptiveSmoothDecor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::AdaptiveSmoothDecor::AdaptiveSmoothDecor (
+    AdaptiveSmoothConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function GetMaxTimeConstantMs 
+
+```C++
+inline unsigned short evam::AdaptiveSmoothDecor::GetMaxTimeConstantMs () const
+```
+
+
+
+
+<hr>
+
+
+
+### function GetMinTimeConstantMs 
+
+```C++
+inline unsigned short evam::AdaptiveSmoothDecor::GetMinTimeConstantMs () const
 ```
 
 
@@ -132,6 +181,52 @@ inline evam::AdaptiveSmoothDecor::AdaptiveSmoothDecor ()
 ```C++
 inline void evam::AdaptiveSmoothDecor::Go (
     signed short aValue
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function SetMaxTimeConstantMs 
+
+```C++
+inline void evam::AdaptiveSmoothDecor::SetMaxTimeConstantMs (
+    unsigned short value
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function SetMinTimeConstantMs 
+
+```C++
+inline void evam::AdaptiveSmoothDecor::SetMinTimeConstantMs (
+    unsigned short value
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function SetupRange 
+
+```C++
+inline void evam::AdaptiveSmoothDecor::SetupRange (
+    unsigned short minTimeConstantMs,
+    unsigned short maxTimeConstantMs
 ) 
 ```
 

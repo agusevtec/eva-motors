@@ -2,7 +2,7 @@
 
 # Class evam::CurveDecor
 
-**template &lt;class Motor, signed short kBend&gt;**
+**template &lt;class TMotor, signed short tBend&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that applies an S-curve (nonlinear) transformation to the control sig
 
 
 
-Inherits the following classes: Motor
+Inherits the following classes: TMotor
 
 
 
@@ -55,6 +55,8 @@ Inherits the following classes: Motor
 
 | Type | Name |
 | ---: | :--- |
+|   | [**CurveDecor**](#function-curvedecor-12) () <br> |
+|   | [**CurveDecor**](#function-curvedecor-22) ([**CurveConfig**](structevam_1_1_curve_config.md) config, Args... args) <br> |
 |  signed short | [**GetBend**](#function-getbend) () const<br>_Get the current bend intensity value._  |
 |  void | [**Go**](#function-go) (signed short aValue) <br>_Apply the curved transformation and pass to the underlying motor._  |
 |  void | [**SetBend**](#function-setbend) (signed short aValue) <br>_Set the bend intensity at runtime._  |
@@ -106,6 +108,36 @@ Converts linear input into an S-shaped curve, useful for smoother starts and fin
     
 ## Public Functions Documentation
 
+
+
+
+### function CurveDecor [1/2]
+
+```C++
+inline evam::CurveDecor::CurveDecor () 
+```
+
+
+
+
+<hr>
+
+
+
+### function CurveDecor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::CurveDecor::CurveDecor (
+    CurveConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
 
 
 

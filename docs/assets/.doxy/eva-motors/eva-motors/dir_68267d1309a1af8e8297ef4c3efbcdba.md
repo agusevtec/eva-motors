@@ -21,6 +21,7 @@
 
 | Type | Name |
 | ---: | :--- |
+| file | [**evabIMotor.h**](evab_i_motor_8h.md) <br> |
 | file | [**evamAdaptiveSmoothDecor.h**](evam_adaptive_smooth_decor_8h.md) <br> |
 | file | [**evamCurveDecor.h**](evam_curve_decor_8h.md) <br> |
 | file | [**evamDirectionalMotor.h**](evam_directional_motor_8h.md) <br> |
@@ -33,7 +34,7 @@
 | file | [**evamPwmDriver.h**](evam_pwm_driver_8h.md) <br> |
 | file | [**evamRingBuffer.h**](evam_ring_buffer_8h.md) <br> |
 | file | [**evamServoDriver.h**](evam_servo_driver_8h.md) <br> |
-| file | [**evamSlidingWindowDecor.h**](evam_sliding_window_decor_8h.md) <br>_Simple moving average (sliding window) filter decorator._  |
+| file | [**evamSlidingWindowDecor.h**](evam_sliding_window_decor_8h.md) <br> |
 | file | [**evamSoftwareServoDriver.h**](evam_software_servo_driver_8h.md) <br> |
 | file | [**evamSteeringActuator.h**](evam_steering_actuator_8h.md) <br> |
 | file | [**evamTA6586Driver.h**](evam_t_a6586_driver_8h.md) <br> |

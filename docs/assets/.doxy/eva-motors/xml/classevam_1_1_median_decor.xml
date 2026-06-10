@@ -3,23 +3,23 @@
   <compounddef id="classevam_1_1_median_decor" kind="class" language="C++" prot="public">
     <compoundname>evam::MedianDecor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Heartbeat</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">Motor</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
     <includes refid="evam_median_decor_8h" local="no">evamMedianDecor.h</includes>
     <templateparamlist>
       <param>
-        <type>class Motor</type>
+        <type>class TMotor</type>
       </param>
       <param>
         <type>unsigned short</type>
-        <declname>kWindowSize</declname>
-        <defname>kWindowSize</defname>
-        <defval>5</defval>
+        <declname>tWindowSize</declname>
+        <defname>tWindowSize</defname>
+        <defval>kDefaultWindowSize</defval>
       </param>
     </templateparamlist>
     <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classevam_1_1_median_decor_1ae139ee9d75adaea362bc281fc12f9c8c" prot="private" static="yes" constexpr="yes" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_median_decor_1ab8a4686cafb742653679a9d61a37382e" prot="private" static="yes" constexpr="yes" mutable="no">
         <type>unsigned long</type>
-        <definition>unsigned long evam::MedianDecor&lt; Motor, kWindowSize &gt;::kHeartbeatPeriodMs</definition>
+        <definition>unsigned long evam::MedianDecor&lt; TMotor, tWindowSize &gt;::kHeartbeatPeriodMs</definition>
         <argsstring></argsstring>
         <name>kHeartbeatPeriodMs</name>
         <qualifiedname>evam::MedianDecor::kHeartbeatPeriodMs</qualifiedname>
@@ -30,14 +30,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="28" column="40" bodyfile="src/evamMedianDecor.h" bodystart="28" bodyend="-1"/>
+        <location file="src/evamMedianDecor.h" line="41" column="40" bodyfile="src/evamMedianDecor.h" bodystart="41" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_median_decor_1a8d5a65c6c9d20c0da803d0a864ee0841" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_median_decor_1a904e64146d2c9adb15691e587bb6af0e" prot="private" static="no" mutable="no">
+        <type><ref refid="structevam_1_1_median_config" kindref="compound">MedianConfig</ref></type>
+        <definition>MedianConfig evam::MedianDecor&lt; TMotor, tWindowSize &gt;::mConfig</definition>
+        <argsstring></argsstring>
+        <name>mConfig</name>
+        <qualifiedname>evam::MedianDecor::mConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamMedianDecor.h" line="43" column="22" bodyfile="src/evamMedianDecor.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_median_decor_1a8f9826ead6fcbc80c3e6619cfa799712" prot="private" static="no" mutable="no">
         <type>signed short</type>
-        <definition>signed short evam::MedianDecor&lt; Motor, kWindowSize &gt;::mBuffer[kWindowSize]</definition>
-        <argsstring>[kWindowSize]</argsstring>
+        <definition>signed short evam::MedianDecor&lt; TMotor, tWindowSize &gt;::mBuffer[tWindowSize]</definition>
+        <argsstring>[tWindowSize]</argsstring>
         <name>mBuffer</name>
         <qualifiedname>evam::MedianDecor::mBuffer</qualifiedname>
         <briefdescription>
@@ -46,11 +60,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="30" column="22" bodyfile="src/evamMedianDecor.h" bodystart="30" bodyend="-1"/>
+        <location file="src/evamMedianDecor.h" line="45" column="22" bodyfile="src/evamMedianDecor.h" bodystart="45" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_median_decor_1a4439d34a666e141ac7a470ba01a4574b" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_median_decor_1a3eb799b14819f8f6a3d3400d6de5bede" prot="private" static="no" mutable="no">
         <type>unsigned short</type>
-        <definition>unsigned short evam::MedianDecor&lt; Motor, kWindowSize &gt;::mIndex</definition>
+        <definition>unsigned short evam::MedianDecor&lt; TMotor, tWindowSize &gt;::mIndex</definition>
         <argsstring></argsstring>
         <name>mIndex</name>
         <qualifiedname>evam::MedianDecor::mIndex</qualifiedname>
@@ -61,11 +75,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="31" column="24" bodyfile="src/evamMedianDecor.h" bodystart="31" bodyend="-1"/>
+        <location file="src/evamMedianDecor.h" line="46" column="24" bodyfile="src/evamMedianDecor.h" bodystart="46" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_median_decor_1ad61797b67505513ccc685113ee9c056e" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_median_decor_1a34a05a566ce852857cff6a3a2c1538d1" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool evam::MedianDecor&lt; Motor, kWindowSize &gt;::mBufferFull</definition>
+        <definition>bool evam::MedianDecor&lt; TMotor, tWindowSize &gt;::mBufferFull</definition>
         <argsstring></argsstring>
         <name>mBufferFull</name>
         <qualifiedname>evam::MedianDecor::mBufferFull</qualifiedname>
@@ -76,11 +90,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="32" column="14" bodyfile="src/evamMedianDecor.h" bodystart="32" bodyend="-1"/>
+        <location file="src/evamMedianDecor.h" line="47" column="14" bodyfile="src/evamMedianDecor.h" bodystart="47" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_median_decor_1a7a4146a264a6c94e646ca86aa98baf93" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_median_decor_1aad989a3a941f8a3c58a40db9bdcd371f" prot="private" static="no" mutable="no">
         <type>signed short</type>
-        <definition>signed short evam::MedianDecor&lt; Motor, kWindowSize &gt;::mLastSample</definition>
+        <definition>signed short evam::MedianDecor&lt; TMotor, tWindowSize &gt;::mLastSample</definition>
         <argsstring></argsstring>
         <name>mLastSample</name>
         <qualifiedname>evam::MedianDecor::mLastSample</qualifiedname>
@@ -91,13 +105,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="33" column="22" bodyfile="src/evamMedianDecor.h" bodystart="33" bodyend="-1"/>
+        <location file="src/evamMedianDecor.h" line="48" column="22" bodyfile="src/evamMedianDecor.h" bodystart="48" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classevam_1_1_median_decor_1a9b7451ed48051d8e7188506f408d099b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_median_decor_1a12231afc244adafc7902db02bfb59e8c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short evam::MedianDecor&lt; Motor, kWindowSize &gt;::calculateMedian</definition>
+        <definition>signed short evam::MedianDecor&lt; TMotor, tWindowSize &gt;::calculateMedian</definition>
         <argsstring>()</argsstring>
         <name>calculateMedian</name>
         <qualifiedname>evam::MedianDecor::calculateMedian</qualifiedname>
@@ -107,13 +121,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="35" column="22" bodyfile="src/evamMedianDecor.h" bodystart="35" bodyend="57"/>
+        <location file="src/evamMedianDecor.h" line="50" column="22" bodyfile="src/evamMedianDecor.h" bodystart="50" bodyend="72"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classevam_1_1_median_decor_1a69a09319965f1b78734de44b9ccff285" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_median_decor_1a7024f74743df06cba29af5a9503db349" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::MedianDecor&lt; Motor, kWindowSize &gt;::onHeartbeat</definition>
+        <definition>void evam::MedianDecor&lt; TMotor, tWindowSize &gt;::onHeartbeat</definition>
         <argsstring>() override</argsstring>
         <name>onHeartbeat</name>
         <qualifiedname>evam::MedianDecor::onHeartbeat</qualifiedname>
@@ -123,13 +137,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="60" column="14" bodyfile="src/evamMedianDecor.h" bodystart="60" bodyend="74"/>
+        <location file="src/evamMedianDecor.h" line="75" column="14" bodyfile="src/evamMedianDecor.h" bodystart="75" bodyend="89"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_median_decor_1a2249eb90839ddace68591fbcf9503280" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_median_decor_1aa7aad7cf7672ad1c81807fb0f97c1bc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>evam::MedianDecor&lt; Motor, kWindowSize &gt;::MedianDecor</definition>
+        <definition>evam::MedianDecor&lt; TMotor, tWindowSize &gt;::MedianDecor</definition>
         <argsstring>()</argsstring>
         <name>MedianDecor</name>
         <qualifiedname>evam::MedianDecor::MedianDecor</qualifiedname>
@@ -139,25 +153,55 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="77" column="9" bodyfile="src/evamMedianDecor.h" bodystart="77" bodyend="81"/>
+        <location file="src/evamMedianDecor.h" line="92" column="9" bodyfile="src/evamMedianDecor.h" bodystart="92" bodyend="96"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_median_decor_1a375629bd26274b4b5fc5c2615761eed6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void evam::MedianDecor&lt; Motor, kWindowSize &gt;::Reset</definition>
-        <argsstring>()</argsstring>
-        <name>Reset</name>
-        <qualifiedname>evam::MedianDecor::Reset</qualifiedname>
+      <memberdef kind="function" id="classevam_1_1_median_decor_1aa0eef48d1fffde1f4f92e5e083ffe974" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::MedianDecor&lt; TMotor, tWindowSize &gt;::MedianDecor</definition>
+        <argsstring>(MedianConfig config, Args... args)</argsstring>
+        <name>MedianDecor</name>
+        <qualifiedname>evam::MedianDecor::MedianDecor</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_median_config" kindref="compound">MedianConfig</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="83" column="14" bodyfile="src/evamMedianDecor.h" bodystart="83" bodyend="89"/>
+        <location file="src/evamMedianDecor.h" line="99" column="9" bodyfile="src/evamMedianDecor.h" bodystart="99" bodyend="104"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_median_decor_1a5bbab261a1c6bbba11efad8488b4ca47" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_median_decor_1ae206528c52356b6120f252d4c47ff805" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::MedianDecor&lt; Motor, kWindowSize &gt;::Go</definition>
+        <definition>void evam::MedianDecor&lt; TMotor, tWindowSize &gt;::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <qualifiedname>evam::MedianDecor::Reset</qualifiedname>
+        <briefdescription>
+<para>Reset the filter buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamMedianDecor.h" line="109" column="14" bodyfile="src/evamMedianDecor.h" bodystart="109" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_median_decor_1a187a27240d7fea1b25d2f2655ccdd3e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::MedianDecor&lt; TMotor, tWindowSize &gt;::Go</definition>
         <argsstring>(signed short aValue)</argsstring>
         <name>Go</name>
         <qualifiedname>evam::MedianDecor::Go</qualifiedname>
@@ -171,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="91" column="14" bodyfile="src/evamMedianDecor.h" bodystart="91" bodyend="94"/>
+        <location file="src/evamMedianDecor.h" line="117" column="14" bodyfile="src/evamMedianDecor.h" bodystart="117" bodyend="120"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -203,10 +247,10 @@
         <label>Heartbeat</label>
       </node>
       <node id="3">
-        <label>Motor</label>
+        <label>TMotor</label>
       </node>
       <node id="1">
-        <label>evam::MedianDecor&lt; Motor, kWindowSize &gt;</label>
+        <label>evam::MedianDecor&lt; TMotor, tWindowSize &gt;</label>
         <link refid="classevam_1_1_median_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -219,10 +263,10 @@
         <label>Heartbeat</label>
       </node>
       <node id="3">
-        <label>Motor</label>
+        <label>TMotor</label>
       </node>
       <node id="1">
-        <label>evam::MedianDecor&lt; Motor, kWindowSize &gt;</label>
+        <label>evam::MedianDecor&lt; TMotor, tWindowSize &gt;</label>
         <link refid="classevam_1_1_median_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -230,18 +274,20 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamMedianDecor.h" line="20" column="5" bodyfile="src/evamMedianDecor.h" bodystart="21" bodyend="95"/>
+    <location file="src/evamMedianDecor.h" line="33" column="5" bodyfile="src/evamMedianDecor.h" bodystart="34" bodyend="121"/>
     <listofallmembers>
-      <member refid="classevam_1_1_median_decor_1a9b7451ed48051d8e7188506f408d099b" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>calculateMedian</name></member>
-      <member refid="classevam_1_1_median_decor_1a5bbab261a1c6bbba11efad8488b4ca47" prot="public" virt="non-virtual"><scope>evam::MedianDecor</scope><name>Go</name></member>
-      <member refid="classevam_1_1_median_decor_1ae139ee9d75adaea362bc281fc12f9c8c" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>kHeartbeatPeriodMs</name></member>
-      <member refid="classevam_1_1_median_decor_1a8d5a65c6c9d20c0da803d0a864ee0841" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mBuffer</name></member>
-      <member refid="classevam_1_1_median_decor_1ad61797b67505513ccc685113ee9c056e" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mBufferFull</name></member>
-      <member refid="classevam_1_1_median_decor_1a2249eb90839ddace68591fbcf9503280" prot="public" virt="non-virtual"><scope>evam::MedianDecor</scope><name>MedianDecor</name></member>
-      <member refid="classevam_1_1_median_decor_1a4439d34a666e141ac7a470ba01a4574b" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mIndex</name></member>
-      <member refid="classevam_1_1_median_decor_1a7a4146a264a6c94e646ca86aa98baf93" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mLastSample</name></member>
-      <member refid="classevam_1_1_median_decor_1a69a09319965f1b78734de44b9ccff285" prot="protected" virt="non-virtual"><scope>evam::MedianDecor</scope><name>onHeartbeat</name></member>
-      <member refid="classevam_1_1_median_decor_1a375629bd26274b4b5fc5c2615761eed6" prot="public" virt="non-virtual"><scope>evam::MedianDecor</scope><name>Reset</name></member>
+      <member refid="classevam_1_1_median_decor_1a12231afc244adafc7902db02bfb59e8c" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>calculateMedian</name></member>
+      <member refid="classevam_1_1_median_decor_1a187a27240d7fea1b25d2f2655ccdd3e0" prot="public" virt="non-virtual"><scope>evam::MedianDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_median_decor_1ab8a4686cafb742653679a9d61a37382e" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>kHeartbeatPeriodMs</name></member>
+      <member refid="classevam_1_1_median_decor_1a8f9826ead6fcbc80c3e6619cfa799712" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mBuffer</name></member>
+      <member refid="classevam_1_1_median_decor_1a34a05a566ce852857cff6a3a2c1538d1" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mBufferFull</name></member>
+      <member refid="classevam_1_1_median_decor_1a904e64146d2c9adb15691e587bb6af0e" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mConfig</name></member>
+      <member refid="classevam_1_1_median_decor_1aa7aad7cf7672ad1c81807fb0f97c1bc4" prot="public" virt="non-virtual"><scope>evam::MedianDecor</scope><name>MedianDecor</name></member>
+      <member refid="classevam_1_1_median_decor_1aa0eef48d1fffde1f4f92e5e083ffe974" prot="public" virt="non-virtual"><scope>evam::MedianDecor</scope><name>MedianDecor</name></member>
+      <member refid="classevam_1_1_median_decor_1a3eb799b14819f8f6a3d3400d6de5bede" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mIndex</name></member>
+      <member refid="classevam_1_1_median_decor_1aad989a3a941f8a3c58a40db9bdcd371f" prot="private" virt="non-virtual"><scope>evam::MedianDecor</scope><name>mLastSample</name></member>
+      <member refid="classevam_1_1_median_decor_1a7024f74743df06cba29af5a9503db349" prot="protected" virt="non-virtual"><scope>evam::MedianDecor</scope><name>onHeartbeat</name></member>
+      <member refid="classevam_1_1_median_decor_1ae206528c52356b6120f252d4c47ff805" prot="public" virt="non-virtual"><scope>evam::MedianDecor</scope><name>Reset</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

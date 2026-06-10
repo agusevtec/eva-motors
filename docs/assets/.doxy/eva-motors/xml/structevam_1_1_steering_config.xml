@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_steering_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::SteeringConfig</compoundname>
+    <includes refid="evam_steering_actuator_8h" local="no">evamSteeringActuator.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_steering_config_1a79256eb506124d014880108fdf38d922" prot="public" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::SteeringConfig::leftPos</definition>
+        <argsstring></argsstring>
+        <name>leftPos</name>
+        <qualifiedname>evam::SteeringConfig::leftPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="10" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_steering_config_1ab8fa122809fb2a436c2bb0275300b05b" prot="public" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::SteeringConfig::centerPos</definition>
+        <argsstring></argsstring>
+        <name>centerPos</name>
+        <qualifiedname>evam::SteeringConfig::centerPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="11" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_steering_config_1a19e2edcccf7e726bc615b12f299090b0" prot="public" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::SteeringConfig::rightPos</definition>
+        <argsstring></argsstring>
+        <name>rightPos</name>
+        <qualifiedname>evam::SteeringConfig::rightPos</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="12" column="22" bodyfile="src/evamSteeringActuator.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_steering_config_1a4fece0a8e7a6f006672c9e27599ed8c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::SteeringConfig::SteeringConfig</definition>
+        <argsstring>(signed short leftPos, signed short centerPos, signed short rightPos)</argsstring>
+        <name>SteeringConfig</name>
+        <qualifiedname>evam::SteeringConfig::SteeringConfig</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>leftPos</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>centerPos</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>rightPos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSteeringActuator.h" line="14" column="9" bodyfile="src/evamSteeringActuator.h" bodystart="14" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_steering_actuator" kindref="compound">SteeringActuator</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamSteeringActuator.h" line="9" column="5" bodyfile="src/evamSteeringActuator.h" bodystart="9" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_steering_config_1ab8fa122809fb2a436c2bb0275300b05b" prot="public" virt="non-virtual"><scope>evam::SteeringConfig</scope><name>centerPos</name></member>
+      <member refid="structevam_1_1_steering_config_1a79256eb506124d014880108fdf38d922" prot="public" virt="non-virtual"><scope>evam::SteeringConfig</scope><name>leftPos</name></member>
+      <member refid="structevam_1_1_steering_config_1a19e2edcccf7e726bc615b12f299090b0" prot="public" virt="non-virtual"><scope>evam::SteeringConfig</scope><name>rightPos</name></member>
+      <member refid="structevam_1_1_steering_config_1a4fece0a8e7a6f006672c9e27599ed8c2" prot="public" virt="non-virtual"><scope>evam::SteeringConfig</scope><name>SteeringConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

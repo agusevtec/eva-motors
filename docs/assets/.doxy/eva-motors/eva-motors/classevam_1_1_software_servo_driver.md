@@ -55,7 +55,9 @@ Inherits the following classes: Tickable
 
 | Type | Name |
 | ---: | :--- |
-|   | [**SoftwareServoDriver**](#function-softwareservodriver) () <br>_Constructor. Initializes the pin as output._  |
+|  int | [**GetPin**](#function-getpin) () const<br>_Get the servo pin number._  |
+|   | [**SoftwareServoDriver**](#function-softwareservodriver-12) () <br>_Constructor. Initializes the pin as output._  |
+|   | [**SoftwareServoDriver**](#function-softwareservodriver-22) ([**SoftwareServoConfig**](structevam_1_1_software_servo_config.md) config, Args... args) <br> |
 
 
 
@@ -115,11 +117,53 @@ This driver implements servo control without using the hardware PWM limitations 
 
 
 
-### function SoftwareServoDriver 
+### function GetPin 
+
+_Get the servo pin number._ 
+```C++
+inline int evam::SoftwareServoDriver::GetPin () const
+```
+
+
+
+
+
+**Returns:**
+
+Pin number used for servo signal. 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function SoftwareServoDriver [1/2]
 
 _Constructor. Initializes the pin as output._ 
 ```C++
 inline evam::SoftwareServoDriver::SoftwareServoDriver () 
+```
+
+
+
+
+<hr>
+
+
+
+### function SoftwareServoDriver [2/2]
+
+```C++
+template<typename... Args>
+inline evam::SoftwareServoDriver::SoftwareServoDriver (
+    SoftwareServoConfig config,
+    Args... args
+) 
 ```
 
 

@@ -17,6 +17,16 @@ using namespace eva;
 
 namespace evam
 {
+    struct SoftwareServoConfig {
+        int pin;
+        int minPulse;
+        int middlePulse;
+        int maxPulse;
+        
+        SoftwareServoConfig(int pin, int minPulse, int middlePulse, int maxPulse) 
+            : pin(pin), minPulse(minPulse), middlePulse(middlePulse), maxPulse(maxPulse) {}
+    };
+
     template <int kPin, int kMinPulse = 1000, int kMiddlePulse = 1500, int kMaxPulse = 2000>
     class SoftwareServoDriver : public virtual Tickable
     {
@@ -27,8 +37,10 @@ namespace evam
         static_assert(kMiddlePulse < kMaxPulse, "kMiddlePulse must be less than kMaxPulse");
 
     private:
-        static constexpr unsigned long kRefreshIntervalMs = 20; // 50Hz refresh rate
+        static constexpr unsigned long kRefreshIntervalMs = 20;
 
+        SoftwareServoConfig mConfig;
+        
         unsigned long mTargetPulseUs = kMinPulse;
         unsigned long mPulseStartUs = 0;
         unsigned long mLastRefreshMs = 0;
@@ -42,7 +54,7 @@ namespace evam
             {
                 if (nowUs - mPulseStartUs >= mTargetPulseUs)
                 {
-                    digitalWrite(kPin, LOW);
+                    digitalWrite(mConfig.pin, LOW);
                     mPulseActive = false;
                 }
             }
@@ -53,7 +65,7 @@ namespace evam
                 if (nowMs - mLastRefreshMs >= kRefreshIntervalMs)
                 {
                     mLastRefreshMs = nowMs;
-                    digitalWrite(kPin, HIGH);
+                    digitalWrite(mConfig.pin, HIGH);
                     mPulseStartUs = nowUs;
                     mPulseActive = true;
                 }
@@ -61,36 +73,47 @@ namespace evam
         }
 
     public:
-        SoftwareServoDriver()
+        SoftwareServoDriver() : mConfig(kPin, kMinPulse, kMiddlePulse, kMaxPulse)
         {
-            pinMode(kPin, OUTPUT);
-            digitalWrite(kPin, LOW);
+            pinMode(mConfig.pin, OUTPUT);
+            digitalWrite(mConfig.pin, LOW);
+        }
+        
+        template<typename... Args>
+        SoftwareServoDriver(SoftwareServoConfig config, Args... args) : mConfig(config)
+        {
+            pinMode(mConfig.pin, OUTPUT);
+            digitalWrite(mConfig.pin, LOW);
+        }
+
+        int GetPin() const
+        {
+            return mConfig.pin;
         }
 
     protected:
         void actBipolar(signed short aValue)
         {
             aValue = constrain(aValue, -1000, 1000);
-            if (aVelue < 0)
-                mTargetPulseUs = map(aValue, -1000, 0), kMinPulse, kMiddlePulse)
+            if (aValue < 0)
+                mTargetPulseUs = map(aValue, -1000, 0, mConfig.minPulse, mConfig.middlePulse);
             else
-                mTargetPulseUs = map(aValue, 0, 1000), kMiddlePulse, kMaxPulse)
+                mTargetPulseUs = map(aValue, 0, 1000, mConfig.middlePulse, mConfig.maxPulse);
         }
 
         void actUnipolar(signed short aValue)
         {
             aValue = constrain(aValue, 0, 1000);
-            if (aVelue < 500)
-                mTargetPulseUs = map(aValue, 0, 500), kMinPulse, kMiddlePulse)
+            if (aValue < 500)
+                mTargetPulseUs = map(aValue, 0, 500, mConfig.minPulse, mConfig.middlePulse);
             else
-                mTargetPulseUs = map(aValue, 500, 1000), kMiddlePulse, kMaxPulse)
+                mTargetPulseUs = map(aValue, 500, 1000, mConfig.middlePulse, mConfig.maxPulse);
         }
     };
 
     template <int kPin, int kMinPulse, int kMaxPulse>
-    using ServoFlatDriver = Servoriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2, kMaxPulse>
-
-} // namespace evam
+    using SoftwareServoFlatDriver = SoftwareServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2 + kMinPulse, kMaxPulse>;
+}
 ```
 
 

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_median_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::MedianConfig</compoundname>
+    <includes refid="evam_median_decor_8h" local="no">evamMedianDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_median_config_1a2ab4dac90e1e057b7096fdbd5c6f627a" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::MedianConfig::windowSize</definition>
+        <argsstring></argsstring>
+        <name>windowSize</name>
+        <qualifiedname>evam::MedianConfig::windowSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamMedianDecor.h" line="18" column="24" bodyfile="src/evamMedianDecor.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_median_config_1a10e2ba1b806c5a1917f485520cc8b6df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::MedianConfig::MedianConfig</definition>
+        <argsstring>(unsigned short windowSize)</argsstring>
+        <name>MedianConfig</name>
+        <qualifiedname>evam::MedianConfig::MedianConfig</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>windowSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamMedianDecor.h" line="20" column="9" bodyfile="src/evamMedianDecor.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_median_decor" kindref="compound">MedianDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamMedianDecor.h" line="17" column="5" bodyfile="src/evamMedianDecor.h" bodystart="17" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_median_config_1a10e2ba1b806c5a1917f485520cc8b6df" prot="public" virt="non-virtual"><scope>evam::MedianConfig</scope><name>MedianConfig</name></member>
+      <member refid="structevam_1_1_median_config_1a2ab4dac90e1e057b7096fdbd5c6f627a" prot="public" virt="non-virtual"><scope>evam::MedianConfig</scope><name>windowSize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

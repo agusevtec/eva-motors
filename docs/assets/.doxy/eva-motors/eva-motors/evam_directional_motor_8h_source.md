@@ -13,7 +13,24 @@
 
 namespace evam
 {
-    template <class Driver, signed short kMaxBackward = -1000, signed short kMinBackward = 0, signed short kMinForward = 0, signed short kMaxForward = 1000>
+    struct DirectionalConfig {
+        signed short maxBackward;
+        signed short minBackward;
+        signed short minForward;
+        signed short maxForward;
+        
+        DirectionalConfig(signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward)
+            : maxBackward(constrain(maxBackward, -1000, 1000)),
+              minBackward(constrain(minBackward, -1000, 1000)),
+              minForward(constrain(minForward, -1000, 1000)),
+              maxForward(constrain(maxForward, -1000, 1000)) {}
+    };
+
+    template <class Driver, 
+              signed short kMaxBackward = -1000, 
+              signed short kMinBackward = 0, 
+              signed short kMinForward = 0, 
+              signed short kMaxForward = 1000>
     class DirectionalMotor : public Driver
     {
         static_assert(kMaxBackward >= -1000 && kMaxBackward <= 1000, "kMaxBackward out of range");
@@ -22,67 +39,69 @@ namespace evam
         static_assert(kMaxForward >= -1000 && kMaxForward <= 1000, "kMaxForward out of range");
 
     private:
-        signed short mMaxBackward = kMaxBackward;
-        signed short mMinBackward = kMinBackward;
-        signed short mMinForward = kMinForward;
-        signed short mMaxForward = kMaxForward;
-
+        DirectionalConfig mConfig;
+        
         signed short compute(signed short aLevel) const
         {
             if (aLevel < 0)
-                return map(constrain(aLevel, -1000, 0), -1000, 0, mMaxBackward, mMinBackward);
+                return map(constrain(aLevel, -1000, 0), -1000, 0, mConfig.maxBackward, mConfig.minBackward);
             if (aLevel > 0)
-                return map(constrain(aLevel, 0, 1000), 0, 1000, mMinForward, mMaxForward);
-            return (mMinForward + mMinBackward)/2;
+                return map(constrain(aLevel, 0, 1000), 0, 1000, mConfig.minForward, mConfig.maxForward);
+            return 0;
         }
 
     public:
-        void SetupRange(signed short aMaxBackward, signed short aMinBackward, signed short aMinForward, signed short aMaxForward)
+        DirectionalMotor() : mConfig(kMaxBackward, kMinBackward, kMinForward, kMaxForward) {}
+        
+        template<typename... Args>
+        DirectionalMotor(DirectionalConfig config, Args... args) : Driver(args...), mConfig(config) {}
+
+        void SetupRange(signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward)
         {
-            SetMaxBackward(aMaxBackward);
-            SetMinBackward(aMinBackward);
-            SetMinForward(aMinForward);
-            SetMaxForward(aMaxForward);
+            SetMaxBackward(maxBackward);
+            SetMinBackward(minBackward);
+            SetMinForward(minForward);
+            SetMaxForward(maxForward);
         }
 
         void SetMaxBackward(signed short aValue)
         {
-            mMaxBackward = constrain(aValue, -1000, 1000);
+            mConfig.maxBackward = constrain(aValue, -1000, 1000);
         }
 
         signed short GetMaxBackward() const
         {
-            return mMaxBackward;
+            return mConfig.maxBackward;
         }
 
         void SetMinBackward(signed short aValue)
         {
-            mMinBackward = constrain(aValue, -1000, 1000);
+            mConfig.minBackward = constrain(aValue, -1000, 1000);
         }
 
         signed short GetMinBackward() const
         {
-            return mMinBackward;
+            return mConfig.minBackward;
         }
 
         void SetMinForward(signed short aValue)
         {
-            mMinForward = constrain(aValue, -1000, 1000);
+            mConfig.minForward = constrain(aValue, -1000, 1000);
         }
 
         signed short GetMinForward() const
         {
-            return mMinForward;
+            return mConfig.minForward;
         }
 
         void SetMaxForward(signed short aValue)
         {
-            mMaxForward = constrain(aValue, -1000, 1000);
+            mConfig.maxForward = constrain(aValue, -1000, 1000);
         }
 
         signed short GetMaxForward() const
         {
-            return mMaxForward;
+            return mConfig.maxForward;
         }
 
         void Go(signed short aLevel)

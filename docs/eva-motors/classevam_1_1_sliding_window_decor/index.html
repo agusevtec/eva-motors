@@ -641,6 +641,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#function-slidingwindowdecor-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function SlidingWindowDecor [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-slidingwindowdecor-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function SlidingWindowDecor [2/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -667,13 +689,13 @@
 
 
 <h1 id="class-evamslidingwindowdecor">Class evam::SlidingWindowDecor<a class="headerlink" href="#class-evamslidingwindowdecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class Motor, unsigned short N&gt;</strong></p>
+<p><strong>template &lt;class TMotor, unsigned short N&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>SlidingWindowDecor</strong></a></p>
 <p><em>Decorator that applies a simple moving average (sliding window) filter.</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evamSlidingWindowDecor.h&gt;</code></li>
 </ul>
-<p>Inherits the following classes: Motor</p>
+<p>Inherits the following classes: TMotor</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -686,6 +708,14 @@
 <tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (signed short value) <br><em>Apply the control value with moving average filtering.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-slidingwindowdecor-12"><strong>SlidingWindowDecor</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-slidingwindowdecor-22"><strong>SlidingWindowDecor</strong></a> (<a href="../structevam_1_1_sliding_window_config/"><strong>SlidingWindowConfig</strong></a> config, Args... args) <br></td>
 </tr>
 </tbody>
 </table>
@@ -709,6 +739,22 @@
 <ul>
 <li><code>value</code> Input control value, range -1000..1000 </li>
 </ul>
+<hr>
+
+<h3 id="function-slidingwindowdecor-12">function SlidingWindowDecor [1/2]<a class="headerlink" href="#function-slidingwindowdecor-12" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">SlidingWindowDecor</span><span class="o">::</span><span class="n">SlidingWindowDecor</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-slidingwindowdecor-22">function SlidingWindowDecor [2/2]<a class="headerlink" href="#function-slidingwindowdecor-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">SlidingWindowDecor</span><span class="o">::</span><span class="n">SlidingWindowDecor</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">SlidingWindowConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
 <hr>
 
 <hr />

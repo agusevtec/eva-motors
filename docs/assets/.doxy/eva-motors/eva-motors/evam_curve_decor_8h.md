@@ -35,7 +35,8 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**CurveDecor**](classevam_1_1_curve_decor.md) &lt;class Motor, kBend&gt;<br>_Decorator that applies an S-curve (nonlinear) transformation to the control signal._  |
+| struct | [**CurveConfig**](structevam_1_1_curve_config.md) <br>_Configuration structure for_ [_**CurveDecor**_](classevam_1_1_curve_decor.md) _._ |
+| class | [**CurveDecor**](classevam_1_1_curve_decor.md) &lt;class TMotor, tBend&gt;<br>_Decorator that applies an S-curve (nonlinear) transformation to the control signal._  |
 
 
 

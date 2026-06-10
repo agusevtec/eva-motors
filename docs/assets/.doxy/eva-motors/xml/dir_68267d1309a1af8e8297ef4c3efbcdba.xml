@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
+    <innerfile refid="evab_i_motor_8h">evabIMotor.h</innerfile>
     <innerfile refid="evam_adaptive_smooth_decor_8h">evamAdaptiveSmoothDecor.h</innerfile>
     <innerfile refid="evam_curve_decor_8h">evamCurveDecor.h</innerfile>
     <innerfile refid="evam_directional_motor_8h">evamDirectionalMotor.h</innerfile>

@@ -664,10 +664,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-inertiadecor" class="md-nav__link">
+  <a href="#function-inertiadecor-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function InertiaDecor
+        function InertiaDecor [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-inertiadecor-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function InertiaDecor [2/2]
       
     </span>
   </a>
@@ -739,13 +750,13 @@
 
 
 <h1 id="class-evaminertiadecor">Class evam::InertiaDecor<a class="headerlink" href="#class-evaminertiadecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class Motor, signed short kInertiaMass&gt;</strong></p>
+<p><strong>template &lt;class TMotor, unsigned short tInertiaMass&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>InertiaDecor</strong></a></p>
 <p><em>Decorator that simulates mechanical inertia (flywheel effect).</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evamInertiaDecor.h&gt;</code></li>
 </ul>
-<p>Inherits the following classes: Heartbeat,  Motor</p>
+<p>Inherits the following classes: Heartbeat,  TMotor</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -757,19 +768,23 @@
 <tbody>
 <tr>
 <td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#function-getinertiamass"><strong>GetInertiaMass</strong></a> () const<br></td>
+<td style="text-align: left;"><a href="#function-getinertiamass"><strong>GetInertiaMass</strong></a> () const<br><em>Get the current inertia mass value.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (int aSpeed) <br></td>
+<td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (int aSpeed) <br><em>Apply the control value with inertia simulation.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-inertiadecor"><strong>InertiaDecor</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-inertiadecor-12"><strong>InertiaDecor</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-inertiadecor-22"><strong>InertiaDecor</strong></a> (<a href="../structevam_1_1_inertia_config/"><strong>InertiaConfig</strong></a> config, Args... args) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setinertiamass"><strong>SetInertiaMass</strong></a> (unsigned short aValue) <br></td>
+<td style="text-align: left;"><a href="#function-setinertiamass"><strong>SetInertiaMass</strong></a> (unsigned short aValue) <br><em>Set the inertia mass value.</em></td>
 </tr>
 </tbody>
 </table>
@@ -793,35 +808,58 @@
 <p><strong>Template parameters:</strong></p>
 <ul>
 <li><code>Motor</code> Base motor class (must implement Go(signed short)) </li>
-<li><code>kInertiaMass</code> Virtual mass (positive). Larger values = slower deceleration. </li>
+<li><code>tInertiaMass</code> Virtual mass (positive). Larger values = slower deceleration. </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-getinertiamass">function GetInertiaMass<a class="headerlink" href="#function-getinertiamass" title="Permanent link">&para;</a></h3>
+<p><em>Get the current inertia mass value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">GetInertiaMass</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 </code></pre></div>
 
+<p><strong>Returns:</strong></p>
+<p>Current inertia mass value </p>
 <hr>
 
 <h3 id="function-go">function Go<a class="headerlink" href="#function-go" title="Permanent link">&para;</a></h3>
+<p><em>Apply the control value with inertia simulation.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">Go</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">aSpeed</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>aSpeed</code> Desired speed, range -1000..1000 </li>
+</ul>
 <hr>
 
-<h3 id="function-inertiadecor">function InertiaDecor<a class="headerlink" href="#function-inertiadecor" title="Permanent link">&para;</a></h3>
+<h3 id="function-inertiadecor-12">function InertiaDecor [1/2]<a class="headerlink" href="#function-inertiadecor-12" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 
+<h3 id="function-inertiadecor-22">function InertiaDecor [2/2]<a class="headerlink" href="#function-inertiadecor-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">InertiaConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="function-setinertiamass">function SetInertiaMass<a class="headerlink" href="#function-setinertiamass" title="Permanent link">&para;</a></h3>
+<p><em>Set the inertia mass value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">SetInertiaMass</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aValue</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>aValue</code> Virtual mass, clamped to 1..200 </li>
+</ul>
 <hr>
 <h2 id="protected-functions-documentation">Protected Functions Documentation<a class="headerlink" href="#protected-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-onheartbeat">function onHeartbeat<a class="headerlink" href="#function-onheartbeat" title="Permanent link">&para;</a></h3>

@@ -14,16 +14,27 @@
 
 namespace evam
 {
-    template <class Motor, signed short kBend = 0>
-    class CurveDecor : public Motor
-    {
-        static_assert(kBend >= -10 && kBend <= 10, "kBend out of range -10..10");
-    private:
-        signed short mBend = kBend;
+    constexpr signed short kDefaultBend = 0;
+    constexpr signed short kMinBend = -10;
+    constexpr signed short kMaxBend = 10;
 
+    struct CurveConfig {
+        signed short bend;
+        
+        CurveConfig(signed short bend) : bend(constrain(bend, kMinBend, kMaxBend)) {}
+    };
+
+    template <class TMotor, signed short tBend = kDefaultBend>
+    class CurveDecor : public TMotor
+    {
+        static_assert(tBend >= kMinBend && tBend <= kMaxBend, "tBend out of range");
+        
+    private:
+        CurveConfig mConfig;
+        
         signed long f(signed long x) const
         {
-            return mBend * (x - x * x / 1000) / 10;
+            return mConfig.bend * (x - x * x / 1000) / 10;
         }
 
         unsigned short curve(unsigned short x) const
@@ -33,28 +44,31 @@ namespace evam
         }
 
     public:
+        CurveDecor() : mConfig(tBend) {}
+        
+        template<typename... Args>
+        CurveDecor(CurveConfig config, Args... args) : TMotor(args...), mConfig(config) {}
+
         void SetBend(signed short aValue)
         {
-            mBend = constrain(aValue, -10, 10);
+            mConfig.bend = constrain(aValue, -10, 10);
         }
 
         signed short GetBend() const
         {
-            return mBend;
+            return mConfig.bend;
         }
 
         void Go(signed short aValue)
         {
             aValue = constrain(aValue, -1000, 1000);
             if (aValue >= 0)
-                Motor::Go(curve(aValue));
+                TMotor::Go(curve(aValue));
             else
-                Motor::Go(-curve(-aValue));
+                TMotor::Go(-curve(-aValue));
         }
     };
-
 }
-
 ```
 
 

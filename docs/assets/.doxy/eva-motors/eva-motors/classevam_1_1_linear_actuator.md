@@ -58,9 +58,11 @@ Inherits the following classes: Driver
 |  int | [**GetMaxValue**](#function-getmaxvalue) () const<br>_Get maximum output value (position at 1000 input)._  |
 |  int | [**GetMinValue**](#function-getminvalue) () const<br>_Get minimum output value (position at 0 input)._  |
 |  void | [**Go**](#function-go) (signed short aLevel) <br>_Apply the position control value._  |
+|   | [**LinearActuator**](#function-linearactuator-12) () <br> |
+|   | [**LinearActuator**](#function-linearactuator-22) ([**LinearActuatorConfig**](structevam_1_1_linear_actuator_config.md) config, Args... args) <br> |
 |  void | [**SetMaxValue**](#function-setmaxvalue) (int aValue) <br>_Set maximum output value (position at 1000 input)._  |
 |  void | [**SetMinValue**](#function-setminvalue) (int aValue) <br>_Set minimum output value (position at 0 input)._  |
-|  void | [**SetupRange**](#function-setuprange) (int aMinValue, int aMaxValue) <br>_Configure the position range parameters at once._  |
+|  void | [**SetupRange**](#function-setuprange) (int minValue, int maxValue) <br>_Configure the position range parameters at once._  |
 
 
 
@@ -190,6 +192,36 @@ inline void evam::LinearActuator::Go (
 
 
 
+### function LinearActuator [1/2]
+
+```C++
+inline evam::LinearActuator::LinearActuator () 
+```
+
+
+
+
+<hr>
+
+
+
+### function LinearActuator [2/2]
+
+```C++
+template<typename... Args>
+inline evam::LinearActuator::LinearActuator (
+    LinearActuatorConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
+
+
+
 ### function SetMaxValue 
 
 _Set maximum output value (position at 1000 input)._ 
@@ -249,8 +281,8 @@ inline void evam::LinearActuator::SetMinValue (
 _Configure the position range parameters at once._ 
 ```C++
 inline void evam::LinearActuator::SetupRange (
-    int aMinValue,
-    int aMaxValue
+    int minValue,
+    int maxValue
 ) 
 ```
 

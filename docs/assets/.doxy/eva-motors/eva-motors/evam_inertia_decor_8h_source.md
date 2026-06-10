@@ -16,17 +16,25 @@ using namespace eva;
 
 namespace evam
 {
-    template <class Motor, signed short kInertiaMass = 5>
-    class InertiaDecor : public Heartbeat, public Motor
+    constexpr unsigned short kInertiaMass = 5;
+    struct InertiaConfig
     {
-        static_assert(1 < kInertiaMass, "kInertiaMass must be > 1");
+        signed short inertiaMass;
+
+        InertiaConfig(signed short inertiaMass) : inertiaMass(inertiaMass) {}
+    };
+
+    template <class TMotor, unsigned short tInertiaMass = kInertiaMass>
+    class InertiaDecor : public Heartbeat, public TMotor
+    {
+        static_assert(0 < tInertiaMass, "tInertiaMass must be > 0");
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 100;
-        
+
+        InertiaConfig mConfig;
         signed short mDesiredSpeed = 0;
         signed short mSpeed = 0;
-        signed short mInertiaMass = kInertiaMass;
 
         signed short calcSpeed() const
         {
@@ -37,8 +45,8 @@ namespace evam
                 return mDesiredSpeed;
 
             signed short delta = mDesiredSpeed - mSpeed;
-            signed short step = 2* delta / mInertiaMass;
-            if (abs(step) < 3)
+            signed short step = delta / mConfig.inertiaMass;
+            if (abs(step) < 2)
                 return mDesiredSpeed;
             return mSpeed + step;
         }
@@ -47,22 +55,24 @@ namespace evam
         void onHeartbeat() override
         {
             mSpeed = calcSpeed();
-            Motor::Go(mSpeed);
+            TMotor::Go(mSpeed);
         }
 
     public:
-        InertiaDecor() : Heartbeat(kHeartbeatPeriodMs)
-        {
-        }
+        InertiaDecor() : Heartbeat(kHeartbeatPeriodMs), mConfig(tInertiaMass), mDesiredSpeed(0), mSpeed(0) {}
+
+        template <typename... Args>
+        InertiaDecor(InertiaConfig config, Args... args)
+            : Heartbeat(kHeartbeatPeriodMs), TMotor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0) {}
 
         void SetInertiaMass(unsigned short aValue)
         {
-            mInertiaMass = constrain(aValue, 1, 200);
+            mConfig.inertiaMass = constrain(aValue, 1, 200);
         }
 
         unsigned short GetInertiaMass() const
         {
-            return mInertiaMass;
+            return mConfig.inertiaMass;
         }
 
         void Go(int aSpeed)
@@ -71,12 +81,11 @@ namespace evam
             if (aSpeed == calcSpeed())
             {
                 mSpeed = aSpeed;
-                Motor::Go(mSpeed);
+                TMotor::Go(mSpeed);
             }
         }
     };
 }
-
 ```
 
 

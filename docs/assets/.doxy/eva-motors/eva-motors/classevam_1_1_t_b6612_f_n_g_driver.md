@@ -57,7 +57,8 @@ _Driver for the TB6612FNG dual H-bridge motor driver._ [More...](#detailed-descr
 |  int | [**GetMode1Pin**](#function-getmode1pin) () const<br>_Get the first direction pin number._  |
 |  int | [**GetMode2Pin**](#function-getmode2pin) () const<br>_Get the second direction pin number._  |
 |  int | [**GetSpeedPin**](#function-getspeedpin) () const<br>_Get the speed PWM pin number._  |
-|   | [**TB6612FNGDriver**](#function-tb6612fngdriver) () <br>_Constructor. Initializes pins and stops the motor._  |
+|   | [**TB6612FNGDriver**](#function-tb6612fngdriver-12) () <br>_Constructor. Initializes pins and stops the motor._  |
+|   | [**TB6612FNGDriver**](#function-tb6612fngdriver-22) ([**TB6612Config**](structevam_1_1_t_b6612_config.md) config, Args... args) <br> |
 
 
 
@@ -195,11 +196,28 @@ Speed control PWM pin number.
 
 
 
-### function TB6612FNGDriver 
+### function TB6612FNGDriver [1/2]
 
 _Constructor. Initializes pins and stops the motor._ 
 ```C++
 inline evam::TB6612FNGDriver::TB6612FNGDriver () 
+```
+
+
+
+
+<hr>
+
+
+
+### function TB6612FNGDriver [2/2]
+
+```C++
+template<typename... Args>
+inline evam::TB6612FNGDriver::TB6612FNGDriver (
+    TB6612Config config,
+    Args... args
+) 
 ```
 
 

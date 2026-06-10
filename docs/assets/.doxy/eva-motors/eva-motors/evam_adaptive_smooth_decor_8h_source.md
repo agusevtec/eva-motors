@@ -17,37 +17,52 @@ using namespace eva;
 
 namespace evam
 {
-    template <class Motor,
-              unsigned short kMinTimeConstantMs = 10,
-              unsigned short kMaxTimeConstantMs = 150>
-    class AdaptiveSmoothDecor : public Heartbeat, public Motor
+    constexpr unsigned short kDefaultMinTimeConstantMs = 10;
+    constexpr unsigned short kDefaultMaxTimeConstantMs = 150;
+    constexpr unsigned short kMinTimeConstantLimit = 5;
+    constexpr unsigned short kMaxTimeConstantLimit = 500;
+
+    struct AdaptiveSmoothConfig {
+        unsigned short minTimeConstantMs;
+        unsigned short maxTimeConstantMs;
+        
+        AdaptiveSmoothConfig(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)
+            : minTimeConstantMs(constrain(minTimeConstantMs, kMinTimeConstantLimit, kMaxTimeConstantLimit)),
+              maxTimeConstantMs(constrain(maxTimeConstantMs, minTimeConstantMs, kMaxTimeConstantLimit)) {}
+    };
+
+    template <class TMotor,
+              unsigned short tMinTimeConstantMs = kDefaultMinTimeConstantMs,
+              unsigned short tMaxTimeConstantMs = kDefaultMaxTimeConstantMs>
+    class AdaptiveSmoothDecor : public Heartbeat, public TMotor
     {
-        static_assert(kMinTimeConstantMs >= 5 && kMinTimeConstantMs <= 200,
-                      "kMinTimeConstantMs out of range 5..200");
-        static_assert(kMaxTimeConstantMs >= kMinTimeConstantMs && kMaxTimeConstantMs <= 500,
-                      "kMaxTimeConstantMs must be >= kMinTimeConstantMs and <= 500");
+        static_assert(tMinTimeConstantMs >= kMinTimeConstantLimit && tMinTimeConstantMs <= kMaxTimeConstantLimit,
+                      "tMinTimeConstantMs out of range");
+        static_assert(tMaxTimeConstantMs >= tMinTimeConstantMs && tMaxTimeConstantMs <= kMaxTimeConstantLimit,
+                      "tMaxTimeConstantMs must be >= tMinTimeConstantMs");
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
         static constexpr signed short kDeadzone = 3;
 
+        AdaptiveSmoothConfig mConfig;
+        
         signed short mTargetValue = 0;
         signed short mCurrentValue = 0;
         signed short mLastTargetValue = 0;
-
-        unsigned short mCurrentTimeConstantMs = kMaxTimeConstantMs;
+        unsigned short mCurrentTimeConstantMs = tMaxTimeConstantMs;
 
         unsigned short calculateTimeConstant()
         {
             signed short change = abs(mTargetValue - mLastTargetValue);
 
             if (change >= 200)
-                return kMinTimeConstantMs;
+                return mConfig.minTimeConstantMs;
             else if (change <= 5)
-                return kMaxTimeConstantMs;
+                return mConfig.maxTimeConstantMs;
             else
             {
-                return kMaxTimeConstantMs - ((change - 5) * (kMaxTimeConstantMs - kMinTimeConstantMs) / 195);
+                return mConfig.maxTimeConstantMs - ((change - 5) * (mConfig.maxTimeConstantMs - mConfig.minTimeConstantMs) / 195);
             }
         }
 
@@ -69,22 +84,48 @@ namespace evam
                 mCurrentValue = constrain(mCurrentValue, -1000, 1000);
             }
 
-            Motor::Go(mCurrentValue);
+            TMotor::Go(mCurrentValue);
         }
 
     public:
-        AdaptiveSmoothDecor() : Heartbeat(kHeartbeatPeriodMs)
-        {
-        }
+        AdaptiveSmoothDecor() : mConfig(tMinTimeConstantMs, tMaxTimeConstantMs), Heartbeat(kHeartbeatPeriodMs) {}
+        
+        template<typename... Args>
+        AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args) 
+            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), TMotor(args...) {}
 
         void Go(signed short aValue)
         {
             mTargetValue = constrain(aValue, -1000, 1000);
         }
+
+        void SetMinTimeConstantMs(unsigned short value)
+        {
+            mConfig.minTimeConstantMs = constrain(value, kMinTimeConstantLimit, kMaxTimeConstantLimit);
+        }
+
+        unsigned short GetMinTimeConstantMs() const
+        {
+            return mConfig.minTimeConstantMs;
+        }
+
+        void SetMaxTimeConstantMs(unsigned short value)
+        {
+            mConfig.maxTimeConstantMs = constrain(value, mConfig.minTimeConstantMs, kMaxTimeConstantLimit);
+        }
+
+        unsigned short GetMaxTimeConstantMs() const
+        {
+            return mConfig.maxTimeConstantMs;
+        }
+
+        void SetupRange(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)
+        {
+            SetMinTimeConstantMs(minTimeConstantMs);
+            SetMaxTimeConstantMs(maxTimeConstantMs);
+        }
     };
-
 }
-
 ```
 
 

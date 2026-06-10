@@ -664,6 +664,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-kickdecor-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function KickDecor [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-kickdecor-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function KickDecor [2/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-setkickduration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -722,13 +744,13 @@
 
 
 <h1 id="class-evamkickdecor">Class evam::KickDecor<a class="headerlink" href="#class-evamkickdecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class Motor, unsigned short kDefaultKickDuration, signed short kDefaultKickPower&gt;</strong></p>
+<p><strong>template &lt;class TMotor, unsigned short tDefaultKickDurationMs, signed short tDefaultKickPower&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>KickDecor</strong></a></p>
 <p><em>Decorator that applies a momentary kick to overcome static friction.</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evamKickDecor.h&gt;</code></li>
 </ul>
-<p>Inherits the following classes: Tickable,  Motor</p>
+<p>Inherits the following classes: Tickable,  TMotor</p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -751,16 +773,24 @@
 <td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (signed short aValue) <br><em>Apply the control value with kick-start pulse.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setkickduration"><strong>SetKickDuration</strong></a> (unsigned short aDuration) <br><em>Set kick pulse duration.</em></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-kickdecor-12"><strong>KickDecor</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-kickdecor-22"><strong>KickDecor</strong></a> (<a href="../structevam_1_1_kick_config/"><strong>KickConfig</strong></a> config, Args... args) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setkickpower"><strong>SetKickPower</strong></a> (signed short aPower) <br><em>Set kick power.</em></td>
+<td style="text-align: left;"><a href="#function-setkickduration"><strong>SetKickDuration</strong></a> (unsigned short aValue) <br><em>Set kick pulse duration.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setupkickstart"><strong>SetupKickstart</strong></a> (unsigned short aKickDuration, signed short aKickPower) <br><em>Configure kickstart parameters at once.</em></td>
+<td style="text-align: left;"><a href="#function-setkickpower"><strong>SetKickPower</strong></a> (signed short aValue) <br><em>Set kick power.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setupkickstart"><strong>SetupKickstart</strong></a> (unsigned short duration, signed short power) <br><em>Configure kickstart parameters at once.</em></td>
 </tr>
 </tbody>
 </table>
@@ -804,10 +834,26 @@
 </ul>
 <hr>
 
+<h3 id="function-kickdecor-12">function KickDecor [1/2]<a class="headerlink" href="#function-kickdecor-12" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">KickDecor</span><span class="o">::</span><span class="n">KickDecor</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-kickdecor-22">function KickDecor [2/2]<a class="headerlink" href="#function-kickdecor-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">KickDecor</span><span class="o">::</span><span class="n">KickDecor</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">KickConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="function-setkickduration">function SetKickDuration<a class="headerlink" href="#function-setkickduration" title="Permanent link">&para;</a></h3>
 <p><em>Set kick pulse duration.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">KickDecor</span><span class="o">::</span><span class="n">SetKickDuration</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aDuration</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aValue</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
@@ -820,7 +866,7 @@
 <h3 id="function-setkickpower">function SetKickPower<a class="headerlink" href="#function-setkickpower" title="Permanent link">&para;</a></h3>
 <p><em>Set kick power.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">KickDecor</span><span class="o">::</span><span class="n">SetKickPower</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aPower</span>
+<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aValue</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
@@ -833,8 +879,8 @@
 <h3 id="function-setupkickstart">function SetupKickstart<a class="headerlink" href="#function-setupkickstart" title="Permanent link">&para;</a></h3>
 <p><em>Configure kickstart parameters at once.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">KickDecor</span><span class="o">::</span><span class="n">SetupKickstart</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aKickDuration</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aKickPower</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">power</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 

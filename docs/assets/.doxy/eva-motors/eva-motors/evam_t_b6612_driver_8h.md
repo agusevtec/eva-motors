@@ -35,6 +35,7 @@
 
 | Type | Name |
 | ---: | :--- |
+| struct | [**TB6612Config**](structevam_1_1_t_b6612_config.md) <br>_Configuration structure for_ [_**TB6612FNGDriver**_](classevam_1_1_t_b6612_f_n_g_driver.md) _._ |
 | class | [**TB6612FNGDriver**](classevam_1_1_t_b6612_f_n_g_driver.md) &lt;kPinSpeed, kPinMode1, kPinMode2&gt;<br>_Driver for the TB6612FNG dual H-bridge motor driver._  |
 
 

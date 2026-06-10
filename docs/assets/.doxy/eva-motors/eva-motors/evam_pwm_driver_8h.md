@@ -35,6 +35,7 @@
 
 | Type | Name |
 | ---: | :--- |
+| struct | [**PwmConfig**](structevam_1_1_pwm_config.md) <br>_Configuration structure for_ [_**PwmDriver**_](classevam_1_1_pwm_driver.md) _._ |
 | class | [**PwmDriver**](classevam_1_1_pwm_driver.md) &lt;kPin&gt;<br>_Simple PWM output driver (unipolar)._  |
 
 

@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_servo_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::ServoConfig</compoundname>
+    <includes refid="evam_servo_driver_8h" local="no">evamServoDriver.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_servo_config_1afb6a45585bdb10a0e9b78e590ebad2dd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::ServoConfig::pin</definition>
+        <argsstring></argsstring>
+        <name>pin</name>
+        <qualifiedname>evam::ServoConfig::pin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="12" column="13" bodyfile="src/evamServoDriver.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_servo_config_1a881a2730f6855a319288409514aaa001" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::ServoConfig::minPulse</definition>
+        <argsstring></argsstring>
+        <name>minPulse</name>
+        <qualifiedname>evam::ServoConfig::minPulse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="13" column="13" bodyfile="src/evamServoDriver.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_servo_config_1adc08684da406021545b43d21267fb365" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::ServoConfig::middlePulse</definition>
+        <argsstring></argsstring>
+        <name>middlePulse</name>
+        <qualifiedname>evam::ServoConfig::middlePulse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="14" column="13" bodyfile="src/evamServoDriver.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structevam_1_1_servo_config_1a68248cba5c5ca96a121ac3dfc00412be" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evam::ServoConfig::maxPulse</definition>
+        <argsstring></argsstring>
+        <name>maxPulse</name>
+        <qualifiedname>evam::ServoConfig::maxPulse</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="15" column="13" bodyfile="src/evamServoDriver.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_servo_config_1a2f6d6a93d5717d1453515ea35539f907" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::ServoConfig::ServoConfig</definition>
+        <argsstring>(int pin, int minPulse, int middlePulse, int maxPulse)</argsstring>
+        <name>ServoConfig</name>
+        <qualifiedname>evam::ServoConfig::ServoConfig</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minPulse</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>middlePulse</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxPulse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamServoDriver.h" line="17" column="9" bodyfile="src/evamServoDriver.h" bodystart="17" bodyend="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_servo_driver" kindref="compound">ServoDriver</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamServoDriver.h" line="11" column="5" bodyfile="src/evamServoDriver.h" bodystart="11" bodyend="19"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_servo_config_1a68248cba5c5ca96a121ac3dfc00412be" prot="public" virt="non-virtual"><scope>evam::ServoConfig</scope><name>maxPulse</name></member>
+      <member refid="structevam_1_1_servo_config_1adc08684da406021545b43d21267fb365" prot="public" virt="non-virtual"><scope>evam::ServoConfig</scope><name>middlePulse</name></member>
+      <member refid="structevam_1_1_servo_config_1a881a2730f6855a319288409514aaa001" prot="public" virt="non-virtual"><scope>evam::ServoConfig</scope><name>minPulse</name></member>
+      <member refid="structevam_1_1_servo_config_1afb6a45585bdb10a0e9b78e590ebad2dd" prot="public" virt="non-virtual"><scope>evam::ServoConfig</scope><name>pin</name></member>
+      <member refid="structevam_1_1_servo_config_1a2f6d6a93d5717d1453515ea35539f907" prot="public" virt="non-virtual"><scope>evam::ServoConfig</scope><name>ServoConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

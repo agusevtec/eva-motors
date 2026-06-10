@@ -36,6 +36,7 @@
 | Type | Name |
 | ---: | :--- |
 | class | [**SteeringActuator**](classevam_1_1_steering_actuator.md) &lt;class Driver, kLeftPos, kCenterPos, kRightPos&gt;<br>_Steering actuator (centered servo) controller._  |
+| struct | [**SteeringConfig**](structevam_1_1_steering_config.md) <br>_Configuration structure for_ [_**SteeringActuator**_](classevam_1_1_steering_actuator.md) _._ |
 
 
 

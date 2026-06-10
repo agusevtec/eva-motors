@@ -17,26 +17,38 @@ using namespace eva;
 
 namespace evam
 {
-    template <class Motor, unsigned short kDefaultKickDuration = 20, signed short kDefaultKickPower = 1000>
-    class KickDecor : public virtual Tickable, public Motor
+    constexpr unsigned short kDefaultKickDurationMs = 20;
+    constexpr signed short kDefaultKickPower = 1000;
+    constexpr signed short kMaxKickPower = 1000;
+
+    struct KickConfig {
+        unsigned short duration;
+        signed short power;
+        
+        KickConfig(unsigned short duration, signed short power) : duration(duration > 0 ? duration : kDefaultKickDurationMs), power(constrain(power, 0, kMaxKickPower)) {}
+    };
+
+    template <class TMotor, 
+              unsigned short tDefaultKickDurationMs = kDefaultKickDurationMs, 
+              signed short tDefaultKickPower = kDefaultKickPower>
+    class KickDecor : public virtual Tickable, public TMotor
     {
-        static_assert(kDefaultKickDuration > 0, "kDefaultKickDuration must be > 0");
-        static_assert(kDefaultKickPower > 0 && kDefaultKickPower <= 1000, "kDefaultKickPower out of range");
+        static_assert(tDefaultKickDurationMs > 0, "tDefaultKickDurationMs must be > 0");
+        static_assert(tDefaultKickPower > 0 && tDefaultKickPower <= kMaxKickPower, "tDefaultKickPower out of range");
 
     private:
+        KickConfig mConfig;
+        
         signed short mTargetSpeed = 0;
         unsigned long mHoldingStartedAt = 0;
-
-        unsigned short mKickDuration = kDefaultKickDuration;
-        signed short mKickPower = kDefaultKickPower;
 
         signed short calculateKickPower(signed short aValue) const
         {
             if ((mTargetSpeed <= 0) && (aValue > 0))
-                return mKickPower;
+                return mConfig.power;
 
             if ((mTargetSpeed >= 0) && (aValue < 0))
-                return -mKickPower;
+                return -mConfig.power;
 
             return 0;
         }
@@ -46,39 +58,44 @@ namespace evam
             if (!mHoldingStartedAt)
                 return;
 
-            if (millis() - mHoldingStartedAt < mKickDuration)
+            if (millis() - mHoldingStartedAt < mConfig.duration)
                 return;
 
-            Motor::Go(mTargetSpeed);
+            TMotor::Go(mTargetSpeed);
             mHoldingStartedAt = 0;
         }
 
     public:
-        void SetupKickstart(unsigned short aKickDuration, signed short aKickPower)
+        KickDecor() : mConfig(tDefaultKickDurationMs, tDefaultKickPower) {}
+        
+        template<typename... Args>
+        KickDecor(KickConfig config, Args... args) : mConfig(config), TMotor(args...) {}
+
+        void SetupKickstart(unsigned short duration, signed short power)
         {
-            SetKickDuration(aKickDuration);
-            SetKickPower(aKickPower);
+            SetKickDuration(duration);
+            SetKickPower(power);
         }
 
-        void SetKickDuration(unsigned short aDuration)
+        void SetKickDuration(unsigned short aValue)
         {
-            if (aDuration > 0)
-                mKickDuration = aDuration;
+            if (aValue > 0)
+                mConfig.duration = aValue;
         }
 
         unsigned short GetKickDuration() const
         {
-            return mKickDuration;
+            return mConfig.duration;
         }
 
-        void SetKickPower(signed short aPower)
+        void SetKickPower(signed short aValue)
         {
-            mKickPower = constrain(aPower, 0, 1000);
+            mConfig.power = constrain(aValue, 0, 1000);
         }
 
         signed short GetKickPower() const
         {
-            return mKickPower;
+            return mConfig.power;
         }
 
         void Go(signed short aValue)
@@ -88,7 +105,7 @@ namespace evam
 
             if (needKick)
             {
-                Motor::Go(needKick);
+                TMotor::Go(needKick);
                 mHoldingStartedAt = millis();
                 return;
             }
@@ -96,7 +113,7 @@ namespace evam
             if (mHoldingStartedAt)
                 return;
 
-            Motor::Go(aValue);
+            TMotor::Go(aValue);
         }
     };
 }

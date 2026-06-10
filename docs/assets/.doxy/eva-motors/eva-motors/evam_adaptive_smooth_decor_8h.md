@@ -37,7 +37,8 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) &lt;class Motor, kMinTimeConstantMs, kMaxTimeConstantMs&gt;<br>_Decorator with adaptive smoothing based on input rate of change._  |
+| struct | [**AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) <br>_Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive_smooth_decor.md) _._ |
+| class | [**AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) &lt;class TMotor, tMinTimeConstantMs, tMaxTimeConstantMs&gt;<br>_Decorator with adaptive smoothing based on input rate of change._  |
 
 
 

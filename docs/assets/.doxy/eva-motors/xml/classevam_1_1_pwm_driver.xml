@@ -10,6 +10,22 @@
         <defname>kPin</defname>
       </param>
     </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_pwm_driver_1a601c6396aba01cab09c68f2f0db38cc7" prot="private" static="no" mutable="no">
+        <type><ref refid="structevam_1_1_pwm_config" kindref="compound">PwmConfig</ref></type>
+        <definition>PwmConfig evam::PwmDriver&lt; kPin &gt;::mConfig</definition>
+        <argsstring></argsstring>
+        <name>mConfig</name>
+        <qualifiedname>evam::PwmDriver::mConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamPwmDriver.h" line="28" column="19" bodyfile="src/evamPwmDriver.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
     <sectiondef kind="public-func">
       <memberdef kind="function" id="classevam_1_1_pwm_driver_1a85802cead4fd16ac623134c70d12e768" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -18,13 +34,59 @@
         <name>PwmDriver</name>
         <qualifiedname>evam::PwmDriver::PwmDriver</qualifiedname>
         <briefdescription>
-<para>Constructor. Initializes the pin as output. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="22" column="9" bodyfile="src/evamPwmDriver.h" bodystart="22" bodyend="26"/>
+        <location file="src/evamPwmDriver.h" line="31" column="9" bodyfile="src/evamPwmDriver.h" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_pwm_driver_1a8209d5077a7b9c5ec0325b516d5e572f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::PwmDriver&lt; kPin &gt;::PwmDriver</definition>
+        <argsstring>(PwmConfig config, Args... args)</argsstring>
+        <name>PwmDriver</name>
+        <qualifiedname>evam::PwmDriver::PwmDriver</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_pwm_config" kindref="compound">PwmConfig</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamPwmDriver.h" line="38" column="9" bodyfile="src/evamPwmDriver.h" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_pwm_driver_1af99aff3048259d90c0d8a4c5c97a73bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int evam::PwmDriver&lt; kPin &gt;::GetPin</definition>
+        <argsstring>() const</argsstring>
+        <name>GetPin</name>
+        <qualifiedname>evam::PwmDriver::GetPin</qualifiedname>
+        <briefdescription>
+<para>Get the PWM pin number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pin number. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamPwmDriver.h" line="48" column="13" bodyfile="src/evamPwmDriver.h" bodystart="48" bodyend="51"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -55,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="33" column="14" bodyfile="src/evamPwmDriver.h" bodystart="33" bodyend="37"/>
+        <location file="src/evamPwmDriver.h" line="58" column="14" bodyfile="src/evamPwmDriver.h" bodystart="58" bodyend="62"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -74,10 +136,13 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamPwmDriver.h" line="16" column="5" bodyfile="src/evamPwmDriver.h" bodystart="17" bodyend="38"/>
+    <location file="src/evamPwmDriver.h" line="25" column="5" bodyfile="src/evamPwmDriver.h" bodystart="26" bodyend="63"/>
     <listofallmembers>
       <member refid="classevam_1_1_pwm_driver_1a0e0cc11fd0a37dd37f603652dd85c2d4" prot="protected" virt="non-virtual"><scope>evam::PwmDriver</scope><name>actUnipolar</name></member>
+      <member refid="classevam_1_1_pwm_driver_1af99aff3048259d90c0d8a4c5c97a73bf" prot="public" virt="non-virtual"><scope>evam::PwmDriver</scope><name>GetPin</name></member>
+      <member refid="classevam_1_1_pwm_driver_1a601c6396aba01cab09c68f2f0db38cc7" prot="private" virt="non-virtual"><scope>evam::PwmDriver</scope><name>mConfig</name></member>
       <member refid="classevam_1_1_pwm_driver_1a85802cead4fd16ac623134c70d12e768" prot="public" virt="non-virtual"><scope>evam::PwmDriver</scope><name>PwmDriver</name></member>
+      <member refid="classevam_1_1_pwm_driver_1a8209d5077a7b9c5ec0325b516d5e572f" prot="public" virt="non-virtual"><scope>evam::PwmDriver</scope><name>PwmDriver</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

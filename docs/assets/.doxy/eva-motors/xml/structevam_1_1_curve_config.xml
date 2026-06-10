@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_curve_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::CurveConfig</compoundname>
+    <includes refid="evam_curve_decor_8h" local="no">evamCurveDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_curve_config_1a061be562c6ffb58aff48c37c55420a75" prot="public" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::CurveConfig::bend</definition>
+        <argsstring></argsstring>
+        <name>bend</name>
+        <qualifiedname>evam::CurveConfig::bend</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="15" column="22" bodyfile="src/evamCurveDecor.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_curve_config_1a04b88ad0f399a13f2f579db56c3a3c49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::CurveConfig::CurveConfig</definition>
+        <argsstring>(signed short bend)</argsstring>
+        <name>CurveConfig</name>
+        <qualifiedname>evam::CurveConfig::CurveConfig</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>bend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamCurveDecor.h" line="17" column="9" bodyfile="src/evamCurveDecor.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_curve_decor" kindref="compound">CurveDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamCurveDecor.h" line="14" column="5" bodyfile="src/evamCurveDecor.h" bodystart="14" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_curve_config_1a061be562c6ffb58aff48c37c55420a75" prot="public" virt="non-virtual"><scope>evam::CurveConfig</scope><name>bend</name></member>
+      <member refid="structevam_1_1_curve_config_1a04b88ad0f399a13f2f579db56c3a3c49" prot="public" virt="non-virtual"><scope>evam::CurveConfig</scope><name>CurveConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

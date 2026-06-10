@@ -14,27 +14,45 @@
 
 namespace evam
 {
+    struct PwmConfig {
+        int pin;
+        
+        PwmConfig(int pin) : pin(pin) {}
+    };
+
     template <int kPin>
     class PwmDriver
     {
+    private:
+        PwmConfig mConfig;
+        
     public:
-        PwmDriver()
+        PwmDriver() : mConfig(kPin)
         {
             pinMode(kPin, OUTPUT);
             actUnipolar(0);
+        }
+        
+        template<typename... Args>
+        PwmDriver(PwmConfig config, Args... args) : mConfig(config)
+        {
+            pinMode(mConfig.pin, OUTPUT);
+            actUnipolar(0);
+        }
+
+        int GetPin() const
+        {
+            return mConfig.pin;
         }
 
     protected:
         void actUnipolar(unsigned short aValue)
         {
             int pwm = map(constrain(aValue, 0, 1000), 0, 1000, 0, 255);
-            analogWrite(kPin, pwm);
+            analogWrite(mConfig.pin, pwm);
         }
     };
-
-} // namespace evam
-
-
+}
 ```
 
 

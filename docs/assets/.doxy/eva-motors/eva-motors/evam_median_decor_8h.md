@@ -36,7 +36,8 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**MedianDecor**](classevam_1_1_median_decor.md) &lt;class Motor, kWindowSize&gt;<br>_Decorator that applies median filtering with fixed time base._  |
+| struct | [**MedianConfig**](structevam_1_1_median_config.md) <br>_Configuration structure for_ [_**MedianDecor**_](classevam_1_1_median_decor.md) _._ |
+| class | [**MedianDecor**](classevam_1_1_median_decor.md) &lt;class TMotor, tWindowSize&gt;<br>_Decorator that applies median filtering with fixed time base._  |
 
 
 

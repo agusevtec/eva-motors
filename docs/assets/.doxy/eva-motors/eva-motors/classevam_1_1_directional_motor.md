@@ -55,6 +55,8 @@ Inherits the following classes: Driver
 
 | Type | Name |
 | ---: | :--- |
+|   | [**DirectionalMotor**](#function-directionalmotor-12) () <br> |
+|   | [**DirectionalMotor**](#function-directionalmotor-22) ([**DirectionalConfig**](structevam_1_1_directional_config.md) config, Args... args) <br> |
 |  signed short | [**GetMaxBackward**](#function-getmaxbackward) () const<br>_Get maximum reverse output value._  |
 |  signed short | [**GetMaxForward**](#function-getmaxforward) () const<br>_Get maximum forward output value._  |
 |  signed short | [**GetMinBackward**](#function-getminbackward) () const<br>_Get minimum reverse output value._  |
@@ -64,7 +66,7 @@ Inherits the following classes: Driver
 |  void | [**SetMaxForward**](#function-setmaxforward) (signed short aValue) <br>_Set maximum forward output value._  |
 |  void | [**SetMinBackward**](#function-setminbackward) (signed short aValue) <br>_Set minimum reverse output value._  |
 |  void | [**SetMinForward**](#function-setminforward) (signed short aValue) <br>_Set minimum forward output value._  |
-|  void | [**SetupRange**](#function-setuprange) (signed short aMaxBackward, signed short aMinBackward, signed short aMinForward, signed short aMaxForward) <br>_Configure all range parameters at once._  |
+|  void | [**SetupRange**](#function-setuprange) (signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward) <br>_Configure all range parameters at once._  |
 
 
 
@@ -116,6 +118,36 @@ Maps a signed input range -1000..1000 to driver-specific output values. Negative
     
 ## Public Functions Documentation
 
+
+
+
+### function DirectionalMotor [1/2]
+
+```C++
+inline evam::DirectionalMotor::DirectionalMotor () 
+```
+
+
+
+
+<hr>
+
+
+
+### function DirectionalMotor [2/2]
+
+```C++
+template<typename... Args>
+inline evam::DirectionalMotor::DirectionalMotor (
+    DirectionalConfig config,
+    Args... args
+) 
+```
+
+
+
+
+<hr>
 
 
 
@@ -359,10 +391,10 @@ inline void evam::DirectionalMotor::SetMinForward (
 _Configure all range parameters at once._ 
 ```C++
 inline void evam::DirectionalMotor::SetupRange (
-    signed short aMaxBackward,
-    signed short aMinBackward,
-    signed short aMinForward,
-    signed short aMaxForward
+    signed short maxBackward,
+    signed short minBackward,
+    signed short minForward,
+    signed short maxForward
 ) 
 ```
 

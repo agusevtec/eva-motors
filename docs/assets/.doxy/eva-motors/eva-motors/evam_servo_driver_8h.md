@@ -36,6 +36,7 @@
 
 | Type | Name |
 | ---: | :--- |
+| struct | [**ServoConfig**](structevam_1_1_servo_config.md) <br>_Configuration structure for_ [_**ServoDriver**_](classevam_1_1_servo_driver.md) _._ |
 | class | [**ServoDriver**](classevam_1_1_servo_driver.md) &lt;kPin, kMinPulse, kMiddlePulse, kMaxPulse&gt;<br>_Servo driver using standard Arduino Servo library._  |
 
 

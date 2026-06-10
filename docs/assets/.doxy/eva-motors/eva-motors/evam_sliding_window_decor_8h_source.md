@@ -8,7 +8,7 @@
 
 
 ```C++
-
+#pragma once
 
 #ifndef EVAM_SLIDING_WINDOW_DECOR_H_
 #define EVAM_SLIDING_WINDOW_DECOR_H_
@@ -17,33 +17,46 @@
 
 namespace evam
 {
+    struct SlidingWindowConfig {
+        unsigned short windowSize;
+        
+        SlidingWindowConfig(unsigned short windowSize) : windowSize(windowSize) {}
+    };
 
-template <class Motor, unsigned short N>
-class SlidingWindowDecor : public Motor
-{
-private:
-    RingBuffer<signed short, N> mRing;  
-    signed long mSum = 0;               
-
-public:
-    void Go(signed short value)
+    template <class TMotor, unsigned short N>
+    class SlidingWindowDecor : public TMotor
     {
-        if (mRing.isFull())
-            mSum -= mRing.get(0);
+        static_assert(N >= 1 && N <= 32, "N out of range 1..32");
+        
+    private:
+        SlidingWindowConfig mConfig;
+        RingBuffer<signed short, N> mRing;
+        signed long mSum = 0;
 
-        mRing.put(value);
-        mSum += value;
+    public:
+        SlidingWindowDecor() : mConfig(N) {}
+        
+        template<typename... Args>
+        SlidingWindowDecor(SlidingWindowConfig config, Args... args) 
+            : mConfig(config), TMotor(args...) {}
 
-        if (mRing.isFull())
-            value = static_cast<signed short>(mSum / N);
+        void Go(signed short value)
+        {
+            if (mRing.isFull())
+                mSum -= mRing.get(0);
 
-        Motor::Go(value);
-    }
-};
+            mRing.put(value);
+            mSum += value;
 
+            if (mRing.isFull())
+                value = static_cast<signed short>(mSum / N);
+
+            TMotor::Go(value);
+        }
+    };
 }
 
-#endif // EVAM_SLIDING_WINDOW_DECOR_H_
+#endif
 ```
 
 

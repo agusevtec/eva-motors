@@ -13,7 +13,21 @@
 
 namespace evam
 {
-    template <class Driver, signed short kLeftPos = -1000, signed short kCenterPos = 0, signed short kRightPos = 1000>
+    struct SteeringConfig {
+        signed short leftPos;
+        signed short centerPos;
+        signed short rightPos;
+        
+        SteeringConfig(signed short leftPos, signed short centerPos, signed short rightPos)
+            : leftPos(constrain(leftPos, -1000, 1000)),
+              centerPos(constrain(centerPos, -1000, 1000)),
+              rightPos(constrain(rightPos, -1000, 1000)) {}
+    };
+
+    template <class Driver, 
+              signed short kLeftPos = -1000, 
+              signed short kCenterPos = 0, 
+              signed short kRightPos = 1000>
     class SteeringActuator : public Driver
     {
         static_assert(kLeftPos >= -1000 && kLeftPos <= 1000, "kLeftPos out of range");
@@ -21,54 +35,57 @@ namespace evam
         static_assert(kRightPos >= -1000 && kRightPos <= 1000, "kRightPos out of range");
 
     private:
-        signed short mLeftPos = kLeftPos;
-        signed short mCenterPos = kCenterPos;
-        signed short mRightPos = kRightPos;
-
+        SteeringConfig mConfig;
+        
         signed short compute(signed short aLevel) const
         {
             if (aLevel < 0)
-                return map(constrain(aLevel, -1000, 0), -1000, 0, mLeftPos, mCenterPos);
+                return map(constrain(aLevel, -1000, 0), -1000, 0, mConfig.leftPos, mConfig.centerPos);
             else
-                return map(constrain(aLevel, 0, 1000), 0, 1000, mCenterPos, mRightPos);
+                return map(constrain(aLevel, 0, 1000), 0, 1000, mConfig.centerPos, mConfig.rightPos);
         }
 
     public:
-        void SetupRange(signed short aLeftPos, signed short aCenterPos, signed short aRightPos)
+        SteeringActuator() : mConfig(kLeftPos, kCenterPos, kRightPos) {}
+        
+        template<typename... Args>
+        SteeringActuator(SteeringConfig config, Args... args) : Driver(args...), mConfig(config) {}
+
+        void SetupRange(signed short leftPos, signed short centerPos, signed short rightPos)
         {
-            SetLeftPos(aLeftPos);
-            SetCenterPos(aCenterPos);
-            SetRightPos(aRightPos);
+            SetLeftPos(leftPos);
+            SetCenterPos(centerPos);
+            SetRightPos(rightPos);
         }
 
         void SetLeftPos(signed short aValue)
         {
-            mLeftPos = constrain(aValue, -1000, 1000);
+            mConfig.leftPos = constrain(aValue, -1000, 1000);
         }
 
         signed short GetLeftPos() const
         {
-            return mLeftPos;
+            return mConfig.leftPos;
         }
 
         void SetCenterPos(signed short aValue)
         {
-            mCenterPos = constrain(aValue, -1000, 1000);
+            mConfig.centerPos = constrain(aValue, -1000, 1000);
         }
 
         signed short GetCenterPos() const
         {
-            return mCenterPos;
+            return mConfig.centerPos;
         }
 
         void SetRightPos(signed short aValue)
         {
-            mRightPos = constrain(aValue, -1000, 1000);
+            mConfig.rightPos = constrain(aValue, -1000, 1000);
         }
 
         signed short GetRightPos() const
         {
-            return mRightPos;
+            return mConfig.rightPos;
         }
 
         void Go(signed short aLevel)

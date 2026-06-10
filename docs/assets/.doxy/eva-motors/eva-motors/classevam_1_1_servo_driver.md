@@ -55,7 +55,8 @@ _Servo driver using standard Arduino Servo library._ [More...](#detailed-descrip
 | Type | Name |
 | ---: | :--- |
 |  int | [**GetPin**](#function-getpin) () const<br>_Get the servo pin number._  |
-|   | [**ServoDriver**](#function-servodriver) () <br>_Constructor. Attaches the servo to the pin._  |
+|   | [**ServoDriver**](#function-servodriver-12) () <br> |
+|   | [**ServoDriver**](#function-servodriver-22) ([**ServoConfig**](structevam_1_1_servo_config.md) config, Args... args) <br> |
 
 
 
@@ -84,8 +85,8 @@ _Servo driver using standard Arduino Servo library._ [More...](#detailed-descrip
 
 | Type | Name |
 | ---: | :--- |
-|  void | [**actBipolar**](#function-actbipolar) (signed short aValue) <br>_Bipolar (centered) control. Input range -1000..1000. Output: 1500µs ± input\_mapped._  |
-|  void | [**actUnipolar**](#function-actunipolar) (signed short aValue) <br>_Unipolar (absolute) control. Input range 0..1000. Output: 1000µs + input\_mapped._  |
+|  void | [**actBipolar**](#function-actbipolar) (signed short aValue) <br>_Bipolar (centered) control. Input range -1000..1000. Output: 1500Вµs В± input\_mapped._  |
+|  void | [**actUnipolar**](#function-actunipolar) (signed short aValue) <br>_Unipolar (absolute) control. Input range 0..1000. Output: 1000Вµs + input\_mapped._  |
 
 
 
@@ -140,11 +141,27 @@ Pin number used for servo signal.
 
 
 
-### function ServoDriver 
+### function ServoDriver [1/2]
 
-_Constructor. Attaches the servo to the pin._ 
 ```C++
 inline evam::ServoDriver::ServoDriver () 
+```
+
+
+
+
+<hr>
+
+
+
+### function ServoDriver [2/2]
+
+```C++
+template<typename... Args>
+inline evam::ServoDriver::ServoDriver (
+    ServoConfig config,
+    Args... args
+) 
 ```
 
 
@@ -158,7 +175,7 @@ inline evam::ServoDriver::ServoDriver ()
 
 ### function actBipolar 
 
-_Bipolar (centered) control. Input range -1000..1000. Output: 1500µs ± input\_mapped._ 
+_Bipolar (centered) control. Input range -1000..1000. Output: 1500Вµs В± input\_mapped._ 
 ```C++
 inline void evam::ServoDriver::actBipolar (
     signed short aValue
@@ -172,7 +189,7 @@ inline void evam::ServoDriver::actBipolar (
 **Parameters:**
 
 
-* `aValue` Input value, range -1000..1000, clamped to 500..2500µs output. 
+* `aValue` Input value, range -1000..1000, clamped to 500..2500Вµs output. 
 
 
 
@@ -185,7 +202,7 @@ inline void evam::ServoDriver::actBipolar (
 
 ### function actUnipolar 
 
-_Unipolar (absolute) control. Input range 0..1000. Output: 1000µs + input\_mapped._ 
+_Unipolar (absolute) control. Input range 0..1000. Output: 1000Вµs + input\_mapped._ 
 ```C++
 inline void evam::ServoDriver::actUnipolar (
     signed short aValue
@@ -199,7 +216,7 @@ inline void evam::ServoDriver::actUnipolar (
 **Parameters:**
 
 
-* `aValue` Input value, range 0..1000, clamped to 500..2500µs output. 
+* `aValue` Input value, range 0..1000, clamped to 500..2500Вµs output. 
 
 
 

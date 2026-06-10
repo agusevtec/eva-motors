@@ -14,37 +14,54 @@
 
 namespace evam
 {
+    struct TA6586Config {
+        int forwardPin;
+        int backwardPin;
+        
+        TA6586Config(int forwardPin, int backwardPin) : forwardPin(forwardPin), backwardPin(backwardPin) {}
+    };
+
     template <int kForwardPin, int kBackwardPin>
     class TA6586Driver
     {
+    private:
+        TA6586Config mConfig;
+        
     public:
-        TA6586Driver()
+        TA6586Driver() : mConfig(kForwardPin, kBackwardPin)
         {
-            pinMode(kForwardPin, OUTPUT);
-            pinMode(kBackwardPin, OUTPUT);
+            pinMode(mConfig.forwardPin, OUTPUT);
+            pinMode(mConfig.backwardPin, OUTPUT);
+            actBipolar(0);
+        }
+        
+        template<typename... Args>
+        TA6586Driver(TA6586Config config, Args... args) : mConfig(config)
+        {
+            pinMode(mConfig.forwardPin, OUTPUT);
+            pinMode(mConfig.backwardPin, OUTPUT);
             actBipolar(0);
         }
 
         int GetForwardPin() const
         {
-            return kForwardPin;
+            return mConfig.forwardPin;
         }
 
         int GetBackwardPin() const
         {
-            return kBackwardPin;
+            return mConfig.backwardPin;
         }
 
     protected:
         void actBipolar(signed short aValue)
         {
             int normalized = map(constrain(aValue, -1000, 1000), -1000, 1000, -255, 255);
-            analogWrite(kForwardPin, max(0, normalized));
-            analogWrite(kBackwardPin, max(0, -normalized));
+            analogWrite(mConfig.forwardPin, max(0, normalized));
+            analogWrite(mConfig.backwardPin, max(0, -normalized));
         }
     };
 }
-
 ```
 
 

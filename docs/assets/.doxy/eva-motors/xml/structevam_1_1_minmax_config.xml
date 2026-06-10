@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_minmax_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::MinmaxConfig</compoundname>
+    <includes refid="evam_minmax_decor_8h" local="no">evamMinmaxDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_minmax_config_1a9cae8eafe7a4298fd6bb21cb53fcb6ae" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char evam::MinmaxConfig::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <qualifiedname>evam::MinmaxConfig::n</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamMinmaxDecor.h" line="11" column="23" bodyfile="src/evamMinmaxDecor.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_minmax_config_1aff5ce4bb8a98e04d34ee5b94e811e92d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::MinmaxConfig::MinmaxConfig</definition>
+        <argsstring>(unsigned char n)</argsstring>
+        <name>MinmaxConfig</name>
+        <qualifiedname>evam::MinmaxConfig::MinmaxConfig</qualifiedname>
+        <param>
+          <type>unsigned char</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamMinmaxDecor.h" line="13" column="9" bodyfile="src/evamMinmaxDecor.h" bodystart="13" bodyend="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_minmax_decor" kindref="compound">MinmaxDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamMinmaxDecor.h" line="10" column="5" bodyfile="src/evamMinmaxDecor.h" bodystart="10" bodyend="14"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_minmax_config_1aff5ce4bb8a98e04d34ee5b94e811e92d" prot="public" virt="non-virtual"><scope>evam::MinmaxConfig</scope><name>MinmaxConfig</name></member>
+      <member refid="structevam_1_1_minmax_config_1a9cae8eafe7a4298fd6bb21cb53fcb6ae" prot="public" virt="non-virtual"><scope>evam::MinmaxConfig</scope><name>n</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

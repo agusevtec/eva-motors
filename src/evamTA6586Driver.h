@@ -7,10 +7,11 @@ namespace evam
     /**
      * @brief Configuration structure for TA6586Driver
      */
-    struct TA6586Config {
+    struct TA6586Config
+    {
         int forwardPin;
         int backwardPin;
-        
+
         TA6586Config(int forwardPin, int backwardPin) : forwardPin(forwardPin), backwardPin(backwardPin) {}
     };
 
@@ -31,12 +32,12 @@ namespace evam
      * @tparam kForwardPin PWM pin connected to FI (forward input)
      * @tparam kBackwardPin PWM pin connected to BI (backward input)
      */
-    template <int kForwardPin, int kBackwardPin>
+    template <int kForwardPin = 0, int kBackwardPin = 0>
     class TA6586Driver
     {
     private:
         TA6586Config mConfig;
-        
+
     public:
         /**
          * @brief Constructor. Initializes pins and stops the motor.
@@ -47,8 +48,8 @@ namespace evam
             pinMode(mConfig.backwardPin, OUTPUT);
             actBipolar(0);
         }
-        
-        template<typename... Args>
+
+        template <typename... Args>
         TA6586Driver(TA6586Config config, Args... args) : mConfig(config)
         {
             pinMode(mConfig.forwardPin, OUTPUT);

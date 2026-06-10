@@ -10,7 +10,7 @@ namespace evam
     struct MinmaxConfig {
         unsigned char n;
         
-        MinmaxConfig(unsigned char size) : n(size) {}
+        MinmaxConfig(unsigned char n) : n(n) {}
     };
 
     /**

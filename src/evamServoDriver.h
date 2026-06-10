@@ -14,8 +14,8 @@ namespace evam
         int middlePulse;
         int maxPulse;
         
-        ServoConfig(int p, int minP, int midP, int maxP) 
-            : pin(p), minPulse(minP), middlePulse(midP), maxPulse(maxP) {}
+        ServoConfig(int pin, int minPulse, int middlePulse, int maxPulse) 
+            : pin(pin), minPulse(minPulse), middlePulse(middlePulse), maxPulse(maxPulse) {}
     };
 
     /**
@@ -65,8 +65,8 @@ namespace evam
     protected:
         /**
          * @brief Bipolar (centered) control. Input range -1000..1000.
-         * Output: 1500µs ± input_mapped.
-         * @param aValue Input value, range -1000..1000, clamped to 500..2500µs output.
+         * Output: 1500Вµs В± input_mapped.
+         * @param aValue Input value, range -1000..1000, clamped to 500..2500Вµs output.
          */
         void actBipolar(signed short aValue)
         {
@@ -79,8 +79,8 @@ namespace evam
 
         /**
          * @brief Unipolar (absolute) control. Input range 0..1000.
-         * Output: 1000µs + input_mapped.
-         * @param aValue Input value, range 0..1000, clamped to 500..2500µs output.
+         * Output: 1000Вµs + input_mapped.
+         * @param aValue Input value, range 0..1000, clamped to 500..2500Вµs output.
          */
         void actUnipolar(signed short aValue)
         {

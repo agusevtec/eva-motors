@@ -11,8 +11,8 @@ namespace evam
         int pinMode1;
         int pinMode2;
         
-        TB6612Config(int speed, int mode1, int mode2) 
-            : pinSpeed(speed), pinMode1(mode1), pinMode2(mode2) {}
+        TB6612Config(int pinSpeed, int pinMode1, int pinMode2) 
+            : pinSpeed(pinSpeed), pinMode1(pinMode1), pinMode2(pinMode2) {}
     };
 
     /**

@@ -10,7 +10,7 @@ namespace evam
         int minValue;
         int maxValue;
         
-        LinearActuatorConfig(int minVal, int maxVal) : minValue(minVal), maxValue(maxVal) {}
+        LinearActuatorConfig(int minValue, int maxValue) : minValue(constrain(minValue, -1000, 1000)), maxValue(constrain(maxValue, -1000, 1000)) {}
     };
 
     /**
@@ -48,10 +48,10 @@ namespace evam
          * @param aMinValue Output value at 0 input (minimum position), range -1000..1000
          * @param aMaxValue Output value at 1000 input (maximum position), range -1000..1000
          */
-        void SetupRange(int aMinValue, int aMaxValue)
+        void SetupRange(int minValue, int maxValue)
         {
-            SetMinValue(aMinValue);
-            SetMaxValue(aMaxValue);
+            SetMinValue(minValue);
+            SetMaxValue(maxValue);
         }
 
         /**

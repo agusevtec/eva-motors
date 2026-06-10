@@ -12,8 +12,11 @@ namespace evam
         signed short minForward;
         signed short maxForward;
         
-        DirectionalConfig(signed short maxBw, signed short minBw, signed short minFw, signed short maxFw)
-            : maxBackward(maxBw), minBackward(minBw), minForward(minFw), maxForward(maxFw) {}
+        DirectionalConfig(signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward)
+            : maxBackward(constrain(maxBackward, -1000, 1000)),
+              minBackward(constrain(minBackward, -1000, 1000)),
+              minForward(constrain(minForward, -1000, 1000)),
+              maxForward(constrain(maxForward, -1000, 1000)) {}
     };
 
     /**
@@ -66,12 +69,12 @@ namespace evam
          * @param aMinForward Minimum forward output value (-1000..1000)
          * @param aMaxForward Maximum forward output value (-1000..1000)
          */
-        void SetupRange(signed short aMaxBackward, signed short aMinBackward, signed short aMinForward, signed short aMaxForward)
+        void SetupRange(signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward)
         {
-            SetMaxBackward(aMaxBackward);
-            SetMinBackward(aMinBackward);
-            SetMinForward(aMinForward);
-            SetMaxForward(aMaxForward);
+            SetMaxBackward(maxBackward);
+            SetMinBackward(minBackward);
+            SetMinForward(minForward);
+            SetMaxForward(maxForward);
         }
 
         /**

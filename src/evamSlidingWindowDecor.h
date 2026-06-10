@@ -13,7 +13,7 @@ namespace evam
     struct SlidingWindowConfig {
         unsigned short windowSize;
         
-        SlidingWindowConfig(unsigned short size) : windowSize(size) {}
+        SlidingWindowConfig(unsigned short windowSize) : windowSize(windowSize) {}
     };
 
     /**

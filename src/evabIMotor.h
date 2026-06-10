@@ -6,6 +6,7 @@ namespace evam
     {
     public:
         virtual void Go(signed short aValue) = 0;
+        virtual ~IMotor() = default;
     };
 
     template <class TMotor>

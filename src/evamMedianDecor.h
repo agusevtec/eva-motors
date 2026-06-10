@@ -7,13 +7,17 @@ using namespace eva;
 
 namespace evam
 {
+    constexpr unsigned short kDefaultWindowSize = 5;
+    constexpr unsigned short kMinWindowSize = 3;
+    constexpr unsigned short kMaxWindowSize = 15;
+
     /**
      * @brief Configuration structure for MedianDecor
      */
     struct MedianConfig {
         unsigned short windowSize;
         
-        MedianConfig(unsigned short size) : windowSize(size) {}
+        MedianConfig(unsigned short windowSize) : windowSize(windowSize) {}
     };
 
     /**
@@ -25,28 +29,28 @@ namespace evam
      * @tparam Motor Base motor class (must implement Go(signed short))
      * @tparam kWindowSize Filter window size (odd number). Default: 5
      */
-    template <class TMotor, unsigned short kWindowSize = 5>
+    template <class TMotor, unsigned short tWindowSize = kDefaultWindowSize>
     class MedianDecor : public Heartbeat, public TMotor
     {
-        static_assert(kWindowSize >= 3 && kWindowSize <= 15, 
-                      "kWindowSize out of range 3..15");
-        static_assert(kWindowSize % 2 == 1, 
-                      "kWindowSize must be odd");
+        static_assert(tWindowSize >= kMinWindowSize && tWindowSize <= kMaxWindowSize, 
+                      "tWindowSize out of range");
+        static_assert(tWindowSize % 2 == 1, 
+                      "tWindowSize must be odd");
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
         
         MedianConfig mConfig;
         
-        signed short mBuffer[kWindowSize];
+        signed short mBuffer[tWindowSize];
         unsigned short mIndex = 0;
         bool mBufferFull = false;
         signed short mLastSample = 0;
 
         signed short calculateMedian()
         {
-            signed short sorted[kWindowSize];
-            unsigned short count = mBufferFull ? kWindowSize : mIndex + 1;
+            signed short sorted[tWindowSize];
+            unsigned short count = mBufferFull ? tWindowSize : mIndex + 1;
             
             for (unsigned short i = 0; i < count; i++)
                 sorted[i] = mBuffer[i];
@@ -72,22 +76,22 @@ namespace evam
         {
             mBuffer[mIndex] = mLastSample;
             mIndex++;
-            if (mIndex >= kWindowSize)
+            if (mIndex >= tWindowSize)
             {
                 mIndex = 0;
                 mBufferFull = true;
             }
             
-            if (mBufferFull || mIndex > kWindowSize / 2)
+            if (mBufferFull || mIndex > tWindowSize / 2)
             {
                 TMotor::Go(calculateMedian());
             }
         }
 
     public:
-        MedianDecor() : mConfig(kWindowSize), Heartbeat(kHeartbeatPeriodMs)
+        MedianDecor() : mConfig(tWindowSize), Heartbeat(kHeartbeatPeriodMs)
         {
-            for (unsigned short i = 0; i < kWindowSize; i++)
+            for (unsigned short i = 0; i < tWindowSize; i++)
                 mBuffer[i] = 0;
         }
         
@@ -95,7 +99,7 @@ namespace evam
         MedianDecor(MedianConfig config, Args... args) 
             : mConfig(config), Heartbeat(kHeartbeatPeriodMs), TMotor(args...)
         {
-            for (unsigned short i = 0; i < kWindowSize; i++)
+            for (unsigned short i = 0; i < tWindowSize; i++)
                 mBuffer[i] = 0;
         }
 
@@ -106,7 +110,7 @@ namespace evam
         {
             mIndex = 0;
             mBufferFull = false;
-            for (unsigned short i = 0; i < kWindowSize; i++)
+            for (unsigned short i = 0; i < tWindowSize; i++)
                 mBuffer[i] = 0;
         }
 

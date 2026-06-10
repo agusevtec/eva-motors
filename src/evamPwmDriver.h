@@ -10,7 +10,7 @@ namespace evam
     struct PwmConfig {
         int pin;
         
-        PwmConfig(int p) : pin(p) {}
+        PwmConfig(int pin) : pin(pin) {}
     };
 
     /**
@@ -39,6 +39,15 @@ namespace evam
         {
             pinMode(mConfig.pin, OUTPUT);
             actUnipolar(0);
+        }
+
+        /**
+         * @brief Get the PWM pin number.
+         * @return Pin number.
+         */
+        int GetPin() const
+        {
+            return mConfig.pin;
         }
 
     protected:

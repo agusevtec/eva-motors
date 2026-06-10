@@ -7,6 +7,10 @@ using namespace eva;
 
 namespace evam
 {
+    constexpr unsigned short kDefaultKickDurationMs = 20;
+    constexpr signed short kDefaultKickPower = 1000;
+    constexpr signed short kMaxKickPower = 1000;
+
     /**
      * @brief Configuration structure for KickDecor
      */
@@ -14,7 +18,7 @@ namespace evam
         unsigned short duration;
         signed short power;
         
-        KickConfig(unsigned short dur, signed short pow) : duration(dur), power(pow) {}
+        KickConfig(unsigned short duration, signed short power) : duration(duration > 0 ? duration : kDefaultKickDurationMs), power(constrain(power, 0, kMaxKickPower)) {}
     };
 
     /**
@@ -28,12 +32,12 @@ namespace evam
      * @tparam kDefaultKickPower Default kick power. Range: -1000..1000. Default: 1000 (full power).
      */
     template <class TMotor, 
-              unsigned short kDefaultKickDuration = 20, 
-              signed short kDefaultKickPower = 1000>
+              unsigned short tDefaultKickDurationMs = kDefaultKickDurationMs, 
+              signed short tDefaultKickPower = kDefaultKickPower>
     class KickDecor : public virtual Tickable, public TMotor
     {
-        static_assert(kDefaultKickDuration > 0, "kDefaultKickDuration must be > 0");
-        static_assert(kDefaultKickPower > 0 && kDefaultKickPower <= 1000, "kDefaultKickPower out of range");
+        static_assert(tDefaultKickDurationMs > 0, "tDefaultKickDurationMs must be > 0");
+        static_assert(tDefaultKickPower > 0 && tDefaultKickPower <= kMaxKickPower, "tDefaultKickPower out of range");
 
     private:
         KickConfig mConfig;
@@ -65,7 +69,7 @@ namespace evam
         }
 
     public:
-        KickDecor() : mConfig(kDefaultKickDuration, kDefaultKickPower) {}
+        KickDecor() : mConfig(tDefaultKickDurationMs, tDefaultKickPower) {}
         
         template<typename... Args>
         KickDecor(KickConfig config, Args... args) : mConfig(config), TMotor(args...) {}
@@ -76,20 +80,20 @@ namespace evam
          * @param aKickDuration Kick pulse duration in milliseconds
          * @param aKickPower Kick power, range -1000..1000
          */
-        void SetupKickstart(unsigned short aKickDuration, signed short aKickPower)
+        void SetupKickstart(unsigned short duration, signed short power)
         {
-            SetKickDuration(aKickDuration);
-            SetKickPower(aKickPower);
+            SetKickDuration(duration);
+            SetKickPower(power);
         }
 
         /**
          * @brief Set kick pulse duration.
          * @param aDuration Duration in milliseconds, must be > 0.
          */
-        void SetKickDuration(unsigned short aDuration)
+        void SetKickDuration(unsigned short aValue)
         {
-            if (aDuration > 0)
-                mConfig.duration = aDuration;
+            if (aValue > 0)
+                mConfig.duration = aValue;
         }
 
         /**
@@ -105,9 +109,9 @@ namespace evam
          * @brief Set kick power.
          * @param aPower Power value, clamped to 0..1000.
          */
-        void SetKickPower(signed short aPower)
+        void SetKickPower(signed short aValue)
         {
-            mConfig.power = constrain(aPower, 0, 1000);
+            mConfig.power = constrain(aValue, 0, 1000);
         }
 
         /**

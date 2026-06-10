@@ -11,7 +11,7 @@ namespace evam
         int forwardPin;
         int backwardPin;
         
-        TA6586Config(int fwd, int bwd) : forwardPin(fwd), backwardPin(bwd) {}
+        TA6586Config(int forwardPin, int backwardPin) : forwardPin(forwardPin), backwardPin(backwardPin) {}
     };
 
     /**

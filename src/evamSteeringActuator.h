@@ -11,8 +11,10 @@ namespace evam
         signed short centerPos;
         signed short rightPos;
         
-        SteeringConfig(signed short left, signed short center, signed short right) 
-            : leftPos(left), centerPos(center), rightPos(right) {}
+        SteeringConfig(signed short leftPos, signed short centerPos, signed short rightPos)
+            : leftPos(constrain(leftPos, -1000, 1000)),
+              centerPos(constrain(centerPos, -1000, 1000)),
+              rightPos(constrain(rightPos, -1000, 1000)) {}
     };
 
     /**
@@ -60,11 +62,11 @@ namespace evam
          * @param aCenterPos Output value at 0 input (center position), range -1000..1000
          * @param aRightPos Output value at 1000 input (rightmost position), range -1000..1000
          */
-        void SetupRange(signed short aLeftPos, signed short aCenterPos, signed short aRightPos)
+        void SetupRange(signed short leftPos, signed short centerPos, signed short rightPos)
         {
-            SetLeftPos(aLeftPos);
-            SetCenterPos(aCenterPos);
-            SetRightPos(aRightPos);
+            SetLeftPos(leftPos);
+            SetCenterPos(centerPos);
+            SetRightPos(rightPos);
         }
 
         /**

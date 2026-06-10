@@ -4,13 +4,17 @@
 
 namespace evam
 {
+    constexpr signed short kDefaultBend = 0;
+    constexpr signed short kMinBend = -10;
+    constexpr signed short kMaxBend = 10;
+
     /**
      * @brief Configuration structure for CurveDecor
      */
     struct CurveConfig {
         signed short bend;
         
-        CurveConfig(signed short b) : bend(b) {}
+        CurveConfig(signed short bend) : bend(constrain(bend, kMinBend, kMaxBend)) {}
     };
 
     /**
@@ -23,10 +27,10 @@ namespace evam
      * @tparam Motor Base motor class (must implement Go(signed short))
      * @tparam kBend Bend intensity. Range: -10..10. 0 = linear.
      */
-    template <class TMotor, signed short kBend = 0>
+    template <class TMotor, signed short tBend = kDefaultBend>
     class CurveDecor : public TMotor
     {
-        static_assert(kBend >= -10 && kBend <= 10, "kBend out of range -10..10");
+        static_assert(tBend >= kMinBend && tBend <= kMaxBend, "tBend out of range");
         
     private:
         CurveConfig mConfig;
@@ -43,7 +47,7 @@ namespace evam
         }
 
     public:
-        CurveDecor() : mConfig(kBend) {}
+        CurveDecor() : mConfig(tBend) {}
         
         template<typename... Args>
         CurveDecor(CurveConfig config, Args... args) : TMotor(args...), mConfig(config) {}

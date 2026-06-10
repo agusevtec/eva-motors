@@ -10,7 +10,7 @@ namespace evam
         int minValue;
         int maxValue;
         
-        ForwardConfig(int minVal, int maxVal) : minValue(minVal), maxValue(maxVal) {}
+        ForwardConfig(int minValue, int maxValue) : minValue(constrain(minValue, -1000, 1000)), maxValue(constrain(maxValue, -1000, 1000)) {}
     };
 
     /**
@@ -50,10 +50,10 @@ namespace evam
          * @param aMinValue Minimum output value (stop position)
          * @param aMaxValue Maximum output value (full throttle)
          */
-        void SetupRange(int aMinValue, int aMaxValue)
+        void SetupRange(int minValue, int maxValue)
         {
-            SetMinValue(aMinValue);
-            SetMaxValue(aMaxValue);
+            SetMinValue(minValue);
+            SetMaxValue(maxValue);
         }
 
         /**

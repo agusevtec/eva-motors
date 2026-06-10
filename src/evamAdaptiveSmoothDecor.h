@@ -7,6 +7,11 @@ using namespace eva;
 
 namespace evam
 {
+    constexpr unsigned short kDefaultMinTimeConstantMs = 10;
+    constexpr unsigned short kDefaultMaxTimeConstantMs = 150;
+    constexpr unsigned short kMinTimeConstantLimit = 5;
+    constexpr unsigned short kMaxTimeConstantLimit = 500;
+
     /**
      * @brief Configuration structure for AdaptiveSmoothDecor
      */
@@ -14,8 +19,9 @@ namespace evam
         unsigned short minTimeConstantMs;
         unsigned short maxTimeConstantMs;
         
-        AdaptiveSmoothConfig(unsigned short minTc, unsigned short maxTc)
-            : minTimeConstantMs(minTc), maxTimeConstantMs(maxTc) {}
+        AdaptiveSmoothConfig(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)
+            : minTimeConstantMs(constrain(minTimeConstantMs, kMinTimeConstantLimit, kMaxTimeConstantLimit)),
+              maxTimeConstantMs(constrain(maxTimeConstantMs, minTimeConstantMs, kMaxTimeConstantLimit)) {}
     };
 
     /**
@@ -29,14 +35,14 @@ namespace evam
      * @tparam kMaxTimeConstantMs Maximum time constant (heavy smoothing). Default: 150ms
      */
     template <class TMotor,
-              unsigned short kMinTimeConstantMs = 10,
-              unsigned short kMaxTimeConstantMs = 150>
+              unsigned short tMinTimeConstantMs = kDefaultMinTimeConstantMs,
+              unsigned short tMaxTimeConstantMs = kDefaultMaxTimeConstantMs>
     class AdaptiveSmoothDecor : public Heartbeat, public TMotor
     {
-        static_assert(kMinTimeConstantMs >= 5 && kMinTimeConstantMs <= 200,
-                      "kMinTimeConstantMs out of range 5..200");
-        static_assert(kMaxTimeConstantMs >= kMinTimeConstantMs && kMaxTimeConstantMs <= 500,
-                      "kMaxTimeConstantMs must be >= kMinTimeConstantMs and <= 500");
+        static_assert(tMinTimeConstantMs >= kMinTimeConstantLimit && tMinTimeConstantMs <= kMaxTimeConstantLimit,
+                      "tMinTimeConstantMs out of range");
+        static_assert(tMaxTimeConstantMs >= tMinTimeConstantMs && tMaxTimeConstantMs <= kMaxTimeConstantLimit,
+                      "tMaxTimeConstantMs must be >= tMinTimeConstantMs");
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
@@ -47,7 +53,7 @@ namespace evam
         signed short mTargetValue = 0;
         signed short mCurrentValue = 0;
         signed short mLastTargetValue = 0;
-        unsigned short mCurrentTimeConstantMs = kMaxTimeConstantMs;
+        unsigned short mCurrentTimeConstantMs = tMaxTimeConstantMs;
 
         unsigned short calculateTimeConstant()
         {
@@ -85,7 +91,7 @@ namespace evam
         }
 
     public:
-        AdaptiveSmoothDecor() : mConfig(kMinTimeConstantMs, kMaxTimeConstantMs), Heartbeat(kHeartbeatPeriodMs) {}
+        AdaptiveSmoothDecor() : mConfig(tMinTimeConstantMs, tMaxTimeConstantMs), Heartbeat(kHeartbeatPeriodMs) {}
         
         template<typename... Args>
         AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args) 
@@ -94,6 +100,32 @@ namespace evam
         void Go(signed short aValue)
         {
             mTargetValue = constrain(aValue, -1000, 1000);
+        }
+
+        void SetMinTimeConstantMs(unsigned short value)
+        {
+            mConfig.minTimeConstantMs = constrain(value, kMinTimeConstantLimit, kMaxTimeConstantLimit);
+        }
+
+        unsigned short GetMinTimeConstantMs() const
+        {
+            return mConfig.minTimeConstantMs;
+        }
+
+        void SetMaxTimeConstantMs(unsigned short value)
+        {
+            mConfig.maxTimeConstantMs = constrain(value, mConfig.minTimeConstantMs, kMaxTimeConstantLimit);
+        }
+
+        unsigned short GetMaxTimeConstantMs() const
+        {
+            return mConfig.maxTimeConstantMs;
+        }
+
+        void SetupRange(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)
+        {
+            SetMinTimeConstantMs(minTimeConstantMs);
+            SetMaxTimeConstantMs(maxTimeConstantMs);
         }
     };
 }

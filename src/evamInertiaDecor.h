@@ -6,13 +6,15 @@ using namespace eva;
 
 namespace evam
 {
+    constexpr unsigned short kInertiaMass = 5;
     /**
      * @brief Configuration structure for InertiaDecor
      */
-    struct InertiaConfig {
+    struct InertiaConfig
+    {
         signed short inertiaMass;
-        
-        InertiaConfig(signed short mass) : inertiaMass(mass) {}
+
+        InertiaConfig(signed short inertiaMass) : inertiaMass(inertiaMass) {}
     };
 
     /**
@@ -23,16 +25,16 @@ namespace evam
      * changes are applied immediately.
      *
      * @tparam Motor Base motor class (must implement Go(signed short))
-     * @tparam kInertiaMass Virtual mass (positive). Larger values = slower deceleration.
+     * @tparam tInertiaMass Virtual mass (positive). Larger values = slower deceleration.
      */
-    template <class TMotor, unsigned short kInertiaMass = 5>
+    template <class TMotor, unsigned short tInertiaMass = kInertiaMass>
     class InertiaDecor : public Heartbeat, public TMotor
     {
-        static_assert(0 < kInertiaMass, "kInertiaMass must be > 0");
+        static_assert(0 < tInertiaMass, "tInertiaMass must be > 0");
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 100;
-        
+
         InertiaConfig mConfig;
         signed short mDesiredSpeed = 0;
         signed short mSpeed = 0;
@@ -60,11 +62,11 @@ namespace evam
         }
 
     public:
-        InertiaDecor() : Heartbeat(kHeartbeatPeriodMs), mConfig(kInertiaMass), mDesiredSpeed(0), mSpeed(0) {}
-        
-        template<typename... Args>
-        InertiaDecor(InertiaConfig config, Args... args) 
-            : Heartbeat(kHeartbeatPeriodMs), TMotor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0){}
+        InertiaDecor() : Heartbeat(kHeartbeatPeriodMs), mConfig(tInertiaMass), mDesiredSpeed(0), mSpeed(0) {}
+
+        template <typename... Args>
+        InertiaDecor(InertiaConfig config, Args... args)
+            : Heartbeat(kHeartbeatPeriodMs), TMotor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0) {}
 
         /**
          * @brief Set the inertia mass value.

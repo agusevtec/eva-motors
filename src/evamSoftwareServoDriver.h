@@ -16,8 +16,8 @@ namespace evam
         int middlePulse;
         int maxPulse;
         
-        SoftwareServoConfig(int p, int minP, int midP, int maxP) 
-            : pin(p), minPulse(minP), middlePulse(midP), maxPulse(maxP) {}
+        SoftwareServoConfig(int pin, int minPulse, int middlePulse, int maxPulse) 
+            : pin(pin), minPulse(minPulse), middlePulse(middlePulse), maxPulse(maxPulse) {}
     };
 
     /**
@@ -92,6 +92,15 @@ namespace evam
         {
             pinMode(mConfig.pin, OUTPUT);
             digitalWrite(mConfig.pin, LOW);
+        }
+
+        /**
+         * @brief Get the servo pin number.
+         * @return Pin number used for servo signal.
+         */
+        int GetPin() const
+        {
+            return mConfig.pin;
         }
 
     protected:

@@ -130,6 +130,16 @@ motor.SetMaxBackward(-800);
 motor.SetMinBackward(-100);
 motor.Go(500);
 ```
+or dynamic configuration can be used:
+
+```cpp
+KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<>>>>> motor = {
+    KickConfig{ 25, 900 },
+    InertiaConfig{ 15 },
+    CurveConfig{ 5 },
+    DirectionalConfig{ -1000, -200, 200, 1000 },
+    TA6586Config{ 9, 10 }
+};
 
 ## Installation
 

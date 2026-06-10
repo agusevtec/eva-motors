@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="structevam_1_1_pwm_config" kind="struct" language="C++" prot="public">
     <compoundname>evam::PwmConfig</compoundname>
     <includes refid="evam_pwm_driver_8h" local="no">evamPwmDriver.h</includes>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="11" column="13" bodyfile="src/evamPwmDriver.h" bodystart="11" bodyend="-1"/>
+        <location file="src/evamPwmDriver.h" line="12" column="13" bodyfile="src/evamPwmDriver.h" bodystart="12" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="13" column="9" bodyfile="src/evamPwmDriver.h" bodystart="13" bodyend="13"/>
+        <location file="src/evamPwmDriver.h" line="14" column="9" bodyfile="src/evamPwmDriver.h" bodystart="14" bodyend="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -44,7 +44,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evamPwmDriver.h" line="10" column="5" bodyfile="src/evamPwmDriver.h" bodystart="10" bodyend="14"/>
+    <location file="src/evamPwmDriver.h" line="10" column="5" bodyfile="src/evamPwmDriver.h" bodystart="11" bodyend="15"/>
     <listofallmembers>
       <member refid="structevam_1_1_pwm_config_1a4258c99c1a9114856c1b8a5b18b20e37" prot="public" virt="non-virtual"><scope>evam::PwmConfig</scope><name>pin</name></member>
       <member refid="structevam_1_1_pwm_config_1a02cc08a1ec604e5f66de1179f53beecf" prot="public" virt="non-virtual"><scope>evam::PwmConfig</scope><name>PwmConfig</name></member>

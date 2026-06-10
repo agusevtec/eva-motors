@@ -14,19 +14,20 @@
 
 namespace evam
 {
-    struct TA6586Config {
+    struct TA6586Config
+    {
         int forwardPin;
         int backwardPin;
-        
+
         TA6586Config(int forwardPin, int backwardPin) : forwardPin(forwardPin), backwardPin(backwardPin) {}
     };
 
-    template <int kForwardPin, int kBackwardPin>
+    template <int kForwardPin = 0, int kBackwardPin = 0>
     class TA6586Driver
     {
     private:
         TA6586Config mConfig;
-        
+
     public:
         TA6586Driver() : mConfig(kForwardPin, kBackwardPin)
         {
@@ -34,8 +35,8 @@ namespace evam
             pinMode(mConfig.backwardPin, OUTPUT);
             actBipolar(0);
         }
-        
-        template<typename... Args>
+
+        template <typename... Args>
         TA6586Driver(TA6586Config config, Args... args) : mConfig(config)
         {
             pinMode(mConfig.forwardPin, OUTPUT);

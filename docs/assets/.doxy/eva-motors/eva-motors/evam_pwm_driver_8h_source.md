@@ -14,26 +14,27 @@
 
 namespace evam
 {
-    struct PwmConfig {
+    struct PwmConfig
+    {
         int pin;
-        
+
         PwmConfig(int pin) : pin(pin) {}
     };
 
-    template <int kPin>
+    template <int kPin = 0>
     class PwmDriver
     {
     private:
         PwmConfig mConfig;
-        
+
     public:
         PwmDriver() : mConfig(kPin)
         {
             pinMode(kPin, OUTPUT);
             actUnipolar(0);
         }
-        
-        template<typename... Args>
+
+        template <typename... Args>
         PwmDriver(PwmConfig config, Args... args) : mConfig(config)
         {
             pinMode(mConfig.pin, OUTPUT);

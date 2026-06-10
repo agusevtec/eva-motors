@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.17.0" xml:lang="en-US">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.16.1" xml:lang="en-US">
   <compound refid="structevam_1_1_adaptive_smooth_config" kind="struct"><name>evam::AdaptiveSmoothConfig</name>
     <member refid="structevam_1_1_adaptive_smooth_config_1a4a5f2b8aec34ab30e563a27477c984bb" kind="variable"><name>minTimeConstantMs</name></member>
     <member refid="structevam_1_1_adaptive_smooth_config_1ad7eebd958a5f6dfa5f126d12e6fd7ed0" kind="variable"><name>maxTimeConstantMs</name></member>

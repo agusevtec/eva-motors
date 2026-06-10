@@ -11,10 +11,10 @@
       
       
       
-        <link rel="prev" href="../configuration/">
+        <link rel="prev" href="../filters/">
       
       
-        <link rel="next" href="../../eva-motors/annotated/">
+        <link rel="next" href="../custom-drivers/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Custom drivers - EVA Motors</title>
+        <title>Configuration - EVA Motors</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#custom-drivers" class="md-skip">
+        <a href="#configuration-system" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Custom drivers
+              Configuration
             
           </span>
         </div>
@@ -407,34 +407,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -444,8 +416,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -454,7 +424,7 @@
   <span class="md-ellipsis">
     
   
-    Custom drivers
+    Configuration
   
 
     
@@ -472,7 +442,7 @@
   <span class="md-ellipsis">
     
   
-    Custom drivers
+    Configuration
   
 
     
@@ -488,8 +458,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -498,44 +466,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#configuration-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Configuration System
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#driver-interface-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Driver Interface Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-bipolar-vs-unipolar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understanding Bipolar vs Unipolar
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding Bipolar vs Unipolar">
+    <nav class="md-nav" aria-label="Configuration System">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bipolar-interface-actbipolar" class="md-nav__link">
+  <a href="#two-ways-to-configure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bipolar Interface (actBipolar)
+        Two Ways to Configure
       
     </span>
   </a>
@@ -543,10 +489,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#unipolar-interface-actunipolar" class="md-nav__link">
+  <a href="#config-structure-initialization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Unipolar Interface (actUnipolar)
+        Config Structure Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-parameter-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Parameter Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-dynamic-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Dynamic Configuration
       
     </span>
   </a>
@@ -558,54 +526,38 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#custom-driver-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom Driver Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-your-custom-driver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Your Custom Driver
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contributing
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-drivers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom drivers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -773,8 +725,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -783,44 +733,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#configuration-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Configuration System
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#driver-interface-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Driver Interface Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-bipolar-vs-unipolar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understanding Bipolar vs Unipolar
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understanding Bipolar vs Unipolar">
+    <nav class="md-nav" aria-label="Configuration System">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bipolar-interface-actbipolar" class="md-nav__link">
+  <a href="#two-ways-to-configure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bipolar Interface (actBipolar)
+        Two Ways to Configure
       
     </span>
   </a>
@@ -828,10 +756,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#unipolar-interface-actunipolar" class="md-nav__link">
+  <a href="#config-structure-initialization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Unipolar Interface (actUnipolar)
+        Config Structure Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-parameter-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Parameter Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-dynamic-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Dynamic Configuration
       
     </span>
   </a>
@@ -840,50 +790,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-driver-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom Driver Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-your-custom-driver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Your Custom Driver
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contributing
-      
-    </span>
-  </a>
   
 </li>
       
@@ -907,132 +813,116 @@
   
 
 
-<h1 id="custom-drivers">Custom Drivers<a class="headerlink" href="#custom-drivers" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>EVA Motors provides a clean hardware abstraction layer that makes adding support for new motor drivers straightforward. The driver layer is designed to be minimal, focused, and easy to implement while maintaining consistency with the rest of the library.</p>
-<h2 id="driver-interface-requirements">Driver Interface Requirements<a class="headerlink" href="#driver-interface-requirements" title="Permanent link">&para;</a></h2>
-<p>To create a custom driver, your class must implement one or both of the following protected methods:</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Purpose</th>
-<th>Input Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>actBipolar(signed short)</code></td>
-<td>Bidirectional control</td>
-<td>-1000..1000</td>
-</tr>
-<tr>
-<td><code>actUnipolar(unsigned short)</code></td>
-<td>Unidirectional control</td>
-<td>0..1000</td>
-</tr>
-</tbody>
-</table>
-<h2 id="understanding-bipolar-vs-unipolar">Understanding Bipolar vs Unipolar<a class="headerlink" href="#understanding-bipolar-vs-unipolar" title="Permanent link">&para;</a></h2>
-<h3 id="bipolar-interface-actbipolar">Bipolar Interface (<code>actBipolar</code>)<a class="headerlink" href="#bipolar-interface-actbipolar" title="Permanent link">&para;</a></h3>
-<p>Used for devices that support both forward and reverse directions. The input range -1000..1000 represents:
-- Negative values: Reverse direction (0% to 100% power)
-- Zero: Stop or neutral
-- Positive values: Forward direction (0% to 100% power)</p>
-<p>Typical applications: DC motors with H-bridges, bidirectional servos</p>
-<h3 id="unipolar-interface-actunipolar">Unipolar Interface (<code>actUnipolar</code>)<a class="headerlink" href="#unipolar-interface-actunipolar" title="Permanent link">&para;</a></h3>
-<p>Used for devices that operate in only one direction. The input range 0..1000 represents:
-- 0: Minimum output (stop or idle)
-- 1000: Maximum output (full power)</p>
-<p>Typical applications: Aircraft ESCs, pumps, fans, LEDs, linear actuators</p>
-<h2 id="custom-driver-example">Custom Driver Example<a class="headerlink" href="#custom-driver-example" title="Permanent link">&para;</a></h2>
-<p>Here is how to create a driver for a hypothetical motor controller:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef MY_DRIVER_H_</span>
-<span class="cp">#define MY_DRIVER_H_</span>
+  <h1>Configuration</h1>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span>
-
-<span class="k">namespace</span><span class="w"> </span><span class="nn">evam</span><span class="w"> </span><span class="p">{</span>
-
-<span class="cm">/**</span>
-<span class="cm"> * @brief Driver for hypothetical specific motor controller</span>
-<span class="cm"> * </span>
-<span class="cm"> * This driver demonstrates how to wrap any motor control hardware</span>
-<span class="cm"> * into the EVA Motors driver interface.</span>
-<span class="cm"> */</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">MyDriver</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * @brief Constructor - initialize hardware</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="n">MyDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Initialize your hardware here</span>
-<span class="w">        </span><span class="n">SpecificController</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-<span class="w">        </span><span class="n">actBipolar</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// Start in safe state</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="k">protected</span><span class="o">:</span>
-<span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * @brief Bipolar control implementation</span>
-<span class="cm">     * @param aValue Range -1000..1000</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">actBipolar</span><span class="p">(</span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aValue</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Constrain input to valid range</span>
-<span class="w">        </span><span class="n">aValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constrain</span><span class="p">(</span><span class="n">aValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-
-<span class="w">        </span><span class="c1">// Convert to your hardware-specific format</span>
-<span class="w">        </span><span class="c1">// For example: -1000..1000 to -255..255</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">scaledValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">aValue</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">-255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
-
-<span class="w">        </span><span class="c1">// Send to your hardware</span>
-<span class="w">        </span><span class="n">SpecificController</span><span class="p">.</span><span class="n">writeSignal</span><span class="p">(</span><span class="n">scaledValue</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="k">private</span><span class="o">:</span>
-<span class="w">    </span><span class="c1">// Your hardware-specific members</span>
-<span class="p">};</span>
-
-<span class="p">}</span><span class="w"> </span><span class="c1">// namespace evam</span>
-
-<span class="cp">#endif </span><span class="c1">// MY_DRIVER_H_</span>
+<h2 id="configuration-system">Configuration System<a class="headerlink" href="#configuration-system" title="Permanent link">&para;</a></h2>
+<p>EVA Motors provides flexible configuration through dedicated config structures. Each decorator and motor wrapper includes its own config structure that can be used either at compile-time (template parameters) or runtime (config objects).</p>
+<h3 id="two-ways-to-configure">Two Ways to Configure<a class="headerlink" href="#two-ways-to-configure" title="Permanent link">&para;</a></h3>
+<p><strong>1. Template parameters (compile-time) – for fixed configurations:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Using template parameters</span>
+<span class="k">using</span><span class="w"> </span><span class="n">Motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurveDecor</span><span class="o">&lt;</span>
+<span class="w">    </span><span class="n">DirectionalMotor</span><span class="o">&lt;</span>
+<span class="w">        </span><span class="n">TA6586Driver</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">        </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">-200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w">  </span><span class="c1">// DirectionalMotor template params</span>
+<span class="w">    </span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">-3</span><span class="w">  </span><span class="c1">// CurveDecor template param: bend = -3</span>
+<span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 
-<h2 id="using-your-custom-driver">Using Your Custom Driver<a class="headerlink" href="#using-your-custom-driver" title="Permanent link">&para;</a></h2>
-<p>Once implemented, your driver can be used with any compatible motor wrapper:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamDirectionalMotor.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyDriver.h&quot;</span>
+<p><strong>2. Config structures (runtime) – for dynamic configuration:</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Using config structures</span>
 
-<span class="c1">// Combine your driver with EVA Motors wrappers</span>
-<span class="k">using</span><span class="w"> </span><span class="n">MyMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">MyDriver</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">CurveDecor</span><span class="o">&lt;</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">TA6586Driver</span><span class="o">&lt;&gt;&gt;&gt;</span><span class="w"> </span><span class="n">motorr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">CurveConfig</span><span class="p">{</span><span class="w"> </span><span class="mi">-3</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="n">DirectionalConfig</span><span class="p">{</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">-200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="n">TA6586Config</span><span class="p">{</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+</code></pre></div>
 
-<span class="n">MyMotor</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
+<h3 id="config-structure-initialization">Config Structure Initialization<a class="headerlink" href="#config-structure-initialization" title="Permanent link">&para;</a></h3>
+<p>All config structures use consistent parameter names matching their fields:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Adaptive smoothing</span>
+<span class="n">AdaptiveSmoothConfig</span><span class="w"> </span><span class="nf">smoothConfig</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span><span class="w">  </span><span class="c1">// minTimeConstantMs, maxTimeConstantMs</span>
+
+<span class="c1">// Curve (S-curve) behavior</span>
+<span class="n">CurveConfig</span><span class="w"> </span><span class="nf">curveConfig</span><span class="p">(</span><span class="mi">-3</span><span class="p">);</span><span class="w">  </span><span class="c1">// bend (-10..10)</span>
+
+<span class="c1">// Directional motor range</span>
+<span class="n">DirectionalConfig</span><span class="w"> </span><span class="nf">dirConfig</span><span class="p">(</span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">-200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">// maxBackward, minBackward, minForward, maxForward</span>
+
+<span class="c1">// Forward-only motor</span>
+<span class="n">ForwardConfig</span><span class="w"> </span><span class="nf">forwardConfig</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">// minValue, maxValue</span>
+
+<span class="c1">// Inertia simulation</span>
+<span class="n">InertiaConfig</span><span class="w"> </span><span class="nf">inertiaConfig</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">  </span><span class="c1">// inertiaMass</span>
+
+<span class="c1">// Kick-start</span>
+<span class="n">KickConfig</span><span class="w"> </span><span class="nf">kickConfig</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">900</span><span class="p">);</span><span class="w">  </span><span class="c1">// duration, power</span>
+
+<span class="c1">// Linear actuator</span>
+<span class="n">LinearActuatorConfig</span><span class="w"> </span><span class="nf">linearConfig</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">// minValue, maxValue</span>
+
+<span class="c1">// Median filter</span>
+<span class="n">MedianConfig</span><span class="w"> </span><span class="nf">medianConfig</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// windowSize</span>
+
+<span class="c1">// Steering actuator</span>
+<span class="n">SteeringConfig</span><span class="w"> </span><span class="nf">steeringConfig</span><span class="p">(</span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">  </span><span class="c1">// leftPos, centerPos, rightPos</span>
+
+<span class="c1">// PWM driver</span>
+<span class="n">PwmConfig</span><span class="w"> </span><span class="nf">pwmConfig</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">  </span><span class="c1">// pin</span>
+
+<span class="c1">// Servo driver</span>
+<span class="n">ServoConfig</span><span class="w"> </span><span class="nf">servoConfig</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1500</span><span class="p">,</span><span class="w"> </span><span class="mi">2000</span><span class="p">);</span><span class="w">  </span><span class="c1">// pin, minPulse, middlePulse, maxPulse</span>
+
+<span class="c1">// TA6586 driver</span>
+<span class="n">TA6586Config</span><span class="w"> </span><span class="nf">ta6586Config</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">  </span><span class="c1">// forwardPin, backwardPin</span>
+
+<span class="c1">// TB6612 driver</span>
+<span class="n">TB6612Config</span><span class="w"> </span><span class="nf">tb6612Config</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span><span class="w">  </span><span class="c1">// pinSpeed, pinMode1, pinMode2</span>
+</code></pre></div>
+
+<h3 id="runtime-parameter-changes">Runtime Parameter Changes<a class="headerlink" href="#runtime-parameter-changes" title="Permanent link">&para;</a></h3>
+<p>All configurable parameters can be changed at runtime using <code>SetXxx()</code> / <code>GetXxx()</code> methods:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">InertiaDecor</span><span class="o">&lt;</span><span class="n">ForwardMotor</span><span class="o">&lt;</span><span class="n">PwmDriver</span><span class="o">&lt;</span><span class="mi">9</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
+
+<span class="c1">// Change inertia mass at runtime</span>
+<span class="n">motor</span><span class="p">.</span><span class="n">SetInertiaMass</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">motor</span><span class="p">.</span><span class="n">GetInertiaMass</span><span class="p">();</span><span class="w">  </span><span class="c1">// returns 20</span>
+
+<span class="c1">// Change direction range at runtime</span>
+<span class="n">motor</span><span class="p">.</span><span class="n">SetMaxForward</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="n">motor</span><span class="p">.</span><span class="n">SetMinForward</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</code></pre></div>
+
+<h3 id="complete-example-dynamic-configuration">Complete Example: Dynamic Configuration<a class="headerlink" href="#complete-example-dynamic-configuration" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTac.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamAdaptiveSmoothDecor.h&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">evam</span><span class="p">;</span>
+
+<span class="c1">// Type definition without compile-time parameters</span>
+<span class="k">using</span><span class="w"> </span><span class="n">SmoothMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AdaptiveSmoothDecor</span><span class="o">&lt;</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">TA6586Driver</span><span class="o">&lt;&gt;&gt;&gt;</span><span class="p">;</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">SetupRange</span><span class="p">(</span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">-200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Create config structures with desired values</span>
+<span class="w">    </span><span class="n">AdaptiveSmoothConfig</span><span class="w"> </span><span class="n">smoothConfig</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span><span class="w">  </span><span class="c1">// custom time constants</span>
+<span class="w">    </span><span class="n">DirectionalConfig</span><span class="w"> </span><span class="n">dirConfig</span><span class="p">(</span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">-150</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TA6586Config</span><span class="w"> </span><span class="n">driverConfig</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Initialize motor with runtime config</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="n">SmoothMotor</span><span class="w"> </span><span class="n">motor</span><span class="p">(</span><span class="n">smoothConfig</span><span class="p">,</span><span class="w"> </span><span class="n">dirConfig</span><span class="p">,</span><span class="w"> </span><span class="n">driverConfig</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Adjust parameters on the fly</span>
+<span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">SetMinForward</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span>
+<span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">SetMaxTimeConstantMs</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">Go</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">Go</span><span class="p">(</span><span class="mi">750</span><span class="p">);</span><span class="w">  </span><span class="c1">// 75 percent forward</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
-<span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">Go</span><span class="p">(</span><span class="mi">-500</span><span class="p">);</span><span class="w"> </span><span class="c1">// 50 percent reverse</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">eva</span><span class="o">::</span><span class="n">tac</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<h2 id="key-points">Key Points<a class="headerlink" href="#key-points" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Implement only what you need – Your driver can implement one or both interfaces</li>
-<li>Initialize to safe state – Always call <code>actBipolar(0)</code> or <code>actUnipolar(0)</code> in constructor</li>
-<li>Constrain inputs – Use <code>constrain()</code> before mapping to hardware values</li>
-<li>Keep it minimal – The driver should only translate between EVA Motors ranges and your hardware</li>
-</ol>
-<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
-<p>If you have created a driver for a common motor controller, contributions are welcome and appreciated.</p>
-<p>Please submit a pull request with:
-- Complete driver implementation
-- Clear documentation including pin connections
-- Basic usage example</p>
-<p>Your driver will help the entire community and make EVA Motors more versatile.</p>
 
 
 

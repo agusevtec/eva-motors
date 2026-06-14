@@ -6,11 +6,12 @@ namespace evam
     /**
      * @brief Configuration structure for SteeringActuator
      */
-    struct SteeringConfig {
+    struct SteeringConfig
+    {
         signed short leftPos;
         signed short centerPos;
         signed short rightPos;
-        
+
         SteeringConfig(signed short leftPos, signed short centerPos, signed short rightPos)
             : leftPos(constrain(leftPos, -1000, 1000)),
               centerPos(constrain(centerPos, -1000, 1000)),
@@ -28,9 +29,9 @@ namespace evam
      * @tparam kCenterPos Output value at 0 input (center position)
      * @tparam kRightPos Output value at 1000 input (rightmost position)
      */
-    template <class Driver, 
-              signed short kLeftPos = -1000, 
-              signed short kCenterPos = 0, 
+    template <class Driver,
+              signed short kLeftPos = -1000,
+              signed short kCenterPos = 0,
               signed short kRightPos = 1000>
     class SteeringActuator : public Driver
     {
@@ -40,7 +41,7 @@ namespace evam
 
     private:
         SteeringConfig mConfig;
-        
+
         signed short compute(signed short aLevel) const
         {
             if (aLevel < 0)
@@ -50,10 +51,16 @@ namespace evam
         }
 
     public:
-        SteeringActuator() : mConfig(kLeftPos, kCenterPos, kRightPos) {}
-        
-        template<typename... Args>
-        SteeringActuator(SteeringConfig config, Args... args) : Driver(args...), mConfig(config) {}
+        SteeringActuator() : mConfig(kLeftPos, kCenterPos, kRightPos)
+        {
+            Go(0);
+        }
+
+        template <typename... Args>
+        SteeringActuator(SteeringConfig config, Args... args) : Driver(args...), mConfig(config)
+        {
+            Go(0);
+        }
 
         /**
          * @brief Configure all position parameters at once.

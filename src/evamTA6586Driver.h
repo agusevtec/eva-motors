@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include <evamUtils.h>
 
 namespace evam
 {
@@ -46,7 +47,6 @@ namespace evam
         {
             pinMode(mConfig.forwardPin, OUTPUT);
             pinMode(mConfig.backwardPin, OUTPUT);
-            actBipolar(0);
         }
 
         template <typename... Args>
@@ -54,7 +54,6 @@ namespace evam
         {
             pinMode(mConfig.forwardPin, OUTPUT);
             pinMode(mConfig.backwardPin, OUTPUT);
-            actBipolar(0);
         }
 
         /**
@@ -84,8 +83,8 @@ namespace evam
         void actBipolar(signed short aValue)
         {
             int normalized = map(constrain(aValue, -1000, 1000), -1000, 1000, -255, 255);
-            analogWrite(mConfig.forwardPin, max(0, normalized));
-            analogWrite(mConfig.backwardPin, max(0, -normalized));
+            universalWrite(mConfig.forwardPin, max(0, normalized));
+            universalWrite(mConfig.backwardPin, max(0, -normalized));
         }
     };
 }

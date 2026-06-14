@@ -6,10 +6,11 @@ namespace evam
     /**
      * @brief Configuration structure for ForwardMotor
      */
-    struct ForwardConfig {
+    struct ForwardConfig
+    {
         int minValue;
         int maxValue;
-        
+
         ForwardConfig(int minValue, int maxValue) : minValue(constrain(minValue, -1000, 1000)), maxValue(constrain(maxValue, -1000, 1000)) {}
     };
 
@@ -30,7 +31,7 @@ namespace evam
 
     private:
         ForwardConfig mConfig;
-        
+
         signed short compute(signed short aLevel) const
         {
             if (aLevel > 0)
@@ -39,10 +40,16 @@ namespace evam
         }
 
     public:
-        ForwardMotor() : mConfig(kMinValue, kMaxValue) {}
-        
-        template<typename... Args>
-        ForwardMotor(ForwardConfig config, Args... args) : Driver(args...), mConfig(config) {}
+        ForwardMotor() : mConfig(kMinValue, kMaxValue)
+        {
+            Go(0);
+        }
+
+        template <typename... Args>
+        ForwardMotor(ForwardConfig config, Args... args) : Driver(args...), mConfig(config)
+        {
+            Go(0);
+        }
 
         /**
          * @brief Configure the output range parameters at once.

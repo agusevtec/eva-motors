@@ -30,7 +30,7 @@ namespace evam
      * @tparam kWindowSize Filter window size (odd number). Default: 5
      */
     template <class TMotor, unsigned short tWindowSize = kDefaultWindowSize>
-    class MedianDecor : public Heartbeat, public TMotor
+    class MedianDecor : public virtual Heartbeat, public TMotor
     {
         static_assert(tWindowSize >= kMinWindowSize && tWindowSize <= kMaxWindowSize, 
                       "tWindowSize out of range");

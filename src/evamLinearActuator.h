@@ -6,10 +6,11 @@ namespace evam
     /**
      * @brief Configuration structure for LinearActuator
      */
-    struct LinearActuatorConfig {
+    struct LinearActuatorConfig
+    {
         int minValue;
         int maxValue;
-        
+
         LinearActuatorConfig(int minValue, int maxValue) : minValue(constrain(minValue, -1000, 1000)), maxValue(constrain(maxValue, -1000, 1000)) {}
     };
 
@@ -30,17 +31,23 @@ namespace evam
 
     private:
         LinearActuatorConfig mConfig;
-        
+
         signed short compute(signed short aLevel) const
         {
             return map(constrain(aLevel, 0, 1000), 0, 1000, mConfig.minValue, mConfig.maxValue);
         }
 
     public:
-        LinearActuator() : mConfig(kMinValue, kMaxValue) {}
-        
-        template<typename... Args>
-        LinearActuator(LinearActuatorConfig config, Args... args) : Driver(args...), mConfig(config) {}
+        LinearActuator() : mConfig(kMinValue, kMaxValue)
+        {
+            Go(0);
+        }
+
+        template <typename... Args>
+        LinearActuator(LinearActuatorConfig config, Args... args) : Driver(args...), mConfig(config)
+        {
+            Go(0);
+        }
 
         /**
          * @brief Configure the position range parameters at once.

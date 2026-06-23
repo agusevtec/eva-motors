@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-void evam::univeralWrite(unsigned char aPin, unsigned char aValue)
+void evam::universalWrite(unsigned char aPin, unsigned char aValue)
 {
     if (aValue == 0)
         digitalWrite(aPin, LOW);

@@ -2,5 +2,5 @@
 
 namespace evam
 {
-    void univeralWrite(unsigned char aPin, unsigned char aValue);
-};
+    void universalWrite(unsigned char aPin, unsigned char aValue);
+}

@@ -37,7 +37,7 @@ namespace evam
     template <class TMotor,
               unsigned short tMinTimeConstantMs = kDefaultMinTimeConstantMs,
               unsigned short tMaxTimeConstantMs = kDefaultMaxTimeConstantMs>
-    class AdaptiveSmoothDecor : public Heartbeat, public TMotor
+    class AdaptiveSmoothDecor : public virtual Heartbeat, public TMotor
     {
         static_assert(tMinTimeConstantMs >= kMinTimeConstantLimit && tMinTimeConstantMs <= kMaxTimeConstantLimit,
                       "tMinTimeConstantMs out of range");

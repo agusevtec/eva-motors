@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include <evamUtils.h>
 
 namespace evam
 {
@@ -32,14 +33,12 @@ namespace evam
         PwmDriver() : mConfig(kPin)
         {
             pinMode(kPin, OUTPUT);
-            actUnipolar(0);
         }
 
         template <typename... Args>
         PwmDriver(PwmConfig config, Args... args) : mConfig(config)
         {
             pinMode(mConfig.pin, OUTPUT);
-            actUnipolar(0);
         }
 
         /**
@@ -58,8 +57,7 @@ namespace evam
          */
         void actUnipolar(unsigned short aValue)
         {
-            int pwm = map(constrain(aValue, 0, 1000), 0, 1000, 0, 255);
-            analogWrite(mConfig.pin, pwm);
+            universalWrite(mConfig.pin, map(constrain(aValue, 0, 1000), 0, 1000, 0, 255));
         }
     };
 }

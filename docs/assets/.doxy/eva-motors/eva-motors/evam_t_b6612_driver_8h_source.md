@@ -13,21 +13,22 @@
 
 namespace evam
 {
-    struct TB6612Config {
+    struct TB6612Config
+    {
         int pinSpeed;
         int pinMode1;
         int pinMode2;
-        
-        TB6612Config(int pinSpeed, int pinMode1, int pinMode2) 
+
+        TB6612Config(int pinSpeed, int pinMode1, int pinMode2)
             : pinSpeed(pinSpeed), pinMode1(pinMode1), pinMode2(pinMode2) {}
     };
 
-    template <int kPinSpeed, int kPinMode1, int kPinMode2>
+    template <int kPinSpeed = 0, int kPinMode1 = 0, int kPinMode2 = 0>
     class TB6612FNGDriver
     {
     private:
         TB6612Config mConfig;
-        
+
     public:
         TB6612FNGDriver() : mConfig(kPinSpeed, kPinMode1, kPinMode2)
         {
@@ -36,8 +37,8 @@ namespace evam
             pinMode(mConfig.pinMode2, OUTPUT);
             actBipolar(0);
         }
-        
-        template<typename... Args>
+
+        template <typename... Args>
         TB6612FNGDriver(TB6612Config config, Args... args) : mConfig(config)
         {
             pinMode(mConfig.pinSpeed, OUTPUT);

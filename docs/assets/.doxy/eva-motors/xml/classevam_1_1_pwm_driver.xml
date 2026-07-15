@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="classevam_1_1_pwm_driver" kind="class" language="C++" prot="public">
     <compoundname>evam::PwmDriver</compoundname>
     <includes refid="evam_pwm_driver_8h" local="no">evamPwmDriver.h</includes>
@@ -8,6 +8,7 @@
         <type>int</type>
         <declname>kPin</declname>
         <defname>kPin</defname>
+        <defval>0</defval>
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
@@ -23,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="28" column="19" bodyfile="src/evamPwmDriver.h" bodystart="28" bodyend="-1"/>
+        <location file="src/evamPwmDriver.h" line="29" column="19" bodyfile="src/evamPwmDriver.h" bodystart="29" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -39,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="31" column="9" bodyfile="src/evamPwmDriver.h" bodystart="31" bodyend="35"/>
+        <location file="src/evamPwmDriver.h" line="32" column="9" bodyfile="src/evamPwmDriver.h" bodystart="32" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_pwm_driver_1a8209d5077a7b9c5ec0325b516d5e572f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -68,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="38" column="9" bodyfile="src/evamPwmDriver.h" bodystart="38" bodyend="42"/>
+        <location file="src/evamPwmDriver.h" line="39" column="9" bodyfile="src/evamPwmDriver.h" bodystart="39" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_pwm_driver_1af99aff3048259d90c0d8a4c5c97a73bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -86,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="48" column="13" bodyfile="src/evamPwmDriver.h" bodystart="48" bodyend="51"/>
+        <location file="src/evamPwmDriver.h" line="49" column="13" bodyfile="src/evamPwmDriver.h" bodystart="49" bodyend="52"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -117,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamPwmDriver.h" line="58" column="14" bodyfile="src/evamPwmDriver.h" bodystart="58" bodyend="62"/>
+        <location file="src/evamPwmDriver.h" line="59" column="14" bodyfile="src/evamPwmDriver.h" bodystart="59" bodyend="63"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -136,7 +137,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamPwmDriver.h" line="25" column="5" bodyfile="src/evamPwmDriver.h" bodystart="26" bodyend="63"/>
+    <location file="src/evamPwmDriver.h" line="26" column="5" bodyfile="src/evamPwmDriver.h" bodystart="27" bodyend="64"/>
     <listofallmembers>
       <member refid="classevam_1_1_pwm_driver_1a0e0cc11fd0a37dd37f603652dd85c2d4" prot="protected" virt="non-virtual"><scope>evam::PwmDriver</scope><name>actUnipolar</name></member>
       <member refid="classevam_1_1_pwm_driver_1af99aff3048259d90c0d8a4c5c97a73bf" prot="public" virt="non-virtual"><scope>evam::PwmDriver</scope><name>GetPin</name></member>

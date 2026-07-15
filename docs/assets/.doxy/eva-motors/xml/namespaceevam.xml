@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="namespaceevam" kind="namespace" language="C++">
     <compoundname>evam</compoundname>
+    <innerclass refid="classevam_1_1_i_motor" prot="public">evam::IMotor</innerclass>
+    <innerclass refid="classevam_1_1_i_motor_maker" prot="public">evam::IMotorMaker</innerclass>
     <innerclass refid="structevam_1_1_adaptive_smooth_config" prot="public">evam::AdaptiveSmoothConfig</innerclass>
     <innerclass refid="classevam_1_1_adaptive_smooth_decor" prot="public">evam::AdaptiveSmoothDecor</innerclass>
     <innerclass refid="structevam_1_1_curve_config" prot="public">evam::CurveConfig</innerclass>
@@ -10,14 +12,12 @@
     <innerclass refid="classevam_1_1_directional_motor" prot="public">evam::DirectionalMotor</innerclass>
     <innerclass refid="structevam_1_1_forward_config" prot="public">evam::ForwardConfig</innerclass>
     <innerclass refid="classevam_1_1_forward_motor" prot="public">evam::ForwardMotor</innerclass>
-    <innerclass refid="classevam_1_1_i_motor" prot="public">evam::IMotor</innerclass>
-    <innerclass refid="classevam_1_1_i_motor_maker" prot="public">evam::IMotorMaker</innerclass>
     <innerclass refid="structevam_1_1_inertia_config" prot="public">evam::InertiaConfig</innerclass>
     <innerclass refid="classevam_1_1_inertia_decor" prot="public">evam::InertiaDecor</innerclass>
     <innerclass refid="structevam_1_1_kick_config" prot="public">evam::KickConfig</innerclass>
     <innerclass refid="classevam_1_1_kick_decor" prot="public">evam::KickDecor</innerclass>
-    <innerclass refid="classevam_1_1_linear_actuator" prot="public">evam::LinearActuator</innerclass>
     <innerclass refid="structevam_1_1_linear_actuator_config" prot="public">evam::LinearActuatorConfig</innerclass>
+    <innerclass refid="classevam_1_1_linear_actuator" prot="public">evam::LinearActuator</innerclass>
     <innerclass refid="structevam_1_1_median_config" prot="public">evam::MedianConfig</innerclass>
     <innerclass refid="classevam_1_1_median_decor" prot="public">evam::MedianDecor</innerclass>
     <innerclass refid="structevam_1_1_minmax_config" prot="public">evam::MinmaxConfig</innerclass>
@@ -31,8 +31,8 @@
     <innerclass refid="classevam_1_1_sliding_window_decor" prot="public">evam::SlidingWindowDecor</innerclass>
     <innerclass refid="structevam_1_1_software_servo_config" prot="public">evam::SoftwareServoConfig</innerclass>
     <innerclass refid="classevam_1_1_software_servo_driver" prot="public">evam::SoftwareServoDriver</innerclass>
-    <innerclass refid="classevam_1_1_steering_actuator" prot="public">evam::SteeringActuator</innerclass>
     <innerclass refid="structevam_1_1_steering_config" prot="public">evam::SteeringConfig</innerclass>
+    <innerclass refid="classevam_1_1_steering_actuator" prot="public">evam::SteeringActuator</innerclass>
     <innerclass refid="structevam_1_1_t_a6586_config" prot="public">evam::TA6586Config</innerclass>
     <innerclass refid="classevam_1_1_t_a6586_driver" prot="public">evam::TA6586Driver</innerclass>
     <innerclass refid="structevam_1_1_t_b6612_config" prot="public">evam::TB6612Config</innerclass>

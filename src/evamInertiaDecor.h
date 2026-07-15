@@ -28,7 +28,7 @@ namespace evam
      * @tparam tInertiaMass Virtual mass (positive). Larger values = slower deceleration.
      */
     template <class TMotor, unsigned short tInertiaMass = kInertiaMass>
-    class InertiaDecor : public Heartbeat, public TMotor
+    class InertiaDecor : public virtual Heartbeat, public TMotor
     {
         static_assert(0 < tInertiaMass, "tInertiaMass must be > 0");
 

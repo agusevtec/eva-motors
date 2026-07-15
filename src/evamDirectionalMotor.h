@@ -6,12 +6,13 @@ namespace evam
     /**
      * @brief Configuration structure for DirectionalMotor
      */
-    struct DirectionalConfig {
+    struct DirectionalConfig
+    {
         signed short maxBackward;
         signed short minBackward;
         signed short minForward;
         signed short maxForward;
-        
+
         DirectionalConfig(signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward)
             : maxBackward(constrain(maxBackward, -1000, 1000)),
               minBackward(constrain(minBackward, -1000, 1000)),
@@ -31,10 +32,10 @@ namespace evam
      * @tparam kMinForward Minimum forward output value (e.g., 50)
      * @tparam kMaxForward Maximum forward output value (e.g., 1000)
      */
-    template <class Driver, 
-              signed short kMaxBackward = -1000, 
-              signed short kMinBackward = 0, 
-              signed short kMinForward = 0, 
+    template <class Driver,
+              signed short kMaxBackward = -1000,
+              signed short kMinBackward = 0,
+              signed short kMinForward = 0,
               signed short kMaxForward = 1000>
     class DirectionalMotor : public Driver
     {
@@ -45,7 +46,7 @@ namespace evam
 
     private:
         DirectionalConfig mConfig;
-        
+
         signed short compute(signed short aLevel) const
         {
             if (aLevel < 0)
@@ -56,10 +57,16 @@ namespace evam
         }
 
     public:
-        DirectionalMotor() : mConfig(kMaxBackward, kMinBackward, kMinForward, kMaxForward) {}
-        
-        template<typename... Args>
-        DirectionalMotor(DirectionalConfig config, Args... args) : Driver(args...), mConfig(config) {}
+        DirectionalMotor() : mConfig(kMaxBackward, kMinBackward, kMinForward, kMaxForward)
+        {
+            Go(0);
+        }
+
+        template <typename... Args>
+        DirectionalMotor(DirectionalConfig config, Args... args) : Driver(args...), mConfig(config)
+        {
+            Go(0);
+        }
 
         /**
          * @brief Configure all range parameters at once.

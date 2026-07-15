@@ -1,12 +1,20 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 <svn-url>"
+    echo "Usage: $0 <svn-url> [folder-name]"
+    echo "  folder-name - optional, if not specified uses last part of URL"
     exit 1
 fi
 
 URL="$1"
-REPO_NAME=$(basename "$URL" | sed 's/\.svn$//')
+
+# Если указан второй параметр, используем его как имя папки
+if [ -n "$2" ]; then
+    REPO_NAME="$2"
+else
+    # Иначе извлекаем последний сегмент URL
+    REPO_NAME=$(basename "$URL" | sed 's/\.svn$//')
+fi
 
 if [ ! -d "libraries" ]; then
     mkdir libraries || {

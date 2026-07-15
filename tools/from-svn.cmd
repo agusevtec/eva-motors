@@ -2,12 +2,21 @@
 setlocal enabledelayedexpansion
 
 if "%~1"=="" (
-    echo Usage: %~nx0 ^<svn-url^>
+    echo Usage: %~nx0 ^<svn-url^> [folder-name]
+    echo   folder-name - optional, if not specified uses last part of URL
     exit /b 1
 )
 
 set "url=%~1"
-set "repo_name=%~n1"
+
+:: Если указан второй параметр, используем его как имя папки
+if not "%~2"=="" (
+    set "repo_name=%~2"
+) else (
+    :: Иначе извлекаем последний сегмент URL
+    for %%a in ("%url:\=" "%") do set "repo_name=%%~a"
+    set "repo_name=!repo_name:"=!"
+)
 
 if not exist libraries (
     mkdir libraries

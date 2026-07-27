@@ -11,6 +11,7 @@
 
 
 * `#include <Arduino.h>`
+* `#include <evamUtils.h>`
 
 
 
@@ -36,7 +37,7 @@
 | Type | Name |
 | ---: | :--- |
 | struct | [**TA6586Config**](structevam_1_1_t_a6586_config.md) <br>_Configuration structure for_ [_**TA6586Driver**_](classevam_1_1_t_a6586_driver.md) _._ |
-| class | [**TA6586Driver**](classevam_1_1_t_a6586_driver.md) &lt;kForwardPin, kBackwardPin&gt;<br>_Driver for the TA6586 dual H-bridge motor driver._  |
+| class | [**TA6586Driver**](classevam_1_1_t_a6586_driver.md) &lt;tForwardPin, tBackwardPin&gt;<br>_Driver for the TA6586 (classic dual H-bridge) motor driver._  |
 
 
 

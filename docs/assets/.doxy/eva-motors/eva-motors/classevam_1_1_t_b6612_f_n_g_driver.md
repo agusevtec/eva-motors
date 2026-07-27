@@ -2,7 +2,7 @@
 
 # Class evam::TB6612FNGDriver
 
-**template &lt;int kPinSpeed, int kPinMode1, int kPinMode2&gt;**
+**template &lt;int tPinSpeed, int tPinMode1, int tPinMode2&gt;**
 
 
 
@@ -108,9 +108,9 @@ Pin connection:
 **Template parameters:**
 
 
-* `kPinSpeed` PWM pin for speed control 
-* `kPinMode1` Direction pin 1 (IN1) 
-* `kPinMode2` Direction pin 2 (IN2) 
+* `tPinSpeed` PWM pin for speed control 
+* `tPinMode1` Direction pin 1 (IN1) 
+* `tPinMode2` Direction pin 2 (IN2) 
 
 
 

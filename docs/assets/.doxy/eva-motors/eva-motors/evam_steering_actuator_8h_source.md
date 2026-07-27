@@ -13,30 +13,31 @@
 
 namespace evam
 {
-    struct SteeringConfig {
+    struct SteeringConfig
+    {
         signed short leftPos;
         signed short centerPos;
         signed short rightPos;
-        
+
         SteeringConfig(signed short leftPos, signed short centerPos, signed short rightPos)
             : leftPos(constrain(leftPos, -1000, 1000)),
               centerPos(constrain(centerPos, -1000, 1000)),
               rightPos(constrain(rightPos, -1000, 1000)) {}
     };
 
-    template <class Driver, 
-              signed short kLeftPos = -1000, 
-              signed short kCenterPos = 0, 
-              signed short kRightPos = 1000>
-    class SteeringActuator : public Driver
+    template <class TDriver,
+              signed short tLeftPos = -1000,
+              signed short tCenterPos = 0,
+              signed short tRightPos = 1000>
+    class SteeringActuator : public TDriver
     {
-        static_assert(kLeftPos >= -1000 && kLeftPos <= 1000, "kLeftPos out of range");
-        static_assert(kCenterPos >= -1000 && kCenterPos <= 1000, "kCenterPos out of range");
-        static_assert(kRightPos >= -1000 && kRightPos <= 1000, "kRightPos out of range");
+        static_assert(tLeftPos >= -1000 && tLeftPos <= 1000, "tLeftPos out of range");
+        static_assert(tCenterPos >= -1000 && tCenterPos <= 1000, "tCenterPos out of range");
+        static_assert(tRightPos >= -1000 && tRightPos <= 1000, "tRightPos out of range");
 
     private:
         SteeringConfig mConfig;
-        
+
         signed short compute(signed short aLevel) const
         {
             if (aLevel < 0)
@@ -46,10 +47,16 @@ namespace evam
         }
 
     public:
-        SteeringActuator() : mConfig(kLeftPos, kCenterPos, kRightPos) {}
-        
-        template<typename... Args>
-        SteeringActuator(SteeringConfig config, Args... args) : Driver(args...), mConfig(config) {}
+        SteeringActuator() : mConfig(tLeftPos, tCenterPos, tRightPos)
+        {
+            Go(0);
+        }
+
+        template <typename... Args>
+        SteeringActuator(SteeringConfig config, Args... args) : TDriver(args...), mConfig(config)
+        {
+            Go(0);
+        }
 
         void SetupRange(signed short leftPos, signed short centerPos, signed short rightPos)
         {
@@ -90,7 +97,7 @@ namespace evam
 
         void Go(signed short aLevel)
         {
-            Driver::actBipolar(compute(aLevel));
+            TDriver::actBipolar(compute(aLevel));
         }
     };
 }

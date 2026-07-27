@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_inertia_decor" kind="class" language="C++" prot="public">
     <compoundname>evam::InertiaDecor</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">Heartbeat</basecompoundref>
+    <basecompoundref prot="public" virt="virtual">Heartbeat</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
     <includes refid="evam_inertia_decor_8h" local="no">evamInertiaDecor.h</includes>
     <templateparamlist>

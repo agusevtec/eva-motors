@@ -2,7 +2,7 @@
 
 # Class evam::PwmDriver
 
-**template &lt;int kPin&gt;**
+**template &lt;int tPin&gt;**
 
 
 
@@ -101,7 +101,7 @@ Converts 0..1000 input to 0..255 PWM duty cycle. Suitable for MOSFETs and other 
 **Template parameters:**
 
 
-* `kPin` PWM output pin number. 
+* `tPin` PWM output pin number. 
 
 
 

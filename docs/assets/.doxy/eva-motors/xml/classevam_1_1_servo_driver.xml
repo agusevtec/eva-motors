@@ -1,38 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_servo_driver" kind="class" language="C++" prot="public">
     <compoundname>evam::ServoDriver</compoundname>
     <includes refid="evam_servo_driver_8h" local="no">evamServoDriver.h</includes>
     <templateparamlist>
       <param>
         <type>int</type>
-        <declname>kPin</declname>
-        <defname>kPin</defname>
+        <declname>tPin</declname>
+        <defname>tPin</defname>
         <defval>0</defval>
       </param>
       <param>
         <type>int</type>
-        <declname>kMinPulse</declname>
-        <defname>kMinPulse</defname>
+        <declname>tMinPulse</declname>
+        <defname>tMinPulse</defname>
         <defval>1000</defval>
       </param>
       <param>
         <type>int</type>
-        <declname>kMiddlePulse</declname>
-        <defname>kMiddlePulse</defname>
+        <declname>tMiddlePulse</declname>
+        <defname>tMiddlePulse</defname>
         <defval>1500</defval>
       </param>
       <param>
         <type>int</type>
-        <declname>kMaxPulse</declname>
-        <defname>kMaxPulse</defname>
+        <declname>tMaxPulse</declname>
+        <defname>tMaxPulse</defname>
         <defval>2000</defval>
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_servo_driver_1a79cd8a51869c28b7797d3a72d3d3735a" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_servo_driver_1a2999812ea4df6fd7859235be4ed3d06d" prot="private" static="no" mutable="no">
         <type><ref refid="structevam_1_1_servo_config" kindref="compound">ServoConfig</ref></type>
-        <definition>ServoConfig evam::ServoDriver&lt; kPin, kMinPulse, kMiddlePulse, kMaxPulse &gt;::mConfig</definition>
+        <definition>ServoConfig evam::ServoDriver&lt; tPin, tMinPulse, tMiddlePulse, tMaxPulse &gt;::mConfig</definition>
         <argsstring></argsstring>
         <name>mConfig</name>
         <qualifiedname>evam::ServoDriver::mConfig</qualifiedname>
@@ -44,9 +44,9 @@
         </inbodydescription>
         <location file="src/evamServoDriver.h" line="41" column="21" bodyfile="src/evamServoDriver.h" bodystart="41" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_servo_driver_1ad6258548dfa671ca4aedee17f74f79b6" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_servo_driver_1aa083ceb71c215e6afe8282d20295ffe8" prot="private" static="no" mutable="no">
         <type>Servo</type>
-        <definition>Servo evam::ServoDriver&lt; kPin, kMinPulse, kMiddlePulse, kMaxPulse &gt;::mServo</definition>
+        <definition>Servo evam::ServoDriver&lt; tPin, tMinPulse, tMiddlePulse, tMaxPulse &gt;::mServo</definition>
         <argsstring></argsstring>
         <name>mServo</name>
         <qualifiedname>evam::ServoDriver::mServo</qualifiedname>
@@ -60,9 +60,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_servo_driver_1a91c1f86ecb7c97fd4e575ad6b1b24292" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1ac291ec366cb0f9d442fb69cdd6bc0495" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>evam::ServoDriver&lt; kPin, kMinPulse, kMiddlePulse, kMaxPulse &gt;::ServoDriver</definition>
+        <definition>evam::ServoDriver&lt; tPin, tMinPulse, tMiddlePulse, tMaxPulse &gt;::ServoDriver</definition>
         <argsstring>()</argsstring>
         <name>ServoDriver</name>
         <qualifiedname>evam::ServoDriver::ServoDriver</qualifiedname>
@@ -74,7 +74,7 @@
         </inbodydescription>
         <location file="src/evamServoDriver.h" line="45" column="9" bodyfile="src/evamServoDriver.h" bodystart="45" bodyend="48"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_servo_driver_1af7d4350d1bce2dc8421f1ea3ed32eeb5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1a3ee599e2843c9e6de46affef94425d60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -83,7 +83,7 @@
           </param>
         </templateparamlist>
         <type></type>
-        <definition>evam::ServoDriver&lt; kPin, kMinPulse, kMiddlePulse, kMaxPulse &gt;::ServoDriver</definition>
+        <definition>evam::ServoDriver&lt; tPin, tMinPulse, tMiddlePulse, tMaxPulse &gt;::ServoDriver</definition>
         <argsstring>(ServoConfig config, Args... args)</argsstring>
         <name>ServoDriver</name>
         <qualifiedname>evam::ServoDriver::ServoDriver</qualifiedname>
@@ -103,9 +103,9 @@
         </inbodydescription>
         <location file="src/evamServoDriver.h" line="51" column="9" bodyfile="src/evamServoDriver.h" bodystart="51" bodyend="54"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_servo_driver_1a908ccb8add8086972a87cd31db3c6aa9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1a4f92b62745a709f6023e5b008cd5cd08" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
-        <definition>int evam::ServoDriver&lt; kPin, kMinPulse, kMiddlePulse, kMaxPulse &gt;::GetPin</definition>
+        <definition>int evam::ServoDriver&lt; tPin, tMinPulse, tMiddlePulse, tMaxPulse &gt;::GetPin</definition>
         <argsstring>() const</argsstring>
         <name>GetPin</name>
         <qualifiedname>evam::ServoDriver::GetPin</qualifiedname>
@@ -123,9 +123,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classevam_1_1_servo_driver_1a168d44995df4ae07b0fc8877bffce6fa" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1aa435d10aa4163e178eafbd5fb718b3e6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::ServoDriver&lt; kPin, kMinPulse, kMiddlePulse, kMaxPulse &gt;::actBipolar</definition>
+        <definition>void evam::ServoDriver&lt; tPin, tMinPulse, tMiddlePulse, tMaxPulse &gt;::actBipolar</definition>
         <argsstring>(signed short aValue)</argsstring>
         <name>actBipolar</name>
         <qualifiedname>evam::ServoDriver::actBipolar</qualifiedname>
@@ -152,9 +152,9 @@
         </inbodydescription>
         <location file="src/evamServoDriver.h" line="71" column="14" bodyfile="src/evamServoDriver.h" bodystart="71" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_servo_driver_1a70a6057fae38cafc597964b4f2281de0" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_servo_driver_1a47d3bb4d3c4cfc50c30f12e96ec45669" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::ServoDriver&lt; kPin, kMinPulse, kMiddlePulse, kMaxPulse &gt;::actUnipolar</definition>
+        <definition>void evam::ServoDriver&lt; tPin, tMinPulse, tMiddlePulse, tMaxPulse &gt;::actUnipolar</definition>
         <argsstring>(signed short aValue)</argsstring>
         <name>actUnipolar</name>
         <qualifiedname>evam::ServoDriver::actUnipolar</qualifiedname>
@@ -189,7 +189,7 @@
 <para>Supports both bipolar (centered) and unipolar (absolute) control modes.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>kPin</parametername>
+<parametername>tPin</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Servo signal pin number. </para>
@@ -197,7 +197,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kMinPulse</parametername>
+<parametername>tMinPulse</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Minimum pulse width in microseconds (default: 1000) </para>
@@ -205,7 +205,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kMiddlePulse</parametername>
+<parametername>tMiddlePulse</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Middle pulse width in microseconds (default: 1500) </para>
@@ -213,7 +213,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kMaxPulse</parametername>
+<parametername>tMaxPulse</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Maximum pulse width in microseconds (default: 2000) </para>
@@ -224,13 +224,13 @@
     </detaileddescription>
     <location file="src/evamServoDriver.h" line="32" column="5" bodyfile="src/evamServoDriver.h" bodystart="33" bodyend="93"/>
     <listofallmembers>
-      <member refid="classevam_1_1_servo_driver_1a168d44995df4ae07b0fc8877bffce6fa" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actBipolar</name></member>
-      <member refid="classevam_1_1_servo_driver_1a70a6057fae38cafc597964b4f2281de0" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actUnipolar</name></member>
-      <member refid="classevam_1_1_servo_driver_1a908ccb8add8086972a87cd31db3c6aa9" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>GetPin</name></member>
-      <member refid="classevam_1_1_servo_driver_1a79cd8a51869c28b7797d3a72d3d3735a" prot="private" virt="non-virtual"><scope>evam::ServoDriver</scope><name>mConfig</name></member>
-      <member refid="classevam_1_1_servo_driver_1ad6258548dfa671ca4aedee17f74f79b6" prot="private" virt="non-virtual"><scope>evam::ServoDriver</scope><name>mServo</name></member>
-      <member refid="classevam_1_1_servo_driver_1a91c1f86ecb7c97fd4e575ad6b1b24292" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>ServoDriver</name></member>
-      <member refid="classevam_1_1_servo_driver_1af7d4350d1bce2dc8421f1ea3ed32eeb5" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>ServoDriver</name></member>
+      <member refid="classevam_1_1_servo_driver_1aa435d10aa4163e178eafbd5fb718b3e6" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actBipolar</name></member>
+      <member refid="classevam_1_1_servo_driver_1a47d3bb4d3c4cfc50c30f12e96ec45669" prot="protected" virt="non-virtual"><scope>evam::ServoDriver</scope><name>actUnipolar</name></member>
+      <member refid="classevam_1_1_servo_driver_1a4f92b62745a709f6023e5b008cd5cd08" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>GetPin</name></member>
+      <member refid="classevam_1_1_servo_driver_1a2999812ea4df6fd7859235be4ed3d06d" prot="private" virt="non-virtual"><scope>evam::ServoDriver</scope><name>mConfig</name></member>
+      <member refid="classevam_1_1_servo_driver_1aa083ceb71c215e6afe8282d20295ffe8" prot="private" virt="non-virtual"><scope>evam::ServoDriver</scope><name>mServo</name></member>
+      <member refid="classevam_1_1_servo_driver_1ac291ec366cb0f9d442fb69cdd6bc0495" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>ServoDriver</name></member>
+      <member refid="classevam_1_1_servo_driver_1a3ee599e2843c9e6de46affef94425d60" prot="public" virt="non-virtual"><scope>evam::ServoDriver</scope><name>ServoDriver</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

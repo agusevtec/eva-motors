@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="structevam_1_1_directional_config" kind="struct" language="C++" prot="public">
     <compoundname>evam::DirectionalConfig</compoundname>
     <includes refid="evam_directional_motor_8h" local="no">evamDirectionalMotor.h</includes>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="10" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evamDirectionalMotor.h" line="11" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structevam_1_1_directional_config_1a1df5c4161763932d0ef4e6a65ade84a1" prot="public" static="no" mutable="no">
         <type>signed short</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="11" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="11" bodyend="-1"/>
+        <location file="src/evamDirectionalMotor.h" line="12" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structevam_1_1_directional_config_1adfc8958c612c046b9eb420a6da28a191" prot="public" static="no" mutable="no">
         <type>signed short</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="12" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evamDirectionalMotor.h" line="13" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structevam_1_1_directional_config_1acb5363dfc5f34e47042e14a3cbbdbeea" prot="public" static="no" mutable="no">
         <type>signed short</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="13" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="13" bodyend="-1"/>
+        <location file="src/evamDirectionalMotor.h" line="14" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="14" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="15" column="9" bodyfile="src/evamDirectionalMotor.h" bodystart="15" bodyend="19"/>
+        <location file="src/evamDirectionalMotor.h" line="16" column="9" bodyfile="src/evamDirectionalMotor.h" bodystart="16" bodyend="20"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -98,7 +98,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evamDirectionalMotor.h" line="9" column="5" bodyfile="src/evamDirectionalMotor.h" bodystart="9" bodyend="20"/>
+    <location file="src/evamDirectionalMotor.h" line="9" column="5" bodyfile="src/evamDirectionalMotor.h" bodystart="10" bodyend="21"/>
     <listofallmembers>
       <member refid="structevam_1_1_directional_config_1a98e0ff0db744d9c2d7249b541f9e1945" prot="public" virt="non-virtual"><scope>evam::DirectionalConfig</scope><name>DirectionalConfig</name></member>
       <member refid="structevam_1_1_directional_config_1afb02f2cc51947d4cdfc2b8830f65effb" prot="public" virt="non-virtual"><scope>evam::DirectionalConfig</scope><name>maxBackward</name></member>

@@ -9,7 +9,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**evam::PwmDriver**](classevam_1_1_pwm_driver.md) _Simple PWM output driver (unipolar)._ 
 * **class** [**evam::RingBuffer**](classevam_1_1_ring_buffer.md) 
 * **class** [**evam::ServoDriver**](classevam_1_1_servo_driver.md) _Servo driver using standard Arduino Servo library._ 
-* **class** [**evam::TA6586Driver**](classevam_1_1_t_a6586_driver.md) _Driver for the TA6586 dual H-bridge motor driver._ 
+* **class** [**evam::TA6586Driver**](classevam_1_1_t_a6586_driver.md) _Driver for the TA6586 (classic dual H-bridge) motor driver._ 
 * **class** [**evam::TB6612FNGDriver**](classevam_1_1_t_b6612_f_n_g_driver.md) _Driver for the TB6612FNG dual H-bridge motor driver._ 
 * **struct** [**evam::AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) _Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive_smooth_decor.md) _._
 * **struct** [**evam::CurveConfig**](structevam_1_1_curve_config.md) _Configuration structure for_ [_**CurveDecor**_](classevam_1_1_curve_decor.md) _._
@@ -39,7 +39,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **class** [**evam::MedianDecor**](classevam_1_1_median_decor.md) _Decorator that applies median filtering with fixed time base._ 
     * **class** [**evam::MinmaxDecor**](classevam_1_1_minmax_decor.md) _Decorator that applies a min-max (morphological) filter to the control signal._ 
     * **class** [**evam::SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md) _Decorator that applies a simple moving average (sliding window) filter._ 
-* **class** **Driver**    
+* **class** **TDriver**    
     * **class** [**evam::DirectionalMotor**](classevam_1_1_directional_motor.md) _Bidirectional motor controller (forward/reverse)._ 
     * **class** [**evam::ForwardMotor**](classevam_1_1_forward_motor.md) _Unidirectional forward-only motor controller (e.g., aircraft ESC, throttle)._ 
     * **class** [**evam::LinearActuator**](classevam_1_1_linear_actuator.md) _Linear actuator controller (position control)._ 

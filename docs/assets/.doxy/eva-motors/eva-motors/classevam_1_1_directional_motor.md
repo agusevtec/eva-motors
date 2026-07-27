@@ -2,7 +2,7 @@
 
 # Class evam::DirectionalMotor
 
-**template &lt;class Driver, signed short kMaxBackward, signed short kMinBackward, signed short kMinForward, signed short kMaxForward&gt;**
+**template &lt;class TDriver, signed short tMaxBackward, signed short tMinBackward, signed short tMinForward, signed short tMaxForward&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Bidirectional motor controller (forward/reverse)._ [More...](#detailed-descript
 
 
 
-Inherits the following classes: Driver
+Inherits the following classes: TDriver
 
 
 
@@ -106,11 +106,11 @@ Maps a signed input range -1000..1000 to driver-specific output values. Negative
 **Template parameters:**
 
 
-* `Driver` Driver class (must implement actBipolar(signed short)) 
-* `kMaxBackward` Maximum reverse output value (e.g., -1000) 
-* `kMinBackward` Minimum reverse output value (e.g., -50) 
-* `kMinForward` Minimum forward output value (e.g., 50) 
-* `kMaxForward` Maximum forward output value (e.g., 1000) 
+* `TDriver` TDriver class (must implement actBipolar(signed short)) 
+* `tMaxBackward` Maximum reverse output value (e.g., -1000) 
+* `tMinBackward` Minimum reverse output value (e.g., -50) 
+* `tMinForward` Minimum forward output value (e.g., 50) 
+* `tMaxForward` Maximum forward output value (e.g., 1000) 
 
 
 

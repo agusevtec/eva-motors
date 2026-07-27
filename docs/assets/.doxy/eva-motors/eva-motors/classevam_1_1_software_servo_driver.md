@@ -2,7 +2,7 @@
 
 # Class evam::SoftwareServoDriver
 
-**template &lt;int kPin, int kMinPulse, int kMiddlePulse, int kMaxPulse&gt;**
+**template &lt;int tPin, int tMinPulse, int tMiddlePulse, int tMaxPulse&gt;**
 
 
 
@@ -86,8 +86,8 @@ Inherits the following classes: Tickable
 
 | Type | Name |
 | ---: | :--- |
-|  void | [**actBipolar**](#function-actbipolar) (signed short aValue) <br>_Bipolar (centered) control. Input range -1000..1000. Output: pulse width mapped to kMinPulse..kMaxPulse with center at mid-point._  |
-|  void | [**actUnipolar**](#function-actunipolar) (signed short aValue) <br>_Unipolar (absolute) control. Input range 0..1000. Output: pulse width mapped to kMinPulse..kMaxPulse._  |
+|  void | [**actBipolar**](#function-actbipolar) (signed short aValue) <br>_Bipolar (centered) control. Input range -1000..1000. Output: pulse width mapped to kMinPulse..tMaxPulse with center at mid-point._  |
+|  void | [**actUnipolar**](#function-actunipolar) (signed short aValue) <br>_Unipolar (absolute) control. Input range 0..1000. Output: pulse width mapped to kMinPulse..tMaxPulse._  |
 
 
 
@@ -103,10 +103,10 @@ This driver implements servo control without using the hardware PWM limitations 
 **Template parameters:**
 
 
-* `kPin` Servo signal pin number. 
-* `kMinPulse` Minimum pulse width in microseconds (default: 1000) 
-* `kMiddlePulse` Middle pulse width in microseconds (default: 1500) 
-* `kMaxPulse` Maximum pulse width in microseconds (default: 2000) 
+* `tPin` Servo signal pin number. 
+* `tMinPulse` Minimum pulse width in microseconds (default: 1000) 
+* `tMiddlePulse` Middle pulse width in microseconds (default: 1500) 
+* `tMaxPulse` Maximum pulse width in microseconds (default: 2000) 
 
 
 
@@ -177,7 +177,7 @@ inline evam::SoftwareServoDriver::SoftwareServoDriver (
 
 ### function actBipolar 
 
-_Bipolar (centered) control. Input range -1000..1000. Output: pulse width mapped to kMinPulse..kMaxPulse with center at mid-point._ 
+_Bipolar (centered) control. Input range -1000..1000. Output: pulse width mapped to kMinPulse..tMaxPulse with center at mid-point._ 
 ```C++
 inline void evam::SoftwareServoDriver::actBipolar (
     signed short aValue
@@ -204,7 +204,7 @@ inline void evam::SoftwareServoDriver::actBipolar (
 
 ### function actUnipolar 
 
-_Unipolar (absolute) control. Input range 0..1000. Output: pulse width mapped to kMinPulse..kMaxPulse._ 
+_Unipolar (absolute) control. Input range 0..1000. Output: pulse width mapped to kMinPulse..tMaxPulse._ 
 ```C++
 inline void evam::SoftwareServoDriver::actUnipolar (
     signed short aValue

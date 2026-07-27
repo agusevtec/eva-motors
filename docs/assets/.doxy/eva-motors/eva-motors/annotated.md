@@ -38,7 +38,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**SteeringActuator**](classevam_1_1_steering_actuator.md) _Steering actuator (centered servo) controller._     
     * **struct** [**SteeringConfig**](structevam_1_1_steering_config.md) _Configuration structure for_ [_**SteeringActuator**_](classevam_1_1_steering_actuator.md) _._    
     * **struct** [**TA6586Config**](structevam_1_1_t_a6586_config.md) _Configuration structure for_ [_**TA6586Driver**_](classevam_1_1_t_a6586_driver.md) _._    
-    * **class** [**TA6586Driver**](classevam_1_1_t_a6586_driver.md) _Driver for the TA6586 dual H-bridge motor driver._     
+    * **class** [**TA6586Driver**](classevam_1_1_t_a6586_driver.md) _Driver for the TA6586 (classic dual H-bridge) motor driver._     
     * **struct** [**TB6612Config**](structevam_1_1_t_b6612_config.md) _Configuration structure for_ [_**TB6612FNGDriver**_](classevam_1_1_t_b6612_f_n_g_driver.md) _._    
     * **class** [**TB6612FNGDriver**](classevam_1_1_t_b6612_f_n_g_driver.md) _Driver for the TB6612FNG dual H-bridge motor driver._     
 

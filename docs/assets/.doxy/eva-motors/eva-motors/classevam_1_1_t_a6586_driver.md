@@ -2,7 +2,7 @@
 
 # Class evam::TA6586Driver
 
-**template &lt;int kForwardPin, int kBackwardPin&gt;**
+**template &lt;int tForwardPin, int tBackwardPin&gt;**
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-_Driver for the TA6586 dual H-bridge motor driver._ [More...](#detailed-description)
+_Driver for the TA6586 (classic dual H-bridge) motor driver._ [More...](#detailed-description)
 
 * `#include <evamTA6586Driver.h>`
 
@@ -102,8 +102,8 @@ Pinout:
 **Template parameters:**
 
 
-* `kForwardPin` PWM pin connected to FI (forward input) 
-* `kBackwardPin` PWM pin connected to BI (backward input) 
+* `tForwardPin` PWM pin connected to FI (forward input) 
+* `tBackwardPin` PWM pin connected to BI (backward input) 
 
 
 

@@ -1,32 +1,32 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_t_b6612_f_n_g_driver" kind="class" language="C++" prot="public">
     <compoundname>evam::TB6612FNGDriver</compoundname>
     <includes refid="evam_t_b6612_driver_8h" local="no">evamTB6612Driver.h</includes>
     <templateparamlist>
       <param>
         <type>int</type>
-        <declname>kPinSpeed</declname>
-        <defname>kPinSpeed</defname>
+        <declname>tPinSpeed</declname>
+        <defname>tPinSpeed</defname>
         <defval>0</defval>
       </param>
       <param>
         <type>int</type>
-        <declname>kPinMode1</declname>
-        <defname>kPinMode1</defname>
+        <declname>tPinMode1</declname>
+        <defname>tPinMode1</defname>
         <defval>0</defval>
       </param>
       <param>
         <type>int</type>
-        <declname>kPinMode2</declname>
-        <defname>kPinMode2</defname>
+        <declname>tPinMode2</declname>
+        <defname>tPinMode2</defname>
         <defval>0</defval>
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_t_b6612_f_n_g_driver_1a17e1e95082eb03f573b7f8767064f488" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_t_b6612_f_n_g_driver_1a399ddb840b901bbcf51074ceb953a78b" prot="private" static="no" mutable="no">
         <type><ref refid="structevam_1_1_t_b6612_config" kindref="compound">TB6612Config</ref></type>
-        <definition>TB6612Config evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::mConfig</definition>
+        <definition>TB6612Config evam::TB6612FNGDriver&lt; tPinSpeed, tPinMode1, tPinMode2 &gt;::mConfig</definition>
         <argsstring></argsstring>
         <name>mConfig</name>
         <qualifiedname>evam::TB6612FNGDriver::mConfig</qualifiedname>
@@ -36,13 +36,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="35" column="22" bodyfile="src/evamTB6612Driver.h" bodystart="35" bodyend="-1"/>
+        <location file="src/evamTB6612Driver.h" line="36" column="22" bodyfile="src/evamTB6612Driver.h" bodystart="36" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1adf1637401e80f6438a2b7ddc18288d45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a729a6a2b7559aa052ecc34dcbcf619b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::TB6612FNGDriver</definition>
+        <definition>evam::TB6612FNGDriver&lt; tPinSpeed, tPinMode1, tPinMode2 &gt;::TB6612FNGDriver</definition>
         <argsstring>()</argsstring>
         <name>TB6612FNGDriver</name>
         <qualifiedname>evam::TB6612FNGDriver::TB6612FNGDriver</qualifiedname>
@@ -53,9 +53,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="41" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="41" bodyend="47"/>
+        <location file="src/evamTB6612Driver.h" line="42" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="42" bodyend="47"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1aff3bd6043f66bf64367191ed72b6d0ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a1e4a7384586f7b4c0fb7d02b6501edc2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -64,7 +64,7 @@
           </param>
         </templateparamlist>
         <type></type>
-        <definition>evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::TB6612FNGDriver</definition>
+        <definition>evam::TB6612FNGDriver&lt; tPinSpeed, tPinMode1, tPinMode2 &gt;::TB6612FNGDriver</definition>
         <argsstring>(TB6612Config config, Args... args)</argsstring>
         <name>TB6612FNGDriver</name>
         <qualifiedname>evam::TB6612FNGDriver::TB6612FNGDriver</qualifiedname>
@@ -82,11 +82,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="50" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="50" bodyend="56"/>
+        <location file="src/evamTB6612Driver.h" line="50" column="9" bodyfile="src/evamTB6612Driver.h" bodystart="50" bodyend="55"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a20dee77f573b8af6aec42559b8623f1b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1ae3a4641516713437e5277bd54da4de0d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
-        <definition>int evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::GetSpeedPin</definition>
+        <definition>int evam::TB6612FNGDriver&lt; tPinSpeed, tPinMode1, tPinMode2 &gt;::GetSpeedPin</definition>
         <argsstring>() const</argsstring>
         <name>GetSpeedPin</name>
         <qualifiedname>evam::TB6612FNGDriver::GetSpeedPin</qualifiedname>
@@ -100,11 +100,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="62" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="62" bodyend="65"/>
+        <location file="src/evamTB6612Driver.h" line="61" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="61" bodyend="64"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a156192da186a4d5f2b3c116ce36f2fde" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
-        <definition>int evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::GetMode1Pin</definition>
+        <definition>int evam::TB6612FNGDriver&lt; tPinSpeed, tPinMode1, tPinMode2 &gt;::GetMode1Pin</definition>
         <argsstring>() const</argsstring>
         <name>GetMode1Pin</name>
         <qualifiedname>evam::TB6612FNGDriver::GetMode1Pin</qualifiedname>
@@ -118,11 +118,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="71" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="71" bodyend="74"/>
+        <location file="src/evamTB6612Driver.h" line="70" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="70" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1ac3a9f5ad479ee89dd1909521fdfc47bd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a08aed0c46144db016aec297d76ac6455" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
-        <definition>int evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::GetMode2Pin</definition>
+        <definition>int evam::TB6612FNGDriver&lt; tPinSpeed, tPinMode1, tPinMode2 &gt;::GetMode2Pin</definition>
         <argsstring>() const</argsstring>
         <name>GetMode2Pin</name>
         <qualifiedname>evam::TB6612FNGDriver::GetMode2Pin</qualifiedname>
@@ -136,13 +136,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="80" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="80" bodyend="83"/>
+        <location file="src/evamTB6612Driver.h" line="79" column="13" bodyfile="src/evamTB6612Driver.h" bodystart="79" bodyend="82"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1adc2c94301188415930a5a20e007ffd48" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_t_b6612_f_n_g_driver_1a84df4fd96f50bc5f6bacc77e834670a3" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::TB6612FNGDriver&lt; kPinSpeed, kPinMode1, kPinMode2 &gt;::actBipolar</definition>
+        <definition>void evam::TB6612FNGDriver&lt; tPinSpeed, tPinMode1, tPinMode2 &gt;::actBipolar</definition>
         <argsstring>(signed short aValue)</argsstring>
         <name>actBipolar</name>
         <qualifiedname>evam::TB6612FNGDriver::actBipolar</qualifiedname>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamTB6612Driver.h" line="91" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="91" bodyend="97"/>
+        <location file="src/evamTB6612Driver.h" line="90" column="14" bodyfile="src/evamTB6612Driver.h" bodystart="90" bodyend="95"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -182,7 +182,7 @@
 </para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>kPinSpeed</parametername>
+<parametername>tPinSpeed</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>PWM pin for speed control </para>
@@ -190,7 +190,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kPinMode1</parametername>
+<parametername>tPinMode1</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Direction pin 1 (IN1) </para>
@@ -198,7 +198,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kPinMode2</parametername>
+<parametername>tPinMode2</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Direction pin 2 (IN2) </para>
@@ -207,15 +207,15 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evamTB6612Driver.h" line="32" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="33" bodyend="98"/>
+    <location file="src/evamTB6612Driver.h" line="33" column="5" bodyfile="src/evamTB6612Driver.h" bodystart="34" bodyend="96"/>
     <listofallmembers>
-      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adc2c94301188415930a5a20e007ffd48" prot="protected" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>actBipolar</name></member>
-      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a61916ce7f80cd2d68752eea38c5e8623" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode1Pin</name></member>
-      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1ac3a9f5ad479ee89dd1909521fdfc47bd" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode2Pin</name></member>
-      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a20dee77f573b8af6aec42559b8623f1b" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetSpeedPin</name></member>
-      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a17e1e95082eb03f573b7f8767064f488" prot="private" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>mConfig</name></member>
-      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1adf1637401e80f6438a2b7ddc18288d45" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>TB6612FNGDriver</name></member>
-      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1aff3bd6043f66bf64367191ed72b6d0ae" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>TB6612FNGDriver</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a84df4fd96f50bc5f6bacc77e834670a3" prot="protected" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>actBipolar</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a156192da186a4d5f2b3c116ce36f2fde" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode1Pin</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a08aed0c46144db016aec297d76ac6455" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetMode2Pin</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1ae3a4641516713437e5277bd54da4de0d" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>GetSpeedPin</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a399ddb840b901bbcf51074ceb953a78b" prot="private" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>mConfig</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a729a6a2b7559aa052ecc34dcbcf619b7" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>TB6612FNGDriver</name></member>
+      <member refid="classevam_1_1_t_b6612_f_n_g_driver_1a1e4a7384586f7b4c0fb7d02b6501edc2" prot="public" virt="non-virtual"><scope>evam::TB6612FNGDriver</scope><name>TB6612FNGDriver</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -25,21 +25,21 @@ namespace evam
             : pin(pin), minPulse(minPulse), middlePulse(middlePulse), maxPulse(maxPulse) {}
     };
 
-    template <int kPin = 0, int kMinPulse = 1000, int kMiddlePulse = 1500, int kMaxPulse = 2000>
+    template <int tPin = 0, int tMinPulse = 1000, int tMiddlePulse = 1500, int tMaxPulse = 2000>
     class ServoDriver
     {
-        static_assert(kMinPulse >= 500 && kMinPulse <= 2500, "kMinPulse out of range 500..2500");
-        static_assert(kMiddlePulse >= 500 && kMiddlePulse <= 2500, "kMiddlePulse out of range 500..2500");
-        static_assert(kMaxPulse >= 500 && kMaxPulse <= 2500, "kMaxPulse out of range 500..2500");
-        static_assert(kMinPulse < kMiddlePulse, "kMinPulse must be less than kMiddlePulse");
-        static_assert(kMiddlePulse < kMaxPulse, "kMiddlePulse must be less than kMaxPulse");
+        static_assert(tMinPulse >= 500 && tMinPulse <= 2500, "tMinPulse out of range 500..2500");
+        static_assert(tMiddlePulse >= 500 && tMiddlePulse <= 2500, "tMiddlePulse out of range 500..2500");
+        static_assert(tMaxPulse >= 500 && tMaxPulse <= 2500, "tMaxPulse out of range 500..2500");
+        static_assert(tMinPulse < tMiddlePulse, "tMinPulse must be less than tMiddlePulse");
+        static_assert(tMiddlePulse < tMaxPulse, "tMiddlePulse must be less than tMaxPulse");
 
     private:
         ServoConfig mConfig;
         Servo mServo;
 
     public:
-        ServoDriver() : mConfig(kPin, kMinPulse, kMiddlePulse, kMaxPulse)
+        ServoDriver() : mConfig(tPin, tMinPulse, tMiddlePulse, tMaxPulse)
         {
             mServo.attach(mConfig.pin);
         }
@@ -75,8 +75,8 @@ namespace evam
         }
     };
     
-    template <int kPin, int kMinPulse, int kMaxPulse>
-    using ServoFlatDriver = ServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2 + kMinPulse, kMaxPulse>;
+    template <int tPin, int tMinPulse, int tMaxPulse>
+    using ServoFlatDriver = ServoDriver<tPin, tMinPulse, (tMaxPulse + tMinPulse) / 2, tMaxPulse>;
 }
 ```
 

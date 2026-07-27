@@ -2,7 +2,7 @@
 
 # Class evam::ForwardMotor
 
-**template &lt;class Driver, int kMinValue, int kMaxValue&gt;**
+**template &lt;class TDriver, int tMinValue, int tMaxValue&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Unidirectional forward-only motor controller (e.g., aircraft ESC, throttle)._ [
 
 
 
-Inherits the following classes: Driver
+Inherits the following classes: TDriver
 
 
 
@@ -102,9 +102,9 @@ Maps input range 0..1000 to driver output. Negative inputs are treated as stop (
 **Template parameters:**
 
 
-* `Driver` Driver class (must implement actUnipolar(unsigned short)) 
-* `kMinValue` Minimum output value (e.g., 20 = stop) 
-* `kMaxValue` Maximum output value (e.g., 1000 = full throttle) 
+* `Driver` TDriver class (must implement actUnipolar(unsigned short)) 
+* `tMinValue` Minimum output value (e.g., 20 = stop) 
+* `tMaxValue` Maximum output value (e.g., 1000 = full throttle) 
 
 
 

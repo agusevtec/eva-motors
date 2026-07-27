@@ -2,7 +2,7 @@
 
 # Class evam::SteeringActuator
 
-**template &lt;class Driver, signed short kLeftPos, signed short kCenterPos, signed short kRightPos&gt;**
+**template &lt;class TDriver, signed short tLeftPos, signed short tCenterPos, signed short tRightPos&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Steering actuator (centered servo) controller._ [More...](#detailed-description
 
 
 
-Inherits the following classes: Driver
+Inherits the following classes: TDriver
 
 
 
@@ -105,9 +105,9 @@ Maps input range -1000..1000 to output positions: -1000 = left position, 0 = cen
 
 
 * `Driver` Driver class (must implement actBipolar(signed short)) 
-* `kLeftPos` Output value at -1000 input (leftmost position) 
-* `kCenterPos` Output value at 0 input (center position) 
-* `kRightPos` Output value at 1000 input (rightmost position) 
+* `tLeftPos` Output value at -1000 input (leftmost position) 
+* `tCenterPos` Output value at 0 input (center position) 
+* `tRightPos` Output value at 1000 input (rightmost position) 
 
 
 

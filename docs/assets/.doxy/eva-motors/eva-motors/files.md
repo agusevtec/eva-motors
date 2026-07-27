@@ -23,4 +23,5 @@ Here is a list of all files with brief descriptions:
     * **file** [**evamSteeringActuator.h**](evam_steering_actuator_8h.md)     
     * **file** [**evamTA6586Driver.h**](evam_t_a6586_driver_8h.md)     
     * **file** [**evamTB6612Driver.h**](evam_t_b6612_driver_8h.md)     
+    * **file** [**evamUtils.h**](evam_utils_8h.md)     
 

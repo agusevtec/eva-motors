@@ -39,6 +39,7 @@
 | file | [**evamSteeringActuator.h**](evam_steering_actuator_8h.md) <br> |
 | file | [**evamTA6586Driver.h**](evam_t_a6586_driver_8h.md) <br> |
 | file | [**evamTB6612Driver.h**](evam_t_b6612_driver_8h.md) <br> |
+| file | [**evamUtils.h**](evam_utils_8h.md) <br> |
 
 
 

@@ -13,12 +13,13 @@
 
 namespace evam
 {
-    struct DirectionalConfig {
+    struct DirectionalConfig
+    {
         signed short maxBackward;
         signed short minBackward;
         signed short minForward;
         signed short maxForward;
-        
+
         DirectionalConfig(signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward)
             : maxBackward(constrain(maxBackward, -1000, 1000)),
               minBackward(constrain(minBackward, -1000, 1000)),
@@ -26,21 +27,21 @@ namespace evam
               maxForward(constrain(maxForward, -1000, 1000)) {}
     };
 
-    template <class Driver, 
-              signed short kMaxBackward = -1000, 
-              signed short kMinBackward = 0, 
-              signed short kMinForward = 0, 
-              signed short kMaxForward = 1000>
-    class DirectionalMotor : public Driver
+    template <class TDriver,
+              signed short tMaxBackward = -1000,
+              signed short tMinBackward = 0,
+              signed short tMinForward = 0,
+              signed short tMaxForward = 1000>
+    class DirectionalMotor : public TDriver
     {
-        static_assert(kMaxBackward >= -1000 && kMaxBackward <= 1000, "kMaxBackward out of range");
-        static_assert(kMinBackward >= -1000 && kMinBackward <= 1000, "kMinBackward out of range");
-        static_assert(kMinForward >= -1000 && kMinForward <= 1000, "kMinForward out of range");
-        static_assert(kMaxForward >= -1000 && kMaxForward <= 1000, "kMaxForward out of range");
+        static_assert(tMaxBackward >= -1000 && tMaxBackward <= 1000, "tMaxBackward out of range");
+        static_assert(tMinBackward >= -1000 && tMinBackward <= 1000, "tMinBackward out of range");
+        static_assert(tMinForward >= -1000 && tMinForward <= 1000, "tMinForward out of range");
+        static_assert(tMaxForward >= -1000 && tMaxForward <= 1000, "tMaxForward out of range");
 
     private:
         DirectionalConfig mConfig;
-        
+
         signed short compute(signed short aLevel) const
         {
             if (aLevel < 0)
@@ -51,10 +52,16 @@ namespace evam
         }
 
     public:
-        DirectionalMotor() : mConfig(kMaxBackward, kMinBackward, kMinForward, kMaxForward) {}
-        
-        template<typename... Args>
-        DirectionalMotor(DirectionalConfig config, Args... args) : Driver(args...), mConfig(config) {}
+        DirectionalMotor() : mConfig(tMaxBackward, tMinBackward, tMinForward, tMaxForward)
+        {
+            Go(0);
+        }
+
+        template <typename... Args>
+        DirectionalMotor(DirectionalConfig config, Args... args) : TDriver(args...), mConfig(config)
+        {
+            Go(0);
+        }
 
         void SetupRange(signed short maxBackward, signed short minBackward, signed short minForward, signed short maxForward)
         {
@@ -106,7 +113,7 @@ namespace evam
 
         void Go(signed short aLevel)
         {
-            Driver::actBipolar(compute(aLevel));
+            TDriver::actBipolar(compute(aLevel));
         }
     };
 }

@@ -11,6 +11,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include <evamUtils.h>
 
 namespace evam
 {
@@ -22,18 +23,17 @@ namespace evam
         TA6586Config(int forwardPin, int backwardPin) : forwardPin(forwardPin), backwardPin(backwardPin) {}
     };
 
-    template <int kForwardPin = 0, int kBackwardPin = 0>
+    template <int tForwardPin = 0, int tBackwardPin = 0>
     class TA6586Driver
     {
     private:
         TA6586Config mConfig;
 
     public:
-        TA6586Driver() : mConfig(kForwardPin, kBackwardPin)
+        TA6586Driver() : mConfig(tForwardPin, tBackwardPin)
         {
             pinMode(mConfig.forwardPin, OUTPUT);
             pinMode(mConfig.backwardPin, OUTPUT);
-            actBipolar(0);
         }
 
         template <typename... Args>
@@ -41,7 +41,6 @@ namespace evam
         {
             pinMode(mConfig.forwardPin, OUTPUT);
             pinMode(mConfig.backwardPin, OUTPUT);
-            actBipolar(0);
         }
 
         int GetForwardPin() const
@@ -58,8 +57,8 @@ namespace evam
         void actBipolar(signed short aValue)
         {
             int normalized = map(constrain(aValue, -1000, 1000), -1000, 1000, -255, 255);
-            analogWrite(mConfig.forwardPin, max(0, normalized));
-            analogWrite(mConfig.backwardPin, max(0, -normalized));
+            universalWrite(mConfig.forwardPin, max(0, normalized));
+            universalWrite(mConfig.backwardPin, max(0, -normalized));
         }
     };
 }

@@ -2,7 +2,7 @@
 
 # Class evam::LinearActuator
 
-**template &lt;class Driver, int kMinValue, int kMaxValue&gt;**
+**template &lt;class TDriver, int tMinValue, int tMaxValue&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Linear actuator controller (position control)._ [More...](#detailed-description
 
 
 
-Inherits the following classes: Driver
+Inherits the following classes: TDriver
 
 
 
@@ -102,9 +102,9 @@ Maps input range 0..1000 linearly to output values. 0 = minimum position, 1000 =
 **Template parameters:**
 
 
-* `Driver` Driver class (must implement actUnipolar(unsigned short)) 
-* `kMinValue` Output value at 0 input (minimum position) 
-* `kMaxValue` Output value at 1000 input (maximum position) 
+* `TDriver` TDriver class (must implement actUnipolar(unsigned short)) 
+* `tMinValue` Output value at 0 input (minimum position) 
+* `tMaxValue` Output value at 1000 input (maximum position) 
 
 
 

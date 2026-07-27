@@ -1,30 +1,30 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_forward_motor" kind="class" language="C++" prot="public">
     <compoundname>evam::ForwardMotor</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">Driver</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TDriver</basecompoundref>
     <includes refid="evam_forward_motor_8h" local="no">evamForwardMotor.h</includes>
     <templateparamlist>
       <param>
-        <type>class Driver</type>
+        <type>class TDriver</type>
       </param>
       <param>
         <type>int</type>
-        <declname>kMinValue</declname>
-        <defname>kMinValue</defname>
+        <declname>tMinValue</declname>
+        <defname>tMinValue</defname>
         <defval>0</defval>
       </param>
       <param>
         <type>int</type>
-        <declname>kMaxValue</declname>
-        <defname>kMaxValue</defname>
+        <declname>tMaxValue</declname>
+        <defname>tMaxValue</defname>
         <defval>1000</defval>
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_forward_motor_1a1466b34acffa93eaa0e688e8af2b4006" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classevam_1_1_forward_motor_1ab7b11219cc2b5ae802401a8e8c4bb0f4" prot="private" static="no" mutable="no">
         <type><ref refid="structevam_1_1_forward_config" kindref="compound">ForwardConfig</ref></type>
-        <definition>ForwardConfig evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::mConfig</definition>
+        <definition>ForwardConfig evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::mConfig</definition>
         <argsstring></argsstring>
         <name>mConfig</name>
         <qualifiedname>evam::ForwardMotor::mConfig</qualifiedname>
@@ -34,13 +34,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="32" column="23" bodyfile="src/evamForwardMotor.h" bodystart="32" bodyend="-1"/>
+        <location file="src/evamForwardMotor.h" line="33" column="23" bodyfile="src/evamForwardMotor.h" bodystart="33" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1afbed39f3ba5604fa32fc669933c80085" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1ad3384f913df4f3834dc81d490aa650bd" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::compute</definition>
+        <definition>signed short evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::compute</definition>
         <argsstring>(signed short aLevel) const</argsstring>
         <name>compute</name>
         <qualifiedname>evam::ForwardMotor::compute</qualifiedname>
@@ -54,13 +54,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="34" column="22" bodyfile="src/evamForwardMotor.h" bodystart="34" bodyend="39"/>
+        <location file="src/evamForwardMotor.h" line="35" column="22" bodyfile="src/evamForwardMotor.h" bodystart="35" bodyend="40"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1a0f77804b51f41282fe81c32c974904e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1a517b1a1af93b3647f0841db933807046" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::ForwardMotor</definition>
+        <definition>evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::ForwardMotor</definition>
         <argsstring>()</argsstring>
         <name>ForwardMotor</name>
         <qualifiedname>evam::ForwardMotor::ForwardMotor</qualifiedname>
@@ -70,9 +70,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="42" column="9" bodyfile="src/evamForwardMotor.h" bodystart="42" bodyend="42"/>
+        <location file="src/evamForwardMotor.h" line="43" column="9" bodyfile="src/evamForwardMotor.h" bodystart="43" bodyend="46"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1a3ea584db6674242ceb4ca93f9c03addd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1acd69433ddf8ffdab0947fc489392cc36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -81,7 +81,7 @@
           </param>
         </templateparamlist>
         <type></type>
-        <definition>evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::ForwardMotor</definition>
+        <definition>evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::ForwardMotor</definition>
         <argsstring>(ForwardConfig config, Args... args)</argsstring>
         <name>ForwardMotor</name>
         <qualifiedname>evam::ForwardMotor::ForwardMotor</qualifiedname>
@@ -99,11 +99,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="45" column="9" bodyfile="src/evamForwardMotor.h" bodystart="45" bodyend="45"/>
+        <location file="src/evamForwardMotor.h" line="49" column="9" bodyfile="src/evamForwardMotor.h" bodystart="49" bodyend="52"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1ac8edfa94a52d3bd7c6d1784c6c286dbc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1acc29f519b1d15931a8006dbd9d683df0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::SetupRange</definition>
+        <definition>void evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::SetupRange</definition>
         <argsstring>(int minValue, int maxValue)</argsstring>
         <name>SetupRange</name>
         <qualifiedname>evam::ForwardMotor::SetupRange</qualifiedname>
@@ -140,11 +140,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="53" column="14" bodyfile="src/evamForwardMotor.h" bodystart="53" bodyend="57"/>
+        <location file="src/evamForwardMotor.h" line="60" column="14" bodyfile="src/evamForwardMotor.h" bodystart="60" bodyend="64"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1a6b9d5ae7ffb188d3c4dbf4edfacd9203" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1adfd9b1fc1254f85595a0275c6e9b8a58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::SetMinValue</definition>
+        <definition>void evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::SetMinValue</definition>
         <argsstring>(int aValue)</argsstring>
         <name>SetMinValue</name>
         <qualifiedname>evam::ForwardMotor::SetMinValue</qualifiedname>
@@ -169,11 +169,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="63" column="14" bodyfile="src/evamForwardMotor.h" bodystart="63" bodyend="66"/>
+        <location file="src/evamForwardMotor.h" line="70" column="14" bodyfile="src/evamForwardMotor.h" bodystart="70" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1a2e4dcca6b16c6f164cfc886204eb4764" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1a92a0f7843d74bfbda84af7e793dd8279" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
-        <definition>int evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::GetMinValue</definition>
+        <definition>int evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::GetMinValue</definition>
         <argsstring>() const</argsstring>
         <name>GetMinValue</name>
         <qualifiedname>evam::ForwardMotor::GetMinValue</qualifiedname>
@@ -187,11 +187,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="72" column="13" bodyfile="src/evamForwardMotor.h" bodystart="72" bodyend="75"/>
+        <location file="src/evamForwardMotor.h" line="79" column="13" bodyfile="src/evamForwardMotor.h" bodystart="79" bodyend="82"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1a82359bddd7701f52941f33210c182c6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1a6d0bffbde4a9f257592d62ce4b369965" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::SetMaxValue</definition>
+        <definition>void evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::SetMaxValue</definition>
         <argsstring>(int aValue)</argsstring>
         <name>SetMaxValue</name>
         <qualifiedname>evam::ForwardMotor::SetMaxValue</qualifiedname>
@@ -216,11 +216,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="81" column="14" bodyfile="src/evamForwardMotor.h" bodystart="81" bodyend="84"/>
+        <location file="src/evamForwardMotor.h" line="88" column="14" bodyfile="src/evamForwardMotor.h" bodystart="88" bodyend="91"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1ab2a75939ff1e2490562f49cb71a441a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1a371ec400692df3fcdb0673fe04df2bbe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
-        <definition>int evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::GetMaxValue</definition>
+        <definition>int evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::GetMaxValue</definition>
         <argsstring>() const</argsstring>
         <name>GetMaxValue</name>
         <qualifiedname>evam::ForwardMotor::GetMaxValue</qualifiedname>
@@ -234,11 +234,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="90" column="13" bodyfile="src/evamForwardMotor.h" bodystart="90" bodyend="93"/>
+        <location file="src/evamForwardMotor.h" line="97" column="13" bodyfile="src/evamForwardMotor.h" bodystart="97" bodyend="100"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_forward_motor_1ac0d4e94277f2d32911fb06cf989815f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_forward_motor_1a90238089f0eb3830d52be2395ce83049" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;::Go</definition>
+        <definition>void evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;::Go</definition>
         <argsstring>(signed short aLevel)</argsstring>
         <name>Go</name>
         <qualifiedname>evam::ForwardMotor::Go</qualifiedname>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="99" column="14" bodyfile="src/evamForwardMotor.h" bodystart="99" bodyend="102"/>
+        <location file="src/evamForwardMotor.h" line="106" column="14" bodyfile="src/evamForwardMotor.h" bodystart="106" bodyend="109"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -276,12 +276,12 @@
 <parametername>Driver</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Driver class (must implement actUnipolar(unsigned short)) </para>
+<para>TDriver class (must implement actUnipolar(unsigned short)) </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kMinValue</parametername>
+<parametername>tMinValue</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Minimum output value (e.g., 20 = stop) </para>
@@ -289,7 +289,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kMaxValue</parametername>
+<parametername>tMaxValue</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Maximum output value (e.g., 1000 = full throttle) </para>
@@ -300,10 +300,10 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Driver</label>
+        <label>TDriver</label>
       </node>
       <node id="1">
-        <label>evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;</label>
+        <label>evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;</label>
         <link refid="classevam_1_1_forward_motor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -311,27 +311,27 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Driver</label>
+        <label>TDriver</label>
       </node>
       <node id="1">
-        <label>evam::ForwardMotor&lt; Driver, kMinValue, kMaxValue &gt;</label>
+        <label>evam::ForwardMotor&lt; TDriver, tMinValue, tMaxValue &gt;</label>
         <link refid="classevam_1_1_forward_motor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamForwardMotor.h" line="26" column="5" bodyfile="src/evamForwardMotor.h" bodystart="27" bodyend="103"/>
+    <location file="src/evamForwardMotor.h" line="27" column="5" bodyfile="src/evamForwardMotor.h" bodystart="28" bodyend="110"/>
     <listofallmembers>
-      <member refid="classevam_1_1_forward_motor_1afbed39f3ba5604fa32fc669933c80085" prot="private" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>compute</name></member>
-      <member refid="classevam_1_1_forward_motor_1a0f77804b51f41282fe81c32c974904e1" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>ForwardMotor</name></member>
-      <member refid="classevam_1_1_forward_motor_1a3ea584db6674242ceb4ca93f9c03addd" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>ForwardMotor</name></member>
-      <member refid="classevam_1_1_forward_motor_1ab2a75939ff1e2490562f49cb71a441a9" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>GetMaxValue</name></member>
-      <member refid="classevam_1_1_forward_motor_1a2e4dcca6b16c6f164cfc886204eb4764" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>GetMinValue</name></member>
-      <member refid="classevam_1_1_forward_motor_1ac0d4e94277f2d32911fb06cf989815f7" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>Go</name></member>
-      <member refid="classevam_1_1_forward_motor_1a1466b34acffa93eaa0e688e8af2b4006" prot="private" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>mConfig</name></member>
-      <member refid="classevam_1_1_forward_motor_1a82359bddd7701f52941f33210c182c6a" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>SetMaxValue</name></member>
-      <member refid="classevam_1_1_forward_motor_1a6b9d5ae7ffb188d3c4dbf4edfacd9203" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>SetMinValue</name></member>
-      <member refid="classevam_1_1_forward_motor_1ac8edfa94a52d3bd7c6d1784c6c286dbc" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>SetupRange</name></member>
+      <member refid="classevam_1_1_forward_motor_1ad3384f913df4f3834dc81d490aa650bd" prot="private" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>compute</name></member>
+      <member refid="classevam_1_1_forward_motor_1a517b1a1af93b3647f0841db933807046" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>ForwardMotor</name></member>
+      <member refid="classevam_1_1_forward_motor_1acd69433ddf8ffdab0947fc489392cc36" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>ForwardMotor</name></member>
+      <member refid="classevam_1_1_forward_motor_1a371ec400692df3fcdb0673fe04df2bbe" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>GetMaxValue</name></member>
+      <member refid="classevam_1_1_forward_motor_1a92a0f7843d74bfbda84af7e793dd8279" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>GetMinValue</name></member>
+      <member refid="classevam_1_1_forward_motor_1a90238089f0eb3830d52be2395ce83049" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_forward_motor_1ab7b11219cc2b5ae802401a8e8c4bb0f4" prot="private" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>mConfig</name></member>
+      <member refid="classevam_1_1_forward_motor_1a6d0bffbde4a9f257592d62ce4b369965" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>SetMaxValue</name></member>
+      <member refid="classevam_1_1_forward_motor_1adfd9b1fc1254f85595a0275c6e9b8a58" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>SetMinValue</name></member>
+      <member refid="classevam_1_1_forward_motor_1acc29f519b1d15931a8006dbd9d683df0" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>SetupRange</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

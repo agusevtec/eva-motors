@@ -27,21 +27,21 @@ namespace evam
             : pin(pin), minPulse(minPulse), middlePulse(middlePulse), maxPulse(maxPulse) {}
     };
 
-    template <int kPin, int kMinPulse = 1000, int kMiddlePulse = 1500, int kMaxPulse = 2000>
+    template <int tPin, int tMinPulse = 1000, int tMiddlePulse = 1500, int tMaxPulse = 2000>
     class SoftwareServoDriver : public virtual Tickable
     {
-        static_assert(kMinPulse >= 500 && kMinPulse <= 2500, "kMinPulse out of range 500..2500");
-        static_assert(kMiddlePulse >= 500 && kMiddlePulse <= 2500, "kMiddlePulse out of range 500..2500");
-        static_assert(kMaxPulse >= 500 && kMaxPulse <= 2500, "kMaxPulse out of range 500..2500");
-        static_assert(kMinPulse < kMiddlePulse, "kMinPulse must be less than kMiddlePulse");
-        static_assert(kMiddlePulse < kMaxPulse, "kMiddlePulse must be less than kMaxPulse");
+        static_assert(tMinPulse >= 500 && tMinPulse <= 2500, "tMinPulse out of range 500..2500");
+        static_assert(tMiddlePulse >= 500 && tMiddlePulse <= 2500, "tMiddlePulse out of range 500..2500");
+        static_assert(tMaxPulse >= 500 && tMaxPulse <= 2500, "tMaxPulse out of range 500..2500");
+        static_assert(tMinPulse < tMiddlePulse, "tMinPulse must be less than tMiddlePulse");
+        static_assert(tMiddlePulse < tMaxPulse, "tMiddlePulse must be less than tMaxPulse");
 
     private:
         static constexpr unsigned long kRefreshIntervalMs = 20;
 
         SoftwareServoConfig mConfig;
         
-        unsigned long mTargetPulseUs = kMinPulse;
+        unsigned long mTargetPulseUs = tMinPulse;
         unsigned long mPulseStartUs = 0;
         unsigned long mLastRefreshMs = 0;
         bool mPulseActive = false;
@@ -73,7 +73,7 @@ namespace evam
         }
 
     public:
-        SoftwareServoDriver() : mConfig(kPin, kMinPulse, kMiddlePulse, kMaxPulse)
+        SoftwareServoDriver() : mConfig(tPin, tMinPulse, tMiddlePulse, tMaxPulse)
         {
             pinMode(mConfig.pin, OUTPUT);
             digitalWrite(mConfig.pin, LOW);
@@ -111,8 +111,8 @@ namespace evam
         }
     };
 
-    template <int kPin, int kMinPulse, int kMaxPulse>
-    using SoftwareServoFlatDriver = SoftwareServoDriver<kPin, kMinPulse, (kMaxPulse - kMinPulse) / 2 + kMinPulse, kMaxPulse>;
+    template <int tPin, int tMinPulse, int tMaxPulse>
+    using SoftwareServoFlatDriver = SoftwareServoDriver<tPin, tMinPulse, (tMaxPulse + tMinPulse) / 2, tMaxPulse>;
 }
 ```
 

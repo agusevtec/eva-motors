@@ -40,7 +40,7 @@ private:
 
   PinSymmetricJoystick<A6, INPUT, 100, 300> mThrottle;
 
-  CurveDecor<DirectionalMotor<TA6586Driver<>>> motorr = {
+  CurveDecor<DirectionalMotor<TA6586Driver<>>> motor {
     CurveConfig{ -3 },
     DirectionalConfig{ -1000, -200, 200, 1000 },
     TA6586Config{ 9, 10 }

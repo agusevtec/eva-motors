@@ -6,7 +6,7 @@
 namespace evam
 {
     /**
-     * @brief Configuration structure for TA6586Driver
+     * @brief Configuration structure for TA6586Driver 
      */
     struct TA6586Config
     {
@@ -17,7 +17,7 @@ namespace evam
     };
 
     /**
-     * @brief Driver for the TA6586 dual H-bridge motor driver.
+     * @brief Driver for the TA6586 (classic dual H-bridge) motor driver.
      *
      * Pinout:
      * @verbatim
@@ -30,10 +30,10 @@ namespace evam
      *       --/ \--
      * @endverbatim
      *
-     * @tparam kForwardPin PWM pin connected to FI (forward input)
-     * @tparam kBackwardPin PWM pin connected to BI (backward input)
+     * @tparam tForwardPin PWM pin connected to FI (forward input)
+     * @tparam tBackwardPin PWM pin connected to BI (backward input)
      */
-    template <int kForwardPin = 0, int kBackwardPin = 0>
+    template <int tForwardPin = 0, int tBackwardPin = 0>
     class TA6586Driver
     {
     private:
@@ -43,7 +43,7 @@ namespace evam
         /**
          * @brief Constructor. Initializes pins and stops the motor.
          */
-        TA6586Driver() : mConfig(kForwardPin, kBackwardPin)
+        TA6586Driver() : mConfig(tForwardPin, tBackwardPin)
         {
             pinMode(mConfig.forwardPin, OUTPUT);
             pinMode(mConfig.backwardPin, OUTPUT);

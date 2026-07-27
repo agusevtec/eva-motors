@@ -25,11 +25,11 @@ namespace evam
      * - AIN1 / AIN2 - direction control pins for motor A
      * - PWMB, BIN1, BIN2 for motor B (use separate instance)
      *
-     * @tparam kPinSpeed PWM pin for speed control
-     * @tparam kPinMode1 Direction pin 1 (IN1)
-     * @tparam kPinMode2 Direction pin 2 (IN2)
+     * @tparam tPinSpeed PWM pin for speed control
+     * @tparam tPinMode1 Direction pin 1 (IN1)
+     * @tparam tPinMode2 Direction pin 2 (IN2)
      */
-    template <int kPinSpeed = 0, int kPinMode1 = 0, int kPinMode2 = 0>
+    template <int tPinSpeed = 0, int tPinMode1 = 0, int tPinMode2 = 0>
     class TB6612FNGDriver
     {
     private:
@@ -39,7 +39,7 @@ namespace evam
         /**
          * @brief Constructor. Initializes pins and stops the motor.
          */
-        TB6612FNGDriver() : mConfig(kPinSpeed, kPinMode1, kPinMode2)
+        TB6612FNGDriver() : mConfig(tPinSpeed, tPinMode1, tPinMode2)
         {
             pinMode(mConfig.pinSpeed, OUTPUT);
             pinMode(mConfig.pinMode1, OUTPUT);

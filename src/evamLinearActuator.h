@@ -19,15 +19,15 @@ namespace evam
      *
      * Maps input range 0..1000 linearly to output values. 0 = minimum position, 1000 = maximum position.
      *
-     * @tparam Driver Driver class (must implement actUnipolar(unsigned short))
-     * @tparam kMinValue Output value at 0 input (minimum position)
-     * @tparam kMaxValue Output value at 1000 input (maximum position)
+     * @tparam TDriver TDriver class (must implement actUnipolar(unsigned short))
+     * @tparam tMinValue Output value at 0 input (minimum position)
+     * @tparam tMaxValue Output value at 1000 input (maximum position)
      */
-    template <class Driver, int kMinValue = 0, int kMaxValue = 1000>
-    class LinearActuator : public Driver
+    template <class TDriver, int tMinValue = 0, int tMaxValue = 1000>
+    class LinearActuator : public TDriver
     {
-        static_assert(kMinValue >= -1000 && kMinValue <= 1000, "kMinValue out of range");
-        static_assert(kMaxValue >= -1000 && kMaxValue <= 1000, "kMaxValue out of range");
+        static_assert(tMinValue >= -1000 && tMinValue <= 1000, "tMinValue out of range");
+        static_assert(tMaxValue >= -1000 && tMaxValue <= 1000, "tMaxValue out of range");
 
     private:
         LinearActuatorConfig mConfig;
@@ -38,13 +38,13 @@ namespace evam
         }
 
     public:
-        LinearActuator() : mConfig(kMinValue, kMaxValue)
+        LinearActuator() : mConfig(tMinValue, tMaxValue)
         {
             Go(0);
         }
 
         template <typename... Args>
-        LinearActuator(LinearActuatorConfig config, Args... args) : Driver(args...), mConfig(config)
+        LinearActuator(LinearActuatorConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
             Go(0);
         }
@@ -103,7 +103,7 @@ namespace evam
          */
         void Go(signed short aLevel)
         {
-            Driver::actUnipolar(compute(aLevel));
+            TDriver::actUnipolar(compute(aLevel));
         }
     };
 }

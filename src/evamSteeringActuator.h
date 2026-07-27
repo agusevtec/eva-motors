@@ -25,19 +25,19 @@ namespace evam
      * -1000 = left position, 0 = center, 1000 = right position.
      *
      * @tparam Driver Driver class (must implement actBipolar(signed short))
-     * @tparam kLeftPos Output value at -1000 input (leftmost position)
-     * @tparam kCenterPos Output value at 0 input (center position)
-     * @tparam kRightPos Output value at 1000 input (rightmost position)
+     * @tparam tLeftPos Output value at -1000 input (leftmost position)
+     * @tparam tCenterPos Output value at 0 input (center position)
+     * @tparam tRightPos Output value at 1000 input (rightmost position)
      */
-    template <class Driver,
-              signed short kLeftPos = -1000,
-              signed short kCenterPos = 0,
-              signed short kRightPos = 1000>
-    class SteeringActuator : public Driver
+    template <class TDriver,
+              signed short tLeftPos = -1000,
+              signed short tCenterPos = 0,
+              signed short tRightPos = 1000>
+    class SteeringActuator : public TDriver
     {
-        static_assert(kLeftPos >= -1000 && kLeftPos <= 1000, "kLeftPos out of range");
-        static_assert(kCenterPos >= -1000 && kCenterPos <= 1000, "kCenterPos out of range");
-        static_assert(kRightPos >= -1000 && kRightPos <= 1000, "kRightPos out of range");
+        static_assert(tLeftPos >= -1000 && tLeftPos <= 1000, "tLeftPos out of range");
+        static_assert(tCenterPos >= -1000 && tCenterPos <= 1000, "tCenterPos out of range");
+        static_assert(tRightPos >= -1000 && tRightPos <= 1000, "tRightPos out of range");
 
     private:
         SteeringConfig mConfig;
@@ -51,13 +51,13 @@ namespace evam
         }
 
     public:
-        SteeringActuator() : mConfig(kLeftPos, kCenterPos, kRightPos)
+        SteeringActuator() : mConfig(tLeftPos, tCenterPos, tRightPos)
         {
             Go(0);
         }
 
         template <typename... Args>
-        SteeringActuator(SteeringConfig config, Args... args) : Driver(args...), mConfig(config)
+        SteeringActuator(SteeringConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
             Go(0);
         }
@@ -136,7 +136,7 @@ namespace evam
          */
         void Go(signed short aLevel)
         {
-            Driver::actBipolar(compute(aLevel));
+            TDriver::actBipolar(compute(aLevel));
         }
     };
 }

@@ -21,18 +21,18 @@ namespace evam
      * Converts 0..1000 input to 0..255 PWM duty cycle.
      * Suitable for MOSFETs and other unipolar devices.
      *
-     * @tparam kPin PWM output pin number.
+     * @tparam tPin PWM output pin number.
      */
-    template <int kPin = 0>
+    template <int tPin = 0>
     class PwmDriver
     {
     private:
         PwmConfig mConfig;
 
     public:
-        PwmDriver() : mConfig(kPin)
+        PwmDriver() : mConfig(tPin)
         {
-            pinMode(kPin, OUTPUT);
+            pinMode(tPin, OUTPUT);
         }
 
         template <typename... Args>

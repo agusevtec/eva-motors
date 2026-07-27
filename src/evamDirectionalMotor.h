@@ -26,23 +26,23 @@ namespace evam
      * Maps a signed input range -1000..1000 to driver-specific output values.
      * Negative values correspond to reverse, positive to forward.
      *
-     * @tparam Driver Driver class (must implement actBipolar(signed short))
-     * @tparam kMaxBackward Maximum reverse output value (e.g., -1000)
-     * @tparam kMinBackward Minimum reverse output value (e.g., -50)
-     * @tparam kMinForward Minimum forward output value (e.g., 50)
-     * @tparam kMaxForward Maximum forward output value (e.g., 1000)
+     * @tparam TDriver TDriver class (must implement actBipolar(signed short))
+     * @tparam tMaxBackward Maximum reverse output value (e.g., -1000)
+     * @tparam tMinBackward Minimum reverse output value (e.g., -50)
+     * @tparam tMinForward Minimum forward output value (e.g., 50)
+     * @tparam tMaxForward Maximum forward output value (e.g., 1000)
      */
-    template <class Driver,
-              signed short kMaxBackward = -1000,
-              signed short kMinBackward = 0,
-              signed short kMinForward = 0,
-              signed short kMaxForward = 1000>
-    class DirectionalMotor : public Driver
+    template <class TDriver,
+              signed short tMaxBackward = -1000,
+              signed short tMinBackward = 0,
+              signed short tMinForward = 0,
+              signed short tMaxForward = 1000>
+    class DirectionalMotor : public TDriver
     {
-        static_assert(kMaxBackward >= -1000 && kMaxBackward <= 1000, "kMaxBackward out of range");
-        static_assert(kMinBackward >= -1000 && kMinBackward <= 1000, "kMinBackward out of range");
-        static_assert(kMinForward >= -1000 && kMinForward <= 1000, "kMinForward out of range");
-        static_assert(kMaxForward >= -1000 && kMaxForward <= 1000, "kMaxForward out of range");
+        static_assert(tMaxBackward >= -1000 && tMaxBackward <= 1000, "tMaxBackward out of range");
+        static_assert(tMinBackward >= -1000 && tMinBackward <= 1000, "tMinBackward out of range");
+        static_assert(tMinForward >= -1000 && tMinForward <= 1000, "tMinForward out of range");
+        static_assert(tMaxForward >= -1000 && tMaxForward <= 1000, "tMaxForward out of range");
 
     private:
         DirectionalConfig mConfig;
@@ -57,13 +57,13 @@ namespace evam
         }
 
     public:
-        DirectionalMotor() : mConfig(kMaxBackward, kMinBackward, kMinForward, kMaxForward)
+        DirectionalMotor() : mConfig(tMaxBackward, tMinBackward, tMinForward, tMaxForward)
         {
             Go(0);
         }
 
         template <typename... Args>
-        DirectionalMotor(DirectionalConfig config, Args... args) : Driver(args...), mConfig(config)
+        DirectionalMotor(DirectionalConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
             Go(0);
         }
@@ -162,7 +162,7 @@ namespace evam
          */
         void Go(signed short aLevel)
         {
-            Driver::actBipolar(compute(aLevel));
+            TDriver::actBipolar(compute(aLevel));
         }
     };
 }

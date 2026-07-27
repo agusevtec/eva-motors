@@ -19,15 +19,15 @@ namespace evam
      *
      * Maps input range 0..1000 to driver output. Negative inputs are treated as stop (0).
      *
-     * @tparam Driver Driver class (must implement actUnipolar(unsigned short))
-     * @tparam kMinValue Minimum output value (e.g., 20 = stop)
-     * @tparam kMaxValue Maximum output value (e.g., 1000 = full throttle)
+     * @tparam Driver TDriver class (must implement actUnipolar(unsigned short))
+     * @tparam tMinValue Minimum output value (e.g., 20 = stop)
+     * @tparam tMaxValue Maximum output value (e.g., 1000 = full throttle)
      */
-    template <class Driver, int kMinValue = 0, int kMaxValue = 1000>
-    class ForwardMotor : public Driver
+    template <class TDriver, int tMinValue = 0, int tMaxValue = 1000>
+    class ForwardMotor : public TDriver
     {
-        static_assert(kMinValue >= -1000 && kMinValue <= 1000, "kMinValue out of range");
-        static_assert(kMaxValue >= -1000 && kMaxValue <= 1000, "kMaxValue out of range");
+        static_assert(tMinValue >= -1000 && tMinValue <= 1000, "tMinValue out of range");
+        static_assert(tMaxValue >= -1000 && tMaxValue <= 1000, "tMaxValue out of range");
 
     private:
         ForwardConfig mConfig;
@@ -40,13 +40,13 @@ namespace evam
         }
 
     public:
-        ForwardMotor() : mConfig(kMinValue, kMaxValue)
+        ForwardMotor() : mConfig(tMinValue, tMaxValue)
         {
             Go(0);
         }
 
         template <typename... Args>
-        ForwardMotor(ForwardConfig config, Args... args) : Driver(args...), mConfig(config)
+        ForwardMotor(ForwardConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
             Go(0);
         }
@@ -105,7 +105,7 @@ namespace evam
          */
         void Go(signed short aLevel)
         {
-            Driver::actUnipolar(compute(aLevel));
+            TDriver::actUnipolar(compute(aLevel));
         }
     };
 }

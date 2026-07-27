@@ -91,6 +91,7 @@ KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<>>>>> motor = {
     DirectionalConfig{ -1000, -200, 200, 1000 },
     TA6586Config{ 9, 10 }
 };
+```
 
 ## Extensible Driver Layer
 

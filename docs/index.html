@@ -864,7 +864,7 @@ EVA Motors lets you compose behavior by stacking decorators that add specific ch
 </tr>
 <tr>
 <td><strong>DRIVER</strong> (Required)</td>
-<td><code>PwmDriver</code> • <code>ServoDriver</code> • <code>TA6586</code> • <code>TB6612</code> • <code>~CustomDriver~</code></td>
+<td><code>PwmDriver</code> • <code>ServoDriver</code>• <code>SoftwareServoDriver</code> • <code>TA6586</code> • <code>TB6612</code> • <code>~CustomDriver~</code></td>
 </tr>
 </tbody>
 </table>
@@ -885,14 +885,15 @@ EVA Motors lets you compose behavior by stacking decorators that add specific ch
 </code></pre></div>
 
 <p>or dynamic configuration:</p>
-<p>```cpp
-KickDecor&lt;InertiaDecor&lt;CurveDecor&lt;DirectionalMotor&lt;TA6586Driver&lt;&gt;&gt;&gt;&gt;&gt; motor = {
-    KickConfig{ 25, 900 },
-    InertiaConfig{ 15 },
-    CurveConfig{ 5 },
-    DirectionalConfig{ -1000, -200, 200, 1000 },
-    TA6586Config{ 9, 10 }
-};</p>
+<div class="codehilite"><pre><span></span><code><span class="n">KickDecor</span><span class="o">&lt;</span><span class="n">InertiaDecor</span><span class="o">&lt;</span><span class="n">CurveDecor</span><span class="o">&lt;</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">TA6586Driver</span><span class="o">&lt;&gt;&gt;&gt;&gt;&gt;</span><span class="w"> </span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">KickConfig</span><span class="p">{</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">900</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="n">InertiaConfig</span><span class="p">{</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="n">CurveConfig</span><span class="p">{</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="n">DirectionalConfig</span><span class="p">{</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">-200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="n">TA6586Config</span><span class="p">{</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
 <h2 id="extensible-driver-layer">Extensible Driver Layer<a class="headerlink" href="#extensible-driver-layer" title="Permanent link">&para;</a></h2>
 <p>The library features a clean, extensible hardware abstraction layer. Adding support for new motor drivers is straightforward.</p>
 

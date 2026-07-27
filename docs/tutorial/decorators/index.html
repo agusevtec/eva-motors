@@ -813,13 +813,13 @@
 <p>Converts linear input into an S-shaped curve. </p>
 <p><img alt="Curve Decor Visualization" src="../../images/decorators_curves.png" /></p>
 <p>Applying to Motors: Negative bend values create a softer response at low speeds (finer control) with steeper response at high speeds. Positive bend values create sharper initial response with compressed high-end.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Motor</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kBend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tBend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">CurveDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>kBend</code>: -10..10 (0 = linear, positive = precise low-speed control, negative = aggressive start)</li>
+<li><code>tBend</code>: -10..10 (0 = linear, positive = precise low-speed control, negative = aggressive start)</li>
 </ul>
 <p><strong>Methods:</strong></p>
 <ul>
@@ -859,7 +859,7 @@
 </ul>
 <h2 id="inertiadecor-flywheel-effect">InertiaDecor – Flywheel Effect<a class="headerlink" href="#inertiadecor-flywheel-effect" title="Permanent link">&para;</a></h2>
 <p>Simulates mechanical inertia where speed decreases gradually when stopping. Acceleration and direction changes are applied immediately, but deceleration follows an exponential decay curve.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Motor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kInertiaMass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tInertiaMass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">InertiaDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">Tickable</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 
@@ -867,7 +867,7 @@
 <p>Acording EVA principle must call <code>eva::tac()</code> in <code>loop()</code> to drive the deceleration updates.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>kInertiaMass</code>: 1..200 (higher = slower deceleration)</li>
+<li><code>tInertiaMass</code>: 1..200 (higher = slower deceleration)</li>
 </ul>
 <p><strong>Methods:</strong></p>
 <ul>
@@ -902,7 +902,7 @@
 <p>For extremely high transmission ratios (e.g., geared motors with high reduction), consider using higher inertia mass values to compensate for the mechanical advantage and gear train inertia.</p>
 <h2 id="kickdecor-static-friction-overcome">KickDecor – Static Friction Overcome<a class="headerlink" href="#kickdecor-static-friction-overcome" title="Permanent link">&para;</a></h2>
 <p>Applies a momentary power pulse when starting from stop or changing direction to overcome static friction and inertia.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Motor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kKickDuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kKickPower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tKickDuration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tKickPower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">KickDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">Tickable</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 
@@ -911,10 +911,10 @@
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>
-<p><code>kKickDuration</code>: Pulse duration in milliseconds (&gt; 0)</p>
+<p><code>tKickDuration</code>: Pulse duration in milliseconds (&gt; 0)</p>
 </li>
 <li>
-<p><code>kKickPower</code>: Pulse power (0..1000)</p>
+<p><code>tKickPower</code>: Pulse power (0..1000)</p>
 </li>
 </ul>
 <p><strong>Methods:</strong></p>

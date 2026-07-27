@@ -56,7 +56,7 @@ The library follows a consistent three-layer architecture:
 |-------|------------|
 | **DECORATORS** (Optional) | `CurveDecor` • `InertiaDecor` • `KickDecor` |
 | **MOTOR** (Required) | `DirectionalMotor` • `ForwardMotor` • `SteeringActuator` • `LinearActuator` |
-| **DRIVER** (Required) | `PwmDriver` • `ServoDriver` • `TA6586` • `TB6612` • `~CustomDriver~` |
+| **DRIVER** (Required) | `PwmDriver` • `ServoDriver`• `SoftwareServoDriver` • `TA6586` • `TB6612` • `~CustomDriver~` |
 
 Driver layer handles hardware specifics – pin assignments, PWM ranges, protocol details
 

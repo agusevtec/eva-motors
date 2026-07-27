@@ -21,6 +21,7 @@
 |--------|------------------|--------------|------------------|----------------|
 | PwmDriver | — | ✅ | — | ✅ |
 | ServoDriver | ✅ | ✅ | ✅ | ✅ |
+| SoftwareServoDriver | ✅ | ✅ | ✅ | ✅ |
 | TA6586Driver | ✅ | — | ✅ | — |
 | TB6612Driver | ✅ | — | ✅ | — |
 
@@ -29,9 +30,9 @@
 Bidirectional motor controller for DC motors with H-bridge drivers.
 
 ```cpp
-template <class Driver, signed short kMaxBackward = -1000, 
-          signed short kMinBackward = 0, signed short kMinForward = 0, 
-          signed short kMaxForward = 1000>
+template <class Driver, signed short tMaxBackward = -1000, 
+          signed short tMinBackward = 0, signed short tMinForward = 0, 
+          signed short tMaxForward = 1000>
 class DirectionalMotor : public Driver
 ```
 

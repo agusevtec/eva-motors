@@ -11,13 +11,13 @@ Converts linear input into an S-shaped curve.
 Applying to Motors: Negative bend values create a softer response at low speeds (finer control) with steeper response at high speeds. Positive bend values create sharper initial response with compressed high-end.
 
 ```cpp
-template <class Motor, signed short kBend = 0>
+template <class TMotor, signed short tBend = 0>
 class CurveDecor : public Motor
 ```
 
 **Parameters:**
 
-- `kBend`: -10..10 (0 = linear, positive = precise low-speed control, negative = aggressive start)
+- `tBend`: -10..10 (0 = linear, positive = precise low-speed control, negative = aggressive start)
 
 **Methods:**
 
@@ -53,7 +53,7 @@ motor.Go(800);
 Simulates mechanical inertia where speed decreases gradually when stopping. Acceleration and direction changes are applied immediately, but deceleration follows an exponential decay curve.
 
 ```cpp
-template <class Motor, unsigned short kInertiaMass = 10>
+template <class TMotor, unsigned short tInertiaMass = 10>
 class InertiaDecor : public virtual Tickable, public Motor
 ```
 
@@ -63,7 +63,7 @@ Acording EVA principle must call `eva::tac()` in `loop()` to drive the decelerat
 
 **Parameters:**
 
-- `kInertiaMass`: 1..200 (higher = slower deceleration)
+- `tInertiaMass`: 1..200 (higher = slower deceleration)
 
 **Methods:**
 
@@ -98,7 +98,7 @@ For extremely high transmission ratios (e.g., geared motors with high reduction)
 Applies a momentary power pulse when starting from stop or changing direction to overcome static friction and inertia.
 
 ```cpp
-template <class Motor, unsigned short kKickDuration = 20, signed short kKickPower = 1000>
+template <class TMotor, unsigned short tKickDuration = 20, signed short tKickPower = 1000>
 class KickDecor : public virtual Tickable, public Motor
 ```
 
@@ -108,9 +108,9 @@ Must call `eva::tac()` in `loop()` to manage kick pulse timing.
 
 **Parameters:**
 
-- `kKickDuration`: Pulse duration in milliseconds (> 0)
+- `tKickDuration`: Pulse duration in milliseconds (> 0)
 
-- `kKickPower`: Pulse power (0..1000)
+- `tKickPower`: Pulse power (0..1000)
 
 **Methods:**
 

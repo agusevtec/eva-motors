@@ -860,7 +860,7 @@
 </table>
 <h2 id="slidingwindowdecor-moving-average">SlidingWindowDecor – Moving Average<a class="headerlink" href="#slidingwindowdecor-moving-average" title="Permanent link">&para;</a></h2>
 <p>Simple moving average filter that computes the arithmetic mean of the last N values.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Motor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">SlidingWindowDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 
@@ -895,7 +895,7 @@
 </ul>
 <h2 id="minmaxdecor-morphological-filter">MinmaxDecor – Morphological Filter<a class="headerlink" href="#minmaxdecor-morphological-filter" title="Permanent link">&para;</a></h2>
 <p>Advanced filter that removes both positive and negative impulse noise while preserving edges.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Motor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">MinmaxDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 
@@ -931,7 +931,7 @@
 </ul>
 <h2 id="adaptivesmoothdecor-adaptive-exponential">AdaptiveSmoothDecor – Adaptive Exponential<a class="headerlink" href="#adaptivesmoothdecor-adaptive-exponential" title="Permanent link">&para;</a></h2>
 <p>Exponential filter that automatically adjusts its time constant based on input rate of change.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Motor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kMinTimeConstantMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kMaxTimeConstantMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMinTimeConstantMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMaxTimeConstantMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">AdaptiveSmoothDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Heartbeat</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 

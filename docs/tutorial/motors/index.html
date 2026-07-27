@@ -893,6 +893,13 @@
 <td>✅</td>
 </tr>
 <tr>
+<td>SoftwareServoDriver</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
 <td>TA6586Driver</td>
 <td>✅</td>
 <td>—</td>
@@ -910,9 +917,9 @@
 </table>
 <h2 id="directionalmotor">DirectionalMotor<a class="headerlink" href="#directionalmotor" title="Permanent link">&para;</a></h2>
 <p>Bidirectional motor controller for DC motors with H-bridge drivers.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Driver</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kMaxBackward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span>
-<span class="w">          </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kMinBackward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kMinForward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
-<span class="w">          </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">kMaxForward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Driver</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMaxBackward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMinBackward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMinForward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMaxForward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">DirectionalMotor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Driver</span>
 </code></pre></div>
 

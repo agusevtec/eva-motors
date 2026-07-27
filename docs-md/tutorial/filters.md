@@ -15,7 +15,7 @@ Filters in EVA Motors are decorators that clean and smooth control signals befor
 Simple moving average filter that computes the arithmetic mean of the last N values.
 
 ```cpp
-template <class Motor, unsigned short N>
+template <class TMotor, unsigned short N>
 class SlidingWindowDecor : public Motor
 ```
 
@@ -54,7 +54,7 @@ motor.Go(500);  // Output = average of last 5 inputs
 Advanced filter that removes both positive and negative impulse noise while preserving edges.
 
 ```cpp
-template <class Motor, unsigned char N>
+template <class TMotor, unsigned char N>
 class MinmaxDecor : public Motor
 ```
 
@@ -95,7 +95,7 @@ motor.Go(500);  // Filtered after 9 samples
 Exponential filter that automatically adjusts its time constant based on input rate of change.
 
 ```cpp
-template <class Motor, unsigned short kMinTimeConstantMs = 10, unsigned short kMaxTimeConstantMs = 150>
+template <class TMotor, unsigned short tMinTimeConstantMs = 10, unsigned short tMaxTimeConstantMs = 150>
 class AdaptiveSmoothDecor : public Heartbeat, public Motor
 ```
 

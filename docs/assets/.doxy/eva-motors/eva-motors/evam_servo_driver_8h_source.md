@@ -31,8 +31,8 @@ namespace evam
         static_assert(tMinPulse >= 500 && tMinPulse <= 2500, "tMinPulse out of range 500..2500");
         static_assert(tMiddlePulse >= 500 && tMiddlePulse <= 2500, "tMiddlePulse out of range 500..2500");
         static_assert(tMaxPulse >= 500 && tMaxPulse <= 2500, "tMaxPulse out of range 500..2500");
-        static_assert(tMinPulse < tMiddlePulse, "tMinPulse must be less than tMiddlePulse");
-        static_assert(tMiddlePulse < tMaxPulse, "tMiddlePulse must be less than tMaxPulse");
+        //static_assert(tMinPulse < tMiddlePulse, "tMinPulse must be less than tMiddlePulse");
+        //static_assert(tMiddlePulse < tMaxPulse, "tMiddlePulse must be less than tMaxPulse");
 
     private:
         ServoConfig mConfig;

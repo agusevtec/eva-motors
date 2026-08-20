@@ -12,6 +12,14 @@ A modular C++ library for motor and actuator control on Arduino.
 
 ## Quick Start
 
+### Built on EVA Ecosystem
+
+EVA Motors is part of the [EVA ecosystem](https://agusevtec.github.io/eva-core-sk/) – an event-driven architecture for Arduino. This integration provides:
+
+- Non-blocking timing – Decorators like `InertiaDecor` and `KickDecor` use EVA's `Tickable` infrastructure
+- Unified update cycle – Single `eva::tac()` call drives all time-based components
+- Zero-polling design – Components update themselves when needed
+
 ### Basic Motor Control
 
 ```cpp

@@ -124,10 +124,10 @@ Must call `eva::tac()` in `loop()` to manage kick pulse timing.
 
 **Example:**
 ```cpp
-using KickerMotor = evam::KickDecor<evam::DirectionalMotor<evam::TA6586Driver<9, 10>>, 30, 900>;
+// 30ms pulse at 90% power
+using KickerMotor = KickDecor<DirectionalMotor<TA6586Driver<9, 10>>, 30, 900>;
 KickerMotor motor;
-motor.SetupKickstart(25, 800);  // 25ms pulse at 80% power
-motor.Go(300);  // Kick then maintain 30% power
+motor.Go(300);  // Kick and then maintain 30% power
 ```
 
 **Kick Logic:**

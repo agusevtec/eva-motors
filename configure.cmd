@@ -4,6 +4,9 @@ setlocal
 call tools\from-git.cmd "https://github.com/agusevtec/eva-core-sk.git"
 if errorlevel 1 exit /b %errorlevel%
 
+call tools\from-git.cmd "https://github.com/agusevtec/eva-filters.git"
+if errorlevel 1 exit /b %errorlevel%
+
 call tools\from-git.cmd "https://github.com/bxparks/EpoxyDuino.git"
 if errorlevel 1 exit /b %errorlevel%
 

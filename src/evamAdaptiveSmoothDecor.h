@@ -2,6 +2,8 @@
 
 #include <Arduino.h>
 #include <evaHeartbeat.h>
+#include <evafAdaptiveSmooth.h>
+#include "evamValueReader.h"
 
 using namespace eva;
 
@@ -15,10 +17,11 @@ namespace evam
     /**
      * @brief Configuration structure for AdaptiveSmoothDecor
      */
-    struct AdaptiveSmoothConfig {
+    struct AdaptiveSmoothConfig
+    {
         unsigned short minTimeConstantMs;
         unsigned short maxTimeConstantMs;
-        
+
         AdaptiveSmoothConfig(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)
             : minTimeConstantMs(constrain(minTimeConstantMs, kMinTimeConstantLimit, kMaxTimeConstantLimit)),
               maxTimeConstantMs(constrain(maxTimeConstantMs, minTimeConstantMs, kMaxTimeConstantLimit)) {}
@@ -37,7 +40,7 @@ namespace evam
     template <class TMotor,
               unsigned short tMinTimeConstantMs = kDefaultMinTimeConstantMs,
               unsigned short tMaxTimeConstantMs = kDefaultMaxTimeConstantMs>
-    class AdaptiveSmoothDecor : public virtual Heartbeat, public TMotor
+    class AdaptiveSmoothDecor : public virtual Heartbeat, public TMotor, private evaf::AdaptiveSmooth<ValueReader, / 10 10, tMaxTimeConstantMs tMinTimeConstantMs>
     {
         static_assert(tMinTimeConstantMs >= kMinTimeConstantLimit && tMinTimeConstantMs <= kMaxTimeConstantLimit,
                       "tMinTimeConstantMs out of range");
@@ -46,55 +49,24 @@ namespace evam
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
-        static constexpr signed short kDeadzone = 3;
 
         AdaptiveSmoothConfig mConfig;
-        
         signed short mTargetValue = 0;
-        signed short mCurrentValue = 0;
-        signed short mLastTargetValue = 0;
-        unsigned short mCurrentTimeConstantMs = tMaxTimeConstantMs;
-
-        unsigned short calculateTimeConstant()
-        {
-            signed short change = abs(mTargetValue - mLastTargetValue);
-
-            if (change >= 200)
-                return mConfig.minTimeConstantMs;
-            else if (change <= 5)
-                return mConfig.maxTimeConstantMs;
-            else
-            {
-                return mConfig.maxTimeConstantMs - ((change - 5) * (mConfig.maxTimeConstantMs - mConfig.minTimeConstantMs) / 195);
-            }
-        }
+        using BaseFilter = evaf::AdaptiveSmooth<ValueReader, / 10 10, tMaxTimeConstantMs tMinTimeConstantMs>;
 
     protected:
         void onHeartbeat() override
         {
-            mCurrentTimeConstantMs = calculateTimeConstant();
-            mLastTargetValue = mTargetValue;
-
-            if (abs(mTargetValue) <= kDeadzone && abs(mCurrentValue) <= kDeadzone)
-            {
-                if (mCurrentValue != 0)
-                    mCurrentValue = 0;
-            }
-            else
-            {
-                signed long step = (signed long)(mTargetValue - mCurrentValue) * kHeartbeatPeriodMs * 1000 / mCurrentTimeConstantMs;
-                mCurrentValue += step / 1000;
-                mCurrentValue = constrain(mCurrentValue, -1000, 1000);
-            }
-
-            TMotor::Go(mCurrentValue);
+            this->setValue(mTargetValue);
+            signed short filtered = BaseFilter::getValue();
+            TMotor::Go(filtered);
         }
 
     public:
         AdaptiveSmoothDecor() : mConfig(tMinTimeConstantMs, tMaxTimeConstantMs), Heartbeat(kHeartbeatPeriodMs) {}
-        
-        template<typename... Args>
-        AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args) 
+
+        template <typename... Args>
+        AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args)
             : mConfig(config), Heartbeat(kHeartbeatPeriodMs), TMotor(args...) {}
 
         void Go(signed short aValue)
@@ -105,6 +77,7 @@ namespace evam
         void SetMinTimeConstantMs(unsigned short value)
         {
             mConfig.minTimeConstantMs = constrain(value, kMinTimeConstantLimit, kMaxTimeConstantLimit);
+            BaseFilter::setMinTimeConstantTicks(mConfig.minTimeConstantMs / kHeartbeatPeriodMs);
         }
 
         unsigned short GetMinTimeConstantMs() const
@@ -115,6 +88,7 @@ namespace evam
         void SetMaxTimeConstantMs(unsigned short value)
         {
             mConfig.maxTimeConstantMs = constrain(value, mConfig.minTimeConstantMs, kMaxTimeConstantLimit);
+            BaseFilter::setMaxTimeConstantTicks(mConfig.maxTimeConstantMs / kHeartbeatPeriodMs);
         }
 
         unsigned short GetMaxTimeConstantMs() const
@@ -128,4 +102,5 @@ namespace evam
             SetMaxTimeConstantMs(maxTimeConstantMs);
         }
     };
+
 }

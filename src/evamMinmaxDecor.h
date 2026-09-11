@@ -33,10 +33,10 @@ namespace evam
         using BaseFilter = evaf::Minmax<ValueReader, N>;
 
     public:
-        MinmaxDecor() : mConfig(N) {}
+        MinmaxDecor() {}
 
         template <typename... Args>
-        MinmaxDecor(MinmaxConfig config, Args... args)
+        MinmaxDecor(Args... args)
             : TMotor(args...) {}
 
         /**

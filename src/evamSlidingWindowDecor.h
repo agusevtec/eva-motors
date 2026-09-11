@@ -28,7 +28,7 @@ namespace evam
         using BaseFilter = evaf::SlidingWindow<ValueReader, N>;
 
     public:
-        SlidingWindowDecor() : {}
+        SlidingWindowDecor() {}
 
         template <typename... Args>
         SlidingWindowDecor(Args... args)

@@ -3,7 +3,7 @@
 
 APP_NAME := tests
 
-ARDUINO_LIBS := libraries/eva-core-sk libraries/AUnit libraries/StubServo src
+ARDUINO_LIBS := libraries/eva-core-sk libraries/AUnit libraries/eva-filters src
 
 include build-tests/EpoxyDuino.mk
 

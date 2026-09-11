@@ -1,106 +1,101 @@
 #pragma once
 
-#include <Arduino.h>
 #include <evaHeartbeat.h>
 #include <evafAdaptiveSmooth.h>
 #include "evamValueReader.h"
 
-using namespace eva;
-
 namespace evam
 {
-    constexpr unsigned short kDefaultMinTimeConstantMs = 10;
-    constexpr unsigned short kDefaultMaxTimeConstantMs = 150;
-    constexpr unsigned short kMinTimeConstantLimit = 5;
-    constexpr unsigned short kMaxTimeConstantLimit = 500;
-
     /**
-     * @brief Configuration structure for AdaptiveSmoothDecor
+     * @brief Configuration structure for AdaptiveSmoothDecor.
+     *
+     * Runtime parameters for evaf::AdaptiveSmooth. Range checking is
+     * delegated to evaf (template defaults + constructor constrain).
      */
     struct AdaptiveSmoothConfig
     {
-        unsigned short minTimeConstantMs;
-        unsigned short maxTimeConstantMs;
+        unsigned short minTimeConstantTicks;
+        unsigned short maxTimeConstantTicks;
 
-        AdaptiveSmoothConfig(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)
-            : minTimeConstantMs(constrain(minTimeConstantMs, kMinTimeConstantLimit, kMaxTimeConstantLimit)),
-              maxTimeConstantMs(constrain(maxTimeConstantMs, minTimeConstantMs, kMaxTimeConstantLimit)) {}
+        AdaptiveSmoothConfig(unsigned short minTimeConstantTicks,
+                             unsigned short maxTimeConstantTicks)
+            : minTimeConstantTicks(minTimeConstantTicks),
+              maxTimeConstantTicks(maxTimeConstantTicks) {}
     };
 
     /**
      * @brief Decorator with adaptive smoothing based on input rate of change.
      *
-     * Automatically adjusts smoothing based on how fast the input is changing.
-     * Uses fixed time base from Heartbeat for consistent behavior.
+     * The evaf filter is held by composition. Go() writes the target value
+     * straight into the filter via ValueReader::setValue; onHeartbeat()
+     * pulls the filtered value out and forwards it to TMotor::Go().
      *
-     * @tparam Motor Base motor class (must implement Go(signed short))
-     * @tparam kMinTimeConstantMs Minimum time constant (fast response). Default: 10ms
-     * @tparam kMaxTimeConstantMs Maximum time constant (heavy smoothing). Default: 150ms
+     * evaf setters/getters are mirrored under the same names so decorators
+     * can be stacked without name clashes.
+     *
+     * @tparam TMotor Base motor class (must implement Go(signed short))
+     * @tparam tMinTimeConstantTicks Default minimum time constant. Default: 1
+     * @tparam tMaxTimeConstantTicks Default maximum time constant. Default: 15
      */
     template <class TMotor,
-              unsigned short tMinTimeConstantMs = kDefaultMinTimeConstantMs,
-              unsigned short tMaxTimeConstantMs = kDefaultMaxTimeConstantMs>
-    class AdaptiveSmoothDecor : public virtual Heartbeat, public TMotor, private evaf::AdaptiveSmooth<ValueReader, / 10 10, tMaxTimeConstantMs tMinTimeConstantMs>
+              unsigned short tMinTimeConstantTicks = evaf::kDefaultMinTimeConstantTicks,
+              unsigned short tMaxTimeConstantTicks = evaf::kDefaultMaxTimeConstantTicks>
+    class AdaptiveSmoothDecor
+        : public virtual eva::Heartbeat,
+          public TMotor
     {
-        static_assert(tMinTimeConstantMs >= kMinTimeConstantLimit && tMinTimeConstantMs <= kMaxTimeConstantLimit,
-                      "tMinTimeConstantMs out of range");
-        static_assert(tMaxTimeConstantMs >= tMinTimeConstantMs && tMaxTimeConstantMs <= kMaxTimeConstantLimit,
-                      "tMaxTimeConstantMs must be >= tMinTimeConstantMs");
-
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        AdaptiveSmoothConfig mConfig;
-        signed short mTargetValue = 0;
-        using BaseFilter = evaf::AdaptiveSmooth<ValueReader, / 10 10, tMaxTimeConstantMs tMinTimeConstantMs>;
+        using Filter = evaf::AdaptiveSmooth<ValueReader,
+                                            tMinTimeConstantTicks,
+                                            tMaxTimeConstantTicks>;
+
+        Filter mFilter;
 
     protected:
         void onHeartbeat() override
         {
-            this->setValue(mTargetValue);
-            signed short filtered = BaseFilter::getValue();
-            TMotor::Go(filtered);
+            TMotor::Go(mFilter.getValue());
         }
 
     public:
-        AdaptiveSmoothDecor() : mConfig(tMinTimeConstantMs, tMaxTimeConstantMs), Heartbeat(kHeartbeatPeriodMs) {}
+        AdaptiveSmoothDecor() : Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
         AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args)
-            : mConfig(config), Heartbeat(kHeartbeatPeriodMs), TMotor(args...) {}
+            : Heartbeat(kHeartbeatPeriodMs),
+              TMotor(args...),
+              mFilter(config.minTimeConstantTicks,
+                      config.maxTimeConstantTicks) {}
 
-        void Go(signed short aValue)
+        /**
+         * @brief Set the target control value.
+         * @param value Target control value, range -1000..1000
+         */
+        void Go(signed short value)
         {
-            mTargetValue = constrain(aValue, -1000, 1000);
+            mFilter.setValue(constrain(value, -1000, 1000));
         }
 
-        void SetMinTimeConstantMs(unsigned short value)
+        void setMinTimeConstantTicks(unsigned short value)
         {
-            mConfig.minTimeConstantMs = constrain(value, kMinTimeConstantLimit, kMaxTimeConstantLimit);
-            BaseFilter::setMinTimeConstantTicks(mConfig.minTimeConstantMs / kHeartbeatPeriodMs);
+            mFilter.setMinTimeConstantTicks(value);
         }
 
-        unsigned short GetMinTimeConstantMs() const
+        unsigned short getMinTimeConstantTicks() const
         {
-            return mConfig.minTimeConstantMs;
+            return mFilter.getMinTimeConstantTicks();
         }
 
-        void SetMaxTimeConstantMs(unsigned short value)
+        void setMaxTimeConstantTicks(unsigned short value)
         {
-            mConfig.maxTimeConstantMs = constrain(value, mConfig.minTimeConstantMs, kMaxTimeConstantLimit);
-            BaseFilter::setMaxTimeConstantTicks(mConfig.maxTimeConstantMs / kHeartbeatPeriodMs);
+            mFilter.setMaxTimeConstantTicks(value);
         }
 
-        unsigned short GetMaxTimeConstantMs() const
+        unsigned short getMaxTimeConstantTicks() const
         {
-            return mConfig.maxTimeConstantMs;
-        }
-
-        void SetupRange(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)
-        {
-            SetMinTimeConstantMs(minTimeConstantMs);
-            SetMaxTimeConstantMs(maxTimeConstantMs);
+            return mFilter.getMaxTimeConstantTicks();
         }
     };
-
 }

@@ -3,11 +3,16 @@
 namespace evam
 {
     /**
-     * @brief Simple stateful reader acting as a bridge between raw control values and evaf filters.
+     * @brief Simple stateful reader acting as a bridge between raw control
+     *        values and evaf filters.
+     *
+     * getValue()/isValid() are public because evaf filters call them.
+     * setValue() is public so that decorators can push the target value
+     * straight into the filter.
      */
     class ValueReader
     {
-    protected:
+    private:
         signed short mValue = 0;
 
     public:
@@ -15,5 +20,4 @@ namespace evam
         signed short getValue() const { return mValue; }
         bool isValid() const { return true; }
     };
-
 }

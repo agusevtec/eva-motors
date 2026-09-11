@@ -1,52 +1,53 @@
 #pragma once
 
-#ifndef EVAM_SLIDING_WINDOW_DECOR_H_
-#define EVAM_SLIDING_WINDOW_DECOR_H_
-
+#include <evaHeartbeat.h>
 #include <evafSlidingWindow.h>
 #include "evamValueReader.h"
 
+using namespace eva;
+
 namespace evam
 {
-
     /**
-     * @brief Decorator that applies a simple moving average (sliding window) filter.
+     * @brief Decorator applying a simple moving average (sliding window) filter.
      *
-     * @tparam Motor Base motor class (must implement Go(signed short))
+     * SlidingWindow has no runtime parameters besides N.
+     *
+     * @tparam TMotor Base motor class (must implement Go(signed short))
      * @tparam N Window size (number of values to average). Must be >= 1.
-     *
-     * @note The filter only produces filtered output after the buffer is full.
-     *       Before that, values pass through unchanged. For N=1, the filter passes
-     *       values through without any averaging (no effect).
      */
     template <class TMotor, unsigned short N>
-    class SlidingWindowDecor : public TMotor, private evaf::SlidingWindow<ValueReader, N>
+    class SlidingWindowDecor
+        : public virtual eva::Heartbeat,
+          public TMotor
     {
-        static_assert(N >= 1 && N <= 32, "N out of range 1..32");
-
     private:
-        using BaseFilter = evaf::SlidingWindow<ValueReader, N>;
+        static constexpr unsigned long kHeartbeatPeriodMs = 10;
+
+        using Filter = evaf::SlidingWindow<ValueReader, N>;
+
+        Filter mFilter;
+
+    protected:
+        void onHeartbeat() override
+        {
+            TMotor::Go(mFilter.getValue());
+        }
 
     public:
-        SlidingWindowDecor() {}
+        SlidingWindowDecor() : Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
         SlidingWindowDecor(Args... args)
-            : TMotor(args...) {}
+            : Heartbeat(kHeartbeatPeriodMs), TMotor(args...) {}
 
         /**
-         * @brief Apply the control value with moving average filtering.
-         *
-         * @param value Input control value, range -1000..1000
+         * @brief Set the target control value.
+         * @param value Target control value, range -1000..1000
          */
         void Go(signed short value)
         {
-            this->setValue(value);
-            signed short filtered = BaseFilter::getValue();
-            TMotor::Go(filtered);
+            mFilter.setValue(constrain(value, -1000, 1000));
         }
     };
-
 }
-
-#endif

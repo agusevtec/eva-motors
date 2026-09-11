@@ -1,72 +1,74 @@
 #pragma once
 
+#include <evaHeartbeat.h>
 #include <evafSlewRate.h>
 #include "evamValueReader.h"
 
 namespace evam
 {
     /**
-     * @brief Configuration structure for SlewRateDecor
+     * @brief Configuration structure for SlewRateDecor.
+     *
+     * Runtime parameter for evaf::SlewRate.
      */
     struct SlewRateConfig
     {
         unsigned short maxStepPerTick;
 
-        SlewRateConfig(unsigned short maxStepPerTick) : maxStepPerTick(maxStepPerTick) {}
+        SlewRateConfig(unsigned short maxStepPerTick)
+            : maxStepPerTick(maxStepPerTick) {}
     };
 
     /**
-     * @brief Decorator that limits maximum rate of change (slew rate / ramp) for the control signal.
+     * @brief Decorator that limits maximum rate of change (slew rate / ramp).
      *
-     * Prevents sharp steps by capping maximum delta per Go() call.
-     *
-     * @tparam Motor Base motor class (must implement Go(signed short))
-     * @tparam tMaxStepPerTick Maximum allowed change per call tick (1..1000). Default: 50
+     * @tparam TMotor Base motor class (must implement Go(signed short))
+     * @tparam tMaxStepPerTick Default maximum change per tick (1..1000). Default: 50
      */
     template <class TMotor, unsigned short tMaxStepPerTick = 50>
-    class SlewRateDecor : public TMotor, private evaf::SlewRate<ValueReader, tMaxStepPerTick>
+    class SlewRateDecor
+        : public virtual eva::Heartbeat,
+          public TMotor
     {
     private:
-        SlewRateConfig mConfig;
-        using BaseFilter = evaf::SlewRate<ValueReader, tMaxStepPerTick>;
+        static constexpr unsigned long kHeartbeatPeriodMs = 10;
+
+        using Filter = evaf::SlewRate<ValueReader, tMaxStepPerTick>;
+
+        Filter mFilter;
+
+    protected:
+        void onHeartbeat() override
+        {
+            TMotor::Go(mFilter.getValue());
+        }
 
     public:
-        SlewRateDecor() : mConfig(tMaxStepPerTick) {}
+        SlewRateDecor() : Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
         SlewRateDecor(SlewRateConfig config, Args... args)
-            : mConfig(config), TMotor(args...) {}
+            : Heartbeat(kHeartbeatPeriodMs),
+              TMotor(args...),
+              mFilter(config.maxStepPerTick) {}
 
         /**
-         * @brief Apply target value with slew rate limiting.
-         * @param value Target control value
+         * @brief Set the target control value.
+         * @param value Target control value, range -1000..1000
          */
         void Go(signed short value)
         {
-            this->setValue(value);
-            signed short filtered = BaseFilter::getValue();
-            TMotor::Go(filtered);
+            mFilter.setValue(constrain(value, -1000, 1000));
         }
 
-        /**
-         * @brief Resets current filter value instantly.
-         * @param initialValue Initial target value
-         */
-        void Reset(signed short initialValue = 0)
+        void setMaxStep(unsigned short maxStep)
         {
-            BaseFilter::reset(initialValue);
+            mFilter.setMaxStep(maxStep);
         }
 
-        void SetMaxStep(unsigned short maxStep)
+        unsigned short getMaxStep() const
         {
-            mConfig.maxStepPerTick = maxStep;
-            BaseFilter::setMaxStep(maxStep);
-        }
-
-        unsigned short GetMaxStep() const
-        {
-            return BaseFilter::getMaxStep();
+            return mFilter.getMaxStep();
         }
     };
-
 }

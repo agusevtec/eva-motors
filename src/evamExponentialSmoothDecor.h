@@ -1,12 +1,15 @@
 #pragma once
 
+#include <evaHeartbeat.h>
 #include <evafExponentialSmooth.h>
 #include "evamValueReader.h"
 
 namespace evam
 {
     /**
-     * @brief Configuration structure for ExponentialSmoothDecor
+     * @brief Configuration structure for ExponentialSmoothDecor.
+     *
+     * Runtime parameter for evaf::ExponentialSmooth.
      */
     struct ExponentialSmoothConfig
     {
@@ -16,55 +19,55 @@ namespace evam
     };
 
     /**
-     * @brief Decorator applying Exponential Moving Average (EMA) filtering to control signals.
+     * @brief Decorator applying Exponential Moving Average (EMA) filtering.
      *
-     * @tparam Motor Base motor class (must implement Go(signed short))
-     * @tparam tAlpha Smoothing factor from 1 to 1000 (1000 = no filtering, 100 = heavy smoothing)
+     * @tparam TMotor Base motor class (must implement Go(signed short))
+     * @tparam tAlpha Default smoothing factor (1..1000). Default: 200
      */
     template <class TMotor, unsigned short tAlpha = 200>
-    class ExponentialSmoothDecor : public TMotor, private evaf::ExponentialSmooth<ValueReader, tAlpha>
+    class ExponentialSmoothDecor
+        : public virtual eva::Heartbeat,
+          public TMotor
     {
     private:
-        ExponentialSmoothConfig mConfig;
-        using BaseFilter = evaf::ExponentialSmooth<ValueReader, tAlpha>;
+        static constexpr unsigned long kHeartbeatPeriodMs = 10;
+
+        using Filter = evaf::ExponentialSmooth<ValueReader, tAlpha>;
+
+        Filter mFilter;
+
+    protected:
+        void onHeartbeat() override
+        {
+            TMotor::Go(mFilter.getValue());
+        }
 
     public:
-        ExponentialSmoothDecor() : mConfig(tAlpha) {}
+        ExponentialSmoothDecor() : Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
         ExponentialSmoothDecor(ExponentialSmoothConfig config, Args... args)
-            : mConfig(config), TMotor(args...) {}
+            : Heartbeat(kHeartbeatPeriodMs),
+              TMotor(args...),
+              mFilter(config.alpha) {}
 
         /**
-         * @brief Apply target value with exponential smoothing filtering.
-         * @param value Target control value
+         * @brief Set the target control value.
+         * @param value Target control value, range -1000..1000
          */
         void Go(signed short value)
         {
-            this->setValue(value);
-            signed short filtered = BaseFilter::getValue();
-            TMotor::Go(filtered);
+            mFilter.setValue(constrain(value, -1000, 1000));
         }
 
-        /**
-         * @brief Resets the filter state to a new initial value.
-         * @param initialValue Initial value to seed the filter
-         */
-        void Reset(signed short initialValue = 0)
+        void setAlpha(unsigned short alpha)
         {
-            BaseFilter::reset(initialValue);
+            mFilter.setAlpha(alpha);
         }
 
-        void SetAlpha(unsigned short alpha)
+        unsigned short getAlpha() const
         {
-            mConfig.alpha = alpha;
-            BaseFilter::setAlpha(alpha);
-        }
-
-        unsigned short GetAlpha() const
-        {
-            return BaseFilter::getAlpha();
+            return mFilter.getAlpha();
         }
     };
-
 }

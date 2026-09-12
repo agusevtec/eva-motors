@@ -2,7 +2,7 @@
 
 #include <evaHeartbeat.h>
 #include <evafSlewRate.h>
-#include "evamValueReader.h"
+#include "evaStdReaders.h"
 
 namespace evam
 {
@@ -33,7 +33,7 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        using Filter = evaf::SlewRate<ValueReader, tMaxStepPerTick>;
+        using Filter = evaf::SlewRate<eva::ValueReader, tMaxStepPerTick>;
 
         Filter mFilter;
 

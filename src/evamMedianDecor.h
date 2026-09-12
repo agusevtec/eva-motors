@@ -2,7 +2,7 @@
 
 #include <evaHeartbeat.h>
 #include <evafMedian.h>
-#include "evamValueReader.h"
+#include "evaStdReaders.h"
 
 namespace evam
 {
@@ -22,7 +22,7 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        using Filter = evaf::Median<ValueReader, tWindowSize>;
+        using Filter = evaf::Median<eva::ValueReader, tWindowSize>;
 
         Filter mFilter;
 

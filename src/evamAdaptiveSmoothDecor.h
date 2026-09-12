@@ -2,7 +2,7 @@
 
 #include <evaHeartbeat.h>
 #include <evafAdaptiveSmooth.h>
-#include "evamValueReader.h"
+#include "evaStdReaders.h"
 
 namespace evam
 {
@@ -27,7 +27,7 @@ namespace evam
      * @brief Decorator with adaptive smoothing based on input rate of change.
      *
      * The evaf filter is held by composition. Go() writes the target value
-     * straight into the filter via ValueReader::setValue; onHeartbeat()
+     * straight into the filter via eva::ValueReader::setValue; onHeartbeat()
      * pulls the filtered value out and forwards it to TMotor::Go().
      *
      * evaf setters/getters are mirrored under the same names so decorators
@@ -47,7 +47,7 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        using Filter = evaf::AdaptiveSmooth<ValueReader,
+        using Filter = evaf::AdaptiveSmooth<eva::ValueReader,
                                             tMinTimeConstantTicks,
                                             tMaxTimeConstantTicks>;
 

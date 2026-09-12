@@ -2,7 +2,7 @@
 
 #include <evaHeartbeat.h>
 #include <evafExponentialSmooth.h>
-#include "evamValueReader.h"
+#include "evaStdReaders.h"
 
 namespace evam
 {
@@ -32,7 +32,7 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        using Filter = evaf::ExponentialSmooth<ValueReader, tAlpha>;
+        using Filter = evaf::ExponentialSmooth<eva::ValueReader, tAlpha>;
 
         Filter mFilter;
 

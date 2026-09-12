@@ -2,7 +2,7 @@
 
 #include <evaHeartbeat.h>
 #include <evafSlidingWindow.h>
-#include "evamValueReader.h"
+#include "evaStdReaders.h"
 
 using namespace eva;
 
@@ -24,7 +24,7 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        using Filter = evaf::SlidingWindow<ValueReader, N>;
+        using Filter = evaf::SlidingWindow<eva::ValueReader, N>;
 
         Filter mFilter;
 

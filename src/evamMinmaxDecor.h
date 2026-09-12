@@ -2,7 +2,7 @@
 
 #include <evaHeartbeat.h>
 #include <evafMinmax.h>
-#include "evamValueReader.h"
+#include <evaStdReaders.h>
 
 namespace evam
 {
@@ -22,7 +22,7 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        using Filter = evaf::Minmax<ValueReader, N>;
+        using Filter = evaf::Minmax<eva::ValueReader, N>;
 
         Filter mFilter;
 

@@ -35,7 +35,7 @@ namespace evam
         }
 
     public:
-        SlidingWindowDecor() : Heartbeat(kHeartbeatPeriodMs) {}
+//        SlidingWindowDecor() : Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
         SlidingWindowDecor(Args... args)

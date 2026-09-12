@@ -33,7 +33,7 @@ namespace evam
         }
 
     public:
-        MinmaxDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
+//        MinmaxDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
         MinmaxDecor(Args... args)

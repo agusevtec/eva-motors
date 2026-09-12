@@ -33,7 +33,7 @@ namespace evam
         }
 
     public:
-        MedianDecor() : Heartbeat(kHeartbeatPeriodMs) {}
+ //       MedianDecor() : Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
         MedianDecor(Args... args)

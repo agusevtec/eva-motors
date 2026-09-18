@@ -1,7 +1,7 @@
 #pragma once
 
 #include <evaHeartbeat.h>
-#include <evafMinmax.h>
+#include <evafOpenClose.h>
 #include <evaStdReaders.h>
 
 namespace evam
@@ -9,7 +9,7 @@ namespace evam
     /**
      * @brief Decorator applying a min-max (morphological) filter.
      *
-     * Minmax has no runtime parameters besides N.
+     * OpenClose has no runtime parameters besides N.
      *
      * @tparam TMotor Base motor class (must implement Go(signed short))
      * @tparam N Number of chunks and chunk size (total buffer size = N * N)
@@ -22,7 +22,7 @@ namespace evam
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
 
-        using Filter = evaf::Minmax<eva::ValueReader, N>;
+        using Filter = evaf::OpenClose<eva::ValueReader, N>;
 
         Filter mFilter;
 
@@ -33,10 +33,10 @@ namespace evam
         }
 
     public:
-//        MinmaxDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
+//        OpenCloseDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
-        MinmaxDecor(Args... args)
+        OpenCloseDecor(Args... args)
             : Heartbeat(kHeartbeatPeriodMs), TMotor(args...) {}
 
         /**

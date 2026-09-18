@@ -1,6 +1,5 @@
 #pragma once
 
-#include <evaHeartbeat.h>
 #include <evafAdaptiveSmooth.h>
 #include "evaStdReaders.h"
 
@@ -26,12 +25,10 @@ namespace evam
     /**
      * @brief Decorator with adaptive smoothing based on input rate of change.
      *
-     * The evaf filter is held by composition. Go() writes the target value
-     * straight into the filter via eva::ValueReader::setValue; onHeartbeat()
-     * pulls the filtered value out and forwards it to TMotor::Go().
+     * This decorator does not own a heartbeat; it only transforms the value.
+     * Wrap it with SampledDecor to get periodic output:
      *
-     * evaf setters/getters are mirrored under the same names so decorators
-     * can be stacked without name clashes.
+     *     SampledDecor<AdaptiveSmoothDecor<MyMotor>> a;
      *
      * @tparam TMotor Base motor class (must implement Go(signed short))
      * @tparam tMinTimeConstantTicks Default minimum time constant. Default: 1
@@ -41,31 +38,21 @@ namespace evam
               unsigned short tMinTimeConstantTicks = evaf::kDefaultMinTimeConstantTicks,
               unsigned short tMaxTimeConstantTicks = evaf::kDefaultMaxTimeConstantTicks>
     class AdaptiveSmoothDecor
-        : public virtual eva::Heartbeat,
-          public TMotor
+        : public TMotor
     {
     private:
-        static constexpr unsigned long kHeartbeatPeriodMs = 10;
-
         using Filter = evaf::AdaptiveSmooth<eva::ValueReader,
                                             tMinTimeConstantTicks,
                                             tMaxTimeConstantTicks>;
 
         Filter mFilter;
 
-    protected:
-        void onHeartbeat() override
-        {
-            TMotor::Go(mFilter.getValue());
-        }
-
     public:
-        AdaptiveSmoothDecor() : Heartbeat(kHeartbeatPeriodMs) {}
+        AdaptiveSmoothDecor() : TMotor() {}
 
         template <typename... Args>
         AdaptiveSmoothDecor(AdaptiveSmoothConfig config, Args... args)
-            : Heartbeat(kHeartbeatPeriodMs),
-              TMotor(args...),
+            : TMotor(args...),
               mFilter(config.minTimeConstantTicks,
                       config.maxTimeConstantTicks) {}
 
@@ -76,6 +63,7 @@ namespace evam
         void Go(signed short value)
         {
             mFilter.setValue(constrain(value, -1000, 1000));
+            TMotor::Go(mFilter.getValue());
         }
 
         void setMinTimeConstantTicks(unsigned short value)

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <evaHeartbeat.h>
 #include <evafSlewRate.h>
 #include "evaStdReaders.h"
 
@@ -22,34 +21,29 @@ namespace evam
     /**
      * @brief Decorator that limits maximum rate of change (slew rate / ramp).
      *
+     * This decorator does not own a heartbeat; it only transforms the value.
+     * Wrap it with SampledDecor to get periodic output:
+     *
+     *     SampledDecor<SlewRateDecor<MyMotor, 50>> a;
+     *
      * @tparam TMotor Base motor class (must implement Go(signed short))
      * @tparam tMaxStepPerTick Default maximum change per tick (1..1000). Default: 50
      */
     template <class TMotor, unsigned short tMaxStepPerTick = 50>
     class SlewRateDecor
-        : public virtual eva::Heartbeat,
-          public TMotor
+        : public TMotor
     {
     private:
-        static constexpr unsigned long kHeartbeatPeriodMs = 10;
-
         using Filter = evaf::SlewRate<eva::ValueReader, tMaxStepPerTick>;
 
         Filter mFilter;
 
-    protected:
-        void onHeartbeat() override
-        {
-            TMotor::Go(mFilter.getValue());
-        }
-
     public:
-        SlewRateDecor() : Heartbeat(kHeartbeatPeriodMs) {}
+        SlewRateDecor() : TMotor() {}
 
         template <typename... Args>
         SlewRateDecor(SlewRateConfig config, Args... args)
-            : Heartbeat(kHeartbeatPeriodMs),
-              TMotor(args...),
+            : TMotor(args...),
               mFilter(config.maxStepPerTick) {}
 
         /**
@@ -59,6 +53,7 @@ namespace evam
         void Go(signed short value)
         {
             mFilter.setValue(constrain(value, -1000, 1000));
+            TMotor::Go(mFilter.getValue());
         }
 
         void setMaxStep(unsigned short maxStep)

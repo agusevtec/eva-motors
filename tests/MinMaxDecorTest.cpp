@@ -34,7 +34,7 @@ test(minimax_pass_through_before_full)
 // Test 3: After full, each new value updates output
 test(minimax_continuous_update)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     // Fill buffer
     filter.Go(10);  // pass through
@@ -62,7 +62,7 @@ test(minimax_continuous_update)
 // Test 4: N=3 (buffer size=9, chunk size=3)
 test(minimax_n3)
 {
-    MinmaxDecor<MockMotor, 3> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     // Fill buffer with 9 values
     filter.Go(10);
@@ -87,7 +87,7 @@ test(minimax_n3)
 // Test 5: All values same
 test(minimax_all_same)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     filter.Go(50);
     filter.Go(50);
@@ -100,7 +100,7 @@ test(minimax_all_same)
 // Test 6: Decreasing sequence
 test(minimax_decreasing)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     filter.Go(100);
     filter.Go(90);
@@ -116,7 +116,7 @@ test(minimax_decreasing)
 // Test 7: Alternating values (spikes)
 test(minimax_alternating)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     filter.Go(1000);
     filter.Go(-1000);
@@ -132,7 +132,7 @@ test(minimax_alternating)
 // Test 8: Negative values only
 test(minimax_negative)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     filter.Go(-10);
     filter.Go(-20);
@@ -148,7 +148,7 @@ test(minimax_negative)
 // Test 9: Mixed positive and negative
 test(minimax_mixed)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     filter.Go(-50);
     filter.Go(100);
@@ -164,7 +164,7 @@ test(minimax_mixed)
 // Test 10: Large N=4
 test(minimax_n4)
 {
-    MinmaxDecor<MockMotor, 4> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     // Fill buffer with 16 values (4 chunks of 4)
     for (int i = 1; i <= 16; i++)
@@ -183,7 +183,7 @@ test(minimax_n4)
 // Test 12: Edge case - zero values
 test(minimax_zeros)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     filter.Go(0);
     filter.Go(0);
@@ -196,7 +196,7 @@ test(minimax_zeros)
 // Test 13: Spike rejection
 test(minimax_spike_rejection)
 {
-    MinmaxDecor<MockMotor, 2> filter;
+    MinmaxDecor<MockMotor, 5> filter;
     
     // Normal values with one huge spike
     filter.Go(10);

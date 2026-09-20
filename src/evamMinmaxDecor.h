@@ -20,24 +20,19 @@ namespace evam
           public TMotor
     {
     private:
-        static constexpr unsigned long kHeartbeatPeriodMs = 10;
+
 
         using Filter = evaf::OpenClose<eva::ValueReader, N>;
 
         Filter mFilter;
 
-    protected:
-        void onHeartbeat() override
-        {
-            TMotor::Go(mFilter.getValue());
-        }
 
     public:
-//        OpenCloseDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
+//        MinmaxDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
-        OpenCloseDecor(Args... args)
-            : Heartbeat(kHeartbeatPeriodMs), TMotor(args...) {}
+        MinmaxDecor(Args... args)
+            :  TMotor(args...) {}
 
         /**
          * @brief Set the target control value.
@@ -46,6 +41,7 @@ namespace evam
         void Go(signed short value)
         {
             mFilter.setValue(constrain(value, -1000, 1000));
-        }
+            TMotor::Go(mFilter.getValue());
+                }
     };
 }

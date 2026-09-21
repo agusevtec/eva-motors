@@ -1,6 +1,5 @@
 #pragma once
 
-#include <evaHeartbeat.h>
 #include <evafOpenClose.h>
 #include <evaStdReaders.h>
 
@@ -15,24 +14,16 @@ namespace evam
      * @tparam N Number of chunks and chunk size (total buffer size = N * N)
      */
     template <class TMotor, unsigned char N>
-    class MinmaxDecor
-        : public virtual eva::Heartbeat,
-          public TMotor
+    class MinmaxDecor : public TMotor
     {
     private:
-
-
-        using Filter = evaf::OpenClose<eva::ValueReader, N>;
-
-        Filter mFilter;
-
+        evaf::OpenClose<eva::ValueReader, N> mFilter;
 
     public:
-//        MinmaxDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
+        // MinmaxDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}
 
         template <typename... Args>
-        MinmaxDecor(Args... args)
-            :  TMotor(args...) {}
+        MinmaxDecor(Args... args) : TMotor(args...) {}
 
         /**
          * @brief Set the target control value.
@@ -42,6 +33,6 @@ namespace evam
         {
             mFilter.setValue(constrain(value, -1000, 1000));
             TMotor::Go(mFilter.getValue());
-                }
+        }
     };
 }

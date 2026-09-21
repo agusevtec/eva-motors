@@ -24,7 +24,6 @@ namespace evam
     {
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
-
         signed short mValue;
 
     protected:
@@ -37,10 +36,7 @@ namespace evam
         SampledDecor() : Heartbeat(kHeartbeatPeriodMs), mValue(0) {}
 
         template <typename... Args>
-        SampledDecor(Args... args)
-            : Heartbeat(kHeartbeatPeriodMs),
-              TMotor(args...),
-              mValue(0) {}
+        SampledDecor(Args... args) : Heartbeat(kHeartbeatPeriodMs), TMotor(args...), mValue(0) {}
 
         /**
          * @brief Set the target control value.

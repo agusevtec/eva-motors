@@ -1,5 +1,5 @@
 #include <AUnit.h>
-#include "../src/evamSlidingWindowDecor.h"
+#include <evamSimpleSmoothDecor.h>
 #include "MockMotor.h"
 #include <evaTac.h>
 
@@ -9,7 +9,7 @@ using namespace evam;
 // Test 1: Before buffer is full, values pass through unchanged
 test(ma_pass_through_before_full)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(100);
     assertEqual(filter.resultLevel, 100);
@@ -27,7 +27,7 @@ test(ma_pass_through_before_full)
 // Test 2: Average calculation with N=3
 test(ma_average_n3)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(10);
     filter.Go(20);
@@ -39,7 +39,7 @@ test(ma_average_n3)
 // Test 3: Moving average updates with each new value
 test(ma_moving_update)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     // Fill buffer
     filter.Go(10);  // pass through
@@ -60,7 +60,7 @@ test(ma_moving_update)
 // Test 4: N=2 (simple two-point average)
 test(ma_n2)
 {
-    SlidingWindowDecor<MockMotor, 2> filter;
+    SimpleSmoothDecor<MockMotor, 2> filter;
     
     filter.Go(100);  // pass through
     filter.Go(200);  // average = (100+200)/2 = 150
@@ -78,7 +78,7 @@ test(ma_n2)
 // Test 5: N=5
 test(ma_n5)
 {
-    SlidingWindowDecor<MockMotor, 5> filter;
+    SimpleSmoothDecor<MockMotor, 5> filter;
     
     filter.Go(10);
     filter.Go(20);
@@ -100,7 +100,7 @@ test(ma_n5)
 // Test 6: All values same
 test(ma_all_same)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(50);
     filter.Go(50);
@@ -115,7 +115,7 @@ test(ma_all_same)
 // Test 7: Negative values
 test(ma_negative)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(-10);
     filter.Go(-20);
@@ -131,7 +131,7 @@ test(ma_negative)
 // Test 8: Mixed positive and negative
 test(ma_mixed)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(-50);
     filter.Go(0);
@@ -147,7 +147,7 @@ test(ma_mixed)
 // Test 9: Large values (near limits)
 test(ma_large_values)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(1000);
     filter.Go(1000);
@@ -163,7 +163,7 @@ test(ma_large_values)
 // Test 11: Verify sum doesn't overflow (N=15, max values)
 test(ma_sum_overflow)
 {
-    SlidingWindowDecor<MockMotor, 15> filter;
+    SimpleSmoothDecor<MockMotor, 15> filter;
     
     // Fill with max values
     for (int i = 0; i < 15; i++)
@@ -176,7 +176,7 @@ test(ma_sum_overflow)
 // Test 12: Smoothing effect on spikes
 test(ma_spike_smoothing)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(10);
     filter.Go(20);
@@ -201,7 +201,7 @@ test(ma_spike_smoothing)
 // Test 13: Zero values
 test(ma_zero)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
     
     filter.Go(0);
     filter.Go(0);
@@ -218,7 +218,7 @@ test(ma_zero)
 // Test 15: Continuous operation with many values
 test(ma_continuous)
 {
-    SlidingWindowDecor<MockMotor, 3> filter;
+    SimpleSmoothDecor<MockMotor, 3> filter;
         
     filter.Go(100);  // pass through
     assertEqual(filter.resultLevel, 100);

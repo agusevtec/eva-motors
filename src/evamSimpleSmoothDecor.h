@@ -1,14 +1,14 @@
 #pragma once
 
 #include <evafSimpleAverage.h>
-#include "evaStdReaders.h"
+#include <evaStdReaders.h>
 
 namespace evam
 {
     /**
      * @brief Decorator applying a simple moving average (sliding window) filter.
      *
-     * SimpleAverage has no runtime parameters besides N. This decorator does
+     * SimpleAverageDecor has no runtime parameters besides N. This decorator does
      * not own a heartbeat; it only transforms the value. Wrap it with
      * SampledDecor to get periodic output:
      *
@@ -18,16 +18,13 @@ namespace evam
      * @tparam N Window size (number of values to average). Must be >= 1.
      */
     template <class TMotor, unsigned short N>
-    class SimpleSmoothDecor
-        : public TMotor
+    class SimpleSmoothDecor : public TMotor
     {
     private:
-        using Filter = evaf::SimpleAverage<eva::ValueReader, N>;
-
-        Filter mFilter;
+        evaf::SimpleAverage<eva::ValueReader, N> mFilter;
 
     public:
-        SimpleSmoothDecor() : TMotor() {}
+        //SimpleSmoothDecor() : TMotor() {}
 
         template <typename... Args>
         SimpleSmoothDecor(Args... args)

@@ -18,20 +18,16 @@ namespace evam
      * @tparam tWindowSize Filter window size (odd number). Default: 5
      */
     template <class TMotor, unsigned short tWindowSize = evaf::kDefaultWindowSize>
-    class MedianDecor
-        : public TMotor
+    class MedianDecor : public TMotor
     {
     private:
-        using Filter = evaf::Median<eva::ValueReader, tWindowSize>;
-
-        Filter mFilter;
+        evaf::Median<eva::ValueReader, tWindowSize> mFilter;
 
     public:
         MedianDecor() : TMotor() {}
 
         template <typename... Args>
-        MedianDecor(Args... args)
-            : TMotor(args...) {}
+        MedianDecor(Args... args) : TMotor(args...) {}
 
         /**
          * @brief Set the target control value.

@@ -32,32 +32,32 @@
 
 
 // // Test 3: After full, each new value updates output
-// // test(minimax_continuous_update)
-// // {
-// //     MinmaxDecor<MockMotor, 5> filter;
+// test(minimax_continuous_update)
+// {
+//     MinmaxDecor<MockMotor, 5> filter;
     
-// //     // Fill buffer
-// //     filter.Go(10);  // pass through
-// //     filter.Go(20);  // pass through
-// //     filter.Go(30);  // pass through
-// //     filter.Go(40);  // filtered: 25
+//     // Fill buffer
+//     filter.Go(10);  // pass through
+//     filter.Go(20);  // pass through
+//     filter.Go(30);  // pass through
+//     filter.Go(40);  // filtered: 25
     
-// //     // Add new value, oldest (10) overwritten
-// //     filter.Go(100);
-// //     // Buffer: [20,30,40,100]
-// //     // Chunk0: [20,30] -> max=30, min=20
-// //     // Chunk1: [40,100] -> max=100, min=40
-// //     // output = (min(30,100)=30 + max(20,40)=40)/2 = 35
-// //     assertEqual(filter.resultLevel, 35);
+//     // Add new value, oldest (10) overwritten
+//     filter.Go(100);
+//     // Buffer: [20,30,40,100]
+//     // Chunk0: [20,30] -> max=30, min=20
+//     // Chunk1: [40,100] -> max=100, min=40
+//     // output = (min(30,100)=30 + max(20,40)=40)/2 = 35
+//     assertEqual(filter.resultLevel, 35);
     
-// //     // Add another
-// //     filter.Go(0);
-// //     // Buffer: [30,40,100,0]
-// //     // Chunk0: [30,40] -> max=40, min=30
-// //     // Chunk1: [100,0] -> max=100, min=0
-// //     // output = (min(40,100)=40 + max(30,0)=30)/2 = 35
-// //     assertEqual(filter.resultLevel, 35);
-// // }
+//     // Add another
+//     filter.Go(0);
+//     // Buffer: [30,40,100,0]
+//     // Chunk0: [30,40] -> max=40, min=30
+//     // Chunk1: [100,0] -> max=100, min=0
+//     // output = (min(40,100)=40 + max(30,0)=30)/2 = 35
+//     assertEqual(filter.resultLevel, 35);
+// }
 
 // // Test 4: N=3 (buffer size=9, chunk size=3)
 // test(minimax_n3)
@@ -98,36 +98,36 @@
 // }
 
 // // Test 6: Decreasing sequence
-// // test(minimax_decreasing)
-// // {
-// //     MinmaxDecor<MockMotor, 5> filter;
+// test(minimax_decreasing)
+// {
+//     MinmaxDecor<MockMotor, 5> filter;
     
-// //     filter.Go(100);
-// //     filter.Go(90);
-// //     filter.Go(80);
-// //     filter.Go(70);
+//     filter.Go(100);
+//     filter.Go(90);
+//     filter.Go(80);
+//     filter.Go(70);
     
-// //     // Chunk0: [100,90] -> max=100, min=90
-// //     // Chunk1: [80,70] -> max=80, min=70
-// //     // output = (min(100,80)=80 + max(90,70)=90)/2 = 85
-// //     assertEqual(filter.resultLevel, 85);
-// // }
+//     // Chunk0: [100,90] -> max=100, min=90
+//     // Chunk1: [80,70] -> max=80, min=70
+//     // output = (min(100,80)=80 + max(90,70)=90)/2 = 85
+//     assertEqual(filter.resultLevel, 85);
+// }
 
-// // Test 7: Alternating values (spikes)
-// // test(minimax_alternating)
-// // {
-// //     MinmaxDecor<MockMotor, 5> filter;
+// //Test 7: Alternating values (spikes)
+// test(minimax_alternating)
+// {
+//     MinmaxDecor<MockMotor, 5> filter;
     
-// //     filter.Go(1000);
-// //     filter.Go(-1000);
-// //     filter.Go(1000);
-// //     filter.Go(-1000);
+//     filter.Go(1000);
+//     filter.Go(-1000);
+//     filter.Go(1000);
+//     filter.Go(-1000);
     
-// //     // Chunk0: [1000,-1000] -> max=1000, min=-1000
-// //     // Chunk1: [1000,-1000] -> max=1000, min=-1000
-// //     // output = (1000 + -1000)/2 = 0
-// //     assertEqual(filter.resultLevel, 0);
-// // }
+//     // Chunk0: [1000,-1000] -> max=1000, min=-1000
+//     // Chunk1: [1000,-1000] -> max=1000, min=-1000
+//     // output = (1000 + -1000)/2 = 0
+//     assertEqual(filter.resultLevel, 0);
+// }
 
 // // Test 8: Negative values only
 // test(minimax_negative)
@@ -145,21 +145,21 @@
 //     assertEqual(filter.resultLevel, -25);
 // }
 
-// // Test 9: Mixed positive and negative
-// // test(minimax_mixed)
-// // {
-// //     MinmaxDecor<MockMotor, 5> filter;
+// //Test 9: Mixed positive and negative
+// test(minimax_mixed)
+// {
+//     MinmaxDecor<MockMotor, 5> filter;
     
-// //     filter.Go(-50);
-// //     filter.Go(100);
-// //     filter.Go(-30);
-// //     filter.Go(200);
+//     filter.Go(-50);
+//     filter.Go(100);
+//     filter.Go(-30);
+//     filter.Go(200);
     
-// //     // Chunk0: [-50,100] -> max=100, min=-50
-// //     // Chunk1: [-30,200] -> max=200, min=-30
-// //     // output = (min(100,200)=100 + max(-50,-30)=-30)/2 = 35
-// //     assertEqual(filter.resultLevel, 35);
-// // }
+//     // Chunk0: [-50,100] -> max=100, min=-50
+//     // Chunk1: [-30,200] -> max=200, min=-30
+//     // output = (min(100,200)=100 + max(-50,-30)=-30)/2 = 35
+//     assertEqual(filter.resultLevel, 35);
+// }
 
 // // Test 10: Large N=4
 // test(minimax_n4)

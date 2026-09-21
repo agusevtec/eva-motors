@@ -1,6 +1,6 @@
 #pragma once
 
-#include <evafOpenClose.h>
+#include <evafMinmax.h>
 #include <evaStdReaders.h>
 
 namespace evam
@@ -17,7 +17,7 @@ namespace evam
     class MinmaxDecor : public TMotor
     {
     private:
-        evaf::OpenClose<eva::ValueReader, N> mFilter;
+        evaf::Minmax<eva::ValueReader, N> mFilter;
 
     public:
         // MinmaxDecor() : eva::Heartbeat(kHeartbeatPeriodMs) {}

@@ -10,7 +10,7 @@
 
 
 
-_Decorator that applies a min-max (morphological) filter to the control signal._ [More...](#detailed-description)
+_Decorator applying a min-max (morphological) filter._ [More...](#detailed-description)
 
 * `#include <evamMinmaxDecor.h>`
 
@@ -55,9 +55,8 @@ Inherits the following classes: TMotor
 
 | Type | Name |
 | ---: | :--- |
-|  void | [**Go**](#function-go) (signed short value) <br>_Apply the control value with min-max filtering._  |
-|   | [**MinmaxDecor**](#function-minmaxdecor-12) () <br> |
-|   | [**MinmaxDecor**](#function-minmaxdecor-22) ([**MinmaxConfig**](structevam_1_1_minmax_config.md) config, Args... args) <br> |
+|  void | [**Go**](#function-go) (signed short value) <br>_Set the target control value._  |
+|   | [**MinmaxDecor**](#function-minmaxdecor) (Args... args) <br> |
 
 
 
@@ -89,15 +88,7 @@ Inherits the following classes: TMotor
 ## Detailed Description
 
 
-The filter effectively removes both positive and negative impulse noise while preserving edges better than a simple moving average. The output is the average of the morphological opening and closing operations, providing symmetric behavior.
-
-
-This filter divides the ring buffer into N chunks of N elements each, then computes:
-* minimax = min of chunk maximums (closing operation)
-* maximin = max of chunk minimums (opening operation)
-* output = (minimax + maximin) / 2
-
-
+OpenClose has no runtime parameters besides N.
 
 
 
@@ -105,15 +96,8 @@ This filter divides the ring buffer into N chunks of N elements each, then compu
 **Template parameters:**
 
 
-* `Motor` Base motor class (must implement [**Go(signed short)**](classevam_1_1_minmax_decor.md#function-go)) 
-* `N` Number of chunks and chunk size (total buffer size = N \* N)
-
-
-
-**Note:**
-
-The filter only produces filtered output after the buffer is full. Before that, values pass through unchanged. 
-
+* `TMotor` Base motor class (must implement [**Go(signed short)**](classevam_1_1_minmax_decor.md#function-go)) 
+* `N` Number of chunks and chunk size (total buffer size = N \* N) 
 
 
 
@@ -126,7 +110,7 @@ The filter only produces filtered output after the buffer is full. Before that, 
 
 ### function Go 
 
-_Apply the control value with min-max filtering._ 
+_Set the target control value._ 
 ```C++
 inline void evam::MinmaxDecor::Go (
     signed short value
@@ -135,20 +119,12 @@ inline void evam::MinmaxDecor::Go (
 
 
 
-Passes values through unchanged until the ring buffer is full. Once full, each new value triggers:
-* Buffer update (overwrites oldest value)
-* Recalculation of chunk maximums and minimums
-* Output = (minimax + maximin) / 2
-
-
-
-
 
 
 **Parameters:**
 
 
-* `value` Input control value, range -1000..1000 
+* `value` Target control value, range -1000..1000 
 
 
 
@@ -159,25 +135,11 @@ Passes values through unchanged until the ring buffer is full. Once full, each n
 
 
 
-### function MinmaxDecor [1/2]
-
-```C++
-inline evam::MinmaxDecor::MinmaxDecor () 
-```
-
-
-
-
-<hr>
-
-
-
-### function MinmaxDecor [2/2]
+### function MinmaxDecor 
 
 ```C++
 template<typename... Args>
 inline evam::MinmaxDecor::MinmaxDecor (
-    MinmaxConfig config,
     Args... args
 ) 
 ```

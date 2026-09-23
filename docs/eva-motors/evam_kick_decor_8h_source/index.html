@@ -642,9 +642,8 @@
 <div class="codehilite"><pre><span></span><code><span class="cp">#pragma once</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Arduino.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTickable.h&gt;</span>
-
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span><span class="p">;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaDelayTimer.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaHandler.h&gt;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">evam</span>
 <span class="p">{</span>
@@ -662,7 +661,7 @@
 <span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span>
 <span class="w">              </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tDefaultKickDurationMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kDefaultKickDurationMs</span><span class="p">,</span><span class="w"> </span>
 <span class="w">              </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tDefaultKickPower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kDefaultKickPower</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">KickDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="n">Tickable</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TMotor</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">KickDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TMotor</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">static_assert</span><span class="p">(</span><span class="n">tDefaultKickDurationMs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tDefaultKickDurationMs must be &gt; 0&quot;</span><span class="p">);</span>
 <span class="w">        </span><span class="k">static_assert</span><span class="p">(</span><span class="n">tDefaultKickPower</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tDefaultKickPower</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">kMaxKickPower</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tDefaultKickPower out of range&quot;</span><span class="p">);</span>
@@ -671,7 +670,14 @@
 <span class="w">        </span><span class="n">KickConfig</span><span class="w"> </span><span class="n">mConfig</span><span class="p">;</span>
 
 <span class="w">        </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">mTargetSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">mHoldingStartedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">eva</span><span class="o">::</span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">KickDecor</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mKickEndHandler</span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">KickDecor</span><span class="o">::</span><span class="n">onKickEnd</span><span class="w"> </span><span class="p">};</span>
+<span class="w">        </span><span class="n">eva</span><span class="o">::</span><span class="n">DelayTimer</span><span class="w"> </span><span class="n">mKickTimer</span><span class="p">{</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mKickEndHandler</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">onKickEnd</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">TMotor</span><span class="o">::</span><span class="n">Go</span><span class="p">(</span><span class="n">mTargetSpeed</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">calculateKickPower</span><span class="p">(</span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aValue</span><span class="p">)</span><span class="w"> </span><span class="k">const</span>
 <span class="w">        </span><span class="p">{</span>
@@ -684,23 +690,11 @@
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">mHoldingStartedAt</span><span class="p">)</span>
-<span class="w">                </span><span class="k">return</span><span class="p">;</span>
-
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mHoldingStartedAt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mConfig</span><span class="p">.</span><span class="n">duration</span><span class="p">)</span>
-<span class="w">                </span><span class="k">return</span><span class="p">;</span>
-
-<span class="w">            </span><span class="n">TMotor</span><span class="o">::</span><span class="n">Go</span><span class="p">(</span><span class="n">mTargetSpeed</span><span class="p">);</span>
-<span class="w">            </span><span class="n">mHoldingStartedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-
 <span class="w">    </span><span class="k">public</span><span class="o">:</span>
 <span class="w">        </span><span class="n">KickDecor</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mConfig</span><span class="p">(</span><span class="n">tDefaultKickDurationMs</span><span class="p">,</span><span class="w"> </span><span class="n">tDefaultKickPower</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 
 <span class="w">        </span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
-<span class="w">        </span><span class="n">KickDecor</span><span class="p">(</span><span class="n">KickConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mConfig</span><span class="p">(</span><span class="n">config</span><span class="p">),</span><span class="w"> </span><span class="n">TMotor</span><span class="p">(</span><span class="n">args</span><span class="p">...)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">        </span><span class="n">KickDecor</span><span class="p">(</span><span class="n">KickConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TMotor</span><span class="p">(</span><span class="n">args</span><span class="p">...),</span><span class="w"> </span><span class="n">mConfig</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetupKickstart</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">power</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
@@ -737,11 +731,11 @@
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">needKick</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="n">TMotor</span><span class="o">::</span><span class="n">Go</span><span class="p">(</span><span class="n">needKick</span><span class="p">);</span>
-<span class="w">                </span><span class="n">mHoldingStartedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
+<span class="w">                </span><span class="n">mKickTimer</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="n">mConfig</span><span class="p">.</span><span class="n">duration</span><span class="p">);</span>
 <span class="w">                </span><span class="k">return</span><span class="p">;</span>
 <span class="w">            </span><span class="p">}</span>
 
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mHoldingStartedAt</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mKickTimer</span><span class="p">.</span><span class="n">isRunning</span><span class="p">())</span>
 <span class="w">                </span><span class="k">return</span><span class="p">;</span>
 
 <span class="w">            </span><span class="n">TMotor</span><span class="o">::</span><span class="n">Go</span><span class="p">(</span><span class="n">aValue</span><span class="p">);</span>

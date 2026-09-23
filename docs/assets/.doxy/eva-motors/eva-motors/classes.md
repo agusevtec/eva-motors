@@ -26,6 +26,14 @@
 ([**evam**](namespaceevam.md))
 
 
+## e
+
+* [**ExponentialSmoothConfig**](structevam_1_1_exponential_smooth_config.md)
+([**evam**](namespaceevam.md))
+* [**ExponentialSmoothDecor**](classevam_1_1_exponential_smooth_decor.md)
+([**evam**](namespaceevam.md))
+
+
 ## f
 
 * [**ForwardConfig**](structevam_1_1_forward_config.md)
@@ -64,11 +72,7 @@
 
 ## m
 
-* [**MedianConfig**](structevam_1_1_median_config.md)
-([**evam**](namespaceevam.md))
 * [**MedianDecor**](classevam_1_1_median_decor.md)
-([**evam**](namespaceevam.md))
-* [**MinmaxConfig**](structevam_1_1_minmax_config.md)
 ([**evam**](namespaceevam.md))
 * [**MinmaxDecor**](classevam_1_1_minmax_decor.md)
 ([**evam**](namespaceevam.md))
@@ -82,21 +86,21 @@
 ([**evam**](namespaceevam.md))
 
 
-## r
-
-* [**RingBuffer**](classevam_1_1_ring_buffer.md)
-([**evam**](namespaceevam.md))
-
-
 ## s
 
+* [**SampledDecor**](classevam_1_1_sampled_decor.md)
+([**evam**](namespaceevam.md))
 * [**ServoConfig**](structevam_1_1_servo_config.md)
 ([**evam**](namespaceevam.md))
 * [**ServoDriver**](classevam_1_1_servo_driver.md)
 ([**evam**](namespaceevam.md))
-* [**SlidingWindowConfig**](structevam_1_1_sliding_window_config.md)
+* [**SimpleSmoothDecor**](classevam_1_1_simple_smooth_decor.md)
 ([**evam**](namespaceevam.md))
-* [**SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md)
+* [**SlewRateConfig**](structevam_1_1_slew_rate_config.md)
+([**evam**](namespaceevam.md))
+* [**SlewRateDecor**](classevam_1_1_slew_rate_decor.md)
+([**evam**](namespaceevam.md))
+* [**SlidingWindowDecor**](structevam_1_1_sliding_window_decor.md)
 ([**evam**](namespaceevam.md))
 * [**SoftwareServoConfig**](structevam_1_1_software_servo_config.md)
 ([**evam**](namespaceevam.md))

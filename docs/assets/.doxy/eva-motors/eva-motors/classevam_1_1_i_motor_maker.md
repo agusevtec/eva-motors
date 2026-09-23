@@ -177,5 +177,5 @@ inline evam::IMotorMaker::IMotorMaker (
 <hr>
 
 ------------------------------
-The documentation for this class was generated from the following file `src/evabIMotor.h`
+The documentation for this class was generated from the following file `src/evamIMotor.h`
 

@@ -12,6 +12,8 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**CurveDecor**](classevam_1_1_curve_decor.md) _Decorator that applies an S-curve (nonlinear) transformation to the control signal._     
     * **struct** [**DirectionalConfig**](structevam_1_1_directional_config.md) _Configuration structure for_ [_**DirectionalMotor**_](classevam_1_1_directional_motor.md) _._    
     * **class** [**DirectionalMotor**](classevam_1_1_directional_motor.md) _Bidirectional motor controller (forward/reverse)._     
+    * **struct** [**ExponentialSmoothConfig**](structevam_1_1_exponential_smooth_config.md) _Configuration structure for_ [_**ExponentialSmoothDecor**_](classevam_1_1_exponential_smooth_decor.md) _._    
+    * **class** [**ExponentialSmoothDecor**](classevam_1_1_exponential_smooth_decor.md) _Decorator applying Exponential Moving Average (EMA) filtering._     
     * **struct** [**ForwardConfig**](structevam_1_1_forward_config.md) _Configuration structure for_ [_**ForwardMotor**_](classevam_1_1_forward_motor.md) _._    
     * **class** [**ForwardMotor**](classevam_1_1_forward_motor.md) _Unidirectional forward-only motor controller (e.g., aircraft ESC, throttle)._     
     * **class** [**IMotor**](classevam_1_1_i_motor.md)     
@@ -22,17 +24,17 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**KickDecor**](classevam_1_1_kick_decor.md) _Decorator that applies a momentary kick to overcome static friction._     
     * **class** [**LinearActuator**](classevam_1_1_linear_actuator.md) _Linear actuator controller (position control)._     
     * **struct** [**LinearActuatorConfig**](structevam_1_1_linear_actuator_config.md) _Configuration structure for_ [_**LinearActuator**_](classevam_1_1_linear_actuator.md) _._    
-    * **struct** [**MedianConfig**](structevam_1_1_median_config.md) _Configuration structure for_ [_**MedianDecor**_](classevam_1_1_median_decor.md) _._    
-    * **class** [**MedianDecor**](classevam_1_1_median_decor.md) _Decorator that applies median filtering with fixed time base._     
-    * **struct** [**MinmaxConfig**](structevam_1_1_minmax_config.md) _Configuration structure for_ [_**MinmaxDecor**_](classevam_1_1_minmax_decor.md) _._    
-    * **class** [**MinmaxDecor**](classevam_1_1_minmax_decor.md) _Decorator that applies a min-max (morphological) filter to the control signal._     
+    * **class** [**MedianDecor**](classevam_1_1_median_decor.md) _Decorator applying median filtering._     
+    * **class** [**MinmaxDecor**](classevam_1_1_minmax_decor.md) _Decorator applying a min-max (morphological) filter._     
     * **struct** [**PwmConfig**](structevam_1_1_pwm_config.md) _Configuration structure for_ [_**PwmDriver**_](classevam_1_1_pwm_driver.md) _._    
     * **class** [**PwmDriver**](classevam_1_1_pwm_driver.md) _Simple PWM output driver (unipolar)._     
-    * **class** [**RingBuffer**](classevam_1_1_ring_buffer.md)     
+    * **class** [**SampledDecor**](classevam_1_1_sampled_decor.md) _Decorator that owns the heartbeat and periodically drives TMotor._     
     * **struct** [**ServoConfig**](structevam_1_1_servo_config.md) _Configuration structure for_ [_**ServoDriver**_](classevam_1_1_servo_driver.md) _._    
     * **class** [**ServoDriver**](classevam_1_1_servo_driver.md) _Servo driver using standard Arduino Servo library._     
-    * **struct** [**SlidingWindowConfig**](structevam_1_1_sliding_window_config.md) _Configuration structure for_ [_**SlidingWindowDecor**_](classevam_1_1_sliding_window_decor.md) _._    
-    * **class** [**SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md) _Decorator that applies a simple moving average (sliding window) filter._     
+    * **class** [**SimpleSmoothDecor**](classevam_1_1_simple_smooth_decor.md) _Decorator applying a simple moving average (sliding window) filter._     
+    * **struct** [**SlewRateConfig**](structevam_1_1_slew_rate_config.md) _Configuration structure for_ [_**SlewRateDecor**_](classevam_1_1_slew_rate_decor.md) _._    
+    * **class** [**SlewRateDecor**](classevam_1_1_slew_rate_decor.md) _Decorator that limits maximum rate of change (slew rate / ramp)._     
+    * **struct** [**SlidingWindowDecor**](structevam_1_1_sliding_window_decor.md) 
     * **struct** [**SoftwareServoConfig**](structevam_1_1_software_servo_config.md) _Configuration structure for_ [_**SoftwareServoDriver**_](classevam_1_1_software_servo_driver.md) _._    
     * **class** [**SoftwareServoDriver**](classevam_1_1_software_servo_driver.md) _Software-based servo driver using millis() for timing._     
     * **class** [**SteeringActuator**](classevam_1_1_steering_actuator.md) _Steering actuator (centered servo) controller._     

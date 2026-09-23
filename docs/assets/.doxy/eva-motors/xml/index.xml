@@ -1,28 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.17.0" xml:lang="en-US">
   <compound refid="structevam_1_1_adaptive_smooth_config" kind="struct"><name>evam::AdaptiveSmoothConfig</name>
-    <member refid="structevam_1_1_adaptive_smooth_config_1a4a5f2b8aec34ab30e563a27477c984bb" kind="variable"><name>minTimeConstantMs</name></member>
-    <member refid="structevam_1_1_adaptive_smooth_config_1ad7eebd958a5f6dfa5f126d12e6fd7ed0" kind="variable"><name>maxTimeConstantMs</name></member>
-    <member refid="structevam_1_1_adaptive_smooth_config_1a432d55a46ef6d28b4a186190c3ccb7fb" kind="function"><name>AdaptiveSmoothConfig</name></member>
+    <member refid="structevam_1_1_adaptive_smooth_config_1a335b5c684dd71bdbef751bf1534f1477" kind="variable"><name>minTimeConstantTicks</name></member>
+    <member refid="structevam_1_1_adaptive_smooth_config_1ac7ae55748ecddeb777b16598f0b88238" kind="variable"><name>maxTimeConstantTicks</name></member>
+    <member refid="structevam_1_1_adaptive_smooth_config_1a51709ea0d9ab3a72ee7bae6333a6517b" kind="function"><name>AdaptiveSmoothConfig</name></member>
   </compound>
   <compound refid="classevam_1_1_adaptive_smooth_decor" kind="class"><name>evam::AdaptiveSmoothDecor</name>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a7a59b18d533d7f418067fb9892e4ff97" kind="variable"><name>kHeartbeatPeriodMs</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a3f212e22fe0b88c770e7e364713555c3" kind="variable"><name>kDeadzone</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a2a6f80d8a66d6b25e4cfbebc88ce8271" kind="variable"><name>mConfig</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1adda895b02194727116011e5b97fc76cc" kind="variable"><name>mTargetValue</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1ac71d81cfaa5d34659038c2db5ec647b4" kind="variable"><name>mCurrentValue</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a4f4e62ac7326b44f6e75b089b70fbbd6" kind="variable"><name>mLastTargetValue</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a66f5f97d9146b6ba670e4a39d3d184fd" kind="variable"><name>mCurrentTimeConstantMs</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a035468d47461e491d1b0207882272205" kind="function"><name>calculateTimeConstant</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1ad2c91067dc87dbb9e15b44d7de04acbe" kind="function"><name>onHeartbeat</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a48645f805cf2aacd842b5c344bb7e917" kind="function"><name>AdaptiveSmoothDecor</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a367dcb02d1f0f4809b0aceb20a1c3ed8" kind="function"><name>AdaptiveSmoothDecor</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1ac01422ef376a01c6b673f94dcc4aa032" kind="function"><name>Go</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a34b294db4cb5600c55c45f7c7aa555f6" kind="function"><name>SetMinTimeConstantMs</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a12a07b04d7cb393b58ccca48a8b57d3b" kind="function"><name>GetMinTimeConstantMs</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a8db77cb95b684066d3edebb3b4cd3238" kind="function"><name>SetMaxTimeConstantMs</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1aaff489fe8f0a7e3b566653a4d50976ff" kind="function"><name>GetMaxTimeConstantMs</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1ab0ed1eb840ab8100338a6456b13c383e" kind="function"><name>SetupRange</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a6527c34abc64b4a2a7b7034814833574" kind="typedef"><name>Filter</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a8de5096b693295afa71adc09a0d2eb19" kind="variable"><name>mFilter</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a77a7fa210494f48915018df0de2bc1a4" kind="function"><name>AdaptiveSmoothDecor</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1aee7a109597681993dfd49488fb00c01f" kind="function"><name>AdaptiveSmoothDecor</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a1f0abed3b4b0e2efa64cc2037c1ce700" kind="function"><name>Go</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a32a7f9579459622dd00f06d93c517213" kind="function"><name>setMinTimeConstantTicks</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1af71fd1f822a2d7b860a307d176368b3a" kind="function"><name>getMinTimeConstantTicks</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a9ed3aed022b0eb944b8a216719a89ea7" kind="function"><name>setMaxTimeConstantTicks</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1abf4dbd9a5f7c0532e8cd6be9e96128ac" kind="function"><name>getMaxTimeConstantTicks</name></member>
   </compound>
   <compound refid="structevam_1_1_curve_config" kind="struct"><name>evam::CurveConfig</name>
     <member refid="structevam_1_1_curve_config_1a061be562c6ffb58aff48c37c55420a75" kind="variable"><name>bend</name></member>
@@ -61,6 +53,19 @@
     <member refid="classevam_1_1_directional_motor_1aa23ed71009bf6683c384ad45d7798a3d" kind="function"><name>GetMaxForward</name></member>
     <member refid="classevam_1_1_directional_motor_1a53de2b6c1f8aff5a8146d135928c9a5c" kind="function"><name>Go</name></member>
   </compound>
+  <compound refid="structevam_1_1_exponential_smooth_config" kind="struct"><name>evam::ExponentialSmoothConfig</name>
+    <member refid="structevam_1_1_exponential_smooth_config_1a56b808cdc63b2217006dfe1c41470564" kind="variable"><name>alpha</name></member>
+    <member refid="structevam_1_1_exponential_smooth_config_1a4fe60a11c7e1f46a14aad400cc9eca0b" kind="function"><name>ExponentialSmoothConfig</name></member>
+  </compound>
+  <compound refid="classevam_1_1_exponential_smooth_decor" kind="class"><name>evam::ExponentialSmoothDecor</name>
+    <member refid="classevam_1_1_exponential_smooth_decor_1a3c7c83a0a55c1c8f85c78517b76a6b82" kind="typedef"><name>Filter</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1ab524a0a8be13414f0e67e4cb86dea472" kind="variable"><name>mFilter</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1ae16841f179206ca223f8ef90c3a4cc99" kind="function"><name>ExponentialSmoothDecor</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1a759ad637829ac9386239776e1f42bdab" kind="function"><name>ExponentialSmoothDecor</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1abc9fdd10a01e44277f3d8d206cafb4ba" kind="function"><name>Go</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1a24c239547ee9819c11c519c0d4aa54f9" kind="function"><name>setAlpha</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1a42b1f9eea806311d7eafb291cc8e7460" kind="function"><name>getAlpha</name></member>
+  </compound>
   <compound refid="structevam_1_1_forward_config" kind="struct"><name>evam::ForwardConfig</name>
     <member refid="structevam_1_1_forward_config_1a782f8cc1d51d6841efd3a8552cfe8c5d" kind="variable"><name>minValue</name></member>
     <member refid="structevam_1_1_forward_config_1a81a28d180c4397da6c24e7fd01d9ecde" kind="variable"><name>maxValue</name></member>
@@ -95,8 +100,10 @@
     <member refid="classevam_1_1_inertia_decor_1a26ec54b46d5b202967c7860346b9a3e0" kind="variable"><name>mConfig</name></member>
     <member refid="classevam_1_1_inertia_decor_1a8767fa1b1f037bdc53c88ac8658d36f2" kind="variable"><name>mDesiredSpeed</name></member>
     <member refid="classevam_1_1_inertia_decor_1aff216923d0f6375178fcd182bfe89b4c" kind="variable"><name>mSpeed</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a91be75f418fa659fa7f9791a2310cdee" kind="variable"><name>mHeartbeatHandler</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a4a8b0d04d4fcdb37ebce957cea0c5620" kind="variable"><name>mHeartbeatTimer</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a734f66d3310016435f4d8cca83f9dd6b" kind="function"><name>onHeartbeat</name></member>
     <member refid="classevam_1_1_inertia_decor_1a2a79b620a0561c16c9a41065bc64cd91" kind="function"><name>calcSpeed</name></member>
-    <member refid="classevam_1_1_inertia_decor_1a392a7eef7d0686e1b8a369c746b67aec" kind="function"><name>onHeartbeat</name></member>
     <member refid="classevam_1_1_inertia_decor_1a7f7d3359f0a7866d3c9aedc2fca99a11" kind="function"><name>InertiaDecor</name></member>
     <member refid="classevam_1_1_inertia_decor_1abf973250437b161538291c14fbe29e60" kind="function"><name>InertiaDecor</name></member>
     <member refid="classevam_1_1_inertia_decor_1a346b729e3d29f0069ce890028a06f1ec" kind="function"><name>SetInertiaMass</name></member>
@@ -111,9 +118,10 @@
   <compound refid="classevam_1_1_kick_decor" kind="class"><name>evam::KickDecor</name>
     <member refid="classevam_1_1_kick_decor_1abcc2857d1673a35eb7dc90ff17804503" kind="variable"><name>mConfig</name></member>
     <member refid="classevam_1_1_kick_decor_1aa001c6b06d47071bc8a186d31f7f3bfc" kind="variable"><name>mTargetSpeed</name></member>
-    <member refid="classevam_1_1_kick_decor_1ad7a723faaedd51f125ba211b41e26496" kind="variable"><name>mHoldingStartedAt</name></member>
+    <member refid="classevam_1_1_kick_decor_1a77a66999555c0b3122f094ea38e8984c" kind="variable"><name>mKickEndHandler</name></member>
+    <member refid="classevam_1_1_kick_decor_1a71197f1dc2971f0d681c946c1730d790" kind="variable"><name>mKickTimer</name></member>
+    <member refid="classevam_1_1_kick_decor_1ae9075fa41c77907fe93ce4508afaa8cc" kind="function"><name>onKickEnd</name></member>
     <member refid="classevam_1_1_kick_decor_1a61268988366f9d42c2092b3a343e0610" kind="function"><name>calculateKickPower</name></member>
-    <member refid="classevam_1_1_kick_decor_1ae0f2120180816b8a9f6cc2affadf91cb" kind="function"><name>tick</name></member>
     <member refid="classevam_1_1_kick_decor_1a356b9cdd81ba9c10ad19639de90bb207" kind="function"><name>KickDecor</name></member>
     <member refid="classevam_1_1_kick_decor_1a4c014783c7ca17f3bc7dede5d2665719" kind="function"><name>KickDecor</name></member>
     <member refid="classevam_1_1_kick_decor_1a9215c24e4d9c16ea619d6e76f1ffde96" kind="function"><name>SetupKickstart</name></member>
@@ -140,38 +148,16 @@
     <member refid="structevam_1_1_linear_actuator_config_1a5f2d9109b7ace082d945941e0908de4c" kind="variable"><name>maxValue</name></member>
     <member refid="structevam_1_1_linear_actuator_config_1ab6f2a415cf8b13d95c259f8c82e8a4e1" kind="function"><name>LinearActuatorConfig</name></member>
   </compound>
-  <compound refid="structevam_1_1_median_config" kind="struct"><name>evam::MedianConfig</name>
-    <member refid="structevam_1_1_median_config_1a2ab4dac90e1e057b7096fdbd5c6f627a" kind="variable"><name>windowSize</name></member>
-    <member refid="structevam_1_1_median_config_1a10e2ba1b806c5a1917f485520cc8b6df" kind="function"><name>MedianConfig</name></member>
-  </compound>
   <compound refid="classevam_1_1_median_decor" kind="class"><name>evam::MedianDecor</name>
-    <member refid="classevam_1_1_median_decor_1ab8a4686cafb742653679a9d61a37382e" kind="variable"><name>kHeartbeatPeriodMs</name></member>
-    <member refid="classevam_1_1_median_decor_1a904e64146d2c9adb15691e587bb6af0e" kind="variable"><name>mConfig</name></member>
-    <member refid="classevam_1_1_median_decor_1a8f9826ead6fcbc80c3e6619cfa799712" kind="variable"><name>mBuffer</name></member>
-    <member refid="classevam_1_1_median_decor_1a3eb799b14819f8f6a3d3400d6de5bede" kind="variable"><name>mIndex</name></member>
-    <member refid="classevam_1_1_median_decor_1a34a05a566ce852857cff6a3a2c1538d1" kind="variable"><name>mBufferFull</name></member>
-    <member refid="classevam_1_1_median_decor_1aad989a3a941f8a3c58a40db9bdcd371f" kind="variable"><name>mLastSample</name></member>
-    <member refid="classevam_1_1_median_decor_1a12231afc244adafc7902db02bfb59e8c" kind="function"><name>calculateMedian</name></member>
-    <member refid="classevam_1_1_median_decor_1a7024f74743df06cba29af5a9503db349" kind="function"><name>onHeartbeat</name></member>
+    <member refid="classevam_1_1_median_decor_1afd74bf45f5e591b5159f7825e38fe384" kind="variable"><name>mFilter</name></member>
     <member refid="classevam_1_1_median_decor_1aa7aad7cf7672ad1c81807fb0f97c1bc4" kind="function"><name>MedianDecor</name></member>
-    <member refid="classevam_1_1_median_decor_1aa0eef48d1fffde1f4f92e5e083ffe974" kind="function"><name>MedianDecor</name></member>
-    <member refid="classevam_1_1_median_decor_1ae206528c52356b6120f252d4c47ff805" kind="function"><name>Reset</name></member>
-    <member refid="classevam_1_1_median_decor_1a187a27240d7fea1b25d2f2655ccdd3e0" kind="function"><name>Go</name></member>
-  </compound>
-  <compound refid="structevam_1_1_minmax_config" kind="struct"><name>evam::MinmaxConfig</name>
-    <member refid="structevam_1_1_minmax_config_1a9cae8eafe7a4298fd6bb21cb53fcb6ae" kind="variable"><name>n</name></member>
-    <member refid="structevam_1_1_minmax_config_1aff5ce4bb8a98e04d34ee5b94e811e92d" kind="function"><name>MinmaxConfig</name></member>
+    <member refid="classevam_1_1_median_decor_1a03cdda2543efa082a9e001b53acc1be8" kind="function"><name>MedianDecor</name></member>
+    <member refid="classevam_1_1_median_decor_1ac84f484527fb1982dcf56de3ae0f140c" kind="function"><name>Go</name></member>
   </compound>
   <compound refid="classevam_1_1_minmax_decor" kind="class"><name>evam::MinmaxDecor</name>
-    <member refid="classevam_1_1_minmax_decor_1ab90d5806f8042d2b205695795a760964" kind="variable"><name>mConfig</name></member>
-    <member refid="classevam_1_1_minmax_decor_1ac661adc51b0b23eafd64ad8076652b7e" kind="variable"><name>mRing</name></member>
-    <member refid="classevam_1_1_minmax_decor_1a840d39e836c5c13017ff90252cc5700d" kind="variable"><name>mMaxBuffer</name></member>
-    <member refid="classevam_1_1_minmax_decor_1a4369ed106f654a0ef3fe271c8fb345ce" kind="variable"><name>mMinBuffer</name></member>
-    <member refid="classevam_1_1_minmax_decor_1a334c8b5dec738b2997451d026799f7e3" kind="function"><name>MinmaxDecor</name></member>
-    <member refid="classevam_1_1_minmax_decor_1ad1d779398740b5a81b7d0daa340dc042" kind="function"><name>MinmaxDecor</name></member>
+    <member refid="classevam_1_1_minmax_decor_1abb0ef1e912c176986097394b4c1e8661" kind="variable"><name>mFilter</name></member>
+    <member refid="classevam_1_1_minmax_decor_1ae98e13abeda06857c3ae46270a8c9305" kind="function"><name>MinmaxDecor</name></member>
     <member refid="classevam_1_1_minmax_decor_1a1a57715d44719fa46d22f8ef81c66880" kind="function"><name>Go</name></member>
-    <member refid="classevam_1_1_minmax_decor_1afca5ad39d8f6006787439273d20f3dbf" kind="function"><name>getMinimax</name></member>
-    <member refid="classevam_1_1_minmax_decor_1a4bf93e0da9e5a37c9e9d076548dbeb48" kind="function"><name>getMaximin</name></member>
   </compound>
   <compound refid="structevam_1_1_pwm_config" kind="struct"><name>evam::PwmConfig</name>
     <member refid="structevam_1_1_pwm_config_1a4258c99c1a9114856c1b8a5b18b20e37" kind="variable"><name>pin</name></member>
@@ -184,16 +170,13 @@
     <member refid="classevam_1_1_pwm_driver_1ac8ea945eb4c3d495558dad06d63ee806" kind="function"><name>GetPin</name></member>
     <member refid="classevam_1_1_pwm_driver_1a877570bc454e7ac608604386a38cd09b" kind="function"><name>actUnipolar</name></member>
   </compound>
-  <compound refid="classevam_1_1_ring_buffer" kind="class"><name>evam::RingBuffer</name>
-    <member refid="classevam_1_1_ring_buffer_1a1294c3ddd50107da160d6e1b7c538fbc" kind="variable"><name>mBuffer</name></member>
-    <member refid="classevam_1_1_ring_buffer_1a1bcbf894d57e1b93c4012bbd18d90d29" kind="variable"><name>mHead</name></member>
-    <member refid="classevam_1_1_ring_buffer_1abfe2c230092271e79666cd90c5000cd4" kind="variable"><name>mSize</name></member>
-    <member refid="classevam_1_1_ring_buffer_1a51ed8432b95472a6d45bd60ec3dac67f" kind="function"><name>wrapIndex</name></member>
-    <member refid="classevam_1_1_ring_buffer_1a5ab9aa1d1d9087ac0380ceb0717ca596" kind="function"><name>RingBuffer</name></member>
-    <member refid="classevam_1_1_ring_buffer_1ab31ffb91bb05a8a6890934fd84fec48f" kind="function"><name>put</name></member>
-    <member refid="classevam_1_1_ring_buffer_1a14963be1a7a30cc3c95869b933ee9b59" kind="function"><name>get</name></member>
-    <member refid="classevam_1_1_ring_buffer_1a0506f1643d549b5383646b135e8abbec" kind="function"><name>isFull</name></member>
-    <member refid="classevam_1_1_ring_buffer_1a841b6e6aa5b306dbfa3b9dea19a7f876" kind="function"><name>size</name></member>
+  <compound refid="classevam_1_1_sampled_decor" kind="class"><name>evam::SampledDecor</name>
+    <member refid="classevam_1_1_sampled_decor_1a7cea174bc613cd782ae30edfd11f11ff" kind="variable"><name>kHeartbeatPeriodMs</name></member>
+    <member refid="classevam_1_1_sampled_decor_1ac878a966940dfee820928bafd36b1640" kind="variable"><name>mValue</name></member>
+    <member refid="classevam_1_1_sampled_decor_1a9c6f130ef055ad33ff0acb561b580261" kind="function"><name>onHeartbeat</name></member>
+    <member refid="classevam_1_1_sampled_decor_1addae5adc56872b8e3195cbd3e3ec658d" kind="function"><name>SampledDecor</name></member>
+    <member refid="classevam_1_1_sampled_decor_1a4b2fc0acf12d75bf8c72d5fd0c8fa36b" kind="function"><name>SampledDecor</name></member>
+    <member refid="classevam_1_1_sampled_decor_1a300acc4375b12874d640343e45bd1e03" kind="function"><name>Go</name></member>
   </compound>
   <compound refid="structevam_1_1_servo_config" kind="struct"><name>evam::ServoConfig</name>
     <member refid="structevam_1_1_servo_config_1afb6a45585bdb10a0e9b78e590ebad2dd" kind="variable"><name>pin</name></member>
@@ -211,17 +194,25 @@
     <member refid="classevam_1_1_servo_driver_1aa435d10aa4163e178eafbd5fb718b3e6" kind="function"><name>actBipolar</name></member>
     <member refid="classevam_1_1_servo_driver_1a47d3bb4d3c4cfc50c30f12e96ec45669" kind="function"><name>actUnipolar</name></member>
   </compound>
-  <compound refid="structevam_1_1_sliding_window_config" kind="struct"><name>evam::SlidingWindowConfig</name>
-    <member refid="structevam_1_1_sliding_window_config_1a4df3cb4a2d61281935b91681c6ead77f" kind="variable"><name>windowSize</name></member>
-    <member refid="structevam_1_1_sliding_window_config_1a28f2b24aea734728917793bc0f92242f" kind="function"><name>SlidingWindowConfig</name></member>
+  <compound refid="classevam_1_1_simple_smooth_decor" kind="class"><name>evam::SimpleSmoothDecor</name>
+    <member refid="classevam_1_1_simple_smooth_decor_1a404e803fe0e3729ce0cddf5da93605b7" kind="variable"><name>mFilter</name></member>
+    <member refid="classevam_1_1_simple_smooth_decor_1a2a9ef3a4d837029a567cf20f6d36962a" kind="function"><name>SimpleSmoothDecor</name></member>
+    <member refid="classevam_1_1_simple_smooth_decor_1a228073cb837e843545157eb41db777c1" kind="function"><name>Go</name></member>
   </compound>
-  <compound refid="classevam_1_1_sliding_window_decor" kind="class"><name>evam::SlidingWindowDecor</name>
-    <member refid="classevam_1_1_sliding_window_decor_1a6d75e8e6b11634b73be3a09cf33629dc" kind="variable"><name>mConfig</name></member>
-    <member refid="classevam_1_1_sliding_window_decor_1a8f6415d8a3a1fdcd26579a5bed0ef7de" kind="variable"><name>mRing</name></member>
-    <member refid="classevam_1_1_sliding_window_decor_1ae92af8e59025785a03fcc2450bf66388" kind="variable"><name>mSum</name></member>
-    <member refid="classevam_1_1_sliding_window_decor_1a1b71c14432e7ced4b663221aba338dc7" kind="function"><name>SlidingWindowDecor</name></member>
-    <member refid="classevam_1_1_sliding_window_decor_1abafc74619019f86b3f03f61fd75d35a9" kind="function"><name>SlidingWindowDecor</name></member>
-    <member refid="classevam_1_1_sliding_window_decor_1a5239139ab6b8d1603f379ba81de08db0" kind="function"><name>Go</name></member>
+  <compound refid="structevam_1_1_slew_rate_config" kind="struct"><name>evam::SlewRateConfig</name>
+    <member refid="structevam_1_1_slew_rate_config_1aac757c3db7e4ba7342ff9252d97b91a4" kind="variable"><name>maxStepPerTick</name></member>
+    <member refid="structevam_1_1_slew_rate_config_1aafce3507ce23f8b093400d52c4418013" kind="function"><name>SlewRateConfig</name></member>
+  </compound>
+  <compound refid="classevam_1_1_slew_rate_decor" kind="class"><name>evam::SlewRateDecor</name>
+    <member refid="classevam_1_1_slew_rate_decor_1ac16201cbbd609e1e94f9d1f2c01dcf48" kind="typedef"><name>Filter</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1aefcd15fccaeeb55cfefd87586bb9f97a" kind="variable"><name>mFilter</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1a09f926ada083a88cac2f0d8afb6206bb" kind="function"><name>SlewRateDecor</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1af38580c774758972a48b2a4dc9d4e90e" kind="function"><name>SlewRateDecor</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1a07bb4e76257a1630b51e7632be644a84" kind="function"><name>Go</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1a1be544e5575947a1c5382b67c37a210d" kind="function"><name>setMaxStep</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1a8dbc51d37eec9dd35b8cd515ce017cab" kind="function"><name>getMaxStep</name></member>
+  </compound>
+  <compound refid="structevam_1_1_sliding_window_decor" kind="struct"><name>evam::SlidingWindowDecor</name>
   </compound>
   <compound refid="structevam_1_1_software_servo_config" kind="struct"><name>evam::SoftwareServoConfig</name>
     <member refid="structevam_1_1_software_servo_config_1abb1decab70904eacb52ebd2dbbcc892b" kind="variable"><name>pin</name></member>
@@ -297,10 +288,6 @@
   <compound refid="namespaceevam" kind="namespace"><name>evam</name>
     <member refid="evam_servo_driver_8h_1a547c972c8cac204ab02e6e745eb45a43" kind="typedef"><name>ServoFlatDriver</name></member>
     <member refid="evam_software_servo_driver_8h_1a7824ecc9e0423df88c298e9c07d78e24" kind="typedef"><name>SoftwareServoFlatDriver</name></member>
-    <member refid="evam_adaptive_smooth_decor_8h_1a07a7f7fdef9126b7acc61733a4c9a867" kind="variable"><name>kDefaultMinTimeConstantMs</name></member>
-    <member refid="evam_adaptive_smooth_decor_8h_1aff62bb6cd28ab897bb215a1b352aada3" kind="variable"><name>kDefaultMaxTimeConstantMs</name></member>
-    <member refid="evam_adaptive_smooth_decor_8h_1ad65e70103f2d070b247eab2a5fe010bd" kind="variable"><name>kMinTimeConstantLimit</name></member>
-    <member refid="evam_adaptive_smooth_decor_8h_1ab1e2db45896133390c82bad8b6a722b7" kind="variable"><name>kMaxTimeConstantLimit</name></member>
     <member refid="evam_curve_decor_8h_1a08613c9331ed57e61656bf7aecef53a3" kind="variable"><name>kDefaultBend</name></member>
     <member refid="evam_curve_decor_8h_1aacb193f1a9745efa451a60f127f48e5b" kind="variable"><name>kMinBend</name></member>
     <member refid="evam_curve_decor_8h_1af45a41fd8b4b39f32bdcb1b159f5d658" kind="variable"><name>kMaxBend</name></member>
@@ -308,12 +295,7 @@
     <member refid="evam_kick_decor_8h_1af0d783ca7dec620da9d884691bc712bc" kind="variable"><name>kDefaultKickDurationMs</name></member>
     <member refid="evam_kick_decor_8h_1a42e76cf7541e053a765ef724a0d9cacf" kind="variable"><name>kDefaultKickPower</name></member>
     <member refid="evam_kick_decor_8h_1af27fe6948e6f3d46bce214d542b392e2" kind="variable"><name>kMaxKickPower</name></member>
-    <member refid="evam_median_decor_8h_1ab5a2df96ec957412d12b192ceee9cbef" kind="variable"><name>kDefaultWindowSize</name></member>
-    <member refid="evam_median_decor_8h_1a8671644efa4d34eda518b5620f8ca4ec" kind="variable"><name>kMinWindowSize</name></member>
-    <member refid="evam_median_decor_8h_1a083575e7981387b55dc85d08f53053de" kind="variable"><name>kMaxWindowSize</name></member>
     <member refid="evam_utils_8h_1aa5cd588ce9f8f08a5b8b671aa99386c5" kind="function"><name>universalWrite</name></member>
-  </compound>
-  <compound refid="evab_i_motor_8h" kind="file"><name>evabIMotor.h</name>
   </compound>
   <compound refid="evam_adaptive_smooth_decor_8h" kind="file"><name>evamAdaptiveSmoothDecor.h</name>
   </compound>
@@ -321,7 +303,11 @@
   </compound>
   <compound refid="evam_directional_motor_8h" kind="file"><name>evamDirectionalMotor.h</name>
   </compound>
+  <compound refid="evam_exponential_smooth_decor_8h" kind="file"><name>evamExponentialSmoothDecor.h</name>
+  </compound>
   <compound refid="evam_forward_motor_8h" kind="file"><name>evamForwardMotor.h</name>
+  </compound>
+  <compound refid="evam_i_motor_8h" kind="file"><name>evamIMotor.h</name>
   </compound>
   <compound refid="evam_inertia_decor_8h" kind="file"><name>evamInertiaDecor.h</name>
   </compound>
@@ -335,12 +321,15 @@
   </compound>
   <compound refid="evam_pwm_driver_8h" kind="file"><name>evamPwmDriver.h</name>
   </compound>
-  <compound refid="evam_ring_buffer_8h" kind="file"><name>evamRingBuffer.h</name>
+  <compound refid="evam_sampled_decor_8h" kind="file"><name>evamSampledDecor.h</name>
   </compound>
   <compound refid="evam_servo_driver_8h" kind="file"><name>evamServoDriver.h</name>
   </compound>
+  <compound refid="evam_simple_smooth_decor_8h" kind="file"><name>evamSimpleSmoothDecor.h</name>
+  </compound>
+  <compound refid="evam_slew_rate_decor_8h" kind="file"><name>evamSlewRateDecor.h</name>
+  </compound>
   <compound refid="evam_sliding_window_decor_8h" kind="file"><name>evamSlidingWindowDecor.h</name>
-    <member refid="evam_sliding_window_decor_8h_1a5e53028a50224b8ff40d32a7d6394835" kind="define"><name>EVAM_SLIDING_WINDOW_DECOR_H_</name></member>
   </compound>
   <compound refid="evam_software_servo_driver_8h" kind="file"><name>evamSoftwareServoDriver.h</name>
   </compound>

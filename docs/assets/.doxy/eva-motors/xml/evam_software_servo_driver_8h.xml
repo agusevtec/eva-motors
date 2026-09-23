@@ -23,6 +23,7 @@
     <innerclass refid="structevam_1_1_software_servo_config" prot="public">evam::SoftwareServoConfig</innerclass>
     <innerclass refid="classevam_1_1_software_servo_driver" prot="public">evam::SoftwareServoDriver</innerclass>
     <innernamespace refid="namespaceevam">evam</innernamespace>
+    <innernamespace refid="namespaceeva">eva</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

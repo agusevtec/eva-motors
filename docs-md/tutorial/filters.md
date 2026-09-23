@@ -6,17 +6,17 @@ Filters in EVA Motors are decorators that clean and smooth control signals befor
 
 | Filter | Type | Best For |
 |--------|------|----------|
-| SlidingWindowDecor | Moving average | General noise reduction |
+| SimpleSmoothDecor | Moving average | General noise reduction |
 | MinmaxDecor | Morphological | Impulse noise removal |
 | AdaptiveSmoothDecor | Adaptive exponential | Mixed noise with varying dynamics |
 
-## SlidingWindowDecor – Moving Average
+## SimpleSmoothDecor – Simple Moving Average (SMA)
 
 Simple moving average filter that computes the arithmetic mean of the last N values.
 
 ```cpp
 template <class TMotor, unsigned short N>
-class SlidingWindowDecor : public Motor
+class SimpleSmoothDecor : public Motor
 ```
 
 **Parameters:**
@@ -37,7 +37,7 @@ class SlidingWindowDecor : public Motor
 **Example:**
 ```cpp
 // Smooth throttle with 5-sample window
-using SmoothESC = evam::SlidingWindowDecor<evam::ForwardMotor<evam::PwmDriver<9>>, 5>;
+using SmoothESC = evam::SimpleSmoothDecor<evam::ForwardMotor<evam::PwmDriver<9>>, 5>;
 SmoothESC motor;
 motor.Go(500);  // Output = average of last 5 inputs
 ```
@@ -73,8 +73,7 @@ class MinmaxDecor : public Motor
 **Methods:**
 
 - `Go(value)` – Apply filter (pass-through until buffer full)
-- `getMinimax()` – Get current minimax value
-- `getMaximin()` – Get current maximin value
+
 
 **Example:**
 ```cpp
@@ -90,30 +89,25 @@ motor.Go(500);  // Filtered after 9 samples
 - Cleaning encoder signals with glitches
 
 
-## AdaptiveSmoothDecor – Adaptive Exponential
+## AdaptiveSmoothDecor – Adaptive Exponential Moving Average 
 
 Exponential filter that automatically adjusts its time constant based on input rate of change.
 
 ```cpp
-template <class TMotor, unsigned short tMinTimeConstantMs = 10, unsigned short tMaxTimeConstantMs = 150>
+template <class TMotor, unsigned short tMinTimeConstantTicks = 10, unsigned short tMaxTimeConstantTicks = 150>
 class AdaptiveSmoothDecor : public Heartbeat, public Motor
 ```
 
-**Requirements:**
-
-Must call `eva::tac()` in `loop()` to drive the filter updates (inherits from `Heartbeat` with 10ms period).
-
 **Parameters:**
 
-- `kMinTimeConstantMs`: Fast response (5..200ms). Default: 10ms
-- `kMaxTimeConstantMs`: Heavy smoothing (≥ kMinTimeConstantMs, ≤500ms). Default: 150ms
+- `kMinTimeConstantTicks`: fast response (1..500 ticks). Default: 1 tick
+- `kMaxTimeConstantTicks`: heavy smoothing (≥ tMinTimeConstantTicks, ≤500 ticks). Default: 15 ticks
 
 **Behavior:**
 
 - Large input change (≥200) → fast response (min time constant)
 - Small input change (≤5) → heavy smoothing (max time constant)
 - Intermediate changes → linear interpolation between min and max
-- Deadzone (±3) forces zero output near origin
 
 **Methods:**
 
@@ -153,7 +147,7 @@ using namespace evam;
 // Remove impulse noise, then smooth, then adapt to dynamics
 using BaseMotor = DirectionalMotor<TA6586Driver<9, 10>>;
 using SpikeFilter = MinmaxDecor<BaseMotor, 3>;        // Remove spikes
-using SmoothFilter = SlidingWindowDecor<SpikeFilter, 5>; // General smoothing
+using SmoothFilter = SimpleSmoothDecor<SpikeFilter, 5>; // General smoothing
 using SmartMotor = AdaptiveSmoothDecor<SmoothFilter>;    // Adaptive response
 
 SmartMotor motor;
@@ -170,13 +164,13 @@ void loop() {
 
 | Filter | Memory (bytes per N) | Computation | Requires tac() |
 |--------|---------------------|-------------|----------------|
-| SlidingWindowDecor | 2 × N + 4 | O(1) | ❌ |
+| SimpleSmoothDecor | 2 × N + 4 | O(1) | ❌ |
 | MinmaxDecor | 2 × N + 2 × N × N | O(N²) | ❌ |
 | AdaptiveSmoothDecor | 6 + 4 | O(1) | ✅ |
 
 **Recommendations:**
 
-- Use `SlidingWindowDecor` for general noise (lowest overhead)
+- Use `SimpleSmoothDecor` for general noise (lowest overhead)
 - Use `MinmaxDecor` when spikes are present (N=2 or 3 usually sufficient)
 - Use `AdaptiveSmoothDecor` when both fast response and smooth idle are critical
 - Stack filters in order: spike removal → smoothing → adaptive behavior

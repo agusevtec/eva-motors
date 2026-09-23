@@ -30,11 +30,13 @@
 | Type | Name |
 | ---: | :--- |
 | struct | [**AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) <br>_Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive_smooth_decor.md) _._ |
-| class | [**AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) &lt;class TMotor, tMinTimeConstantMs, tMaxTimeConstantMs&gt;<br>_Decorator with adaptive smoothing based on input rate of change._  |
+| class | [**AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) &lt;class TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks&gt;<br>_Decorator with adaptive smoothing based on input rate of change._  |
 | struct | [**CurveConfig**](structevam_1_1_curve_config.md) <br>_Configuration structure for_ [_**CurveDecor**_](classevam_1_1_curve_decor.md) _._ |
 | class | [**CurveDecor**](classevam_1_1_curve_decor.md) &lt;class TMotor, tBend&gt;<br>_Decorator that applies an S-curve (nonlinear) transformation to the control signal._  |
 | struct | [**DirectionalConfig**](structevam_1_1_directional_config.md) <br>_Configuration structure for_ [_**DirectionalMotor**_](classevam_1_1_directional_motor.md) _._ |
 | class | [**DirectionalMotor**](classevam_1_1_directional_motor.md) &lt;class TDriver, tMaxBackward, tMinBackward, tMinForward, tMaxForward&gt;<br>_Bidirectional motor controller (forward/reverse)._  |
+| struct | [**ExponentialSmoothConfig**](structevam_1_1_exponential_smooth_config.md) <br>_Configuration structure for_ [_**ExponentialSmoothDecor**_](classevam_1_1_exponential_smooth_decor.md) _._ |
+| class | [**ExponentialSmoothDecor**](classevam_1_1_exponential_smooth_decor.md) &lt;class TMotor, tAlpha&gt;<br>_Decorator applying Exponential Moving Average (EMA) filtering._  |
 | struct | [**ForwardConfig**](structevam_1_1_forward_config.md) <br>_Configuration structure for_ [_**ForwardMotor**_](classevam_1_1_forward_motor.md) _._ |
 | class | [**ForwardMotor**](classevam_1_1_forward_motor.md) &lt;class TDriver, tMinValue, tMaxValue&gt;<br>_Unidirectional forward-only motor controller (e.g., aircraft ESC, throttle)._  |
 | class | [**IMotor**](classevam_1_1_i_motor.md) <br> |
@@ -45,17 +47,17 @@
 | class | [**KickDecor**](classevam_1_1_kick_decor.md) &lt;class TMotor, tDefaultKickDurationMs, tDefaultKickPower&gt;<br>_Decorator that applies a momentary kick to overcome static friction._  |
 | class | [**LinearActuator**](classevam_1_1_linear_actuator.md) &lt;class TDriver, tMinValue, tMaxValue&gt;<br>_Linear actuator controller (position control)._  |
 | struct | [**LinearActuatorConfig**](structevam_1_1_linear_actuator_config.md) <br>_Configuration structure for_ [_**LinearActuator**_](classevam_1_1_linear_actuator.md) _._ |
-| struct | [**MedianConfig**](structevam_1_1_median_config.md) <br>_Configuration structure for_ [_**MedianDecor**_](classevam_1_1_median_decor.md) _._ |
-| class | [**MedianDecor**](classevam_1_1_median_decor.md) &lt;class TMotor, tWindowSize&gt;<br>_Decorator that applies median filtering with fixed time base._  |
-| struct | [**MinmaxConfig**](structevam_1_1_minmax_config.md) <br>_Configuration structure for_ [_**MinmaxDecor**_](classevam_1_1_minmax_decor.md) _._ |
-| class | [**MinmaxDecor**](classevam_1_1_minmax_decor.md) &lt;class TMotor, N&gt;<br>_Decorator that applies a min-max (morphological) filter to the control signal._  |
+| class | [**MedianDecor**](classevam_1_1_median_decor.md) &lt;class TMotor, tWindowSize&gt;<br>_Decorator applying median filtering._  |
+| class | [**MinmaxDecor**](classevam_1_1_minmax_decor.md) &lt;class TMotor, N&gt;<br>_Decorator applying a min-max (morphological) filter._  |
 | struct | [**PwmConfig**](structevam_1_1_pwm_config.md) <br>_Configuration structure for_ [_**PwmDriver**_](classevam_1_1_pwm_driver.md) _._ |
 | class | [**PwmDriver**](classevam_1_1_pwm_driver.md) &lt;tPin&gt;<br>_Simple PWM output driver (unipolar)._  |
-| class | [**RingBuffer**](classevam_1_1_ring_buffer.md) &lt;typename T, N&gt;<br> |
+| class | [**SampledDecor**](classevam_1_1_sampled_decor.md) &lt;class TMotor&gt;<br>_Decorator that owns the heartbeat and periodically drives TMotor._  |
 | struct | [**ServoConfig**](structevam_1_1_servo_config.md) <br>_Configuration structure for_ [_**ServoDriver**_](classevam_1_1_servo_driver.md) _._ |
 | class | [**ServoDriver**](classevam_1_1_servo_driver.md) &lt;tPin, tMinPulse, tMiddlePulse, tMaxPulse&gt;<br>_Servo driver using standard Arduino Servo library._  |
-| struct | [**SlidingWindowConfig**](structevam_1_1_sliding_window_config.md) <br>_Configuration structure for_ [_**SlidingWindowDecor**_](classevam_1_1_sliding_window_decor.md) _._ |
-| class | [**SlidingWindowDecor**](classevam_1_1_sliding_window_decor.md) &lt;class TMotor, N&gt;<br>_Decorator that applies a simple moving average (sliding window) filter._  |
+| class | [**SimpleSmoothDecor**](classevam_1_1_simple_smooth_decor.md) &lt;class TMotor, N&gt;<br>_Decorator applying a simple moving average (sliding window) filter._  |
+| struct | [**SlewRateConfig**](structevam_1_1_slew_rate_config.md) <br>_Configuration structure for_ [_**SlewRateDecor**_](classevam_1_1_slew_rate_decor.md) _._ |
+| class | [**SlewRateDecor**](classevam_1_1_slew_rate_decor.md) &lt;class TMotor, tMaxStepPerTick&gt;<br>_Decorator that limits maximum rate of change (slew rate / ramp)._  |
+| struct | [**SlidingWindowDecor**](structevam_1_1_sliding_window_decor.md) &lt;class TMotor, N&gt;<br> |
 | struct | [**SoftwareServoConfig**](structevam_1_1_software_servo_config.md) <br>_Configuration structure for_ [_**SoftwareServoDriver**_](classevam_1_1_software_servo_driver.md) _._ |
 | class | [**SoftwareServoDriver**](classevam_1_1_software_servo_driver.md) &lt;tPin, tMinPulse, tMiddlePulse, tMaxPulse&gt;<br>_Software-based servo driver using millis() for timing._  |
 | class | [**SteeringActuator**](classevam_1_1_steering_actuator.md) &lt;class TDriver, tLeftPos, tCenterPos, tRightPos&gt;<br>_Steering actuator (centered servo) controller._  |
@@ -83,17 +85,10 @@
 |  signed short | [**kDefaultBend**](#variable-kdefaultbend)   = `0`<br> |
 |  unsigned short | [**kDefaultKickDurationMs**](#variable-kdefaultkickdurationms)   = `20`<br> |
 |  signed short | [**kDefaultKickPower**](#variable-kdefaultkickpower)   = `1000`<br> |
-|  unsigned short | [**kDefaultMaxTimeConstantMs**](#variable-kdefaultmaxtimeconstantms)   = `150`<br> |
-|  unsigned short | [**kDefaultMinTimeConstantMs**](#variable-kdefaultmintimeconstantms)   = `10`<br> |
-|  unsigned short | [**kDefaultWindowSize**](#variable-kdefaultwindowsize)   = `5`<br> |
 |  unsigned short | [**kInertiaMass**](#variable-kinertiamass)   = `5`<br> |
 |  signed short | [**kMaxBend**](#variable-kmaxbend)   = `10`<br> |
 |  signed short | [**kMaxKickPower**](#variable-kmaxkickpower)   = `1000`<br> |
-|  unsigned short | [**kMaxTimeConstantLimit**](#variable-kmaxtimeconstantlimit)   = `500`<br> |
-|  unsigned short | [**kMaxWindowSize**](#variable-kmaxwindowsize)   = `15`<br> |
 |  signed short | [**kMinBend**](#variable-kminbend)   = `-10`<br> |
-|  unsigned short | [**kMinTimeConstantLimit**](#variable-kmintimeconstantlimit)   = `5`<br> |
-|  unsigned short | [**kMinWindowSize**](#variable-kminwindowsize)   = `3`<br> |
 
 
 
@@ -215,45 +210,6 @@ signed short evam::kDefaultKickPower;
 
 
 
-### variable kDefaultMaxTimeConstantMs 
-
-```C++
-unsigned short evam::kDefaultMaxTimeConstantMs;
-```
-
-
-
-
-<hr>
-
-
-
-### variable kDefaultMinTimeConstantMs 
-
-```C++
-unsigned short evam::kDefaultMinTimeConstantMs;
-```
-
-
-
-
-<hr>
-
-
-
-### variable kDefaultWindowSize 
-
-```C++
-unsigned short evam::kDefaultWindowSize;
-```
-
-
-
-
-<hr>
-
-
-
 ### variable kInertiaMass 
 
 ```C++
@@ -293,62 +249,10 @@ signed short evam::kMaxKickPower;
 
 
 
-### variable kMaxTimeConstantLimit 
-
-```C++
-unsigned short evam::kMaxTimeConstantLimit;
-```
-
-
-
-
-<hr>
-
-
-
-### variable kMaxWindowSize 
-
-```C++
-unsigned short evam::kMaxWindowSize;
-```
-
-
-
-
-<hr>
-
-
-
 ### variable kMinBend 
 
 ```C++
 signed short evam::kMinBend;
-```
-
-
-
-
-<hr>
-
-
-
-### variable kMinTimeConstantLimit 
-
-```C++
-unsigned short evam::kMinTimeConstantLimit;
-```
-
-
-
-
-<hr>
-
-
-
-### variable kMinWindowSize 
-
-```C++
-unsigned short evam::kMinWindowSize;
 ```
 
 
@@ -375,5 +279,5 @@ void evam::universalWrite (
 <hr>
 
 ------------------------------
-The documentation for this class was generated from the following file `src/evabIMotor.h`
+The documentation for this class was generated from the following file `src/evamAdaptiveSmoothDecor.h`
 

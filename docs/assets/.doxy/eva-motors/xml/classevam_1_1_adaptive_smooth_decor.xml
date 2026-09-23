@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_adaptive_smooth_decor" kind="class" language="C++" prot="public">
     <compoundname>evam::AdaptiveSmoothDecor</compoundname>
-    <basecompoundref prot="public" virt="virtual">Heartbeat</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
     <includes refid="evam_adaptive_smooth_decor_8h" local="no">evamAdaptiveSmoothDecor.h</includes>
     <templateparamlist>
@@ -11,161 +10,55 @@
       </param>
       <param>
         <type>unsigned short</type>
-        <declname>tMinTimeConstantMs</declname>
-        <defname>tMinTimeConstantMs</defname>
-        <defval>kDefaultMinTimeConstantMs</defval>
+        <declname>tMinTimeConstantTicks</declname>
+        <defname>tMinTimeConstantTicks</defname>
+        <defval>evaf::kDefaultMinTimeConstantTicks</defval>
       </param>
       <param>
         <type>unsigned short</type>
-        <declname>tMaxTimeConstantMs</declname>
-        <defname>tMaxTimeConstantMs</defname>
-        <defval>kDefaultMaxTimeConstantMs</defval>
+        <declname>tMaxTimeConstantTicks</declname>
+        <defname>tMaxTimeConstantTicks</defname>
+        <defval>evaf::kDefaultMaxTimeConstantTicks</defval>
       </param>
     </templateparamlist>
-    <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a7a59b18d533d7f418067fb9892e4ff97" prot="private" static="yes" constexpr="yes" mutable="no">
-        <type>unsigned long</type>
-        <definition>unsigned long evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::kHeartbeatPeriodMs</definition>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classevam_1_1_adaptive_smooth_decor_1a6527c34abc64b4a2a7b7034814833574" prot="private" static="no">
+        <type>evaf::AdaptiveSmooth&lt; eva::ValueReader, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;</type>
+        <definition>using evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::Filter = evaf::AdaptiveSmooth&lt;eva::ValueReader,
+                                           tMinTimeConstantTicks,
+                                           tMaxTimeConstantTicks&gt;</definition>
         <argsstring></argsstring>
-        <name>kHeartbeatPeriodMs</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::kHeartbeatPeriodMs</qualifiedname>
-        <initializer>= 10</initializer>
+        <name>Filter</name>
+        <qualifiedname>evam::AdaptiveSmoothDecor::Filter</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="48" column="40" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="48" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a3f212e22fe0b88c770e7e364713555c3" prot="private" static="yes" constexpr="yes" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::kDeadzone</definition>
-        <argsstring></argsstring>
-        <name>kDeadzone</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::kDeadzone</qualifiedname>
-        <initializer>= 3</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="49" column="39" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="49" bodyend="-1"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="44" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="44" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a2a6f80d8a66d6b25e4cfbebc88ce8271" prot="private" static="no" mutable="no">
-        <type><ref refid="structevam_1_1_adaptive_smooth_config" kindref="compound">AdaptiveSmoothConfig</ref></type>
-        <definition>AdaptiveSmoothConfig evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::mConfig</definition>
+      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a8de5096b693295afa71adc09a0d2eb19" prot="private" static="no" mutable="no">
+        <type>Filter</type>
+        <definition>Filter evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::mFilter</definition>
         <argsstring></argsstring>
-        <name>mConfig</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::mConfig</qualifiedname>
+        <name>mFilter</name>
+        <qualifiedname>evam::AdaptiveSmoothDecor::mFilter</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="51" column="30" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="51" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1adda895b02194727116011e5b97fc76cc" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::mTargetValue</definition>
-        <argsstring></argsstring>
-        <name>mTargetValue</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::mTargetValue</qualifiedname>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="53" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="53" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1ac71d81cfaa5d34659038c2db5ec647b4" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::mCurrentValue</definition>
-        <argsstring></argsstring>
-        <name>mCurrentValue</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::mCurrentValue</qualifiedname>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="54" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="54" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a4f4e62ac7326b44f6e75b089b70fbbd6" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::mLastTargetValue</definition>
-        <argsstring></argsstring>
-        <name>mLastTargetValue</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::mLastTargetValue</qualifiedname>
-        <initializer>= 0</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="55" column="22" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="55" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_adaptive_smooth_decor_1a66f5f97d9146b6ba670e4a39d3d184fd" prot="private" static="no" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::mCurrentTimeConstantMs</definition>
-        <argsstring></argsstring>
-        <name>mCurrentTimeConstantMs</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::mCurrentTimeConstantMs</qualifiedname>
-        <initializer>= tMaxTimeConstantMs</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="56" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="56" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a035468d47461e491d1b0207882272205" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::calculateTimeConstant</definition>
-        <argsstring>()</argsstring>
-        <name>calculateTimeConstant</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::calculateTimeConstant</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="58" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="58" bodyend="70"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1ad2c91067dc87dbb9e15b44d7de04acbe" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::onHeartbeat</definition>
-        <argsstring>() override</argsstring>
-        <name>onHeartbeat</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::onHeartbeat</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="73" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="73" bodyend="91"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="48" column="16" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="48" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a48645f805cf2aacd842b5c344bb7e917" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a77a7fa210494f48915018df0de2bc1a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::AdaptiveSmoothDecor</definition>
+        <definition>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::AdaptiveSmoothDecor</definition>
         <argsstring>()</argsstring>
         <name>AdaptiveSmoothDecor</name>
         <qualifiedname>evam::AdaptiveSmoothDecor::AdaptiveSmoothDecor</qualifiedname>
@@ -175,9 +68,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="94" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="94" bodyend="94"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="51" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="51" bodyend="51"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a367dcb02d1f0f4809b0aceb20a1c3ed8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1aee7a109597681993dfd49488fb00c01f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -186,7 +79,7 @@
           </param>
         </templateparamlist>
         <type></type>
-        <definition>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::AdaptiveSmoothDecor</definition>
+        <definition>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::AdaptiveSmoothDecor</definition>
         <argsstring>(AdaptiveSmoothConfig config, Args... args)</argsstring>
         <name>AdaptiveSmoothDecor</name>
         <qualifiedname>evam::AdaptiveSmoothDecor::AdaptiveSmoothDecor</qualifiedname>
@@ -204,32 +97,43 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="97" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="97" bodyend="98"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="54" column="9" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="54" bodyend="57"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1ac01422ef376a01c6b673f94dcc4aa032" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a1f0abed3b4b0e2efa64cc2037c1ce700" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::Go</definition>
-        <argsstring>(signed short aValue)</argsstring>
+        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::Go</definition>
+        <argsstring>(signed short value)</argsstring>
         <name>Go</name>
         <qualifiedname>evam::AdaptiveSmoothDecor::Go</qualifiedname>
         <param>
           <type>signed short</type>
-          <declname>aValue</declname>
+          <declname>value</declname>
         </param>
         <briefdescription>
+<para>Set the target control value. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target control value, range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="100" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="100" bodyend="103"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="63" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="63" bodyend="67"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a34b294db4cb5600c55c45f7c7aa555f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a32a7f9579459622dd00f06d93c517213" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::SetMinTimeConstantMs</definition>
+        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::setMinTimeConstantTicks</definition>
         <argsstring>(unsigned short value)</argsstring>
-        <name>SetMinTimeConstantMs</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::SetMinTimeConstantMs</qualifiedname>
+        <name>setMinTimeConstantTicks</name>
+        <qualifiedname>evam::AdaptiveSmoothDecor::setMinTimeConstantTicks</qualifiedname>
         <param>
           <type>unsigned short</type>
           <declname>value</declname>
@@ -240,28 +144,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="105" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="105" bodyend="108"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="69" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="69" bodyend="72"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a12a07b04d7cb393b58ccca48a8b57d3b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1af71fd1f822a2d7b860a307d176368b3a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
-        <definition>unsigned short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::GetMinTimeConstantMs</definition>
+        <definition>unsigned short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::getMinTimeConstantTicks</definition>
         <argsstring>() const</argsstring>
-        <name>GetMinTimeConstantMs</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::GetMinTimeConstantMs</qualifiedname>
+        <name>getMinTimeConstantTicks</name>
+        <qualifiedname>evam::AdaptiveSmoothDecor::getMinTimeConstantTicks</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="110" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="110" bodyend="113"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="74" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="74" bodyend="77"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a8db77cb95b684066d3edebb3b4cd3238" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1a9ed3aed022b0eb944b8a216719a89ea7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::SetMaxTimeConstantMs</definition>
+        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::setMaxTimeConstantTicks</definition>
         <argsstring>(unsigned short value)</argsstring>
-        <name>SetMaxTimeConstantMs</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::SetMaxTimeConstantMs</qualifiedname>
+        <name>setMaxTimeConstantTicks</name>
+        <qualifiedname>evam::AdaptiveSmoothDecor::setMaxTimeConstantTicks</qualifiedname>
         <param>
           <type>unsigned short</type>
           <declname>value</declname>
@@ -272,72 +176,51 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="115" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="115" bodyend="118"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="79" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="79" bodyend="82"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1aaff489fe8f0a7e3b566653a4d50976ff" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1abf4dbd9a5f7c0532e8cd6be9e96128ac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
-        <definition>unsigned short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::GetMaxTimeConstantMs</definition>
+        <definition>unsigned short evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;::getMaxTimeConstantTicks</definition>
         <argsstring>() const</argsstring>
-        <name>GetMaxTimeConstantMs</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::GetMaxTimeConstantMs</qualifiedname>
+        <name>getMaxTimeConstantTicks</name>
+        <qualifiedname>evam::AdaptiveSmoothDecor::getMaxTimeConstantTicks</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="120" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="120" bodyend="123"/>
-      </memberdef>
-      <memberdef kind="function" id="classevam_1_1_adaptive_smooth_decor_1ab0ed1eb840ab8100338a6456b13c383e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;::SetupRange</definition>
-        <argsstring>(unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs)</argsstring>
-        <name>SetupRange</name>
-        <qualifiedname>evam::AdaptiveSmoothDecor::SetupRange</qualifiedname>
-        <param>
-          <type>unsigned short</type>
-          <declname>minTimeConstantMs</declname>
-        </param>
-        <param>
-          <type>unsigned short</type>
-          <declname>maxTimeConstantMs</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="125" column="14" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="125" bodyend="129"/>
+        <location file="src/evamAdaptiveSmoothDecor.h" line="84" column="24" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="84" bodyend="87"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Decorator with adaptive smoothing based on input rate of change. </para>
     </briefdescription>
     <detaileddescription>
-<para>Automatically adjusts smoothing based on how fast the input is changing. Uses fixed time base from Heartbeat for consistent behavior.</para>
+<para>This decorator does not own a heartbeat; it only transforms the value. Wrap it with <ref refid="classevam_1_1_sampled_decor" kindref="compound">SampledDecor</ref> to get periodic output: <verbatim>SampledDecor&lt;AdaptiveSmoothDecor&lt;MyMotor&gt;&gt; a;
+</verbatim></para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>Motor</parametername>
+<parametername>TMotor</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Base motor class (must implement Go(signed short)) </para>
+<para>Base motor class (must implement <ref refid="classevam_1_1_adaptive_smooth_decor_1a1f0abed3b4b0e2efa64cc2037c1ce700" kindref="member">Go(signed short)</ref>) </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kMinTimeConstantMs</parametername>
+<parametername>tMinTimeConstantTicks</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Minimum time constant (fast response). Default: 10ms </para>
+<para>Default minimum time constant. Default: 1 </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kMaxTimeConstantMs</parametername>
+<parametername>tMaxTimeConstantTicks</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum time constant (heavy smoothing). Default: 150ms </para>
+<para>Default maximum time constant. Default: 15 </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -345,55 +228,37 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>Heartbeat</label>
-      </node>
-      <node id="3">
         <label>TMotor</label>
       </node>
       <node id="1">
-        <label>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;</label>
+        <label>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;</label>
         <link refid="classevam_1_1_adaptive_smooth_decor"/>
         <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>Heartbeat</label>
-      </node>
-      <node id="3">
         <label>TMotor</label>
       </node>
       <node id="1">
-        <label>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantMs, tMaxTimeConstantMs &gt;</label>
+        <label>evam::AdaptiveSmoothDecor&lt; TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks &gt;</label>
         <link refid="classevam_1_1_adaptive_smooth_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamAdaptiveSmoothDecor.h" line="40" column="5" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="41" bodyend="130"/>
+    <location file="src/evamAdaptiveSmoothDecor.h" line="40" column="5" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="42" bodyend="88"/>
     <listofallmembers>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a48645f805cf2aacd842b5c344bb7e917" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>AdaptiveSmoothDecor</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a367dcb02d1f0f4809b0aceb20a1c3ed8" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>AdaptiveSmoothDecor</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a035468d47461e491d1b0207882272205" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>calculateTimeConstant</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1aaff489fe8f0a7e3b566653a4d50976ff" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>GetMaxTimeConstantMs</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a12a07b04d7cb393b58ccca48a8b57d3b" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>GetMinTimeConstantMs</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1ac01422ef376a01c6b673f94dcc4aa032" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>Go</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a3f212e22fe0b88c770e7e364713555c3" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>kDeadzone</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a7a59b18d533d7f418067fb9892e4ff97" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>kHeartbeatPeriodMs</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a2a6f80d8a66d6b25e4cfbebc88ce8271" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>mConfig</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a66f5f97d9146b6ba670e4a39d3d184fd" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>mCurrentTimeConstantMs</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1ac71d81cfaa5d34659038c2db5ec647b4" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>mCurrentValue</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a4f4e62ac7326b44f6e75b089b70fbbd6" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>mLastTargetValue</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1adda895b02194727116011e5b97fc76cc" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>mTargetValue</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1ad2c91067dc87dbb9e15b44d7de04acbe" prot="protected" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>onHeartbeat</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a8db77cb95b684066d3edebb3b4cd3238" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>SetMaxTimeConstantMs</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1a34b294db4cb5600c55c45f7c7aa555f6" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>SetMinTimeConstantMs</name></member>
-      <member refid="classevam_1_1_adaptive_smooth_decor_1ab0ed1eb840ab8100338a6456b13c383e" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>SetupRange</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1a77a7fa210494f48915018df0de2bc1a4" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>AdaptiveSmoothDecor</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1aee7a109597681993dfd49488fb00c01f" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>AdaptiveSmoothDecor</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1a6527c34abc64b4a2a7b7034814833574" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>Filter</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1abf4dbd9a5f7c0532e8cd6be9e96128ac" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>getMaxTimeConstantTicks</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1af71fd1f822a2d7b860a307d176368b3a" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>getMinTimeConstantTicks</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1a1f0abed3b4b0e2efa64cc2037c1ce700" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1a8de5096b693295afa71adc09a0d2eb19" prot="private" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>mFilter</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1a9ed3aed022b0eb944b8a216719a89ea7" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>setMaxTimeConstantTicks</name></member>
+      <member refid="classevam_1_1_adaptive_smooth_decor_1a32a7f9579459622dd00f06d93c517213" prot="public" virt="non-virtual"><scope>evam::AdaptiveSmoothDecor</scope><name>setMinTimeConstantTicks</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

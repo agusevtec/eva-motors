@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evabIMotor.h" line="8" column="22"/>
+        <location file="src/evamIMotor.h" line="8" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_i_motor_1a8ad753ce700ff72a470853369f722931" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evabIMotor.h" line="9" column="17"/>
+        <location file="src/evamIMotor.h" line="9" column="17"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -54,7 +54,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/evabIMotor.h" line="5" column="5" bodyfile="src/evabIMotor.h" bodystart="6" bodyend="10"/>
+    <location file="src/evamIMotor.h" line="5" column="5" bodyfile="src/evamIMotor.h" bodystart="6" bodyend="10"/>
     <listofallmembers>
       <member refid="classevam_1_1_i_motor_1aabb372b56f4dd0bf28a2a482b8a23512" prot="public" virt="pure-virtual"><scope>evam::IMotor</scope><name>Go</name></member>
       <member refid="classevam_1_1_i_motor_1a8ad753ce700ff72a470853369f722931" prot="public" virt="virtual"><scope>evam::IMotor</scope><name>~IMotor</name></member>

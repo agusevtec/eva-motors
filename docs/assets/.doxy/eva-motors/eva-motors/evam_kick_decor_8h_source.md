@@ -11,9 +11,8 @@
 #pragma once
 
 #include <Arduino.h>
-#include <evaTickable.h>
-
-using namespace eva;
+#include <evaDelayTimer.h>
+#include <evaHandler.h>
 
 namespace evam
 {
@@ -31,16 +30,23 @@ namespace evam
     template <class TMotor, 
               unsigned short tDefaultKickDurationMs = kDefaultKickDurationMs, 
               signed short tDefaultKickPower = kDefaultKickPower>
-    class KickDecor : public virtual Tickable, public TMotor
+    class KickDecor : public TMotor
     {
         static_assert(tDefaultKickDurationMs > 0, "tDefaultKickDurationMs must be > 0");
         static_assert(tDefaultKickPower > 0 && tDefaultKickPower <= kMaxKickPower, "tDefaultKickPower out of range");
 
     private:
         KickConfig mConfig;
-        
+
         signed short mTargetSpeed = 0;
-        unsigned long mHoldingStartedAt = 0;
+
+        eva::Handler<KickDecor> mKickEndHandler{ this, &KickDecor::onKickEnd };
+        eva::DelayTimer mKickTimer{ &mKickEndHandler };
+
+        void onKickEnd(void *sender, eva::CallbackInfo cbInfo)
+        {
+            TMotor::Go(mTargetSpeed);
+        }
 
         signed short calculateKickPower(signed short aValue) const
         {
@@ -53,23 +59,11 @@ namespace evam
             return 0;
         }
 
-        void tick() override
-        {
-            if (!mHoldingStartedAt)
-                return;
-
-            if (millis() - mHoldingStartedAt < mConfig.duration)
-                return;
-
-            TMotor::Go(mTargetSpeed);
-            mHoldingStartedAt = 0;
-        }
-
     public:
         KickDecor() : mConfig(tDefaultKickDurationMs, tDefaultKickPower) {}
         
         template<typename... Args>
-        KickDecor(KickConfig config, Args... args) : mConfig(config), TMotor(args...) {}
+        KickDecor(KickConfig config, Args... args) : TMotor(args...), mConfig(config) {}
 
         void SetupKickstart(unsigned short duration, signed short power)
         {
@@ -106,11 +100,11 @@ namespace evam
             if (needKick)
             {
                 TMotor::Go(needKick);
-                mHoldingStartedAt = millis();
+                mKickTimer.start(mConfig.duration);
                 return;
             }
 
-            if (mHoldingStartedAt)
+            if (mKickTimer.isRunning())
                 return;
 
             TMotor::Go(aValue);

@@ -1,8 +1,7 @@
 #pragma once
 #include <Arduino.h>
-#include <evaHeartbeat.h>
-
-using namespace eva;
+#include <evaRepeatTimer.h>
+#include <evaHandler.h>
 
 namespace evam
 {
@@ -28,7 +27,7 @@ namespace evam
      * @tparam tInertiaMass Virtual mass (positive). Larger values = slower deceleration.
      */
     template <class TMotor, unsigned short tInertiaMass = kInertiaMass>
-    class InertiaDecor : public virtual Heartbeat, public TMotor
+    class InertiaDecor : public TMotor
     {
         static_assert(0 < tInertiaMass, "tInertiaMass must be > 0");
 
@@ -38,6 +37,15 @@ namespace evam
         InertiaConfig mConfig;
         signed short mDesiredSpeed = 0;
         signed short mSpeed = 0;
+
+        eva::Handler<InertiaDecor> mHeartbeatHandler{ this, &InertiaDecor::onHeartbeat };
+        eva::RepeatTimer mHeartbeatTimer{ &mHeartbeatHandler };
+
+        void onHeartbeat(void *sender, eva::CallbackInfo cbInfo)
+        {
+            mSpeed = calcSpeed();
+            TMotor::Go(mSpeed);
+        }
 
         signed short calcSpeed() const
         {
@@ -54,19 +62,19 @@ namespace evam
             return mSpeed + step;
         }
 
-    protected:
-        void onHeartbeat() override
-        {
-            mSpeed = calcSpeed();
-            TMotor::Go(mSpeed);
-        }
-
     public:
-        InertiaDecor() : Heartbeat(kHeartbeatPeriodMs), mConfig(tInertiaMass), mDesiredSpeed(0), mSpeed(0) {}
+        InertiaDecor()
+            : mConfig(tInertiaMass), mDesiredSpeed(0), mSpeed(0)
+        {
+            mHeartbeatTimer.start(kHeartbeatPeriodMs);
+        }
 
         template <typename... Args>
         InertiaDecor(InertiaConfig config, Args... args)
-            : Heartbeat(kHeartbeatPeriodMs), TMotor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0) {}
+            : TMotor(args...), mConfig(config), mDesiredSpeed(0), mSpeed(0)
+        {
+            mHeartbeatTimer.start(kHeartbeatPeriodMs);
+        }
 
         /**
          * @brief Set the inertia mass value.

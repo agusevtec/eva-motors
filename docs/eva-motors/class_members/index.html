@@ -669,6 +669,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#f" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -735,17 +746,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#n" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        n
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#o" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -801,17 +801,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#w" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        w
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -847,6 +836,7 @@
 <ul>
 <li><strong>AdaptiveSmoothConfig</strong> (<a href="../structevam_1_1_adaptive_smooth_config/"><strong>evam::AdaptiveSmoothConfig</strong></a>)</li>
 <li><strong>AdaptiveSmoothDecor</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
+<li><strong>alpha</strong> (<a href="../structevam_1_1_exponential_smooth_config/"><strong>evam::ExponentialSmoothConfig</strong></a>)</li>
 <li><strong>actUnipolar</strong> (<a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a>, <a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>actBipolar</strong> (<a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>, <a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>, <a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
 </ul>
@@ -857,14 +847,12 @@
 </ul>
 <h2 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>calculateTimeConstant</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
 <li><strong>CurveConfig</strong> (<a href="../structevam_1_1_curve_config/"><strong>evam::CurveConfig</strong></a>)</li>
 <li><strong>CurveDecor</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>)</li>
 <li><strong>curve</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>)</li>
 <li><strong>compute</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
 <li><strong>calcSpeed</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
 <li><strong>calculateKickPower</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
-<li><strong>calculateMedian</strong> (<a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
 <li><strong>centerPos</strong> (<a href="../structevam_1_1_steering_config/"><strong>evam::SteeringConfig</strong></a>)</li>
 </ul>
 <h2 id="d">d<a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
@@ -873,8 +861,14 @@
 <li><strong>DirectionalMotor</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
 <li><strong>duration</strong> (<a href="../structevam_1_1_kick_config/"><strong>evam::KickConfig</strong></a>)</li>
 </ul>
+<h2 id="e">e<a class="headerlink" href="#e" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>ExponentialSmoothConfig</strong> (<a href="../structevam_1_1_exponential_smooth_config/"><strong>evam::ExponentialSmoothConfig</strong></a>)</li>
+<li><strong>ExponentialSmoothDecor</strong> (<a href="../classevam_1_1_exponential_smooth_decor/"><strong>evam::ExponentialSmoothDecor</strong></a>)</li>
+</ul>
 <h2 id="f">f<a class="headerlink" href="#f" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>Filter</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_exponential_smooth_decor/"><strong>evam::ExponentialSmoothDecor</strong></a>, <a href="../classevam_1_1_slew_rate_decor/"><strong>evam::SlewRateDecor</strong></a>)</li>
 <li><strong>f</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>)</li>
 <li><strong>ForwardConfig</strong> (<a href="../structevam_1_1_forward_config/"><strong>evam::ForwardConfig</strong></a>)</li>
 <li><strong>ForwardMotor</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>)</li>
@@ -882,23 +876,22 @@
 </ul>
 <h2 id="g">g<a class="headerlink" href="#g" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>GetMaxTimeConstantMs</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>GetMinTimeConstantMs</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>Go</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>, <a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_i_motor/"><strong>evam::IMotor</strong></a>, <a href="../classevam_1_1_i_motor_maker/"><strong>evam::IMotorMaker</strong></a>, <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>, <a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>, <a href="../classevam_1_1_sliding_window_decor/"><strong>evam::SlidingWindowDecor</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>Go</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>, <a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_exponential_smooth_decor/"><strong>evam::ExponentialSmoothDecor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_i_motor/"><strong>evam::IMotor</strong></a>, <a href="../classevam_1_1_i_motor_maker/"><strong>evam::IMotorMaker</strong></a>, <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>, <a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>, <a href="../classevam_1_1_sampled_decor/"><strong>evam::SampledDecor</strong></a>, <a href="../classevam_1_1_simple_smooth_decor/"><strong>evam::SimpleSmoothDecor</strong></a>, <a href="../classevam_1_1_slew_rate_decor/"><strong>evam::SlewRateDecor</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>getMaxTimeConstantTicks</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
+<li><strong>getMinTimeConstantTicks</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
 <li><strong>GetBend</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>)</li>
 <li><strong>GetMaxBackward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
 <li><strong>GetMaxForward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
 <li><strong>GetMinBackward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
 <li><strong>GetMinForward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
+<li><strong>getAlpha</strong> (<a href="../classevam_1_1_exponential_smooth_decor/"><strong>evam::ExponentialSmoothDecor</strong></a>)</li>
 <li><strong>GetMaxValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
 <li><strong>GetMinValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
 <li><strong>GetInertiaMass</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
 <li><strong>GetKickDuration</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 <li><strong>GetKickPower</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
-<li><strong>getMaximin</strong> (<a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>)</li>
-<li><strong>getMinimax</strong> (<a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>)</li>
 <li><strong>GetPin</strong> (<a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a>, <a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
-<li><strong>get</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
+<li><strong>getMaxStep</strong> (<a href="../classevam_1_1_slew_rate_decor/"><strong>evam::SlewRateDecor</strong></a>)</li>
 <li><strong>GetCenterPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
 <li><strong>GetLeftPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
 <li><strong>GetRightPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
@@ -914,12 +907,10 @@
 <li><strong>InertiaConfig</strong> (<a href="../structevam_1_1_inertia_config/"><strong>evam::InertiaConfig</strong></a>)</li>
 <li><strong>inertiaMass</strong> (<a href="../structevam_1_1_inertia_config/"><strong>evam::InertiaConfig</strong></a>)</li>
 <li><strong>InertiaDecor</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
-<li><strong>isFull</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
 </ul>
 <h2 id="k">k<a class="headerlink" href="#k" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>kDeadzone</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>kHeartbeatPeriodMs</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
+<li><strong>kHeartbeatPeriodMs</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_sampled_decor/"><strong>evam::SampledDecor</strong></a>)</li>
 <li><strong>KickConfig</strong> (<a href="../structevam_1_1_kick_config/"><strong>evam::KickConfig</strong></a>)</li>
 <li><strong>KickDecor</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 <li><strong>kRefreshIntervalMs</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
@@ -932,13 +923,10 @@
 </ul>
 <h2 id="m">m<a class="headerlink" href="#m" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>maxTimeConstantMs</strong> (<a href="../structevam_1_1_adaptive_smooth_config/"><strong>evam::AdaptiveSmoothConfig</strong></a>)</li>
-<li><strong>minTimeConstantMs</strong> (<a href="../structevam_1_1_adaptive_smooth_config/"><strong>evam::AdaptiveSmoothConfig</strong></a>)</li>
-<li><strong>mConfig</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>, <a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>, <a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>, <a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a>, <a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_sliding_window_decor/"><strong>evam::SlidingWindowDecor</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>, <a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>, <a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
-<li><strong>mCurrentTimeConstantMs</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>mCurrentValue</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>mLastTargetValue</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>mTargetValue</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
+<li><strong>maxTimeConstantTicks</strong> (<a href="../structevam_1_1_adaptive_smooth_config/"><strong>evam::AdaptiveSmoothConfig</strong></a>)</li>
+<li><strong>minTimeConstantTicks</strong> (<a href="../structevam_1_1_adaptive_smooth_config/"><strong>evam::AdaptiveSmoothConfig</strong></a>)</li>
+<li><strong>mFilter</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_exponential_smooth_decor/"><strong>evam::ExponentialSmoothDecor</strong></a>, <a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>, <a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>, <a href="../classevam_1_1_simple_smooth_decor/"><strong>evam::SimpleSmoothDecor</strong></a>, <a href="../classevam_1_1_slew_rate_decor/"><strong>evam::SlewRateDecor</strong></a>)</li>
+<li><strong>mConfig</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>, <a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a>, <a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>, <a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>, <a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
 <li><strong>maxBackward</strong> (<a href="../structevam_1_1_directional_config/"><strong>evam::DirectionalConfig</strong></a>)</li>
 <li><strong>maxForward</strong> (<a href="../structevam_1_1_directional_config/"><strong>evam::DirectionalConfig</strong></a>)</li>
 <li><strong>minBackward</strong> (<a href="../structevam_1_1_directional_config/"><strong>evam::DirectionalConfig</strong></a>)</li>
@@ -946,39 +934,29 @@
 <li><strong>maxValue</strong> (<a href="../structevam_1_1_forward_config/"><strong>evam::ForwardConfig</strong></a>, <a href="../structevam_1_1_linear_actuator_config/"><strong>evam::LinearActuatorConfig</strong></a>)</li>
 <li><strong>minValue</strong> (<a href="../structevam_1_1_forward_config/"><strong>evam::ForwardConfig</strong></a>, <a href="../structevam_1_1_linear_actuator_config/"><strong>evam::LinearActuatorConfig</strong></a>)</li>
 <li><strong>mDesiredSpeed</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
+<li><strong>mHeartbeatHandler</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
+<li><strong>mHeartbeatTimer</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
 <li><strong>mSpeed</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
-<li><strong>mHoldingStartedAt</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
+<li><strong>mKickEndHandler</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
+<li><strong>mKickTimer</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 <li><strong>mTargetSpeed</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
-<li><strong>MedianConfig</strong> (<a href="../structevam_1_1_median_config/"><strong>evam::MedianConfig</strong></a>)</li>
 <li><strong>MedianDecor</strong> (<a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
-<li><strong>mBuffer</strong> (<a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>, <a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
-<li><strong>mBufferFull</strong> (<a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
-<li><strong>mIndex</strong> (<a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
-<li><strong>mLastSample</strong> (<a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
-<li><strong>MinmaxConfig</strong> (<a href="../structevam_1_1_minmax_config/"><strong>evam::MinmaxConfig</strong></a>)</li>
 <li><strong>MinmaxDecor</strong> (<a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>)</li>
-<li><strong>mMaxBuffer</strong> (<a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>)</li>
-<li><strong>mMinBuffer</strong> (<a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>)</li>
-<li><strong>mRing</strong> (<a href="../classevam_1_1_minmax_decor/"><strong>evam::MinmaxDecor</strong></a>, <a href="../classevam_1_1_sliding_window_decor/"><strong>evam::SlidingWindowDecor</strong></a>)</li>
-<li><strong>mHead</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
-<li><strong>mSize</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
+<li><strong>mValue</strong> (<a href="../classevam_1_1_sampled_decor/"><strong>evam::SampledDecor</strong></a>)</li>
 <li><strong>maxPulse</strong> (<a href="../structevam_1_1_servo_config/"><strong>evam::ServoConfig</strong></a>, <a href="../structevam_1_1_software_servo_config/"><strong>evam::SoftwareServoConfig</strong></a>)</li>
 <li><strong>middlePulse</strong> (<a href="../structevam_1_1_servo_config/"><strong>evam::ServoConfig</strong></a>, <a href="../structevam_1_1_software_servo_config/"><strong>evam::SoftwareServoConfig</strong></a>)</li>
 <li><strong>minPulse</strong> (<a href="../structevam_1_1_servo_config/"><strong>evam::ServoConfig</strong></a>, <a href="../structevam_1_1_software_servo_config/"><strong>evam::SoftwareServoConfig</strong></a>)</li>
 <li><strong>mServo</strong> (<a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>)</li>
-<li><strong>mSum</strong> (<a href="../classevam_1_1_sliding_window_decor/"><strong>evam::SlidingWindowDecor</strong></a>)</li>
+<li><strong>maxStepPerTick</strong> (<a href="../structevam_1_1_slew_rate_config/"><strong>evam::SlewRateConfig</strong></a>)</li>
 <li><strong>mLastRefreshMs</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>mPulseActive</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>mPulseStartUs</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>mTargetPulseUs</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 </ul>
-<h2 id="n">n<a class="headerlink" href="#n" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>n</strong> (<a href="../structevam_1_1_minmax_config/"><strong>evam::MinmaxConfig</strong></a>)</li>
-</ul>
 <h2 id="o">o<a class="headerlink" href="#o" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>onHeartbeat</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
+<li><strong>onHeartbeat</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>, <a href="../classevam_1_1_sampled_decor/"><strong>evam::SampledDecor</strong></a>)</li>
+<li><strong>onKickEnd</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 </ul>
 <h2 id="p">p<a class="headerlink" href="#p" title="Permanent link">&para;</a></h2>
 <ul>
@@ -986,38 +964,38 @@
 <li><strong>PwmConfig</strong> (<a href="../structevam_1_1_pwm_config/"><strong>evam::PwmConfig</strong></a>)</li>
 <li><strong>pin</strong> (<a href="../structevam_1_1_pwm_config/"><strong>evam::PwmConfig</strong></a>, <a href="../structevam_1_1_servo_config/"><strong>evam::ServoConfig</strong></a>, <a href="../structevam_1_1_software_servo_config/"><strong>evam::SoftwareServoConfig</strong></a>)</li>
 <li><strong>PwmDriver</strong> (<a href="../classevam_1_1_pwm_driver/"><strong>evam::PwmDriver</strong></a>)</li>
-<li><strong>put</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
 <li><strong>pinMode1</strong> (<a href="../structevam_1_1_t_b6612_config/"><strong>evam::TB6612Config</strong></a>)</li>
 <li><strong>pinMode2</strong> (<a href="../structevam_1_1_t_b6612_config/"><strong>evam::TB6612Config</strong></a>)</li>
 <li><strong>pinSpeed</strong> (<a href="../structevam_1_1_t_b6612_config/"><strong>evam::TB6612Config</strong></a>)</li>
 </ul>
 <h2 id="r">r<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Reset</strong> (<a href="../classevam_1_1_median_decor/"><strong>evam::MedianDecor</strong></a>)</li>
-<li><strong>RingBuffer</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
 <li><strong>rightPos</strong> (<a href="../structevam_1_1_steering_config/"><strong>evam::SteeringConfig</strong></a>)</li>
 </ul>
 <h2 id="s">s<a class="headerlink" href="#s" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>SetMaxTimeConstantMs</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>SetMinTimeConstantMs</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
-<li><strong>SetupRange</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>, <a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>setMaxTimeConstantTicks</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
+<li><strong>setMinTimeConstantTicks</strong> (<a href="../classevam_1_1_adaptive_smooth_decor/"><strong>evam::AdaptiveSmoothDecor</strong></a>)</li>
 <li><strong>SetBend</strong> (<a href="../classevam_1_1_curve_decor/"><strong>evam::CurveDecor</strong></a>)</li>
 <li><strong>SetMaxBackward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
 <li><strong>SetMaxForward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
 <li><strong>SetMinBackward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
 <li><strong>SetMinForward</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>)</li>
+<li><strong>SetupRange</strong> (<a href="../classevam_1_1_directional_motor/"><strong>evam::DirectionalMotor</strong></a>, <a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>, <a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
+<li><strong>setAlpha</strong> (<a href="../classevam_1_1_exponential_smooth_decor/"><strong>evam::ExponentialSmoothDecor</strong></a>)</li>
 <li><strong>SetMaxValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
 <li><strong>SetMinValue</strong> (<a href="../classevam_1_1_forward_motor/"><strong>evam::ForwardMotor</strong></a>, <a href="../classevam_1_1_linear_actuator/"><strong>evam::LinearActuator</strong></a>)</li>
 <li><strong>SetInertiaMass</strong> (<a href="../classevam_1_1_inertia_decor/"><strong>evam::InertiaDecor</strong></a>)</li>
 <li><strong>SetKickDuration</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 <li><strong>SetKickPower</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
 <li><strong>SetupKickstart</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>)</li>
-<li><strong>size</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
+<li><strong>SampledDecor</strong> (<a href="../classevam_1_1_sampled_decor/"><strong>evam::SampledDecor</strong></a>)</li>
 <li><strong>ServoConfig</strong> (<a href="../structevam_1_1_servo_config/"><strong>evam::ServoConfig</strong></a>)</li>
 <li><strong>ServoDriver</strong> (<a href="../classevam_1_1_servo_driver/"><strong>evam::ServoDriver</strong></a>)</li>
-<li><strong>SlidingWindowConfig</strong> (<a href="../structevam_1_1_sliding_window_config/"><strong>evam::SlidingWindowConfig</strong></a>)</li>
-<li><strong>SlidingWindowDecor</strong> (<a href="../classevam_1_1_sliding_window_decor/"><strong>evam::SlidingWindowDecor</strong></a>)</li>
+<li><strong>SimpleSmoothDecor</strong> (<a href="../classevam_1_1_simple_smooth_decor/"><strong>evam::SimpleSmoothDecor</strong></a>)</li>
+<li><strong>SlewRateConfig</strong> (<a href="../structevam_1_1_slew_rate_config/"><strong>evam::SlewRateConfig</strong></a>)</li>
+<li><strong>SlewRateDecor</strong> (<a href="../classevam_1_1_slew_rate_decor/"><strong>evam::SlewRateDecor</strong></a>)</li>
+<li><strong>setMaxStep</strong> (<a href="../classevam_1_1_slew_rate_decor/"><strong>evam::SlewRateDecor</strong></a>)</li>
 <li><strong>SoftwareServoConfig</strong> (<a href="../structevam_1_1_software_servo_config/"><strong>evam::SoftwareServoConfig</strong></a>)</li>
 <li><strong>SoftwareServoDriver</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>SetCenterPos</strong> (<a href="../classevam_1_1_steering_actuator/"><strong>evam::SteeringActuator</strong></a>)</li>
@@ -1028,16 +1006,11 @@
 </ul>
 <h2 id="t">t<a class="headerlink" href="#t" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>tick</strong> (<a href="../classevam_1_1_kick_decor/"><strong>evam::KickDecor</strong></a>, <a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
+<li><strong>tick</strong> (<a href="../classevam_1_1_software_servo_driver/"><strong>evam::SoftwareServoDriver</strong></a>)</li>
 <li><strong>TA6586Config</strong> (<a href="../structevam_1_1_t_a6586_config/"><strong>evam::TA6586Config</strong></a>)</li>
 <li><strong>TA6586Driver</strong> (<a href="../classevam_1_1_t_a6586_driver/"><strong>evam::TA6586Driver</strong></a>)</li>
 <li><strong>TB6612Config</strong> (<a href="../structevam_1_1_t_b6612_config/"><strong>evam::TB6612Config</strong></a>)</li>
 <li><strong>TB6612FNGDriver</strong> (<a href="../classevam_1_1_t_b6612_f_n_g_driver/"><strong>evam::TB6612FNGDriver</strong></a>)</li>
-</ul>
-<h2 id="w">w<a class="headerlink" href="#w" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>windowSize</strong> (<a href="../structevam_1_1_median_config/"><strong>evam::MedianConfig</strong></a>, <a href="../structevam_1_1_sliding_window_config/"><strong>evam::SlidingWindowConfig</strong></a>)</li>
-<li><strong>wrapIndex</strong> (<a href="../classevam_1_1_ring_buffer/"><strong>evam::RingBuffer</strong></a>)</li>
 </ul>
 <h2 id="_1">~<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>

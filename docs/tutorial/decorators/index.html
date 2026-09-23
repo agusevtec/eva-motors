@@ -933,10 +933,10 @@
 </li>
 </ul>
 <p><strong>Example:</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">KickerMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">KickDecor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">TA6586Driver</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">900</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">// 30ms pulse at 90% power</span>
+<span class="k">using</span><span class="w"> </span><span class="n">KickerMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KickDecor</span><span class="o">&lt;</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">TA6586Driver</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">900</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="n">KickerMotor</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
-<span class="n">motor</span><span class="p">.</span><span class="n">SetupKickstart</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">);</span><span class="w">  </span><span class="c1">// 25ms pulse at 80% power</span>
-<span class="n">motor</span><span class="p">.</span><span class="n">Go</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span><span class="w">  </span><span class="c1">// Kick then maintain 30% power</span>
+<span class="n">motor</span><span class="p">.</span><span class="n">Go</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span><span class="w">  </span><span class="c1">// Kick and then maintain 30% power</span>
 </code></pre></div>
 
 <p><strong>Kick Logic:</strong></p>

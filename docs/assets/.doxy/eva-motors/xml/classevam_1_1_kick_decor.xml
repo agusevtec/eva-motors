@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classevam_1_1_kick_decor" kind="class" language="C++" prot="public">
     <compoundname>evam::KickDecor</compoundname>
-    <basecompoundref prot="public" virt="virtual">Tickable</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
     <includes refid="evam_kick_decor_8h" local="no">evamKickDecor.h</includes>
     <templateparamlist>
@@ -35,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="43" column="20" bodyfile="src/evamKickDecor.h" bodystart="43" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="42" column="20" bodyfile="src/evamKickDecor.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_kick_decor_1aa001c6b06d47071bc8a186d31f7f3bfc" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -50,25 +49,62 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="45" column="22" bodyfile="src/evamKickDecor.h" bodystart="45" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="44" column="22" bodyfile="src/evamKickDecor.h" bodystart="44" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_kick_decor_1ad7a723faaedd51f125ba211b41e26496" prot="private" static="no" mutable="no">
-        <type>unsigned long</type>
-        <definition>unsigned long evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;::mHoldingStartedAt</definition>
+      <memberdef kind="variable" id="classevam_1_1_kick_decor_1a77a66999555c0b3122f094ea38e8984c" prot="private" static="no" mutable="no">
+        <type>eva::Handler&lt; KickDecor &gt;</type>
+        <definition>eva::Handler&lt;KickDecor&gt; evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;::mKickEndHandler</definition>
         <argsstring></argsstring>
-        <name>mHoldingStartedAt</name>
-        <qualifiedname>evam::KickDecor::mHoldingStartedAt</qualifiedname>
-        <initializer>= 0</initializer>
+        <name>mKickEndHandler</name>
+        <qualifiedname>evam::KickDecor::mKickEndHandler</qualifiedname>
+        <initializer>{ this, &amp;KickDecor::onKickEnd }</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="46" column="23" bodyfile="src/evamKickDecor.h" bodystart="46" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="46" column="22" bodyfile="src/evamKickDecor.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_kick_decor_1a71197f1dc2971f0d681c946c1730d790" prot="private" static="no" mutable="no">
+        <type>eva::DelayTimer</type>
+        <definition>eva::DelayTimer evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;::mKickTimer</definition>
+        <argsstring></argsstring>
+        <name>mKickTimer</name>
+        <qualifiedname>evam::KickDecor::mKickTimer</qualifiedname>
+        <initializer>{ &amp;mKickEndHandler }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamKickDecor.h" line="47" column="25" bodyfile="src/evamKickDecor.h" bodystart="47" bodyend="47"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
+      <memberdef kind="function" id="classevam_1_1_kick_decor_1ae9075fa41c77907fe93ce4508afaa8cc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;::onKickEnd</definition>
+        <argsstring>(void *sender, eva::CallbackInfo cbInfo)</argsstring>
+        <name>onKickEnd</name>
+        <qualifiedname>evam::KickDecor::onKickEnd</qualifiedname>
+        <param>
+          <type>void *</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>eva::CallbackInfo</type>
+          <declname>cbInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamKickDecor.h" line="49" column="14" bodyfile="src/evamKickDecor.h" bodystart="49" bodyend="52"/>
+      </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a61268988366f9d42c2092b3a343e0610" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;::calculateKickPower</definition>
@@ -85,21 +121,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="48" column="22" bodyfile="src/evamKickDecor.h" bodystart="48" bodyend="57"/>
-      </memberdef>
-      <memberdef kind="function" id="classevam_1_1_kick_decor_1ae0f2120180816b8a9f6cc2affadf91cb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;::tick</definition>
-        <argsstring>() override</argsstring>
-        <name>tick</name>
-        <qualifiedname>evam::KickDecor::tick</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamKickDecor.h" line="59" column="14" bodyfile="src/evamKickDecor.h" bodystart="59" bodyend="69"/>
+        <location file="src/evamKickDecor.h" line="54" column="22" bodyfile="src/evamKickDecor.h" bodystart="54" bodyend="63"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -115,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="72" column="9" bodyfile="src/evamKickDecor.h" bodystart="72" bodyend="72"/>
+        <location file="src/evamKickDecor.h" line="66" column="9" bodyfile="src/evamKickDecor.h" bodystart="66" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a4c014783c7ca17f3bc7dede5d2665719" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -144,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="75" column="9" bodyfile="src/evamKickDecor.h" bodystart="75" bodyend="75"/>
+        <location file="src/evamKickDecor.h" line="69" column="9" bodyfile="src/evamKickDecor.h" bodystart="69" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a9215c24e4d9c16ea619d6e76f1ffde96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -185,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="83" column="14" bodyfile="src/evamKickDecor.h" bodystart="83" bodyend="87"/>
+        <location file="src/evamKickDecor.h" line="77" column="14" bodyfile="src/evamKickDecor.h" bodystart="77" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1ab24d11d92e89115fbce875e0425d68c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -214,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="93" column="14" bodyfile="src/evamKickDecor.h" bodystart="93" bodyend="97"/>
+        <location file="src/evamKickDecor.h" line="87" column="14" bodyfile="src/evamKickDecor.h" bodystart="87" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a89401f1d2d5a6b852b93d8e97c6357df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
@@ -232,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="103" column="24" bodyfile="src/evamKickDecor.h" bodystart="103" bodyend="106"/>
+        <location file="src/evamKickDecor.h" line="97" column="24" bodyfile="src/evamKickDecor.h" bodystart="97" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a4819f7333cb577d1e90b954844a4e8f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -261,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="112" column="14" bodyfile="src/evamKickDecor.h" bodystart="112" bodyend="115"/>
+        <location file="src/evamKickDecor.h" line="106" column="14" bodyfile="src/evamKickDecor.h" bodystart="106" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a0b98c3bd9c8cd3ce0ef37811b42bbd63" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -279,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="121" column="22" bodyfile="src/evamKickDecor.h" bodystart="121" bodyend="124"/>
+        <location file="src/evamKickDecor.h" line="115" column="22" bodyfile="src/evamKickDecor.h" bodystart="115" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_kick_decor_1a552267ad10b61cf470896b260b78e2c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -308,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="130" column="14" bodyfile="src/evamKickDecor.h" bodystart="130" bodyend="146"/>
+        <location file="src/evamKickDecor.h" line="124" column="14" bodyfile="src/evamKickDecor.h" bodystart="124" bodyend="140"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -326,7 +348,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kDefaultKickDuration</parametername>
+<parametername>tDefaultKickDuration</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Default kick pulse duration in milliseconds. Default: 20ms. </para>
@@ -334,7 +356,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>kDefaultKickPower</parametername>
+<parametername>tDefaultKickPower</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Default kick power. Range: -1000..1000. Default: 1000 (full power). </para>
@@ -344,38 +366,28 @@
 </para>
     </detaileddescription>
     <inheritancegraph>
-      <node id="3">
-        <label>TMotor</label>
-      </node>
       <node id="2">
-        <label>Tickable</label>
+        <label>TMotor</label>
       </node>
       <node id="1">
         <label>evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;</label>
         <link refid="classevam_1_1_kick_decor"/>
         <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="3">
-        <label>TMotor</label>
-      </node>
       <node id="2">
-        <label>Tickable</label>
+        <label>TMotor</label>
       </node>
       <node id="1">
         <label>evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;</label>
         <link refid="classevam_1_1_kick_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamKickDecor.h" line="37" column="5" bodyfile="src/evamKickDecor.h" bodystart="38" bodyend="147"/>
+    <location file="src/evamKickDecor.h" line="36" column="5" bodyfile="src/evamKickDecor.h" bodystart="37" bodyend="141"/>
     <listofallmembers>
       <member refid="classevam_1_1_kick_decor_1a61268988366f9d42c2092b3a343e0610" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>calculateKickPower</name></member>
       <member refid="classevam_1_1_kick_decor_1a89401f1d2d5a6b852b93d8e97c6357df" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>GetKickDuration</name></member>
@@ -384,12 +396,13 @@
       <member refid="classevam_1_1_kick_decor_1a356b9cdd81ba9c10ad19639de90bb207" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>KickDecor</name></member>
       <member refid="classevam_1_1_kick_decor_1a4c014783c7ca17f3bc7dede5d2665719" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>KickDecor</name></member>
       <member refid="classevam_1_1_kick_decor_1abcc2857d1673a35eb7dc90ff17804503" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mConfig</name></member>
-      <member refid="classevam_1_1_kick_decor_1ad7a723faaedd51f125ba211b41e26496" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mHoldingStartedAt</name></member>
+      <member refid="classevam_1_1_kick_decor_1a77a66999555c0b3122f094ea38e8984c" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mKickEndHandler</name></member>
+      <member refid="classevam_1_1_kick_decor_1a71197f1dc2971f0d681c946c1730d790" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mKickTimer</name></member>
       <member refid="classevam_1_1_kick_decor_1aa001c6b06d47071bc8a186d31f7f3bfc" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mTargetSpeed</name></member>
+      <member refid="classevam_1_1_kick_decor_1ae9075fa41c77907fe93ce4508afaa8cc" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>onKickEnd</name></member>
       <member refid="classevam_1_1_kick_decor_1ab24d11d92e89115fbce875e0425d68c7" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>SetKickDuration</name></member>
       <member refid="classevam_1_1_kick_decor_1a4819f7333cb577d1e90b954844a4e8f8" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>SetKickPower</name></member>
       <member refid="classevam_1_1_kick_decor_1a9215c24e4d9c16ea619d6e76f1ffde96" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>SetupKickstart</name></member>
-      <member refid="classevam_1_1_kick_decor_1ae0f2120180816b8a9f6cc2affadf91cb" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>tick</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

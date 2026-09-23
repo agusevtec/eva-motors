@@ -753,39 +753,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-kdefaultmaxtimeconstantms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable kDefaultMaxTimeConstantMs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-kdefaultmintimeconstantms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable kDefaultMinTimeConstantMs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-kdefaultwindowsize" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable kDefaultWindowSize
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#variable-kinertiamass" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -819,54 +786,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-kmaxtimeconstantlimit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable kMaxTimeConstantLimit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-kmaxwindowsize" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable kMaxWindowSize
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#variable-kminbend" class="md-nav__link">
     <span class="md-ellipsis">
       
         variable kMinBend
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-kmintimeconstantlimit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable kMinTimeConstantLimit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-kminwindowsize" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable kMinWindowSize
       
     </span>
   </a>
@@ -943,7 +866,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classevam_1_1_adaptive_smooth_decor/"><strong>AdaptiveSmoothDecor</strong></a> &lt;class TMotor, tMinTimeConstantMs, tMaxTimeConstantMs&gt;<br><em>Decorator with adaptive smoothing based on input rate of change.</em></td>
+<td style="text-align: left;"><a href="../classevam_1_1_adaptive_smooth_decor/"><strong>AdaptiveSmoothDecor</strong></a> &lt;class TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks&gt;<br><em>Decorator with adaptive smoothing based on input rate of change.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
@@ -960,6 +883,14 @@
 <tr>
 <td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../classevam_1_1_directional_motor/"><strong>DirectionalMotor</strong></a> &lt;class TDriver, tMaxBackward, tMinBackward, tMinForward, tMaxForward&gt;<br><em>Bidirectional motor controller (forward/reverse).</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">struct</td>
+<td style="text-align: left;"><a href="../structevam_1_1_exponential_smooth_config/"><strong>ExponentialSmoothConfig</strong></a> <br><em>Configuration structure for</em> <a href="../classevam_1_1_exponential_smooth_decor/"><em><strong>ExponentialSmoothDecor</strong></em></a> <em>.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classevam_1_1_exponential_smooth_decor/"><strong>ExponentialSmoothDecor</strong></a> &lt;class TMotor, tAlpha&gt;<br><em>Decorator applying Exponential Moving Average (EMA) filtering.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
@@ -1002,20 +933,12 @@
 <td style="text-align: left;"><a href="../structevam_1_1_linear_actuator_config/"><strong>LinearActuatorConfig</strong></a> <br><em>Configuration structure for</em> <a href="../classevam_1_1_linear_actuator/"><em><strong>LinearActuator</strong></em></a> <em>.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="../structevam_1_1_median_config/"><strong>MedianConfig</strong></a> <br><em>Configuration structure for</em> <a href="../classevam_1_1_median_decor/"><em><strong>MedianDecor</strong></em></a> <em>.</em></td>
+<td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classevam_1_1_median_decor/"><strong>MedianDecor</strong></a> &lt;class TMotor, tWindowSize&gt;<br><em>Decorator applying median filtering.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classevam_1_1_median_decor/"><strong>MedianDecor</strong></a> &lt;class TMotor, tWindowSize&gt;<br><em>Decorator that applies median filtering with fixed time base.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="../structevam_1_1_minmax_config/"><strong>MinmaxConfig</strong></a> <br><em>Configuration structure for</em> <a href="../classevam_1_1_minmax_decor/"><em><strong>MinmaxDecor</strong></em></a> <em>.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classevam_1_1_minmax_decor/"><strong>MinmaxDecor</strong></a> &lt;class TMotor, N&gt;<br><em>Decorator that applies a min-max (morphological) filter to the control signal.</em></td>
+<td style="text-align: left;"><a href="../classevam_1_1_minmax_decor/"><strong>MinmaxDecor</strong></a> &lt;class TMotor, N&gt;<br><em>Decorator applying a min-max (morphological) filter.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
@@ -1027,7 +950,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classevam_1_1_ring_buffer/"><strong>RingBuffer</strong></a> &lt;typename T, N&gt;<br></td>
+<td style="text-align: left;"><a href="../classevam_1_1_sampled_decor/"><strong>SampledDecor</strong></a> &lt;class TMotor&gt;<br><em>Decorator that owns the heartbeat and periodically drives TMotor.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
@@ -1038,12 +961,20 @@
 <td style="text-align: left;"><a href="../classevam_1_1_servo_driver/"><strong>ServoDriver</strong></a> &lt;tPin, tMinPulse, tMiddlePulse, tMaxPulse&gt;<br><em>Servo driver using standard Arduino Servo library.</em></td>
 </tr>
 <tr>
+<td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classevam_1_1_simple_smooth_decor/"><strong>SimpleSmoothDecor</strong></a> &lt;class TMotor, N&gt;<br><em>Decorator applying a simple moving average (sliding window) filter.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">struct</td>
-<td style="text-align: left;"><a href="../structevam_1_1_sliding_window_config/"><strong>SlidingWindowConfig</strong></a> <br><em>Configuration structure for</em> <a href="../classevam_1_1_sliding_window_decor/"><em><strong>SlidingWindowDecor</strong></em></a> <em>.</em></td>
+<td style="text-align: left;"><a href="../structevam_1_1_slew_rate_config/"><strong>SlewRateConfig</strong></a> <br><em>Configuration structure for</em> <a href="../classevam_1_1_slew_rate_decor/"><em><strong>SlewRateDecor</strong></em></a> <em>.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classevam_1_1_sliding_window_decor/"><strong>SlidingWindowDecor</strong></a> &lt;class TMotor, N&gt;<br><em>Decorator that applies a simple moving average (sliding window) filter.</em></td>
+<td style="text-align: left;"><a href="../classevam_1_1_slew_rate_decor/"><strong>SlewRateDecor</strong></a> &lt;class TMotor, tMaxStepPerTick&gt;<br><em>Decorator that limits maximum rate of change (slew rate / ramp).</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">struct</td>
+<td style="text-align: left;"><a href="../structevam_1_1_sliding_window_decor/"><strong>SlidingWindowDecor</strong></a> &lt;class TMotor, N&gt;<br></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
@@ -1121,18 +1052,6 @@
 </tr>
 <tr>
 <td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-kdefaultmaxtimeconstantms"><strong>kDefaultMaxTimeConstantMs</strong></a>   = <code>150</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-kdefaultmintimeconstantms"><strong>kDefaultMinTimeConstantMs</strong></a>   = <code>10</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-kdefaultwindowsize"><strong>kDefaultWindowSize</strong></a>   = <code>5</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
 <td style="text-align: left;"><a href="#variable-kinertiamass"><strong>kInertiaMass</strong></a>   = <code>5</code><br></td>
 </tr>
 <tr>
@@ -1144,24 +1063,8 @@
 <td style="text-align: left;"><a href="#variable-kmaxkickpower"><strong>kMaxKickPower</strong></a>   = <code>1000</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-kmaxtimeconstantlimit"><strong>kMaxTimeConstantLimit</strong></a>   = <code>500</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-kmaxwindowsize"><strong>kMaxWindowSize</strong></a>   = <code>15</code><br></td>
-</tr>
-<tr>
 <td style="text-align: right;">signed short</td>
 <td style="text-align: left;"><a href="#variable-kminbend"><strong>kMinBend</strong></a>   = <code>-10</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-kmintimeconstantlimit"><strong>kMinTimeConstantLimit</strong></a>   = <code>5</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-kminwindowsize"><strong>kMinWindowSize</strong></a>   = <code>3</code><br></td>
 </tr>
 </tbody>
 </table>
@@ -1211,24 +1114,6 @@
 
 <hr>
 
-<h3 id="variable-kdefaultmaxtimeconstantms">variable kDefaultMaxTimeConstantMs<a class="headerlink" href="#variable-kdefaultmaxtimeconstantms" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kDefaultMaxTimeConstantMs</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="variable-kdefaultmintimeconstantms">variable kDefaultMinTimeConstantMs<a class="headerlink" href="#variable-kdefaultmintimeconstantms" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kDefaultMinTimeConstantMs</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="variable-kdefaultwindowsize">variable kDefaultWindowSize<a class="headerlink" href="#variable-kdefaultwindowsize" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kDefaultWindowSize</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
 <h3 id="variable-kinertiamass">variable kInertiaMass<a class="headerlink" href="#variable-kinertiamass" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kInertiaMass</span><span class="p">;</span>
 </code></pre></div>
@@ -1247,32 +1132,8 @@
 
 <hr>
 
-<h3 id="variable-kmaxtimeconstantlimit">variable kMaxTimeConstantLimit<a class="headerlink" href="#variable-kmaxtimeconstantlimit" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kMaxTimeConstantLimit</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="variable-kmaxwindowsize">variable kMaxWindowSize<a class="headerlink" href="#variable-kmaxwindowsize" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kMaxWindowSize</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
 <h3 id="variable-kminbend">variable kMinBend<a class="headerlink" href="#variable-kminbend" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kMinBend</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="variable-kmintimeconstantlimit">variable kMinTimeConstantLimit<a class="headerlink" href="#variable-kmintimeconstantlimit" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kMinTimeConstantLimit</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="variable-kminwindowsize">variable kMinWindowSize<a class="headerlink" href="#variable-kminwindowsize" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">kMinWindowSize</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
@@ -1287,7 +1148,7 @@
 <hr>
 
 <hr />
-<p>The documentation for this class was generated from the following file <code>src/evabIMotor.h</code></p>
+<p>The documentation for this class was generated from the following file <code>src/evamAdaptiveSmoothDecor.h</code></p>
 
 
 

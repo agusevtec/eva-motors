@@ -18,9 +18,7 @@ namespace evam
      * @tparam TMotor Wrapped class (must implement Go(signed short))
      */
     template <class TMotor>
-    class SampledDecor
-        : public virtual eva::Heartbeat,
-          public TMotor
+    class SampledDecor : public eva::Heartbeat, public TMotor
     {
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 10;
@@ -33,7 +31,7 @@ namespace evam
         }
 
     public:
-        SampledDecor() : Heartbeat(kHeartbeatPeriodMs), mValue(0) {}
+        SampledDecor() : eva::Heartbeat(kHeartbeatPeriodMs), mValue(0) {}
 
         template <typename... Args>
         SampledDecor(Args... args) : Heartbeat(kHeartbeatPeriodMs), TMotor(args...), mValue(0) {}

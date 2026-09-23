@@ -647,6 +647,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#detailed-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-attributes-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -659,10 +670,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-maxtimeconstantms" class="md-nav__link">
+  <a href="#variable-maxtimeconstantticks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variable maxTimeConstantMs
+        variable maxTimeConstantTicks
       
     </span>
   </a>
@@ -670,10 +681,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-mintimeconstantms" class="md-nav__link">
+  <a href="#variable-mintimeconstantticks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variable minTimeConstantMs
+        variable minTimeConstantTicks
       
     </span>
   </a>
@@ -735,7 +746,7 @@
 
 <h1 id="struct-evamadaptivesmoothconfig">Struct evam::AdaptiveSmoothConfig<a class="headerlink" href="#struct-evamadaptivesmoothconfig" title="Permanent link">&para;</a></h1>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceevam/"><strong>evam</strong></a> <strong>&gt;</strong> <a href="./"><strong>AdaptiveSmoothConfig</strong></a></p>
-<p><em>Configuration structure for</em> <a href="../classevam_1_1_adaptive_smooth_decor/"><em><strong>AdaptiveSmoothDecor</strong></em></a> <em>.</em></p>
+<p><em>Configuration structure for</em> <a href="../classevam_1_1_adaptive_smooth_decor/"><em><strong>AdaptiveSmoothDecor</strong></em></a> <em>.</em><a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evamAdaptiveSmoothDecor.h&gt;</code></li>
 </ul>
@@ -750,11 +761,11 @@
 <tbody>
 <tr>
 <td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-maxtimeconstantms"><strong>maxTimeConstantMs</strong></a>  <br></td>
+<td style="text-align: left;"><a href="#variable-maxtimeconstantticks"><strong>maxTimeConstantTicks</strong></a>  <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#variable-mintimeconstantms"><strong>minTimeConstantMs</strong></a>  <br></td>
+<td style="text-align: left;"><a href="#variable-mintimeconstantticks"><strong>minTimeConstantTicks</strong></a>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -769,27 +780,29 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-adaptivesmoothconfig"><strong>AdaptiveSmoothConfig</strong></a> (unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs) <br></td>
+<td style="text-align: left;"><a href="#function-adaptivesmoothconfig"><strong>AdaptiveSmoothConfig</strong></a> (unsigned short minTimeConstantTicks, unsigned short maxTimeConstantTicks) <br></td>
 </tr>
 </tbody>
 </table>
+<h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
+<p>Runtime parameters for evaf::AdaptiveSmooth. Range checking is delegated to evaf (template defaults + constructor constrain). </p>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-maxtimeconstantms">variable maxTimeConstantMs<a class="headerlink" href="#variable-maxtimeconstantms" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothConfig</span><span class="o">::</span><span class="n">maxTimeConstantMs</span><span class="p">;</span>
+<h3 id="variable-maxtimeconstantticks">variable maxTimeConstantTicks<a class="headerlink" href="#variable-maxtimeconstantticks" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothConfig</span><span class="o">::</span><span class="n">maxTimeConstantTicks</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
-<h3 id="variable-mintimeconstantms">variable minTimeConstantMs<a class="headerlink" href="#variable-mintimeconstantms" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothConfig</span><span class="o">::</span><span class="n">minTimeConstantMs</span><span class="p">;</span>
+<h3 id="variable-mintimeconstantticks">variable minTimeConstantTicks<a class="headerlink" href="#variable-mintimeconstantticks" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothConfig</span><span class="o">::</span><span class="n">minTimeConstantTicks</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-adaptivesmoothconfig">function AdaptiveSmoothConfig<a class="headerlink" href="#function-adaptivesmoothconfig" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothConfig</span><span class="o">::</span><span class="n">AdaptiveSmoothConfig</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">minTimeConstantMs</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">maxTimeConstantMs</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">minTimeConstantTicks</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">maxTimeConstantTicks</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 

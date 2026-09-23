@@ -10,8 +10,8 @@
 
 
 
-* `#include <Arduino.h>`
-* `#include <evaHeartbeat.h>`
+* `#include <evafAdaptiveSmooth.h>`
+* `#include "evaStdReaders.h"`
 
 
 
@@ -29,7 +29,6 @@
 
 | Type | Name |
 | ---: | :--- |
-| namespace | [**eva**](namespaceeva.md) <br> |
 | namespace | [**evam**](namespaceevam.md) <br> |
 
 
@@ -38,7 +37,7 @@
 | Type | Name |
 | ---: | :--- |
 | struct | [**AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) <br>_Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive_smooth_decor.md) _._ |
-| class | [**AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) &lt;class TMotor, tMinTimeConstantMs, tMaxTimeConstantMs&gt;<br>_Decorator with adaptive smoothing based on input rate of change._  |
+| class | [**AdaptiveSmoothDecor**](classevam_1_1_adaptive_smooth_decor.md) &lt;class TMotor, tMinTimeConstantTicks, tMaxTimeConstantTicks&gt;<br>_Decorator with adaptive smoothing based on input rate of change._  |
 
 
 

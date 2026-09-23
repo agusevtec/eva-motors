@@ -10,13 +10,13 @@
 
 
 
-_Decorator that applies median filtering with fixed time base._ [More...](#detailed-description)
+_Decorator applying median filtering._ [More...](#detailed-description)
 
 * `#include <evamMedianDecor.h>`
 
 
 
-Inherits the following classes: Heartbeat,  TMotor
+Inherits the following classes: TMotor
 
 
 
@@ -55,10 +55,9 @@ Inherits the following classes: Heartbeat,  TMotor
 
 | Type | Name |
 | ---: | :--- |
-|  void | [**Go**](#function-go) (signed short aValue) <br> |
+|  void | [**Go**](#function-go) (signed short value) <br>_Set the target control value._  |
 |   | [**MedianDecor**](#function-mediandecor-12) () <br> |
-|   | [**MedianDecor**](#function-mediandecor-22) ([**MedianConfig**](structevam_1_1_median_config.md) config, Args... args) <br> |
-|  void | [**Reset**](#function-reset) () <br>_Reset the filter buffer._  |
+|   | [**MedianDecor**](#function-mediandecor-22) (Args... args) <br> |
 
 
 
@@ -83,11 +82,6 @@ Inherits the following classes: Heartbeat,  TMotor
 
 
 
-## Protected Functions
-
-| Type | Name |
-| ---: | :--- |
-|  void | [**onHeartbeat**](#function-onheartbeat) () override<br> |
 
 
 
@@ -95,7 +89,7 @@ Inherits the following classes: Heartbeat,  TMotor
 ## Detailed Description
 
 
-Samples the input at regular intervals and applies median filtering to remove spikes and noise. Output updates at the sampling rate.
+Median has no runtime parameters besides the template window size. This decorator does not own a heartbeat; it only transforms the value. Wrap it with [**SampledDecor**](classevam_1_1_sampled_decor.md) to get periodic output: 
 
 
 
@@ -103,8 +97,8 @@ Samples the input at regular intervals and applies median filtering to remove sp
 **Template parameters:**
 
 
-* `Motor` Base motor class (must implement Go(signed short)) 
-* `kWindowSize` Filter window size (odd number). Default: 5 
+* `TMotor` Base motor class (must implement [**Go(signed short)**](classevam_1_1_median_decor.md#function-go)) 
+* `tWindowSize` Filter window size (odd number). Default: 5 
 
 
 
@@ -117,14 +111,26 @@ Samples the input at regular intervals and applies median filtering to remove sp
 
 ### function Go 
 
+_Set the target control value._ 
 ```C++
 inline void evam::MedianDecor::Go (
-    signed short aValue
+    signed short value
 ) 
 ```
 
 
 
+
+
+**Parameters:**
+
+
+* `value` Target control value, range -1000..1000 
+
+
+
+
+        
 
 <hr>
 
@@ -148,38 +154,8 @@ inline evam::MedianDecor::MedianDecor ()
 ```C++
 template<typename... Args>
 inline evam::MedianDecor::MedianDecor (
-    MedianConfig config,
     Args... args
 ) 
-```
-
-
-
-
-<hr>
-
-
-
-### function Reset 
-
-_Reset the filter buffer._ 
-```C++
-inline void evam::MedianDecor::Reset () 
-```
-
-
-
-
-<hr>
-## Protected Functions Documentation
-
-
-
-
-### function onHeartbeat 
-
-```C++
-inline void evam::MedianDecor::onHeartbeat () override
 ```
 
 

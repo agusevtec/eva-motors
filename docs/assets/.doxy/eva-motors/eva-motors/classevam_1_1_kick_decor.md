@@ -16,7 +16,7 @@ _Decorator that applies a momentary kick to overcome static friction._ [More...]
 
 
 
-Inherits the following classes: Tickable,  TMotor
+Inherits the following classes: TMotor
 
 
 
@@ -103,8 +103,8 @@ When starting from stop or changing direction, a power pulse is applied for a sh
 
 
 * `Motor` Base motor class (must implement [**Go(signed short)**](classevam_1_1_kick_decor.md#function-go)) 
-* `kDefaultKickDuration` Default kick pulse duration in milliseconds. Default: 20ms. 
-* `kDefaultKickPower` Default kick power. Range: -1000..1000. Default: 1000 (full power). 
+* `tDefaultKickDuration` Default kick pulse duration in milliseconds. Default: 20ms. 
+* `tDefaultKickPower` Default kick power. Range: -1000..1000. Default: 1000 (full power). 
 
 
 

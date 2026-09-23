@@ -5,7 +5,7 @@
 
 using namespace aunit;
 using namespace evam;
-
+using namespace eva;
 
 test(kick_simple)
 {

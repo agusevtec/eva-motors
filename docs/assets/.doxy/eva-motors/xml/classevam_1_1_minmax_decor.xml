@@ -15,79 +15,23 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classevam_1_1_minmax_decor_1ab90d5806f8042d2b205695795a760964" prot="private" static="no" mutable="no">
-        <type><ref refid="structevam_1_1_minmax_config" kindref="compound">MinmaxConfig</ref></type>
-        <definition>MinmaxConfig evam::MinmaxDecor&lt; TMotor, N &gt;::mConfig</definition>
+      <memberdef kind="variable" id="classevam_1_1_minmax_decor_1abb0ef1e912c176986097394b4c1e8661" prot="private" static="no" mutable="no">
+        <type>evaf::Minmax&lt; eva::ValueReader, N &gt;</type>
+        <definition>evaf::Minmax&lt;eva::ValueReader, N&gt; evam::MinmaxDecor&lt; TMotor, N &gt;::mFilter</definition>
         <argsstring></argsstring>
-        <name>mConfig</name>
-        <qualifiedname>evam::MinmaxDecor::mConfig</qualifiedname>
+        <name>mFilter</name>
+        <qualifiedname>evam::MinmaxDecor::mFilter</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="40" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="40" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_minmax_decor_1ac661adc51b0b23eafd64ad8076652b7e" prot="private" static="no" mutable="no">
-        <type><ref refid="classevam_1_1_ring_buffer" kindref="compound">RingBuffer</ref>&lt; signed short, N *N &gt;</type>
-        <definition>RingBuffer&lt;signed short, N * N&gt; evam::MinmaxDecor&lt; TMotor, N &gt;::mRing</definition>
-        <argsstring></argsstring>
-        <name>mRing</name>
-        <qualifiedname>evam::MinmaxDecor::mRing</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="41" column="20" bodyfile="src/evamMinmaxDecor.h" bodystart="41" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_minmax_decor_1a840d39e836c5c13017ff90252cc5700d" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::MinmaxDecor&lt; TMotor, N &gt;::mMaxBuffer[N]</definition>
-        <argsstring>[N]</argsstring>
-        <name>mMaxBuffer</name>
-        <qualifiedname>evam::MinmaxDecor::mMaxBuffer</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="42" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="42" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classevam_1_1_minmax_decor_1a4369ed106f654a0ef3fe271c8fb345ce" prot="private" static="no" mutable="no">
-        <type>signed short</type>
-        <definition>signed short evam::MinmaxDecor&lt; TMotor, N &gt;::mMinBuffer[N]</definition>
-        <argsstring>[N]</argsstring>
-        <name>mMinBuffer</name>
-        <qualifiedname>evam::MinmaxDecor::mMinBuffer</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="43" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="43" bodyend="-1"/>
+        <location file="src/evamMinmaxDecor.h" line="20" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="20" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classevam_1_1_minmax_decor_1a334c8b5dec738b2997451d026799f7e3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>evam::MinmaxDecor&lt; TMotor, N &gt;::MinmaxDecor</definition>
-        <argsstring>()</argsstring>
-        <name>MinmaxDecor</name>
-        <qualifiedname>evam::MinmaxDecor::MinmaxDecor</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="46" column="9" bodyfile="src/evamMinmaxDecor.h" bodystart="46" bodyend="53"/>
-      </memberdef>
-      <memberdef kind="function" id="classevam_1_1_minmax_decor_1ad1d779398740b5a81b7d0daa340dc042" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_minmax_decor_1ae98e13abeda06857c3ae46270a8c9305" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -97,13 +41,9 @@
         </templateparamlist>
         <type></type>
         <definition>evam::MinmaxDecor&lt; TMotor, N &gt;::MinmaxDecor</definition>
-        <argsstring>(MinmaxConfig config, Args... args)</argsstring>
+        <argsstring>(Args... args)</argsstring>
         <name>MinmaxDecor</name>
         <qualifiedname>evam::MinmaxDecor::MinmaxDecor</qualifiedname>
-        <param>
-          <type><ref refid="structevam_1_1_minmax_config" kindref="compound">MinmaxConfig</ref></type>
-          <declname>config</declname>
-        </param>
         <param>
           <type>Args...</type>
           <declname>args</declname>
@@ -114,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="56" column="9" bodyfile="src/evamMinmaxDecor.h" bodystart="56" bodyend="64"/>
+        <location file="src/evamMinmaxDecor.h" line="26" column="9" bodyfile="src/evamMinmaxDecor.h" bodystart="26" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_minmax_decor_1a1a57715d44719fa46d22f8ef81c66880" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -127,21 +67,15 @@
           <declname>value</declname>
         </param>
         <briefdescription>
-<para>Apply the control value with min-max filtering. </para>
+<para>Set the target control value. </para>
         </briefdescription>
         <detaileddescription>
-<para>Passes values through unchanged until the ring buffer is full. Once full, each new value triggers:<itemizedlist>
-<listitem><para>Buffer update (overwrites oldest value)</para>
-</listitem><listitem><para>Recalculation of chunk maximums and minimums</para>
-</listitem><listitem><para>Output = (minimax + maximin) / 2</para>
-</listitem></itemizedlist>
-</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Input control value, range -1000..1000 </para>
+<para>Target control value, range -1000..1000 </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -149,53 +83,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="77" column="14" bodyfile="src/evamMinmaxDecor.h" bodystart="77" bodyend="106"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
-      <memberdef kind="function" id="classevam_1_1_minmax_decor_1afca5ad39d8f6006787439273d20f3dbf" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>signed short</type>
-        <definition>signed short evam::MinmaxDecor&lt; TMotor, N &gt;::getMinimax</definition>
-        <argsstring>() const</argsstring>
-        <name>getMinimax</name>
-        <qualifiedname>evam::MinmaxDecor::getMinimax</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="109" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="109" bodyend="116"/>
-      </memberdef>
-      <memberdef kind="function" id="classevam_1_1_minmax_decor_1a4bf93e0da9e5a37c9e9d076548dbeb48" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>signed short</type>
-        <definition>signed short evam::MinmaxDecor&lt; TMotor, N &gt;::getMaximin</definition>
-        <argsstring>() const</argsstring>
-        <name>getMaximin</name>
-        <qualifiedname>evam::MinmaxDecor::getMaximin</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMinmaxDecor.h" line="118" column="22" bodyfile="src/evamMinmaxDecor.h" bodystart="118" bodyend="125"/>
+        <location file="src/evamMinmaxDecor.h" line="32" column="14" bodyfile="src/evamMinmaxDecor.h" bodystart="32" bodyend="36"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Decorator that applies a min-max (morphological) filter to the control signal. </para>
+<para>Decorator applying a min-max (morphological) filter. </para>
     </briefdescription>
     <detaileddescription>
-<para>The filter effectively removes both positive and negative impulse noise while preserving edges better than a simple moving average. The output is the average of the morphological opening and closing operations, providing symmetric behavior.</para>
-<para>This filter divides the ring buffer into N chunks of N elements each, then computes:<itemizedlist>
-<listitem><para>minimax = min of chunk maximums (closing operation)</para>
-</listitem><listitem><para>maximin = max of chunk minimums (opening operation)</para>
-</listitem><listitem><para>output = (minimax + maximin) / 2</para>
-</listitem></itemizedlist>
-</para>
+<para>OpenClose has no runtime parameters besides N.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>Motor</parametername>
+<parametername>TMotor</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Base motor class (must implement <ref refid="classevam_1_1_minmax_decor_1a1a57715d44719fa46d22f8ef81c66880" kindref="member">Go(signed short)</ref>) </para>
@@ -206,12 +104,10 @@
 <parametername>N</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Number of chunks and chunk size (total buffer size = N * N)</para>
+<para>Number of chunks and chunk size (total buffer size = N * N) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="note"><para>The filter only produces filtered output after the buffer is full. Before that, values pass through unchanged. </para>
-</simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
@@ -236,17 +132,11 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamMinmaxDecor.h" line="35" column="5" bodyfile="src/evamMinmaxDecor.h" bodystart="36" bodyend="126"/>
+    <location file="src/evamMinmaxDecor.h" line="17" column="5" bodyfile="src/evamMinmaxDecor.h" bodystart="18" bodyend="37"/>
     <listofallmembers>
-      <member refid="classevam_1_1_minmax_decor_1a4bf93e0da9e5a37c9e9d076548dbeb48" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>getMaximin</name></member>
-      <member refid="classevam_1_1_minmax_decor_1afca5ad39d8f6006787439273d20f3dbf" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>getMinimax</name></member>
       <member refid="classevam_1_1_minmax_decor_1a1a57715d44719fa46d22f8ef81c66880" prot="public" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>Go</name></member>
-      <member refid="classevam_1_1_minmax_decor_1ab90d5806f8042d2b205695795a760964" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>mConfig</name></member>
-      <member refid="classevam_1_1_minmax_decor_1a334c8b5dec738b2997451d026799f7e3" prot="public" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>MinmaxDecor</name></member>
-      <member refid="classevam_1_1_minmax_decor_1ad1d779398740b5a81b7d0daa340dc042" prot="public" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>MinmaxDecor</name></member>
-      <member refid="classevam_1_1_minmax_decor_1a840d39e836c5c13017ff90252cc5700d" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>mMaxBuffer</name></member>
-      <member refid="classevam_1_1_minmax_decor_1a4369ed106f654a0ef3fe271c8fb345ce" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>mMinBuffer</name></member>
-      <member refid="classevam_1_1_minmax_decor_1ac661adc51b0b23eafd64ad8076652b7e" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>mRing</name></member>
+      <member refid="classevam_1_1_minmax_decor_1abb0ef1e912c176986097394b4c1e8661" prot="private" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>mFilter</name></member>
+      <member refid="classevam_1_1_minmax_decor_1ae98e13abeda06857c3ae46270a8c9305" prot="public" virt="non-virtual"><scope>evam::MinmaxDecor</scope><name>MinmaxDecor</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -2,7 +2,7 @@
 
 # Class evam::AdaptiveSmoothDecor
 
-**template &lt;class TMotor, unsigned short tMinTimeConstantMs, unsigned short tMaxTimeConstantMs&gt;**
+**template &lt;class TMotor, unsigned short tMinTimeConstantTicks, unsigned short tMaxTimeConstantTicks&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator with adaptive smoothing based on input rate of change._ [More...](#de
 
 
 
-Inherits the following classes: Heartbeat,  TMotor
+Inherits the following classes: TMotor
 
 
 
@@ -57,12 +57,11 @@ Inherits the following classes: Heartbeat,  TMotor
 | ---: | :--- |
 |   | [**AdaptiveSmoothDecor**](#function-adaptivesmoothdecor-12) () <br> |
 |   | [**AdaptiveSmoothDecor**](#function-adaptivesmoothdecor-22) ([**AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) config, Args... args) <br> |
-|  unsigned short | [**GetMaxTimeConstantMs**](#function-getmaxtimeconstantms) () const<br> |
-|  unsigned short | [**GetMinTimeConstantMs**](#function-getmintimeconstantms) () const<br> |
-|  void | [**Go**](#function-go) (signed short aValue) <br> |
-|  void | [**SetMaxTimeConstantMs**](#function-setmaxtimeconstantms) (unsigned short value) <br> |
-|  void | [**SetMinTimeConstantMs**](#function-setmintimeconstantms) (unsigned short value) <br> |
-|  void | [**SetupRange**](#function-setuprange) (unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs) <br> |
+|  void | [**Go**](#function-go) (signed short value) <br>_Set the target control value._  |
+|  unsigned short | [**getMaxTimeConstantTicks**](#function-getmaxtimeconstantticks) () const<br> |
+|  unsigned short | [**getMinTimeConstantTicks**](#function-getmintimeconstantticks) () const<br> |
+|  void | [**setMaxTimeConstantTicks**](#function-setmaxtimeconstantticks) (unsigned short value) <br> |
+|  void | [**setMinTimeConstantTicks**](#function-setmintimeconstantticks) (unsigned short value) <br> |
 
 
 
@@ -87,11 +86,6 @@ Inherits the following classes: Heartbeat,  TMotor
 
 
 
-## Protected Functions
-
-| Type | Name |
-| ---: | :--- |
-|  void | [**onHeartbeat**](#function-onheartbeat) () override<br> |
 
 
 
@@ -99,7 +93,7 @@ Inherits the following classes: Heartbeat,  TMotor
 ## Detailed Description
 
 
-Automatically adjusts smoothing based on how fast the input is changing. Uses fixed time base from Heartbeat for consistent behavior.
+This decorator does not own a heartbeat; it only transforms the value. Wrap it with [**SampledDecor**](classevam_1_1_sampled_decor.md) to get periodic output: 
 
 
 
@@ -107,9 +101,9 @@ Automatically adjusts smoothing based on how fast the input is changing. Uses fi
 **Template parameters:**
 
 
-* `Motor` Base motor class (must implement Go(signed short)) 
-* `kMinTimeConstantMs` Minimum time constant (fast response). Default: 10ms 
-* `kMaxTimeConstantMs` Maximum time constant (heavy smoothing). Default: 150ms 
+* `TMotor` Base motor class (must implement [**Go(signed short)**](classevam_1_1_adaptive_smooth_decor.md#function-go)) 
+* `tMinTimeConstantTicks` Default minimum time constant. Default: 1 
+* `tMaxTimeConstantTicks` Default maximum time constant. Default: 15 
 
 
 
@@ -150,38 +144,37 @@ inline evam::AdaptiveSmoothDecor::AdaptiveSmoothDecor (
 
 
 
-### function GetMaxTimeConstantMs 
-
-```C++
-inline unsigned short evam::AdaptiveSmoothDecor::GetMaxTimeConstantMs () const
-```
-
-
-
-
-<hr>
-
-
-
-### function GetMinTimeConstantMs 
-
-```C++
-inline unsigned short evam::AdaptiveSmoothDecor::GetMinTimeConstantMs () const
-```
-
-
-
-
-<hr>
-
-
-
 ### function Go 
 
+_Set the target control value._ 
 ```C++
 inline void evam::AdaptiveSmoothDecor::Go (
-    signed short aValue
+    signed short value
 ) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `value` Target control value, range -1000..1000 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function getMaxTimeConstantTicks 
+
+```C++
+inline unsigned short evam::AdaptiveSmoothDecor::getMaxTimeConstantTicks () const
 ```
 
 
@@ -191,10 +184,23 @@ inline void evam::AdaptiveSmoothDecor::Go (
 
 
 
-### function SetMaxTimeConstantMs 
+### function getMinTimeConstantTicks 
 
 ```C++
-inline void evam::AdaptiveSmoothDecor::SetMaxTimeConstantMs (
+inline unsigned short evam::AdaptiveSmoothDecor::getMinTimeConstantTicks () const
+```
+
+
+
+
+<hr>
+
+
+
+### function setMaxTimeConstantTicks 
+
+```C++
+inline void evam::AdaptiveSmoothDecor::setMaxTimeConstantTicks (
     unsigned short value
 ) 
 ```
@@ -206,43 +212,12 @@ inline void evam::AdaptiveSmoothDecor::SetMaxTimeConstantMs (
 
 
 
-### function SetMinTimeConstantMs 
+### function setMinTimeConstantTicks 
 
 ```C++
-inline void evam::AdaptiveSmoothDecor::SetMinTimeConstantMs (
+inline void evam::AdaptiveSmoothDecor::setMinTimeConstantTicks (
     unsigned short value
 ) 
-```
-
-
-
-
-<hr>
-
-
-
-### function SetupRange 
-
-```C++
-inline void evam::AdaptiveSmoothDecor::SetupRange (
-    unsigned short minTimeConstantMs,
-    unsigned short maxTimeConstantMs
-) 
-```
-
-
-
-
-<hr>
-## Protected Functions Documentation
-
-
-
-
-### function onHeartbeat 
-
-```C++
-inline void evam::AdaptiveSmoothDecor::onHeartbeat () override
 ```
 
 

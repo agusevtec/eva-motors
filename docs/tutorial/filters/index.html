@@ -453,10 +453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slidingwindowdecor-moving-average" class="md-nav__link">
+  <a href="#simplesmoothdecor-simple-moving-average-sma" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SlidingWindowDecor – Moving Average
+        SimpleSmoothDecor – Simple Moving Average (SMA)
       
     </span>
   </a>
@@ -475,10 +475,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adaptivesmoothdecor-adaptive-exponential" class="md-nav__link">
+  <a href="#adaptivesmoothdecor-adaptive-exponential-moving-average" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AdaptiveSmoothDecor – Adaptive Exponential
+        AdaptiveSmoothDecor – Adaptive Exponential Moving Average
       
     </span>
   </a>
@@ -755,10 +755,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slidingwindowdecor-moving-average" class="md-nav__link">
+  <a href="#simplesmoothdecor-simple-moving-average-sma" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SlidingWindowDecor – Moving Average
+        SimpleSmoothDecor – Simple Moving Average (SMA)
       
     </span>
   </a>
@@ -777,10 +777,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adaptivesmoothdecor-adaptive-exponential" class="md-nav__link">
+  <a href="#adaptivesmoothdecor-adaptive-exponential-moving-average" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AdaptiveSmoothDecor – Adaptive Exponential
+        AdaptiveSmoothDecor – Adaptive Exponential Moving Average
       
     </span>
   </a>
@@ -842,7 +842,7 @@
 </thead>
 <tbody>
 <tr>
-<td>SlidingWindowDecor</td>
+<td>SimpleSmoothDecor</td>
 <td>Moving average</td>
 <td>General noise reduction</td>
 </tr>
@@ -858,10 +858,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="slidingwindowdecor-moving-average">SlidingWindowDecor – Moving Average<a class="headerlink" href="#slidingwindowdecor-moving-average" title="Permanent link">&para;</a></h2>
+<h2 id="simplesmoothdecor-simple-moving-average-sma">SimpleSmoothDecor – Simple Moving Average (SMA)<a class="headerlink" href="#simplesmoothdecor-simple-moving-average-sma" title="Permanent link">&para;</a></h2>
 <p>Simple moving average filter that computes the arithmetic mean of the last N values.</p>
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">N</span><span class="o">&gt;</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">SlidingWindowDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SimpleSmoothDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 
 <p><strong>Parameters:</strong></p>
@@ -881,7 +881,7 @@
 </ul>
 <p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// Smooth throttle with 5-sample window</span>
-<span class="k">using</span><span class="w"> </span><span class="n">SmoothESC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">SlidingWindowDecor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">ForwardMotor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">PwmDriver</span><span class="o">&lt;</span><span class="mi">9</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">SmoothESC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">SimpleSmoothDecor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">ForwardMotor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">PwmDriver</span><span class="o">&lt;</span><span class="mi">9</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="n">SmoothESC</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
 <span class="n">motor</span><span class="p">.</span><span class="n">Go</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">  </span><span class="c1">// Output = average of last 5 inputs</span>
 </code></pre></div>
@@ -914,8 +914,6 @@
 <p><strong>Methods:</strong></p>
 <ul>
 <li><code>Go(value)</code> – Apply filter (pass-through until buffer full)</li>
-<li><code>getMinimax()</code> – Get current minimax value</li>
-<li><code>getMaximin()</code> – Get current maximin value</li>
 </ul>
 <p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// Clean noisy potentiometer signal</span>
@@ -929,25 +927,22 @@
 <li>Removing impulse noise from potentiometers</li>
 <li>Cleaning encoder signals with glitches</li>
 </ul>
-<h2 id="adaptivesmoothdecor-adaptive-exponential">AdaptiveSmoothDecor – Adaptive Exponential<a class="headerlink" href="#adaptivesmoothdecor-adaptive-exponential" title="Permanent link">&para;</a></h2>
+<h2 id="adaptivesmoothdecor-adaptive-exponential-moving-average">AdaptiveSmoothDecor – Adaptive Exponential Moving Average<a class="headerlink" href="#adaptivesmoothdecor-adaptive-exponential-moving-average" title="Permanent link">&para;</a></h2>
 <p>Exponential filter that automatically adjusts its time constant based on input rate of change.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMinTimeConstantMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMaxTimeConstantMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TMotor</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMinTimeConstantTicks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">tMaxTimeConstantTicks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">150</span><span class="o">&gt;</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">AdaptiveSmoothDecor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Heartbeat</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Motor</span>
 </code></pre></div>
 
-<p><strong>Requirements:</strong></p>
-<p>Must call <code>eva::tac()</code> in <code>loop()</code> to drive the filter updates (inherits from <code>Heartbeat</code> with 10ms period).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>kMinTimeConstantMs</code>: Fast response (5..200ms). Default: 10ms</li>
-<li><code>kMaxTimeConstantMs</code>: Heavy smoothing (≥ kMinTimeConstantMs, ≤500ms). Default: 150ms</li>
+<li><code>kMinTimeConstantTicks</code>: fast response (1..500 ticks). Default: 1 tick</li>
+<li><code>kMaxTimeConstantTicks</code>: heavy smoothing (≥ tMinTimeConstantTicks, ≤500 ticks). Default: 15 ticks</li>
 </ul>
 <p><strong>Behavior:</strong></p>
 <ul>
 <li>Large input change (≥200) → fast response (min time constant)</li>
 <li>Small input change (≤5) → heavy smoothing (max time constant)</li>
 <li>Intermediate changes → linear interpolation between min and max</li>
-<li>Deadzone (±3) forces zero output near origin</li>
 </ul>
 <p><strong>Methods:</strong></p>
 <ul>
@@ -983,7 +978,7 @@
 <span class="c1">// Remove impulse noise, then smooth, then adapt to dynamics</span>
 <span class="k">using</span><span class="w"> </span><span class="n">BaseMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">TA6586Driver</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">SpikeFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MinmaxDecor</span><span class="o">&lt;</span><span class="n">BaseMotor</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span><span class="w">        </span><span class="c1">// Remove spikes</span>
-<span class="k">using</span><span class="w"> </span><span class="n">SmoothFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SlidingWindowDecor</span><span class="o">&lt;</span><span class="n">SpikeFilter</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// General smoothing</span>
+<span class="k">using</span><span class="w"> </span><span class="n">SmoothFilter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SimpleSmoothDecor</span><span class="o">&lt;</span><span class="n">SpikeFilter</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span><span class="c1">// General smoothing</span>
 <span class="k">using</span><span class="w"> </span><span class="n">SmartMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AdaptiveSmoothDecor</span><span class="o">&lt;</span><span class="n">SmoothFilter</span><span class="o">&gt;</span><span class="p">;</span><span class="w">    </span><span class="c1">// Adaptive response</span>
 
 <span class="n">SmartMotor</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
@@ -1008,7 +1003,7 @@
 </thead>
 <tbody>
 <tr>
-<td>SlidingWindowDecor</td>
+<td>SimpleSmoothDecor</td>
 <td>2 × N + 4</td>
 <td>O(1)</td>
 <td>❌</td>
@@ -1029,7 +1024,7 @@
 </table>
 <p><strong>Recommendations:</strong></p>
 <ul>
-<li>Use <code>SlidingWindowDecor</code> for general noise (lowest overhead)</li>
+<li>Use <code>SimpleSmoothDecor</code> for general noise (lowest overhead)</li>
 <li>Use <code>MinmaxDecor</code> when spikes are present (N=2 or 3 usually sufficient)</li>
 <li>Use <code>AdaptiveSmoothDecor</code> when both fast response and smooth idle are critical</li>
 <li>Stack filters in order: spike removal → smoothing → adaptive behavior</li>

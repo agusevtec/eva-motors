@@ -8,7 +8,7 @@
 
 
 
-_Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive_smooth_decor.md) _._
+_Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive_smooth_decor.md) _._[More...](#detailed-description)
 
 * `#include <evamAdaptiveSmoothDecor.h>`
 
@@ -36,8 +36,8 @@ _Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive
 
 | Type | Name |
 | ---: | :--- |
-|  unsigned short | [**maxTimeConstantMs**](#variable-maxtimeconstantms)  <br> |
-|  unsigned short | [**minTimeConstantMs**](#variable-mintimeconstantms)  <br> |
+|  unsigned short | [**maxTimeConstantTicks**](#variable-maxtimeconstantticks)  <br> |
+|  unsigned short | [**minTimeConstantTicks**](#variable-mintimeconstantticks)  <br> |
 
 
 
@@ -58,7 +58,7 @@ _Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive
 
 | Type | Name |
 | ---: | :--- |
-|   | [**AdaptiveSmoothConfig**](#function-adaptivesmoothconfig) (unsigned short minTimeConstantMs, unsigned short maxTimeConstantMs) <br> |
+|   | [**AdaptiveSmoothConfig**](#function-adaptivesmoothconfig) (unsigned short minTimeConstantTicks, unsigned short maxTimeConstantTicks) <br> |
 
 
 
@@ -87,15 +87,22 @@ _Configuration structure for_ [_**AdaptiveSmoothDecor**_](classevam_1_1_adaptive
 
 
 
+## Detailed Description
+
+
+Runtime parameters for evaf::AdaptiveSmooth. Range checking is delegated to evaf (template defaults + constructor constrain). 
+
+
+    
 ## Public Attributes Documentation
 
 
 
 
-### variable maxTimeConstantMs 
+### variable maxTimeConstantTicks 
 
 ```C++
-unsigned short evam::AdaptiveSmoothConfig::maxTimeConstantMs;
+unsigned short evam::AdaptiveSmoothConfig::maxTimeConstantTicks;
 ```
 
 
@@ -105,10 +112,10 @@ unsigned short evam::AdaptiveSmoothConfig::maxTimeConstantMs;
 
 
 
-### variable minTimeConstantMs 
+### variable minTimeConstantTicks 
 
 ```C++
-unsigned short evam::AdaptiveSmoothConfig::minTimeConstantMs;
+unsigned short evam::AdaptiveSmoothConfig::minTimeConstantTicks;
 ```
 
 
@@ -124,8 +131,8 @@ unsigned short evam::AdaptiveSmoothConfig::minTimeConstantMs;
 
 ```C++
 inline evam::AdaptiveSmoothConfig::AdaptiveSmoothConfig (
-    unsigned short minTimeConstantMs,
-    unsigned short maxTimeConstantMs
+    unsigned short minTimeConstantTicks,
+    unsigned short maxTimeConstantTicks
 ) 
 ```
 

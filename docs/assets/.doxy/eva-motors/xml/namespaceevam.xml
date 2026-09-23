@@ -8,6 +8,8 @@
     <innerclass refid="classevam_1_1_curve_decor" prot="public">evam::CurveDecor</innerclass>
     <innerclass refid="structevam_1_1_directional_config" prot="public">evam::DirectionalConfig</innerclass>
     <innerclass refid="classevam_1_1_directional_motor" prot="public">evam::DirectionalMotor</innerclass>
+    <innerclass refid="structevam_1_1_exponential_smooth_config" prot="public">evam::ExponentialSmoothConfig</innerclass>
+    <innerclass refid="classevam_1_1_exponential_smooth_decor" prot="public">evam::ExponentialSmoothDecor</innerclass>
     <innerclass refid="structevam_1_1_forward_config" prot="public">evam::ForwardConfig</innerclass>
     <innerclass refid="classevam_1_1_forward_motor" prot="public">evam::ForwardMotor</innerclass>
     <innerclass refid="classevam_1_1_i_motor" prot="public">evam::IMotor</innerclass>
@@ -18,17 +20,17 @@
     <innerclass refid="classevam_1_1_kick_decor" prot="public">evam::KickDecor</innerclass>
     <innerclass refid="classevam_1_1_linear_actuator" prot="public">evam::LinearActuator</innerclass>
     <innerclass refid="structevam_1_1_linear_actuator_config" prot="public">evam::LinearActuatorConfig</innerclass>
-    <innerclass refid="structevam_1_1_median_config" prot="public">evam::MedianConfig</innerclass>
     <innerclass refid="classevam_1_1_median_decor" prot="public">evam::MedianDecor</innerclass>
-    <innerclass refid="structevam_1_1_minmax_config" prot="public">evam::MinmaxConfig</innerclass>
     <innerclass refid="classevam_1_1_minmax_decor" prot="public">evam::MinmaxDecor</innerclass>
     <innerclass refid="structevam_1_1_pwm_config" prot="public">evam::PwmConfig</innerclass>
     <innerclass refid="classevam_1_1_pwm_driver" prot="public">evam::PwmDriver</innerclass>
-    <innerclass refid="classevam_1_1_ring_buffer" prot="public">evam::RingBuffer</innerclass>
+    <innerclass refid="classevam_1_1_sampled_decor" prot="public">evam::SampledDecor</innerclass>
     <innerclass refid="structevam_1_1_servo_config" prot="public">evam::ServoConfig</innerclass>
     <innerclass refid="classevam_1_1_servo_driver" prot="public">evam::ServoDriver</innerclass>
-    <innerclass refid="structevam_1_1_sliding_window_config" prot="public">evam::SlidingWindowConfig</innerclass>
-    <innerclass refid="classevam_1_1_sliding_window_decor" prot="public">evam::SlidingWindowDecor</innerclass>
+    <innerclass refid="classevam_1_1_simple_smooth_decor" prot="public">evam::SimpleSmoothDecor</innerclass>
+    <innerclass refid="structevam_1_1_slew_rate_config" prot="public">evam::SlewRateConfig</innerclass>
+    <innerclass refid="classevam_1_1_slew_rate_decor" prot="public">evam::SlewRateDecor</innerclass>
+    <innerclass refid="structevam_1_1_sliding_window_decor" prot="public">evam::SlidingWindowDecor</innerclass>
     <innerclass refid="structevam_1_1_software_servo_config" prot="public">evam::SoftwareServoConfig</innerclass>
     <innerclass refid="classevam_1_1_software_servo_driver" prot="public">evam::SoftwareServoDriver</innerclass>
     <innerclass refid="classevam_1_1_steering_actuator" prot="public">evam::SteeringActuator</innerclass>
@@ -102,66 +104,6 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
-      <memberdef kind="variable" id="evam_adaptive_smooth_decor_8h_1a07a7f7fdef9126b7acc61733a4c9a867" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::kDefaultMinTimeConstantMs</definition>
-        <argsstring></argsstring>
-        <name>kDefaultMinTimeConstantMs</name>
-        <qualifiedname>evam::kDefaultMinTimeConstantMs</qualifiedname>
-        <initializer>= 10</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="10" column="30" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="10" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="evam_adaptive_smooth_decor_8h_1aff62bb6cd28ab897bb215a1b352aada3" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::kDefaultMaxTimeConstantMs</definition>
-        <argsstring></argsstring>
-        <name>kDefaultMaxTimeConstantMs</name>
-        <qualifiedname>evam::kDefaultMaxTimeConstantMs</qualifiedname>
-        <initializer>= 150</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="11" column="30" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="11" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="evam_adaptive_smooth_decor_8h_1ad65e70103f2d070b247eab2a5fe010bd" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::kMinTimeConstantLimit</definition>
-        <argsstring></argsstring>
-        <name>kMinTimeConstantLimit</name>
-        <qualifiedname>evam::kMinTimeConstantLimit</qualifiedname>
-        <initializer>= 5</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="12" column="30" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="12" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="evam_adaptive_smooth_decor_8h_1ab1e2db45896133390c82bad8b6a722b7" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::kMaxTimeConstantLimit</definition>
-        <argsstring></argsstring>
-        <name>kMaxTimeConstantLimit</name>
-        <qualifiedname>evam::kMaxTimeConstantLimit</qualifiedname>
-        <initializer>= 500</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamAdaptiveSmoothDecor.h" line="13" column="30" bodyfile="src/evamAdaptiveSmoothDecor.h" bodystart="13" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="evam_curve_decor_8h_1a08613c9331ed57e61656bf7aecef53a3" prot="public" static="no" constexpr="yes" mutable="no">
         <type>signed short</type>
         <definition>signed short evam::kDefaultBend</definition>
@@ -220,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="9" column="30" bodyfile="src/evamInertiaDecor.h" bodystart="9" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="8" column="30" bodyfile="src/evamInertiaDecor.h" bodystart="8" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="evam_kick_decor_8h_1af0d783ca7dec620da9d884691bc712bc" prot="public" static="no" constexpr="yes" mutable="no">
         <type>unsigned short</type>
@@ -235,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="10" column="30" bodyfile="src/evamKickDecor.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="9" column="30" bodyfile="src/evamKickDecor.h" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="evam_kick_decor_8h_1a42e76cf7541e053a765ef724a0d9cacf" prot="public" static="no" constexpr="yes" mutable="no">
         <type>signed short</type>
@@ -250,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="11" column="28" bodyfile="src/evamKickDecor.h" bodystart="11" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="10" column="28" bodyfile="src/evamKickDecor.h" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="evam_kick_decor_8h_1af27fe6948e6f3d46bce214d542b392e2" prot="public" static="no" constexpr="yes" mutable="no">
         <type>signed short</type>
@@ -265,52 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamKickDecor.h" line="12" column="28" bodyfile="src/evamKickDecor.h" bodystart="12" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="evam_median_decor_8h_1ab5a2df96ec957412d12b192ceee9cbef" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::kDefaultWindowSize</definition>
-        <argsstring></argsstring>
-        <name>kDefaultWindowSize</name>
-        <qualifiedname>evam::kDefaultWindowSize</qualifiedname>
-        <initializer>= 5</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="10" column="30" bodyfile="src/evamMedianDecor.h" bodystart="10" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="evam_median_decor_8h_1a8671644efa4d34eda518b5620f8ca4ec" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::kMinWindowSize</definition>
-        <argsstring></argsstring>
-        <name>kMinWindowSize</name>
-        <qualifiedname>evam::kMinWindowSize</qualifiedname>
-        <initializer>= 3</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="11" column="30" bodyfile="src/evamMedianDecor.h" bodystart="11" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="evam_median_decor_8h_1a083575e7981387b55dc85d08f53053de" prot="public" static="no" constexpr="yes" mutable="no">
-        <type>unsigned short</type>
-        <definition>unsigned short evam::kMaxWindowSize</definition>
-        <argsstring></argsstring>
-        <name>kMaxWindowSize</name>
-        <qualifiedname>evam::kMaxWindowSize</qualifiedname>
-        <initializer>= 15</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evamMedianDecor.h" line="12" column="30" bodyfile="src/evamMedianDecor.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evamKickDecor.h" line="11" column="28" bodyfile="src/evamKickDecor.h" bodystart="11" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -341,6 +238,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evabIMotor.h" line="3" column="1"/>
+    <location file="src/evamAdaptiveSmoothDecor.h" line="6" column="1"/>
   </compounddef>
 </doxygen>

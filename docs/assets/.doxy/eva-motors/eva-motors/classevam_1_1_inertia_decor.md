@@ -16,7 +16,7 @@ _Decorator that simulates mechanical inertia (flywheel effect)._ [More...](#deta
 
 
 
-Inherits the following classes: Heartbeat,  TMotor
+Inherits the following classes: TMotor
 
 
 
@@ -84,11 +84,6 @@ Inherits the following classes: Heartbeat,  TMotor
 
 
 
-## Protected Functions
-
-| Type | Name |
-| ---: | :--- |
-|  void | [**onHeartbeat**](#function-onheartbeat) () override<br> |
 
 
 
@@ -220,21 +215,6 @@ inline void evam::InertiaDecor::SetInertiaMass (
 
 
         
-
-<hr>
-## Protected Functions Documentation
-
-
-
-
-### function onHeartbeat 
-
-```C++
-inline void evam::InertiaDecor::onHeartbeat () override
-```
-
-
-
 
 <hr>
 

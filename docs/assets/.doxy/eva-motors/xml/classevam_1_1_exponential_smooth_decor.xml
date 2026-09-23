@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="classevam_1_1_exponential_smooth_decor" kind="class" language="C++" prot="public">
+    <compoundname>evam::ExponentialSmoothDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
+    <includes refid="evam_exponential_smooth_decor_8h" local="no">evamExponentialSmoothDecor.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class TMotor</type>
+      </param>
+      <param>
+        <type>unsigned short</type>
+        <declname>tAlpha</declname>
+        <defname>tAlpha</defname>
+        <defval>200</defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classevam_1_1_exponential_smooth_decor_1a3c7c83a0a55c1c8f85c78517b76a6b82" prot="private" static="no">
+        <type>evaf::ExponentialSmooth&lt; eva::ValueReader, tAlpha &gt;</type>
+        <definition>using evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::Filter = evaf::ExponentialSmooth&lt;eva::ValueReader, tAlpha&gt;</definition>
+        <argsstring></argsstring>
+        <name>Filter</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::Filter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="36" column="9" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_exponential_smooth_decor_1ab524a0a8be13414f0e67e4cb86dea472" prot="private" static="no" mutable="no">
+        <type>Filter</type>
+        <definition>Filter evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::mFilter</definition>
+        <argsstring></argsstring>
+        <name>mFilter</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::mFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="38" column="16" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1ae16841f179206ca223f8ef90c3a4cc99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::ExponentialSmoothDecor</definition>
+        <argsstring>()</argsstring>
+        <name>ExponentialSmoothDecor</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::ExponentialSmoothDecor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="41" column="9" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1a759ad637829ac9386239776e1f42bdab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::ExponentialSmoothDecor</definition>
+        <argsstring>(ExponentialSmoothConfig config, Args... args)</argsstring>
+        <name>ExponentialSmoothDecor</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::ExponentialSmoothDecor</qualifiedname>
+        <param>
+          <type><ref refid="structevam_1_1_exponential_smooth_config" kindref="compound">ExponentialSmoothConfig</ref></type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="44" column="9" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1abc9fdd10a01e44277f3d8d206cafb4ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::Go</definition>
+        <argsstring>(signed short value)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::Go</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set the target control value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target control value, range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="52" column="14" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="52" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1a24c239547ee9819c11c519c0d4aa54f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::setAlpha</definition>
+        <argsstring>(unsigned short alpha)</argsstring>
+        <name>setAlpha</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::setAlpha</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="58" column="14" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1a42b1f9eea806311d7eafb291cc8e7460" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::getAlpha</definition>
+        <argsstring>() const</argsstring>
+        <name>getAlpha</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::getAlpha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="63" column="24" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="63" bodyend="66"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator applying Exponential Moving Average (EMA) filtering. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This decorator does not own a heartbeat; it only transforms the value. Wrap it with <ref refid="classevam_1_1_sampled_decor" kindref="compound">SampledDecor</ref> to get periodic output: <verbatim>SampledDecor&lt;ExponentialSmoothDecor&lt;MyMotor, 200&gt;&gt; a;
+</verbatim></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base motor class (must implement <ref refid="classevam_1_1_exponential_smooth_decor_1abc9fdd10a01e44277f3d8d206cafb4ba" kindref="member">Go(signed short)</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tAlpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default smoothing factor (1..1000). Default: 200 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>TMotor</label>
+      </node>
+      <node id="1">
+        <label>evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;</label>
+        <link refid="classevam_1_1_exponential_smooth_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>TMotor</label>
+      </node>
+      <node id="1">
+        <label>evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;</label>
+        <link refid="classevam_1_1_exponential_smooth_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamExponentialSmoothDecor.h" line="32" column="5" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="34" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_exponential_smooth_decor_1ae16841f179206ca223f8ef90c3a4cc99" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>ExponentialSmoothDecor</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1a759ad637829ac9386239776e1f42bdab" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>ExponentialSmoothDecor</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1a3c7c83a0a55c1c8f85c78517b76a6b82" prot="private" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>Filter</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1a42b1f9eea806311d7eafb291cc8e7460" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>getAlpha</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1abc9fdd10a01e44277f3d8d206cafb4ba" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1ab524a0a8be13414f0e67e4cb86dea472" prot="private" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>mFilter</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1a24c239547ee9819c11c519c0d4aa54f9" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>setAlpha</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

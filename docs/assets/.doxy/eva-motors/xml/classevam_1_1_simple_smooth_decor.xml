@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="classevam_1_1_simple_smooth_decor" kind="class" language="C++" prot="public">
+    <compoundname>evam::SimpleSmoothDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
+    <includes refid="evam_simple_smooth_decor_8h" local="no">evamSimpleSmoothDecor.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class TMotor</type>
+      </param>
+      <param>
+        <type>unsigned short</type>
+        <declname>N</declname>
+        <defname>N</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_simple_smooth_decor_1a404e803fe0e3729ce0cddf5da93605b7" prot="private" static="no" mutable="no">
+        <type>evaf::SimpleAverage&lt; eva::ValueReader, N &gt;</type>
+        <definition>evaf::SimpleAverage&lt;eva::ValueReader, N&gt; evam::SimpleSmoothDecor&lt; TMotor, N &gt;::mFilter</definition>
+        <argsstring></argsstring>
+        <name>mFilter</name>
+        <qualifiedname>evam::SimpleSmoothDecor::mFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSimpleSmoothDecor.h" line="24" column="29" bodyfile="src/evamSimpleSmoothDecor.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_simple_smooth_decor_1a2a9ef3a4d837029a567cf20f6d36962a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::SimpleSmoothDecor&lt; TMotor, N &gt;::SimpleSmoothDecor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>SimpleSmoothDecor</name>
+        <qualifiedname>evam::SimpleSmoothDecor::SimpleSmoothDecor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSimpleSmoothDecor.h" line="30" column="9" bodyfile="src/evamSimpleSmoothDecor.h" bodystart="30" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_simple_smooth_decor_1a228073cb837e843545157eb41db777c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SimpleSmoothDecor&lt; TMotor, N &gt;::Go</definition>
+        <argsstring>(signed short value)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::SimpleSmoothDecor::Go</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set the target control value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target control value, range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSimpleSmoothDecor.h" line="37" column="14" bodyfile="src/evamSimpleSmoothDecor.h" bodystart="37" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator applying a simple moving average (sliding window) filter. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>SimpleAverageDecor has no runtime parameters besides N. This decorator does not own a heartbeat; it only transforms the value. Wrap it with <ref refid="classevam_1_1_sampled_decor" kindref="compound">SampledDecor</ref> to get periodic output: <verbatim>SampledDecor&lt;SimpleSmoothDecor&lt;MyMotor, 5&gt;&gt; a;
+</verbatim></para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base motor class (must implement <ref refid="classevam_1_1_simple_smooth_decor_1a228073cb837e843545157eb41db777c1" kindref="member">Go(signed short)</ref>) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window size (number of values to average). Must be &gt;= 1. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>TMotor</label>
+      </node>
+      <node id="1">
+        <label>evam::SimpleSmoothDecor&lt; TMotor, N &gt;</label>
+        <link refid="classevam_1_1_simple_smooth_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>TMotor</label>
+      </node>
+      <node id="1">
+        <label>evam::SimpleSmoothDecor&lt; TMotor, N &gt;</label>
+        <link refid="classevam_1_1_simple_smooth_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamSimpleSmoothDecor.h" line="21" column="5" bodyfile="src/evamSimpleSmoothDecor.h" bodystart="22" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_simple_smooth_decor_1a228073cb837e843545157eb41db777c1" prot="public" virt="non-virtual"><scope>evam::SimpleSmoothDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_simple_smooth_decor_1a404e803fe0e3729ce0cddf5da93605b7" prot="private" virt="non-virtual"><scope>evam::SimpleSmoothDecor</scope><name>mFilter</name></member>
+      <member refid="classevam_1_1_simple_smooth_decor_1a2a9ef3a4d837029a567cf20f6d36962a" prot="public" virt="non-virtual"><scope>evam::SimpleSmoothDecor</scope><name>SimpleSmoothDecor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

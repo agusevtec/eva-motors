@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_slew_rate_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::SlewRateConfig</compoundname>
+    <includes refid="evam_slew_rate_decor_8h" local="no">evamSlewRateDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_slew_rate_config_1aac757c3db7e4ba7342ff9252d97b91a4" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::SlewRateConfig::maxStepPerTick</definition>
+        <argsstring></argsstring>
+        <name>maxStepPerTick</name>
+        <qualifiedname>evam::SlewRateConfig::maxStepPerTick</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlewRateDecor.h" line="15" column="24" bodyfile="src/evamSlewRateDecor.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_slew_rate_config_1aafce3507ce23f8b093400d52c4418013" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::SlewRateConfig::SlewRateConfig</definition>
+        <argsstring>(unsigned short maxStepPerTick)</argsstring>
+        <name>SlewRateConfig</name>
+        <qualifiedname>evam::SlewRateConfig::SlewRateConfig</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>maxStepPerTick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSlewRateDecor.h" line="17" column="9" bodyfile="src/evamSlewRateDecor.h" bodystart="17" bodyend="18"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_slew_rate_decor" kindref="compound">SlewRateDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Runtime parameter for evaf::SlewRate. </para>
+    </detaileddescription>
+    <location file="src/evamSlewRateDecor.h" line="13" column="5" bodyfile="src/evamSlewRateDecor.h" bodystart="14" bodyend="19"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_slew_rate_config_1aac757c3db7e4ba7342ff9252d97b91a4" prot="public" virt="non-virtual"><scope>evam::SlewRateConfig</scope><name>maxStepPerTick</name></member>
+      <member refid="structevam_1_1_slew_rate_config_1aafce3507ce23f8b093400d52c4418013" prot="public" virt="non-virtual"><scope>evam::SlewRateConfig</scope><name>SlewRateConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

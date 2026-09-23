@@ -1,6 +1,6 @@
 #pragma once
 
-#include <evafAdaptiveSmooth.h>
+#include <evafAdaptiveAverage.h>
 #include "evaStdReaders.h"
 
 namespace evam
@@ -41,7 +41,7 @@ namespace evam
         : public TMotor
     {
     private:
-        using Filter = evaf::AdaptiveSmooth<eva::ValueReader,
+        using Filter = evaf::AdaptiveAverage<eva::ValueReader,
                                             tMinTimeConstantTicks,
                                             tMaxTimeConstantTicks>;
 

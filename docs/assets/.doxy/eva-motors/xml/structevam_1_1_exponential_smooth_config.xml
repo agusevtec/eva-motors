@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_exponential_smooth_config" kind="struct" language="C++" prot="public">
+    <compoundname>evam::ExponentialSmoothConfig</compoundname>
+    <includes refid="evam_exponential_smooth_decor_8h" local="no">evamExponentialSmoothDecor.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structevam_1_1_exponential_smooth_config_1a56b808cdc63b2217006dfe1c41470564" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short evam::ExponentialSmoothConfig::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <qualifiedname>evam::ExponentialSmoothConfig::alpha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="15" column="24" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structevam_1_1_exponential_smooth_config_1a4fe60a11c7e1f46a14aad400cc9eca0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::ExponentialSmoothConfig::ExponentialSmoothConfig</definition>
+        <argsstring>(unsigned short alpha)</argsstring>
+        <name>ExponentialSmoothConfig</name>
+        <qualifiedname>evam::ExponentialSmoothConfig::ExponentialSmoothConfig</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamExponentialSmoothDecor.h" line="17" column="9" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration structure for <ref refid="classevam_1_1_exponential_smooth_decor" kindref="compound">ExponentialSmoothDecor</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Runtime parameter for evaf::ExponentialSmooth. </para>
+    </detaileddescription>
+    <location file="src/evamExponentialSmoothDecor.h" line="13" column="5" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="14" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structevam_1_1_exponential_smooth_config_1a56b808cdc63b2217006dfe1c41470564" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothConfig</scope><name>alpha</name></member>
+      <member refid="structevam_1_1_exponential_smooth_config_1a4fe60a11c7e1f46a14aad400cc9eca0b" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothConfig</scope><name>ExponentialSmoothConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

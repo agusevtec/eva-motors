@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="classevam_1_1_sampled_decor" kind="class" language="C++" prot="public">
+    <compoundname>evam::SampledDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">eva::Heartbeat</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TMotor</basecompoundref>
+    <includes refid="evam_sampled_decor_8h" local="no">evamSampledDecor.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class TMotor</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classevam_1_1_sampled_decor_1a7cea174bc613cd782ae30edfd11f11ff" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long evam::SampledDecor&lt; TMotor &gt;::kHeartbeatPeriodMs</definition>
+        <argsstring></argsstring>
+        <name>kHeartbeatPeriodMs</name>
+        <qualifiedname>evam::SampledDecor::kHeartbeatPeriodMs</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSampledDecor.h" line="24" column="40" bodyfile="src/evamSampledDecor.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevam_1_1_sampled_decor_1ac878a966940dfee820928bafd36b1640" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::SampledDecor&lt; TMotor &gt;::mValue</definition>
+        <argsstring></argsstring>
+        <name>mValue</name>
+        <qualifiedname>evam::SampledDecor::mValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSampledDecor.h" line="25" column="22" bodyfile="src/evamSampledDecor.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classevam_1_1_sampled_decor_1a9c6f130ef055ad33ff0acb561b580261" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SampledDecor&lt; TMotor &gt;::onHeartbeat</definition>
+        <argsstring>() override</argsstring>
+        <name>onHeartbeat</name>
+        <qualifiedname>evam::SampledDecor::onHeartbeat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSampledDecor.h" line="28" column="14" bodyfile="src/evamSampledDecor.h" bodystart="28" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevam_1_1_sampled_decor_1addae5adc56872b8e3195cbd3e3ec658d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>evam::SampledDecor&lt; TMotor &gt;::SampledDecor</definition>
+        <argsstring>()</argsstring>
+        <name>SampledDecor</name>
+        <qualifiedname>evam::SampledDecor::SampledDecor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSampledDecor.h" line="34" column="9" bodyfile="src/evamSampledDecor.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_sampled_decor_1a4b2fc0acf12d75bf8c72d5fd0c8fa36b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>evam::SampledDecor&lt; TMotor &gt;::SampledDecor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>SampledDecor</name>
+        <qualifiedname>evam::SampledDecor::SampledDecor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSampledDecor.h" line="37" column="9" bodyfile="src/evamSampledDecor.h" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classevam_1_1_sampled_decor_1a300acc4375b12874d640343e45bd1e03" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void evam::SampledDecor&lt; TMotor &gt;::Go</definition>
+        <argsstring>(signed short value)</argsstring>
+        <name>Go</name>
+        <qualifiedname>evam::SampledDecor::Go</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set the target control value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target control value, range -1000..1000 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamSampledDecor.h" line="43" column="14" bodyfile="src/evamSampledDecor.h" bodystart="43" bodyend="46"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator that owns the heartbeat and periodically drives TMotor. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classevam_1_1_sampled_decor" kindref="compound">SampledDecor</ref> stores the target value and, on every heartbeat, forwards it to TMotor::Go(). Any filter decorators wrapped inside transform the value in their own <ref refid="classevam_1_1_sampled_decor_1a300acc4375b12874d640343e45bd1e03" kindref="member">Go()</ref> before it reaches the motor.</para>
+<para>Usage: <ref refid="classevam_1_1_sampled_decor" kindref="compound">SampledDecor&lt;SimpleSmoothDecor&lt;MyMotor, 5&gt;&gt;</ref> a;</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TMotor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wrapped class (must implement <ref refid="classevam_1_1_sampled_decor_1a300acc4375b12874d640343e45bd1e03" kindref="member">Go(signed short)</ref>) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>TMotor</label>
+      </node>
+      <node id="2">
+        <label>eva::Heartbeat</label>
+      </node>
+      <node id="1">
+        <label>evam::SampledDecor&lt; TMotor &gt;</label>
+        <link refid="classevam_1_1_sampled_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>TMotor</label>
+      </node>
+      <node id="2">
+        <label>eva::Heartbeat</label>
+      </node>
+      <node id="1">
+        <label>evam::SampledDecor&lt; TMotor &gt;</label>
+        <link refid="classevam_1_1_sampled_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evamSampledDecor.h" line="21" column="5" bodyfile="src/evamSampledDecor.h" bodystart="22" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classevam_1_1_sampled_decor_1a300acc4375b12874d640343e45bd1e03" prot="public" virt="non-virtual"><scope>evam::SampledDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_sampled_decor_1a7cea174bc613cd782ae30edfd11f11ff" prot="private" virt="non-virtual"><scope>evam::SampledDecor</scope><name>kHeartbeatPeriodMs</name></member>
+      <member refid="classevam_1_1_sampled_decor_1ac878a966940dfee820928bafd36b1640" prot="private" virt="non-virtual"><scope>evam::SampledDecor</scope><name>mValue</name></member>
+      <member refid="classevam_1_1_sampled_decor_1a9c6f130ef055ad33ff0acb561b580261" prot="protected" virt="non-virtual"><scope>evam::SampledDecor</scope><name>onHeartbeat</name></member>
+      <member refid="classevam_1_1_sampled_decor_1addae5adc56872b8e3195cbd3e3ec658d" prot="public" virt="non-virtual"><scope>evam::SampledDecor</scope><name>SampledDecor</name></member>
+      <member refid="classevam_1_1_sampled_decor_1a4b2fc0acf12d75bf8c72d5fd0c8fa36b" prot="public" virt="non-virtual"><scope>evam::SampledDecor</scope><name>SampledDecor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

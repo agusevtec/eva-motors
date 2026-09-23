@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structevam_1_1_sliding_window_decor" kind="struct" language="C++" prot="public">
+    <compoundname>evam::SlidingWindowDecor</compoundname>
+    <templateparamlist>
+      <param>
+        <type>class TMotor</type>
+      </param>
+      <param>
+        <type>unsigned short</type>
+        <declname>N</declname>
+        <defname>N</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evamSlidingWindowDecor.h" line="6" column="5" bodyfile="src/evamSlidingWindowDecor.h" bodystart="7" bodyend="9"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

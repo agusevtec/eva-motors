@@ -1,15 +1,20 @@
+
+
+# File evamExponentialSmoothDecor.h
+
+[**File List**](files.md) **>** [**src**](dir_68267d1309a1af8e8297ef4c3efbcdba.md) **>** [**evamExponentialSmoothDecor.h**](evam_exponential_smooth_decor_8h.md)
+
+[Go to the documentation of this file](evam_exponential_smooth_decor_8h.md)
+
+
+```C++
 #pragma once
 
-#include <evafExponentialAverage.h>
+#include <evafExponentialSmooth.h>
 #include "evaStdReaders.h"
 
 namespace evam
 {
-    /**
-     * @brief Configuration structure for ExponentialSmoothDecor.
-     *
-     * Runtime parameter for evaf::ExponentialSmooth.
-     */
     struct ExponentialSmoothConfig
     {
         unsigned short alpha;
@@ -17,23 +22,12 @@ namespace evam
         ExponentialSmoothConfig(unsigned short alpha) : alpha(alpha) {}
     };
 
-    /**
-     * @brief Decorator applying Exponential Moving Average (EMA) filtering.
-     *
-     * This decorator does not own a heartbeat; it only transforms the value.
-     * Wrap it with SampledDecor to get periodic output:
-     *
-     *     SampledDecor<ExponentialSmoothDecor<MyMotor, 200>> a;
-     *
-     * @tparam TMotor Base motor class (must implement Go(signed short))
-     * @tparam tAlpha Default smoothing factor (1..1000). Default: 200
-     */
     template <class TMotor, unsigned short tAlpha = 200>
     class ExponentialSmoothDecor
         : public TMotor
     {
     private:
-        using Filter = evaf::ExponentialAverage<eva::ValueReader, tAlpha>;
+        using Filter = evaf::ExponentialSmooth<eva::ValueReader, tAlpha>;
 
         Filter mFilter;
 
@@ -45,10 +39,6 @@ namespace evam
             : TMotor(args...),
               mFilter(config.alpha) {}
 
-        /**
-         * @brief Set the target control value.
-         * @param value Target control value, range -1000..1000
-         */
         void Go(signed short value)
         {
             mFilter.setValue(constrain(value, -1000, 1000));
@@ -66,3 +56,6 @@ namespace evam
         }
     };
 }
+```
+
+

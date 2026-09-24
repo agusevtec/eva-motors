@@ -8,7 +8,7 @@
 #include <evamInertiaDecor.h>
 #include <evamAdaptiveSmoothDecor.h>
 #include <evamMinmaxDecor.h>
-#include <evamSlidingWindowDecor.h>
+#include <evamSimpleSmoothDecor.h>
 #include <evamTA6586Driver.h>
 
 using namespace eva;
@@ -31,14 +31,14 @@ class App : Heartbeat {
 private:
   // Uncomment the one!
 
-  CurveDecor<DemoMotor, -6> mMotor;
+   CurveDecor<DemoMotor, -6> mMotor;
   // KickDecor<DemoMotor, 25, 900> mMotor;
   // InertiaDecor<DemoMotor, 30> mMotor;
   // AdaptiveSmoothDecor<DemoMotor> mMotor;
-  // SlidingWindowDecor<DemoMotor, 40> mMotor;
+  // SimpleSmoothDecor<DemoMotor, 7> mMotor;
   // MinmaxDecor<DemoMotor, 3> mMotor;
 
-  PinSymmetricJoystick<A6, INPUT, 100, 300> mThrottle;
+  PinSymmetricJoystick<A6, INPUT_PULLUP, 0, 1000> mThrottle;
 
   CurveDecor<DirectionalMotor<TA6586Driver<>>> motor {
     CurveConfig{ -3 },
@@ -52,7 +52,7 @@ public:
   }
 
   void onHeartbeat() override {
-    signed short speed = map(mThrottle.getValue(), 1000, 2000, -1000, 1000);
+    signed short speed = mThrottle.getValue();
     mMotor.Go(speed);
     Serial.print(-1000);
     Serial.print(" ");

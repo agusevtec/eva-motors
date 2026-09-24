@@ -32,10 +32,10 @@ private:
   PinSymmetricJoystick<A0, INPUT, 100, 600> mThrottle;
 
   // Button on pin 7 increases bend (softer low-speed control)
-  PullupSwitch<7> mIncreaseButton{ new Handler<Vehicle>(this, &Vehicle::onIncreaseButtonPress), ON_PRESS };
+  PullUpSwitch<7> mIncreaseButton{ new Handler<Vehicle>(this, &Vehicle::onIncreaseButtonPress), ON_PRESS };
 
   // Button on pin 8 decreases bend (sharper response)
-  PullupSwitch<8> mDecreaseButton{ new Handler<Vehicle>(this, &Vehicle::onDecreaseButtonPress), ON_PRESS };
+  PullUpSwitch<8> mDecreaseButton{ new Handler<Vehicle>(this, &Vehicle::onDecreaseButtonPress), ON_PRESS };
 
   void onIncreaseButtonPress(void *sender, CallbackInfo cbInfo) {
     // Softer low-speed response, stronger high-end
@@ -48,8 +48,7 @@ private:
   }
 
   void onHeartbeat() {
-    // Map joystick value (1000-2000) to motor range (-1000..1000)
-    int speed = map(mThrottle.getValue(), 1000, 2000, -1000, 1000);
+    int speed = mThrottle.getValue();
     mMotor.Go(speed);
   }
 };

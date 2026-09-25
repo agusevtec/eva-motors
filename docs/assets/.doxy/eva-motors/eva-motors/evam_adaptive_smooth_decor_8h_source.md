@@ -10,7 +10,7 @@
 ```C++
 #pragma once
 
-#include <evafAdaptiveSmooth.h>
+#include <evafAdaptiveAverage.h>
 #include "evaStdReaders.h"
 
 namespace evam
@@ -33,7 +33,7 @@ namespace evam
         : public TMotor
     {
     private:
-        using Filter = evaf::AdaptiveSmooth<eva::ValueReader,
+        using Filter = evaf::AdaptiveAverage<eva::ValueReader,
                                             tMinTimeConstantTicks,
                                             tMaxTimeConstantTicks>;
 
@@ -54,22 +54,22 @@ namespace evam
             TMotor::Go(mFilter.getValue());
         }
 
-        void setMinTimeConstantTicks(unsigned short value)
+        void SetMinTimeConstantTicks(unsigned short value)
         {
             mFilter.setMinTimeConstantTicks(value);
         }
 
-        unsigned short getMinTimeConstantTicks() const
+        unsigned short GetMinTimeConstantTicks() const
         {
             return mFilter.getMinTimeConstantTicks();
         }
 
-        void setMaxTimeConstantTicks(unsigned short value)
+        void SetMaxTimeConstantTicks(unsigned short value)
         {
             mFilter.setMaxTimeConstantTicks(value);
         }
 
-        unsigned short getMaxTimeConstantTicks() const
+        unsigned short GetMaxTimeConstantTicks() const
         {
             return mFilter.getMaxTimeConstantTicks();
         }

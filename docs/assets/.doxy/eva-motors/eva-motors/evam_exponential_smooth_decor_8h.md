@@ -10,7 +10,7 @@
 
 
 
-* `#include <evafExponentialSmooth.h>`
+* `#include <evafExponentialAverage.h>`
 * `#include "evaStdReaders.h"`
 
 

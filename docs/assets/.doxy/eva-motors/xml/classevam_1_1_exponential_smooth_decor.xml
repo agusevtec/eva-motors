@@ -16,9 +16,9 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-type">
-      <memberdef kind="typedef" id="classevam_1_1_exponential_smooth_decor_1a3c7c83a0a55c1c8f85c78517b76a6b82" prot="private" static="no">
-        <type>evaf::ExponentialSmooth&lt; eva::ValueReader, tAlpha &gt;</type>
-        <definition>using evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::Filter = evaf::ExponentialSmooth&lt;eva::ValueReader, tAlpha&gt;</definition>
+      <memberdef kind="typedef" id="classevam_1_1_exponential_smooth_decor_1ae9cc290ab402e5b11c3fa123212ab549" prot="private" static="no">
+        <type>evaf::ExponentialAverage&lt; eva::ValueReader, tAlpha &gt;</type>
+        <definition>using evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::Filter = evaf::ExponentialAverage&lt;eva::ValueReader, tAlpha&gt;</definition>
         <argsstring></argsstring>
         <name>Filter</name>
         <qualifiedname>evam::ExponentialSmoothDecor::Filter</qualifiedname>
@@ -120,12 +120,12 @@
         </inbodydescription>
         <location file="src/evamExponentialSmoothDecor.h" line="52" column="14" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="52" bodyend="56"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1a24c239547ee9819c11c519c0d4aa54f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1a03f42dca3bfa7f3ee85f67ce7ee2c7ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::setAlpha</definition>
+        <definition>void evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::SetAlpha</definition>
         <argsstring>(unsigned short alpha)</argsstring>
-        <name>setAlpha</name>
-        <qualifiedname>evam::ExponentialSmoothDecor::setAlpha</qualifiedname>
+        <name>SetAlpha</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::SetAlpha</qualifiedname>
         <param>
           <type>unsigned short</type>
           <declname>alpha</declname>
@@ -138,12 +138,12 @@
         </inbodydescription>
         <location file="src/evamExponentialSmoothDecor.h" line="58" column="14" bodyfile="src/evamExponentialSmoothDecor.h" bodystart="58" bodyend="61"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1a42b1f9eea806311d7eafb291cc8e7460" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_exponential_smooth_decor_1ace4ea487d1d9ed7aba26450462a0a6bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
-        <definition>unsigned short evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::getAlpha</definition>
+        <definition>unsigned short evam::ExponentialSmoothDecor&lt; TMotor, tAlpha &gt;::GetAlpha</definition>
         <argsstring>() const</argsstring>
-        <name>getAlpha</name>
-        <qualifiedname>evam::ExponentialSmoothDecor::getAlpha</qualifiedname>
+        <name>GetAlpha</name>
+        <qualifiedname>evam::ExponentialSmoothDecor::GetAlpha</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -204,11 +204,11 @@
     <listofallmembers>
       <member refid="classevam_1_1_exponential_smooth_decor_1ae16841f179206ca223f8ef90c3a4cc99" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>ExponentialSmoothDecor</name></member>
       <member refid="classevam_1_1_exponential_smooth_decor_1a759ad637829ac9386239776e1f42bdab" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>ExponentialSmoothDecor</name></member>
-      <member refid="classevam_1_1_exponential_smooth_decor_1a3c7c83a0a55c1c8f85c78517b76a6b82" prot="private" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>Filter</name></member>
-      <member refid="classevam_1_1_exponential_smooth_decor_1a42b1f9eea806311d7eafb291cc8e7460" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>getAlpha</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1ae9cc290ab402e5b11c3fa123212ab549" prot="private" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>Filter</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1ace4ea487d1d9ed7aba26450462a0a6bf" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>GetAlpha</name></member>
       <member refid="classevam_1_1_exponential_smooth_decor_1abc9fdd10a01e44277f3d8d206cafb4ba" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>Go</name></member>
       <member refid="classevam_1_1_exponential_smooth_decor_1ab524a0a8be13414f0e67e4cb86dea472" prot="private" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>mFilter</name></member>
-      <member refid="classevam_1_1_exponential_smooth_decor_1a24c239547ee9819c11c519c0d4aa54f9" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>setAlpha</name></member>
+      <member refid="classevam_1_1_exponential_smooth_decor_1a03f42dca3bfa7f3ee85f67ce7ee2c7ed" prot="public" virt="non-virtual"><scope>evam::ExponentialSmoothDecor</scope><name>SetAlpha</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

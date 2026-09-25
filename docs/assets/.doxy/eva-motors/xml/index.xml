@@ -6,15 +6,15 @@
     <member refid="structevam_1_1_adaptive_smooth_config_1a51709ea0d9ab3a72ee7bae6333a6517b" kind="function"><name>AdaptiveSmoothConfig</name></member>
   </compound>
   <compound refid="classevam_1_1_adaptive_smooth_decor" kind="class"><name>evam::AdaptiveSmoothDecor</name>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a6527c34abc64b4a2a7b7034814833574" kind="typedef"><name>Filter</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1aa6336d0eb6cbbfac1495a90aad65a522" kind="typedef"><name>Filter</name></member>
     <member refid="classevam_1_1_adaptive_smooth_decor_1a8de5096b693295afa71adc09a0d2eb19" kind="variable"><name>mFilter</name></member>
     <member refid="classevam_1_1_adaptive_smooth_decor_1a77a7fa210494f48915018df0de2bc1a4" kind="function"><name>AdaptiveSmoothDecor</name></member>
     <member refid="classevam_1_1_adaptive_smooth_decor_1aee7a109597681993dfd49488fb00c01f" kind="function"><name>AdaptiveSmoothDecor</name></member>
     <member refid="classevam_1_1_adaptive_smooth_decor_1a1f0abed3b4b0e2efa64cc2037c1ce700" kind="function"><name>Go</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a32a7f9579459622dd00f06d93c517213" kind="function"><name>setMinTimeConstantTicks</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1af71fd1f822a2d7b860a307d176368b3a" kind="function"><name>getMinTimeConstantTicks</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1a9ed3aed022b0eb944b8a216719a89ea7" kind="function"><name>setMaxTimeConstantTicks</name></member>
-    <member refid="classevam_1_1_adaptive_smooth_decor_1abf4dbd9a5f7c0532e8cd6be9e96128ac" kind="function"><name>getMaxTimeConstantTicks</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a538c6e473559531194d778df7e82461f" kind="function"><name>SetMinTimeConstantTicks</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a30775e5a4a85bbe130d898c6729371d1" kind="function"><name>GetMinTimeConstantTicks</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1a0f21948268e585a9a09a55e49acc7f61" kind="function"><name>SetMaxTimeConstantTicks</name></member>
+    <member refid="classevam_1_1_adaptive_smooth_decor_1afcdaa92d930d3296387f3d89154b7136" kind="function"><name>GetMaxTimeConstantTicks</name></member>
   </compound>
   <compound refid="structevam_1_1_curve_config" kind="struct"><name>evam::CurveConfig</name>
     <member refid="structevam_1_1_curve_config_1a061be562c6ffb58aff48c37c55420a75" kind="variable"><name>bend</name></member>
@@ -58,13 +58,13 @@
     <member refid="structevam_1_1_exponential_smooth_config_1a4fe60a11c7e1f46a14aad400cc9eca0b" kind="function"><name>ExponentialSmoothConfig</name></member>
   </compound>
   <compound refid="classevam_1_1_exponential_smooth_decor" kind="class"><name>evam::ExponentialSmoothDecor</name>
-    <member refid="classevam_1_1_exponential_smooth_decor_1a3c7c83a0a55c1c8f85c78517b76a6b82" kind="typedef"><name>Filter</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1ae9cc290ab402e5b11c3fa123212ab549" kind="typedef"><name>Filter</name></member>
     <member refid="classevam_1_1_exponential_smooth_decor_1ab524a0a8be13414f0e67e4cb86dea472" kind="variable"><name>mFilter</name></member>
     <member refid="classevam_1_1_exponential_smooth_decor_1ae16841f179206ca223f8ef90c3a4cc99" kind="function"><name>ExponentialSmoothDecor</name></member>
     <member refid="classevam_1_1_exponential_smooth_decor_1a759ad637829ac9386239776e1f42bdab" kind="function"><name>ExponentialSmoothDecor</name></member>
     <member refid="classevam_1_1_exponential_smooth_decor_1abc9fdd10a01e44277f3d8d206cafb4ba" kind="function"><name>Go</name></member>
-    <member refid="classevam_1_1_exponential_smooth_decor_1a24c239547ee9819c11c519c0d4aa54f9" kind="function"><name>setAlpha</name></member>
-    <member refid="classevam_1_1_exponential_smooth_decor_1a42b1f9eea806311d7eafb291cc8e7460" kind="function"><name>getAlpha</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1a03f42dca3bfa7f3ee85f67ce7ee2c7ed" kind="function"><name>SetAlpha</name></member>
+    <member refid="classevam_1_1_exponential_smooth_decor_1ace4ea487d1d9ed7aba26450462a0a6bf" kind="function"><name>GetAlpha</name></member>
   </compound>
   <compound refid="structevam_1_1_forward_config" kind="struct"><name>evam::ForwardConfig</name>
     <member refid="structevam_1_1_forward_config_1a782f8cc1d51d6841efd3a8552cfe8c5d" kind="variable"><name>minValue</name></member>
@@ -209,8 +209,8 @@
     <member refid="classevam_1_1_slew_rate_decor_1a09f926ada083a88cac2f0d8afb6206bb" kind="function"><name>SlewRateDecor</name></member>
     <member refid="classevam_1_1_slew_rate_decor_1af38580c774758972a48b2a4dc9d4e90e" kind="function"><name>SlewRateDecor</name></member>
     <member refid="classevam_1_1_slew_rate_decor_1a07bb4e76257a1630b51e7632be644a84" kind="function"><name>Go</name></member>
-    <member refid="classevam_1_1_slew_rate_decor_1a1be544e5575947a1c5382b67c37a210d" kind="function"><name>setMaxStep</name></member>
-    <member refid="classevam_1_1_slew_rate_decor_1a8dbc51d37eec9dd35b8cd515ce017cab" kind="function"><name>getMaxStep</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1a52a41bfe96bb50ffea1f41a45694c50b" kind="function"><name>SetMaxStep</name></member>
+    <member refid="classevam_1_1_slew_rate_decor_1adc710c330ee92ae5cbde124cd6f50016" kind="function"><name>GetMaxStep</name></member>
   </compound>
   <compound refid="structevam_1_1_sliding_window_decor" kind="struct"><name>evam::SlidingWindowDecor</name>
   </compound>

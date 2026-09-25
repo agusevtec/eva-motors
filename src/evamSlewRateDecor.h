@@ -56,12 +56,12 @@ namespace evam
             TMotor::Go(mFilter.getValue());
         }
 
-        void setMaxStep(unsigned short maxStep)
+        void SetMaxStep(unsigned short maxStep)
         {
             mFilter.setMaxStep(maxStep);
         }
 
-        unsigned short getMaxStep() const
+        unsigned short GetMaxStep() const
         {
             return mFilter.getMaxStep();
         }

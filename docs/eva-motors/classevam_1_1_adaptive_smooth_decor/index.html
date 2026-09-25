@@ -681,6 +681,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-getmaxtimeconstantticks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetMaxTimeConstantTicks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getmintimeconstantticks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetMinTimeConstantTicks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-go" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -692,32 +714,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-getmaxtimeconstantticks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function getMaxTimeConstantTicks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-getmintimeconstantticks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function getMinTimeConstantTicks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#function-setmaxtimeconstantticks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function setMaxTimeConstantTicks
+        function SetMaxTimeConstantTicks
       
     </span>
   </a>
@@ -728,7 +728,7 @@
   <a href="#function-setmintimeconstantticks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function setMinTimeConstantTicks
+        function SetMinTimeConstantTicks
       
     </span>
   </a>
@@ -786,24 +786,24 @@
 <td style="text-align: left;"><a href="#function-adaptivesmoothdecor-22"><strong>AdaptiveSmoothDecor</strong></a> (<a href="../structevam_1_1_adaptive_smooth_config/"><strong>AdaptiveSmoothConfig</strong></a> config, Args... args) <br></td>
 </tr>
 <tr>
+<td style="text-align: right;">unsigned short</td>
+<td style="text-align: left;"><a href="#function-getmaxtimeconstantticks"><strong>GetMaxTimeConstantTicks</strong></a> () const<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">unsigned short</td>
+<td style="text-align: left;"><a href="#function-getmintimeconstantticks"><strong>GetMinTimeConstantTicks</strong></a> () const<br></td>
+</tr>
+<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (signed short value) <br><em>Set the target control value.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#function-getmaxtimeconstantticks"><strong>getMaxTimeConstantTicks</strong></a> () const<br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#function-getmintimeconstantticks"><strong>getMinTimeConstantTicks</strong></a> () const<br></td>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-setmaxtimeconstantticks"><strong>SetMaxTimeConstantTicks</strong></a> (unsigned short value) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setmaxtimeconstantticks"><strong>setMaxTimeConstantTicks</strong></a> (unsigned short value) <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setmintimeconstantticks"><strong>setMinTimeConstantTicks</strong></a> (unsigned short value) <br></td>
+<td style="text-align: left;"><a href="#function-setmintimeconstantticks"><strong>SetMinTimeConstantTicks</strong></a> (unsigned short value) <br></td>
 </tr>
 </tbody>
 </table>
@@ -832,6 +832,18 @@
 
 <hr>
 
+<h3 id="function-getmaxtimeconstantticks">function GetMaxTimeConstantTicks<a class="headerlink" href="#function-getmaxtimeconstantticks" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">GetMaxTimeConstantTicks</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-getmintimeconstantticks">function GetMinTimeConstantTicks<a class="headerlink" href="#function-getmintimeconstantticks" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">GetMinTimeConstantTicks</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="function-go">function Go<a class="headerlink" href="#function-go" title="Permanent link">&para;</a></h3>
 <p><em>Set the target control value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">Go</span><span class="w"> </span><span class="p">(</span>
@@ -845,28 +857,16 @@
 </ul>
 <hr>
 
-<h3 id="function-getmaxtimeconstantticks">function getMaxTimeConstantTicks<a class="headerlink" href="#function-getmaxtimeconstantticks" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">getMaxTimeConstantTicks</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="function-getmintimeconstantticks">function getMinTimeConstantTicks<a class="headerlink" href="#function-getmintimeconstantticks" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">getMinTimeConstantTicks</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="function-setmaxtimeconstantticks">function setMaxTimeConstantTicks<a class="headerlink" href="#function-setmaxtimeconstantticks" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">setMaxTimeConstantTicks</span><span class="w"> </span><span class="p">(</span>
+<h3 id="function-setmaxtimeconstantticks">function SetMaxTimeConstantTicks<a class="headerlink" href="#function-setmaxtimeconstantticks" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">SetMaxTimeConstantTicks</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">value</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 
-<h3 id="function-setmintimeconstantticks">function setMinTimeConstantTicks<a class="headerlink" href="#function-setmintimeconstantticks" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">setMinTimeConstantTicks</span><span class="w"> </span><span class="p">(</span>
+<h3 id="function-setmintimeconstantticks">function SetMinTimeConstantTicks<a class="headerlink" href="#function-setmintimeconstantticks" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">::</span><span class="n">SetMinTimeConstantTicks</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">value</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>

@@ -10,7 +10,7 @@
 ```C++
 #pragma once
 
-#include <evafExponentialSmooth.h>
+#include <evafExponentialAverage.h>
 #include "evaStdReaders.h"
 
 namespace evam
@@ -27,7 +27,7 @@ namespace evam
         : public TMotor
     {
     private:
-        using Filter = evaf::ExponentialSmooth<eva::ValueReader, tAlpha>;
+        using Filter = evaf::ExponentialAverage<eva::ValueReader, tAlpha>;
 
         Filter mFilter;
 
@@ -45,12 +45,12 @@ namespace evam
             TMotor::Go(mFilter.getValue());
         }
 
-        void setAlpha(unsigned short alpha)
+        void SetAlpha(unsigned short alpha)
         {
             mFilter.setAlpha(alpha);
         }
 
-        unsigned short getAlpha() const
+        unsigned short GetAlpha() const
         {
             return mFilter.getAlpha();
         }

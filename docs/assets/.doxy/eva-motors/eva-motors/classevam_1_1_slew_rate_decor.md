@@ -55,11 +55,11 @@ Inherits the following classes: TMotor
 
 | Type | Name |
 | ---: | :--- |
+|  unsigned short | [**GetMaxStep**](#function-getmaxstep) () const<br> |
 |  void | [**Go**](#function-go) (signed short value) <br>_Set the target control value._  |
+|  void | [**SetMaxStep**](#function-setmaxstep) (unsigned short maxStep) <br> |
 |   | [**SlewRateDecor**](#function-slewratedecor-12) () <br> |
 |   | [**SlewRateDecor**](#function-slewratedecor-22) ([**SlewRateConfig**](structevam_1_1_slew_rate_config.md) config, Args... args) <br> |
-|  unsigned short | [**getMaxStep**](#function-getmaxstep) () const<br> |
-|  void | [**setMaxStep**](#function-setmaxstep) (unsigned short maxStep) <br> |
 
 
 
@@ -111,6 +111,19 @@ This decorator does not own a heartbeat; it only transforms the value. Wrap it w
 
 
 
+### function GetMaxStep 
+
+```C++
+inline unsigned short evam::SlewRateDecor::GetMaxStep () const
+```
+
+
+
+
+<hr>
+
+
+
 ### function Go 
 
 _Set the target control value._ 
@@ -138,6 +151,21 @@ inline void evam::SlewRateDecor::Go (
 
 
 
+### function SetMaxStep 
+
+```C++
+inline void evam::SlewRateDecor::SetMaxStep (
+    unsigned short maxStep
+) 
+```
+
+
+
+
+<hr>
+
+
+
 ### function SlewRateDecor [1/2]
 
 ```C++
@@ -158,34 +186,6 @@ template<typename... Args>
 inline evam::SlewRateDecor::SlewRateDecor (
     SlewRateConfig config,
     Args... args
-) 
-```
-
-
-
-
-<hr>
-
-
-
-### function getMaxStep 
-
-```C++
-inline unsigned short evam::SlewRateDecor::getMaxStep () const
-```
-
-
-
-
-<hr>
-
-
-
-### function setMaxStep 
-
-```C++
-inline void evam::SlewRateDecor::setMaxStep (
-    unsigned short maxStep
 ) 
 ```
 

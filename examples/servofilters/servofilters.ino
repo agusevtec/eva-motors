@@ -1,42 +1,54 @@
-#include <evaHeartbeat.h>
 #include <evaTac.h>
+#include <evaHeartbeat.h>
+#include <evaJoystick.h>
+#include <evaSwitch.h>
 
-#include <evamSoftwareServoDriver.h>
-#include <evamLinearActuator.h>
-#include <evamAdaptiveSmoothDecor.h>
-#include <evamSimpleSmoothDecor.h>
-#include <evamMedianDecor.h>
-#include <evamMinmaxDecor.h>
+#include <evamTA6586Driver.h>
+#include <evamDirectionalMotor.h>
+#include <evamCurveDecor.h>
+#include <evamKickDecor.h>
 
-using namespace eva;
-using namespace evam;
+// Build the motor stack from bottom up:
+// Driver (TA6586) -> DirectionalMotor -> KickDecor -> CurveDecor
+// 25ms kick pulse at 90% power to overcome static friction
+// Negative bend (-6) creates sharper initial response
 
-using MyLinearActuator = LinearActuator<SoftwareServoDriver<3>>;
+using BaseMotor = evam::DirectionalMotor<evam::TA6586Driver<9, 10>, -1000, -200, 200, 1000>;
+using KickMotor = evam::KickDecor<BaseMotor, 25, 900>;
+using PreciseMotor = evam::CurveDecor<KickMotor, -6>;
 
-using SmoothServo = AdaptiveSmoothDecor<MyLinearActuator>;
-//using SmoothServo = SimpleSmoothDecor<MyLinearActuator, 6>;
-//using SmoothServo = MedianDecor<MyLinearActuator, 5>;
+class Vehicle : public eva::Heartbeat {
+private:
+  PreciseMotor mMotor;
 
-class App : Heartbeat {
-  SmoothServo servo;
+  // Joystick on A0,  mapped to -1000..1000
+  eva::PinSymmetricJoystick<A0, INPUT, 100, 600> mThrottle;
 
-public:
-  
-  App()
-    : Heartbeat(100) {
+  // Button on pin changes bend (sharper response)
+  eva::Handler<Vehicle> mButtonHandler{ this, &onButtonPress };
+  eva::PullUpSwitch<8> mDecreaseButton{ &mButtonHandler, eva::ON_PRESS };
+
+  void onButtonPress(void* sender, eva::CallbackInfo cbInfo) {
+    // Softer low-speed response, stronger high-end
+    mMotor.SetBend(-mMotor.GetBend());
   }
 
+public:
+  Vehicle() : Heartbeat(100) {}
+
   void onHeartbeat() override {
-    int joystickValue = analogRead(A0);  // 0-1023
-    int mappedValue = map(joystickValue, 0, 1023, -1000, 1000);
-    servo.Go(mappedValue);
+    // Map joystick value (1000-2000) to motor range (-1000..1000)
+    int speed = map(mThrottle.getValue(), 1000, 2000, -1000, 1000);
+    mMotor.Go(speed);
   }
 };
 
 void setup() {
-  static App app;
+  // Static ensures object persists after setup() exits
+  static Vehicle vehicle;
 }
 
 void loop() {
+  // Single call drives heartbeat, switches, and motor decorators
   eva::tac();
 }

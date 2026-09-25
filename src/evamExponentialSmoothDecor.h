@@ -55,12 +55,12 @@ namespace evam
             TMotor::Go(mFilter.getValue());
         }
 
-        void setAlpha(unsigned short alpha)
+        void SetAlpha(unsigned short alpha)
         {
             mFilter.setAlpha(alpha);
         }
 
-        unsigned short getAlpha() const
+        unsigned short GetAlpha() const
         {
             return mFilter.getAlpha();
         }

@@ -120,12 +120,12 @@
         </inbodydescription>
         <location file="src/evamSlewRateDecor.h" line="53" column="14" bodyfile="src/evamSlewRateDecor.h" bodystart="53" bodyend="57"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_slew_rate_decor_1a1be544e5575947a1c5382b67c37a210d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_slew_rate_decor_1a52a41bfe96bb50ffea1f41a45694c50b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void evam::SlewRateDecor&lt; TMotor, tMaxStepPerTick &gt;::setMaxStep</definition>
+        <definition>void evam::SlewRateDecor&lt; TMotor, tMaxStepPerTick &gt;::SetMaxStep</definition>
         <argsstring>(unsigned short maxStep)</argsstring>
-        <name>setMaxStep</name>
-        <qualifiedname>evam::SlewRateDecor::setMaxStep</qualifiedname>
+        <name>SetMaxStep</name>
+        <qualifiedname>evam::SlewRateDecor::SetMaxStep</qualifiedname>
         <param>
           <type>unsigned short</type>
           <declname>maxStep</declname>
@@ -138,12 +138,12 @@
         </inbodydescription>
         <location file="src/evamSlewRateDecor.h" line="59" column="14" bodyfile="src/evamSlewRateDecor.h" bodystart="59" bodyend="62"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_slew_rate_decor_1a8dbc51d37eec9dd35b8cd515ce017cab" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_slew_rate_decor_1adc710c330ee92ae5cbde124cd6f50016" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
-        <definition>unsigned short evam::SlewRateDecor&lt; TMotor, tMaxStepPerTick &gt;::getMaxStep</definition>
+        <definition>unsigned short evam::SlewRateDecor&lt; TMotor, tMaxStepPerTick &gt;::GetMaxStep</definition>
         <argsstring>() const</argsstring>
-        <name>getMaxStep</name>
-        <qualifiedname>evam::SlewRateDecor::getMaxStep</qualifiedname>
+        <name>GetMaxStep</name>
+        <qualifiedname>evam::SlewRateDecor::GetMaxStep</qualifiedname>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -203,10 +203,10 @@
     <location file="src/evamSlewRateDecor.h" line="33" column="5" bodyfile="src/evamSlewRateDecor.h" bodystart="35" bodyend="68"/>
     <listofallmembers>
       <member refid="classevam_1_1_slew_rate_decor_1ac16201cbbd609e1e94f9d1f2c01dcf48" prot="private" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>Filter</name></member>
-      <member refid="classevam_1_1_slew_rate_decor_1a8dbc51d37eec9dd35b8cd515ce017cab" prot="public" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>getMaxStep</name></member>
+      <member refid="classevam_1_1_slew_rate_decor_1adc710c330ee92ae5cbde124cd6f50016" prot="public" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>GetMaxStep</name></member>
       <member refid="classevam_1_1_slew_rate_decor_1a07bb4e76257a1630b51e7632be644a84" prot="public" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>Go</name></member>
       <member refid="classevam_1_1_slew_rate_decor_1aefcd15fccaeeb55cfefd87586bb9f97a" prot="private" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>mFilter</name></member>
-      <member refid="classevam_1_1_slew_rate_decor_1a1be544e5575947a1c5382b67c37a210d" prot="public" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>setMaxStep</name></member>
+      <member refid="classevam_1_1_slew_rate_decor_1a52a41bfe96bb50ffea1f41a45694c50b" prot="public" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>SetMaxStep</name></member>
       <member refid="classevam_1_1_slew_rate_decor_1a09f926ada083a88cac2f0d8afb6206bb" prot="public" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>SlewRateDecor</name></member>
       <member refid="classevam_1_1_slew_rate_decor_1af38580c774758972a48b2a4dc9d4e90e" prot="public" virt="non-virtual"><scope>evam::SlewRateDecor</scope><name>SlewRateDecor</name></member>
     </listofallmembers>

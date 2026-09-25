@@ -641,7 +641,7 @@
 <p><a href="../evam_adaptive_smooth_decor_8h/">Go to the documentation of this file</a></p>
 <div class="codehilite"><pre><span></span><code><span class="cp">#pragma once</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evafAdaptiveSmooth.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evafAdaptiveAverage.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaStdReaders.h&quot;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">evam</span>
@@ -664,7 +664,7 @@
 <span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TMotor</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="o">:</span>
-<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evaf</span><span class="o">::</span><span class="n">AdaptiveSmooth</span><span class="o">&lt;</span><span class="n">eva</span><span class="o">::</span><span class="n">ValueReader</span><span class="p">,</span>
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">Filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evaf</span><span class="o">::</span><span class="n">AdaptiveAverage</span><span class="o">&lt;</span><span class="n">eva</span><span class="o">::</span><span class="n">ValueReader</span><span class="p">,</span>
 <span class="w">                                            </span><span class="n">tMinTimeConstantTicks</span><span class="p">,</span>
 <span class="w">                                            </span><span class="n">tMaxTimeConstantTicks</span><span class="o">&gt;</span><span class="p">;</span>
 
@@ -685,22 +685,22 @@
 <span class="w">            </span><span class="n">TMotor</span><span class="o">::</span><span class="n">Go</span><span class="p">(</span><span class="n">mFilter</span><span class="p">.</span><span class="n">getValue</span><span class="p">());</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">setMinTimeConstantTicks</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetMinTimeConstantTicks</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">mFilter</span><span class="p">.</span><span class="n">setMinTimeConstantTicks</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">getMinTimeConstantTicks</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">GetMinTimeConstantTicks</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mFilter</span><span class="p">.</span><span class="n">getMinTimeConstantTicks</span><span class="p">();</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">setMaxTimeConstantTicks</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetMaxTimeConstantTicks</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">mFilter</span><span class="p">.</span><span class="n">setMaxTimeConstantTicks</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">getMaxTimeConstantTicks</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">GetMaxTimeConstantTicks</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">mFilter</span><span class="p">.</span><span class="n">getMaxTimeConstantTicks</span><span class="p">();</span>
 <span class="w">        </span><span class="p">}</span>

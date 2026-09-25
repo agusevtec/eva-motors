@@ -57,11 +57,11 @@ Inherits the following classes: TMotor
 | ---: | :--- |
 |   | [**AdaptiveSmoothDecor**](#function-adaptivesmoothdecor-12) () <br> |
 |   | [**AdaptiveSmoothDecor**](#function-adaptivesmoothdecor-22) ([**AdaptiveSmoothConfig**](structevam_1_1_adaptive_smooth_config.md) config, Args... args) <br> |
+|  unsigned short | [**GetMaxTimeConstantTicks**](#function-getmaxtimeconstantticks) () const<br> |
+|  unsigned short | [**GetMinTimeConstantTicks**](#function-getmintimeconstantticks) () const<br> |
 |  void | [**Go**](#function-go) (signed short value) <br>_Set the target control value._  |
-|  unsigned short | [**getMaxTimeConstantTicks**](#function-getmaxtimeconstantticks) () const<br> |
-|  unsigned short | [**getMinTimeConstantTicks**](#function-getmintimeconstantticks) () const<br> |
-|  void | [**setMaxTimeConstantTicks**](#function-setmaxtimeconstantticks) (unsigned short value) <br> |
-|  void | [**setMinTimeConstantTicks**](#function-setmintimeconstantticks) (unsigned short value) <br> |
+|  void | [**SetMaxTimeConstantTicks**](#function-setmaxtimeconstantticks) (unsigned short value) <br> |
+|  void | [**SetMinTimeConstantTicks**](#function-setmintimeconstantticks) (unsigned short value) <br> |
 
 
 
@@ -144,6 +144,32 @@ inline evam::AdaptiveSmoothDecor::AdaptiveSmoothDecor (
 
 
 
+### function GetMaxTimeConstantTicks 
+
+```C++
+inline unsigned short evam::AdaptiveSmoothDecor::GetMaxTimeConstantTicks () const
+```
+
+
+
+
+<hr>
+
+
+
+### function GetMinTimeConstantTicks 
+
+```C++
+inline unsigned short evam::AdaptiveSmoothDecor::GetMinTimeConstantTicks () const
+```
+
+
+
+
+<hr>
+
+
+
 ### function Go 
 
 _Set the target control value._ 
@@ -171,36 +197,10 @@ inline void evam::AdaptiveSmoothDecor::Go (
 
 
 
-### function getMaxTimeConstantTicks 
+### function SetMaxTimeConstantTicks 
 
 ```C++
-inline unsigned short evam::AdaptiveSmoothDecor::getMaxTimeConstantTicks () const
-```
-
-
-
-
-<hr>
-
-
-
-### function getMinTimeConstantTicks 
-
-```C++
-inline unsigned short evam::AdaptiveSmoothDecor::getMinTimeConstantTicks () const
-```
-
-
-
-
-<hr>
-
-
-
-### function setMaxTimeConstantTicks 
-
-```C++
-inline void evam::AdaptiveSmoothDecor::setMaxTimeConstantTicks (
+inline void evam::AdaptiveSmoothDecor::SetMaxTimeConstantTicks (
     unsigned short value
 ) 
 ```
@@ -212,10 +212,10 @@ inline void evam::AdaptiveSmoothDecor::setMaxTimeConstantTicks (
 
 
 
-### function setMinTimeConstantTicks 
+### function SetMinTimeConstantTicks 
 
 ```C++
-inline void evam::AdaptiveSmoothDecor::setMinTimeConstantTicks (
+inline void evam::AdaptiveSmoothDecor::SetMinTimeConstantTicks (
     unsigned short value
 ) 
 ```

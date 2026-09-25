@@ -947,7 +947,6 @@
 <p><strong>Methods:</strong></p>
 <ul>
 <li><code>Go(value)</code> – Set target value (range -1000..1000)</li>
-<li><code>GetCurrentTimeConstant()</code> – Get current smoothing amount</li>
 </ul>
 <p><strong>Example:</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">AdaptiveMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">AdaptiveSmoothDecor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">DirectionalMotor</span><span class="o">&lt;</span><span class="n">evam</span><span class="o">::</span><span class="n">TA6586Driver</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
@@ -965,14 +964,12 @@
 </ul>
 <h2 id="combining-filters">Combining Filters<a class="headerlink" href="#combining-filters" title="Permanent link">&para;</a></h2>
 <p>Filters can be stacked for enhanced noise rejection:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTac.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamTA6586Driver.h&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamTA6586Driver.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamDirectionalMotor.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamSlidingWindowDecor.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamMinmaxDecor.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evamAdaptiveSmoothDecor.h&gt;</span>
 
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">evam</span><span class="p">;</span>
 
 <span class="c1">// Remove impulse noise, then smooth, then adapt to dynamics</span>
@@ -982,13 +979,6 @@
 <span class="k">using</span><span class="w"> </span><span class="n">SmartMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AdaptiveSmoothDecor</span><span class="o">&lt;</span><span class="n">SmoothFilter</span><span class="o">&gt;</span><span class="p">;</span><span class="w">    </span><span class="c1">// Adaptive response</span>
 
 <span class="n">SmartMotor</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">eva</span><span class="o">::</span><span class="n">tac</span><span class="p">();</span><span class="w">  </span><span class="c1">// Drives AdaptiveSmoothDecor</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mapped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-<span class="w">    </span><span class="n">motor</span><span class="p">.</span><span class="n">Go</span><span class="p">(</span><span class="n">mapped</span><span class="p">);</span><span class="w">  </span><span class="c1">// Triple-filtered signal</span>
-<span class="p">}</span>
 </code></pre></div>
 
 <h2 id="performance-considerations">Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permanent link">&para;</a></h2>

@@ -10,7 +10,7 @@
 
 
 
-* `#include <evafAdaptiveSmooth.h>`
+* `#include <evafAdaptiveAverage.h>`
 * `#include "evaStdReaders.h"`
 
 

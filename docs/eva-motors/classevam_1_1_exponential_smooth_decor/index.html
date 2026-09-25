@@ -681,6 +681,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-getalpha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function GetAlpha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-go" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -692,21 +703,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-getalpha" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function getAlpha
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#function-setalpha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function setAlpha
+        function SetAlpha
       
     </span>
   </a>
@@ -764,16 +764,16 @@
 <td style="text-align: left;"><a href="#function-exponentialsmoothdecor-22"><strong>ExponentialSmoothDecor</strong></a> (<a href="../structevam_1_1_exponential_smooth_config/"><strong>ExponentialSmoothConfig</strong></a> config, Args... args) <br></td>
 </tr>
 <tr>
+<td style="text-align: right;">unsigned short</td>
+<td style="text-align: left;"><a href="#function-getalpha"><strong>GetAlpha</strong></a> () const<br></td>
+</tr>
+<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (signed short value) <br><em>Set the target control value.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="#function-getalpha"><strong>getAlpha</strong></a> () const<br></td>
-</tr>
-<tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setalpha"><strong>setAlpha</strong></a> (unsigned short alpha) <br></td>
+<td style="text-align: left;"><a href="#function-setalpha"><strong>SetAlpha</strong></a> (unsigned short alpha) <br></td>
 </tr>
 </tbody>
 </table>
@@ -801,6 +801,12 @@
 
 <hr>
 
+<h3 id="function-getalpha">function GetAlpha<a class="headerlink" href="#function-getalpha" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">ExponentialSmoothDecor</span><span class="o">::</span><span class="n">GetAlpha</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="function-go">function Go<a class="headerlink" href="#function-go" title="Permanent link">&para;</a></h3>
 <p><em>Set the target control value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">ExponentialSmoothDecor</span><span class="o">::</span><span class="n">Go</span><span class="w"> </span><span class="p">(</span>
@@ -814,14 +820,8 @@
 </ul>
 <hr>
 
-<h3 id="function-getalpha">function getAlpha<a class="headerlink" href="#function-getalpha" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">ExponentialSmoothDecor</span><span class="o">::</span><span class="n">getAlpha</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="function-setalpha">function setAlpha<a class="headerlink" href="#function-setalpha" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">ExponentialSmoothDecor</span><span class="o">::</span><span class="n">setAlpha</span><span class="w"> </span><span class="p">(</span>
+<h3 id="function-setalpha">function SetAlpha<a class="headerlink" href="#function-setalpha" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">ExponentialSmoothDecor</span><span class="o">::</span><span class="n">SetAlpha</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">alpha</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>

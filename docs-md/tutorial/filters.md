@@ -112,7 +112,6 @@ class AdaptiveSmoothDecor : public Heartbeat, public Motor
 **Methods:**
 
 - `Go(value)` – Set target value (range -1000..1000)
-- `GetCurrentTimeConstant()` – Get current smoothing amount
 
 **Example:**
 ```cpp
@@ -134,14 +133,12 @@ motor.Go(810);  // Heavy smoothing for small change
 Filters can be stacked for enhanced noise rejection:
 
 ```cpp
-#include <evaTac.h>
 #include <evamTA6586Driver.h>
 #include <evamDirectionalMotor.h>
 #include <evamSlidingWindowDecor.h>
 #include <evamMinmaxDecor.h>
 #include <evamAdaptiveSmoothDecor.h>
 
-using namespace eva;
 using namespace evam;
 
 // Remove impulse noise, then smooth, then adapt to dynamics
@@ -152,12 +149,6 @@ using SmartMotor = AdaptiveSmoothDecor<SmoothFilter>;    // Adaptive response
 
 SmartMotor motor;
 
-void loop() {
-    eva::tac();  // Drives AdaptiveSmoothDecor
-    int raw = analogRead(A0);
-    int mapped = map(raw, 0, 1023, -1000, 1000);
-    motor.Go(mapped);  // Triple-filtered signal
-}
 ```
 
 ## Performance Considerations

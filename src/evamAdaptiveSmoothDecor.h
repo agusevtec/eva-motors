@@ -66,22 +66,22 @@ namespace evam
             TMotor::Go(mFilter.getValue());
         }
 
-        void setMinTimeConstantTicks(unsigned short value)
+        void SetMinTimeConstantTicks(unsigned short value)
         {
             mFilter.setMinTimeConstantTicks(value);
         }
 
-        unsigned short getMinTimeConstantTicks() const
+        unsigned short GetMinTimeConstantTicks() const
         {
             return mFilter.getMinTimeConstantTicks();
         }
 
-        void setMaxTimeConstantTicks(unsigned short value)
+        void SetMaxTimeConstantTicks(unsigned short value)
         {
             mFilter.setMaxTimeConstantTicks(value);
         }
 
-        unsigned short getMaxTimeConstantTicks() const
+        unsigned short GetMaxTimeConstantTicks() const
         {
             return mFilter.getMaxTimeConstantTicks();
         }

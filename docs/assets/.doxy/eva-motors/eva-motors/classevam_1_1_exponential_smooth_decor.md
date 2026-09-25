@@ -57,9 +57,9 @@ Inherits the following classes: TMotor
 | ---: | :--- |
 |   | [**ExponentialSmoothDecor**](#function-exponentialsmoothdecor-12) () <br> |
 |   | [**ExponentialSmoothDecor**](#function-exponentialsmoothdecor-22) ([**ExponentialSmoothConfig**](structevam_1_1_exponential_smooth_config.md) config, Args... args) <br> |
+|  unsigned short | [**GetAlpha**](#function-getalpha) () const<br> |
 |  void | [**Go**](#function-go) (signed short value) <br>_Set the target control value._  |
-|  unsigned short | [**getAlpha**](#function-getalpha) () const<br> |
-|  void | [**setAlpha**](#function-setalpha) (unsigned short alpha) <br> |
+|  void | [**SetAlpha**](#function-setalpha) (unsigned short alpha) <br> |
 
 
 
@@ -141,6 +141,19 @@ inline evam::ExponentialSmoothDecor::ExponentialSmoothDecor (
 
 
 
+### function GetAlpha 
+
+```C++
+inline unsigned short evam::ExponentialSmoothDecor::GetAlpha () const
+```
+
+
+
+
+<hr>
+
+
+
 ### function Go 
 
 _Set the target control value._ 
@@ -168,23 +181,10 @@ inline void evam::ExponentialSmoothDecor::Go (
 
 
 
-### function getAlpha 
+### function SetAlpha 
 
 ```C++
-inline unsigned short evam::ExponentialSmoothDecor::getAlpha () const
-```
-
-
-
-
-<hr>
-
-
-
-### function setAlpha 
-
-```C++
-inline void evam::ExponentialSmoothDecor::setAlpha (
+inline void evam::ExponentialSmoothDecor::SetAlpha (
     unsigned short alpha
 ) 
 ```

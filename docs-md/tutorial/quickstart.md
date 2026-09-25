@@ -36,7 +36,7 @@ class Vehicle : public eva::Heartbeat {
 private:
   PreciseMotor mMotor;
 
-  // Joystick on A0,  mapped to -1000..1000
+  // Joystick on A0, signal 100..600 mapped to -1000..1000
   eva::PinSymmetricJoystick<A0, INPUT, 100, 600> mThrottle;
 
   // Button on pin changes bend (sharper response)
@@ -52,9 +52,8 @@ public:
   Vehicle() : Heartbeat(100) {}
 
   void onHeartbeat() override {
-    // Map joystick value (1000-2000) to motor range (-1000..1000)
-    int speed = map(mThrottle.getValue(), 1000, 2000, -1000, 1000);
-    mMotor.Go(speed);
+    // Joystick range (-1000..1000) is compatible with motor range (-1000..1000)
+    mMotor.Go(mThrottle.getValue());
   }
 };
 

@@ -41,7 +41,7 @@ private:
 
   // Button on pin changes bend (sharper response)
   eva::Handler<Vehicle> mButtonHandler{ this, &onButtonPress };
-  eva::PullUpSwitch<8> mDecreaseButton{ &mButtonHandler, eva::ON_PRESS };
+  eva::PullUpSwitch<3> mButton{ &mButtonHandler, eva::ON_PRESS };
 
   void onButtonPress(void* sender, eva::CallbackInfo cbInfo) {
     // Softer low-speed response, stronger high-end

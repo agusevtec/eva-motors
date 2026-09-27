@@ -46,7 +46,7 @@ namespace evam
         eva::Handler<KickDecor> mKickEndHandler{ this, &KickDecor::onKickEnd };
         eva::DelayTimer mKickTimer{ &mKickEndHandler };
 
-        void onKickEnd(void *sender, eva::CallbackInfo cbInfo)
+        void onKickEnd(void *, eva::CallbackInfo)
         {
             TMotor::Go(mTargetSpeed);
         }

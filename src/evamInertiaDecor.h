@@ -38,14 +38,16 @@ namespace evam
         signed short mDesiredSpeed = 0;
         signed short mSpeed = 0;
 
-        eva::Handler<InertiaDecor> mHeartbeatHandler{ this, &InertiaDecor::onHeartbeat };
-        eva::RepeatTimer mHeartbeatTimer{ &mHeartbeatHandler };
+        eva::Handler<InertiaDecor> mHeartbeatHandler{this, &InertiaDecor::onHeartbeat};
+        eva::RepeatTimer mHeartbeatTimer{&mHeartbeatHandler};
 
-        void onHeartbeat(void *sender, eva::CallbackInfo cbInfo)
+        void onHeartbeat(void *, eva::CallbackInfo)
         {
             mSpeed = calcSpeed();
             TMotor::Go(mSpeed);
         }
+
+        static constexpr signed long kSpeedScale = 4; // точность
 
         signed short calcSpeed() const
         {
@@ -55,11 +57,21 @@ namespace evam
             if (abs(mDesiredSpeed) > abs(mSpeed))
                 return mDesiredSpeed;
 
-            signed short delta = mDesiredSpeed - mSpeed;
-            signed short step = delta / mConfig.inertiaMass;
-            if (abs(step) < 2)
+            signed long delta = (signed long)mDesiredSpeed - mSpeed;
+            signed long step = (delta * kSpeedScale) / mConfig.inertiaMass;
+
+            // защита от слишком маленького шага
+            if (step == 0)
+                step = (delta > 0) ? 1 : -1;
+
+            signed long next = (signed long)mSpeed + step;
+
+            // не перескакиваем через цель
+            if ((delta > 0 && next > mDesiredSpeed) ||
+                (delta < 0 && next < mDesiredSpeed))
                 return mDesiredSpeed;
-            return mSpeed + step;
+
+            return (signed short)next;
         }
 
     public:

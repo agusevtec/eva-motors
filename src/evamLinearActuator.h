@@ -40,13 +40,11 @@ namespace evam
     public:
         LinearActuator() : mConfig(tMinValue, tMaxValue)
         {
-            Go(0);
         }
 
         template <typename... Args>
         LinearActuator(LinearActuatorConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
-            Go(0);
         }
 
         /**

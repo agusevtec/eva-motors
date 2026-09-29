@@ -59,13 +59,11 @@ namespace evam
     public:
         DirectionalMotor() : mConfig(tMaxBackward, tMinBackward, tMinForward, tMaxForward)
         {
-            Go(0);
         }
 
         template <typename... Args>
         DirectionalMotor(DirectionalConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
-            Go(0);
         }
 
         /**

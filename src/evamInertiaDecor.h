@@ -47,7 +47,7 @@ namespace evam
             TMotor::Go(mSpeed);
         }
 
-        static constexpr signed long kSpeedScale = 4; // точность
+        static constexpr signed long kSpeedScale = 4; 
 
         signed short calcSpeed() const
         {
@@ -60,13 +60,11 @@ namespace evam
             signed long delta = (signed long)mDesiredSpeed - mSpeed;
             signed long step = (delta * kSpeedScale) / mConfig.inertiaMass;
 
-            // защита от слишком маленького шага
             if (step == 0)
                 step = (delta > 0) ? 1 : -1;
 
             signed long next = (signed long)mSpeed + step;
 
-            // не перескакиваем через цель
             if ((delta > 0 && next > mDesiredSpeed) ||
                 (delta < 0 && next < mDesiredSpeed))
                 return mDesiredSpeed;

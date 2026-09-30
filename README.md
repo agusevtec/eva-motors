@@ -39,8 +39,8 @@ motor.Go(750);  // 75% throttle
 
 // Steering servo (center = straight)
 SteeringActuator<ServoDriver<3>> steering;
-steering.Go(500);   // turn right
-steering.Go(-300);  // turn left
+steering.Go(500);   // turn right 50%
+steering.Go(-300);  // turn left 30%
 ```
 
 ### Bidirectional Motor (H-Bridge)
@@ -51,8 +51,8 @@ steering.Go(-300);  // turn left
 
 // Reversible motor using TB6612
 DirectionalMotor<TB6612FNGDriver<9, 10, 11>> motor;
-motor.Go(400);   // forward
-motor.Go(-200);  // reverse
+motor.Go(400);   // forward 40%
+motor.Go(-200);  // reverse 20%
 ```
 
 ### Linear Actuator

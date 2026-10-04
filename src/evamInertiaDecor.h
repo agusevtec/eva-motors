@@ -33,6 +33,7 @@ namespace evam
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 100;
+        static constexpr signed short kSpeedScale = 4; 
 
         InertiaConfig mConfig;
         signed short mDesiredSpeed = 0;
@@ -47,7 +48,6 @@ namespace evam
             TMotor::Go(mSpeed);
         }
 
-        static constexpr signed long kSpeedScale = 4; 
 
         signed short calcSpeed() const
         {
@@ -57,19 +57,13 @@ namespace evam
             if (abs(mDesiredSpeed) > abs(mSpeed))
                 return mDesiredSpeed;
 
-            signed long delta = (signed long)mDesiredSpeed - mSpeed;
-            signed long step = (delta * kSpeedScale) / mConfig.inertiaMass;
+            signed short delta = mDesiredSpeed - mSpeed;
+            signed short step = (delta * kSpeedScale) / mConfig.inertiaMass;
 
             if (step == 0)
-                step = (delta > 0) ? 1 : -1;
+                return mDesiredSpeed
 
-            signed long next = (signed long)mSpeed + step;
-
-            if ((delta > 0 && next > mDesiredSpeed) ||
-                (delta < 0 && next < mDesiredSpeed))
-                return mDesiredSpeed;
-
-            return (signed short)next;
+            return mSpeed + step;
         }
 
     public:
@@ -108,7 +102,7 @@ namespace evam
          * @brief Apply the control value with inertia simulation.
          * @param aSpeed Desired speed, range -1000..1000
          */
-        void Go(int aSpeed)
+        void Go(signed short aSpeed)
         {
             mDesiredSpeed = aSpeed;
             if (aSpeed == calcSpeed())

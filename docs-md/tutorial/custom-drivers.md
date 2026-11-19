@@ -58,7 +58,7 @@ public:
     MyDriver() {
         // Initialize your hardware here
         SpecificController.begin();
-        actBipolar(0);  // Start in safe state
+        // WARNING: Do not call actBipolar(0); 0 can be mechanically unsafe.
     }
 
 protected:

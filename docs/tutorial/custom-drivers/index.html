@@ -968,7 +968,7 @@
 <span class="w">    </span><span class="n">MyDriver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// Initialize your hardware here</span>
 <span class="w">        </span><span class="n">SpecificController</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-<span class="w">        </span><span class="n">actBipolar</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">  </span><span class="c1">// Start in safe state</span>
+<span class="w">        </span><span class="c1">// WARNING: Do not call actBipolar(0); 0 can be mechanically unsafe.</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="k">protected</span><span class="o">:</span>

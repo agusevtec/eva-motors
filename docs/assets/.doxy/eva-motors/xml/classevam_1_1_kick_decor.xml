@@ -83,19 +83,17 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classevam_1_1_kick_decor_1ae9075fa41c77907fe93ce4508afaa8cc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_kick_decor_1a34cc5cc0f1c0b4d817948c6871eaf88e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void evam::KickDecor&lt; TMotor, tDefaultKickDurationMs, tDefaultKickPower &gt;::onKickEnd</definition>
-        <argsstring>(void *sender, eva::CallbackInfo cbInfo)</argsstring>
+        <argsstring>(void *, eva::CallbackInfo)</argsstring>
         <name>onKickEnd</name>
         <qualifiedname>evam::KickDecor::onKickEnd</qualifiedname>
         <param>
           <type>void *</type>
-          <declname>sender</declname>
         </param>
         <param>
           <type>eva::CallbackInfo</type>
-          <declname>cbInfo</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -399,7 +397,7 @@
       <member refid="classevam_1_1_kick_decor_1a77a66999555c0b3122f094ea38e8984c" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mKickEndHandler</name></member>
       <member refid="classevam_1_1_kick_decor_1a71197f1dc2971f0d681c946c1730d790" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mKickTimer</name></member>
       <member refid="classevam_1_1_kick_decor_1aa001c6b06d47071bc8a186d31f7f3bfc" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>mTargetSpeed</name></member>
-      <member refid="classevam_1_1_kick_decor_1ae9075fa41c77907fe93ce4508afaa8cc" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>onKickEnd</name></member>
+      <member refid="classevam_1_1_kick_decor_1a34cc5cc0f1c0b4d817948c6871eaf88e" prot="private" virt="non-virtual"><scope>evam::KickDecor</scope><name>onKickEnd</name></member>
       <member refid="classevam_1_1_kick_decor_1ab24d11d92e89115fbce875e0425d68c7" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>SetKickDuration</name></member>
       <member refid="classevam_1_1_kick_decor_1a4819f7333cb577d1e90b954844a4e8f8" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>SetKickPower</name></member>
       <member refid="classevam_1_1_kick_decor_1a9215c24e4d9c16ea619d6e76f1ffde96" prot="public" virt="non-virtual"><scope>evam::KickDecor</scope><name>SetupKickstart</name></member>

@@ -69,7 +69,7 @@
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eva::Handler&lt;KickDecor&gt;<sp/>mKickEndHandler{<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;KickDecor::onKickEnd<sp/>};</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eva::DelayTimer<sp/>mKickTimer{<sp/>&amp;mKickEndHandler<sp/>};</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onKickEnd(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*sender,<sp/>eva::CallbackInfo<sp/>cbInfo)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onKickEnd(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>eva::CallbackInfo)</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TMotor::Go(mTargetSpeed);</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

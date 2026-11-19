@@ -49,13 +49,11 @@ namespace evam
     public:
         SteeringActuator() : mConfig(tLeftPos, tCenterPos, tRightPos)
         {
-            Go(0);
         }
 
         template <typename... Args>
         SteeringActuator(SteeringConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
-            Go(0);
         }
 
         void SetupRange(signed short leftPos, signed short centerPos, signed short rightPos)

@@ -37,6 +37,7 @@
 ## k
 
 * **kHeartbeatPeriodMs** ([**evam::InertiaDecor**](classevam_1_1_inertia_decor.md), [**evam::SampledDecor**](classevam_1_1_sampled_decor.md))
+* **kSpeedScale** ([**evam::InertiaDecor**](classevam_1_1_inertia_decor.md))
 * **kRefreshIntervalMs** ([**evam::SoftwareServoDriver**](classevam_1_1_software_servo_driver.md))
 
 

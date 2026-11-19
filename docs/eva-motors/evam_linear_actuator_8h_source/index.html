@@ -669,13 +669,11 @@
 <span class="w">    </span><span class="k">public</span><span class="o">:</span>
 <span class="w">        </span><span class="n">LinearActuator</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mConfig</span><span class="p">(</span><span class="n">tMinValue</span><span class="p">,</span><span class="w"> </span><span class="n">tMaxValue</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Go</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
 <span class="w">        </span><span class="n">LinearActuator</span><span class="p">(</span><span class="n">LinearActuatorConfig</span><span class="w"> </span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TDriver</span><span class="p">(</span><span class="n">args</span><span class="p">...),</span><span class="w"> </span><span class="n">mConfig</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Go</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">SetupRange</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="p">)</span>

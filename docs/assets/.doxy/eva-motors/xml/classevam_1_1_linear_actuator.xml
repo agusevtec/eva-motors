@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="41" column="9" bodyfile="src/evamLinearActuator.h" bodystart="41" bodyend="44"/>
+        <location file="src/evamLinearActuator.h" line="41" column="9" bodyfile="src/evamLinearActuator.h" bodystart="41" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1ac3076ab854a26f2ab600e4afbc4b1579" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="47" column="9" bodyfile="src/evamLinearActuator.h" bodystart="47" bodyend="50"/>
+        <location file="src/evamLinearActuator.h" line="46" column="9" bodyfile="src/evamLinearActuator.h" bodystart="46" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a6c09c8b0bb68d04b9af0a4331810e65e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="58" column="14" bodyfile="src/evamLinearActuator.h" bodystart="58" bodyend="62"/>
+        <location file="src/evamLinearActuator.h" line="56" column="14" bodyfile="src/evamLinearActuator.h" bodystart="56" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a81d06742761ec4c9420c3ad5a674c4df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="68" column="14" bodyfile="src/evamLinearActuator.h" bodystart="68" bodyend="71"/>
+        <location file="src/evamLinearActuator.h" line="66" column="14" bodyfile="src/evamLinearActuator.h" bodystart="66" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a118570113d362c51a81c66d104d76390" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="77" column="13" bodyfile="src/evamLinearActuator.h" bodystart="77" bodyend="80"/>
+        <location file="src/evamLinearActuator.h" line="75" column="13" bodyfile="src/evamLinearActuator.h" bodystart="75" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1aa419205e11571febb0522ec41699745c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -216,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="86" column="14" bodyfile="src/evamLinearActuator.h" bodystart="86" bodyend="89"/>
+        <location file="src/evamLinearActuator.h" line="84" column="14" bodyfile="src/evamLinearActuator.h" bodystart="84" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a916358c634528c35d2a895915418e47c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -234,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="95" column="13" bodyfile="src/evamLinearActuator.h" bodystart="95" bodyend="98"/>
+        <location file="src/evamLinearActuator.h" line="93" column="13" bodyfile="src/evamLinearActuator.h" bodystart="93" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_linear_actuator_1a57b855c700d0b9097dfd9939054784c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamLinearActuator.h" line="104" column="14" bodyfile="src/evamLinearActuator.h" bodystart="104" bodyend="107"/>
+        <location file="src/evamLinearActuator.h" line="102" column="14" bodyfile="src/evamLinearActuator.h" bodystart="102" bodyend="105"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -320,7 +320,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamLinearActuator.h" line="27" column="5" bodyfile="src/evamLinearActuator.h" bodystart="28" bodyend="108"/>
+    <location file="src/evamLinearActuator.h" line="27" column="5" bodyfile="src/evamLinearActuator.h" bodystart="28" bodyend="106"/>
     <listofallmembers>
       <member refid="classevam_1_1_linear_actuator_1abb34c4c0430a5eb89f09e0ab181577a6" prot="private" virt="non-virtual"><scope>evam::LinearActuator</scope><name>compute</name></member>
       <member refid="classevam_1_1_linear_actuator_1a916358c634528c35d2a895915418e47c" prot="public" virt="non-virtual"><scope>evam::LinearActuator</scope><name>GetMaxValue</name></member>

@@ -761,7 +761,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (int aSpeed) <br><em>Apply the control value with inertia simulation.</em></td>
+<td style="text-align: left;"><a href="#function-go"><strong>Go</strong></a> (signed short aSpeed) <br><em>Apply the control value with inertia simulation.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
@@ -781,7 +781,7 @@
 <p>When decelerating or stopping, speed decreases gradually over time, simulating the effect of mass and inertia. Acceleration and direction changes are applied immediately.</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
-<li><code>Motor</code> Base motor class (must implement Go(signed short)) </li>
+<li><code>Motor</code> Base motor class (must implement <a href="./#function-go"><strong>Go(signed short)</strong></a>) </li>
 <li><code>tInertiaMass</code> Virtual mass (positive). Larger values = slower deceleration. </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
@@ -797,7 +797,7 @@
 <h3 id="function-go">function Go<a class="headerlink" href="#function-go" title="Permanent link">&para;</a></h3>
 <p><em>Apply the control value with inertia simulation.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">evam</span><span class="o">::</span><span class="n">InertiaDecor</span><span class="o">::</span><span class="n">Go</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">aSpeed</span>
+<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aSpeed</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 

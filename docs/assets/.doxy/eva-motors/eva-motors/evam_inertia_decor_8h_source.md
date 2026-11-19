@@ -30,19 +30,21 @@ namespace evam
 
     private:
         static constexpr unsigned long kHeartbeatPeriodMs = 100;
+        static constexpr signed short kSpeedScale = 4; 
 
         InertiaConfig mConfig;
         signed short mDesiredSpeed = 0;
         signed short mSpeed = 0;
 
-        eva::Handler<InertiaDecor> mHeartbeatHandler{ this, &InertiaDecor::onHeartbeat };
-        eva::RepeatTimer mHeartbeatTimer{ &mHeartbeatHandler };
+        eva::Handler<InertiaDecor> mHeartbeatHandler{this, &InertiaDecor::onHeartbeat};
+        eva::RepeatTimer mHeartbeatTimer{&mHeartbeatHandler};
 
-        void onHeartbeat(void *sender, eva::CallbackInfo cbInfo)
+        void onHeartbeat(void *, eva::CallbackInfo)
         {
             mSpeed = calcSpeed();
             TMotor::Go(mSpeed);
         }
+
 
         signed short calcSpeed() const
         {
@@ -53,9 +55,11 @@ namespace evam
                 return mDesiredSpeed;
 
             signed short delta = mDesiredSpeed - mSpeed;
-            signed short step = delta / mConfig.inertiaMass;
-            if (abs(step) < 2)
-                return mDesiredSpeed;
+            signed short step = (delta * kSpeedScale) / mConfig.inertiaMass;
+
+            if (step == 0)
+                return mDesiredSpeed
+
             return mSpeed + step;
         }
 
@@ -83,7 +87,7 @@ namespace evam
             return mConfig.inertiaMass;
         }
 
-        void Go(int aSpeed)
+        void Go(signed short aSpeed)
         {
             mDesiredSpeed = aSpeed;
             if (aSpeed == calcSpeed())

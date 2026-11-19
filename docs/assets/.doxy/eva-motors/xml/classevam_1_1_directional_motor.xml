@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="60" column="9" bodyfile="src/evamDirectionalMotor.h" bodystart="60" bodyend="63"/>
+        <location file="src/evamDirectionalMotor.h" line="60" column="9" bodyfile="src/evamDirectionalMotor.h" bodystart="60" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1aa7ab9863f061ba78b65d636b97162849" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="66" column="9" bodyfile="src/evamDirectionalMotor.h" bodystart="66" bodyend="69"/>
+        <location file="src/evamDirectionalMotor.h" line="65" column="9" bodyfile="src/evamDirectionalMotor.h" bodystart="65" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1a8fa87d05385c71828f266538a8430599" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="79" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="79" bodyend="85"/>
+        <location file="src/evamDirectionalMotor.h" line="77" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="77" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1a3d8c51d4dc544aebed343651a65b2aed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -205,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="91" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="91" bodyend="94"/>
+        <location file="src/evamDirectionalMotor.h" line="89" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="89" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1ab4bf5a4e3ebc799898bcaaf2e85721fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -223,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="100" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="100" bodyend="103"/>
+        <location file="src/evamDirectionalMotor.h" line="98" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="98" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1a5f62c6f48549b077ace2e3044dc358ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="109" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="109" bodyend="112"/>
+        <location file="src/evamDirectionalMotor.h" line="107" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="107" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1a60a9690204bd9992f561d0eb126c25e9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="118" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="118" bodyend="121"/>
+        <location file="src/evamDirectionalMotor.h" line="116" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="116" bodyend="119"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1a6d83e1ccb1f93901239be2096420db68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -299,7 +299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="127" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="127" bodyend="130"/>
+        <location file="src/evamDirectionalMotor.h" line="125" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="125" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1a7c39f8139563ecc3a88104ce90cf26f9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -317,7 +317,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="136" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="136" bodyend="139"/>
+        <location file="src/evamDirectionalMotor.h" line="134" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="134" bodyend="137"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1ae8dbec433916d86e6502c11d00ddfa21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -346,7 +346,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="145" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="145" bodyend="148"/>
+        <location file="src/evamDirectionalMotor.h" line="143" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="143" bodyend="146"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1aa23ed71009bf6683c384ad45d7798a3d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -364,7 +364,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="154" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="154" bodyend="157"/>
+        <location file="src/evamDirectionalMotor.h" line="152" column="22" bodyfile="src/evamDirectionalMotor.h" bodystart="152" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_directional_motor_1a53de2b6c1f8aff5a8146d135928c9a5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -393,7 +393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamDirectionalMotor.h" line="163" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="163" bodyend="166"/>
+        <location file="src/evamDirectionalMotor.h" line="161" column="14" bodyfile="src/evamDirectionalMotor.h" bodystart="161" bodyend="164"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -466,7 +466,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamDirectionalMotor.h" line="40" column="5" bodyfile="src/evamDirectionalMotor.h" bodystart="41" bodyend="167"/>
+    <location file="src/evamDirectionalMotor.h" line="40" column="5" bodyfile="src/evamDirectionalMotor.h" bodystart="41" bodyend="165"/>
     <listofallmembers>
       <member refid="classevam_1_1_directional_motor_1acd34ec35be7077d49eb82796992b6d91" prot="private" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>compute</name></member>
       <member refid="classevam_1_1_directional_motor_1a343b1f59e2e11a7583940a9d195028f2" prot="public" virt="non-virtual"><scope>evam::DirectionalMotor</scope><name>DirectionalMotor</name></member>

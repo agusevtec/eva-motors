@@ -40,13 +40,11 @@ namespace evam
     public:
         ForwardMotor() : mConfig(tMinValue, tMaxValue)
         {
-            Go(0);
         }
 
         template <typename... Args>
         ForwardMotor(ForwardConfig config, Args... args) : TDriver(args...), mConfig(config)
         {
-            Go(0);
         }
 
         void SetupRange(int minValue, int maxValue)

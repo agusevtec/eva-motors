@@ -56,7 +56,7 @@ Inherits the following classes: TMotor
 | Type | Name |
 | ---: | :--- |
 |  unsigned short | [**GetInertiaMass**](#function-getinertiamass) () const<br>_Get the current inertia mass value._  |
-|  void | [**Go**](#function-go) (int aSpeed) <br>_Apply the control value with inertia simulation._  |
+|  void | [**Go**](#function-go) (signed short aSpeed) <br>_Apply the control value with inertia simulation._  |
 |   | [**InertiaDecor**](#function-inertiadecor-12) () <br> |
 |   | [**InertiaDecor**](#function-inertiadecor-22) ([**InertiaConfig**](structevam_1_1_inertia_config.md) config, Args... args) <br> |
 |  void | [**SetInertiaMass**](#function-setinertiamass) (unsigned short aValue) <br>_Set the inertia mass value._  |
@@ -99,7 +99,7 @@ When decelerating or stopping, speed decreases gradually over time, simulating t
 **Template parameters:**
 
 
-* `Motor` Base motor class (must implement Go(signed short)) 
+* `Motor` Base motor class (must implement [**Go(signed short)**](classevam_1_1_inertia_decor.md#function-go)) 
 * `tInertiaMass` Virtual mass (positive). Larger values = slower deceleration. 
 
 
@@ -141,7 +141,7 @@ Current inertia mass value
 _Apply the control value with inertia simulation._ 
 ```C++
 inline void evam::InertiaDecor::Go (
-    int aSpeed
+    signed short aSpeed
 ) 
 ```
 

@@ -31,6 +31,21 @@
         </inbodydescription>
         <location file="src/evamInertiaDecor.h" line="35" column="40" bodyfile="src/evamInertiaDecor.h" bodystart="35" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a3eb1871691be4e7ecdf18e2ac6870fbe" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>signed short</type>
+        <definition>signed short evam::InertiaDecor&lt; TMotor, tInertiaMass &gt;::kSpeedScale</definition>
+        <argsstring></argsstring>
+        <name>kSpeedScale</name>
+        <qualifiedname>evam::InertiaDecor::kSpeedScale</qualifiedname>
+        <initializer>= 4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evamInertiaDecor.h" line="36" column="39" bodyfile="src/evamInertiaDecor.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a26ec54b46d5b202967c7860346b9a3e0" prot="private" static="no" mutable="no">
@@ -45,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="37" column="23" bodyfile="src/evamInertiaDecor.h" bodystart="37" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="38" column="23" bodyfile="src/evamInertiaDecor.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a8767fa1b1f037bdc53c88ac8658d36f2" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -60,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="38" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="38" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="39" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_inertia_decor_1aff216923d0f6375178fcd182bfe89b4c" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -75,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="39" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="39" bodyend="-1"/>
+        <location file="src/evamInertiaDecor.h" line="40" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a91be75f418fa659fa7f9791a2310cdee" prot="private" static="no" mutable="no">
         <type>eva::Handler&lt; InertiaDecor &gt;</type>
@@ -83,14 +98,14 @@
         <argsstring></argsstring>
         <name>mHeartbeatHandler</name>
         <qualifiedname>evam::InertiaDecor::mHeartbeatHandler</qualifiedname>
-        <initializer>{ this, &amp;InertiaDecor::onHeartbeat }</initializer>
+        <initializer>{this, &amp;InertiaDecor::onHeartbeat}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="41" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="41" bodyend="41"/>
+        <location file="src/evamInertiaDecor.h" line="42" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="42" bodyend="42"/>
       </memberdef>
       <memberdef kind="variable" id="classevam_1_1_inertia_decor_1a4a8b0d04d4fcdb37ebce957cea0c5620" prot="private" static="no" mutable="no">
         <type>eva::RepeatTimer</type>
@@ -98,30 +113,28 @@
         <argsstring></argsstring>
         <name>mHeartbeatTimer</name>
         <qualifiedname>evam::InertiaDecor::mHeartbeatTimer</qualifiedname>
-        <initializer>{ &amp;mHeartbeatHandler }</initializer>
+        <initializer>{&amp;mHeartbeatHandler}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="42" column="26" bodyfile="src/evamInertiaDecor.h" bodystart="42" bodyend="42"/>
+        <location file="src/evamInertiaDecor.h" line="43" column="26" bodyfile="src/evamInertiaDecor.h" bodystart="43" bodyend="43"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classevam_1_1_inertia_decor_1a734f66d3310016435f4d8cca83f9dd6b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_inertia_decor_1a3c9f94f718e38dace16978b2e2748760" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void evam::InertiaDecor&lt; TMotor, tInertiaMass &gt;::onHeartbeat</definition>
-        <argsstring>(void *sender, eva::CallbackInfo cbInfo)</argsstring>
+        <argsstring>(void *, eva::CallbackInfo)</argsstring>
         <name>onHeartbeat</name>
         <qualifiedname>evam::InertiaDecor::onHeartbeat</qualifiedname>
         <param>
           <type>void *</type>
-          <declname>sender</declname>
         </param>
         <param>
           <type>eva::CallbackInfo</type>
-          <declname>cbInfo</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -129,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="44" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="44" bodyend="48"/>
+        <location file="src/evamInertiaDecor.h" line="45" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="45" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1a2a79b620a0561c16c9a41065bc64cd91" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -143,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="50" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="50" bodyend="63"/>
+        <location file="src/evamInertiaDecor.h" line="52" column="22" bodyfile="src/evamInertiaDecor.h" bodystart="52" bodyend="67"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -159,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="66" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="66" bodyend="70"/>
+        <location file="src/evamInertiaDecor.h" line="70" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="70" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1abf973250437b161538291c14fbe29e60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -188,7 +201,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="73" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="73" bodyend="77"/>
+        <location file="src/evamInertiaDecor.h" line="77" column="9" bodyfile="src/evamInertiaDecor.h" bodystart="77" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1a346b729e3d29f0069ce890028a06f1ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -217,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="83" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="83" bodyend="86"/>
+        <location file="src/evamInertiaDecor.h" line="87" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="87" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_inertia_decor_1a4678023aa3d076ca7f7cb9a0dc72f507" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned short</type>
@@ -235,16 +248,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="92" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="92" bodyend="95"/>
+        <location file="src/evamInertiaDecor.h" line="96" column="24" bodyfile="src/evamInertiaDecor.h" bodystart="96" bodyend="99"/>
       </memberdef>
-      <memberdef kind="function" id="classevam_1_1_inertia_decor_1a7d0fddedeb038592947b68d3e0448418" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classevam_1_1_inertia_decor_1a6aa73f7deb8f46231be12e9dfbc42870" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void evam::InertiaDecor&lt; TMotor, tInertiaMass &gt;::Go</definition>
-        <argsstring>(int aSpeed)</argsstring>
+        <argsstring>(signed short aSpeed)</argsstring>
         <name>Go</name>
         <qualifiedname>evam::InertiaDecor::Go</qualifiedname>
         <param>
-          <type>int</type>
+          <type>signed short</type>
           <declname>aSpeed</declname>
         </param>
         <briefdescription>
@@ -264,7 +277,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamInertiaDecor.h" line="101" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="101" bodyend="109"/>
+        <location file="src/evamInertiaDecor.h" line="105" column="14" bodyfile="src/evamInertiaDecor.h" bodystart="105" bodyend="113"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -277,7 +290,7 @@
 <parametername>Motor</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Base motor class (must implement Go(signed short)) </para>
+<para>Base motor class (must implement <ref refid="classevam_1_1_inertia_decor_1a6aa73f7deb8f46231be12e9dfbc42870" kindref="member">Go(signed short)</ref>) </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -313,20 +326,21 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamInertiaDecor.h" line="30" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="31" bodyend="110"/>
+    <location file="src/evamInertiaDecor.h" line="30" column="5" bodyfile="src/evamInertiaDecor.h" bodystart="31" bodyend="114"/>
     <listofallmembers>
       <member refid="classevam_1_1_inertia_decor_1a2a79b620a0561c16c9a41065bc64cd91" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>calcSpeed</name></member>
       <member refid="classevam_1_1_inertia_decor_1a4678023aa3d076ca7f7cb9a0dc72f507" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>GetInertiaMass</name></member>
-      <member refid="classevam_1_1_inertia_decor_1a7d0fddedeb038592947b68d3e0448418" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>Go</name></member>
+      <member refid="classevam_1_1_inertia_decor_1a6aa73f7deb8f46231be12e9dfbc42870" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>Go</name></member>
       <member refid="classevam_1_1_inertia_decor_1a7f7d3359f0a7866d3c9aedc2fca99a11" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>InertiaDecor</name></member>
       <member refid="classevam_1_1_inertia_decor_1abf973250437b161538291c14fbe29e60" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>InertiaDecor</name></member>
       <member refid="classevam_1_1_inertia_decor_1a423189909009ff0134423fac29211273" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>kHeartbeatPeriodMs</name></member>
+      <member refid="classevam_1_1_inertia_decor_1a3eb1871691be4e7ecdf18e2ac6870fbe" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>kSpeedScale</name></member>
       <member refid="classevam_1_1_inertia_decor_1a26ec54b46d5b202967c7860346b9a3e0" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mConfig</name></member>
       <member refid="classevam_1_1_inertia_decor_1a8767fa1b1f037bdc53c88ac8658d36f2" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mDesiredSpeed</name></member>
       <member refid="classevam_1_1_inertia_decor_1a91be75f418fa659fa7f9791a2310cdee" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mHeartbeatHandler</name></member>
       <member refid="classevam_1_1_inertia_decor_1a4a8b0d04d4fcdb37ebce957cea0c5620" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mHeartbeatTimer</name></member>
       <member refid="classevam_1_1_inertia_decor_1aff216923d0f6375178fcd182bfe89b4c" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>mSpeed</name></member>
-      <member refid="classevam_1_1_inertia_decor_1a734f66d3310016435f4d8cca83f9dd6b" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>onHeartbeat</name></member>
+      <member refid="classevam_1_1_inertia_decor_1a3c9f94f718e38dace16978b2e2748760" prot="private" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>onHeartbeat</name></member>
       <member refid="classevam_1_1_inertia_decor_1a346b729e3d29f0069ce890028a06f1ec" prot="public" virt="non-virtual"><scope>evam::InertiaDecor</scope><name>SetInertiaMass</name></member>
     </listofallmembers>
   </compounddef>

@@ -27,7 +27,6 @@
 
 ## DirectionalMotor
 
-Bidirectional motor controller for DC motors with H-bridge drivers.
 
 ```cpp
 template <class Driver, signed short tMaxBackward = -1000, 
@@ -51,6 +50,8 @@ class DirectionalMotor : public Driver
 - `Go(level)` – Set motor power (-1000..1000)
 
 **Example:**
+
+Bidirectional motor controller for DC motors with H-bridge drivers.
 ```cpp
 using Motor = evam::DirectionalMotor<evam::TA6586Driver<9, 10>>;
 Motor motor;
@@ -60,7 +61,6 @@ motor.Go(750);  // 75% forward
 
 ## ForwardMotor
 
-Unidirectional motor controller for ESCs and forward-only applications.
 
 ```cpp
 template <class Driver, int kMinValue = 0, int kMaxValue = 1000>
@@ -78,6 +78,8 @@ class ForwardMotor : public Driver
 - `Go(level)` – Set motor power (0..1000, negative treated as 0)
 
 **Example:**
+
+Unidirectional motor controller for ESCs and forward-only applications.
 ```cpp
 using ESC = evam::ForwardMotor<evam::PwmDriver<9>>;
 ESC throttle;
@@ -86,8 +88,6 @@ throttle.Go(500);  // 50% throttle
 ```
 
 ## SteeringActuator
-
-Centered servo controller for steering and positioning.
 
 ```cpp
 template <class Driver, signed short kLeftPos = -1000, 
@@ -116,8 +116,6 @@ steering.Go(500);  // Turn right
 ```
 
 ## LinearActuator
-
-Position controller for linear actuators and position servos.
 
 ```cpp
 template <class Driver, int kMinValue = 0, int kMaxValue = 1000>

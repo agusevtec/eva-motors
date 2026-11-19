@@ -97,18 +97,19 @@
   </compound>
   <compound refid="classevam_1_1_inertia_decor" kind="class"><name>evam::InertiaDecor</name>
     <member refid="classevam_1_1_inertia_decor_1a423189909009ff0134423fac29211273" kind="variable"><name>kHeartbeatPeriodMs</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a3eb1871691be4e7ecdf18e2ac6870fbe" kind="variable"><name>kSpeedScale</name></member>
     <member refid="classevam_1_1_inertia_decor_1a26ec54b46d5b202967c7860346b9a3e0" kind="variable"><name>mConfig</name></member>
     <member refid="classevam_1_1_inertia_decor_1a8767fa1b1f037bdc53c88ac8658d36f2" kind="variable"><name>mDesiredSpeed</name></member>
     <member refid="classevam_1_1_inertia_decor_1aff216923d0f6375178fcd182bfe89b4c" kind="variable"><name>mSpeed</name></member>
     <member refid="classevam_1_1_inertia_decor_1a91be75f418fa659fa7f9791a2310cdee" kind="variable"><name>mHeartbeatHandler</name></member>
     <member refid="classevam_1_1_inertia_decor_1a4a8b0d04d4fcdb37ebce957cea0c5620" kind="variable"><name>mHeartbeatTimer</name></member>
-    <member refid="classevam_1_1_inertia_decor_1a734f66d3310016435f4d8cca83f9dd6b" kind="function"><name>onHeartbeat</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a3c9f94f718e38dace16978b2e2748760" kind="function"><name>onHeartbeat</name></member>
     <member refid="classevam_1_1_inertia_decor_1a2a79b620a0561c16c9a41065bc64cd91" kind="function"><name>calcSpeed</name></member>
     <member refid="classevam_1_1_inertia_decor_1a7f7d3359f0a7866d3c9aedc2fca99a11" kind="function"><name>InertiaDecor</name></member>
     <member refid="classevam_1_1_inertia_decor_1abf973250437b161538291c14fbe29e60" kind="function"><name>InertiaDecor</name></member>
     <member refid="classevam_1_1_inertia_decor_1a346b729e3d29f0069ce890028a06f1ec" kind="function"><name>SetInertiaMass</name></member>
     <member refid="classevam_1_1_inertia_decor_1a4678023aa3d076ca7f7cb9a0dc72f507" kind="function"><name>GetInertiaMass</name></member>
-    <member refid="classevam_1_1_inertia_decor_1a7d0fddedeb038592947b68d3e0448418" kind="function"><name>Go</name></member>
+    <member refid="classevam_1_1_inertia_decor_1a6aa73f7deb8f46231be12e9dfbc42870" kind="function"><name>Go</name></member>
   </compound>
   <compound refid="structevam_1_1_kick_config" kind="struct"><name>evam::KickConfig</name>
     <member refid="structevam_1_1_kick_config_1a6ee1b4a7331ffe0c832b6f38d896f865" kind="variable"><name>duration</name></member>
@@ -120,7 +121,7 @@
     <member refid="classevam_1_1_kick_decor_1aa001c6b06d47071bc8a186d31f7f3bfc" kind="variable"><name>mTargetSpeed</name></member>
     <member refid="classevam_1_1_kick_decor_1a77a66999555c0b3122f094ea38e8984c" kind="variable"><name>mKickEndHandler</name></member>
     <member refid="classevam_1_1_kick_decor_1a71197f1dc2971f0d681c946c1730d790" kind="variable"><name>mKickTimer</name></member>
-    <member refid="classevam_1_1_kick_decor_1ae9075fa41c77907fe93ce4508afaa8cc" kind="function"><name>onKickEnd</name></member>
+    <member refid="classevam_1_1_kick_decor_1a34cc5cc0f1c0b4d817948c6871eaf88e" kind="function"><name>onKickEnd</name></member>
     <member refid="classevam_1_1_kick_decor_1a61268988366f9d42c2092b3a343e0610" kind="function"><name>calculateKickPower</name></member>
     <member refid="classevam_1_1_kick_decor_1a356b9cdd81ba9c10ad19639de90bb207" kind="function"><name>KickDecor</name></member>
     <member refid="classevam_1_1_kick_decor_1a4c014783c7ca17f3bc7dede5d2665719" kind="function"><name>KickDecor</name></member>

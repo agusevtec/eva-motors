@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="43" column="9" bodyfile="src/evamForwardMotor.h" bodystart="43" bodyend="46"/>
+        <location file="src/evamForwardMotor.h" line="43" column="9" bodyfile="src/evamForwardMotor.h" bodystart="43" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_forward_motor_1acd69433ddf8ffdab0947fc489392cc36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="49" column="9" bodyfile="src/evamForwardMotor.h" bodystart="49" bodyend="52"/>
+        <location file="src/evamForwardMotor.h" line="48" column="9" bodyfile="src/evamForwardMotor.h" bodystart="48" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_forward_motor_1acc29f519b1d15931a8006dbd9d683df0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="60" column="14" bodyfile="src/evamForwardMotor.h" bodystart="60" bodyend="64"/>
+        <location file="src/evamForwardMotor.h" line="58" column="14" bodyfile="src/evamForwardMotor.h" bodystart="58" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_forward_motor_1adfd9b1fc1254f85595a0275c6e9b8a58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="70" column="14" bodyfile="src/evamForwardMotor.h" bodystart="70" bodyend="73"/>
+        <location file="src/evamForwardMotor.h" line="68" column="14" bodyfile="src/evamForwardMotor.h" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_forward_motor_1a92a0f7843d74bfbda84af7e793dd8279" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -187,7 +187,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="79" column="13" bodyfile="src/evamForwardMotor.h" bodystart="79" bodyend="82"/>
+        <location file="src/evamForwardMotor.h" line="77" column="13" bodyfile="src/evamForwardMotor.h" bodystart="77" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_forward_motor_1a6d0bffbde4a9f257592d62ce4b369965" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -216,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="88" column="14" bodyfile="src/evamForwardMotor.h" bodystart="88" bodyend="91"/>
+        <location file="src/evamForwardMotor.h" line="86" column="14" bodyfile="src/evamForwardMotor.h" bodystart="86" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_forward_motor_1a371ec400692df3fcdb0673fe04df2bbe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -234,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="97" column="13" bodyfile="src/evamForwardMotor.h" bodystart="97" bodyend="100"/>
+        <location file="src/evamForwardMotor.h" line="95" column="13" bodyfile="src/evamForwardMotor.h" bodystart="95" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="classevam_1_1_forward_motor_1a90238089f0eb3830d52be2395ce83049" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evamForwardMotor.h" line="106" column="14" bodyfile="src/evamForwardMotor.h" bodystart="106" bodyend="109"/>
+        <location file="src/evamForwardMotor.h" line="104" column="14" bodyfile="src/evamForwardMotor.h" bodystart="104" bodyend="107"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -320,7 +320,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evamForwardMotor.h" line="27" column="5" bodyfile="src/evamForwardMotor.h" bodystart="28" bodyend="110"/>
+    <location file="src/evamForwardMotor.h" line="27" column="5" bodyfile="src/evamForwardMotor.h" bodystart="28" bodyend="108"/>
     <listofallmembers>
       <member refid="classevam_1_1_forward_motor_1ad3384f913df4f3834dc81d490aa650bd" prot="private" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>compute</name></member>
       <member refid="classevam_1_1_forward_motor_1a517b1a1af93b3647f0841db933807046" prot="public" virt="non-virtual"><scope>evam::ForwardMotor</scope><name>ForwardMotor</name></member>

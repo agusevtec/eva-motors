@@ -126,19 +126,15 @@ motor.Go(100);  // brief full power then 10% throttle
 | `InertiaDecor` | Gradual deceleration (flywheel effect) |
 | `KickDecor` | Full-power pulse at start/direction change |
 
-## Runtime Configuration
+## Structured configuration
 
-All parameters can be adjusted at runtime:
+Compile-time configuration:
 
 ```cpp
-DirectionalMotor<TB6612FNGDriver<9,10,11>> motor;
-motor.SetMaxForward(800);
-motor.SetMinForward(100);
-motor.SetMaxBackward(-800);
-motor.SetMinBackward(-100);
-motor.Go(500);
+KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<9, 10>, -1000, -200, 200, 1000>, 5>, 15>, 25, 900> motor ;
 ```
-or dynamic configuration can be used:
+
+Or dynamic configuration:
 
 ```cpp
 KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<>>>>> motor = {
@@ -148,6 +144,17 @@ KickDecor<InertiaDecor<CurveDecor<DirectionalMotor<TA6586Driver<>>>>> motor = {
     DirectionalConfig{ -1000, -200, 200, 1000 },
     TA6586Config{ 9, 10 }
 };
+```
+
+Regardless of the initialization approach, parameters can be adjusted at runtime:
+
+```cpp
+// Assuming motor is declared above as DirectionalMotor 
+motor.SetMaxForward(800);
+motor.SetMinForward(100);
+motor.SetMaxBackward(-800);
+motor.SetMinBackward(-100);
+motor.Go(500);
 ```
 
 ## Installation
